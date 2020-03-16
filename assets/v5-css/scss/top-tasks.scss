@@ -1,0 +1,109 @@
+// Beta
+
+// Numbered headings 
+
+// 1-10 
+
+h2.multistepHeading1::before {counter-increment: h2; content: "1."; padding-right: 10px;}
+h2.multistepHeading2::before {counter-increment: h2; content: "2."; padding-right: 10px;}
+h2.multistepHeading3::before {counter-increment: h2; content: "3."; padding-right: 10px;}
+h2.multistepHeading4::before {counter-increment: h2; content: "4."; padding-right: 10px;}
+h2.multistepHeading5::before {counter-increment: h2; content: "5."; padding-right: 10px;}
+h2.multistepHeading6::before {counter-increment: h2; content: "6."; padding-right: 10px;}
+h2.multistepHeading7::before {counter-increment: h2; content: "7."; padding-right: 10px;}
+h2.multistepHeading8::before {counter-increment: h2; content: "8."; padding-right: 10px;}
+h2.multistepHeading9::before {counter-increment: h2; content: "9."; padding-right: 10px;}
+h2.multistepHeading10::before {counter-increment: h2; content: "10."; padding-right: 10px;}
+// Add more numbered headings 
+
+.multistep {
+width: 100%;
+}
+
+// Pagination 
+
+#pagination {
+width: 100%;
+float: left;
+margin-top: 10px;
+}
+
+#contentContainer #pagination ul, #contentContainer #pagination ul li {
+float: left;
+background: none;
+margin: 0 !important;
+padding: 0;
+}
+
+#contentContainer #pagination ul span {
+float: left;
+display: inline-block;
+clear: both;
+}
+
+// Top task pagination
+
+#pagination .next-page, #pagination .previous-page {
+width: 50%;
+float: left;
+@media only screen and (max-width : 991px) {
+width: 100%;
+}
+}
+
+
+
+#pagination span {
+color: $red;
+}
+
+#pagination a:hover {
+background: $gray;
+}
+
+.pagination-icon {
+font-size: 2.167em;
+}
+
+.pagination-text {
+font-size: 1.167em;
+padding-top: 10px;
+text-decoration: underline;
+}
+
+#pagination .next-page {
+margin-left: -10px;
+}
+
+#pagination div:nth-child(2) {
+margin-left: -10px;
+@media only screen and (min-width : $desktop) {
+margin-left: 10px;
+}
+}
+
+#pagination .previous-page {
+margin-left: -10px;
+}
+
+#pagination .next-page a, #pagination .previous-page a {
+width: 100%;
+padding: 10px;
+box-sizing: border-box;
+float: left;
+}
+
+
+// Aside
+
+.exploreTopic {
+width: 100%;
+float: left;
+box-sizing: border-box;
+padding: 10px;
+margin-bottom: 15px;
+}
+
+#asideBottom h2 {
+font-size: 1.1rem !important;
+}

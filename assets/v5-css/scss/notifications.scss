@@ -1,0 +1,115 @@
+// Cookie notification
+
+#cookieContainer {
+background-color: #333;
+position:relative;
+}
+
+.ie7 #cookieContainer {
+	height: 3.500em;
+}
+
+#cookieNotify {
+	width: 940px;
+	margin: 5px auto;
+	background: url(../v4-images/shared/cookie-icon.png) no-repeat 0 4px;
+}
+
+.ie7 #cookieNotify {
+	height: 2.667em;
+}
+
+#cookieNotify p {
+	color: #fff;
+	padding: 6px 0 0 33px;
+	font-size: 1.1em;
+	float: left;
+	margin: 0;
+}
+
+#cookieNotify p a {
+	color: #FF9C00;
+	text-decoration:underline;
+}
+
+#cookieNotifyClose {
+	float: right;
+	padding: 6px 0 0 0;
+}
+
+/* Cookie notification end */
+
+/* Notification bar */
+
+#notification-bar {
+background: $gray;
+width: 100%;
+height: auto;
+float: left;
+@media only screen and (min-width : 980px) {
+min-height: 78px;
+}
+font-size: 16px;
+border-bottom: 2px solid $red;
+line-height: normal !important;
+}
+
+.hide-notification {
+display: none !important;
+}
+
+.brexit-icon {
+float: left;
+}
+
+.notification-container {
+width: 90%;
+padding: 10px 5%;
+@media only screen and (min-width : 980px) {
+padding: 20px 0;
+width: 940px;
+float: none;
+}
+float: left;
+position: relative;
+}
+
+.notification-message {
+margin: 0;
+float: left;
+}
+
+.notification-call-to-action {
+display: block;
+width: 100%;
+@media only screen and (min-width : 980px) {
+margin-left: 54px;
+}
+}
+
+.notification-message img {
+@media only screen and (max-width : 979px) {
+display: none;
+}
+@media only screen and (min-width : 980px) {
+margin-right: 20px;
+float: left;
+}
+}
+
+.notification-hide-button {
+@media only screen and (min-width : 980px) {
+position: absolute;
+right: 0;	
+top: 0;
+}
+float: right;
+padding-top: 20px;
+}
+
+.notification-bar-title {
+font-weight: bold;
+vertical-align: top !important;
+width: 100%;
+}
+/* Notification bar end */

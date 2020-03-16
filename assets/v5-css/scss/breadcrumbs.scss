@@ -1,0 +1,20 @@
+// Breadcrumbs
+
+#breadCrumb {
+margin-bottom: 10px;
+background: $gray;
+margin: 0;
+}
+
+#breadCrumb ol li {
+font-size: 1.1em;	
+}
+
+#breadCrumb ol li a {
+color: $black;
+text-decoration: underline;
+}
+
+#breadCrumb ol li a:hover {
+text-decoration: none;	
+}

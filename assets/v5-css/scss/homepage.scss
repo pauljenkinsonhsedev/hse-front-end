@@ -1,0 +1,44 @@
+// Homepage
+
+// Homepage banner
+
+.homepageBanner {
+padding-top: 0;
+padding-bottom: 0;
+margin-bottom: 20px !important;
+}
+
+.homepageBanner img {
+height: auto;
+	@media only screen and (min-width : 979px) {
+		max-height: 265.14px !important;
+	}
+}
+
+.mostPopular {
+@media only screen and (min-width : 979px) {
+		max-height: 265.14px !important;
+	}	
+}
+
+.subText {
+color: $black;
+}
+
+// Responsive carousel
+
+#homepageCarousel {
+width: 100% !important;
+}
+
+.touchcarousel-item img {
+border-radius: 0 !important;
+}
+
+ul.touchcarousel-container {
+width: 1200px!important;
+}
+
+.homepageRecommended {
+margin-bottom: 20px;
+}

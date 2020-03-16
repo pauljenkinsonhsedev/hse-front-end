@@ -1,0 +1,368 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN" "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
+<!--[if lte IE 7 ]><html class="ie ie7" xml:lang="en-GB" xmlns="http://www.w3.org/1999/xhtml"><![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" xml:lang="en-GB" xmlns="http://www.w3.org/1999/xhtml"><![endif]-->
+<!--[if (gt IE 8)&(IE)]><html class="ie" xml:lang="en-GB" xmlns="http://www.w3.org/1999/xhtml"><![endif]-->
+<!--[if (gt IE 8)|!(IE)]><!-->
+<html xml:lang="en-GB" xmlns="http://www.aw3.org/1999/xhtml">
+<!--<![endif]-->
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- v4.2.13 Link to website-tracker.js removed and feedback added - 23/11/18-->	
+	<!-- v4.2.12 NEWS.HSE.GOV.UK LINK REMOVED FROM HEADER-->
+<!-- Google Optimize Page hide-->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-324220-1', 'auto');
+  ga('require', 'GTM-MFL3FWX');
+</script>
+<!-- End Google Optimize Page hide-->
+<!-- Google Optimize -->
+<style>.async-hide { opacity: 0 !important} </style>
+<script>(function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
+h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
+(a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
+})(window,document.documentElement,'async-hide','dataLayer',4000,
+{'GTM-MFL3FWX':true});</script>
+<!-- End Google Optimize -->
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PJPWMNL');</script>
+<!-- End Google Tag Manager -->
+
+<link rel="stylesheet" href="../assets/v4-css/core.min.css" type="text/css" media="screen,print" />
+
+	
+<!-- TemplateBeginMultipleIf -->
+<!-- TemplateBeginIfClause cond="platform == 'website'" -->
+<link rel="stylesheet" href="../assets/v4-css/website.min.css" type="text/css" media="screen,print" />
+
+<!-- TemplateEndIfClause -->
+<!-- TemplateBeginIfClause cond="platform == 'toolbox'" -->
+<link rel="stylesheet" href="../assets/v4-css/website.min.css" type="text/css" media="screen,print" />
+<link rel="stylesheet" href="../assets/v4-css/toolbox.min.css" type="text/css" media="screen,print" />
+<!-- TemplateEndIfClause -->
+<!-- TemplateBeginIfClause cond="platform == 'hsms'" -->
+<link rel="stylesheet" href="../assets/v4-css/website.min.css" type="text/css" media="screen,print" />
+<link rel="stylesheet" href="../assets/v4-css/hsms.min.css" type="text/css" media="screen,print" />
+<!-- TemplateEndIfClause -->
+<!-- TemplateBeginIfClause cond="platform == 'v5'" -->
+<link rel="stylesheet" href="../assets/v4-css/website.min.css" type="text/css" media="screen,print" />
+
+<!-- V5 -->
+<link rel="stylesheet" href="../assets/v5-css/v5.css" type="text/css" media="screen,print" />
+<!-- TemplateEndIfClause -->
+<!-- TemplateEndMultipleIf -->
+
+<!--<script type="text/javascript" src="../assets/v4-js/site-tracker-web.min.js"></script>-->
+<!-- TemplateBeginEditable name="doctitle" -->
+<title></title>
+<meta name="keywords" content=" " />
+<meta name="description" content=" " />
+<!-- TemplateEndEditable -->
+<meta name="HSE.contentType" content="@@(contentType)@@" />
+<link rel="shortcut icon" href="../favicon.ico" />
+<link rel="apple-touch-icon" href="../assets/v4-images/shared/apple-touch-icon.png" />
+<link rel="home" href="../index.htm" />
+<!--<link rel="alternate" type="application/rss+xml" title="What's new at HSE - NewsFeed" href="http://news.hse.gov.uk/feed/" />-->
+
+</head>
+<body class="@@(_document['bodyClass'])@@ normalFont">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PJPWMNL"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<div id="top"> 
+<!-- TemplateBeginMultipleIf --><!-- TemplateBeginIfClause cond="weblite == false" --> <a href="#contentContainer" class="skip">Skip to content</a> 
+<!-- TemplateEndIfClause --><!-- TemplateEndMultipleIf --> 
+<!-- TemplateBeginMultipleIf -->
+<!-- TemplateBeginIfClause cond="columnLayout == 2 | columnLayout == 3 && weblite == false" --> 
+<a href="#navSecondary" class="skip">Skip to navigation</a> <!-- TemplateEndIfClause --><!-- TemplateEndMultipleIf --> 
+</div>
+<!-- TemplateBeginMultipleIf -->
+<!-- TemplateBeginIfClause cond="platform == 'v5'" -->
+<div id="printBanner"> <img src="../assets/v4-images/website/print/print-logo.jpg" width="193" height="65" alt="" id="printLogo"/> <img src="../assets/v4-images/website/print/print-header-bground.jpg" width="427" height="65" alt="" id="printBground"/> </div>
+<div id="cookieContainer" class="cf">
+  <div id="cookieNotify" class="cf">
+    <p>This website uses non-intrusive cookies to improve your user experience. You can visit our <a href="../privacy-cookies.htm">cookie privacy page</a> for more information.</p>
+  </div>
+</div>
+<!-- Off canvas navigation -->
+<div id="off-canvas-container" class="full-width-container">
+	
+<div class="c-offcanvas-content-wrap responsive-container">
+        <a href="#offCanvas" id="triggerButton"><i class="fas fa-bars"></i></a>
+         <!-- Your Main Content goes here -->
+		<!-- TemplateBeginMultipleIf --><!-- TemplateBeginIfClause cond="welsh == false && homepage == false" -->
+	
+    <div id="headerLogo" class="offCanvasHeaderLogo"><a href="../index.htm">Health and Safety<br />
+      Executive</a></div>
+    <!-- TemplateEndIfClause --> <!-- TemplateBeginIfClause cond="welsh == true" -->
+    <div id="headerLogo" class="offCanvasHeaderLogo" xml:lang="cy"><a href="../index.htm">Awdurdod Gweithredol<br />
+      Iechyd a Diogelwch</a></div>
+    <!-- TemplateEndIfClause --> <!-- TemplateBeginIfClause cond="homepage == true" -->
+    <h1 id="headerLogo" class="offCanvasHeaderLogo"><a href="../index.htm">Health and Safety<br />
+      Executive</a></h1>
+    <!-- TemplateEndIfClause --> <!-- TemplateEndMultipleIf -->
+    </div>
+    
+    <div id="offCanvas" class="responsive-nav-container">
+	
+	<div>
+		<div class="off-canvas-close">
+		<a class="js-offcanvas-close"><i class="fas fa-bars"></i></a>
+		</div>
+		<ul id="off-canvas-menu">
+		 <li><a href="../index.htm">Home</a></li>
+		 <li><a href="../news/index.htm">News</a></li>
+		 <li><a href="../guidance/index.htm">Guidance</a></li>
+		 <li><a href="../aboutus/index.htm">About HSE</a></li>
+		 <li><a href="../pubns/index.htm">HSE Books</a></li>
+		 <li><a href="../contact/index.htm">Contact HSE</a></li>
+		</ul>
+	</div>
+	
+	
+	</div>
+	
+</div>	
+	
+	
+	
+	
+<div id="headerContainer" class="cf">
+  <div id="header" class="cf"> <!-- TemplateBeginMultipleIf --><!-- TemplateBeginIfClause cond="welsh == false && homepage == false" -->
+    <div id="headerLogo" class="headerLogo"><a href="../index.htm">Health and Safety<br />
+      Executive</a></div>
+    <!-- TemplateEndIfClause --> <!-- TemplateBeginIfClause cond="welsh == true" -->
+    <div id="headerLogo" class="headerLogo" xml:lang="cy"><a href="../index.htm">Awdurdod Gweithredol<br />
+      Iechyd a Diogelwch</a></div>
+    <!-- TemplateEndIfClause --> <!-- TemplateBeginIfClause cond="homepage == true" -->
+    <h1 id="headerLogo" class="headerLogo"><a href="../index.htm">Health and Safety<br />
+      Executive</a></h1>
+    <!-- TemplateEndIfClause --> <!-- TemplateEndMultipleIf --> <!-- TemplateBeginMultipleIf --><!-- TemplateBeginIfClause cond="abc == true" -->
+    <div class="ABC-header"><a href="../abc/index.htm"><img src="../assets/v4-images/website/logos/abc-logo-text-white-90.png" height="90" width="165" alt="ABC An easy guide to health and safety" /></a> </div>
+    <!-- TemplateEndIfClause --><!-- TemplateEndMultipleIf --> <!-- TemplateBeginMultipleIf --><!-- TemplateBeginIfClause cond="weblite == false" -->
+    <div id="globalSearch">
+      <gcse:searchbox-only></gcse:searchbox-only>
+    </div>
+    <!-- TemplateEndIfClause --><!-- TemplateEndMultipleIf --> </div>
+  <div id="navigationContainer" class="cf">
+    <ul class="navDropdown">
+      <li class="home"><a href="../index.htm">Home</a></li>
+      <!-- TemplateBeginMultipleIf --><!-- TemplateBeginIfClause cond="abc == false" -->
+      <li class="news"><a href="../news/index.htm">News</a><span class="arrow"></span>
+        <div class="navDrop navDropNews"><span class="navDropGap"></span>
+          <div class="navDropContent cf"></div>
+        </div>
+      </li>
+      <!-- TemplateEndIfClause --><!-- TemplateEndMultipleIf -->
+      <li class="guidance"><a href="../guidance/index.htm">Guidance</a><span class="arrow"></span>
+        <div class="navDrop navDropGuidance"><span class="navDropGap"></span>
+          <div class="navDropContent cf"></div>
+        </div>
+      </li>
+      
+      <li class="abouthse"><a href="../aboutus/index.htm">About HSE</a><span class="arrow"></span>
+        <div class="navDrop navDropAboutHSE"><span class="navDropGap"></span>
+          <div class="navDropContent cf"></div>
+        </div>
+      </li>
+	  <li class="hseBooks"><a href="../pubns/index.htm">HSE Books</a><span class="arrow"></span>
+        <div class="navDrop navDropAboutHSE"><span class="navDropGap"></span>
+          <div class="navDropContent cf"></div>
+        </div>
+      </li>
+      <li class="contact"><a href="../contact/index.htm">Contact HSE</a><span class="arrow"></span>
+        <div class="navDrop navDropContact"><span class="navDropGap"></span>
+          <div class="navDropContent cf"></div>
+        </div>
+      </li>
+    </ul>
+    
+  </div>
+</div>
+
+<!-- TemplateEndIfClause -->
+<!-- TemplateEndMultipleIf --> 
+
+<!-- TemplateBeginMultipleIf --><!-- TemplateBeginIfClause cond="welsh == false" -->
+<div id="pageContainer" class="cf" xmlns:argot="http://purl.oclc.org/argot/" xmlns:dc="http://purl.org/dc/terms/" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:v="http://www.w3.org/2006/vcard/ns#" xmlns:dbp="http://dbpedia.org/resource/">
+<!-- TemplateEndIfClause --> <!-- TemplateBeginIfClause cond="welsh == true" -->
+<div id="pageContainer" class="cf" xml:lang="cy" xmlns:argot="http://purl.oclc.org/argot/" xmlns:dc="http://purl.org/dc/terms/" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:v="http://www.w3.org/2006/vcard/ns#" xmlns:dbp="http://dbpedia.org/resource/">
+<!-- TemplateEndIfClause --><!-- TemplateEndMultipleIf --> <!-- TemplateBeginMultipleIf --><!-- TemplateBeginIfClause cond="bodyClass != 'home'" -->
+<div id="breadCrumb"><!-- TemplateBeginEditable name="Breadcrumbs" -->
+  <ol>
+    <li class="home"><a href="../index.htm">HSE</a></li>
+    <li>#1</li>
+    <li>#2</li>
+    <li>#3</li>
+  </ol>
+  <!-- TemplateEndEditable --></div>
+
+<!-- TemplateBeginEditable name="beta-survey" --> 
+	
+
+<!-- TemplateEndEditable -->
+
+	
+<!-- TemplateEndIfClause --><!-- TemplateEndMultipleIf --> <!-- TemplateBeginMultipleIf --><!-- TemplateBeginIfClause cond="columnLayout == 2 | columnLayout == 3" -->
+<div id="navSecondary">
+<!-- TemplateBeginEditable name="Subnav" -->
+<ul id="navSub">
+  <li class="first"><a href="#">HSE</a></li>
+  <li><a href="#">Nav</a></li>
+</ul>
+<h2>Related content</h2>
+<ul id="navSupp">
+  <li><a href="#">Item</a></li>
+</ul>
+<!-- TemplateEndEditable --> <!-- TemplateEndIfClause -->
+<!-- TemplateEndMultipleIf --> 
+
+<!-- TemplateBeginMultipleIf --><!-- TemplateBeginIfClause cond="columnLayout == 2 | columnLayout == 3" -->
+</div>
+<!-- TemplateEndIfClause --><!-- TemplateEndMultipleIf -->
+<div id="contentContainer"> <!-- TemplateBeginMultipleIf --><!-- TemplateBeginIfClause cond="rdfa == true" -->
+  <div class="rdfa" about="#this" typeof="foaf:Document">
+  <span rel="dc:publisher" resource="http://www.hse.gov.uk/" content="Health and Safety Executive"></span> <span rel="dc:source" resource=""></span> <span property="dc:language" content="en"></span> <!-- TemplateEndIfClause --><!-- TemplateEndMultipleIf --> <!-- TemplateBeginEditable name="content" -->
+  <h1>Header</h1>
+  <p>Content</p>
+  <!-- TemplateEndEditable --> <!-- TemplateBeginMultipleIf --><!-- TemplateBeginIfClause cond="rdfa == true" --> </div>
+<!-- TemplateEndIfClause --><!-- TemplateEndMultipleIf -->
+</div>
+<!-- TemplateBeginMultipleIf --><!-- TemplateBeginIfClause cond="columnLayout == 3" -->
+<div id="sideBar"><!-- TemplateBeginEditable name="Sidebar" -->
+  <div class="box">
+    <h2>Resources</h2>
+    <ul class="itemThumbBook">
+      <li><a href="#"><img src="#" alt="#" width="47" height="67" /><span>Item</span></a></li>
+    </ul>
+    <p class="more"><a href="#">More resources</a></p>
+  </div>
+  <div class="box">
+    <h2>See also</h2>
+    <ul class="linkList">
+      <li><a href="#">Item</a></li>
+    </ul>
+  </div>
+  <!-- TemplateEndEditable --></div>
+<!-- TemplateEndIfClause --><!-- TemplateEndMultipleIf -->
+</div>
+	<!-- TemplateBeginMultipleIf -->
+<!-- TemplateBeginIfClause cond="feedback == true && homepage == false" -->
+	
+<div id="feedback">
+ <div class="feedback-container">
+	<p class="feedback-message"><strong>Is this page useful?</strong></p>
+	 
+	<div class="feedback-links">
+		<a id="userYes" href="#userYes">Yes</a>
+		<a id="userNo" href="#userNo">No</a>
+	</div>
+ </div>
+</div>
+	
+<!-- TemplateEndIfClause -->
+<!-- TemplateEndMultipleIf -->
+<div id="footerContainer">
+  <div id="footer">
+    <h2 class="hide">Footer links</h2>
+	<div class="footer-links-container">
+    <ul>
+      <li class="first"><a href="../search/search-results.htm">Search</a></li>
+      <li><a href="../a-z/index.htm">A-Z</a></li>
+      <li><a href="../acronym/index.htm">Acronyms</a></li>
+      <li><a href="../about/site_map/index.htm">Site map</a></li>
+      <li><a href="../copyright.htm">Copyright</a></li>
+      <li><a href="../disclaimer.htm">Disclaimer</a></li>
+      <li><a href="../privacy.htm">Privacy</a></li>
+      <li><a href="../privacy-cookies.htm">Cookies</a></li>
+      <li><a href="../accessibility.htm">Accessibility</a></li>
+    </ul>
+	</div>
+  </div>
+  <div id="baseStrip">
+    <div id="baseStripInner">
+      <p>HSE aims to reduce work-related death, injury and ill health.</p>
+      <ul class="ddmswitch separateLabel fauxDropdown" title="Information in:" id="languagesDropdown">
+        <li><a href="../languages/welsh.htm"><span xml:lang="cy">Cymraeg</span> / Welsh</a></li>
+        <li><a href="../languages/albanian.htm"><span xml:lang="sq">Shqip</span> / Albanian</a></li>
+        <li><a href="../languages/arabic.htm"><span id="lArabic" class="nonLatin"></span> / Arabic</a></li>
+        <li><a href="../languages/bengali.htm"><span id="lBengali" class="nonLatin"></span> / Bengali</a></li>
+        <li><a href="../languages/chinese.htm"><span id="lChinese" class="nonLatin"></span> / Chinese</a></li>
+        <li><a href="../languages/czech.htm"><span xml:lang="cs">&#268;e&#353;tina</span> / Czech</a></li>
+        <li><a href="../languages/gujarati.htm"><span id="lGujarati" class="nonLatin"></span> / Gujarati</a></li>
+        <li><a href="../languages/hindi.htm"><span id="lHindi" class="nonLatin"></span> / Hindi</a></li>
+        <li><a href="../languages/kurdish.htm"><span id="lKurdish" class="nonLatin"></span> / Kurdish</a></li>
+        <li><a href="../languages/latvian.htm"><span xml:lang="lv">Latvie&scaron;u</span> / Latvian</a></li>
+        <li><a href="../languages/lithuanian.htm"><span xml:lang="lt">Lietuviskai</span> / Lithuanian</a></li>
+        <li><a href="../languages/polish.htm"><span xml:lang="pl">Polski</span> / Polish</a></li>
+        <li><a href="../languages/portuguese.htm"><span xml:lang="pt">Portugu&ecirc;s</span> / Portuguese</a></li>
+        <li><a href="../languages/punjabi.htm"><span id="lPunjabi" class="nonLatin"></span> / Punjabi</a></li>
+        <li><a href="../languages/romanian.htm"><span xml:lang="ro">Rom&acirc;n&acirc;</span> / Romanian</a></li>
+        <li><a href="../languages/russian.htm"><span xml:lang="ru">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</span> / Russian</a></li>
+        <li><a href="../languages/slovak.htm"><span xml:lang="sk">Slovensky</span> / Slovak</a></li>
+        <li><a href="../languages/turkish.htm"><span xml:lang="tr">T&#252;r&#231;ke</span> / Turkish</a></li>
+        <li><a href="../languages/urdu.htm"><span id="lUrdu" class="nonLatin"></span> / Urdu</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+	
+<div id="lastUpdated"><!-- TemplateBeginEditable name="updated" -->Updated:
+  <!-- #BeginDate format:IS1 -->2020-01-24<!-- #EndDate -->
+  <!-- TemplateEndEditable --></div>
+	
+<script type="text/javascript" src="../assets/v4-js/jquery.min.js"></script>
+<script type="text/javascript" src="../assets/v5-js/v5-footer-min.js"></script>
+<script type="text/javascript" src="../assets/v4-js/hse-primary.min.js"></script>
+<script type="text/javascript" src="../assets/v4-js/core.min.js"></script>
+<script type="text/javascript" src="https://www.google.co.uk/jsapi"></script>
+<script type="text/javascript" src="../assets/v4-js/website.min.js"></script>
+
+<!-- TemplateBeginMultipleIf --><!-- TemplateBeginIfClause cond="platform == 'toolbox'" -->
+<script type="text/javascript" src="../assets/v4-js/toolbox.min.js"></script>
+<!-- TemplateEndIfClause --><!-- TemplateBeginIfClause cond="platform == 'hsms'" -->
+<script type="text/javascript" src="../assets/v4-js/hsms.min.js"></script>
+<!-- TemplateEndIfClause -->
+<!-- TemplateEndMultipleIf -->
+	
+	
+
+	
+	
+<div id="gutter"><!-- TemplateBeginEditable name="gutter" --> <!-- TemplateEndEditable --></div>
+<!-- TemplateBeginMultipleIf -->
+<!-- TemplateBeginIfClause cond="contentType == 'Content' | contentType == 'Task' | contentType == 'Engaged' | contentType == 'Navigation' | contentType == 'Tool' && weblite == false" -->
+
+<!-- TemplateEndIfClause -->
+<!-- TemplateBeginIfClause cond="contentType != 'Content' && contentType != 'Task' && contentType != 'Engaged' && contentType != 'Navigation' && contentType != 'Tool' && weblite == false" -->
+
+<!-- TemplateEndIfClause -->
+<!-- TemplateEndMultipleIf -->
+
+<!-- TemplateInfo codeOutsideHTMLIsLocked="true" --> 
+<!-- TemplateParam name="bodyClass" type="text" value="guidance" --> 
+<!-- TemplateParam name="columnLayout" type="number" value="1" --> 
+<!-- TemplateParam name="platform" type="text" value="v5" --> 
+<!-- TemplateParam name="rdfa" type="boolean" value="false" --> 
+<!-- TemplateParam name="socialMedia" type="boolean" value="true" --> 
+<!-- TemplateParam name="welsh" type="boolean" value="false" --> 
+<!-- TemplateParam name="homepage" type="boolean" value="false" --> 
+<!-- TemplateParam name="abc" type="boolean" value="false" --> 
+<!-- TemplateParam name="weblite" type="boolean" value="false" -->
+<!-- TemplateParam name="feedback" type="boolean" value="true" -->
+<!-- TemplateParam name="contentType" type="text" value="default" -->
+</body>
+</html>

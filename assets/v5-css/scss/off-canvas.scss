@@ -1,0 +1,97 @@
+// Off-canvas navigation
+
+#off-canvas-container {
+padding-top: 10px;
+}
+
+#off-canvas-menu {
+float: left;
+width: 100%;
+clear: both;
+font-size: 1rem;
+background: $gray;
+}
+
+#off-canvas-menu li {
+width: 100%;
+float: left;
+list-style-type: none;
+background: none;
+padding: 0;
+border-bottom: 1px solid #c2c2c2;
+}
+
+#off-canvas-menu li a {
+float: left;
+width: 100%;
+color: $body;
+box-sizing: border-box;
+}
+
+#off-canvas-top {
+width: 90%;
+float: left;
+padding: 10px 5% 0 5%;
+}
+
+.responsive-nav-container #off-canvas-menu li a:hover {
+color: white !important;
+}
+
+
+.responsive-nav-container a.js-offcanvas-close {
+float: right;
+text-decoration: none;
+}
+
+.responsive-nav-container #off-canvas-menu li a {
+padding: 15px 5% 15px 5%;
+}
+
+.responsive-nav-container #off-canvas-menu li:hover {
+background: $black;
+}
+
+#triggerButton span {
+color: white;
+}
+
+#triggerButton {
+position: relative;
+float: right;
+}
+
+#triggerButton:hover i {
+color: white;
+}
+
+.off-canvas-close a:hover {
+cursor: pointer;
+}
+
+#offCanvas {
+border-bottom: 3px solid #999;
+background: $red;
+}
+
+.full-width-container {
+width: 100%;
+float: left;
+clear: both;
+}
+
+.responsive-container {
+width: 90%;
+padding-left: 5%;
+padding-right: 5%;
+}
+
+.responsive-nav-container {
+width: 100%;
+}
+
+
+
+.responsive-nav-container #off-canvas-menu li:hover a::before {
+color: white;	
+}

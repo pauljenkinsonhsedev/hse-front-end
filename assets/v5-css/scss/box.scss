@@ -1,0 +1,42 @@
+// Box layout
+
+.box {
+width: 100%;
+border-radius: 0;
+margin-bottom: 15px;
+}
+
+.box .more {
+width: 100%;
+position: relative;
+}
+
+.more {
+border-radius: 0;
+margin-bottom: 10px !important;
+}
+
+.hasMore {
+padding-bottom: 0 !important;
+}
+
+.hasMore .more {
+bottom: 0;
+}
+
+.box1col .more {
+width: 100% !important;
+}
+
+.box1col .boxSplit {
+background: none !important;
+}
+
+.box.backgroundRed.hasMore p.more a {
+color: $red !important;
+}
+
+.boxSplit {
+@media only screen and (max-width : 979px) {
+background: none !important;}
+}

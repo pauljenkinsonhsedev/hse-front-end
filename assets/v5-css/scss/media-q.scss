@@ -1,0 +1,39 @@
+/* Media queries & Responsive design */
+
+
+// Equal heights fix
+
+@media only screen and (max-width : 979px) {
+/* Disables auto height on mobile devices */
+[class*="equalHeights"], [class*="equalHeight"] {
+height: auto !important;	
+}
+	
+}
+
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+
+#contentContainer .twoThirdHalf {
+width: 49.2%;
+}
+	
+
+}	
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+	
+#contentContainer .oneThird {
+width: 32.26%;
+}
+	
+#contentContainer .twoThird {
+width: 66.13%;
+}
+	
+}
+
+
+

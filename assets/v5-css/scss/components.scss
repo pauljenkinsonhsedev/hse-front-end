@@ -1,0 +1,226 @@
+/* Components */
+
+.v5-float-right {
+float: right !important
+}
+
+
+// Lightbox
+
+.lightbox {
+margin-bottom: 10px !important;
+}
+
+.lightbox li {
+background: none;
+padding-right: 0 !important;
+background: $gray;
+border: 5px solid $gray;
+}
+
+#contentContainer ul.lightbox li {
+padding-bottom: 0 !important;
+}
+
+.lightbox li a {
+float: left;
+}
+
+body.hasScript #contentContainer ul.lightbox li {
+margin-right: 10px;
+}
+
+.expand {
+bottom: 10px !important;
+left: auto !important;
+}
+
+// Dropdown
+
+
+
+.box .ddmStyling {
+margin: 0 10px 0 0;
+}
+
+.ddmStyling {
+float: left;
+margin: 0 10px 10px 0;
+}
+
+.ddmStyling select {
+	float: left;
+    display: block;
+	padding: 5px;
+    width: 100%;
+    max-width: 100%; 
+    box-sizing: border-box;
+    margin: 0;
+    border-radius: 0;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background-image: url('../../assets/v5-images/icons/svg/solid/arrow-down-red.svg');
+    background-repeat: no-repeat, repeat;
+    background-position: right;
+    background-size: auto;
+	background-size: 10px;
+}
+.ddmStyling select::-ms-expand {
+    display: none;
+}
+.ddmStyling select:hover {
+    border-color: #888;
+}
+.ddmStyling selectfocus {
+    border-color: #aaa;
+    box-shadow: 0 0 1px 3px rgba(59, 153, 252, .7);
+    box-shadow: 0 0 0 3px -moz-mac-focusring;
+    color: #222; 
+    outline: none;
+}
+.ddmStyling select option {
+    font-weight:normal;
+}
+
+.ddmStyling input.button, .box .ddmStyling input.button {
+margin: 0 !important;
+}
+
+
+.ddmStyling input.button, .box .ddmStyling input.button {
+width: auto !important;
+height: auto !important;
+padding: 5px;
+margin-left: 0;
+}
+
+.ddmStyling input.button:hover {
+cursor: pointer;
+}
+
+.ddmStyling select {
+width: 200px !important;
+}
+
+/* Cookies bar */
+
+.v5-span-heading1 {
+color: white;
+font-size: 2em;
+float: left;
+padding: 20px 0;
+}
+
+#cookieNotify {
+background: none;
+padding: 10px;
+}
+
+#cookieNotify p {
+padding: 0;
+}
+
+#cookieNotify .v5-hide-button {
+background: none;
+color: white;
+text-decoration: underline;
+border: 0;
+}
+
+#cookieNotify .v5-hide-button:hover {
+cursor: pointer;
+}
+
+
+/* Forms */
+
+.v5-fieldset {
+padding: 10px;
+width: 100%;
+float: left;
+background: $gray;
+margin-bottom: 20px;
+}
+
+.v5-legend {
+background: $black;
+padding: 10px;
+color: white;
+}
+
+.v5-radio-button-container {
+background: #333333;
+float: left;
+color: white;
+margin-right: 10px;
+margin-bottom: 10px;
+}
+
+.v5-button {
+float: left;
+margin: 10px 10px 10px 0;
+background: $red;
+color: white;
+}
+
+button.v5-button {
+padding: 10px;
+}
+
+.v5-button:hover {
+cursor: pointer;
+background: $black;
+}
+
+.v5-button a {
+float: left;
+background: $red;
+padding: 10px;
+color: white;
+}
+
+.guidance-languages {
+float: right;
+}
+
+
+.v5-label {
+float: left;
+padding: 10px;
+}
+
+
+.v5-radio {
+margin-right: 10px;
+position: relative;
+top: 2px;
+}
+
+.v5-radio-button-container label span {
+position: relative;
+top: 0;
+}
+
+.v5-radio-button-container label:hover {
+cursor: pointer !important;
+}
+
+input[type=radio] {
+float: left;  
+width: auto;
+display: inline-block;
+}
+
+// Alert box
+
+.v5-notice-box {
+float: left;
+padding: 10px;
+width: 100%;
+border: 2px solid $red;
+margin-bottom: 20px;
+}
+
+
+

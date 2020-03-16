@@ -1,0 +1,155 @@
+/* CSS Document */
+
+#contentContainer .catalogue dl
+{
+	margin-bottom: 0;
+}
+
+.catalogue p
+{
+	margin-bottom: 0.5em;
+}
+
+#contentContainer .catalogue h2
+{
+	margin-bottom: 0.3125em;
+	clear: none;
+}
+
+.catalogue dt 
+{
+	float: left;
+	padding: 0.25em 0.5em 0.55em 0;
+	line-height: 1em;
+}
+
+.catalogue dd 
+{
+	line-height: 1em;		
+	list-style-type: none;
+	font-weight: bold;
+	padding-top: 0;
+	padding-bottom: 0;
+	font-weight: normal;
+	padding: 0.25em 0 0.55em;
+	margin: 0;
+}
+
+.catalogue>img 
+{
+	float: left;
+	margin-right: 15px;
+	margin-bottom: 0;
+	padding-bottom: 0;
+}
+
+.catalogue img.catalogueButton 
+{		
+	margin: 0 0.5em 0 0;
+	padding-bottom: 0;
+	float: none;
+}	
+
+ul.boxCatalogue 
+{
+	margin: 0 !important; /* specifically used for: strategy/one-year-on.htm to prevent grey box padding below the UL*/
+}
+
+.catalogue .addToBasket
+{
+	height: 1.92em;
+	width: 8.65em;
+	position: relative;
+	margin: 0.5em 0 0.5em 96px;
+}
+
+.catalogue .addToBasket img
+{
+	height: 1.92em;
+	width: 8.65em;
+	margin: 0;
+}
+
+.catalogue .addToBasket a
+{
+	height: auto;
+	width: 8.66em;
+	position: absolute;
+	top: -1px;
+	left: 4px;
+	float: left;
+	display: block;
+	color: #ffffff;
+	text-align: center;
+	line-height: 1.9em;
+}
+
+.catalogue .productInfo
+{
+	float: left;
+	width: 170px;
+}
+
+#contentContainer .catalogue .productInfo dl
+{
+	float: left;
+	width: 100%;
+}
+
+.catalogue .otherFormats
+{
+	float: left;
+	width: 170px;
+}
+
+.otherFormats dt
+{
+	width: 100%;
+	padding: 0.25em 0 0.55em 0;
+}
+
+.otherFormats dd
+{
+	width: 100%;
+	margin: 0;
+	padding: 0.1em 0 0.55em;
+	float: left;
+}
+
+.otherFormats dd a,
+.otherFormats dd span
+{
+	padding-left: 20px;
+	float: left;
+	line-height: 1.2em;
+}
+
+#contentContainer .catalogue .otherFormats dl
+{
+	margin-bottom: 0;
+}
+
+.otherFormats dd.leaflet
+{
+	background: url(../../pubns/assets/leaflet.gif) no-repeat 0 0;
+}
+
+.otherFormats dd.poster
+{
+	background: url(../../pubns/assets/poster.gif) no-repeat 0 0;
+}
+
+.otherFormats dd.audio
+{
+	background: url(../../pubns/assets/audio.gif) no-repeat 0 0;
+}
+
+.otherFormats dd.video
+{
+	background: url(../../pubns/assets/video.gif) no-repeat 0 0;
+}
+
+.otherFormats dd.ringbinder
+{
+	background: url(../../pubns/assets/ringbinder.gif) no-repeat 0 0;
+}

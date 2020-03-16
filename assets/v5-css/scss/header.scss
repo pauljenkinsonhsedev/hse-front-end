@@ -1,0 +1,88 @@
+// Header 
+#headerContainer {
+width: 100%;
+max-width: 100%;
+min-width: 100%;
+background-image: none;
+}
+
+#header {
+width: 90%;
+padding-left: 5%;
+padding-right: 5%;
+}
+
+#headerLogo a {
+text-decoration: none;
+}
+
+h1.offCanvasHeaderLogo {
+font-size: 14px !important;	
+}
+
+#headerLogo, #offCanvasHeaderLogo a {
+float: left;
+text-decoration: none;
+}
+
+
+#navigationContainer {
+height: 33px;	
+}
+
+.navDropdown {
+font-size: 1.1em !important;
+}
+
+@media only screen and (max-width: 979px) {	
+#navigationContainer, .headerLogo {
+display: none;
+// Hides HSE logo in mobile view  
+}
+
+} 
+
+// Search box 
+
+#globalSearch {
+float: left;	
+}
+
+.gsc-search-button {
+padding-right: 0;
+}
+
+// Medium Devices, Desktops 
+@media only screen and (max-width : 979px) {
+
+#globalSearch table {
+width: 100%;
+}
+
+#globalSearch {
+width: 100% !important;
+}
+}
+
+.navDrop {
+display: none;
+/* Hides drop-down menu */
+}
+
+.navDropdown li {
+background: none;
+}
+
+// Cookie container 
+
+#cookieContainer {
+width: 90% !important;
+padding-left: 5% !important;
+padding-right: 5% !important;
+}
+
+#cookieNotify {
+max-width: 100% !important;
+}
+
+
