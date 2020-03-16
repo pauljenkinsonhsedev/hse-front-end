@@ -36,23 +36,23 @@
 		
 	}	
 		
-		
-		
-		$('#acceptAllCookies').click(function() {
+	$('#acceptAllCookies').click(function() {
 		
 	gtmFunction();
-	console.log('whopper');
 
 	});
 
 		
-		if (usageSet == true )  {
-	
+	if (usageSet == true )  {
 	gtmFunction();
-
-
-		}
-  
-    
+	} 
+		
+	else {
+	Cookies.remove('_ga');
+    Cookies.remove('_gid');
+	Cookies.remove('_gali');
+	Cookies.remove('_dc_gtm_UA-324220-1');
+	}
+	
 	
 	}); 

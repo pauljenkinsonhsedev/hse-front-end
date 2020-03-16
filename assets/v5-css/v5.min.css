@@ -1123,7 +1123,7 @@ h1.offCanvasHeaderLogo {
 #footer ul li {
   width: auto;
   float: left;
-  padding-right: 2rem;
+  padding-right: 4%;
   text-align: left; }
 
 @media only screen and (min-width: 992px) {
@@ -1133,12 +1133,7 @@ h1.offCanvasHeaderLogo {
     width: 940px; }
   #languagesDropdown-container {
     width: 100%;
-    float: right !important; }
-  #footer ul li {
-    padding-right: 0px; }
-  #footer ul li {
-    float: left;
-    width: 11%; } }
+    float: right !important; } }
 
 .v5 h1, .v5 h2, .v5 h3 {
   font-weight: bold; }

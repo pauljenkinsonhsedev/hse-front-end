@@ -45,7 +45,7 @@
 #footer ul li {
   width: auto;
   float: left;
-  padding-right: 2rem;
+  padding-right: 4%;
   text-align: left; }
 
 @media only screen and (min-width: 992px) {
@@ -57,11 +57,4 @@
 
   #languagesDropdown-container {
     width: 100%;
-    float: right !important; }
-
-  #footer ul li {
-    padding-right: 0px; }
-
-  #footer ul li {
-    float: left;
-    width: 11%; } }
+    float: right !important; } }
