@@ -52,6 +52,7 @@
     Cookies.remove('_gid');
 	Cookies.remove('_gali');
 	Cookies.remove('_dc_gtm_UA-324220-1');
+	Cookies.remove('_gat_UA-324220-1');
 	}
 	
 	

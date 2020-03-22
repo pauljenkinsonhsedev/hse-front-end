@@ -1,6 +1,6 @@
 /*
 Error: Undefined variable: "$gray".
-        on line 17 of /Users/pjenkinson/Dev/v5-cookies/assets/v5-css/scss/components.scss
+        on line 17 of /Users/pjenkinson/Dev/sites/hse-front-end/assets/v5-css/scss/components.scss
 
 12: }
 13: 
@@ -15,7 +15,7 @@ Error: Undefined variable: "$gray".
 22: padding-bottom: 0 !important;
 
 Backtrace:
-/Users/pjenkinson/Dev/v5-cookies/assets/v5-css/scss/components.scss:17
+/Users/pjenkinson/Dev/sites/hse-front-end/assets/v5-css/scss/components.scss:17
 /Applications/Adobe Dreamweaver 2020/Adobe Dreamweaver 2020.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/script/tree/variable.rb:49:in `_perform'
 /Applications/Adobe Dreamweaver 2020/Adobe Dreamweaver 2020.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/script/tree/node.rb:50:in `perform'
 /Applications/Adobe Dreamweaver 2020/Adobe Dreamweaver 2020.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/tree/visitors/perform.rb:402:in `visit_prop'
@@ -61,4 +61,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$gray\".\A         on line 17 of /Users/pjenkinson/Dev/v5-cookies/assets/v5-css/scss/components.scss\A \A 12: }\A 13: \A 14: .lightbox li {\A 15: background: none;\A 16: padding-right: 0 !important;\A 17: background: $gray;\A 18: border: 5px solid $gray;\A 19: }\A 20: \A 21: #contentContainer ul.lightbox li {\A 22: padding-bottom: 0 !important;"; }
+  content: "Error: Undefined variable: \"$gray\".\A         on line 17 of /Users/pjenkinson/Dev/sites/hse-front-end/assets/v5-css/scss/components.scss\A \A 12: }\A 13: \A 14: .lightbox li {\A 15: background: none;\A 16: padding-right: 0 !important;\A 17: background: $gray;\A 18: border: 5px solid $gray;\A 19: }\A 20: \A 21: #contentContainer ul.lightbox li {\A 22: padding-bottom: 0 !important;"; }

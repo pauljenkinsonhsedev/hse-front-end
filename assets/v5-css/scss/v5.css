@@ -1109,7 +1109,7 @@ h1.offCanvasHeaderLogo {
 #footer ul li {
   width: auto;
   float: left;
-  padding-right: 2rem;
+  padding-right: 4%;
   text-align: left; }
 
 @media only screen and (min-width: 992px) {
@@ -1121,14 +1121,7 @@ h1.offCanvasHeaderLogo {
 
   #languagesDropdown-container {
     width: 100%;
-    float: right !important; }
-
-  #footer ul li {
-    padding-right: 0px; }
-
-  #footer ul li {
-    float: left;
-    width: 11%; } }
+    float: right !important; } }
 .v5 h1, .v5 h2, .v5 h3 {
   font-weight: bold; }
 
@@ -1960,7 +1953,8 @@ body.lwet #feature-home {
     width: 100% !important; }
 
   #contentContainer.columnbetacontentpage .boxHalfLeft, #contentContainer.columnbetacontentpage .boxHalfRight {
-    width: 345px !important; }
+    width: 345px !important;
+    float: left; }
 
   #contentContainer.columnbetacontentpage .box1col, #contentContainer.columnbetacontentpage .box2col {
     display: flex;
@@ -3151,3 +3145,30 @@ input[type=radio] {
   width: 100%;
   border: 2px solid #981e32;
   margin-bottom: 20px; }
+
+.radio-toolbar {
+  margin: 10px; }
+
+.radio-toolbar input[type="radio"] {
+  opacity: 0;
+  position: fixed;
+  width: 0; }
+
+.radio-toolbar label {
+  display: inline-block;
+  background-color: #ddd;
+  padding: 10px 20px;
+  font-family: sans-serif, Arial;
+  font-size: 16px;
+  border: 2px solid #444;
+  border-radius: 4px; }
+
+.radio-toolbar label:hover {
+  background-color: #dfd; }
+
+.radio-toolbar input[type="radio"]:focus + label {
+  border: 2px dashed #444; }
+
+.radio-toolbar input[type="radio"]:checked + label {
+  background-color: #bfb;
+  border-color: #4c4; }

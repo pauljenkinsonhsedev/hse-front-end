@@ -1,6 +1,6 @@
 /*
 Error: Undefined variable: "$black".
-        on line 24 of /Users/pjenkinson/Dev/v5-cookies/assets/v5-css/scss/content-page.scss
+        on line 24 of /Users/pjenkinson/Dev/sites/hse-front-end/assets/v5-css/scss/content-page.scss
 
 19: #breadCrumb ol li {
 20: background: url(../v4-images/shared/page-furniture.png) 0 -379px no-repeat;
@@ -15,7 +15,7 @@ Error: Undefined variable: "$black".
 29: }
 
 Backtrace:
-/Users/pjenkinson/Dev/v5-cookies/assets/v5-css/scss/content-page.scss:24
+/Users/pjenkinson/Dev/sites/hse-front-end/assets/v5-css/scss/content-page.scss:24
 /Applications/Adobe Dreamweaver 2020/Adobe Dreamweaver 2020.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/script/tree/variable.rb:49:in `_perform'
 /Applications/Adobe Dreamweaver 2020/Adobe Dreamweaver 2020.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/script/tree/node.rb:50:in `perform'
 /Applications/Adobe Dreamweaver 2020/Adobe Dreamweaver 2020.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/tree/visitors/perform.rb:402:in `visit_prop'
@@ -61,4 +61,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$black\".\A         on line 24 of /Users/pjenkinson/Dev/v5-cookies/assets/v5-css/scss/content-page.scss\A \A 19: #breadCrumb ol li {\A 20: background: url(../v4-images/shared/page-furniture.png) 0 -379px no-repeat;\A 21: }\A 22: \A 23: #backTo {\A 24: background: $black;\A 25: }\A 26: \A 27: #backTo a {\A 28: color: white;\A 29: }"; }
+  content: "Error: Undefined variable: \"$black\".\A         on line 24 of /Users/pjenkinson/Dev/sites/hse-front-end/assets/v5-css/scss/content-page.scss\A \A 19: #breadCrumb ol li {\A 20: background: url(../v4-images/shared/page-furniture.png) 0 -379px no-repeat;\A 21: }\A 22: \A 23: #backTo {\A 24: background: $black;\A 25: }\A 26: \A 27: #backTo a {\A 28: color: white;\A 29: }"; }

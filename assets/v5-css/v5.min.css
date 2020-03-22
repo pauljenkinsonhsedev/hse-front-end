@@ -1964,7 +1964,8 @@ body.lwet #feature-home {
   #contentContainer.columnbetacontentpage .box3col {
     width: 100% !important; }
   #contentContainer.columnbetacontentpage .boxHalfLeft, #contentContainer.columnbetacontentpage .boxHalfRight {
-    width: 345px !important; }
+    width: 345px !important;
+    float: left; }
   #contentContainer.columnbetacontentpage .box1col, #contentContainer.columnbetacontentpage .box2col {
     display: flex;
     flex-direction: column; }
@@ -3019,8 +3020,7 @@ body.hasScript #contentContainer ul.lightbox li {
   padding: 20px 0; }
 
 #cookieNotify {
-  background: none;
-  padding: 10px; }
+  background: none; }
 
 #cookieNotify p {
   padding: 0; }
@@ -3034,6 +3034,13 @@ body.hasScript #contentContainer ul.lightbox li {
 #cookieNotify .v5-hide-button:hover {
   cursor: pointer; }
 
+.v5-notice-box {
+  float: left;
+  padding: 10px;
+  width: 100%;
+  border: 2px solid #981e32;
+  margin-bottom: 20px; }
+
 /* Forms */
 .v5-fieldset {
   padding: 10px;
@@ -3043,9 +3050,13 @@ body.hasScript #contentContainer ul.lightbox li {
   margin-bottom: 20px; }
 
 .v5-legend {
-  background: #333333;
-  padding: 10px;
-  color: white; }
+  float: left;
+  font-size: 1.5em !important;
+  margin-bottom: 10px;
+  padding: 0; }
+
+.v5-legend + p {
+  clear: both; }
 
 .v5-radio-button-container {
   background: #333333;
@@ -3061,7 +3072,8 @@ body.hasScript #contentContainer ul.lightbox li {
   color: white; }
 
 button.v5-button {
-  padding: 10px; }
+  padding: 10px;
+  border: 0; }
 
 .v5-button:hover {
   cursor: pointer;
@@ -3071,7 +3083,8 @@ button.v5-button {
   float: left;
   background: #981e32;
   padding: 10px;
-  color: white; }
+  color: white;
+  text-decoration: none; }
 
 .guidance-languages {
   float: right; }
@@ -3097,11 +3110,42 @@ input[type=radio] {
   width: auto;
   display: inline-block; }
 
-.v5-notice-box {
+.radio-toolbar {
   float: left;
-  padding: 10px;
-  width: 100%;
-  border: 2px solid #981e32;
-  margin-bottom: 20px; }
+  margin-right: 10px; }
+
+.radio-toolbar input[type="radio"] {
+  opacity: 0;
+  visibility: visible !important;
+  width: 0;
+  margin-right: 5px; }
+
+.radio-toolbar .v5-label-on {
+  border-right: 0 solid #c2c2c2; }
+
+.radio-toolbar .v5-label-off {
+  border-left: 0 solid #c2c2c2; }
+
+.radio-toolbar label {
+  display: inline-block;
+  background-color: #eee;
+  padding: 5px 10px;
+  font-family: sans-serif, Arial;
+  color: black;
+  outline: 2px solid #c2c2c2; }
+
+.radio-toolbar label:hover {
+  cursor: pointer; }
+
+.radio-toolbar input[type="radio"]:focus + label {
+  outline: 3px solid #3b98fc; }
+
+.radio-toolbar input[type="radio"]:checked + label {
+  background-color: #981e32;
+  color: white; }
+
+.radio-toolbar input.v5-input-on[type="radio"]:checked + label {
+  background-color: #005500;
+  color: white; }
 
 /*# sourceMappingURL=v5.css.map */
