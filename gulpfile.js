@@ -15,7 +15,7 @@ var rename = require("gulp-rename");
 /* Footer JS */
 
 gulp.task('footer-js', function () {    
-    return gulp.src(['./assets/v5-js/slinky-ie11-fix.js','./assets/v5-js/google-custom-search.js','./assets/v5-js/js-offcanvas.pkgd.min.js','./assets/v5-js/js-offcanvas-trigger.js', './assets/v5-js/aria.js', './assets/v5-js/website-feedback.src.js', './assets/v5-js/content-page.js', './assets/v5-js/notification-bar.js', './assets/v5-js/top-tasks.js'])
+    return gulp.src(['./assets/v5-js/slinky-ie11-fix.js','./assets/v5-js/google-custom-search.js','./assets/v5-js/js-offcanvas.pkgd.min.js','./assets/v5-js/js-offcanvas-trigger.js', './assets/v5-js/aria.js', './assets/v5-js/website-feedback.src.js', './assets/v5-js/content-page.js', './assets/v5-js/notification-bar.js', './assets/v5-js/top-tasks.js', './assets/v5-js/cookies-gtm.js'])
         .pipe(concat('v5-footer.js'))
         .pipe(minify())
 	    .pipe(rename("v5-footer.min.js"))

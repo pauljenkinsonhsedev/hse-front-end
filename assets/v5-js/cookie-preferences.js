@@ -1,7 +1,9 @@
 // Cookie prefers [hse.gov.uk/cookies.htm]
 
 
-$( "#cookies-settings, #acceptAll" ).submit(function( event ) {
+// Submit form function
+
+$( "#cookies-settings" ).submit(function( event ) {
 			
   event.preventDefault(); // Prevents normal form behaviour 
 		
@@ -17,15 +19,45 @@ $( "#cookies-settings, #acceptAll" ).submit(function( event ) {
 	var marketing = dataObj['cookies-marketing'];
 	var settings = dataObj['cookie-settings'];
 			
-	// User preference variables (7)
+	// User preference variables (8)
 		
-	var true_false_false_false = {'essential':true,'usage':false,'campaigns':false,'settings':false,};
-	var true_true_true_true = {'essential':true,'usage':true,'campaigns':true,'settings':true};
-	var true_true_true_false = {'essential':true,'usage':true,'campaigns':true,'settings':false};
-	var true_true_false_false = {'essential':true,'usage':true,'campaigns':false,'settings':false};
-	var true_false_true_true = {'essential':true,'usage':false,'campaigns':true,'settings':true};
-	var true_true_false_true = {'essential':true,'usage':true,'campaigns':false,'settings':true};
-	var true_false_true_false = {'essential':true,'usage':false,'campaigns':true,'settings':false};
+	/* Only essential */ var true_false_false_false = {'essential':true,'usage':false,'campaigns':false,'settings':false,};
+	
+	/* Approve all */    var true_true_true_true = {'essential':true,'usage':true,'campaigns':true,'settings':true};
+	
+	/* Analytics and marketing */ var true_true_true_false = {'essential':true,'usage':true,'campaigns':true,'settings':false};
+	
+	/* Analytics only */ var true_true_false_false = {'essential':true,'usage':true,'campaigns':false,'settings':false};
+	
+	/* Campaigns and settings */ var true_false_true_true = {'essential':true,'usage':false,'campaigns':true,'settings':true};
+	
+	/* Analytics and settings */ var true_true_false_true = {'essential':true,'usage':true,'campaigns':false,'settings':true};
+	
+	/* Just campaigns */ var true_false_true_false = {'essential':true,'usage':false,'campaigns':true,'settings':false};
+	
+	/* Cookie settings */ var true_false_false_true ={'essential':true,'usage':false,'campaigns':false,'settings':true,};
+	
+	// Convert JSON to string
+	var stringOnlyEssential = JSON.stringify(true_false_false_false);
+	var stringAcceptAll = JSON.stringify(true_true_true_true);
+	var stringAnalyticsMarketing = JSON.stringify(true_true_true_false);
+	var stringAnalytics = JSON.stringify(true_true_false_false);
+	var stringCampaignsSettings = JSON.stringify(true_false_true_true);
+	var stringAnalyticsSettings = JSON.stringify(true_true_false_true);
+	var stringCampaigns = JSON.stringify(true_false_true_false);
+	var stringSettings = JSON.stringify(true_false_false_true);
+
+	// Encode string: btoa
+	
+	const encodedOnlyEssential = window.btoa(stringOnlyEssential); 
+	const encodedAcceptAll = window.btoa(stringAcceptAll); 
+	const encodedAnalyticsMarketing = window.btoa(stringAnalyticsMarketing);
+	const encodedAnalytics = window.btoa(stringAnalytics);
+	const encodedCampaignsSettings = window.btoa(stringCampaignsSettings);
+	const encodedAnalyticsSettings = window.btoa(stringAnalyticsSettings);
+	const encodedCampaigns = window.btoa(stringCampaigns);
+	const encodedSettings = window.btoa(stringSettings);
+
 
 
     // Conditionals for setting cookie preferences 	
@@ -33,59 +65,66 @@ $( "#cookies-settings, #acceptAll" ).submit(function( event ) {
 	// #1 Only essential cookies
 		
 	if (analytics == 'off' && marketing == 'off' && settings == 'off' ) {
-	document.cookie = cookiePolicy + "=" + JSON.stringify(true_false_false_false) + ";" + "expires=Thu, 18 Dec 2020 12:00:00 UTC" + ";" + " path=/";
+	Cookies.set(cookiePolicy, encodedEssential , { sameSite: 'strict' })
   }
-		
-	// #2 Just analytics
-		
-	if (analytics == 'on' && marketing == 'off' && settings == 'off' ) {
-	document.cookie = cookiePolicy + "=" + JSON.stringify(true_true_false_false) + ";" + "expires=Thu, 18 Dec 2020 12:00:00 UTC" + ";" + " path=/";
-
-	}
-		
-	// #3 Analytics and marketing
-		
-	if (analytics == 'on' && marketing == 'on' && settings == 'off' ) {
-	document.cookie = cookiePolicy + "=" + JSON.stringify(true_true_true_false) + ";" + "expires=Thu, 18 Dec 2020 12:00:00 UTC" + ";" + " path=/";
-
-	}
 	
-	// #4 Just marketing
-		
-	if (analytics == 'off' && marketing == 'on' && settings == 'off' ) {
-	document.cookie = cookiePolicy + "=" + JSON.stringify(true_false_true_false) + ";" + "expires=Thu, 18 Dec 2020 12:00:00 UTC" + ";" + " path=/";
-
-	}
-		
-	// #3 Analytics and settings
-		
-	if (analytics == 'on' && marketing == 'off' && settings == 'on' ) {
-	document.cookie = cookiePolicy + "=" + JSON.stringify(true_true_false_true) + ";" + "expires=Thu, 18 Dec 2020 12:00:00 UTC" + ";" + " path=/";
-
-	}
-		
-	// #5 Approve all cookies
+	// #2 Approve all cookies
 		
 	if (analytics == 'on' && marketing == 'on' && settings == 'on' ) {
-	document.cookie = cookiePolicy + "=" + JSON.stringify(true_true_true_true) + ";" + "expires=Thu, 18 Dec 2020 12:00:00 UTC" + ";" + " path=/";
+	Cookies.set(cookiePolicy, encodedAcceptAll , { sameSite: 'strict' })
 	}
 		
-	
+	// #3 Just analytics
 		
-    // #6 Everything but analytics
+	if (analytics == 'on' && marketing == 'off' && settings == 'off' ) {
+	Cookies.set(cookiePolicy, encodedAnalytics , { sameSite: 'strict' })
+	}
+		
+	// #4 Analytics and marketing
+		
+	if (analytics == 'on' && marketing == 'on' && settings == 'off' ) {
+		Cookies.set(cookiePolicy, encodedAnalyticsMarketing , { sameSite: 'strict' })
+	}
+	
+	// #5 Just marketing/campaigns
+		
+	if (analytics == 'off' && marketing == 'on' && settings == 'off' ) {
+	Cookies.set(cookiePolicy, encodedCampaigns , { sameSite: 'strict' })
+
+	}
+		
+	// #6 Analytics and settings
+		
+	if (analytics == 'on' && marketing == 'off' && settings == 'on' ) {
+		Cookies.set(cookiePolicy, encodedAnalyticsSettings , { sameSite: 'strict' })
+	}
+			
+    // #7 Everything but analytics
 		
 	if (analytics == 'off' && marketing == 'on' && settings == 'on' ) {
-	document.cookie = cookiePolicy + "=" + JSON.stringify(true_false_true_true) + ";" + "expires=Thu, 18 Dec 2020 12:00:00 UTC" + ";" + " path=/";
+			Cookies.set(cookiePolicy, encodedAnalytics , { sameSite: 'strict' })
+
+	}
+	
+	// #8 Just settings
+		
+	if (analytics == 'off' && marketing == 'off' && settings == 'on' ) {
+			Cookies.set(cookiePolicy, encodedSettings , { sameSite: 'strict' })
+
 	}
 		
 	// Check if cookie notice exists and do nothing
   
   if($('#cookie-preferences-update-notice').length){
+	  
+  // Do nothing  
   } 
 	
-  // Creates cookie preferences updated notice
 		
   else {
+	  
+  // Creates cookie preferences updated notice
+
 	  
   // Jump to top of content
   location.href = "#contentContainer"; 
@@ -104,9 +143,10 @@ $( "#cookies-settings, #acceptAll" ).submit(function( event ) {
  	$('#cookieContainer').remove();
 				
 	});
-	
-	
-	///////////////////////////
+
+
+
+// On click handling 
 
 	
 	$(document).ready(function () {	
@@ -119,6 +159,9 @@ $( "#cookies-settings, #acceptAll" ).submit(function( event ) {
 		document.getElementById('cookie-usage-analytics-on').checked = 'checked';
 		document.getElementById('cookie-usage-marketing-on').checked = 'checked';
 		document.getElementById('cookie-settings-on').checked = 'checked';	
+		
+		// Jump to top of content
+	    location.href = "#contentContainer"; 
 		
 	});
 		
@@ -148,13 +191,15 @@ $( "#cookies-settings, #acceptAll" ).submit(function( event ) {
 	}
 	
 	else { document.getElementById('cookie-settings-off').checked = 'checked'; }
-  	
+		
 	});
 
-	// Jump to top of content
-	location.href = "#contentContainer"; 
 
-	
 	function goBack() {
   		window.history.go(-2);
 	}
+	
+
+
+	
+	

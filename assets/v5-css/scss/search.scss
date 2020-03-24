@@ -148,4 +148,13 @@ color: $black !important;
 color: $black !important;
 }
 	
+.gsc-tabHeader.gsc-tabhActive, .gsc-refinementHeader.gsc-refinementhActive {
+color: $red !important;
 }
+	
+.gsc-tabHeader.gsc-tabhInactive, .gsc-refinementHeader.gsc-refinementhInactive, .gsc-results .gsc-cursor-box .gsc-cursor-page, .gsc-result-info {
+color: $black !important;
+}
+
+}
+

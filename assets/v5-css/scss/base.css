@@ -42,6 +42,9 @@ a:hover, a:focus {
 #contentContainer .border:last-of-type {
   border-bottom: none; }
 
+dd {
+  margin: 10px 0; }
+
 .backgroundRed ul.listCaret li:before {
   color: white; }
 

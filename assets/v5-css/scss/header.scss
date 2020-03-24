@@ -77,12 +77,17 @@ background: none;
 
 #cookieContainer {
 width: 90% !important;
+@media only screen and (min-width : $desktop) {
+width: 100% !important;
+padding: 0 !important;
+}
 padding-left: 5% !important;
 padding-right: 5% !important;
 }
 
 #cookieNotify {
 max-width: 100% !important;
+padding: 10px !important;
 }
 
 

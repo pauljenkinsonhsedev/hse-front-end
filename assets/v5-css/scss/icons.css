@@ -1,6 +1,6 @@
 /*
 Error: Undefined variable: "$black".
-        on line 174 of /Users/pjenkinson/Dev/v5-cookies/assets/v5-css/scss/icons.scss
+        on line 174 of /Users/pjenkinson/Dev/sites/hse-front-end/assets/v5-css/scss/icons.scss
 
 169: width: 100%;
 170: padding: 0 0 10px 0;
@@ -15,7 +15,7 @@ Error: Undefined variable: "$black".
 179: width: 100%;
 
 Backtrace:
-/Users/pjenkinson/Dev/v5-cookies/assets/v5-css/scss/icons.scss:174
+/Users/pjenkinson/Dev/sites/hse-front-end/assets/v5-css/scss/icons.scss:174
 /Applications/Adobe Dreamweaver 2020/Adobe Dreamweaver 2020.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/script/tree/variable.rb:49:in `_perform'
 /Applications/Adobe Dreamweaver 2020/Adobe Dreamweaver 2020.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/script/tree/node.rb:50:in `perform'
 /Applications/Adobe Dreamweaver 2020/Adobe Dreamweaver 2020.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/tree/visitors/perform.rb:402:in `visit_prop'
@@ -61,4 +61,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$black\".\A         on line 174 of /Users/pjenkinson/Dev/v5-cookies/assets/v5-css/scss/icons.scss\A \A 169: width: 100%;\A 170: padding: 0 0 10px 0;\A 171: }\A 172: \A 173: .hsl-links li a:hover {\A 174: background: $black;\A 175: }\A 176: \A 177: .hsl-links a {\A 178: float: left;\A 179: width: 100%;"; }
+  content: "Error: Undefined variable: \"$black\".\A         on line 174 of /Users/pjenkinson/Dev/sites/hse-front-end/assets/v5-css/scss/icons.scss\A \A 169: width: 100%;\A 170: padding: 0 0 10px 0;\A 171: }\A 172: \A 173: .hsl-links li a:hover {\A 174: background: $black;\A 175: }\A 176: \A 177: .hsl-links a {\A 178: float: left;\A 179: width: 100%;"; }

@@ -592,7 +592,7 @@ function hse_aria_landmark_roles (){
 	$('#contentContainer').attr('role','main');
 	$('#navigationContainer')
 		.attr('role','navigation')
-		.attr('aria-label','Primary');
+		.attr('aria-label','Main menu');
 	$('#navSecondary')
 		.attr('role','navigation')
 		.attr('aria-label','Secondary');

@@ -88,6 +88,10 @@ border-bottom: none;
 
 // Lists 
 
+dd {
+margin: 10px 0;	
+}
+
 .backgroundRed ul.listCaret li:before {
 color: white;
 }

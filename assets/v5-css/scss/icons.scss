@@ -299,3 +299,17 @@ height: 16px;
 right: 10px;
 margin: 0;
 }
+
+#backnav::before{
+content: " ";
+background-image: url('../../assets/v5-images/icons/svg/solid/arrow-left-white.svg');
+background-repeat: no-repeat;
+display: inline-block;
+position: relative;
+top: 3px;
+width: 16px;
+height: 16px;
+padding-right: 10px;
+margin: 0;
+}
+

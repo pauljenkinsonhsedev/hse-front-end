@@ -37,7 +37,16 @@ left: auto !important;
 
 // Dropdown
 
+.ddmswitch input.button {
+position: relative;
+background: $red;
+color: white;
+right: 10px;
+}
 
+.box .ddmStyling select, .homepageDropdown .ddmStyling select {
+margin-bottom: 10px !important;
+}
 
 .box .ddmStyling {
 margin: 0 10px 0 0;
@@ -45,27 +54,21 @@ margin: 0 10px 0 0;
 
 .ddmStyling {
 float: left;
-margin: 0 10px 10px 0;
 }
 
 .ddmStyling select {
 	float: left;
     display: block;
-	padding: 5px;
     width: 100%;
     max-width: 100%; 
     box-sizing: border-box;
     margin: 0;
     border-radius: 0;
-    -moz-appearance: none;
-    -webkit-appearance: none;
-    appearance: none;
-    background-image: url('../../assets/v5-images/icons/svg/solid/arrow-down-red.svg');
-    background-repeat: no-repeat, repeat;
-    background-position: right;
-    background-size: auto;
-	background-size: 10px;
+    height: 31px !important;
+	background-position: right;
+	content: " ";
 }
+
 .ddmStyling select::-ms-expand {
     display: none;
 }
@@ -84,15 +87,13 @@ margin: 0 10px 10px 0;
 }
 
 .ddmStyling input.button, .box .ddmStyling input.button {
-margin: 0 !important;
+margin-left: 20px !important;
+width: 34px !important;
+height: 31px !important;
+@media only screen and (min-width : $desktop) {
+position: absolute !important;
 }
 
-
-.ddmStyling input.button, .box .ddmStyling input.button {
-width: auto !important;
-height: auto !important;
-padding: 5px;
-margin-left: 0;
 }
 
 .ddmStyling input.button:hover {
@@ -100,7 +101,7 @@ cursor: pointer;
 }
 
 .ddmStyling select {
-width: 200px !important;
+width: 160px !important;
 }
 
 /* Cookies bar */
@@ -140,6 +141,14 @@ padding: 10px;
 width: 100%;
 border: 2px solid $red;
 margin-bottom: 20px;
+}
+
+// Tables 
+
+table caption {
+background: $black;
+padding: 10px;
+color: white;
 }
 
 
