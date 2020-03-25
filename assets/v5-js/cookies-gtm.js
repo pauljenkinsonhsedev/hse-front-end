@@ -7,8 +7,8 @@ const obj = JSON.parse(decodedCookieVal);
 // Assigns variables to cookies values
 
 var usageSet = (obj.usage);
-// var campaignsSet = (obj.campaigns);
-// var settingsSet = (obj.settings);	
+var campaignsSet = (obj.campaigns);
+var settingsSet = (obj.settings);	
 
 
 // When DOM is ready, create function for dynamically loading GTM scripts
