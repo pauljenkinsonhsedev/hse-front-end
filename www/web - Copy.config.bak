@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <system.webServer>
+        <defaultDocument>
+            <files>
+                <clear />
+                <add value="index.htm" />
+                <add value="Default.htm" />
+                <add value="Default.asp" />
+                <add value="index.html" />
+                <add value="iisstart.htm" />
+                <add value="default.aspx" />
+            </files>
+        </defaultDocument>
+	<modules>
+		<remove name="iJentoCookieModule" />
+		<add name="iJentoCookieModule" type="iJentoCookieModule" />
+ 	</modules>
+        <httpErrors errorMode="DetailedLocalOnly" existingResponse="Replace">
+            <remove statusCode="404" subStatusCode="-1" />
+            <error statusCode="404" prefixLanguageFilePath="" path="D:\websites\HSEGOV\nonadmin\wwwroot\404.htm" responseMode="File" />
+        </httpErrors>
+        <security>
+            <requestFiltering>
+                <fileExtensions>
+                    <remove fileExtension=".mdb" />
+                    <add fileExtension=".mdb" allowed="true" />
+                </fileExtensions>
+            </requestFiltering>
+        </security>
+        <staticContent>
+            <mimeMap fileExtension=".webm" mimeType="video/webm" />
+            <mimeMap fileExtension=".vtt" mimeType="text/vtt" />
+        </staticContent>
+    </system.webServer>
+    <location path="Notices">
+    </location>
+    <location path="businesses.htm">
+        <system.webServer>
+            <httpRedirect enabled="true" destination="http://www.hse.gov.uk/business/" exactDestination="true" httpResponseStatus="Permanent" />
+        </system.webServer>
+    </location>
+</configuration>

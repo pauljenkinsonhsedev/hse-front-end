@@ -1,0 +1,96 @@
+#playerInfo {
+	width: 420px;
+}
+
+#sideBar .box-vidCol {
+	padding: 10px 10px 10px 10px;
+	background: url(../images/bg/greyboxlong.jpg) top repeat-x #DBDBDB;
+}
+
+#relatedContent ul {
+	margin:0px 0px 6px 0px;
+}
+
+#vidPlayer {
+	width:430px;
+	height:287px;
+}
+
+#copyEmbed {
+	margin: 0px 0px 16px 0px;
+}
+
+#copyLink{
+	margin: 0px 0px 16px 0px;
+}
+
+#playerInfo{
+	display:none;
+	visibility: hidden;
+}
+
+#keyShorts {
+	margin: 0px 0px 0px 16px;
+	display: none;
+	visibility: hidden;
+}
+
+#keyShorts .divTxt {
+	letter-spacing:1px;
+}
+
+#downloadPanel {
+	margin-top:12px;
+}
+
+#vidTitle {
+	width:420px;
+}
+
+#vidDesc{
+	width:420px;
+}
+
+#linkContent {
+	width:400px;
+}
+
+#embedContent {
+	width:400px;
+}
+
+#emailerForm {
+	width:400px;
+}
+
+#emailerForm ul {
+	padding:0px;
+}
+#emailerForm ul li {
+	padding:0px;
+	margin:0px;
+}
+
+#emailerForm ul li label {
+	padding-left:10px;
+	margin:0px;
+}
+
+#emailerForm .formSubmit {
+	margin-left:0px;
+	text-align:right;
+	width:60px;
+}
+
+.btnSubmit {
+    border: 1px solid #666666;
+    background: #cccccc;
+	cursor: pointer;
+	width:60px;
+	height:22px;
+	padding: 0px 0px 3px 0px;
+}
+
+.btnSubmit:hover {
+    background: #E6E6E6;
+}
