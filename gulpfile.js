@@ -129,7 +129,7 @@ gulp.task('build-footer-js', function () {
       .pipe(concat('v5-footer.js'))
       // Renames files for dreamweaver template
       .pipe(rename("v5-footer.min.js"))
-      .pipe(gulp.dest('build/assets/v5-js/'));
+      .pipe(gulp.dest('src/assets/v5-js/'));
 }); 
 
 /* -------------------------------------------------------------------------------------------------
