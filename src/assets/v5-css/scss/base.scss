@@ -11,7 +11,7 @@ $darkred: #58041b;
 $black: #333333;
 $body: #111;
 $beta: #014a82;
-$focus: #3b98fc;
+$focus: #ffdd00;
 $yes: #005500;
 
 // Responsive breakpoints 
@@ -35,6 +35,10 @@ color: white !important;
 
 a {
 text-decoration: underline;
+}
+
+a:focus {
+outline: #ffdd00 5px solid !important;
 }
 
 a:hover, a:focus {
@@ -379,6 +383,10 @@ float: left;
 display: inline-block;
 }
 
- #headerContainer {
+/* London Bridge */
+
+/*
+#headerContainer {
 background: black !important;
 }
+*/

@@ -84,10 +84,19 @@ padding: 0 !important;
 padding: 0 !important;
 }
 
+// a:focus
+
+input.gsc-input:focus, #baseStrip ul.ddmswitch li a:focus {
+outline: #ffdd00 5px solid !important;
+outline-color: #ffdd00 !important;
+}
+
+td.gsc-search-button button:focus {
+outline: #ffdd00 5px solid !important;
+outline-color: #ffdd00 !important;    
+}
+
 // Search results
-
-
-
 
 .gcs-results {
 	
