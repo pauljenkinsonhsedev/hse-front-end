@@ -256,12 +256,12 @@ gulp.task('serve', function () {
   // Serve files from the root of this project
   browserSync.init({
      server: {
-          baseDir: "./build/"
+          baseDir: "./build/",
           },
           port: 8080,
           open: true,
           notify: false,
-    startPath: "/index.htm"
+          startPath: "/index.htm"
   });
 
   // Watch for SCSS change
