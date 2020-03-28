@@ -47,13 +47,6 @@
   
   var segment = url.split("/").length - 1 - (url.indexOf("//")==-1?0:2);
   
-  console.log(url);
-  console.log(numActiveItems);
-  console.log(orphanindex);
-  console.log(segment);
-
-	
-
   if (numActiveItems == 0) {
 
         $(".slinky-menu ul li a").each(function (id, element) {
