@@ -1,0 +1,3 @@
+@media print {
+  #beta-user-testing, #off-canvas-container {
+    display: none; } }

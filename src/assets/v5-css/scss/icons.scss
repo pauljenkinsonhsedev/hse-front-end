@@ -1,0 +1,315 @@
+
+#contentContainer .columnFull  ul.listCaret li::before {
+content: " ";
+background-image: url('../../assets/v5-images/icons/svg/solid/caret-right-white.svg');
+background-repeat: no-repeat;
+top: 2px;
+display: inline-block;
+width: 18px;
+height: 18px;
+margin: 0;
+position: absolute;
+left: 0;
+}
+
+#contentContainer .columnFull .box ul.listCaret li::before {
+content: " ";
+background-image: url('../../assets/v5-images/icons/svg/solid/caret-right-red.svg');
+background-repeat: no-repeat;
+display: inline-block;
+margin: 0;
+position: absolute;
+left: 0;
+}
+
+#contentContainer .columnFull .box.backgroundRed ul.listCaret li::before {
+content: " ";
+background-image: url('../../assets/v5-images/icons/svg/solid/caret-right-white.svg');
+background-repeat: no-repeat;
+display: inline-block;
+margin: 0;
+position: absolute;
+left: 0;
+}
+
+#contentContainer .columnFull p.moreLink a::before {
+content: " ";
+position: relative;
+top: 2px;
+background-image: url('../../assets/v5-images/icons/svg/solid/arrow-right-red.svg');
+background-repeat: no-repeat;
+display: inline-block;
+padding-right: 5px;
+width: 16px;
+height: 16px;
+margin: 0;
+float: left;
+}
+
+#contentContainer .columnFull p.moreLink a:hover::before {
+content: " ";
+background-image: url('../../assets/v5-images/icons/svg/solid/arrow-right-black.svg');
+background-repeat: no-repeat;
+display: inline-block;
+padding-right: 5px;
+width: 16px;
+height: 16px;
+margin: 0;
+float: left;
+}
+
+#contentContainer .columnFull .backgroundRed p.moreLink a::before {
+content: " ";
+background-image: url('../../assets/v5-images/icons/svg/solid/arrow-right-white.svg');
+background-repeat: no-repeat;
+display: inline-block;
+padding-right: 5px;
+width: 16px;
+height: 16px;
+margin: 0;
+float: left;
+}
+
+#contentContainer .columnFull ul.social li.facebook::before {
+content: " ";
+background-image: url('../../assets/v5-images/icons/svg/brands/facebook-square-red.svg');
+position: relative;
+top: 2px;
+float: left;
+background-repeat: no-repeat;
+display: inline-block;
+padding-right: 5px;
+width: 16px;
+height: 16px;
+margin: 0;
+}
+
+#contentContainer .columnFull ul.social li.linkedin::before {
+content: " ";
+background-image: url('../../assets/v5-images/icons/svg/brands/linkedin-red.svg');
+position: relative;
+top: 2px;
+float: left;
+background-repeat: no-repeat;
+display: inline-block;
+padding-right: 5px;
+width: 16px;
+height: 16px;
+margin: 0;
+}
+
+#contentContainer .columnFull ul.social li.youtube::before {
+content: " ";
+background-image: url('../../assets/v5-images/icons/svg/brands/youtube-red.svg');
+position: relative;
+top: 2px;
+float: left;
+background-repeat: no-repeat;
+display: inline-block;
+padding-right: 5px;
+width: 16px;
+height: 16px;
+margin: 0;
+}
+
+#contentContainer .columnFull ul.social li.twitter::before {
+content: " ";
+background-image: url('../../assets/v5-images/icons/svg/brands/twitter-red.svg');
+position: relative;
+top: 2px;
+float: left;
+background-repeat: no-repeat;
+display: inline-block;
+padding-right: 5px;
+width: 16px;
+height: 16px;
+margin: 0;
+}
+
+#printGuide a::before {
+content: " ";
+background-image: url('../../assets/v5-images/icons/svg/solid/print.svg');
+float: left;
+background-repeat: no-repeat;
+display: inline-block;
+padding-right: 5px;
+width: 16px;
+height: 16px;
+margin: 0;
+}
+
+
+#triggerButton span.c-button__text::before {
+content: " ";
+background-image: url('../../assets/v5-images/icons/svg/solid/bars-white.svg');
+float: left;
+background-repeat: no-repeat;
+display: inline-block;
+width: 25px;
+height: 25px;
+margin: 0;
+}
+
+.off-canvas-close span.c-button__text::before {
+content: " ";
+background-image: url('../../assets/v5-images/icons/svg/solid/window-close-white.svg');
+float: left;
+background-repeat: no-repeat;
+display: inline-block;
+width: 25px;
+height: 25px;
+margin: 0;
+}
+
+/* HSL */
+
+.hsl-links li {
+background: none;
+float: left;
+width: 100%;
+padding: 0 0 10px 0;
+}
+
+.hsl-links li a:hover {
+background: $hseblack;
+}
+
+.hsl-links a {
+float: left;
+width: 100%;
+color: white !important;
+display: block;
+font-weight: bold;
+text-decoration: none !important;
+padding: 10px;
+}
+
+.hsl-links li a::before {	
+content: " ";
+background-image: url('../../assets/v5-images/icons/svg/solid/chevron-circle-right-white.svg');
+background-repeat: no-repeat;
+display: inline-block;
+float: left;
+width: 17px;
+height: 17px;
+margin: 0;
+border-right: 10px solid transparent;
+}
+
+
+// Caret list icons
+
+#contentContainer .box.backgroundRed .linkList li::before {
+content: " ";
+background-image: url('../../assets/v5-images/icons/svg/solid/caret-right-white.svg');
+position: relative;
+top: 2px;
+background-repeat: no-repeat;
+height: 16px;
+width: 16px;
+margin: 0;
+padding-right: 10px;
+}
+
+#contentContainer .linkList li a::before {
+content: " ";
+background-image: url('../../assets/v5-images/icons/svg/solid/caret-right-red.svg');
+background-repeat: no-repeat;
+height: 16px;
+width: 16px;
+margin: 0;
+padding-right: 10px;
+}
+
+
+// Pagination icons
+
+#contentContainer #pagination .next-page .pagination-icon::after {	
+content: " ";
+background-size: 28px;
+background-image: url('../../assets/v5-images/icons/svg/solid/arrow-right-red.svg');
+background-repeat: no-repeat;
+display: inline-block;
+width: 30px;
+height: 30px;
+margin: 0;
+}
+
+#contentContainer #pagination .previous-page .pagination-icon::before {	
+content: " ";
+background-size: 28px;
+background-image: url('../../assets/v5-images/icons/svg/solid/arrow-left-red.svg');
+background-repeat: no-repeat;
+display: inline-block;
+width: 30px;
+height: 30px;
+margin: 0;
+}
+
+#off-canvas-menu li a::before {
+content: " ";
+background-image: url('../../assets/v5-images/icons/svg/solid/chevron-right-gray.svg');
+float: right;
+background-repeat: no-repeat;
+display: inline-block;
+width: 25px;
+height: 25px;
+margin: 0;
+}
+
+#off-canvas-menu li a:hover::before {
+content: " ";
+background-image: url('../../assets/v5-images/icons/svg/solid/chevron-right-white.svg');
+float: right;
+background-repeat: no-repeat;
+display: inline-block;
+width: 25px;
+height: 25px;
+margin: 0;
+}
+	
+#contentContainer ul.boxList li:hover a::after  {
+content: " ";
+background-image: url('../../assets/v5-images/icons/svg/solid/arrow-right-white.svg');
+background-repeat: no-repeat;
+display: inline-block;
+position: relative;
+top: 5px;
+float: right;
+width: 16px;
+height: 16px;
+right: 10px;
+margin: 0;
+}
+
+#contentContainer ul.boxList li:hover h3 {
+color: white !important;
+}
+
+#contentContainer ul.boxList li a::after {
+content: " ";
+background-image: url('../../assets/v5-images/icons/svg/solid/arrow-right-red.svg');
+background-repeat: no-repeat;
+display: inline-block;
+position: relative;
+top: 5px;
+float: right;
+width: 16px;
+height: 16px;
+right: 10px;
+margin: 0;
+}
+
+#backnav::before{
+content: " ";
+background-image: url('../../assets/v5-images/icons/svg/solid/arrow-left-white.svg');
+background-repeat: no-repeat;
+display: inline-block;
+position: relative;
+top: 3px;
+width: 16px;
+height: 16px;
+padding-right: 10px;
+margin: 0;
+}
+

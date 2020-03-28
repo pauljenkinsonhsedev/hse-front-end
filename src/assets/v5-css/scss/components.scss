@@ -1,0 +1,155 @@
+/* Components */
+
+.v5-float-right {
+float: right !important
+}
+
+
+// Lightbox
+
+.lightbox {
+margin-bottom: 10px !important;
+}
+
+.lightbox li {
+background: none;
+padding-right: 0 !important;
+background: $gray;
+border: 5px solid $gray;
+}
+
+#contentContainer ul.lightbox li {
+padding-bottom: 0 !important;
+}
+
+.lightbox li a {
+float: left;
+}
+
+body.hasScript #contentContainer ul.lightbox li {
+margin-right: 10px;
+}
+
+.expand {
+bottom: 10px !important;
+left: auto !important;
+}
+
+// Dropdown
+
+.ddmswitch input.button {
+position: relative;
+background: $red;
+color: white;
+right: 10px;
+}
+
+.box .ddmStyling select, .homepageDropdown .ddmStyling select {
+margin-bottom: 10px !important;
+}
+
+.box .ddmStyling {
+margin: 0 10px 0 0;
+}
+
+.ddmStyling {
+float: left;
+}
+
+.ddmStyling select {
+	float: left;
+    display: block;
+    width: 100%;
+    max-width: 100%; 
+    box-sizing: border-box;
+    margin: 0;
+    border-radius: 0;
+    height: 31px !important;
+	background-position: right;
+	content: " ";
+}
+
+.ddmStyling select::-ms-expand {
+    display: none;
+}
+.ddmStyling select:hover {
+    border-color: #888;
+}
+.ddmStyling selectfocus {
+    border-color: #aaa;
+    box-shadow: 0 0 1px 3px rgba(59, 153, 252, .7);
+    box-shadow: 0 0 0 3px -moz-mac-focusring;
+    color: #222; 
+    outline: none;
+}
+.ddmStyling select option {
+    font-weight:normal;
+}
+
+.ddmStyling input.button, .box .ddmStyling input.button {
+margin-left: 20px !important;
+width: 34px !important;
+height: 31px !important;
+@media only screen and (min-width : $desktop) {
+position: absolute !important;
+}
+
+}
+
+.ddmStyling input.button:hover {
+cursor: pointer;
+}
+
+.ddmStyling select {
+width: 160px !important;
+}
+
+/* Cookies bar */
+
+.v5-span-heading1 {
+color: white;
+font-size: 2em;
+float: left;
+padding: 20px 0;
+}
+
+#cookieNotify {
+background: none;
+}
+
+#cookieNotify p {
+padding: 0;
+}
+
+#cookieNotify .v5-hide-button {
+background: none;
+color: white;
+text-decoration: underline;
+border: 0;
+}
+
+#cookieNotify .v5-hide-button:hover {
+cursor: pointer;
+}
+
+
+// Alert box
+
+.v5-notice-box {
+float: left;
+padding: 10px;
+width: 100%;
+border: 2px solid $red;
+margin-bottom: 20px;
+}
+
+// Tables 
+
+table caption {
+background: $hseblack;
+padding: 10px;
+color: white;
+}
+
+
+
