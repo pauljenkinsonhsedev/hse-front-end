@@ -81,7 +81,10 @@ width: 940px !important;
 }
 	
 .guidance-languages {
+float: left;
+@media only screen and (min-width : $desktop) {
 float: right;
+}
 }
 
 #languagesDropdown-container {

@@ -8,7 +8,7 @@ $red: #981e32;
 $redhover: #333333;
 $darkergray: #4e4e4e;
 $darkred: #58041b;
-$black: #333333;
+$hseblack: #333333;
 $body: #111;
 $beta: #014a82;
 $focus: #ffdd00;
@@ -140,7 +140,7 @@ background: none;
 
 #contentContainer ul.multistep li::before {
 content: "— ";
-color: $black;
+color: $hseblack;
 }
 #contentContainer ul.linkArrow li {
 padding-left: 0;
@@ -192,7 +192,7 @@ text-decoration: underline;
 
 #contentContainer ul.itemThumbBook li a:hover span.header, #contentContainer ul.itemThumbBook li a:hover span.resourceTitle, #contentContainer ul.itemThumbBook li a:hover span  {
 text-decoration: none;
-color: $black;
+color: $hseblack;
 }
 
 

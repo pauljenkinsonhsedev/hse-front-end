@@ -1173,7 +1173,10 @@ h1.offCanvasHeaderLogo {
       width: 940px !important; } }
 
 .guidance-languages {
-  float: right; }
+  float: left; }
+  @media only screen and (min-width: 980px) {
+    .guidance-languages {
+      float: right; } }
 
 #languagesDropdown-container {
   width: 100%;
@@ -3132,6 +3135,9 @@ table caption {
   margin: 10px 10px 10px 0;
   background: #981e32;
   color: white; }
+
+.v5-button:focus {
+  outline: #ffdd00 5px solid !important; }
 
 button.v5-button {
   padding: 10px;

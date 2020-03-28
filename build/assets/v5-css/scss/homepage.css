@@ -1,5 +1,5 @@
 /*
-Error: Undefined variable: "$black".
+Error: Undefined variable: "$hseblack".
         on line 25 of /Users/pjenkinson/Dev/v5-cookies/assets/v5-css/scss/homepage.scss
 
 20: 		max-height: 265.14px !important;
@@ -7,7 +7,7 @@ Error: Undefined variable: "$black".
 22: }
 23: 
 24: .subText {
-25: color: $black;
+25: color: $hseblack;
 26: }
 27: 
 28: // Responsive carousel
@@ -61,4 +61,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$black\".\A         on line 25 of /Users/pjenkinson/Dev/v5-cookies/assets/v5-css/scss/homepage.scss\A \A 20: 		max-height: 265.14px !important;\A 21: 	}	\A 22: }\A 23: \A 24: .subText {\A 25: color: $black;\A 26: }\A 27: \A 28: // Responsive carousel\A 29: \A 30: #homepageCarousel {"; }
+  content: "Error: Undefined variable: \"$hseblack\".\A         on line 25 of /Users/pjenkinson/Dev/v5-cookies/assets/v5-css/scss/homepage.scss\A \A 20: 		max-height: 265.14px !important;\A 21: 	}	\A 22: }\A 23: \A 24: .subText {\A 25: color: $hseblack;\A 26: }\A 27: \A 28: // Responsive carousel\A 29: \A 30: #homepageCarousel {"; }

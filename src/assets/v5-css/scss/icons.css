@@ -1,5 +1,5 @@
 /*
-Error: Undefined variable: "$black".
+Error: Undefined variable: "$hseblack".
         on line 174 of /Users/pjenkinson/Dev/sites/hse-front-end/assets/v5-css/scss/icons.scss
 
 169: width: 100%;
@@ -7,7 +7,7 @@ Error: Undefined variable: "$black".
 171: }
 172: 
 173: .hsl-links li a:hover {
-174: background: $black;
+174: background: $hseblack;
 175: }
 176: 
 177: .hsl-links a {
@@ -61,4 +61,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$black\".\A         on line 174 of /Users/pjenkinson/Dev/sites/hse-front-end/assets/v5-css/scss/icons.scss\A \A 169: width: 100%;\A 170: padding: 0 0 10px 0;\A 171: }\A 172: \A 173: .hsl-links li a:hover {\A 174: background: $black;\A 175: }\A 176: \A 177: .hsl-links a {\A 178: float: left;\A 179: width: 100%;"; }
+  content: "Error: Undefined variable: \"$hseblack\".\A         on line 174 of /Users/pjenkinson/Dev/sites/hse-front-end/assets/v5-css/scss/icons.scss\A \A 169: width: 100%;\A 170: padding: 0 0 10px 0;\A 171: }\A 172: \A 173: .hsl-links li a:hover {\A 174: background: $hseblack;\A 175: }\A 176: \A 177: .hsl-links a {\A 178: float: left;\A 179: width: 100%;"; }

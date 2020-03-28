@@ -12,11 +12,11 @@ let cleanCSS = require('gulp-clean-css');
 var minify = require('gulp-minify');
 var rename = require("gulp-rename");
 
-/* WORKFLOW = src > build > www */
+/* WORKFLOW = src > build > secureroot */
 
 /* src: code here
 /* build: view here
-/* www: distribute here
+/* secureroot: distribute here
 
 
 /* PATHS */
@@ -42,14 +42,14 @@ var paths = {
   buildJS: 'build/**/*.js', 
   buildIMAGESV4: 'build/assets/v4-images/', 
   buildIMAGESV5: 'build/assets/v5-images/', 
-  /* www */
-  www: 'www',
-  wwwV4CSS: 'www/assets/v4-css/',
-  wwwV5CSS: 'www/assets/v5-css/',
-  wwwV4JS: 'www/assets/v4-js/',
-  wwwV5JS: 'www/assets/v5-js/',
-  wwwIMAGESV4: 'www/assets/v4-images/', 
-  wwwIMAGESV5: 'www/assets/v5-images/',
+  /* secureroot */
+  secureroot: 'secureroot',
+  securerootV4CSS: 'secureroot/assets/v4-css/',
+  securerootV5CSS: 'secureroot/assets/v5-css/',
+  securerootV4JS: 'secureroot/assets/v4-js/',
+  securerootV5JS: 'secureroot/assets/v5-js/',
+  securerootIMAGESV4: 'secureroot/assets/v4-images/', 
+  securerootIMAGESV5: 'secureroot/assets/v5-images/',
 };
 
 /* -------------------------------------------------------------------------------------------------
@@ -133,78 +133,78 @@ gulp.task('build-footer-js', function () {
 }); 
 
 /* -------------------------------------------------------------------------------------------------
-SRC TO WWW (Distribution)
+SRC TO secureroot (Distribution)
 -------------------------------------------------------------------------------------------------- */
 
 // .htm
 
-gulp.task('www-htm', function () {
-  return gulp.src(paths.srcHTM).pipe(gulp.dest(paths.www));
+gulp.task('secureroot-htm', function () {
+  return gulp.src(paths.srcHTM).pipe(gulp.dest(paths.secureroot));
 });
 
 // .css (V4)
 
-gulp.task('www-cssv4', function () {
-  return gulp.src(paths.srcCSSV4).pipe(gulp.dest(paths.wwwV4CSS));
+gulp.task('secureroot-cssv4', function () {
+  return gulp.src(paths.srcCSSV4).pipe(gulp.dest(paths.securerootV4CSS));
 });
 
 // .css (V5)
 
-gulp.task('www-cssv5', function () {
-  return gulp.src(paths.srcCSSV5).pipe(gulp.dest(paths.wwwV5CSS));
+gulp.task('secureroot-cssv5', function () {
+  return gulp.src(paths.srcCSSV5).pipe(gulp.dest(paths.securerootV5CSS));
 });
 
 // .js (V4)
 
-gulp.task('www-jsv4', function () {
-  return gulp.src(paths.srcJSV4).pipe(gulp.dest(paths.wwwV4JS));
+gulp.task('secureroot-jsv4', function () {
+  return gulp.src(paths.srcJSV4).pipe(gulp.dest(paths.securerootV4JS));
 });
 
 // .js (V5)
 
-gulp.task('www-jsv5', function () {
-  return gulp.src(paths.srcJSV5).pipe(gulp.dest(paths.wwwV5JS));
+gulp.task('secureroot-jsv5', function () {
+  return gulp.src(paths.srcJSV5).pipe(gulp.dest(paths.securerootV5JS));
 });
 
 // Images (V5) (jpg,png,gif)
 
-gulp.task('www-imagesv5', function () {
-  return gulp.src(paths.srcIMAGESV5).pipe(gulp.dest(paths.wwwIMAGESV5));
+gulp.task('secureroot-imagesv5', function () {
+  return gulp.src(paths.srcIMAGESV5).pipe(gulp.dest(paths.securerootIMAGESV5));
 });
 
 // Images (V4) (jpg,png,gif)
 
-gulp.task('www-imagesv4', function () {
-  return gulp.src(paths.srcIMAGESV4).pipe(gulp.dest(paths.wwwIMAGESV4));
+gulp.task('secureroot-imagesv4', function () {
+  return gulp.src(paths.srcIMAGESV4).pipe(gulp.dest(paths.securerootIMAGESV4));
 });
 
 // MINIFY
 
-gulp.task('www-footer-js', function () {    
+gulp.task('secureroot-footer-js', function () {    
   return gulp.src(['./src/assets/v5-js/slinky-ie11-fix.js','./src/assets/v5-js/google-custom-search.js','./src/assets/v5-js/js-offcanvas.pkgd.min.js','./src/assets/v5-js/js-offcanvas-trigger.js', './src/assets/v5-js/aria.js', './src/assets/v5-js/website-feedback.src.js', './src/assets/v5-js/content-page.js', './src/assets/v5-js/notification-bar.js', './src/assets/v5-js/top-tasks.js', './src/assets/v5-js/cookies-gtm.js'])
       .pipe(concat('v5-footer.js'))
       .pipe(minify())
       .pipe(rename("v5-footer.min.js"))
-      .pipe(gulp.dest('www/assets/v5-js/'));
+      .pipe(gulp.dest('secureroot/assets/v5-js/'));
 }); 
 
-// MULTI TASKS FOR WWW
+// MULTI TASKS FOR secureroot
 
 // ALL
 
-gulp.task('www', gulp.series('www-htm', 'www-cssv5', 'www-cssv4', 'www-jsv5', 'www-jsv4', 'www-imagesv4', 'www-imagesv5', function (done) {
+gulp.task('secureroot', gulp.series('secureroot-htm', 'secureroot-cssv5', 'secureroot-cssv4', 'secureroot-jsv5', 'secureroot-jsv4', 'secureroot-imagesv4', 'secureroot-imagesv5', function (done) {
   done();
 }));
 
 // V4 
 
-gulp.task('www-v4', gulp.series('www-imagesv4', 'www-cssv4', 'www-jsv4', 'www-jsv4', function (done) {
+gulp.task('secureroot-v4', gulp.series('secureroot-imagesv4', 'secureroot-cssv4', 'secureroot-jsv4', 'secureroot-jsv4', function (done) {
   done();
 }));
 
 // V5 
 
-gulp.task('www-v5', gulp.series('www-imagesv5', 'www-cssv5', 'www-jsv5', 'www-jsv5', 'www-footer-js', 'www-footer-js', function (done) {
+gulp.task('secureroot-v5', gulp.series('secureroot-imagesv5', 'secureroot-cssv5', 'secureroot-jsv5', 'secureroot-jsv5', 'secureroot-footer-js', 'secureroot-footer-js', function (done) {
   done();
 }));
 
@@ -226,7 +226,7 @@ gulp.task('minify-css',() => {
   return gulp.src('src/assets/v5-css/v5.min.css')
     .pipe(cleanCSS())
 	.pipe(rename("v5.min.css"))
-    .pipe(gulp.dest('www/assets/v5-css/v5.min/'));
+    .pipe(gulp.dest('secureroot/assets/v5-css/v5.min/'));
 });
 
 

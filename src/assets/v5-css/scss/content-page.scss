@@ -21,7 +21,7 @@ background: url(../v4-images/shared/page-furniture.png) 0 -379px no-repeat;
 }
 
 #backTo {
-background: $black;
+background: $hseblack;
 }
 
 #backTo a {
@@ -156,7 +156,7 @@ margin: 0;
 }
 
 .ui-widget-content #menu  li a {
-color: $black;
+color: $hseblack;
 }
 
 .ui-widget-content #menu li.header a, .ui-widget-content #menu li.first a {
@@ -380,7 +380,7 @@ width: auto;
 }
 
 .v5-figure-border {
-border: 1px solid $black;	
+border: 1px solid $hseblack;	
 border-bottom: 0;
 }
 
@@ -401,7 +401,7 @@ height: auto;
 float: left;
 width: 100%;
 padding: 10px;
-background: $black;
+background: $hseblack;
 color: white;
 clear: both;
 text-align: center;
@@ -455,13 +455,13 @@ border-radius: 0 !important;
 }
 
 .ui-accordion .ui-accordion-content-active {
-border: 1px solid $black !important;
+border: 1px solid $hseblack !important;
 border-top: 0 !important;
 border-radius: 0 !important;
 }
 
 .ui-state-active {
-border: 1px solid $black !important;	
+border: 1px solid $hseblack !important;	
 }
 
 // Print page
@@ -506,7 +506,7 @@ color: white;
 }
 
 #contentContainer ul.tabs li.active a {
-color: $black;
+color: $hseblack;
 }
 
 .tabPanel {

@@ -15,10 +15,6 @@ margin-bottom: 10px;
 padding: 0;
 }
 
-.form fieldset .v5-legend  {
-	
-}
-
 .v5-legend + p {
 clear: both;
 }
@@ -38,6 +34,10 @@ background: $red;
 color: white;
 }
 
+.v5-button:focus {
+outline: #ffdd00 5px solid !important;
+}
+
 button.v5-button {
 padding: 10px;
 border: 0;
@@ -45,7 +45,7 @@ border: 0;
 
 .v5-button:hover {
 cursor: pointer;
-background: $black;
+background: $hseblack;
 }
 
 .v5-button a {
