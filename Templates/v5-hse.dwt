@@ -74,7 +74,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 	  </div>
 	  
 	  <div class="v5-inline">
-	  <div class="v5-button"><a href="../cookies.htm">Set cookie preferences</a></div>
+	  <div class="v5-button"><a href="cookies.htm">Set cookie preferences</a></div>
 	  </div>
   </div>
 </div>
