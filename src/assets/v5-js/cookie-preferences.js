@@ -136,7 +136,7 @@ $( "#cookies-settings" ).submit(function( event ) {
 
 	// Creates cookie to confirm preferences have been set
 		
-	document.cookie = cookiePreferences + "= true"  + ";" + "expires=Thu, 18 Dec 2020 12:00:00 UTC" + ";" + " path=/";
+	Cookies.set(cookiePreferences, true , { path: '/' }, { expires: 365})
 		
 	// Removes cookie banner
 		
