@@ -65,7 +65,7 @@ $( "#cookies-settings" ).submit(function( event ) {
 	// #1 Only essential cookies
 		
 	if (analytics == 'off' && marketing == 'off' && settings == 'off' ) {
-	Cookies.set(cookiePolicy, encodedEssential )
+	Cookies.set(cookiePolicy, encodedOnlyEssential )
   }
 	
 	// #2 Approve all cookies
@@ -99,10 +99,10 @@ $( "#cookies-settings" ).submit(function( event ) {
 		Cookies.set(cookiePolicy, encodedAnalyticsSettings)
 	}
 			
-    // #7 Everything but analytics
+    // #7 Campaigns and settings
 		
 	if (analytics == 'off' && marketing == 'on' && settings == 'on' ) {
-			Cookies.set(cookiePolicy, encodedOnlyEssential)
+			Cookies.set(cookiePolicy, encodedCampaignsSettings )
 
 	}
 	
