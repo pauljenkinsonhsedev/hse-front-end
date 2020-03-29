@@ -65,51 +65,51 @@ $( "#cookies-settings" ).submit(function( event ) {
 	// #1 Only essential cookies
 		
 	if (analytics == 'off' && marketing == 'off' && settings == 'off' ) {
-	Cookies.set(cookiePolicy, encodedEssential , { sameSite: 'strict' })
+	Cookies.set(cookiePolicy, encodedEssential )
   }
 	
 	// #2 Approve all cookies
 		
 	if (analytics == 'on' && marketing == 'on' && settings == 'on' ) {
-	Cookies.set(cookiePolicy, encodedAcceptAll , { sameSite: 'strict' })
+	Cookies.set(cookiePolicy, encodedAcceptAll)
 	}
 		
 	// #3 Just analytics
 		
 	if (analytics == 'on' && marketing == 'off' && settings == 'off' ) {
-	Cookies.set(cookiePolicy, encodedAnalytics , { sameSite: 'strict' })
+	Cookies.set(cookiePolicy, encodedAnalytics)
 	}
 		
 	// #4 Analytics and marketing
 		
 	if (analytics == 'on' && marketing == 'on' && settings == 'off' ) {
-		Cookies.set(cookiePolicy, encodedAnalyticsMarketing , { sameSite: 'strict' })
+		Cookies.set(cookiePolicy, encodedAnalyticsMarketing)
 	}
 	
 	// #5 Just marketing/campaigns
 		
 	if (analytics == 'off' && marketing == 'on' && settings == 'off' ) {
-	Cookies.set(cookiePolicy, encodedCampaigns , { sameSite: 'strict' })
+	Cookies.set(cookiePolicy, encodedCampaigns)
 
 	}
 		
 	// #6 Analytics and settings
 		
 	if (analytics == 'on' && marketing == 'off' && settings == 'on' ) {
-		Cookies.set(cookiePolicy, encodedAnalyticsSettings , { sameSite: 'strict' })
+		Cookies.set(cookiePolicy, encodedAnalyticsSettings)
 	}
 			
     // #7 Everything but analytics
 		
 	if (analytics == 'off' && marketing == 'on' && settings == 'on' ) {
-			Cookies.set(cookiePolicy, encodedAnalytics , { sameSite: 'strict' })
+			Cookies.set(cookiePolicy, encodedOnlyEssential)
 
 	}
 	
 	// #8 Just settings
 		
 	if (analytics == 'off' && marketing == 'off' && settings == 'on' ) {
-			Cookies.set(cookiePolicy, encodedSettings , { sameSite: 'strict' })
+			Cookies.set(cookiePolicy, encodedSettings)
 
 	}
 		
