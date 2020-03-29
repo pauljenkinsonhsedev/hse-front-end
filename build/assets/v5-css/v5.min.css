@@ -558,12 +558,6 @@ input.gsc-input:focus, #baseStrip ul.ddmswitch li a:focus {
   float: left;
   display: inline-block; }
 
-/* London Bridge */
-/*
-#headerContainer {
-background: black !important;
-}
-*/
 .subscribe img {
   display: inline-block;
   float: left; }

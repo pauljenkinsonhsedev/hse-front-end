@@ -28,7 +28,7 @@ gtm.setAttribute("id", "gtm");
 
 // Set the script element `src`
 
-gtm.src = 'assets/v5-js/gtm.js';
+gtm.src = '../assets/v5-js/gtm.js';
 
 
 // Inject the script into the DOM

@@ -8,7 +8,7 @@ const fs = require('fs');
 var plumber = require('gulp-plumber');
 var browserSync = require('browser-sync').create();
 var reload = browserSync.reload;
-let cleanCSS = require('gulp-clean-css');
+let cleanCSS = require('gulp-clean-css'); // Minify CSS
 var minify = require('gulp-minify');
 var rename = require("gulp-rename");
 
@@ -27,10 +27,11 @@ var paths = {
   srcHTM: 'src/**/*.htm',
   srcCSS: 'src/**/*.css',
   srcCSSV4: 'src/assets/v4-css/**/*.css',
-  srcCSSV5: 'src/assets/v5-css/**/*.css',
+  srcCSSV5: ['src/assets/v5-css/**/*.css', '!src/assets/v5-css/scss/**/*'],
   srcJSV4: 'src/assets/v4-js/**/*.js',
-  srcJSV5: 'src/assets/v5-js/**/*.js',
+  srcJSV5: ['src/assets/v5-js/v5-footer.min.js', 'src/assets/v5-js/cookies-gtm.js', 'src/assets/v5-js/v5-hse-primary.min.js', 'src/assets/v5-js/gtm.js', 'src/assets/v5-js/v5-footer-slinky-js.min.js', 'src/assets/v5-js/cookie-preferences.js' ],
   srcIMAGESV4: 'src/assets/v4-images/**/*.{jpg,png,gif,svg}',
+  srcIMAGESV4HOMEPAGE: 'src/assets/v4-homepage/**/*.{jpg,png,gif,svg}',
   srcIMAGESV5: 'src/assets/v5-images/**/*.{jpg,png,gif,svg}',
   srcJS: 'src/**/*.js',  
   /* build */
@@ -40,7 +41,8 @@ var paths = {
   buildJSV4: 'build/assets/v4-js/',
   buildJSV5: 'build/assets/v5-js/',
   buildJS: 'build/**/*.js', 
-  buildIMAGESV4: 'build/assets/v4-images/', 
+  buildIMAGESV4: 'build/assets/v4-images/',
+  buildIMAGESV4HOMEPAGE: 'build/assets/v4-homepage/',
   buildIMAGESV5: 'build/assets/v5-images/', 
   /* secureroot */
   secureroot: 'secureroot',
@@ -62,16 +64,22 @@ gulp.task('build-htm', function () {
   return gulp.src(paths.srcHTM).pipe(gulp.dest(paths.build));
 });
 
-// Images (V5) (jpg,png,gif)
+// Images (V5) (jpg,png,gif,svg)
 
 gulp.task('build-imagesv5', function () {
   return gulp.src(paths.srcIMAGESV5).pipe(gulp.dest(paths.buildIMAGESV5));
 });
 
-// Images (V4) (jpg,png,gif)
+// Images (V4) (jpg,png,gif,svg)
 
 gulp.task('build-imagesv4', function () {
   return gulp.src(paths.srcIMAGESV4).pipe(gulp.dest(paths.buildIMAGESV4));
+});
+
+// Images (V4 homepage) (jpg,png,gif,svg)
+
+gulp.task('build-imagesv4homepage', function () {
+  return gulp.src(paths.srcIMAGESV4HOMEPAGE).pipe(gulp.dest(paths.buildIMAGESV4HOMEPAGE));
 });
 
 // .css (V4)
@@ -98,30 +106,9 @@ gulp.task('build-jsv5', function () {
   return gulp.src(paths.srcJSV5).pipe(gulp.dest(paths.buildJSV5));
 });
 
-
-// TASKS
-
-// All 
-
-gulp.task('build', gulp.series('build-htm', 'build-imagesv5', 'build-imagesv4', 'build-cssv4', 'build-cssv5', 'build-jsv4', 'build-jsv4', function (done) {
-  done();
-}));
-
-// V4 
-
-gulp.task('build-v4', gulp.series('build-imagesv4', 'build-cssv4', 'build-jsv4', 'build-jsv4', function (done) {
-  done();
-}));
-
-// V5 
-
-gulp.task('build-v5', gulp.series('build-imagesv5', 'build-cssv5', 'build-jsv5', 'build-jsv5', function (done) {
-  done();
-}));
-
 // Concat V5 footer js files
 
-gulp.task('build-footer-js', function () {    
+gulp.task('footer-js', function () {    
 
   // Gets all V5 footer JS source files
   return gulp.src(['./src/assets/v5-js/slinky-ie11-fix.js','./src/assets/v5-js/google-custom-search.js','./src/assets/v5-js/js-offcanvas.pkgd.min.js','./src/assets/v5-js/js-offcanvas-trigger.js', './src/assets/v5-js/aria.js', './src/assets/v5-js/website-feedback.src.js', './src/assets/v5-js/content-page.js', './src/assets/v5-js/notification-bar.js', './src/assets/v5-js/top-tasks.js', './src/assets/v5-js/cookies-gtm.js'])
@@ -131,6 +118,27 @@ gulp.task('build-footer-js', function () {
       .pipe(rename("v5-footer.min.js"))
       .pipe(gulp.dest('src/assets/v5-js/'));
 }); 
+
+
+// TASKS
+
+// All 
+
+gulp.task('build', gulp.series('build-htm', 'build-imagesv5', 'build-imagesv4', 'build-imagesv4homepage', 'build-cssv4', 'build-cssv5', 'build-jsv4', 'build-jsv5', function (done) {
+  done();
+}));
+
+// V4 
+
+gulp.task('build-v4', gulp.series('build-imagesv4', 'build-cssv4', 'build-jsv4',  function (done) {
+  done();
+}));
+
+// V5 
+
+gulp.task('build-v5', gulp.series('build-imagesv5', 'build-cssv5', 'build-jsv5',  function (done) {
+  done();
+}));
 
 /* -------------------------------------------------------------------------------------------------
 SRC TO secureroot (Distribution)
@@ -178,16 +186,6 @@ gulp.task('secureroot-imagesv4', function () {
   return gulp.src(paths.srcIMAGESV4).pipe(gulp.dest(paths.securerootIMAGESV4));
 });
 
-// MINIFY
-
-gulp.task('secureroot-footer-js', function () {    
-  return gulp.src(['./src/assets/v5-js/slinky-ie11-fix.js','./src/assets/v5-js/google-custom-search.js','./src/assets/v5-js/js-offcanvas.pkgd.min.js','./src/assets/v5-js/js-offcanvas-trigger.js', './src/assets/v5-js/aria.js', './src/assets/v5-js/website-feedback.src.js', './src/assets/v5-js/content-page.js', './src/assets/v5-js/notification-bar.js', './src/assets/v5-js/top-tasks.js', './src/assets/v5-js/cookies-gtm.js'])
-      .pipe(concat('v5-footer.js'))
-      .pipe(minify())
-      .pipe(rename("v5-footer.min.js"))
-      .pipe(gulp.dest('secureroot/assets/v5-js/'));
-}); 
-
 // MULTI TASKS FOR secureroot
 
 // ALL
@@ -204,7 +202,7 @@ gulp.task('secureroot-v4', gulp.series('secureroot-imagesv4', 'secureroot-cssv4'
 
 // V5 
 
-gulp.task('secureroot-v5', gulp.series('secureroot-imagesv5', 'secureroot-cssv5', 'secureroot-jsv5', 'secureroot-jsv5', 'secureroot-footer-js', 'secureroot-footer-js', function (done) {
+gulp.task('secureroot-v5', gulp.series('secureroot-imagesv5', 'secureroot-cssv5', 'secureroot-jsv5', 'secureroot-jsv5', function (done) {
   done();
 }));
 
@@ -216,20 +214,28 @@ gulp.task('sass', () => {
       .pipe(sourcemaps.init())
   	  .pipe(sass().on("error", sass.logError))
     .pipe(sourcemaps.write('.'))
-    /* Rename css file for DW template */
-    .pipe(rename("v5.min.css"))
-    /* Creates v5.min.css file in build foler */
+    
+    /* Creates v5.css file in build foler */
     .pipe(gulp.dest("src/assets/v5-css/"))
 });
-           
-gulp.task('minify-css',() => {
-  return gulp.src('src/assets/v5-css/v5.min.css')
-    .pipe(cleanCSS())
-	.pipe(rename("v5.min.css"))
-    .pipe(gulp.dest('secureroot/assets/v5-css/v5.min/'));
+
+gulp.task('rename-css',() => {
+  return gulp.src('src/assets/v5-css/v5.css')
+    /* Rename css file for DW template */
+    .pipe(rename("v5.min.css"))
+    .pipe(gulp.dest('src/assets/v5-css/'));
 });
 
 
+/* -------------------------------------------------------------------------------------------------
+Minifiy
+-------------------------------------------------------------------------------------------------- */
+           
+gulp.task('minify-secureroot-v5css',() => {
+  return gulp.src('src/assets/v5-css/v5.min.css')
+    .pipe(cleanCSS())
+    .pipe(gulp.dest('secureroot/assets/v5-css/'));
+});
 
 /* -------------------------------------------------------------------------------------------------
 LEFT NAV (Slinky)
