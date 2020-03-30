@@ -28,7 +28,7 @@ gtm.setAttribute("id", "gtm");
 
 // Set the script element `src`
 
-gtm.src = '../assets/v5-js/gtm.js';
+gtm.src = 'https://www.hse.gov.uk/assets/v5-js/gtm.js';
 
 
 // Inject the script into the DOM
@@ -67,12 +67,12 @@ gtmFunction();
 // If analytics preference is set to false - delete all GTM cookies
 
 else {
-Cookies.remove('_ga', { path: '/' });
-Cookies.remove('_gid', { path: '/' });
-Cookies.remove('_gali', { path: '/' });
-Cookies.remove('_dc_gtm_UA-324220-1' , { path: '/' });
-Cookies.remove('_gat_UA-324220-1', { path: '/' });
-Cookies.remove('nmstat'); // Site Improve cookie - invoked by Google Analytics
+Cookies.remove('_ga', {domain: '.hse.gov.uk'});
+Cookies.remove('_gid', {domain: '.hse.gov.uk'});
+Cookies.remove('_gali', {domain: '.hse.gov.uk'});
+Cookies.remove('_dc_gtm_UA-324220-1', {domain: '.hse.gov.uk'});
+Cookies.remove('_gat_UA-324220-1', {domain: '.hse.gov.uk'});
+Cookies.remove('nmstat', {domain: '.www.hse.gov.uk'}); // Site Improve cookie - invoked by Google Analytics
 
 }
 
