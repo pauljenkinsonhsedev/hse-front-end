@@ -67,11 +67,11 @@ gtmFunction();
 // If analytics preference is set to false - delete all GTM cookies
 
 else {
-Cookies.remove('_ga');
-Cookies.remove('_gid');
-Cookies.remove('_gali');
-Cookies.remove('_dc_gtm_UA-324220-1');
-Cookies.remove('_gat_UA-324220-1');
+Cookies.remove('_ga', { path: '/' });
+Cookies.remove('_gid', { path: '/' });
+Cookies.remove('_gali', { path: '/' });
+Cookies.remove('_dc_gtm_UA-324220-1' , { path: '/' });
+Cookies.remove('_gat_UA-324220-1', { path: '/' });
 Cookies.remove('nmstat'); // Site Improve cookie - invoked by Google Analytics
 
 }
