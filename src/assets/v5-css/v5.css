@@ -317,13 +317,6 @@ template {
 a {
   text-decoration: underline; }
 
-a:focus {
-  outline: #ffdd00 5px solid !important; }
-
-a:hover, a:focus {
-  text-decoration: none;
-  color: #333333; }
-
 #contentContainer a:link,
 #contentContainer a:visited,
 #contentContainer a {
@@ -558,18 +551,40 @@ input.gsc-input:focus, #baseStrip ul.ddmswitch li a:focus {
   float: left;
   display: inline-block; }
 
-/* Black header */
-#headerContainer {
-  background: #000 !important; }
+a:focus {
+  outline: #ffdd00 5px solid !important; }
 
-#offCanvasHeaderLogo {
-  background: url(../v4-images/website/logos/hselogoblack.gif) no-repeat 0 0 !important; }
+#contentContainer li a:focus-within {
+  background: #ffdd00;
+  outline: solid transparent !important;
+  color: #000; }
 
-#headerLogo {
-  background: url(../v4-images/website/logos/hselogoblack.gif) no-repeat 0 0 !important; }
+.backgroundRed a:focus {
+  color: #000; }
 
-.gsc-search-box, #globalSearch tr {
-  background: #000 !important; }
+#contentContainer .backgroundRed p a:focus, #beta-user-testing p a:focus, #contentContainer .backgroundRed li a:focus-within, .hsl-links a:focus-within, .footer-links-container li a:focus-within, .breadCrumbContainer li a:focus, .skip:focus, #navSecondary ul li a:focus, .v5-button a:focus, .v5-hide-button:focus, button.v5-button:focus, .navDropdown li a:focus {
+  outline: solid transparent !important;
+  text-decoration: none !important;
+  background: #ffdd00 !important;
+  color: #000 !important;
+  border-bottom: 2px solid #000 !important; }
+
+.v5-button a:focus, button.v5-button:focus, #navSecondary ul li a:focus {
+  border-bottom: 0 !important; }
+
+#contentContainer input:focus {
+  outline: #ffdd00 5px solid !important; }
+
+#contentContainer li h3 a:focus, #contentContainer p a:focus {
+  outline: solid transparent !important;
+  color: #0b0c0c;
+  background-color: #ffdd00;
+  text-decoration: none;
+  border-bottom: 2px solid #000 !important; }
+
+a:hover, a:focus {
+  text-decoration: none;
+  color: #333333; }
 
 .subscribe img {
   display: inline-block;
@@ -657,7 +672,10 @@ td.gsib_b {
   background: white !important; }
 
 .gsst_a .gscb_a {
-  color: #981e32 !important; }
+  color: #981e32 !important;
+  font-size: 30px !important;
+  position: relative;
+  top: 2px; }
 
 #globalSearch #gsc-i-id1 {
   margin: 0 !important;
@@ -1096,8 +1114,7 @@ h1.offCanvasHeaderLogo {
       padding: 0 !important; } }
 
 #cookieNotify {
-  max-width: 100% !important;
-  padding: 10px !important; }
+  max-width: 100% !important; }
 
 #breadCrumb {
   margin-bottom: 10px;
@@ -2389,7 +2406,7 @@ ul.semtabs li a {
 
 .slinky-theme-default a:not(.back) {
   color: #333;
-  padding: 12px !important; }
+  padding: 14px !important; }
 
 .slinky-theme-default a:not(.back):hover {
   background: #c2c2c2;
@@ -2488,6 +2505,27 @@ li.first a.active-page {
 
 .slinky-menu li a.back {
   padding: 1em 0; }
+
+.slinky-menu li a:focus {
+  outline: none !important; }
+
+.slinky-menu li.first a:focus {
+  color: #000 !important; }
+
+.slinky-menu li a:focus-within {
+  background: #ffdd00;
+  color: #000 !important; }
+
+.slinky-menu li a.back {
+  padding: 14px !important; }
+
+.slinky-theme-default a.back:focus::before {
+  content: " ";
+  background-image: url("../../assets/v5-images/icons/svg/solid/arrow-left-black.svg") !important; }
+
+.slinky-theme-default a.next::after {
+  content: " ";
+  background-image: url("../../assets/v5-images/icons/svg/solid/arrow-right-black.svg") !important; }
 
 /* A-Z lists */
 .boxAtoZ {
@@ -2588,6 +2626,12 @@ dl.dlpretty {
 @media only screen and (max-width: 979px) {
   .boxSplit {
     background: none !important; } }
+
+.box.backgroundRed p {
+  margin-bottom: 0 !important; }
+
+.box.box1col .ddmswitch select {
+  width: 100% !important; }
 
 @media only screen and (max-width: 980px) {
   #beta-user-testing {
@@ -3025,8 +3069,7 @@ body.hasScript #contentContainer ul.lightbox li {
 .ddmswitch input.button {
   position: relative;
   background: #981e32;
-  color: white;
-  right: 10px; }
+  color: white; }
 
 .box .ddmStyling select, .homepageDropdown .ddmStyling select {
   margin-bottom: 10px !important; }
@@ -3040,7 +3083,6 @@ body.hasScript #contentContainer ul.lightbox li {
 .ddmStyling select {
   float: left;
   display: block;
-  width: 100%;
   max-width: 100%;
   box-sizing: border-box;
   margin: 0;
@@ -3048,6 +3090,9 @@ body.hasScript #contentContainer ul.lightbox li {
   height: 31px !important;
   background-position: right;
   content: " "; }
+  @media only screen and (min-width: 980px) {
+    .ddmStyling select {
+      width: 100% !important; } }
 
 .ddmStyling select::-ms-expand {
   display: none; }
@@ -3066,12 +3111,8 @@ body.hasScript #contentContainer ul.lightbox li {
   font-weight: normal; }
 
 .ddmStyling input.button, .box .ddmStyling input.button {
-  margin-left: 20px !important;
   width: 34px !important;
   height: 31px !important; }
-  @media only screen and (min-width: 980px) {
-    .ddmStyling input.button, .box .ddmStyling input.button {
-      position: absolute !important; } }
 
 .ddmStyling input.button:hover {
   cursor: pointer; }
@@ -3087,7 +3128,8 @@ body.hasScript #contentContainer ul.lightbox li {
   padding: 20px 0; }
 
 #cookieNotify {
-  background: none; }
+  background: none;
+  padding: 10px 0 !important; }
 
 #cookieNotify p {
   padding: 0; }

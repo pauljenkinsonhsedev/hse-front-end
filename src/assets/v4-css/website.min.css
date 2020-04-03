@@ -488,13 +488,6 @@ a:visited {
 	color:#981e32;/*changed from #b82533 by Sarah 27/2/19*/
 }	
 
-a.hover,
-a:hover,
-a:focus,
-a:active {
-	color:#E90542;
-}
-
 h1 {
 	color:#981e32;/*changed from #a50532 by Sarah 27/2/19*/
 }
@@ -698,59 +691,6 @@ div#contentContainer div.diaryMonth li.even {
 	background:#e4e4e4;
 	border: 0px;
 
-}
-
-/* ----------------------------------------------------- */
-/* Custom styles */
-/* ----------------------------------------------------- */
-
-.boxAlert,
-.boxInfo {
-	border: 1px solid #e8e8e8 !important;
-	padding: 14px 10px !important;	
-	background-color: transparent !important;
-	-pie-background: transparent; /* CSS3pie IE6-9 */	
-	border-radius: 0 !important;
-}
-
-.boxAlert p,
-.boxInfo p {
-	margin: 0 0 0 40px;
-	padding: 0;
-}
-
-.boxAlert {
-	background: url(../v4-images/website/icons/box-alert.png) no-repeat 10px center !important;	
-}
-
-.boxInfo {
-	background: url(../v4-images/website/icons/box-info.png) no-repeat 10px center !important;	
-}
-
-/* ----------------------------------------------------- */
-/* Google autocomplete styles */
-/* ----------------------------------------------------- */
-/* website JS edited to prevent Google loading 38K of its own CSS - these few rules are minimum required to make autocomplete look OK */
-table.gstl_0,
-table.gstl_0 td {
-	background-color:transparent;
-}
-/* required to overule default table styles that are set in place by HSE JS */
-.gsc-completion-selected {
-  background: #F2F2F2;
-  cursor: pointer;
-}
-.gsc-completion-container {
-  background: white; 
-}
-.gsc-completion-container td {
-	border-color: #e0e0e0;
-}
-td.gssb_a {
-	min-width:200px;
-}
-td.gssb_e {
-	box-shadow: none !important;
 }
 
 /* ----------------------------------------------------- */

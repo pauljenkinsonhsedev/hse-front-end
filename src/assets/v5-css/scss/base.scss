@@ -38,15 +38,6 @@ a {
 text-decoration: underline;
 }
 
-a:focus {
-outline: #ffdd00 5px solid !important;
-}
-
-a:hover, a:focus {
-text-decoration: none;
-color: $redhover;
-}
-
 #contentContainer a:link,
 #contentContainer a:visited,
 #contentContainer a {

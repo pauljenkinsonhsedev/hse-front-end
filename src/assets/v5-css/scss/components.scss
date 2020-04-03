@@ -41,7 +41,6 @@ left: auto !important;
 position: relative;
 background: $red;
 color: white;
-right: 10px;
 }
 
 .box .ddmStyling select, .homepageDropdown .ddmStyling select {
@@ -59,7 +58,9 @@ float: left;
 .ddmStyling select {
 	float: left;
     display: block;
-    width: 100%;
+    @media only screen and (min-width : $desktop) {
+    width: 100% !important;
+    }
     max-width: 100%; 
     box-sizing: border-box;
     margin: 0;
@@ -87,13 +88,8 @@ float: left;
 }
 
 .ddmStyling input.button, .box .ddmStyling input.button {
-margin-left: 20px !important;
 width: 34px !important;
 height: 31px !important;
-@media only screen and (min-width : $desktop) {
-position: absolute !important;
-}
-
 }
 
 .ddmStyling input.button:hover {
@@ -115,6 +111,7 @@ padding: 20px 0;
 
 #cookieNotify {
 background: none;
+padding: 10px 0 !important;
 }
 
 #cookieNotify p {

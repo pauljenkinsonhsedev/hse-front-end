@@ -155,7 +155,7 @@
 	  
   var overviewTitle = $(element).parent().parent().find('a.next span').first().text();
   $(element).next('li').find('a').attr("title", "Overview: " + overviewTitle);
-  $(element).next('li').find('a').html("Overview" + '<span class="hide">: ' + overviewTitle + '</span>');
+  $(element).next('li').find('a').html('<span>' + "Overview" + '</span>' + '<span class="hide">: ' + overviewTitle + '</span>');
 
 	  
   });

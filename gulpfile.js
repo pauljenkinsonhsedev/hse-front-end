@@ -186,6 +186,20 @@ gulp.task('secureroot-imagesv4', function () {
   return gulp.src(paths.srcIMAGESV4).pipe(gulp.dest(paths.securerootIMAGESV4));
 });
 
+/* -------------------------------------------------------------------------------------------------
+Minifiy in secureroot
+-------------------------------------------------------------------------------------------------- */
+
+gulp.task('minify-secureroot-v5css',() => {
+  return gulp.src('secureroot/assets/v5-css/v5.min.css')
+    .pipe(cleanCSS())
+    .pipe(gulp.dest('secureroot/assets/v5-css/'));
+});
+
+gulp.task('minify-all-v4-css', gulp.series('minify-secureroot-v5css', function (done) {
+  done();
+}));
+
 // MULTI TASKS FOR secureroot
 
 // ALL
@@ -206,8 +220,20 @@ gulp.task('secureroot-v5', gulp.series('secureroot-imagesv5', 'secureroot-cssv5'
   done();
 }));
 
-// SASS
+/* -------------------------------------------------------------------------------------------------
+LEFT NAV (Slinky)
+-------------------------------------------------------------------------------------------------- */
 
+gulp.task('footer-slinky-js', function () {    
+  return gulp.src(['./src/assets/v5-js/slinky.min.js', './src/assets/v5-js/slinky-custom.js'])
+    .pipe(concat('v5-footer-slinky-js.js'))
+    .pipe(minify())
+  .pipe(rename("v5-footer-slinky-js.min.js"))
+    .pipe(gulp.dest('src/assets/v5-js/'));
+});
+
+
+// Compiles SCSS files into v5.css
 gulp.task('sass', () => {
   return gulp
 	  .src("src/assets/v5-css/scss/v5.scss")
@@ -219,6 +245,8 @@ gulp.task('sass', () => {
     .pipe(gulp.dest("src/assets/v5-css/"))
 });
 
+// Renames v5.css to v5.min.css for templating purposes (Does not minify)
+
 gulp.task('rename-css',() => {
   return gulp.src('src/assets/v5-css/v5.css')
     /* Rename css file for DW template */
@@ -226,29 +254,9 @@ gulp.task('rename-css',() => {
     .pipe(gulp.dest('src/assets/v5-css/'));
 });
 
-
-/* -------------------------------------------------------------------------------------------------
-Minifiy
--------------------------------------------------------------------------------------------------- */
-           
-gulp.task('minify-secureroot-v5css',() => {
-  return gulp.src('src/assets/v5-css/v5.min.css')
-    .pipe(cleanCSS())
-    .pipe(gulp.dest('secureroot/assets/v5-css/'));
-});
-
-/* -------------------------------------------------------------------------------------------------
-LEFT NAV (Slinky)
--------------------------------------------------------------------------------------------------- */
-
-gulp.task('footer-slinky-js', function () {    
-  return gulp.src(['./src/assets/v5-js/slinky.min.js', './src/assets/v5-js/slinky-custom.js'])
-    .pipe(concat('v5-footer-slinky-js.js'))
-    .pipe(minify())
-  .pipe(rename("v5-footer-slinky-js.min.js"))
-    .pipe(gulp.dest('build/assets/v5-js/'));
-});
-
+gulp.task('sass-build', gulp.series('sass', 'rename-css', function (done) {
+  done();
+}));
 
 /* -------------------------------------------------------------------------------------------------
 BrowserSync
@@ -271,13 +279,13 @@ gulp.task('serve', function () {
   });
 
   // Watch for SCSS change
-  gulp.watch('src/assets/v5-css/scss/*.scss', gulp.series('sass')).on("change", reload);
+  gulp.watch('src/assets/v5-css/scss/*.scss', gulp.series('sass-build','build')).on("change", reload);
   
   // Watch for .htm change and copy src .css to build folder
-  gulp.watch("*.htm").on("change", reload);
-  gulp.task('sass');
-  gulp.task('build-cssv5');
+  gulp.watch('src/*.htm', gulp.series('build')).on("change", reload);
+
 });
+
 
 
 

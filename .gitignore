@@ -2,3 +2,5 @@
 .DS_Store
 *.lbi
 node_modules
+simple-healthy-safety/*
+aboutyou/*

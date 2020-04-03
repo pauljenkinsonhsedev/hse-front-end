@@ -1,0 +1,43 @@
+a:focus {
+outline: $focus 5px solid !important;
+}
+
+#contentContainer li a:focus-within {
+background: $focus;
+outline: solid transparent !important;
+color: $black;
+}
+
+.backgroundRed a:focus {
+color: $black;
+}
+#contentContainer .backgroundRed p a:focus, #beta-user-testing p a:focus, #contentContainer .backgroundRed li a:focus-within, .hsl-links a:focus-within, .footer-links-container li a:focus-within, .breadCrumbContainer li a:focus, .skip:focus, #navSecondary ul li a:focus, .v5-button a:focus, .v5-hide-button:focus, button.v5-button:focus, .navDropdown li a:focus {
+outline: solid transparent !important;
+text-decoration: none !important;
+background: $focus !important;
+color: $black !important;
+border-bottom: 2px solid $black !important;
+}
+
+.v5-button a:focus, button.v5-button:focus, #navSecondary ul li a:focus {
+border-bottom: 0 !important;
+}
+
+#contentContainer input:focus {
+outline: $focus 5px solid !important;
+}
+
+#contentContainer li h3 a:focus, #contentContainer p a:focus {
+outline: solid transparent !important;
+color: #0b0c0c;
+background-color: $focus;
+text-decoration: none;
+border-bottom: 2px solid $black !important;
+}
+
+a:hover, a:focus {
+text-decoration: none;
+color: $redhover;
+}
+
+
