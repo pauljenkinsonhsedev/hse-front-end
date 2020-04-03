@@ -196,10 +196,6 @@ gulp.task('minify-secureroot-v5css',() => {
     .pipe(gulp.dest('secureroot/assets/v5-css/'));
 });
 
-gulp.task('minify-all-v4-css', gulp.series('minify-secureroot-v5css', function (done) {
-  done();
-}));
-
 // MULTI TASKS FOR secureroot
 
 // ALL
