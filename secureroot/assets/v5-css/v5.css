@@ -2604,10 +2604,6 @@ dl.dlpretty {
   width: 100%;
   position: relative; }
 
-.more {
-  border-radius: 0;
-  margin-bottom: 10px !important; }
-
 .hasMore {
   padding-bottom: 0 !important; }
 
@@ -2629,6 +2625,13 @@ dl.dlpretty {
 
 .box.backgroundRed p {
   margin-bottom: 0 !important; }
+
+.box.backgroundRed p.more {
+  margin-bottom: 10px !important; }
+
+.more {
+  border-radius: 0;
+  margin-bottom: 10px !important; }
 
 .box.box1col .ddmswitch select {
   width: 100% !important; }
