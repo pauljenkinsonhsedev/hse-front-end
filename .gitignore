@@ -6,4 +6,5 @@ src/pubns
 src/assets/images
 src/agriculture
 build/
+secureroot/*.htm
 
