@@ -336,6 +336,10 @@ a {
 #contentContainer .linkList {
   margin: 0 0 1em 0; }
 
+#contentContainer .backgroundRed .linkList li a::before {
+  background-image: none;
+  padding-right: 0; }
+
 .p-10 {
   padding: 10px !important; }
 
@@ -396,31 +400,6 @@ dd {
 @media only screen and (min-width: 992px) {
   .linkArrow li {
     display: block; } }
-
-#contentContainer ul.itemThumbBook {
-  margin: 0 !important; }
-
-#contentContainer ul.itemThumbBook li {
-  float: left;
-  padding: 0 !important;
-  margin-bottom: 10px;
-  width: 100%; }
-
-#contentContainer ul.itemThumbBook li a, #contentContainer ul.itemThumbBook li a:hover span.header {
-  text-decoration: none; }
-
-#contentContainer ul.itemThumbBook li a span.header, #contentContainer ul.itemThumbBook li a span.resourceTitle {
-  text-decoration: underline; }
-
-#contentContainer ul.itemThumbBook li a:hover span.header, #contentContainer ul.itemThumbBook li a:hover span.resourceTitle, #contentContainer ul.itemThumbBook li a:hover span {
-  text-decoration: none;
-  color: #333333; }
-
-#contentContainer ul.itemThumbBook li p {
-  margin: 0 !important; }
-
-#contentContainer ul.itemThumbBook span {
-  padding-right: 0; }
 
 #contentContainer ul.listLinks li {
   background: none;
@@ -554,12 +533,19 @@ input.gsc-input:focus, #baseStrip ul.ddmswitch li a:focus {
 a:focus {
   outline: #ffdd00 5px solid !important; }
 
+a:hover, a:focus {
+  text-decoration: none;
+  color: #333333; }
+
 #contentContainer li a:focus-within {
   background: #ffdd00;
   outline: solid transparent !important;
   color: #000; }
 
-.backgroundRed a:focus {
+#contentContainer ul li a:focus {
+  border-bottom: 2px solid #000 !important; }
+
+#contentContainer .backgroundRed a:focus {
   color: #000; }
 
 #contentContainer .backgroundRed p a:focus, #beta-user-testing p a:focus, #contentContainer .backgroundRed li a:focus-within, .hsl-links a:focus-within, .footer-links-container li a:focus-within, .breadCrumbContainer li a:focus, .skip:focus, #navSecondary ul li a:focus, .v5-button a:focus, .v5-hide-button:focus, button.v5-button:focus, .navDropdown li a:focus, .multistep li a:focus, .listCaret li a:focus, .pagination-text a:focus, .listLinks a:focus {
@@ -568,9 +554,6 @@ a:focus {
   background: #ffdd00 !important;
   color: #000 !important;
   border-bottom: 2px solid #000 !important; }
-
-.v5-button a:focus, button.v5-button:focus, #navSecondary ul li a:focus, .footer-links-container li a:focus-within {
-  border-bottom: 0 !important; }
 
 #contentContainer input:focus {
   outline: #ffdd00 5px solid !important; }
@@ -582,9 +565,18 @@ a:focus {
   text-decoration: none;
   border-bottom: 2px solid #000 !important; }
 
-a:hover, a:focus {
-  text-decoration: none;
-  color: #333333; }
+.v5-button a:focus, button.v5-button:focus, #navSecondary ul li a:focus, .footer-links-container li a:focus-within {
+  border-bottom: 0 !important; }
+
+.box ul.itemThumbBook li a:focus {
+  background-color: #ffdd00; }
+
+.box ul.itemThumbBook li a:focus .resourceTitle {
+  color: #000;
+  text-decoration: underline !important; }
+
+.box ul.itemThumbBook li a:hover .resourcePrice {
+  color: #000; }
 
 .subscribe img {
   display: inline-block;
@@ -1319,6 +1311,7 @@ h1.offCanvasHeaderLogo {
 
 .column {
   float: left;
+  width: 100%;
   position: relative;
   padding: 10px; }
 
@@ -1721,6 +1714,10 @@ h2.multistepHeading10::before {
   padding-bottom: 0;
   margin-bottom: 20px !important; }
 
+.homepageBanner a {
+  float: left;
+  width: 100%; }
+
 .homepageBanner img {
   height: auto; }
   @media only screen and (min-width: 979px) {
@@ -2042,46 +2039,6 @@ body.lwet #feature-home {
     flex-direction: column; }
   #contentContainer.columnbetacontentpage .hasMore .more {
     margin-top: auto !important; } }
-
-.hsl-links {
-  margin: 0 !important; }
-
-.itemThumbBook.publications li a {
-  text-decoration: underline !important; }
-
-.itemThumbBook.publications li {
-  width: 100%;
-  margin-right: 20px;
-  clear: none; }
-  @media only screen and (min-width: 756px) {
-    .itemThumbBook.publications li {
-      width: 47% !important; } }
-  @media only screen and (min-width: 979px) {
-    .itemThumbBook.publications li {
-      max-width: 100px !important; } }
-
-.publications .itemThumbBook img {
-  margin: 0 0 10px 0 !important; }
-
-@media only screen and (min-width: 979px) {
-  .publications .desktopOnly:last-of-type {
-    margin-right: 0px !important; }
-  .mobile {
-    display: none; }
-  .publications li {
-    clear: none !important; } }
-
-.publications-products a {
-  background: #2846A5; }
-
-.training a {
-  background: #4F2170; }
-
-.testing a {
-  background: #CE421B; }
-
-.research a {
-  background: #287826; }
 
 .catalogue {
   background-color: #fff;
@@ -3044,8 +3001,81 @@ p.moreLink a {
   margin: 0; }
 
 /* Components */
+.box ul.itemThumbBook a:link {
+  text-decoration: none !important; }
+
+ul.itemThumbBook .header, ul.itemThumbBook .resourceTitle {
+  color: #981e32;
+  text-decoration: underline; }
+
+ul.itemThumbBook .header:hover, ul.itemThumbBook .resourceTitle:hover, ul.itemThumbBook a:focus .header, ul.itemThumbBook a:focus .resourceTitle {
+  color: #000 !important; }
+
+#contentContainer ul.itemThumbBook .subText {
+  width: 100% !important; }
+
+#contentContainer ul.itemThumbBook {
+  margin: 0 !important; }
+
+#contentContainer ul.itemThumbBook a {
+  float: left !important;
+  width: 100%; }
+
+#contentContainer ul.itemThumbBook li {
+  float: left;
+  padding: 0 !important;
+  margin-bottom: 10px;
+  width: 100%; }
+
+#contentContainer ul.itemThumbBook li p {
+  margin: 0 !important; }
+
+#contentContainer ul.itemThumbBook span {
+  padding-right: 0; }
+
 .v5-float-right {
   float: right !important; }
+
+.hsl-links {
+  margin: 0 !important; }
+
+ul.itemThumbBook.publications a {
+  text-decoration: underline !important; }
+
+ul.itemThumbBook.publications li {
+  width: 100% !important; }
+
+ul.itemThumbBook.publications a {
+  margin-right: 20px;
+  clear: none; }
+  @media only screen and (min-width: 756px) {
+    ul.itemThumbBook.publications a {
+      width: 47% !important; } }
+  @media only screen and (min-width: 979px) {
+    ul.itemThumbBook.publications a {
+      max-width: 100px !important; } }
+
+@media only screen and (min-width: 979px) {
+  .itemThumbBook.publications a:last-of-type {
+    margin-right: 0px !important; }
+  .publications .itemThumbBook img {
+    margin: 0 0 10px 0 !important; }
+  .mobile {
+    display: none; }
+  .publications li {
+    clear: none !important; } }
+
+.publications-products a {
+  background: #2846A5; }
+
+.training a {
+  background: #4F2170; }
+
+.testing a {
+  background: #CE421B; }
+
+.research a {
+  background: #287826; }
 
 .lightbox {
   margin-bottom: 10px !important; }

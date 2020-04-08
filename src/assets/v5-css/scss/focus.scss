@@ -1,6 +1,17 @@
+// GLOBAL FOCUS
+
 a:focus {
 outline: $focus 5px solid !important;
 }
+
+// COMPONENT FOCUS
+
+a:hover, a:focus {
+text-decoration: none;
+color: $redhover;
+}
+
+// Content focus
 
 #contentContainer li a:focus-within {
 background: $focus;
@@ -8,7 +19,12 @@ outline: solid transparent !important;
 color: $black;
 }
 
-.backgroundRed a:focus {
+#contentContainer ul li a:focus {
+border-bottom: 2px solid $black !important;
+}
+
+
+#contentContainer .backgroundRed a:focus {
 color: $black;
 }
 
@@ -18,10 +34,6 @@ text-decoration: none !important;
 background: $focus !important;
 color: $black !important;
 border-bottom: 2px solid $black !important;
-}
-
-.v5-button a:focus, button.v5-button:focus, #navSecondary ul li a:focus, .footer-links-container li a:focus-within {
-border-bottom: 0 !important;
 }
 
 #contentContainer input:focus {
@@ -36,9 +48,26 @@ text-decoration: none;
 border-bottom: 2px solid $black !important;
 }
 
-a:hover, a:focus {
-text-decoration: none;
-color: $redhover;
+
+// Form focus
+
+
+.v5-button a:focus, button.v5-button:focus, #navSecondary ul li a:focus, .footer-links-container li a:focus-within {
+    border-bottom: 0 !important;
+    }
+
+// itemThumbBook within box component
+
+.box ul.itemThumbBook li a:focus {
+background-color: $focus;
 }
 
+.box ul.itemThumbBook li a:focus .resourceTitle {
+color: $black;
+text-decoration: underline !important;
+}
+
+.box ul.itemThumbBook li a:hover .resourcePrice {
+color: $black;
+}
 

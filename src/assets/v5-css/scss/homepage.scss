@@ -8,6 +8,11 @@ padding-bottom: 0;
 margin-bottom: 20px !important;
 }
 
+.homepageBanner a {
+float: left;
+width: 100%;
+}
+
 .homepageBanner img {
 height: auto;
 	@media only screen and (min-width : 979px) {

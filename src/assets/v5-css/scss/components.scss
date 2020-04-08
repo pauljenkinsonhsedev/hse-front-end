@@ -1,8 +1,121 @@
 /* Components */
 
+// itemThumbBook
+
+.box ul.itemThumbBook a:link {
+text-decoration: none !important;
+}
+
+
+ul.itemThumbBook .header, ul.itemThumbBook .resourceTitle {
+color: $red;
+text-decoration: underline;   
+}
+
+ul.itemThumbBook .header:hover , ul.itemThumbBook .resourceTitle:hover, ul.itemThumbBook a:focus .header, ul.itemThumbBook a:focus .resourceTitle {
+color: $black !important;
+}
+
+#contentContainer ul.itemThumbBook .subText {
+width: 100% !important;
+}
+
+#contentContainer ul.itemThumbBook {
+margin: 0 !important;
+}
+
+#contentContainer ul.itemThumbBook a {
+float: left !important;
+width: 100%;
+}
+
+#contentContainer ul.itemThumbBook li {
+float: left;
+padding: 0 !important;
+margin-bottom: 10px;
+width: 100%;
+}
+
+#contentContainer ul.itemThumbBook li p {
+margin: 0 !important;
+}
+
+#contentContainer ul.itemThumbBook span {
+padding-right: 0;
+}
+
 .v5-float-right {
 float: right !important
 }
+
+
+// HSL Publications *replaced js carousel (homepage)
+
+.hsl-links {
+margin: 0 !important;
+}
+
+ul.itemThumbBook.publications a {
+text-decoration: underline !important;
+}
+
+ul.itemThumbBook.publications li {
+width: 100% !important;
+}
+
+ul.itemThumbBook.publications a {
+
+@media only screen and (min-width : 756px) {
+width: 47% !important;	
+}
+
+@media only screen and (min-width : 979px) {
+max-width: 100px !important;
+}
+
+margin-right: 20px;
+clear: none;
+
+}
+
+@media only screen and (min-width : 979px) {
+    .itemThumbBook.publications  a:last-of-type {
+    margin-right: 0px !important;
+}
+
+
+.publications .itemThumbBook img {
+margin: 0 0 10px 0 !important;
+}
+
+
+.mobile {
+display: none;
+}
+
+.publications li {
+clear: none !important;
+}
+
+}
+
+
+.publications-products a {
+background: #2846A5;
+}
+
+.training a {
+background: #4F2170;
+}
+
+.testing a {
+background: #CE421B;
+}
+
+.research a {
+background: #287826;	
+}
+
 
 
 // Lightbox
@@ -56,35 +169,35 @@ float: left;
 }
 
 .ddmStyling select {
-	float: left;
-    display: block;
-    @media only screen and (min-width : $desktop) {
-    width: 100% !important;
-    }
-    max-width: 100%; 
-    box-sizing: border-box;
-    margin: 0;
-    border-radius: 0;
-    height: 31px !important;
-	background-position: right;
-	content: " ";
+float: left;
+display: block;
+@media only screen and (min-width : $desktop) {
+width: 100% !important;
+}
+max-width: 100%; 
+box-sizing: border-box;
+margin: 0;
+border-radius: 0;
+height: 31px !important;
+background-position: right;
+content: " ";
 }
 
 .ddmStyling select::-ms-expand {
-    display: none;
+display: none;
 }
 .ddmStyling select:hover {
-    border-color: #888;
+border-color: #888;
 }
 .ddmStyling selectfocus {
-    border-color: #aaa;
-    box-shadow: 0 0 1px 3px rgba(59, 153, 252, .7);
-    box-shadow: 0 0 0 3px -moz-mac-focusring;
-    color: #222; 
-    outline: none;
+border-color: #aaa;
+box-shadow: 0 0 1px 3px rgba(59, 153, 252, .7);
+box-shadow: 0 0 0 3px -moz-mac-focusring;
+color: #222; 
+outline: none;
 }
 .ddmStyling select option {
-    font-weight:normal;
+font-weight:normal;
 }
 
 .ddmStyling input.button, .box .ddmStyling input.button {
@@ -129,7 +242,6 @@ border: 0;
 cursor: pointer;
 }
 
-
 // Alert box
 
 .v5-notice-box {
@@ -147,6 +259,3 @@ background: $hseblack;
 padding: 10px;
 color: white;
 }
-
-
-

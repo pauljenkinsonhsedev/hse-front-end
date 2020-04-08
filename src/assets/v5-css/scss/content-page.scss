@@ -301,66 +301,6 @@ margin-top: auto !important;
 
 }
 
-// Publications *replaces js carousel
-
-.hsl-links {
-margin: 0 !important;
-}
-
-.itemThumbBook.publications li a {
-text-decoration: underline !important;
-}
-
-.itemThumbBook.publications li {
-width: 100%;	
-@media only screen and (min-width : 756px) {
-width: 47% !important;	
-}
-@media only screen and (min-width : 979px) {
-max-width: 100px !important;
-}
-
-margin-right: 20px;
-clear: none;
-}
-
-
-.publications .itemThumbBook img {
-margin: 0 0 10px 0 !important;
-}
-
-@media only screen and (min-width : 979px) {
-.publications .desktopOnly:last-of-type {
-margin-right: 0px !important;
-}
-.mobile {
-display: none;
-}
-
-.publications li {
-clear: none !important;
-}
-
-}
-
-
-
-.publications-products a {
-background: #2846A5;
-}
-
-.training a {
-background: #4F2170;
-}
-
-.testing a {
-background: #CE421B;
-}
-
-.research a {
-background: #287826;	
-}
-
 
 
 // Pubns
