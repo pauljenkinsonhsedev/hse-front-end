@@ -2,5 +2,8 @@
 .DS_Store
 *.lbi
 node_modules
-simple-healthy-safety/*
-aboutyou/*
+src/pubns
+src/assets/images
+src/agriculture
+build/*
+

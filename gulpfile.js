@@ -200,7 +200,7 @@ gulp.task('minify-secureroot-v5css',() => {
 
 // ALL
 
-gulp.task('secureroot', gulp.series('secureroot-htm', 'secureroot-cssv5', 'secureroot-cssv4', 'secureroot-jsv5', 'secureroot-jsv4', 'secureroot-imagesv4', 'secureroot-imagesv5', function (done) {
+gulp.task('secureroot', gulp.series('secureroot-cssv5', 'secureroot-cssv4', 'secureroot-jsv5', 'secureroot-jsv4', 'secureroot-imagesv4', 'secureroot-imagesv5', function (done) {
   done();
 }));
 
