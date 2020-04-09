@@ -1,21 +1,21 @@
 /*
-Error: Undefined variable: "$gray".
-        on line 17 of /Users/pjenkinson/Dev/sites/hse-front-end/assets/v5-css/scss/components.scss
+Error: Undefined variable: "$red".
+        on line 11 of /Users/pjenkinson/Dev/sites/hse-front-end/src/assets/v5-css/scss/components.scss
 
-12: }
-13: 
-14: .lightbox li {
-15: background: none;
-16: padding-right: 0 !important;
-17: background: $gray;
-18: border: 5px solid $gray;
-19: }
-20: 
-21: #contentContainer ul.lightbox li {
-22: padding-bottom: 0 !important;
+6: text-decoration: none !important;
+7: }
+8: 
+9: 
+10: ul.itemThumbBook .header, ul.itemThumbBook .resourceTitle {
+11: color: $red;
+12: text-decoration: underline;   
+13: }
+14: 
+15: ul.itemThumbBook .header:hover , ul.itemThumbBook .resourceTitle:hover, ul.itemThumbBook a:focus .header, ul.itemThumbBook a:focus .resourceTitle {
+16: color: $black !important;
 
 Backtrace:
-/Users/pjenkinson/Dev/sites/hse-front-end/assets/v5-css/scss/components.scss:17
+/Users/pjenkinson/Dev/sites/hse-front-end/src/assets/v5-css/scss/components.scss:11
 /Applications/Adobe Dreamweaver 2020/Adobe Dreamweaver 2020.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/script/tree/variable.rb:49:in `_perform'
 /Applications/Adobe Dreamweaver 2020/Adobe Dreamweaver 2020.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/script/tree/node.rb:50:in `perform'
 /Applications/Adobe Dreamweaver 2020/Adobe Dreamweaver 2020.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/tree/visitors/perform.rb:402:in `visit_prop'
@@ -61,4 +61,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$gray\".\A         on line 17 of /Users/pjenkinson/Dev/sites/hse-front-end/assets/v5-css/scss/components.scss\A \A 12: }\A 13: \A 14: .lightbox li {\A 15: background: none;\A 16: padding-right: 0 !important;\A 17: background: $gray;\A 18: border: 5px solid $gray;\A 19: }\A 20: \A 21: #contentContainer ul.lightbox li {\A 22: padding-bottom: 0 !important;"; }
+  content: "Error: Undefined variable: \"$red\".\A         on line 11 of /Users/pjenkinson/Dev/sites/hse-front-end/src/assets/v5-css/scss/components.scss\A \A 6: text-decoration: none !important;\A 7: }\A 8: \A 9: \A 10: ul.itemThumbBook .header, ul.itemThumbBook .resourceTitle {\A 11: color: $red;\A 12: text-decoration: underline;   \A 13: }\A 14: \A 15: ul.itemThumbBook .header:hover , ul.itemThumbBook .resourceTitle:hover, ul.itemThumbBook a:focus .header, ul.itemThumbBook a:focus .resourceTitle {\A 16: color: $black !important;"; }
