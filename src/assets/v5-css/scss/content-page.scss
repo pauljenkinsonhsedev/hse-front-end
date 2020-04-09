@@ -369,6 +369,17 @@ margin-bottom: 20px;
 
 // Accordion 
 
+.ui-accordion .ui-accordion-header .ui-icon {
+display: inline-block !important;
+vertical-align: middle !important;
+margin-top: -.25em !important;
+margin-right: 20px !important;
+position: relative !important;
+text-indent: -99999px !important;
+overflow: hidden !important;
+background-repeat: no-repeat !important;
+}
+
 .ui-accordion .ui-accordion-header a {
 font-size: 0.9rem !important;
 }
@@ -381,28 +392,39 @@ width: 100% !important;
 
 .ui-accordion-header {
 background: none !important;
-padding: 5px !important;
+color: $red !important;
+padding: 10px 0 !important;
 border-radius: 0 !important;
-margin: 10px 0 0 0 !important;
+text-decoration: underline !important;
+}
+.ui-accordion-header:hover {
+color: $black !important;
+text-decoration: none !important;
 }
 
-.ui-accordion-header.ui-state-active a {
-background: none !important;
+
+.ui-accordion-header.ui-state-focus  {
+background: $focus !important;
+color: $black !important;
+text-decoration: none !important;
 }
+
+.ui-accordion-header.ui-state-active {
+color: $black !important;
+margin: 0 !important;
+}
+
 
 .ui-corner-all {
 border-radius: 0 !important;
 }
 
 .ui-accordion .ui-accordion-content-active {
-border: 1px solid $hseblack !important;
+border: 1px solid $gray !important;
 border-top: 0 !important;
 border-radius: 0 !important;
 }
 
-.ui-state-active {
-border: 1px solid $hseblack !important;	
-}
 
 // Print page
 #printGuide {

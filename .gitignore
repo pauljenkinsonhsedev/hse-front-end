@@ -5,6 +5,13 @@ node_modules
 src/pubns
 src/assets/images
 src/agriculture
+src/msd
 build/
-secureroot/*.htm
+secureroot/aboutyou
+secureroot/agriculture
+secureroot/msd
+secureroot/pubns
+secureroot/simple-health-safety
+
+
 

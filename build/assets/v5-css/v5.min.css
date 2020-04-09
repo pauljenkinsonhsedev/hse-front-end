@@ -537,6 +537,9 @@ a:hover, a:focus {
   text-decoration: none;
   color: #333333; }
 
+#contentContainer ul.boxList li a:focus h3 {
+  color: #000 !important; }
+
 #contentContainer li a:focus-within {
   background: #ffdd00;
   outline: solid transparent !important;
@@ -2089,6 +2092,16 @@ body.lwet #feature-home {
   width: 100%;
   height: 100%; }
 
+.ui-accordion .ui-accordion-header .ui-icon {
+  display: inline-block !important;
+  vertical-align: middle !important;
+  margin-top: -.25em !important;
+  margin-right: 20px !important;
+  position: relative !important;
+  text-indent: -99999px !important;
+  overflow: hidden !important;
+  background-repeat: no-repeat !important; }
+
 .ui-accordion .ui-accordion-header a {
   font-size: 0.9rem !important; }
 
@@ -2098,23 +2111,31 @@ body.lwet #feature-home {
 
 .ui-accordion-header {
   background: none !important;
-  padding: 5px !important;
+  color: #981e32 !important;
+  padding: 10px 0 !important;
   border-radius: 0 !important;
-  margin: 10px 0 0 0 !important; }
+  text-decoration: underline !important; }
 
-.ui-accordion-header.ui-state-active a {
-  background: none !important; }
+.ui-accordion-header:hover {
+  color: #000 !important;
+  text-decoration: none !important; }
+
+.ui-accordion-header.ui-state-focus {
+  background: #ffdd00 !important;
+  color: #000 !important;
+  text-decoration: none !important; }
+
+.ui-accordion-header.ui-state-active {
+  color: #000 !important;
+  margin: 0 !important; }
 
 .ui-corner-all {
   border-radius: 0 !important; }
 
 .ui-accordion .ui-accordion-content-active {
-  border: 1px solid #333333 !important;
+  border: 1px solid #eee !important;
   border-top: 0 !important;
   border-radius: 0 !important; }
-
-.ui-state-active {
-  border: 1px solid #333333 !important; }
 
 #printGuide {
   float: left;

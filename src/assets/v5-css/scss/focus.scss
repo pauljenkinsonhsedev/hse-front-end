@@ -4,14 +4,20 @@ a:focus {
 outline: $focus 5px solid !important;
 }
 
+a:hover, a:focus {
+    text-decoration: none;
+    color: $redhover;
+    }
+
 // COMPONENT FOCUS
 
-a:hover, a:focus {
-text-decoration: none;
-color: $redhover;
-}
+
 
 // Content focus
+
+#contentContainer ul.boxList li a:focus h3 {
+color: $black !important;
+}
 
 #contentContainer li a:focus-within {
 background: $focus;
@@ -48,13 +54,17 @@ text-decoration: none;
 border-bottom: 2px solid $black !important;
 }
 
+// Accordion
+
+
+
 
 // Form focus
 
 
 .v5-button a:focus, button.v5-button:focus, #navSecondary ul li a:focus, .footer-links-container li a:focus-within {
-    border-bottom: 0 !important;
-    }
+border-bottom: 0 !important;
+}
 
 // itemThumbBook within box component
 
