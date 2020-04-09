@@ -38,16 +38,11 @@ color: $red !important;
 background: none !important;}
 }
 
-.box p , .box.backgroundRed p {
+.box p:last-child {
 margin-bottom: 0 !important;
 }
-
-.box.backgroundRed.hasMore p {
-margin-bottom: 10px !important;
-}
-
-.box.backgroundRed p.more {
-margin-bottom: 10px !important;
+.box.hasMore p:last-child {
+margin-bottom: 10px !important;	
 }
 
 .more {

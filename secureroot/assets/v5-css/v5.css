@@ -2556,13 +2556,10 @@ dl.dlpretty {
   .boxSplit {
     background: none !important; } }
 
-.box p, .box.backgroundRed p {
+.box p:last-child {
   margin-bottom: 0 !important; }
 
-.box.backgroundRed.hasMore p {
-  margin-bottom: 10px !important; }
-
-.box.backgroundRed p.more {
+.box.hasMore p:last-child {
   margin-bottom: 10px !important; }
 
 .more {
