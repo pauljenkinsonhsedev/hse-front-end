@@ -136,7 +136,7 @@ $( "#cookies-settings" ).submit(function( event ) {
 
 	// Creates cookie to confirm preferences have been set
 		
-	Cookies.set(cookiePreferences, true , { path: '/', sameSite: 'Lax', secure: true, expires: 365})
+	Cookies.set(cookiePreferences, true , { path: '/', sameSite: 'lax', expires: 365})
 		
 	// Removes cookie banner
 		
