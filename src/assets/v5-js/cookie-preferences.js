@@ -65,51 +65,51 @@ $( "#cookies-settings" ).submit(function( event ) {
 	// #1 Only essential cookies
 		
 	if (analytics == 'off' && marketing == 'off' && settings == 'off' ) {
-	Cookies.set(cookiePolicy, encodedOnlyEssential, {path: '/', domain: '.hse.gov.uk', sameSite: 'None', secure: true , expires: 365})
+	Cookies.set(cookiePolicy, encodedOnlyEssential, {path: '/', domain: '.hse.gov.uk', secure: true , expires: 365})
   }
 	
 	// #2 Approve all cookies
 		
 	if (analytics == 'on' && marketing == 'on' && settings == 'on' ) {
-	Cookies.set(cookiePolicy, encodedAcceptAll, {path: '/', domain: '.hse.gov.uk', sameSite: 'None', secure: true , expires: 365})
+	Cookies.set(cookiePolicy, encodedAcceptAll, {path: '/', domain: '.hse.gov.uk', secure: true , expires: 365})
 	}
 		
 	// #3 Just analytics
 		
 	if (analytics == 'on' && marketing == 'off' && settings == 'off' ) {
-	Cookies.set(cookiePolicy, encodedAnalytics, {path: '/', domain: '.hse.gov.uk', sameSite: 'None', secure: true , expires: 365})
+	Cookies.set(cookiePolicy, encodedAnalytics, {path: '/', domain: '.hse.gov.uk', secure: true , expires: 365})
 	}
 		
 	// #4 Analytics and marketing
 		
 	if (analytics == 'on' && marketing == 'on' && settings == 'off' ) {
-		Cookies.set(cookiePolicy, encodedAnalyticsMarketing, {path: '/', domain: '.hse.gov.uk', sameSite: 'None', secure: true , expires: 365})
+		Cookies.set(cookiePolicy, encodedAnalyticsMarketing, {path: '/', domain: '.hse.gov.uk', secure: true , expires: 365})
 	}
 	
 	// #5 Just marketing/campaigns
 		
 	if (analytics == 'off' && marketing == 'on' && settings == 'off' ) {
-	Cookies.set(cookiePolicy, encodedCampaigns, {path: '/', domain: '.hse.gov.uk', sameSite: 'None', secure: true, expires: 365})
+	Cookies.set(cookiePolicy, encodedCampaigns, {path: '/', domain: '.hse.gov.uk', secure: true, expires: 365})
 
 	}
 		
 	// #6 Analytics and settings
 		
 	if (analytics == 'on' && marketing == 'off' && settings == 'on' ) {
-		Cookies.set(cookiePolicy, encodedAnalyticsSettings, {path: '/', domain: '.hse.gov.uk', sameSite: 'None', secure: true, expires: 365})
+		Cookies.set(cookiePolicy, encodedAnalyticsSettings, {path: '/', domain: '.hse.gov.uk', secure: true, expires: 365})
 	}
 			
     // #7 Campaigns and settings
 		
 	if (analytics == 'off' && marketing == 'on' && settings == 'on' ) {
-			Cookies.set(cookiePolicy, encodedCampaignsSettings, {path: '/', domain: '.hse.gov.uk', sameSite: 'None', secure: true , expires: 365})
+			Cookies.set(cookiePolicy, encodedCampaignsSettings, {path: '/', domain: '.hse.gov.uk', secure: true , expires: 365})
 
 	}
 	
 	// #8 Just settings
 		
 	if (analytics == 'off' && marketing == 'off' && settings == 'on' ) {
-			Cookies.set(cookiePolicy, encodedSettings, {path: '/', domain: '.hse.gov.uk', sameSite: 'None', secure: true , expires: 365})
+			Cookies.set(cookiePolicy, encodedSettings, {path: '/', domain: '.hse.gov.uk', secure: true , expires: 365})
 
 	}
 		
@@ -136,7 +136,7 @@ $( "#cookies-settings" ).submit(function( event ) {
 
 	// Creates cookie to confirm preferences have been set
 		
-	Cookies.set(cookiePreferences, true , { path: '/', domain: '.hse.gov.uk', sameSite: 'lax', expires: 365})
+	Cookies.set(cookiePreferences, true , { path: '/', domain: '.hse.gov.uk', secure: true, expires: 365})
 		
 	// Removes cookie banner
 		
