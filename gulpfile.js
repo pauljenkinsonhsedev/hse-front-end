@@ -111,7 +111,7 @@ gulp.task('build-jsv5', function () {
 gulp.task('footer-js', function () {    
 
   // Gets all V5 footer JS source files
-  return gulp.src(['./src/assets/v5-js/slinky-ie11-fix.js','./src/assets/v5-js/google-custom-search.js','./src/assets/v5-js/js-offcanvas.pkgd.min.js','./src/assets/v5-js/js-offcanvas-trigger.js', './src/assets/v5-js/aria.js', './src/assets/v5-js/website-feedback.src.js', './src/assets/v5-js/content-page.js', './src/assets/v5-js/notification-bar.js', './src/assets/v5-js/top-tasks.js', './src/assets/v5-js/cookies-gtm.js'])
+  return gulp.src(['./src/assets/v5-js/base64-poly.js','./src/assets/v5-js/slinky-ie11-fix.js','./src/assets/v5-js/google-custom-search.js','./src/assets/v5-js/js-offcanvas.pkgd.min.js','./src/assets/v5-js/js-offcanvas-trigger.js', './src/assets/v5-js/aria.js', './src/assets/v5-js/website-feedback.src.js', './src/assets/v5-js/content-page.js', './src/assets/v5-js/notification-bar.js', './src/assets/v5-js/top-tasks.js', './src/assets/v5-js/cookies-gtm.js'])
       // Concats js files to single V5 footer js file
       .pipe(concat('v5-footer.js'))
       // Renames files for dreamweaver template
