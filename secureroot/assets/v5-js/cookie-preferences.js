@@ -136,7 +136,7 @@ $( "#contentContainer" ).prepend( '<div id="cookie-preferences-update-notice" cl
 
 // Creates cookie to confirm preferences have been set
 
-Cookies.set(cookiePreferences, true , { path: '/', domain: '.hse.gov.uk', secure: true, expires: 365})
+Cookies.set(cookiePreferences, cookieBannerAccepted , { path: '/', domain: '.hse.gov.uk', secure: true, expires: 365})
 // Removes cookie banner
 $('#cookieContainer').remove();
 
