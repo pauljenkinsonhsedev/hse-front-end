@@ -317,11 +317,16 @@ float: left;
 
 #pageContainer {
 margin: 20px auto; 
+clear: both;
 }
 
 
 #contentContainer {
 margin: 0 !important;
+// Important fix for Edge
+// 81.0.416.62
+//-webkit-transform: translateZ(0);
+//transform: translateZ(0);
 }
 
 // Input focus fix

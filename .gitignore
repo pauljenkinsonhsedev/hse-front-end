@@ -1,4 +1,3 @@
-
 .DS_Store
 *.lbi
 node_modules
@@ -6,7 +5,10 @@ src/pubns
 src/assets/images
 src/agriculture
 src/msd
-build/
+src/aboutyou
+src/pubns
+src/simple-health-safety
+build/**
 secureroot/aboutyou
 secureroot/agriculture
 secureroot/msd

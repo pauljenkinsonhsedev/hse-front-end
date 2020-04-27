@@ -1,21 +1,21 @@
 /*
 Error: Undefined variable: "$desktop".
-        on line 26 of /Users/pjenkinson/Dev/v5-cookies/assets/v5-css/scss/layout.scss
+        on line 23 of /Users/pjenkinson/Dev/sites/hse-front-end/src/assets/v5-css/scss/layout.scss
 
-21: }
-22: 
-23: .fixed-container {
-24: width: 100%;
-25: margin: auto;
-26: @media only screen and (min-width : $desktop) {
-27: width: 940px;
-28: }
-29: }
-30: 
-31: .breadCrumbContainer, #backTo {
+18: }
+19: 
+20: .fixed-container {
+21: width: 100%;
+22: margin: auto;
+23: @media only screen and (min-width : $desktop) {
+24: width: 940px;
+25: }
+26: }
+27: 
+28: .breadCrumbContainer, #backTo {
 
 Backtrace:
-/Users/pjenkinson/Dev/v5-cookies/assets/v5-css/scss/layout.scss:26
+/Users/pjenkinson/Dev/sites/hse-front-end/src/assets/v5-css/scss/layout.scss:23
 /Applications/Adobe Dreamweaver 2020/Adobe Dreamweaver 2020.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/script/tree/variable.rb:49:in `_perform'
 /Applications/Adobe Dreamweaver 2020/Adobe Dreamweaver 2020.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/script/tree/node.rb:50:in `perform'
 /Applications/Adobe Dreamweaver 2020/Adobe Dreamweaver 2020.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/tree/visitors/perform.rb:555:in `block in run_interp_no_strip'
@@ -65,4 +65,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$desktop\".\A         on line 26 of /Users/pjenkinson/Dev/v5-cookies/assets/v5-css/scss/layout.scss\A \A 21: }\A 22: \A 23: .fixed-container {\A 24: width: 100%;\A 25: margin: auto;\A 26: @media only screen and (min-width : $desktop) {\A 27: width: 940px;\A 28: }\A 29: }\A 30: \A 31: .breadCrumbContainer, #backTo {"; }
+  content: "Error: Undefined variable: \"$desktop\".\A         on line 23 of /Users/pjenkinson/Dev/sites/hse-front-end/src/assets/v5-css/scss/layout.scss\A \A 18: }\A 19: \A 20: .fixed-container {\A 21: width: 100%;\A 22: margin: auto;\A 23: @media only screen and (min-width : $desktop) {\A 24: width: 940px;\A 25: }\A 26: }\A 27: \A 28: .breadCrumbContainer, #backTo {"; }

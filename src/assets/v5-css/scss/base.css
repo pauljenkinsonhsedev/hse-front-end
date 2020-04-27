@@ -11,13 +11,6 @@
 a {
   text-decoration: underline; }
 
-a:focus {
-  outline: #ffdd00 5px solid !important; }
-
-a:hover, a:focus {
-  text-decoration: none;
-  color: #333333; }
-
 #contentContainer a:link,
 #contentContainer a:visited,
 #contentContainer a {
@@ -36,6 +29,10 @@ a:hover, a:focus {
 
 #contentContainer .linkList {
   margin: 0 0 1em 0; }
+
+#contentContainer .backgroundRed .linkList li a::before {
+  background-image: none;
+  padding-right: 0; }
 
 .p-10 {
   padding: 10px !important; }
@@ -96,31 +93,6 @@ dd {
 @media only screen and (min-width: 992px) {
   .linkArrow li {
     display: block; } }
-#contentContainer ul.itemThumbBook {
-  margin: 0 !important; }
-
-#contentContainer ul.itemThumbBook li {
-  float: left;
-  padding: 0 !important;
-  margin-bottom: 10px;
-  width: 100%; }
-
-#contentContainer ul.itemThumbBook li a, #contentContainer ul.itemThumbBook li a:hover span.header {
-  text-decoration: none; }
-
-#contentContainer ul.itemThumbBook li a span.header, #contentContainer ul.itemThumbBook li a span.resourceTitle {
-  text-decoration: underline; }
-
-#contentContainer ul.itemThumbBook li a:hover span.header, #contentContainer ul.itemThumbBook li a:hover span.resourceTitle, #contentContainer ul.itemThumbBook li a:hover span {
-  text-decoration: none;
-  color: #333333; }
-
-#contentContainer ul.itemThumbBook li p {
-  margin: 0 !important; }
-
-#contentContainer ul.itemThumbBook span {
-  padding-right: 0; }
-
 #contentContainer ul.listLinks li {
   background: none;
   padding-left: 0;
@@ -234,7 +206,8 @@ img.responsiveImg {
   float: left; }
 
 #pageContainer {
-  margin: 20px auto; }
+  margin: 20px auto;
+  clear: both; }
 
 #contentContainer {
   margin: 0 !important; }

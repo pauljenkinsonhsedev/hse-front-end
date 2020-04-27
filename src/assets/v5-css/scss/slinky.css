@@ -1,21 +1,21 @@
 /*
 Error: Undefined variable: "$gray".
-        on line 42 of /Users/pjenkinson/Dev/v5-cookies/assets/v5-css/scss/slinky.scss
+        on line 42 of /Users/pjenkinson/Dev/sites/hse-front-end/src/assets/v5-css/scss/slinky.scss
 
-37:       line-height: 1.4;
-38:       margin: 0;
-39:       order: 1; }
+37: line-height: 1.4;
+38: margin: 0;
+39: order: 1; }
 40: 
 41: .slinky-theme-default {
-42:   background: $gray; }
-43:   .slinky-theme-default .title {
-44:     color: #333;
-45:     padding: 1em; }
-46:   .slinky-theme-default li {
-47:     line-height: 1; }
+42: background: $gray; }
+43: .slinky-theme-default .title {
+44: color: #333;
+45: padding: 1em; }
+46: .slinky-theme-default li {
+47: line-height: 1; }
 
 Backtrace:
-/Users/pjenkinson/Dev/v5-cookies/assets/v5-css/scss/slinky.scss:42
+/Users/pjenkinson/Dev/sites/hse-front-end/src/assets/v5-css/scss/slinky.scss:42
 /Applications/Adobe Dreamweaver 2020/Adobe Dreamweaver 2020.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/script/tree/variable.rb:49:in `_perform'
 /Applications/Adobe Dreamweaver 2020/Adobe Dreamweaver 2020.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/script/tree/node.rb:50:in `perform'
 /Applications/Adobe Dreamweaver 2020/Adobe Dreamweaver 2020.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/tree/visitors/perform.rb:402:in `visit_prop'
@@ -61,4 +61,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$gray\".\A         on line 42 of /Users/pjenkinson/Dev/v5-cookies/assets/v5-css/scss/slinky.scss\A \A 37:       line-height: 1.4;\A 38:       margin: 0;\A 39:       order: 1; }\A 40: \A 41: .slinky-theme-default {\A 42:   background: $gray; }\A 43:   .slinky-theme-default .title {\A 44:     color: #333;\A 45:     padding: 1em; }\A 46:   .slinky-theme-default li {\A 47:     line-height: 1; }"; }
+  content: "Error: Undefined variable: \"$gray\".\A         on line 42 of /Users/pjenkinson/Dev/sites/hse-front-end/src/assets/v5-css/scss/slinky.scss\A \A 37: line-height: 1.4;\A 38: margin: 0;\A 39: order: 1; }\A 40: \A 41: .slinky-theme-default {\A 42: background: $gray; }\A 43: .slinky-theme-default .title {\A 44: color: #333;\A 45: padding: 1em; }\A 46: .slinky-theme-default li {\A 47: line-height: 1; }"; }

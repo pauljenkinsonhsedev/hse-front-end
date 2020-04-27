@@ -223,8 +223,7 @@ padding: 20px 0;
 }
 
 #cookieNotify {
-background: none;
-padding: 10px 0 !important;
+background: none !important;
 }
 
 #cookieNotify p {
@@ -320,4 +319,17 @@ padding: 20px !important;
 border: 1px solid $gray !important;
 border-top: 0 !important;
 border-radius: 0 !important;
+}
+
+// Containers
+
+.v5-container {
+width: 90%;
+padding-left: 5%;
+padding-right: 5%;
+@media only screen and (min-width : $desktop) {
+width: 940px !important;
+margin: 0 auto;
+padding: 0;
+}
 }

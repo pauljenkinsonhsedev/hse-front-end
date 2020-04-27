@@ -1,8 +1,9 @@
 // Cookie notification
 
 #cookieContainer {
+float: left;
 background-color: #333;
-position:relative;
+display: block;
 }
 
 .ie7 #cookieContainer {
@@ -10,7 +11,11 @@ position:relative;
 }
 
 #cookieNotify {
+	width: 100%;
+	@media only screen and (min-width : $desktop) {
 	width: 940px;
+	}
+	padding: 0px !important;
 	margin: 5px auto;
 	background: url(../v4-images/shared/cookie-icon.png) no-repeat 0 4px;
 }

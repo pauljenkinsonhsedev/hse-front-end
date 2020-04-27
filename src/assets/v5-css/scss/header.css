@@ -1,21 +1,21 @@
 /*
 Error: Undefined variable: "$desktop".
-        on line 80 of /Users/pjenkinson/Dev/sites/hse-front-end/assets/v5-css/scss/header.scss
+        on line 83 of /Users/pjenkinson/Dev/sites/hse-front-end/src/assets/v5-css/scss/header.scss
 
-75: 
-76: // Cookie container 
-77: 
 78: #cookieContainer {
 79: width: 90% !important;
-80: @media only screen and (min-width : $desktop) {
-81: width: 100% !important;
-82: padding: 0 !important;
-83: }
-84: padding-left: 5% !important;
-85: padding-right: 5% !important;
+80: padding: 10px 0;
+81: padding-left: 5%;
+82: padding-right: 5%;
+83: @media only screen and (min-width : $desktop) {
+84: width: 100% !important;
+85: padding-left: 0;
+86: padding-right: 0;
+87: }
+88: }
 
 Backtrace:
-/Users/pjenkinson/Dev/sites/hse-front-end/assets/v5-css/scss/header.scss:80
+/Users/pjenkinson/Dev/sites/hse-front-end/src/assets/v5-css/scss/header.scss:83
 /Applications/Adobe Dreamweaver 2020/Adobe Dreamweaver 2020.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/script/tree/variable.rb:49:in `_perform'
 /Applications/Adobe Dreamweaver 2020/Adobe Dreamweaver 2020.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/script/tree/node.rb:50:in `perform'
 /Applications/Adobe Dreamweaver 2020/Adobe Dreamweaver 2020.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/tree/visitors/perform.rb:555:in `block in run_interp_no_strip'
@@ -65,4 +65,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$desktop\".\A         on line 80 of /Users/pjenkinson/Dev/sites/hse-front-end/assets/v5-css/scss/header.scss\A \A 75: \A 76: // Cookie container \A 77: \A 78: #cookieContainer {\A 79: width: 90% !important;\A 80: @media only screen and (min-width : $desktop) {\A 81: width: 100% !important;\A 82: padding: 0 !important;\A 83: }\A 84: padding-left: 5% !important;\A 85: padding-right: 5% !important;"; }
+  content: "Error: Undefined variable: \"$desktop\".\A         on line 83 of /Users/pjenkinson/Dev/sites/hse-front-end/src/assets/v5-css/scss/header.scss\A \A 78: #cookieContainer {\A 79: width: 90% !important;\A 80: padding: 10px 0;\A 81: padding-left: 5%;\A 82: padding-right: 5%;\A 83: @media only screen and (min-width : $desktop) {\A 84: width: 100% !important;\A 85: padding-left: 0;\A 86: padding-right: 0;\A 87: }\A 88: }"; }

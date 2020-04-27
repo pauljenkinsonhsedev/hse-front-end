@@ -1,6 +1,7 @@
 // Header 
 #headerContainer {
 width: 100%;
+float: left;
 max-width: 100%;
 min-width: 100%;
 background-image: none;
@@ -76,14 +77,12 @@ background: none;
 // Cookie container 
 #cookieContainer {
 width: 90% !important;
+padding: 10px 0;
+padding-left: 5%;
+padding-right: 5%;
 @media only screen and (min-width : $desktop) {
 width: 100% !important;
-padding: 0 !important;
+padding-left: 0;
+padding-right: 0;
 }
-padding-left: 5% !important;
-padding-right: 5% !important;
-}
-
-#cookieNotify {
-max-width: 100% !important;
 }
