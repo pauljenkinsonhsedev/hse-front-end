@@ -1,0 +1,116 @@
+// Off-canvas navigation
+
+// HSE logo
+#offCanvasHeaderLogo {
+float: left;
+background: url(../../assets/v4-images/website/logos/hselogo.gif) no-repeat 0 0;
+line-height: 1.333em;
+font-weight: 700;
+font-family: Helvetica,Arial,sans-serif;
+color: #fff;
+}
+
+#offCanvasHeaderLogo a {
+color: #fff;
+display: block;
+padding: 10px 0 0 65px;
+height: 3.75em;
+width: 170px;
+text-decoration: none;
+}
+
+#off-canvas-container {
+padding-top: 10px;
+background: $red;
+overflow: hidden;
+}
+
+#off-canvas-menu {
+float: left;
+width: 100%;
+clear: both;
+font-size: 1rem;
+background: $gray;
+}
+
+#off-canvas-menu li {
+width: 100%;
+float: left;
+list-style-type: none;
+background: none;
+padding: 0;
+border-bottom: 1px solid #c2c2c2;
+}
+
+#off-canvas-menu li a {
+float: left;
+width: 100%;
+color: $body;
+box-sizing: border-box;
+}
+
+#off-canvas-top {
+width: 90%;
+float: left;
+padding: 10px 5% 0 5%;
+}
+
+.responsive-nav-container #off-canvas-menu li a:hover {
+color: white !important;
+}
+
+
+.responsive-nav-container a.js-offcanvas-close {
+float: right;
+text-decoration: none;
+}
+
+.responsive-nav-container #off-canvas-menu li a {
+padding: 15px 5% 15px 5%;
+}
+
+.responsive-nav-container #off-canvas-menu li:hover {
+background: $hseblack;
+}
+
+#triggerButton span {
+color: white;
+}
+
+#triggerButton {
+position: relative;
+float: right;
+}
+
+#triggerButton:hover i {
+color: white;
+}
+
+.off-canvas-close a:hover {
+cursor: pointer;
+}
+
+#offCanvas {
+border-bottom: 3px solid #999;
+background: $red;
+}
+
+.full-width-container {
+width: 100%;
+float: left;
+clear: both;
+}
+
+.responsive-container {
+width: 90%;
+padding-left: 5%;
+padding-right: 5%;
+}
+
+.responsive-nav-container {
+width: 100%;
+}
+
+.responsive-nav-container #off-canvas-menu li:hover a::before {
+color: white;	
+}

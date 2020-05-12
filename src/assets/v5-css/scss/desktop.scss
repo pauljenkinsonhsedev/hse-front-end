@@ -6,8 +6,7 @@
 min-width: 960px;
 }
 #header {
-max-width: 940px;
-width: 940px;
+width: 100%;
 padding-left: 0;
 padding-right: 0;
 }
@@ -226,10 +225,10 @@ margin-left: 640px !important;
 width: 940px;
 }
 
-#globalSearch {
+#globalSearch  {
 float: right;	
 }
-#globalSearch table {
+#globalSearch table, #globalSearchMobile  table {
 width: 250px !important;	
 }
 

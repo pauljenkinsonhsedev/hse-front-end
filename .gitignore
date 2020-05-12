@@ -2,11 +2,15 @@
 *.lbi
 node_modules
 src/pubns
+src/asbestos
 src/assets/images
 src/agriculture
+src/aboutus
+src/news
 src/msd
 src/aboutyou
 src/pubns
+src/statistics
 src/simple-health-safety
 build/**
 secureroot/aboutyou

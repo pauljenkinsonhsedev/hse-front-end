@@ -139,10 +139,9 @@ margin: 0;
 }
 
 
-#triggerButton span.c-button__text::before {
+.menu-button span::before {
 content: " ";
 background-image: url('../../assets/v5-images/icons/svg/solid/bars-white.svg');
-float: left;
 background-repeat: no-repeat;
 display: inline-block;
 width: 25px;
@@ -229,9 +228,11 @@ content: " ";
 background-size: 28px;
 background-image: url('../../assets/v5-images/icons/svg/solid/arrow-right-red.svg');
 background-repeat: no-repeat;
+background-position: right;
 display: inline-block;
 width: 30px;
 height: 30px;
+padding-left: 5px;
 margin: 0;
 }
 
@@ -240,15 +241,20 @@ content: " ";
 background-size: 28px;
 background-image: url('../../assets/v5-images/icons/svg/solid/arrow-left-red.svg');
 background-repeat: no-repeat;
+background-position: left;
 display: inline-block;
 width: 30px;
 height: 30px;
+padding-right: 5px;
 margin: 0;
 }
 
-#off-canvas-menu li a::before {
+.menu li a::before {
 content: " ";
 background-image: url('../../assets/v5-images/icons/svg/solid/chevron-right-gray.svg');
+@media only screen and (min-width : $desktop) {
+display: none;
+}
 float: right;
 background-repeat: no-repeat;
 display: inline-block;
@@ -257,9 +263,12 @@ height: 25px;
 margin: 0;
 }
 
-#off-canvas-menu li a:hover::before {
+.menu li a:hover::before {
 content: " ";
 background-image: url('../../assets/v5-images/icons/svg/solid/chevron-right-white.svg');
+@media only screen and (min-width : $desktop) {
+display: none;
+}
 float: right;
 background-repeat: no-repeat;
 display: inline-block;

@@ -2,12 +2,13 @@
 
 a:focus {
 outline: $focus 5px solid !important;
+z-index: 100;
 }
 
 a:hover, a:focus {
-    text-decoration: none;
-    color: $redhover;
-    }
+text-decoration: none;
+color: $redhover;
+}
 
 // COMPONENT FOCUS
 
@@ -34,7 +35,7 @@ border-bottom: 2px solid $black !important;
 color: $black;
 }
 
-#contentContainer .backgroundRed p a:focus, #beta-user-testing p a:focus, #contentContainer .backgroundRed li a:focus-within, .hsl-links a:focus-within, .footer-links-container li a:focus-within, .breadCrumbContainer li a:focus, .skip:focus, #navSecondary ul li a:focus, .v5-button a:focus, .v5-hide-button:focus, button.v5-button:focus, .navDropdown li a:focus, .multistep li a:focus, .listCaret li a:focus, .pagination-text a:focus, .listLinks a:focus  {
+#contentContainer .backgroundRed p a:focus, #beta-user-testing p a:focus, #contentContainer .backgroundRed li a:focus-within, .hsl-links a:focus-within, .footer-links-container li a:focus-within, .breadCrumbContainer li a:focus, .skip:focus, #navSecondary ul li a:focus, .v5-button a:focus, .v5-hide-button:focus, button.v5-button:focus, .menu li a:focus, .multistep li a:focus, .listCaret li a:focus, .pagination-text a:focus, .listLinks a:focus  {
 outline: solid transparent !important;
 text-decoration: none !important;
 background: $focus !important;

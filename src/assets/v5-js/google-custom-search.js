@@ -18,4 +18,6 @@ $(window).load(function () {
 
 window.onload = function(){
 document.getElementById('gsc-i-id1').placeholder = 'Search hse.gov.uk';
+document.getElementById('gsc-i-id2').placeholder = 'Search hse.gov.uk';
+
 };

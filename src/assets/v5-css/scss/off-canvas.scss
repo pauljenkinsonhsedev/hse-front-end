@@ -1,32 +1,121 @@
 // Off-canvas navigation
 
+// HSE logo
+#offCanvasHeaderLogo {
+float: left;
+background: url(../../assets/v4-images/website/logos/hselogo.gif) no-repeat 0 0;
+line-height: 1.333em;
+font-weight: 700;
+font-family: Helvetica,Arial,sans-serif;
+color: #fff;
+}
+
+#offCanvasHeaderLogo a {
+color: #fff;
+display: block;
+padding: 10px 0 0 65px;
+height: 3.75em;
+width: 170px;
+text-decoration: none;
+}
+
 #off-canvas-container {
 padding-top: 10px;
 background: $red;
+overflow: hidden;
 }
 
-#off-canvas-menu {
-float: left;
+
+.menu {
+display: none;
+font-size: 1.1em!important;
+@media only screen and (min-width : $desktop) {
+display: block;
+}
+}
+
+@media only screen and (min-width : $desktop) {
+
+.menu-button {
+display: none;
+}
+
+}
+
+.menu-button {
+float: right;
+height: 25px;
+width: 25px;
+}
+
+.menu.active {
+display: block;
+}
+
+.menu a {
+display: block;
+}
+
+.no-js .menu {
+display: block;
+}
+
+.menu {
 width: 100%;
+@media only screen and (min-width : $desktop) {
+max-width: 940px;
+min-width: 940px;
+margin: 0 auto;
+}
 clear: both;
 font-size: 1rem;
 background: $gray;
 }
 
-#off-canvas-menu li {
+.menu li {
 width: 100%;
 float: left;
 list-style-type: none;
 background: none;
 padding: 0;
 border-bottom: 1px solid #c2c2c2;
+@media only screen and (min-width : $desktop) {
+width: auto;
+margin: 0;
+float: left;
+text-align: center;
+position: relative;
+background: $red;
+border-bottom: none;
 }
 
-#off-canvas-menu li a {
+}
+
+.menu li a {
 float: left;
 width: 100%;
 color: $body;
 box-sizing: border-box;
+padding: 15px 5% 15px 5%;
+@media only screen and (min-width : $desktop) {
+position: relative;
+background-image: none;
+vertical-align: middle;
+font-weight: bold;
+color: #fff;
+padding: 6px 19px 0 19px;
+height: 33px;
+text-decoration: none;
+display: block;
+}
+
+}
+
+.menu li a:hover {
+@media only screen and (min-width : $desktop) {
+background: $hseblack;
+}
+
 }
 
 #off-canvas-top {
@@ -35,7 +124,7 @@ float: left;
 padding: 10px 5% 0 5%;
 }
 
-.responsive-nav-container #off-canvas-menu li a:hover {
+.responsive-nav-container .menu li a:hover {
 color: white !important;
 }
 
@@ -45,11 +134,11 @@ float: right;
 text-decoration: none;
 }
 
-.responsive-nav-container #off-canvas-menu li a {
+.responsive-nav-container .menu li a {
 padding: 15px 5% 15px 5%;
 }
 
-.responsive-nav-container #off-canvas-menu li:hover {
+.responsive-nav-container .menu li:hover {
 background: $hseblack;
 }
 
@@ -91,8 +180,6 @@ padding-right: 5%;
 width: 100%;
 }
 
-
-
-.responsive-nav-container #off-canvas-menu li:hover a::before {
+.responsive-nav-container .menu li:hover a::before {
 color: white;	
 }
