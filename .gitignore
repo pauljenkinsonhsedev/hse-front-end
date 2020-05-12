@@ -5,7 +5,8 @@ src/**
 src/assets/
 src/assets/images
 build/**
-build/simple-health-safety/
+build/aboutyou/
+build/simple-health-safety/**
 secureroot/**
 devkit-v5/
 
