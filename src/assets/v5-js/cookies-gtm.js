@@ -1,16 +1,3 @@
-var cookieVal = Cookies.get('cookies_policy');
-
-const decodedCookieVal = window.atob(cookieVal);
-
-const obj = JSON.parse(decodedCookieVal);
-
-// Assigns variables to cookies values
-
-var usageSet = (obj.usage);
-var campaignsSet = (obj.campaigns);
-var settingsSet = (obj.settings);	
-
-
 // When DOM is ready, create function for dynamically loading GTM scripts
 
 function gtmFunction() {
@@ -45,35 +32,6 @@ $('body').prepend('<noscript><iframe src="https://www.googletagmanager.com/ns.ht
 
 $( document ).ready(function() {
 
-
-$('#acceptAllCookies').click(function() {
-
-// Call function on accept all cookies button (Cookie preferences banner)
-
 gtmFunction();
-
-});
-
-// Checks to see if analytics preference is set to true
-
-if (usageSet == true )  {
-
-// Call function on accept all cookies button (Cookie preferences banner)
-
-gtmFunction();
-
-} 
-
-// If analytics preference is set to false - delete all GTM cookies
-
-else {
-Cookies.remove('_ga', {domain: '.hse.gov.uk'});
-Cookies.remove('_gid', {domain: '.hse.gov.uk'});
-Cookies.remove('_gali', {domain: '.hse.gov.uk'});
-Cookies.remove('_dc_gtm_UA-324220-1', {domain: '.hse.gov.uk'});
-Cookies.remove('_gat_UA-324220-1', {domain: '.hse.gov.uk'});
-Cookies.remove('nmstat', {domain: '.www.hse.gov.uk'}); // Site Improve cookie - invoked by Google Analytics
-
-}
 
 });
