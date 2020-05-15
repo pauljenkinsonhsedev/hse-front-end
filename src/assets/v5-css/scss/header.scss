@@ -71,7 +71,6 @@ float: left;
 }
 
 .desktop-gcs-search {
-display: none; 
 @media only screen and (min-width : $desktop) {
 display: block;
 }
@@ -121,18 +120,53 @@ display: none;
 background: none;
 }
 
-// Main mene
+// Main menu
 
 .menuContainer {
 width: 100%;
 float: left;
 margin-top: 10px;
-margin-bottom: 10px;
 background: $gray;
 @media only screen and (min-width : $desktop) {
 background: $red;
 margin-bottom: 0;
 }
+}
+
+/* ---------------------------- */
+/* Main menu */ 
+/* ---------------------------- */
+
+@media only screen and (min-width : $desktop) {
+
+.menu li.search {
+display: none;
+}
+
+
+.home .menu li.home,
+.news .menu li.news,
+.guidance .menu li.guidance,
+.aboutyou .menu li.aboutyou,
+.abouthse .menu li.abouthse,
+.contact .menu li.contact, .freeUpdates .menu li.freeUpdates  {
+	background:#333; /*changed by Sarah 26/2/19 from #59031b*//* add darker background colour for selected tab */
+	border-radius:0px; /*changed by Sarah from 5px 5px 0 0 20/2/19*/
+}
+
+.home .menu li.home > a,
+.home .menu li.home + li.news > a,
+.news .menu li.news > a,
+.news .menu li.news + li.guidance > a,
+.guidance .menu li.guidance > a,
+.guidance .menu li.guidance + li.aboutyou > a,
+.aboutyou .menu li.aboutyou > a,
+.aboutyou .menu li.aboutyou + li.abouthse > a,
+.abouthse .menu li.abouthse > a,
+.abouthse .menu li.abouthse + li.contact > a { 
+    background-image:none; /* remove seperator background image on selected and adjacent tabs */
+} 
+
 }
 
 // Cookie container 

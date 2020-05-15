@@ -34,6 +34,8 @@
   $(".slinky-menu ul li a").each(function () {
     if ($(this).attr("href") == urlnew) {
       $(this).addClass("active-page");
+      $(this).attr('aria-current','page');
+
     }
     });
 
@@ -55,14 +57,16 @@
 			
 		// Add active page class to first list item
 			
-		$(this).addClass("active-page no-active-style");
+    $(this).addClass("active-page no-active-style");
+    $(this).attr('aria-current','page');
 		$(this).parent().parent().addClass("active");
 		} 
 		
 		// If URL is 2 segments
 			
 		if($(segment == 2) || (this).prop("href").includes(hseonline)) {
-		$(".first").addClass("active-page");
+    $(".first").addClass("active-page");
+    $(".first").attr('aria-current','page');
 		$(".first").parent().addClass("active");
 		}
 		

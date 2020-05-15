@@ -1,23 +1,5 @@
 .DS_Store
 *.lbi
 node_modules
-src/pubns
-src/asbestos
-src/assets/images
-src/agriculture
-src/aboutus
-src/news
-src/msd
-src/aboutyou
-src/pubns
-src/statistics
-src/simple-health-safety
-build/**
-secureroot/aboutyou
-secureroot/agriculture
-secureroot/msd
-secureroot/pubns
-secureroot/simple-health-safety
-devkit-v5/
 
 

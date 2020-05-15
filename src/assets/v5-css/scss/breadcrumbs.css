@@ -5,7 +5,7 @@ Error: Undefined variable: "$gray".
 1: // Breadcrumbs
 2: 
 3: #breadCrumb {
-4: margin-bottom: 10px;
+4: margin-bottom: 20px !important;
 5: background: $gray;
 6: margin: 0;
 7: float: left;
@@ -60,4 +60,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$gray\".\A         on line 5 of /Users/pjenkinson/Dev/sites/hse-front-end/src/assets/v5-css/scss/breadcrumbs.scss\A \A 1: // Breadcrumbs\A 2: \A 3: #breadCrumb {\A 4: margin-bottom: 10px;\A 5: background: $gray;\A 6: margin: 0;\A 7: float: left;\A 8: }\A 9: \A 10: #breadCrumb ol li {"; }
+  content: "Error: Undefined variable: \"$gray\".\A         on line 5 of /Users/pjenkinson/Dev/sites/hse-front-end/src/assets/v5-css/scss/breadcrumbs.scss\A \A 1: // Breadcrumbs\A 2: \A 3: #breadCrumb {\A 4: margin-bottom: 20px !important;\A 5: background: $gray;\A 6: margin: 0;\A 7: float: left;\A 8: }\A 9: \A 10: #breadCrumb ol li {"; }

@@ -940,7 +940,7 @@ form button,form input.button,form input.submit{
 }
 form label span.validationHint,form legend span.validationHint{
     padding:.4em;
-    color:#999;
+    color: $red;
     font-weight:400;
 }
 form label span.error{

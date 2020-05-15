@@ -272,8 +272,8 @@ left: 0 !important;
 float: left !important;
 }
 
-.ui-accordion .ui-accordion-header a {
-font-size: 0.9rem !important;
+.ui-accordion .ui-accordion-header  {
+border: 1px solid $gray;
 }
 
 .ui-accordion-content {

@@ -46,7 +46,7 @@ display: block;
 
 /* Notification bar */
 
-#notification-bar {
+.notification-banner {
 background: $gray;
 width: 100%;
 height: auto;
@@ -57,6 +57,19 @@ min-height: 78px;
 font-size: 16px;
 border-bottom: 2px solid $red;
 line-height: normal !important;
+}
+
+.notification-banner.global {
+background: $hseblack;
+border-bottom: 2px solid $focus;
+}
+
+.notification-banner.global p {
+color: white;
+}
+
+.notification-banner.global a {
+color: $focus;
 }
 
 .hide-notification {
@@ -102,7 +115,8 @@ float: left;
 }
 }
 
-.notification-hide-button {
+.notification-hide, .notification-banner.global .notification-hide
+	{
 @media only screen and (min-width : 980px) {
 position: absolute;
 right: 0;	

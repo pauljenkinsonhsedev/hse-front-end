@@ -220,5 +220,4 @@ input.gsc-input:focus, #baseStrip ul.ddmswitch li a:focus {
 
 /* V5 global styles */
 .v5-inline {
-  float: left;
   display: inline-block; }
