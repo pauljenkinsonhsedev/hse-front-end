@@ -17,17 +17,21 @@ window.onload = function(){
 
 addGoogleAlt()
 
-document.getElementById('gsc-i-id1').placeholder = 'Search hse.gov.uk';
 searchInput = document.querySelector('#gs_tti50'),
 searchLabel = document.createElement('label');
+
 
 searchLabel.innerHTML = 'Search hse.gov.uk';
 searchLabel.classList.add('hide');
 searchLabel.setAttribute('for', 'gsc-i-id1');
 
-
-
 searchInput.prepend(searchLabel);
+
+document.getElementById('gsc-i-id1').placeholder = 'Search hse.gov.uk';
+
+
+
+
 
 };
 

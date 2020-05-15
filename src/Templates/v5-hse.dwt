@@ -231,7 +231,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </div>
 </footer>
 </nav>
-<div id="lastUpdated"><!-- TemplateBeginEditable name="updated" -->Updated:<!-- #BeginDate format:IS1 -->2020-05-14<!-- #EndDate --> 
+<div id="lastUpdated"><!-- TemplateBeginEditable name="updated" -->Updated:<!-- #BeginDate format:IS1 -->2020-05-15<!-- #EndDate --> 
   <!-- TemplateEndEditable --></div>
 <script src="../assets/v4-js/jquery.min.js"></script> 
 <script src="../assets/v5-js/v5-footer.min.js"></script> 
@@ -255,6 +255,27 @@ sz.src = '//siteimproveanalytics.com/js/siteanalyze_6798.js';
 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(sz, s);
 })();
 /*]]>*/
+	
+// removes cellspacing & cellpadding attributes from GCS (Assesibility fix)
+	
+window.onload = function(){
+
+var searchTable = document.querySelector('table.gsc-search-box');
+var searchTable2 = document.querySelector('table.gsc-input');
+var searchTable3 = document.querySelector('table.gssb_c');
+var searchInput = document.querySelector('input.gsc-input');
+
+searchTable.removeAttribute('cellpadding');
+searchTable2.removeAttribute('cellpadding');
+searchTable3.removeAttribute('cellpadding');
+searchInput.removeAttribute('cellpadding');
+
+searchTable.removeAttribute('cellspacing');
+searchTable2.removeAttribute('cellspacing');
+searchTable3.removeAttribute('cellspacing');
+searchInput.removeAttribute('cellspacing');
+
+};	
 </script> 
 <!-- TemplateBeginMultipleIf --> <!-- TemplateBeginIfClause cond="contentType == 'Content' | contentType == 'Task' | contentType == 'Engaged' | contentType == 'Navigation' | contentType == 'Tool' && weblite == false" --> <!-- TemplateEndIfClause --> <!-- TemplateBeginIfClause cond="contentType != 'Content' && contentType != 'Task' && contentType != 'Engaged' && contentType != 'Navigation' && contentType != 'Tool' && weblite == false" --> <!-- TemplateEndIfClause --> <!-- TemplateEndMultipleIf --> <!-- TemplateInfo codeOutsideHTMLIsLocked="true" --> <!-- TemplateParam name="bodyClass" type="text" value="guidance" --> <!-- TemplateParam name="layout" type="text" value="betacontentpage" --> <!-- TemplateParam name="columnLayout" type="number" value="2" --> <!-- TemplateParam name="platform" type="text" value="v5" --> <!-- TemplateParam name="rdfa" type="boolean" value="false" --> <!-- TemplateParam name="welsh" type="boolean" value="false" --> <!-- TemplateParam name="homepage" type="boolean" value="true" --> <!-- TemplateParam name="weblite" type="boolean" value="false" --> <!-- TemplateParam name="feedback" type="boolean" value="true" --> <!-- TemplateParam name="contentType" type="text" value="default" --> <!-- TemplateParam name="notificationBar" type="boolean" value="false" --> <!-- TemplateParam name="printGuide" type="boolean" value="false" -->
 </body>

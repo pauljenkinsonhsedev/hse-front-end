@@ -221,6 +221,27 @@ sz.src = '//siteimproveanalytics.com/js/siteanalyze_6798.js';
 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(sz, s);
 })();
 /*]]>*/
+	
+// removes cellspacing & cellpadding attributes from GCS (Assesibility fix)
+	
+window.onload = function(){
+
+var searchTable = document.querySelector('table.gsc-search-box');
+var searchTable2 = document.querySelector('table.gsc-input');
+var searchTable3 = document.querySelector('table.gssb_c');
+var searchInput = document.querySelector('input.gsc-input');
+
+searchTable.removeAttribute('cellpadding');
+searchTable2.removeAttribute('cellpadding');
+searchTable3.removeAttribute('cellpadding');
+searchInput.removeAttribute('cellpadding');
+
+searchTable.removeAttribute('cellspacing');
+searchTable2.removeAttribute('cellspacing');
+searchTable3.removeAttribute('cellspacing');
+searchInput.removeAttribute('cellspacing');
+
+};	
 </script> 
       <!-- InstanceParam name="bodyClass" type="text" value="guidance" --> <!-- InstanceParam name="layout" type="text" value="betacontentpage" --> <!-- InstanceParam name="columnLayout" type="number" value="2" --> <!-- InstanceParam name="platform" type="text" value="v5" --> <!-- InstanceParam name="rdfa" type="boolean" value="false" --> <!-- InstanceParam name="welsh" type="boolean" value="false" --> <!-- InstanceParam name="homepage" type="boolean" value="true" --> <!-- InstanceParam name="weblite" type="boolean" value="false" --> <!-- InstanceParam name="feedback" type="boolean" value="true" --> <!-- InstanceParam name="contentType" type="text" value="default" --> <!-- InstanceParam name="notificationBar" type="boolean" value="false" --> <!-- InstanceParam name="printGuide" type="boolean" value="false" -->
 </body>
