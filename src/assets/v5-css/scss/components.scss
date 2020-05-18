@@ -213,33 +213,7 @@ cursor: pointer;
 width: 160px !important;
 }
 
-/* Cookies bar */
 
-.v5-span-heading1 {
-color: white;
-font-size: 2em;
-float: left;
-padding: 20px 0;
-}
-
-#cookieNotify {
-background: none !important;
-}
-
-#cookieNotify p {
-padding: 0;
-}
-
-#cookieNotify .v5-hide-button {
-background: none;
-color: white;
-text-decoration: underline;
-border: 0;
-}
-
-#cookieNotify .v5-hide-button:hover {
-cursor: pointer;
-}
 
 // Alert box
 
@@ -272,8 +246,22 @@ left: 0 !important;
 float: left !important;
 }
 
+.ui-icon {
+width: 16px;
+height: 16px;
+background-image: url(https://www.hse.gov.uk/assets/v4-images/website/jqueryui/ui-icons_b82533_256x240.png);
+}
+
 .ui-accordion .ui-accordion-header  {
 border: 1px solid $gray;
+}
+
+.ui-icon-triangle-1-e {
+background-position: -64px -16px; 
+}
+
+.ui-corner-top .ui-icon-triangle-1-s {
+background-position: 0px -16px; 
 }
 
 .ui-accordion-content {
@@ -292,6 +280,7 @@ text-decoration: underline !important;
 .ui-accordion-header:hover {
 color: $black !important;
 text-decoration: none !important;
+cursor: pointer;
 }
 
 

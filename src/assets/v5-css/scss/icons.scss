@@ -139,7 +139,7 @@ margin: 0;
 }
 
 
-.menu-button span::before {
+.menu-button span::before, .menu-button.main-menu span::before {
 content: " ";
 background-image: url('../../assets/v5-images/icons/svg/solid/bars-white.svg');
 background-repeat: no-repeat;
@@ -149,10 +149,9 @@ height: 25px;
 margin: 0;
 }
 
-.off-canvas-close span.c-button__text::before {
+.menu-button.main-menu-expanded span::before {
 content: " ";
 background-image: url('../../assets/v5-images/icons/svg/solid/window-close-white.svg');
-float: left;
 background-repeat: no-repeat;
 display: inline-block;
 width: 25px;
