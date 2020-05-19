@@ -5,7 +5,8 @@
   var header = document.querySelector('.js-header'),
   menu = document.querySelector('.js-menu'),
   menuLocation = document.querySelector('#globalSearch'),
-  searchLocation = document.querySelector('.menuContainer nav ul');
+  searchLinkLocation = document.querySelector('#main-menu');
+  searchListItemLocation = document.querySelector('#main-menu ul');
 
   menuButton = document.createElement('button');
   menuListItem = document.createElement('li');
@@ -37,9 +38,8 @@
   // Handle button click event
   menuButton.addEventListener('click', function () {
 
-    searchLocation.insertBefore(menuListItem);
+    searchLinkLocation.insertBefore(menuListItem, searchListItemLocation.nextSibling);
 
-    
     // If active...
     if (menu.classList.contains('active')) {
       // Hide
