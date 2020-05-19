@@ -49,7 +49,7 @@
 
   // Search list item
   menuListItem.classList.add('search');
-  menuListItem.innerHTML = '<a href="/search/index.htm">Search</a>';
+  menuListItem.innerHTML = '<a href="https://www.hse.gov.uk/search/search-results.htm">Search</a>';
 
   // Menu properties
   menu.setAttribute('aria-hidden', 'true');
