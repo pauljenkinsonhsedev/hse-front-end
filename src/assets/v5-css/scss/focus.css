@@ -5,12 +5,12 @@ Error: Undefined variable: "$focus".
 1: // GLOBAL FOCUS
 2: 
 3: a:focus {
-4: outline: $focus 5px solid !important;
+4: outline: $focus 5px solid;
 5: z-index: 100;
 6: }
 7: 
-8: a:hover, a:focus {
-9: text-decoration: none;
+8: .slinky-menu ul li a:focus {
+9: outline: solid transparent !important;
 
 Backtrace:
 /Users/pjenkinson/Dev/sites/hse-front-end/src/assets/v5-css/scss/focus.scss:4
@@ -63,4 +63,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$focus\".\A         on line 4 of /Users/pjenkinson/Dev/sites/hse-front-end/src/assets/v5-css/scss/focus.scss\A \A 1: // GLOBAL FOCUS\A 2: \A 3: a:focus {\A 4: outline: $focus 5px solid !important;\A 5: z-index: 100;\A 6: }\A 7: \A 8: a:hover, a:focus {\A 9: text-decoration: none;"; }
+  content: "Error: Undefined variable: \"$focus\".\A         on line 4 of /Users/pjenkinson/Dev/sites/hse-front-end/src/assets/v5-css/scss/focus.scss\A \A 1: // GLOBAL FOCUS\A 2: \A 3: a:focus {\A 4: outline: $focus 5px solid;\A 5: z-index: 100;\A 6: }\A 7: \A 8: .slinky-menu ul li a:focus {\A 9: outline: solid transparent !important;"; }

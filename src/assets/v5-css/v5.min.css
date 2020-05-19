@@ -3400,8 +3400,15 @@ template {
   display: none; }
 
 a:focus {
-  outline: #ffdd00 5px solid !important;
+  outline: #ffdd00 5px solid;
   z-index: 100; }
+
+.slinky-menu ul li a:focus {
+  outline: solid transparent !important;
+  text-decoration: none !important;
+  background: #ffdd00 !important;
+  color: #000 !important;
+  border-bottom: 2px solid #000 !important; }
 
 a:hover, a:focus {
   text-decoration: none;

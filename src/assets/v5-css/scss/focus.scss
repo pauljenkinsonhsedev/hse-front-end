@@ -1,8 +1,16 @@
 // GLOBAL FOCUS
 
 a:focus {
-outline: $focus 5px solid !important;
+outline: $focus 5px solid;
 z-index: 100;
+}
+
+.slinky-menu ul li a:focus {
+outline: solid transparent !important;
+text-decoration: none !important;
+background: $focus !important;
+color: $black !important;
+border-bottom: 2px solid $black !important;    
 }
 
 a:hover, a:focus {
