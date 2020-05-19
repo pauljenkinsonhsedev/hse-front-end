@@ -5449,9 +5449,6 @@ li.first a.active-page {
 .slinky-menu li a.back {
   padding: 1em 0; }
 
-.slinky-menu li a:focus {
-  outline: none !important; }
-
 .slinky-menu li.first a:focus {
   color: #000 !important; }
 
