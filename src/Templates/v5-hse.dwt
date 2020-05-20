@@ -1,6 +1,24 @@
 ﻿<!DOCTYPE html>
 <html lang="en-GB">
 <head>
+	
+<!-- Anti-flicker snippet (recommended) If installing optimise with GTM, specifcy GTM container ID  --> 
+<script id="anti-flicker">(function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
+h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
+(a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
+})(window,document.documentElement,'async-hide','dataLayer',4000,
+{'GTM-PJPWMNL':true});
+</script>
+<!-- Conditional CSS -->
+	
+<!-- GTM -->
+	
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PJPWMNL');</script>
+	
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <!-- TemplateBeginMultipleIf -->
 <!-- TemplateBeginIfClause cond="printGuide == true" -->
@@ -10,15 +28,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- v5.1.1 --> 
 
-<!-- Anti-flicker snippet (recommended) If installing optimise with GTM, specifcy GTM container ID  --> 
 
-<script>(function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
-h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
-(a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
-})(window,document.documentElement,'async-hide','dataLayer',4000,
-{'GTM-PJPWMNL':true});
-</script> 
-<!-- Conditional CSS -->
 
 <!-- TemplateBeginMultipleIf -->
 <!-- TemplateBeginIfClause cond="platform == 'v5'" -->
@@ -45,6 +55,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <!-- TemplateEndMultipleIf -->
 </head>
 <body class="@@(_document['bodyClass'])@@ normalFont">
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PJPWMNL" height="0" width="0" style="display:none;visibility:hidden" aria-hidden="true"></iframe></noscript>
 <div id="top"> <!-- TemplateBeginMultipleIf --><!-- TemplateBeginIfClause cond="weblite == false" --> <a href="#contentContainer" class="skip">Skip to content</a> <!-- TemplateEndIfClause --><!-- TemplateEndMultipleIf --> </div>
 <!-- TemplateBeginMultipleIf --> <!-- TemplateBeginIfClause cond="platform == 'v5'" -->
 <div id="printBanner"> <img src="../assets/v4-images/website/print/print-logo.jpg" width="193" height="65" alt="Health and Safety Executive" id="printLogo"/> </div>
@@ -231,7 +242,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </div>
 </footer>
 </nav>
-<div id="lastUpdated"><!-- TemplateBeginEditable name="updated" -->Updated:<!-- #BeginDate format:IS1 -->2020-05-18<!-- #EndDate --> 
+<div id="lastUpdated"><!-- TemplateBeginEditable name="updated" -->Updated:<!-- #BeginDate format:IS1 -->2020-05-20<!-- #EndDate --> 
   <!-- TemplateEndEditable --></div>
 <script src="../assets/v4-js/jquery.min.js"></script> 
 <script src="../assets/v5-js/v5-footer.min.js"></script> 

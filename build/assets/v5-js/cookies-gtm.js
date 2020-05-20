@@ -5,7 +5,9 @@ function gtmFunction() {
 // Function adds script	
 
 // Get the first script element on the page
-var ref = document.getElementsByTagName( 'head' )[0];
+var ref = document.querySelector('head'),
+antiFlicker = document.querySelector('#anti-flicker');
+
 
 // Create a new script element
 var gtm = document.createElement( 'script' );
@@ -21,7 +23,7 @@ gtm.src = 'https://www.hse.gov.uk/assets/v5-js/gtm.js';
 // Inject the script into the DOM
 
 // ref.insertBefore( gtmAsync, ref.childNodes[0] );		
-ref.insertBefore( gtm, ref.childNodes[0] );
+ref.insertBefore(gtm, antiFlicker.nextSibling);
 
 
 $('head').prepend('<style id="gtm-async-hide">.async-hide { opacity: 0 !important} </style>');

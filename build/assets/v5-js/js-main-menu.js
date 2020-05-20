@@ -33,7 +33,6 @@
   
   // Add button to page
   header.insertBefore(menuButton, menuLocation);
-  //headerContainer.insertBefore(searchBox, searchLocation.nextSibling);
 
   // Handle button click event
   menuButton.addEventListener('click', function () {
