@@ -29,7 +29,7 @@ var paths = {
   srcCSSV4: 'src/assets/v4-css/**/*.css',
   srcCSSV5: ['src/assets/v5-css/**/*.css', '!src/assets/v5-css/scss/**/*'],
   srcJSV4: 'src/assets/v4-js/**/*.js',
-  srcJSV5: ['src/assets/v5-js/v5-footer.min.js', 'src/assets/v5-js/v5-hse-primary.min.js', 'src/assets/v5-js/gtm.js', 'src/assets/v5-js/v5-footer-slinky-js.min.js', 'src/assets/v5-js/cookie-preferences.js', 'src/assets/v5-js/js-main-menu.js' ],
+  srcJSV5: ['src/assets/v5-js/jquery.min.js','src/assets/v5-js/v5-footer.min.js', 'src/assets/v5-js/v5-hse-primary.min.js', 'src/assets/v5-js/gtm.js', 'src/assets/v5-js/v5-footer-slinky-js.min.js', 'src/assets/v5-js/cookie-preferences.js', 'src/assets/v5-js/js-main-menu.js' ],
   srcIMAGESV4: 'src/assets/v4-images/**/*.{jpg,png,gif,svg}',
   srcIMAGESV4HOMEPAGE: 'src/assets/v4-homepage/**/*.{jpg,png,gif,svg}',
   srcIMAGESV5: 'src/assets/v5-images/**/*.{jpg,png,gif,svg}',

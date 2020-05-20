@@ -1,4 +1,7 @@
 @charset "UTF-8";
+.hide-notification {
+  display: none !important; }
+
 .backgroundRed {
   background: #981e32 !important; }
 
@@ -4838,7 +4841,7 @@ ul.touchcarousel-container {
 /* Beta */
 #beta-user-testing {
   padding: 10px;
-  width: 90%;
+  width: 100%;
   border: 2px solid #014a82;
   box-sizing: border-box; }
   @media only screen and (min-width: 980px) {
@@ -5286,8 +5289,6 @@ ul.semtabs li a {
   .offsetTwoThird {
     margin-left: 640px !important; }
   /* Beta */
-  #beta-user-testing {
-    width: 940px; }
   #globalSearch {
     float: right; }
   #globalSearch table, #globalSearchMobile table {
@@ -5588,7 +5589,6 @@ dl.dlpretty {
   width: 100% !important; }
 
 #beta-user-testing {
-  width: 100%;
   clear: both;
   margin: 0 0 20px 0; }
 
@@ -5676,9 +5676,6 @@ dl.dlpretty {
 
 .notification-banner.global a {
   color: #ffdd00; }
-
-.hide-notification {
-  display: none !important; }
 
 .brexit-icon {
   float: left; }
