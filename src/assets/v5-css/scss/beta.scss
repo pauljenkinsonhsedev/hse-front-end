@@ -1,10 +1,12 @@
 #beta-user-testing  {
 width: 100%;
 clear: both;
-float: left;
 margin: 0 0 20px 0;
 }
 
-.home #beta-user-testing  {
-margin-top: 20px;
+#beta-user-testing p a {
+text-decoration: underline;
+}
+#beta-user-testing p a:hover {
+text-decoration: none;
 }

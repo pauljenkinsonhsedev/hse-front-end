@@ -5,8 +5,8 @@
   var header = document.querySelector('.js-header'),
   menu = document.querySelector('.js-menu'),
   menuLocation = document.querySelector('#globalSearch'),
-  searchLinkLocation = document.querySelector('#main-menu');
-  searchListItemLocation = document.querySelector('#main-menu ul');
+  searchLinkLocation = document.querySelector('#main-menu ul');
+  searchListItemLocation = document.querySelector('#main-menu ul li.contact');
 
   menuButton = document.createElement('button');
   menuListItem = document.createElement('li');

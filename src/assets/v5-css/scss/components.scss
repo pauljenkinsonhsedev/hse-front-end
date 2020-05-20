@@ -314,6 +314,7 @@ border-radius: 0 !important;
 
 .v5-container {
 width: 90%;
+clear: both;
 padding-left: 5%;
 padding-right: 5%;
 @media only screen and (min-width : $desktop) {
@@ -321,4 +322,8 @@ width: 940px !important;
 margin: 0 auto;
 padding: 0;
 }
+}
+
+.home #headerContainer {
+margin-bottom: 20px;
 }
