@@ -30,6 +30,7 @@
   // Menu properties
   menu.setAttribute('aria-hidden', 'true');
   menu.setAttribute('aria-labelledby', 'menu-button');
+
   
   // Add button to page
   header.insertBefore(menuButton, menuLocation);
@@ -48,6 +49,7 @@
       menuButton.setAttribute('aria-expanded', 'false');
       menuButton.classList.add('main-menu');
       menuButton.classList.remove('main-menu-expanded');
+      menuButton.setAttribute('aria-label', 'Main menu');
 
     } else {
       // Show
@@ -55,7 +57,6 @@
       $('#globalSearch').addClass('desktop-hide');
       menu.setAttribute('aria-hidden', 'false');
       menuButton.setAttribute('aria-expanded', 'true');
-      menuButton.removeAttribute('aria-label', 'Main menu');
       menuButton.classList.add('main-menu-expanded');
       menuButton.setAttribute('aria-label', 'Close menu');
       
