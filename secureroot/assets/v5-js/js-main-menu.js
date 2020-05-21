@@ -61,7 +61,7 @@
       menuButton.setAttribute('aria-label', 'Close menu');
       
       // Set focus on first link
-      menu.children[0].children[0].children[0].focus();
+      // menu.children[0].children[0].children[0].focus();
     }
   }, false);
   
