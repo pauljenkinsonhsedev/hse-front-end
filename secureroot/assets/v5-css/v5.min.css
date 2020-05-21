@@ -4629,56 +4629,6 @@ display: none;
 .responsive-nav-container .menu li:hover a::before {
   color: white; }
 
-h2.multistepHeading1::before {
-  counter-increment: h2;
-  content: "1.";
-  padding-right: 10px; }
-
-h2.multistepHeading2::before {
-  counter-increment: h2;
-  content: "2.";
-  padding-right: 10px; }
-
-h2.multistepHeading3::before {
-  counter-increment: h2;
-  content: "3.";
-  padding-right: 10px; }
-
-h2.multistepHeading4::before {
-  counter-increment: h2;
-  content: "4.";
-  padding-right: 10px; }
-
-h2.multistepHeading5::before {
-  counter-increment: h2;
-  content: "5.";
-  padding-right: 10px; }
-
-h2.multistepHeading6::before {
-  counter-increment: h2;
-  content: "6.";
-  padding-right: 10px; }
-
-h2.multistepHeading7::before {
-  counter-increment: h2;
-  content: "7.";
-  padding-right: 10px; }
-
-h2.multistepHeading8::before {
-  counter-increment: h2;
-  content: "8.";
-  padding-right: 10px; }
-
-h2.multistepHeading9::before {
-  counter-increment: h2;
-  content: "9.";
-  padding-right: 10px; }
-
-h2.multistepHeading10::before {
-  counter-increment: h2;
-  content: "10.";
-  padding-right: 10px; }
-
 .multistep {
   width: 100%; }
 
