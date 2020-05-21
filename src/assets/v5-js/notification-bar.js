@@ -23,7 +23,7 @@ $(document).ready(function() {
 
 var globalSet = Cookies.get('global_banner');
 
-  $.getJSON('/ajax/this.json', function(global) { 
+  $.getJSON('hseonline/website/drafts/accessibility/ajax/this.json', function(global) { 
       var active = global.active;
       var message = global.message;
       var link = global.link;
