@@ -3641,7 +3641,7 @@ ul.semtabs li a:focus {
   border: 1px solid #eee; }
 
 .ui-icon-triangle-1-e {
-  background-image: url("../../assets/v5-images/icons/svg/solid/chevron-up-solid-red.svg");
+  background-image: url("../../assets/v5-images/icons/svg/solid/chevron-down-solid-red.svg");
   background-repeat: no-repeat;
   display: inline-block;
   width: 15px;
@@ -3650,7 +3650,7 @@ ul.semtabs li a:focus {
 
 .ui-corner-top .ui-icon-triangle-1-s {
   content: " ";
-  background-image: url("../../assets/v5-images/icons/svg/solid/chevron-down-solid-red.svg");
+  background-image: url("../../assets/v5-images/icons/svg/solid/chevron-up-solid-red.svg");
   background-repeat: no-repeat;
   display: inline-block;
   width: 15px;
