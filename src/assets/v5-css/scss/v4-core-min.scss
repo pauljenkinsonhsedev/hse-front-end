@@ -119,7 +119,7 @@ a.hover,a:active,a:focus,a:hover{
 #contentContainer a:focus,#contentContainer a:focus span,#contentContainer a:hover,#contentContainer a:hover span{
     text-decoration:none;
 }
-#contentContainer .box a,#contentContainer .linkList a,#contentContainer .semtabs a,#contentContainer h2 a,#contentContainer h3 a{
+#contentContainer .linkList a,#contentContainer .semtabs a,#contentContainer h2 a,#contentContainer h3 a{
     text-decoration:none;
 }
 #contentContainer .box a:focus,#contentContainer .box a:hover,#contentContainer .linkList a:focus,#contentContainer .linkList a:hover,#contentContainer .semtabs a:focus,#contentContainer .semtabs a:hover,#contentContainer h2 a:focus,#contentContainer h2 a:hover,#contentContainer h3 a:hover{
@@ -574,23 +574,7 @@ table a.tableRowToggle,table a.tableRowToggleClosed{
 #textTab .largerFont{
     font-size:18px;
 }
-#breadCrumb{
-    clear:both;
-    width:100%;
-}
-#breadCrumb ol li{
-    background:url(../v4-images/shared/page-furniture.png) 0 -382px no-repeat;
-    display:inline;
-    margin:0;
-    padding:0 0 0 10px;
-}
-.ie7 #breadCrumb ol li{
-    zoom:0;
-}
-#breadCrumb ol li.home{
-    background:0 0;
-    padding:0;
-}
+
 ul#navSupp,ul.navSupp{
     margin-left:12px;
 }
@@ -800,9 +784,6 @@ ul#navSupp li a,ul.navSupp li a{
 .hasMore .more{
     position:absolute;
     bottom:10px;
-}
-p.more a,p.moreAboveSplit a{
-    padding:0 0 0 20px;
 }
 .box .more{
     width:430px;

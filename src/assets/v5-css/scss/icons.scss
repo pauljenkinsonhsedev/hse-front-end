@@ -43,7 +43,6 @@ padding-right: 5px;
 width: 16px;
 height: 16px;
 margin: 0;
-float: left;
 }
 
 #contentContainer .columnFull p.moreLink a:hover::before {
@@ -55,7 +54,6 @@ padding-right: 5px;
 width: 16px;
 height: 16px;
 margin: 0;
-float: left;
 }
 
 #contentContainer .columnFull .backgroundRed p.moreLink a::before {
@@ -67,7 +65,6 @@ padding-right: 5px;
 width: 16px;
 height: 16px;
 margin: 0;
-float: left;
 }
 
 #contentContainer .columnFull ul.social li.facebook::before {
@@ -75,7 +72,6 @@ content: " ";
 background-image: url('../../assets/v5-images/icons/svg/brands/facebook-square-red.svg');
 position: relative;
 top: 2px;
-float: left;
 background-repeat: no-repeat;
 display: inline-block;
 padding-right: 5px;
@@ -89,7 +85,6 @@ content: " ";
 background-image: url('../../assets/v5-images/icons/svg/brands/linkedin-red.svg');
 position: relative;
 top: 2px;
-float: left;
 background-repeat: no-repeat;
 display: inline-block;
 padding-right: 5px;
@@ -103,7 +98,6 @@ content: " ";
 background-image: url('../../assets/v5-images/icons/svg/brands/youtube-red.svg');
 position: relative;
 top: 2px;
-float: left;
 background-repeat: no-repeat;
 display: inline-block;
 padding-right: 5px;
@@ -117,7 +111,6 @@ content: " ";
 background-image: url('../../assets/v5-images/icons/svg/brands/twitter-red.svg');
 position: relative;
 top: 2px;
-float: left;
 background-repeat: no-repeat;
 display: inline-block;
 padding-right: 5px;
@@ -129,7 +122,6 @@ margin: 0;
 #printGuide a::before {
 content: " ";
 background-image: url('../../assets/v5-images/icons/svg/solid/print.svg');
-float: left;
 background-repeat: no-repeat;
 display: inline-block;
 padding-right: 5px;
@@ -209,7 +201,10 @@ margin: 0;
 padding-right: 10px;
 }
 
-#contentContainer .linkList li a::before {
+
+
+#contentContainer .linkList li a::before, #contentContainer p.linkList a::before, #contentContainer .more a::before,
+.moreAboveSplit a::before  {
 content: " ";
 background-image: url('../../assets/v5-images/icons/svg/solid/caret-right-red.svg');
 background-repeat: no-repeat;
@@ -217,6 +212,10 @@ height: 16px;
 width: 16px;
 margin: 0;
 padding-right: 10px;
+}
+
+#contentContainer p.linkList a {
+text-decoration: underline;
 }
 
 

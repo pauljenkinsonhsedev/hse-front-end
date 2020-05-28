@@ -14,26 +14,11 @@
 	#cookieNotify p {
 	padding: 0;
 	}
-	
-	#cookieNotify .v5-hide-button {
-	background: none;
-	color: white;
-	text-decoration: underline;
-	border: 0;
-	}
-	
-	#cookieNotify .v5-hide-button:hover {
-	cursor: pointer;
-	}
 
 #cookieContainer {
 float: left;
 background-color: #333;
 display: block;
-}
-
-.ie7 #cookieContainer {
-	height: 3.500em;
 }
 
 #cookieNotify {
@@ -55,11 +40,6 @@ display: block;
 	font-size: 1.1em;
 	float: left;
 	margin: 0;
-}
-
-#cookieNotify p a {
-	color: #FF9C00;
-	text-decoration:underline;
 }
 
 #cookieNotifyClose {
@@ -93,7 +73,29 @@ border-bottom: 2px solid $focus;
 color: white;
 }
 
-.notification-banner.global a {
+.notification-banner.global p a {
+color: $focus;
+text-decoration: underline;
+}
+
+.notification-banner.global p a:hover {
+text-decoration: none;
+}
+
+.notification-banner button {
+padding: 0;
+}
+
+.notification-banner button:hover  {
+text-decoration: none;
+}
+
+.notification-banner button {
+text-decoration: underline;
+cursor: pointer;
+}
+
+.notification-banner.global button {
 color: $focus;
 }
 
@@ -105,14 +107,24 @@ float: left;
 
 .notification-container {
 width: 90%;
+margin-top: 20px;
 padding: 10px 5%;
 @media only screen and (min-width : 980px) {
-padding: 20px 0;
+padding: 0;
 width: 940px;
 float: none;
 }
 float: left;
 position: relative;
+}
+
+.notification-container p {
+margin: 0;
+}
+
+.notification-container img {
+float: left;
+margin-right: 20px;
 }
 
 .notification-message {
@@ -140,13 +152,16 @@ float: left;
 
 .notification-hide, .notification-banner.global .notification-hide
 	{
+background: none;
+border: none;
+float: right;
+margin-top: 10px;
 @media only screen and (min-width : 980px) {
 position: absolute;
 right: 0;	
 top: 0;
+margin-top: 0;
 }
-float: right;
-padding-top: 20px;
 }
 
 .notification-bar-title {

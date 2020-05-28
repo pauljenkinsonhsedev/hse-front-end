@@ -23,7 +23,7 @@ $(document).ready(function() {
 
 var globalSet = Cookies.get('global_banner');
 
-  $.getJSON('hseonline/website/drafts/accessibility/ajax/this.json', function(global) { 
+  $.getJSON('/ajax/global-message.json', function(global) { 
       var active = global.active;
       var message = global.message;
       var link = global.link;
@@ -42,7 +42,7 @@ globalNotification = document.createElement('div');
 globalNotification.setAttribute('id', 'global-notification-banner');
 globalNotification.classList.add('notification-banner');
 globalNotification.classList.add('global');
-globalNotification.innerHTML = '<div class="notification-container fixed-container">' + message + '<a href="#hide-message" class="notification-hide global">Hide&nbsp;message</a></div>';
+globalNotification.innerHTML = '<div class="notification-container fixed-container">' + message + '<button class="notification-hide global">Hide&nbsp;message</a></button>';
 
 headerContainer.insertBefore(globalNotification, globalBannerLocation.nextSibling);
 

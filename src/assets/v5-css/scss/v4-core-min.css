@@ -1,21 +1,21 @@
 /*
 Error: Undefined variable: "$red".
-        on line 938 of /Users/pjenkinson/Dev/sites/hse-front-end/src/assets/v5-css/scss/v4-core-min.scss
+        on line 919 of /Users/pjenkinson/Dev/sites/hse-front-end/src/assets/v5-css/scss/v4-core-min.scss
 
-933:     width:auto;
-934:     float:left;
-935: }
-936: form label span.validationHint,form legend span.validationHint{
-937:     padding:.4em;
-938:     color: $red;
-939:     font-weight:400;
-940: }
-941: form label span.error{
-942:     background:#d81541;
-943:     color:#fff;
+914:     width:auto;
+915:     float:left;
+916: }
+917: form label span.validationHint,form legend span.validationHint{
+918:     padding:.4em;
+919:     color: $red;
+920:     font-weight:400;
+921: }
+922: form label span.error{
+923:     background:#d81541;
+924:     color:#fff;
 
 Backtrace:
-/Users/pjenkinson/Dev/sites/hse-front-end/src/assets/v5-css/scss/v4-core-min.scss:938
+/Users/pjenkinson/Dev/sites/hse-front-end/src/assets/v5-css/scss/v4-core-min.scss:919
 /Applications/Adobe Dreamweaver 2020/Adobe Dreamweaver 2020.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/script/tree/variable.rb:49:in `_perform'
 /Applications/Adobe Dreamweaver 2020/Adobe Dreamweaver 2020.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/script/tree/node.rb:50:in `perform'
 /Applications/Adobe Dreamweaver 2020/Adobe Dreamweaver 2020.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/tree/visitors/perform.rb:402:in `visit_prop'
@@ -61,4 +61,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$red\".\A         on line 938 of /Users/pjenkinson/Dev/sites/hse-front-end/src/assets/v5-css/scss/v4-core-min.scss\A \A 933:     width:auto;\A 934:     float:left;\A 935: }\A 936: form label span.validationHint,form legend span.validationHint{\A 937:     padding:.4em;\A 938:     color: $red;\A 939:     font-weight:400;\A 940: }\A 941: form label span.error{\A 942:     background:#d81541;\A 943:     color:#fff;"; }
+  content: "Error: Undefined variable: \"$red\".\A         on line 919 of /Users/pjenkinson/Dev/sites/hse-front-end/src/assets/v5-css/scss/v4-core-min.scss\A \A 914:     width:auto;\A 915:     float:left;\A 916: }\A 917: form label span.validationHint,form legend span.validationHint{\A 918:     padding:.4em;\A 919:     color: $red;\A 920:     font-weight:400;\A 921: }\A 922: form label span.error{\A 923:     background:#d81541;\A 924:     color:#fff;"; }

@@ -3,23 +3,10 @@
 #navSecondary {
 margin-bottom: 20px;
 width: 100%;	
-// Visually hides left nav
-
-/*
-@media only screen and (max-width : 979px) {
-position: absolute !important;
-top: -9999px !important;
-left: -9999px !important;
-}
-*/	
 }
 
 .normalFont #breadCrumb ol {
 font-size: 1.1em;	
-}
-
-#breadCrumb ol li {
-background: url(../v4-images/shared/page-furniture.png) 0 -379px no-repeat;
 }
 
 #backTo {

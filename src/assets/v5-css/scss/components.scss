@@ -79,8 +79,8 @@ clear: none;
 }
 
 @media only screen and (min-width : 979px) {
-    .itemThumbBook.publications  a:last-of-type {
-    margin-right: 0px !important;
+.itemThumbBook.publications  a:last-of-type {
+margin-right: 0px !important;
 }
 
 
@@ -233,6 +233,31 @@ padding: 10px;
 color: white;
 }
 
+// Tabs 
+
+.tabs.semtabs {
+width: 100%;
+@media only screen and (min-width : $desktop) {
+
+}
+}
+
+.tabs li {
+width: 100%;
+@media only screen and (min-width : 800px) {
+width: auto;
+}   
+}
+ul.semtabs li a:focus {
+border: none;
+}
+#contentContainer ul.tabs li a:focus {
+border-bottom: none !important;
+color: $hseblack;
+}
+
+#contentContainer ul li a:focus
+
 // Accordion 
 
 .ui-accordion .ui-accordion-header .ui-icon {
@@ -246,6 +271,10 @@ left: 0 !important;
 float: left !important;
 }
 
+.ui-accordion .ui-icon {
+float: left;
+}
+
 .ui-icon {
 width: 16px;
 height: 16px;
@@ -257,11 +286,23 @@ border: 1px solid $gray;
 }
 
 .ui-icon-triangle-1-e {
-background-position: -64px -16px; 
+background-image: url('../../assets/v5-images/icons/svg/solid/chevron-up-solid-red.svg');
+background-repeat: no-repeat;
+display: inline-block;
+width: 15px;
+height: 15px;
+margin: 0 5px 10px 5px;
 }
 
+
 .ui-corner-top .ui-icon-triangle-1-s {
-background-position: 0px -16px; 
+content: " ";
+background-image: url('../../assets/v5-images/icons/svg/solid/chevron-down-solid-red.svg');
+background-repeat: no-repeat;
+display: inline-block;
+width: 15px;
+height: 15px;
+margin: 0 5px 10px 5px;
 }
 
 .ui-accordion-content {

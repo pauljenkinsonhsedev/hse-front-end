@@ -7,6 +7,10 @@ var navSec = document.querySelector('#navSecondary'),
   content = document.querySelector('#contentContainer'),
   page = document.querySelector('#pageContainer');
 
+  // If page has left navigation
+
+  if ($(navSec).length ) {
+
   if (window.matchMedia('(max-width: 979px)').matches) {
 page.insertBefore(navSec, content.nextSibling);
 
@@ -24,10 +28,6 @@ page.insertBefore(navSec, content.nextSibling);
 }
 }, false);
 
-// Add button to page
-
-
-  
-
+}
 
 })(document, window);

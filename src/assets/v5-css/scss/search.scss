@@ -1,8 +1,12 @@
 // Google Custom Search
 
 #globalSearch, #globalSearchMobile {
-margin-top: 10px !important;
+margin-top: 20px;
+@media only screen and (min-width : $desktop) {
+margin-top: 0px;
 }
+}
+
 #globalSearch tr, #globalSearchMobile  tr {
 background: $red;
 }

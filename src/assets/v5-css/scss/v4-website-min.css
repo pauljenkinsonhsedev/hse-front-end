@@ -91,10 +91,6 @@ ul.listexclaim li {
 .downloadBox a {
   background: url(../../assets/v4-images/website/sprites/large-download-icons.png) 15px center no-repeat; }
 
-.more a,
-.moreAboveSplit a {
-  background: url(../../assets/v4-images/website/sprites/more-boxes.png) -1640px bottom no-repeat; }
-
 .boxSubscribeSingle h2 {
   color: #4E4E4E; }
 

@@ -44,7 +44,6 @@
     if (menu.classList.contains('active')) {
       // Hide
       menu.classList.remove('active');
-      menu.classList.add('not-active');
       $('#globalSearch').removeClass('desktop-hide');
       menu.setAttribute('aria-hidden', 'true');
       menuButton.setAttribute('aria-expanded', 'false');

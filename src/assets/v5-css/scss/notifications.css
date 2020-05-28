@@ -1,21 +1,21 @@
 /*
 Error: Undefined variable: "$desktop".
-        on line 41 of /Users/pjenkinson/Dev/sites/hse-front-end/src/assets/v5-css/scss/notifications.scss
+        on line 26 of /Users/pjenkinson/Dev/sites/hse-front-end/src/assets/v5-css/scss/notifications.scss
 
-36: 	height: 3.500em;
-37: }
-38: 
-39: #cookieNotify {
-40: 	width: 100%;
-41: 	@media only screen and (min-width : $desktop) {
-42: 	width: 940px;
-43: 	}
-44: 	padding: 0px !important;
-45: 	margin: 5px auto;
-46: 	background: url(../v4-images/shared/cookie-icon.png) no-repeat 0 4px;
+21: display: block;
+22: }
+23: 
+24: #cookieNotify {
+25: 	width: 100%;
+26: 	@media only screen and (min-width : $desktop) {
+27: 	width: 940px;
+28: 	}
+29: 	padding: 0px !important;
+30: 	margin: 5px auto;
+31: 	background: url(../v4-images/shared/cookie-icon.png) no-repeat 0 4px;
 
 Backtrace:
-/Users/pjenkinson/Dev/sites/hse-front-end/src/assets/v5-css/scss/notifications.scss:41
+/Users/pjenkinson/Dev/sites/hse-front-end/src/assets/v5-css/scss/notifications.scss:26
 /Applications/Adobe Dreamweaver 2020/Adobe Dreamweaver 2020.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/script/tree/variable.rb:49:in `_perform'
 /Applications/Adobe Dreamweaver 2020/Adobe Dreamweaver 2020.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/script/tree/node.rb:50:in `perform'
 /Applications/Adobe Dreamweaver 2020/Adobe Dreamweaver 2020.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/tree/visitors/perform.rb:555:in `block in run_interp_no_strip'
@@ -65,4 +65,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$desktop\".\A         on line 41 of /Users/pjenkinson/Dev/sites/hse-front-end/src/assets/v5-css/scss/notifications.scss\A \A 36: 	height: 3.500em;\A 37: }\A 38: \A 39: #cookieNotify {\A 40: 	width: 100%;\A 41: 	@media only screen and (min-width : $desktop) {\A 42: 	width: 940px;\A 43: 	}\A 44: 	padding: 0px !important;\A 45: 	margin: 5px auto;\A 46: 	background: url(../v4-images/shared/cookie-icon.png) no-repeat 0 4px;"; }
+  content: "Error: Undefined variable: \"$desktop\".\A         on line 26 of /Users/pjenkinson/Dev/sites/hse-front-end/src/assets/v5-css/scss/notifications.scss\A \A 21: display: block;\A 22: }\A 23: \A 24: #cookieNotify {\A 25: 	width: 100%;\A 26: 	@media only screen and (min-width : $desktop) {\A 27: 	width: 940px;\A 28: 	}\A 29: 	padding: 0px !important;\A 30: 	margin: 5px auto;\A 31: 	background: url(../v4-images/shared/cookie-icon.png) no-repeat 0 4px;"; }

@@ -10,6 +10,8 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 })(window,document.documentElement,'async-hide','dataLayer',4000,
 {'GTM-PJPWMNL':true});
 </script>
+
+<!-- GTM -->	
 	
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -53,7 +55,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- TemplateEndMultipleIf -->
 </head>
 <body class="@@(_document['bodyClass'])@@ normalFont">
-	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PJPWMNL" height="0" width="0" style="display:none;visibility:hidden" aria-hidden="true"></iframe></noscript>
+	
+<!-- GTM -->
+	
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PJPWMNL" height="0" width="0" style="display:none;visibility:hidden" aria-hidden="true"></iframe</noscript>
+	
 <div id="top"> <!-- TemplateBeginMultipleIf --><!-- TemplateBeginIfClause cond="weblite == false" --> <a href="#contentContainer" class="skip">Skip to content</a> <!-- TemplateEndIfClause --><!-- TemplateEndMultipleIf --> </div>
 <!-- TemplateBeginMultipleIf --> <!-- TemplateBeginIfClause cond="platform == 'v5'" -->
 <div id="printBanner"> <img src="../assets/v4-images/website/print/print-logo.jpg" width="193" height="65" alt="Health and Safety Executive" id="printLogo"/> </div>
@@ -87,9 +93,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <!-- TemplateBeginMultipleIf --><!-- TemplateBeginIfClause cond="notificationBar == true" -->
   <div id="notificationBanner" class="notification-banner">
     <div class="notification-container fixed-container">
-      <p class="notification-message"> <!-- TemplateBeginEditable name="notification-message" --> <!-- TemplateEndEditable --> </p>
-      <a href="#hide-message" class="notification-hide">Hide&nbsp;message</a>
-      <div id="hide-message"></div>
+      <!-- TemplateBeginEditable name="notification-message" --> <!-- TemplateEndEditable -->
+      <button class="notification-hide">Hide&nbsp;message</button>
     </div>
   </div>
   <!-- TemplateEndIfClause --><!-- TemplateEndMultipleIf --> </header>
@@ -247,7 +252,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </div>
 </footer>
 </nav>
-<div id="lastUpdated"><!-- TemplateBeginEditable name="updated" -->Updated:<!-- #BeginDate format:IS1 -->2020-05-20<!-- #EndDate --> 
+<div id="lastUpdated"><!-- TemplateBeginEditable name="updated" -->Updated:<!-- #BeginDate format:IS1 -->2020-05-27<!-- #EndDate --> 
   <!-- TemplateEndEditable --></div>
 <script src="../assets/v5-js/jquery.min.js"></script> 
 <script src="../assets/v5-js/v5-footer.min.js"></script> 
@@ -292,6 +297,7 @@ searchInput.removeAttribute('cellspacing');
 
 };	
 </script> 
+	
 <!-- TemplateBeginMultipleIf --> <!-- TemplateBeginIfClause cond="contentType == 'Content' | contentType == 'Task' | contentType == 'Engaged' | contentType == 'Navigation' | contentType == 'Tool' && weblite == false" --> <!-- TemplateEndIfClause --> <!-- TemplateBeginIfClause cond="contentType != 'Content' && contentType != 'Task' && contentType != 'Engaged' && contentType != 'Navigation' && contentType != 'Tool' && weblite == false" --> <!-- TemplateEndIfClause --> <!-- TemplateEndMultipleIf --> <!-- TemplateInfo codeOutsideHTMLIsLocked="true" --> <!-- TemplateParam name="bodyClass" type="text" value="guidance" --> <!-- TemplateParam name="layout" type="text" value="betacontentpage" --> <!-- TemplateParam name="columnLayout" type="number" value="2" --> <!-- TemplateParam name="platform" type="text" value="v5" --> <!-- TemplateParam name="rdfa" type="boolean" value="false" --> <!-- TemplateParam name="welsh" type="boolean" value="false" --> <!-- TemplateParam name="homepage" type="boolean" value="true" --> <!-- TemplateParam name="weblite" type="boolean" value="false" --> <!-- TemplateParam name="feedback" type="boolean" value="true" --> <!-- TemplateParam name="contentType" type="text" value="default" --> <!-- TemplateParam name="notificationBar" type="boolean" value="false" --> <!-- TemplateParam name="printGuide" type="boolean" value="false" -->
 </body>
 </html>

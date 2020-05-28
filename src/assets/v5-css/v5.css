@@ -348,7 +348,7 @@ a.hover, a:active, a:focus, a:hover {
 #contentContainer a:focus, #contentContainer a:focus span, #contentContainer a:hover, #contentContainer a:hover span {
   text-decoration: none; }
 
-#contentContainer .box a, #contentContainer .linkList a, #contentContainer .semtabs a, #contentContainer h2 a, #contentContainer h3 a {
+#contentContainer .linkList a, #contentContainer .semtabs a, #contentContainer h2 a, #contentContainer h3 a {
   text-decoration: none; }
 
 #contentContainer .box a:focus, #contentContainer .box a:hover, #contentContainer .linkList a:focus, #contentContainer .linkList a:hover, #contentContainer .semtabs a:focus, #contentContainer .semtabs a:hover, #contentContainer h2 a:focus, #contentContainer h2 a:hover, #contentContainer h3 a:hover {
@@ -802,23 +802,6 @@ table a.tableRowToggle, table a.tableRowToggleClosed {
 #textTab .largerFont {
   font-size: 18px; }
 
-#breadCrumb {
-  clear: both;
-  width: 100%; }
-
-#breadCrumb ol li {
-  background: url(../v4-images/shared/page-furniture.png) 0 -382px no-repeat;
-  display: inline;
-  margin: 0;
-  padding: 0 0 0 10px; }
-
-.ie7 #breadCrumb ol li {
-  zoom: 0; }
-
-#breadCrumb ol li.home {
-  background: 0 0;
-  padding: 0; }
-
 ul#navSupp, ul.navSupp {
   margin-left: 12px; }
 
@@ -1028,9 +1011,6 @@ ul#navSupp li a, ul.navSupp li a {
 .hasMore .more {
   position: absolute;
   bottom: 10px; }
-
-p.more a, p.moreAboveSplit a {
-  padding: 0 0 0 20px; }
 
 .box .more {
   width: 430px; }
@@ -2563,10 +2543,6 @@ ul.listexclaim li {
 .downloadBox a {
   background: url(../../assets/v4-images/website/sprites/large-download-icons.png) 15px center no-repeat; }
 
-.more a,
-.moreAboveSplit a {
-  background: url(../../assets/v4-images/website/sprites/more-boxes.png) -1640px bottom no-repeat; }
-
 .boxSubscribeSingle h2 {
   color: #4E4E4E; }
 
@@ -3626,6 +3602,23 @@ table caption {
   padding: 10px;
   color: white; }
 
+.tabs.semtabs {
+  width: 100%; }
+
+.tabs li {
+  width: 100%; }
+  @media only screen and (min-width: 800px) {
+    .tabs li {
+      width: auto; } }
+
+ul.semtabs li a:focus {
+  border: none; }
+
+#contentContainer ul.tabs li a:focus {
+  border-bottom: none !important;
+  color: #333333; }
+
+#contentContainer ul li a:focus
 .ui-accordion .ui-accordion-header .ui-icon {
   vertical-align: middle !important;
   margin: 0  5px 10px 0 !important;
@@ -3636,6 +3629,9 @@ table caption {
   left: 0 !important;
   float: left !important; }
 
+.ui-accordion .ui-icon {
+  float: left; }
+
 .ui-icon {
   width: 16px;
   height: 16px;
@@ -3645,10 +3641,21 @@ table caption {
   border: 1px solid #eee; }
 
 .ui-icon-triangle-1-e {
-  background-position: -64px -16px; }
+  background-image: url("../../assets/v5-images/icons/svg/solid/chevron-up-solid-red.svg");
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  margin: 0 5px 10px 5px; }
 
 .ui-corner-top .ui-icon-triangle-1-s {
-  background-position: 0px -16px; }
+  content: " ";
+  background-image: url("../../assets/v5-images/icons/svg/solid/chevron-down-solid-red.svg");
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  margin: 0 5px 10px 5px; }
 
 .ui-accordion-content {
   margin-bottom: 10px !important;
@@ -3731,7 +3738,10 @@ table caption {
   color: white; }
 
 #globalSearch, #globalSearchMobile {
-  margin-top: 10px !important; }
+  margin-top: 20px; }
+  @media only screen and (min-width: 980px) {
+    #globalSearch, #globalSearchMobile {
+      margin-top: 0px; } }
 
 #globalSearch tr, #globalSearchMobile tr {
   background: #981e32; }
@@ -4262,7 +4272,7 @@ display: none;
 .menuContainer {
   width: 100%;
   float: left;
-  margin-top: 10px;
+  margin-top: 20px;
   background: #eee; }
   @media only screen and (min-width: 980px) {
     .menuContainer {
@@ -4311,13 +4321,41 @@ display: none;
       padding-right: 0; } }
 
 #breadCrumb {
+  clear: both;
+  width: 100%; }
+
+#breadCrumb ol li::before {
+  content: " ";
+  background-image: url("../../assets/v5-images/icons/svg/solid/chevron-right-gray.svg");
+  background-repeat: no-repeat;
+  background-position: bottom;
+  float: left;
+  top: 2px;
+  position: relative;
+  width: 17px;
+  height: 17px; }
+
+#breadCrumb ol li.home {
+  background: 0 0;
+  padding: 0; }
+
+#breadCrumb ol li.home::before {
+  display: none; }
+
+#breadCrumb {
   margin-bottom: 20px !important;
   background: #eee;
   margin: 0;
   float: left; }
 
+#breadCrumb ol {
+  list-style: none; }
+
 #breadCrumb ol li {
-  font-size: 1.1em; }
+  display: inline-block;
+  font-size: 1.1em;
+  margin: 0;
+  padding: 0; }
 
 #breadCrumb ol li a {
   color: #333333;
@@ -4832,20 +4870,10 @@ ul.touchcarousel-container {
 
 #navSecondary {
   margin-bottom: 20px;
-  width: 100%;
-  /*
-@media only screen and (max-width : 979px) {
-position: absolute !important;
-top: -9999px !important;
-left: -9999px !important;
-}
-*/ }
+  width: 100%; }
 
 .normalFont #breadCrumb ol {
   font-size: 1.1em; }
-
-#breadCrumb ol li {
-  background: url(../v4-images/shared/page-furniture.png) 0 -379px no-repeat; }
 
 #backTo {
   background: #333333; }
@@ -5562,22 +5590,10 @@ dl.dlpretty {
 #cookieNotify p {
   padding: 0; }
 
-#cookieNotify .v5-hide-button {
-  background: none;
-  color: white;
-  text-decoration: underline;
-  border: 0; }
-
-#cookieNotify .v5-hide-button:hover {
-  cursor: pointer; }
-
 #cookieContainer {
   float: left;
   background-color: #333;
   display: block; }
-
-.ie7 #cookieContainer {
-  height: 3.500em; }
 
 #cookieNotify {
   width: 100%;
@@ -5596,10 +5612,6 @@ dl.dlpretty {
   font-size: 1.1em;
   float: left;
   margin: 0; }
-
-#cookieNotify p a {
-  color: #FF9C00;
-  text-decoration: underline; }
 
 #cookieNotifyClose {
   float: right;
@@ -5626,7 +5638,24 @@ dl.dlpretty {
 .notification-banner.global p {
   color: white; }
 
-.notification-banner.global a {
+.notification-banner.global p a {
+  color: #ffdd00;
+  text-decoration: underline; }
+
+.notification-banner.global p a:hover {
+  text-decoration: none; }
+
+.notification-banner button {
+  padding: 0; }
+
+.notification-banner button:hover {
+  text-decoration: none; }
+
+.notification-banner button {
+  text-decoration: underline;
+  cursor: pointer; }
+
+.notification-banner.global button {
   color: #ffdd00; }
 
 .brexit-icon {
@@ -5634,14 +5663,22 @@ dl.dlpretty {
 
 .notification-container {
   width: 90%;
+  margin-top: 20px;
   padding: 10px 5%;
   float: left;
   position: relative; }
   @media only screen and (min-width: 980px) {
     .notification-container {
-      padding: 20px 0;
+      padding: 0;
       width: 940px;
       float: none; } }
+
+.notification-container p {
+  margin: 0; }
+
+.notification-container img {
+  float: left;
+  margin-right: 20px; }
 
 .notification-message {
   margin: 0;
@@ -5664,13 +5701,16 @@ dl.dlpretty {
     float: left; } }
 
 .notification-hide, .notification-banner.global .notification-hide {
+  background: none;
+  border: none;
   float: right;
-  padding-top: 20px; }
+  margin-top: 10px; }
   @media only screen and (min-width: 980px) {
     .notification-hide, .notification-banner.global .notification-hide {
       position: absolute;
       right: 0;
-      top: 0; } }
+      top: 0;
+      margin-top: 0; } }
 
 .notification-bar-title {
   font-weight: bold;
@@ -5742,8 +5782,7 @@ p.moreLink a {
   padding-right: 5px;
   width: 16px;
   height: 16px;
-  margin: 0;
-  float: left; }
+  margin: 0; }
 
 #contentContainer .columnFull p.moreLink a:hover::before {
   content: " ";
@@ -5753,8 +5792,7 @@ p.moreLink a {
   padding-right: 5px;
   width: 16px;
   height: 16px;
-  margin: 0;
-  float: left; }
+  margin: 0; }
 
 #contentContainer .columnFull .backgroundRed p.moreLink a::before {
   content: " ";
@@ -5764,15 +5802,13 @@ p.moreLink a {
   padding-right: 5px;
   width: 16px;
   height: 16px;
-  margin: 0;
-  float: left; }
+  margin: 0; }
 
 #contentContainer .columnFull ul.social li.facebook::before {
   content: " ";
   background-image: url("../../assets/v5-images/icons/svg/brands/facebook-square-red.svg");
   position: relative;
   top: 2px;
-  float: left;
   background-repeat: no-repeat;
   display: inline-block;
   padding-right: 5px;
@@ -5785,7 +5821,6 @@ p.moreLink a {
   background-image: url("../../assets/v5-images/icons/svg/brands/linkedin-red.svg");
   position: relative;
   top: 2px;
-  float: left;
   background-repeat: no-repeat;
   display: inline-block;
   padding-right: 5px;
@@ -5798,7 +5833,6 @@ p.moreLink a {
   background-image: url("../../assets/v5-images/icons/svg/brands/youtube-red.svg");
   position: relative;
   top: 2px;
-  float: left;
   background-repeat: no-repeat;
   display: inline-block;
   padding-right: 5px;
@@ -5811,7 +5845,6 @@ p.moreLink a {
   background-image: url("../../assets/v5-images/icons/svg/brands/twitter-red.svg");
   position: relative;
   top: 2px;
-  float: left;
   background-repeat: no-repeat;
   display: inline-block;
   padding-right: 5px;
@@ -5822,7 +5855,6 @@ p.moreLink a {
 #printGuide a::before {
   content: " ";
   background-image: url("../../assets/v5-images/icons/svg/solid/print.svg");
-  float: left;
   background-repeat: no-repeat;
   display: inline-block;
   padding-right: 5px;
@@ -5889,7 +5921,8 @@ p.moreLink a {
   margin: 0;
   padding-right: 10px; }
 
-#contentContainer .linkList li a::before {
+#contentContainer .linkList li a::before, #contentContainer p.linkList a::before, #contentContainer .more a::before,
+.moreAboveSplit a::before {
   content: " ";
   background-image: url("../../assets/v5-images/icons/svg/solid/caret-right-red.svg");
   background-repeat: no-repeat;
@@ -5897,6 +5930,9 @@ p.moreLink a {
   width: 16px;
   margin: 0;
   padding-right: 10px; }
+
+#contentContainer p.linkList a {
+  text-decoration: underline; }
 
 #contentContainer #pagination .next-page .pagination-icon::after {
   content: " ";
