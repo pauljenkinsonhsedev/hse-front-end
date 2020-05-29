@@ -5578,6 +5578,23 @@ dl.dlpretty {
 #beta-user-testing p a:hover {
   text-decoration: none; }
 
+#cookieContainer p a {
+  color: #ffdd00;
+  text-decoration: underline; }
+
+#cookieContainer p a:hover {
+  text-decoration: none; }
+
+#cookieContainer button {
+  float: left;
+  background: #981e32;
+  border: none;
+  color: white;
+  padding: 10px; }
+
+#cookieContainer button:hover {
+  cursor: pointer; }
+
 .v5-span-heading1 {
   color: white;
   font-size: 2em;
@@ -5610,8 +5627,7 @@ dl.dlpretty {
 #cookieNotify p {
   color: #fff;
   font-size: 1.1em;
-  float: left;
-  margin: 0; }
+  float: left; }
 
 #cookieNotifyClose {
   float: right;

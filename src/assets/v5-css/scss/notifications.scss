@@ -1,19 +1,40 @@
 // Cookie notification
 
+#cookieContainer p a {
+color: $focus;
+text-decoration: underline;
+}
+
+#cookieContainer p a:hover {
+text-decoration: none;	
+}
+
+#cookieContainer button {
+float: left;
+background: $red;
+border: none;
+color: white;
+padding: 10px;
+}
+
+#cookieContainer button:hover {
+cursor: pointer;
+}
+
 .v5-span-heading1 {
-	color: white;
-	font-size: 2em;
-	float: left;
-	padding: 20px 0;
-	}
-	
-	#cookieNotify {
-	background: none !important;
-	}
-	
-	#cookieNotify p {
-	padding: 0;
-	}
+color: white;
+font-size: 2em;
+float: left;
+padding: 20px 0;
+}
+
+#cookieNotify {
+background: none !important;
+}
+
+#cookieNotify p {
+padding: 0;
+}
 
 #cookieContainer {
 float: left;
@@ -22,29 +43,28 @@ display: block;
 }
 
 #cookieNotify {
-	width: 100%;
-	@media only screen and (min-width : $desktop) {
-	width: 940px;
-	}
-	padding: 0px !important;
-	margin: 5px auto;
-	background: url(../v4-images/shared/cookie-icon.png) no-repeat 0 4px;
+width: 100%;
+@media only screen and (min-width : $desktop) {
+width: 940px;
+}
+padding: 0px !important;
+margin: 5px auto;
+background: url(../v4-images/shared/cookie-icon.png) no-repeat 0 4px;
 }
 
 .ie7 #cookieNotify {
-	height: 2.667em;
+height: 2.667em;
 }
 
 #cookieNotify p {
-	color: #fff;
-	font-size: 1.1em;
-	float: left;
-	margin: 0;
+color: #fff;
+font-size: 1.1em;
+float: left;
 }
 
 #cookieNotifyClose {
-	float: right;
-	padding: 6px 0 0 0;
+float: right;
+padding: 6px 0 0 0;
 }
 
 /* Cookie notification end */
@@ -150,8 +170,8 @@ float: left;
 }
 }
 
-.notification-hide, .notification-banner.global .notification-hide
-	{
+.notification-hide, .notification-banner.global .notification-hide, 
+{
 background: none;
 border: none;
 float: right;

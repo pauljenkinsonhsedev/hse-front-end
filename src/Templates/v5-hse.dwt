@@ -235,8 +235,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <li><a href="../acronym/index.htm">Acronyms</a></li>
       <li><a href="../about/site_map/index.htm">Site map</a></li>
       <li><a href="../copyright.htm">Copyright</a></li>
-      <li><a href="../cookies.htm">Cookies</a></li>
-      <li><a href="../privacy.htm">Privacy</a></li>
+      <li><a href="../privacy.htm">Privacy and cookies</a></li>
       <li><a href="../accessibility.htm">Accessibility</a></li>
       <li><a href="../foi/index.htm">Disclosure of information</a></li>
       <li><a href="../report-vulnerability.htm">Vulnerability disclosure</a></li>
@@ -252,7 +251,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </div>
 </footer>
 </nav>
-<div id="lastUpdated"><!-- TemplateBeginEditable name="updated" -->Updated:<!-- #BeginDate format:IS1 -->2020-05-27<!-- #EndDate --> 
+<div id="lastUpdated"><!-- TemplateBeginEditable name="updated" -->Updated:<!-- #BeginDate format:IS1 -->2020-05-29<!-- #EndDate --> 
   <!-- TemplateEndEditable --></div>
 <script src="../assets/v5-js/jquery.min.js"></script> 
 <script src="../assets/v5-js/v5-footer.min.js"></script> 

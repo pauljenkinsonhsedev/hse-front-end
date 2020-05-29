@@ -1,28 +1,22 @@
 /*
-Error: Undefined variable: "$desktop".
-        on line 26 of /Users/pjenkinson/Dev/sites/hse-front-end/src/assets/v5-css/scss/notifications.scss
+Error: Undefined variable: "$focus".
+        on line 4 of /Users/pjenkinson/Dev/sites/hse-front-end/src/assets/v5-css/scss/notifications.scss
 
-21: display: block;
-22: }
-23: 
-24: #cookieNotify {
-25: 	width: 100%;
-26: 	@media only screen and (min-width : $desktop) {
-27: 	width: 940px;
-28: 	}
-29: 	padding: 0px !important;
-30: 	margin: 5px auto;
-31: 	background: url(../v4-images/shared/cookie-icon.png) no-repeat 0 4px;
+1: // Cookie notification
+2: 
+3: #cookieContainer p a {
+4: color: $focus;
+5: text-decoration: underline;
+6: }
+7: 
+8: #cookieContainer p a:hover {
+9: text-decoration: none;	
 
 Backtrace:
-/Users/pjenkinson/Dev/sites/hse-front-end/src/assets/v5-css/scss/notifications.scss:26
+/Users/pjenkinson/Dev/sites/hse-front-end/src/assets/v5-css/scss/notifications.scss:4
 /Applications/Adobe Dreamweaver 2020/Adobe Dreamweaver 2020.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/script/tree/variable.rb:49:in `_perform'
 /Applications/Adobe Dreamweaver 2020/Adobe Dreamweaver 2020.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/script/tree/node.rb:50:in `perform'
-/Applications/Adobe Dreamweaver 2020/Adobe Dreamweaver 2020.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/tree/visitors/perform.rb:555:in `block in run_interp_no_strip'
-/Applications/Adobe Dreamweaver 2020/Adobe Dreamweaver 2020.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/tree/visitors/perform.rb:553:in `map'
-/Applications/Adobe Dreamweaver 2020/Adobe Dreamweaver 2020.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/tree/visitors/perform.rb:553:in `run_interp_no_strip'
-/Applications/Adobe Dreamweaver 2020/Adobe Dreamweaver 2020.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/tree/visitors/perform.rb:560:in `run_interp'
-/Applications/Adobe Dreamweaver 2020/Adobe Dreamweaver 2020.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/tree/visitors/perform.rb:525:in `visit_media'
+/Applications/Adobe Dreamweaver 2020/Adobe Dreamweaver 2020.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/tree/visitors/perform.rb:402:in `visit_prop'
 /Applications/Adobe Dreamweaver 2020/Adobe Dreamweaver 2020.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/tree/visitors/base.rb:36:in `visit'
 /Applications/Adobe Dreamweaver 2020/Adobe Dreamweaver 2020.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/tree/visitors/perform.rb:162:in `block in visit'
 /Applications/Adobe Dreamweaver 2020/Adobe Dreamweaver 2020.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/stack.rb:79:in `block in with_base'
@@ -65,4 +59,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$desktop\".\A         on line 26 of /Users/pjenkinson/Dev/sites/hse-front-end/src/assets/v5-css/scss/notifications.scss\A \A 21: display: block;\A 22: }\A 23: \A 24: #cookieNotify {\A 25: 	width: 100%;\A 26: 	@media only screen and (min-width : $desktop) {\A 27: 	width: 940px;\A 28: 	}\A 29: 	padding: 0px !important;\A 30: 	margin: 5px auto;\A 31: 	background: url(../v4-images/shared/cookie-icon.png) no-repeat 0 4px;"; }
+  content: "Error: Undefined variable: \"$focus\".\A         on line 4 of /Users/pjenkinson/Dev/sites/hse-front-end/src/assets/v5-css/scss/notifications.scss\A \A 1: // Cookie notification\A 2: \A 3: #cookieContainer p a {\A 4: color: $focus;\A 5: text-decoration: underline;\A 6: }\A 7: \A 8: #cookieContainer p a:hover {\A 9: text-decoration: none;	"; }
