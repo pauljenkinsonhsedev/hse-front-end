@@ -368,3 +368,29 @@ padding: 0;
 .home #headerContainer {
 margin-bottom: 20px;
 }
+
+// Column lists
+
+.column.multiCol {
+margin-bottom: 0;
+@media only screen and (min-width : $desktop) {
+margin-bottom: 20px;
+}
+}
+
+.column.multiCol.col3 {
+-webkit-column-count: 1; /* Chrome, Safari, Opera */
+-moz-column-count: 1; /* Firefox */
+column-count: 1;
+@media only screen and (min-width : $desktop) {
+-webkit-column-count: 3; /* Chrome, Safari, Opera */
+-moz-column-count: 3; /* Firefox */
+column-count: 3;
+}
+}
+
+.columnsList li {
+padding: 0;
+background: none;
+}
+

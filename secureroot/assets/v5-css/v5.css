@@ -196,7 +196,8 @@ input#email {
   background: #981e32;
   color: white;
   padding: 5px;
-  margin-top: 10px; }
+  margin-top: 10px;
+  border: 0; }
 
 img.featuredImg {
   width: 100%;
@@ -891,18 +892,18 @@ ul#navSupp li a, ul.navSupp li a {
   width: 680px; }
 
 .boxSplit {
-  height: 32px;
+  height: 15px;
   padding: 0;
   margin: 0 0 4px -10px;
   float: left; }
 
 .box1col .boxSplit {
-  background: transparent url(../v4-images/shared/more-boxes.png) 0 5px no-repeat;
+  background: white;
   width: 220px; }
 
 .box2col .boxSplit {
-  background: transparent url(../v4-images/shared/more-boxes.png) -220px 5px no-repeat;
-  width: 460px; }
+  width: 460px;
+  background: white; }
 
 .boxPromoImage img {
   float: right;
@@ -996,7 +997,6 @@ ul#navSupp li a, ul.navSupp li a {
 .more, .moreAboveSplit {
   background: #fff;
   padding: 4px 5px;
-  margin: 0 !important;
   clear: both;
   border-radius: 0;
   z-index: 1;
@@ -3707,6 +3707,30 @@ ul.semtabs li a:focus {
 .home #headerContainer {
   margin-bottom: 20px; }
 
+.column.multiCol {
+  margin-bottom: 0; }
+  @media only screen and (min-width: 980px) {
+    .column.multiCol {
+      margin-bottom: 20px; } }
+
+.column.multiCol.col3 {
+  -webkit-column-count: 1;
+  /* Chrome, Safari, Opera */
+  -moz-column-count: 1;
+  /* Firefox */
+  column-count: 1; }
+  @media only screen and (min-width: 980px) {
+    .column.multiCol.col3 {
+      -webkit-column-count: 3;
+      /* Chrome, Safari, Opera */
+      -moz-column-count: 3;
+      /* Firefox */
+      column-count: 3; } }
+
+.columnsList li {
+  padding: 0;
+  background: none; }
+
 .subscribe img {
   display: inline-block;
   float: left; }
@@ -5545,9 +5569,6 @@ dl.dlpretty {
 .box1col .more {
   width: 100% !important; }
 
-.box1col .boxSplit {
-  background: none !important; }
-
 .box.backgroundRed.hasMore p.more a {
   color: #981e32 !important; }
 
@@ -5599,7 +5620,8 @@ dl.dlpretty {
   color: white;
   font-size: 2em;
   float: left;
-  padding: 20px 0; }
+  padding: 0;
+  margin-bottom: 10px; }
 
 #cookieNotify {
   background: none !important; }
@@ -5643,9 +5665,6 @@ dl.dlpretty {
   font-size: 16px;
   border-bottom: 2px solid #981e32;
   line-height: normal !important; }
-  @media only screen and (min-width: 980px) {
-    .notification-banner {
-      min-height: 78px; } }
 
 .notification-banner.global {
   background: #333333;
@@ -5679,7 +5698,8 @@ dl.dlpretty {
 
 .notification-container {
   width: 90%;
-  margin-top: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   padding: 10px 5%;
   float: left;
   position: relative; }
@@ -5687,6 +5707,8 @@ dl.dlpretty {
     .notification-container {
       padding: 0;
       width: 940px;
+      margin-top: 20px;
+      margin-bottom: 20px;
       float: none; } }
 
 .notification-container p {
@@ -5937,7 +5959,7 @@ p.moreLink a {
   margin: 0;
   padding-right: 10px; }
 
-#contentContainer .linkList li a::before, #contentContainer p.linkList a::before, #contentContainer .more a::before,
+#contentContainer .linkList li::before, #contentContainer p.linkList a::before, #contentContainer .more a::before,
 .moreAboveSplit a::before {
   content: " ";
   background-image: url("../../assets/v5-images/icons/svg/solid/caret-right-red.svg");

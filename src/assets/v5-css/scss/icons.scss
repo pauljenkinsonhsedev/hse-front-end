@@ -203,7 +203,7 @@ padding-right: 10px;
 
 
 
-#contentContainer .linkList li a::before, #contentContainer p.linkList a::before, #contentContainer .more a::before,
+#contentContainer .linkList li::before, #contentContainer p.linkList a::before, #contentContainer .more a::before,
 .moreAboveSplit a::before  {
 content: " ";
 background-image: url('../../assets/v5-images/icons/svg/solid/caret-right-red.svg');

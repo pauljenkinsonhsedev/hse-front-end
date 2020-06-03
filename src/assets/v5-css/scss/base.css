@@ -194,7 +194,8 @@ input#email {
   background: #981e32;
   color: white;
   padding: 5px;
-  margin-top: 10px; }
+  margin-top: 10px;
+  border: 0; }
 
 img.featuredImg {
   width: 100%;
