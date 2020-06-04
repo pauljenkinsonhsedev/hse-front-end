@@ -1,13 +1,3 @@
 .DS_Store
 *.lbi
 node_modules
-src/**
-src/assets/
-src/assets/images
-build/**
-build/aboutyou/
-build/simple-health-safety/**
-secureroot/**
-devkit-v5/
-
-

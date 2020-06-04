@@ -1,21 +1,21 @@
 /*
 Error: Undefined variable: "$red".
-        on line 33 of /Users/pjenkinson/Dev/sites/hse-front-end/src/assets/v5-css/scss/box.scss
+        on line 29 of /Users/pjenkinson/Dev/sites/hse-front-end/src/assets/v5-css/scss/box.scss
 
-28: .box1col .boxSplit {
-29: background: none !important;
+24: .box1col .more {
+25: width: 100% !important;
+26: }
+27: 
+28: .box.backgroundRed.hasMore p.more a {
+29: color: $red !important;
 30: }
 31: 
-32: .box.backgroundRed.hasMore p.more a {
-33: color: $red !important;
-34: }
-35: 
-36: .boxSplit {
-37: @media only screen and (max-width : 979px) {
-38: background: none !important;}
+32: .boxSplit {
+33: @media only screen and (max-width : 979px) {
+34: background: none !important;}
 
 Backtrace:
-/Users/pjenkinson/Dev/sites/hse-front-end/src/assets/v5-css/scss/box.scss:33
+/Users/pjenkinson/Dev/sites/hse-front-end/src/assets/v5-css/scss/box.scss:29
 /Applications/Adobe Dreamweaver 2020/Adobe Dreamweaver 2020.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/script/tree/variable.rb:49:in `_perform'
 /Applications/Adobe Dreamweaver 2020/Adobe Dreamweaver 2020.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/script/tree/node.rb:50:in `perform'
 /Applications/Adobe Dreamweaver 2020/Adobe Dreamweaver 2020.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/script/tree/list_literal.rb:75:in `block in _perform'
@@ -65,4 +65,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$red\".\A         on line 33 of /Users/pjenkinson/Dev/sites/hse-front-end/src/assets/v5-css/scss/box.scss\A \A 28: .box1col .boxSplit {\A 29: background: none !important;\A 30: }\A 31: \A 32: .box.backgroundRed.hasMore p.more a {\A 33: color: $red !important;\A 34: }\A 35: \A 36: .boxSplit {\A 37: @media only screen and (max-width : 979px) {\A 38: background: none !important;}"; }
+  content: "Error: Undefined variable: \"$red\".\A         on line 29 of /Users/pjenkinson/Dev/sites/hse-front-end/src/assets/v5-css/scss/box.scss\A \A 24: .box1col .more {\A 25: width: 100% !important;\A 26: }\A 27: \A 28: .box.backgroundRed.hasMore p.more a {\A 29: color: $red !important;\A 30: }\A 31: \A 32: .boxSplit {\A 33: @media only screen and (max-width : 979px) {\A 34: background: none !important;}"; }

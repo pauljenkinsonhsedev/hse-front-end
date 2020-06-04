@@ -79,8 +79,8 @@ clear: none;
 }
 
 @media only screen and (min-width : 979px) {
-    .itemThumbBook.publications  a:last-of-type {
-    margin-right: 0px !important;
+.itemThumbBook.publications  a:last-of-type {
+margin-right: 0px !important;
 }
 
 
@@ -213,33 +213,7 @@ cursor: pointer;
 width: 160px !important;
 }
 
-/* Cookies bar */
 
-.v5-span-heading1 {
-color: white;
-font-size: 2em;
-float: left;
-padding: 20px 0;
-}
-
-#cookieNotify {
-background: none !important;
-}
-
-#cookieNotify p {
-padding: 0;
-}
-
-#cookieNotify .v5-hide-button {
-background: none;
-color: white;
-text-decoration: underline;
-border: 0;
-}
-
-#cookieNotify .v5-hide-button:hover {
-cursor: pointer;
-}
 
 // Alert box
 
@@ -259,6 +233,31 @@ padding: 10px;
 color: white;
 }
 
+// Tabs 
+
+.tabs.semtabs {
+width: 100%;
+@media only screen and (min-width : $desktop) {
+
+}
+}
+
+.tabs li {
+width: 100%;
+@media only screen and (min-width : 800px) {
+width: auto;
+}   
+}
+ul.semtabs li a:focus {
+border: none;
+}
+#contentContainer ul.tabs li a:focus {
+border-bottom: none !important;
+color: $hseblack;
+}
+
+#contentContainer ul li a:focus
+
 // Accordion 
 
 .ui-accordion .ui-accordion-header .ui-icon {
@@ -272,8 +271,38 @@ left: 0 !important;
 float: left !important;
 }
 
-.ui-accordion .ui-accordion-header a {
-font-size: 0.9rem !important;
+.ui-accordion .ui-icon {
+float: left;
+}
+
+.ui-icon {
+width: 16px;
+height: 16px;
+background-image: url(https://www.hse.gov.uk/assets/v4-images/website/jqueryui/ui-icons_b82533_256x240.png);
+}
+
+.ui-accordion .ui-accordion-header  {
+border: 1px solid $gray;
+}
+
+.ui-icon-triangle-1-e {
+background-image: url('../../assets/v5-images/icons/svg/solid/chevron-down-solid-red.svg');
+background-repeat: no-repeat;
+display: inline-block;
+width: 15px;
+height: 15px;
+margin: 0 5px 10px 5px;
+}
+
+
+.ui-corner-top .ui-icon-triangle-1-s {
+content: " ";
+background-image: url('../../assets/v5-images/icons/svg/solid/chevron-up-solid-red.svg');
+background-repeat: no-repeat;
+display: inline-block;
+width: 15px;
+height: 15px;
+margin: 0 5px 10px 5px;
 }
 
 .ui-accordion-content {
@@ -292,6 +321,7 @@ text-decoration: underline !important;
 .ui-accordion-header:hover {
 color: $black !important;
 text-decoration: none !important;
+cursor: pointer;
 }
 
 
@@ -325,6 +355,7 @@ border-radius: 0 !important;
 
 .v5-container {
 width: 90%;
+clear: both;
 padding-left: 5%;
 padding-right: 5%;
 @media only screen and (min-width : $desktop) {
@@ -333,3 +364,33 @@ margin: 0 auto;
 padding: 0;
 }
 }
+
+.home #headerContainer {
+margin-bottom: 20px;
+}
+
+// Column lists
+
+.column.multiCol {
+margin-bottom: 0;
+@media only screen and (min-width : $desktop) {
+margin-bottom: 20px;
+}
+}
+
+.column.multiCol.col3 {
+-webkit-column-count: 1; /* Chrome, Safari, Opera */
+-moz-column-count: 1; /* Firefox */
+column-count: 1;
+@media only screen and (min-width : $desktop) {
+-webkit-column-count: 3; /* Chrome, Safari, Opera */
+-moz-column-count: 3; /* Firefox */
+column-count: 3;
+}
+}
+
+.columnsList li {
+padding: 0;
+background: none;
+}
+

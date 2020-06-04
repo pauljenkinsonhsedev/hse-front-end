@@ -14,6 +14,3 @@
   var txt = $("#breadCrumb ol li a:last").html();
   $(".backto a").append(" ").append(txt);
 
-  // Wrap beta banner for center align
-
-  $( "#beta-user-testing" ).wrap( "<div class='v5-container'></div>" );

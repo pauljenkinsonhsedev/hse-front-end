@@ -30,8 +30,7 @@ $('body').prepend('<noscript><iframe src="https://www.googletagmanager.com/ns.ht
 
 }	
 
-$( document ).ready(function() {
 
-gtmFunction();
 
-});
+
+

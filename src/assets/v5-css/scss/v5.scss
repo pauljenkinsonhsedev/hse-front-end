@@ -1,6 +1,9 @@
-@import "normalize.scss";
 @import "base.scss";
+@import "v4-core-min.scss";
+@import "v4-website-min.scss";
+@import "normalize.scss";
 @import "focus.scss";
+@import "components.scss";
 @import "subscribe-box.scss";
 @import "search.scss";
 @import "font-awesome.scss";
@@ -10,8 +13,7 @@
 @import "fonts.scss";
 @import "media-q.scss";
 @import "layout.scss";
-@import "js-offcanvas.scss";
-@import "off-canvas.scss";
+@import "main-menu.scss";
 @import "top-tasks.scss";
 @import "homepage.scss";
 @import "feedback.scss";
@@ -25,7 +27,6 @@
 @import "notifications.scss";
 @import "more-links.scss";
 @import "icons.scss";
-@import "components.scss";
 @import "forms.scss";
 
 

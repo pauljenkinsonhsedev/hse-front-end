@@ -10,12 +10,30 @@ function addGoogleAlt() {
   t.parentNode.insertBefore(a, t)
 }(),
 
-$(window).load(function () {
-  addGoogleAlt()
-})
 
 // Replaces default Google custom search placeholder text
 
 window.onload = function(){
+
+addGoogleAlt()
+
+searchInput = document.querySelector('#gs_tti50'),
+searchLabel = document.createElement('label');
+
+
+searchLabel.innerHTML = 'Search hse.gov.uk';
+searchLabel.classList.add('hide');
+searchLabel.setAttribute('for', 'gsc-i-id1');
+
+searchInput.prepend(searchLabel);
+
 document.getElementById('gsc-i-id1').placeholder = 'Search hse.gov.uk';
+
+
+
+
+
 };
+
+
+

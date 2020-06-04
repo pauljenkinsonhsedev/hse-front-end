@@ -1,5 +1,9 @@
 // BASE
 
+.hide-notification {
+display: none !important;
+}
+
 // HSE colours
 
 $gray: #eee;
@@ -297,6 +301,7 @@ background: $red;
 color: white;
 padding: 5px;
 margin-top: 10px;
+border: 0;
 }
 
 // Responsive images 
@@ -341,6 +346,5 @@ outline-width: 5px !important;
 /* V5 global styles */
 
 .v5-inline {
-float: left;
 display: inline-block;
 }
