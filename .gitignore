@@ -1,3 +1,9 @@
-.DS_Store
+*.DS_Store
 *.lbi
 node_modules
+src/**/*.htm
+build/**/*.htm
+devkit-v5
+*.bak
+.vscode/settings.json
+.eslintrc.json
