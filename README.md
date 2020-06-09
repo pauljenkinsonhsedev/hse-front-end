@@ -6,7 +6,7 @@ Raw front-end source files
 
 ## Build
 
-Front-end files for testing/development
+Front-end files for local testing/development
 
 ## Secureroot
 
