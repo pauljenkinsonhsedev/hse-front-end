@@ -4761,8 +4761,50 @@ display: none;
 
 .homepageBanner {
   padding-top: 0;
-  padding-bottom: 0;
-  margin-bottom: 20px !important; }
+  padding-bottom: 0; }
+  @media only screen and (min-width: 980px) {
+    .homepageBanner {
+      margin-bottom: 20px !important; } }
+
+.homepageBanner:hover h2 {
+  text-decoration: underline; }
+
+.homepageBannerText {
+  white-space: nowrap;
+  width: 100%;
+  float: left;
+  position: relative;
+  bottom: 20px;
+  background: #981e32;
+  color: white;
+  padding: 10px;
+  max-width: 100%;
+  z-index: 999; }
+  @media only screen and (min-width: 980px) {
+    .homepageBannerText {
+      width: auto;
+      position: absolute;
+      max-width: 60%; } }
+
+.homepageBannerText h2::after {
+  content: " ";
+  background-image: url("../../assets/v5-images/icons/svg/solid/caret-right-white.svg");
+  background-repeat: no-repeat;
+  background-position: left;
+  display: inline-block;
+  margin-left: 10px;
+  width: 20px;
+  height: 20px; }
+
+.homepageBannerText h2 {
+  margin: 0;
+  padding: 0;
+  clear: none;
+  white-space: nowrap; }
+
+.homepageBannerText p {
+  color: white;
+  margin: 0; }
 
 .homepageBanner a {
   float: left;
@@ -5231,10 +5273,10 @@ ul.semtabs li a {
   #contentContainer .sevenEighths {
     width: 820px !important; }
   #contentContainer .mostPopular {
-    width: 280px;
-    min-height: 265px; }
+    width: 300px;
+    min-height: 256.84px; }
   #contentContainer .homepageBanner {
-    width: 640px; }
+    width: 620px; }
   #contentContainer .noPadding.twoThird {
     width: 620px; }
   #contentContainer .twoThirdHalf {
@@ -5784,21 +5826,24 @@ p.moreLink a {
   content: " ";
   background-image: url("../../assets/v5-images/icons/svg/solid/caret-right-white.svg");
   background-repeat: no-repeat;
-  top: 2px;
   display: inline-block;
-  width: 18px;
-  height: 18px;
+  width: 12px;
+  height: 12px;
   margin: 0;
   position: absolute;
+  top: 6px;
   left: 0; }
 
 #contentContainer .columnFull .box ul.listCaret li::before {
   content: " ";
   background-image: url("../../assets/v5-images/icons/svg/solid/caret-right-red.svg");
   background-repeat: no-repeat;
+  width: 12px;
+  height: 12px;
   display: inline-block;
   margin: 0;
   position: absolute;
+  top: 6px;
   left: 0; }
 
 #contentContainer .columnFull .box.backgroundRed ul.listCaret li::before {
