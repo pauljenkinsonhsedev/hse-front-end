@@ -6007,12 +6007,14 @@ p.moreLink a {
 #contentContainer .linkList li::before, #contentContainer p.linkList a::before, #contentContainer .more a::before,
 .moreAboveSplit a::before {
   content: " ";
+  float: left;
+  position: relative;
   background-image: url("../../assets/v5-images/icons/svg/solid/caret-right-red.svg");
   background-repeat: no-repeat;
-  height: 16px;
-  width: 16px;
-  margin: 0;
-  padding-right: 10px; }
+  height: 12px;
+  width: 12px;
+  top: 4px;
+  margin-right: 3px; }
 
 #contentContainer p.linkList a {
   text-decoration: underline; }

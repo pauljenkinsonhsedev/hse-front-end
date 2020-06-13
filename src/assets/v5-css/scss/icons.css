@@ -1,21 +1,21 @@
 /*
 Error: Undefined variable: "$hseblack".
-        on line 164 of /Users/pjenkinson/Dev/sites/hse-front-end/src/assets/v5-css/scss/icons.scss
+        on line 167 of /Users/pjenkinson/Dev/sites/hse-front-end/src/assets/v5-css/scss/icons.scss
 
-159: width: 100%;
-160: padding: 0 0 10px 0;
-161: }
-162: 
-163: .hsl-links li a:hover {
-164: background: $hseblack;
-165: }
-166: 
-167: .hsl-links a {
-168: float: left;
-169: width: 100%;
+162: width: 100%;
+163: padding: 0 0 10px 0;
+164: }
+165: 
+166: .hsl-links li a:hover {
+167: background: $hseblack;
+168: }
+169: 
+170: .hsl-links a {
+171: float: left;
+172: width: 100%;
 
 Backtrace:
-/Users/pjenkinson/Dev/sites/hse-front-end/src/assets/v5-css/scss/icons.scss:164
+/Users/pjenkinson/Dev/sites/hse-front-end/src/assets/v5-css/scss/icons.scss:167
 /Applications/Adobe Dreamweaver 2020/Adobe Dreamweaver 2020.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/script/tree/variable.rb:49:in `_perform'
 /Applications/Adobe Dreamweaver 2020/Adobe Dreamweaver 2020.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/script/tree/node.rb:50:in `perform'
 /Applications/Adobe Dreamweaver 2020/Adobe Dreamweaver 2020.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/tree/visitors/perform.rb:402:in `visit_prop'
@@ -61,4 +61,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$hseblack\".\A         on line 164 of /Users/pjenkinson/Dev/sites/hse-front-end/src/assets/v5-css/scss/icons.scss\A \A 159: width: 100%;\A 160: padding: 0 0 10px 0;\A 161: }\A 162: \A 163: .hsl-links li a:hover {\A 164: background: $hseblack;\A 165: }\A 166: \A 167: .hsl-links a {\A 168: float: left;\A 169: width: 100%;"; }
+  content: "Error: Undefined variable: \"$hseblack\".\A         on line 167 of /Users/pjenkinson/Dev/sites/hse-front-end/src/assets/v5-css/scss/icons.scss\A \A 162: width: 100%;\A 163: padding: 0 0 10px 0;\A 164: }\A 165: \A 166: .hsl-links li a:hover {\A 167: background: $hseblack;\A 168: }\A 169: \A 170: .hsl-links a {\A 171: float: left;\A 172: width: 100%;"; }

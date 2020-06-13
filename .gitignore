@@ -7,3 +7,7 @@ devkit-v5
 *.bak
 .vscode/settings.json
 .eslintrc.json
+
+src/brexit/
+src/coronavirus/
+src/news/
