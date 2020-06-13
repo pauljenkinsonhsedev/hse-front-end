@@ -3,7 +3,7 @@
 $(document).ready(function () {
 
 // Get cookie value
-var notificationBanner = Cookies.get('notification-banner');
+var notificationBanner = Cookies.get('notification_banner');
 
 // If cookie value = true, hide notification banner
 if ( notificationBanner == 'yes') {
@@ -12,7 +12,7 @@ $('#notificationBanner').addClass('hide-notification');
 
 // Set cookie on click 
 $('.notification-hide').click(function() {
-Cookies.set('notification-banner', 'yes' , { path: '/', expires: 7});
+Cookies.set('notification_banner', 'yes' , { path: '/', expires: 7});
 $("#notificationBanner").hide();
 });
 
