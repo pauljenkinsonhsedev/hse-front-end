@@ -23,7 +23,7 @@ $(document).ready(function() {
 
 var globalSet = Cookies.get('global_banner');
 
-  $.getJSON('/ajax/global-message.json', function(global) { 
+  $.getJSON('/assets/ajax/global-message.json', function(global) { 
       var active = global.active;
       var message = global.message;
       var link = global.link;
