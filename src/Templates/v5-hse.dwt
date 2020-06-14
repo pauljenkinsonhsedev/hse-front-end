@@ -87,7 +87,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       </nav>
     </div>
   </div>
-  </div>
   <!-- TemplateBeginMultipleIf --><!-- TemplateBeginIfClause cond="notificationBar == true" -->
   <div id="notificationBanner" class="notification-banner">
     <div class="notification-container fixed-container"> <!-- TemplateBeginEditable name="notification-message" --> <!-- TemplateEndEditable -->
@@ -242,7 +241,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     </div>
   </footer>
 </nav>
-<div id="lastUpdated"><!-- TemplateBeginEditable name="updated" -->Updated:<!-- #BeginDate format:IS1 -->2020-06-12<!-- #EndDate --> 
+<div id="lastUpdated"><!-- TemplateBeginEditable name="updated" -->Updated:<!-- #BeginDate format:IS1 -->2020-06-14<!-- #EndDate --> 
   <!-- TemplateEndEditable --></div>
 <script src="../assets/v5-js/jquery.min.js"></script> 
 <script src="../assets/v5-js/v5-footer.min.js"></script> 
