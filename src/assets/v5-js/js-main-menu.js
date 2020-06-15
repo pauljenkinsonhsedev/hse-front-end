@@ -18,7 +18,7 @@
   menuButton.classList.add('menu-button');
   menuButton.setAttribute('href', '#main-menu');
   menuButton.setAttribute('id', 'menu-button');
-  menuButton.setAttribute('aria-label', 'Main menu');
+  menuButton.setAttribute('aria-label', 'Menu button');
   menuButton.setAttribute('aria-expanded', 'false');
   menuButton.setAttribute('aria-controls', 'menu');
   menuButton.innerHTML = '<span aria-hidden="true"></span>';
@@ -29,7 +29,7 @@
 
   // Menu properties
   menu.setAttribute('aria-hidden', 'true');
-  menu.setAttribute('aria-labelledby', 'menu-button');
+  menu.setAttribute('aria-labelledby', 'Main menu');
 
   
   // Add button to page
