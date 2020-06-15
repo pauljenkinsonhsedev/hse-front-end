@@ -29,7 +29,7 @@
 
   // Menu properties
   menu.setAttribute('aria-hidden', 'true');
-  menu.setAttribute('aria-labelledby', 'Main menu');
+  menu.setAttribute('aria-labelledby', 'main-menu');
 
   
   // Add button to page
