@@ -8,6 +8,7 @@ devkit-v5
 .vscode/settings.json
 .eslintrc.json
 
-src/brexit/
-src/coronavirus/
-src/news/
+brexit/
+coronavirus/
+news/
+asbestos

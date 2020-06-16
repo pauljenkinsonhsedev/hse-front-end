@@ -27,9 +27,7 @@ var globalSet = Cookies.get('global_banner');
       var active = global.active;
       var message = global.message;
       var link = global.link;
-
-console.log(message);
-
+      
 // If global message set to active in JSON and banner has not been accepted      
 
 if (active == 'true' && globalSet != 'true') {
