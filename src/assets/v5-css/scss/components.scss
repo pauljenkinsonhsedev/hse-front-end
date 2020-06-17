@@ -394,3 +394,9 @@ padding: 0;
 background: none;
 }
 
+.columnsList li p {
+@media only screen and (min-width : $desktop) {
+min-height: 43.2px;
+}
+} 
+
