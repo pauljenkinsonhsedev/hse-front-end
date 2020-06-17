@@ -3731,10 +3731,6 @@ ul.semtabs li a:focus {
   padding: 0;
   background: none; }
 
-@media only screen and (min-width: 980px) {
-  .columnsList li p {
-    min-height: 43.2px; } }
-
 .subscribe img {
   display: inline-block;
   float: left; }
