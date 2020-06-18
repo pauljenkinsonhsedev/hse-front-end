@@ -171,17 +171,17 @@ float: left;
 }
 }
 
-.notification-hide, .notification-banner.global .notification-hide, 
+.notification-hide, .notification-banner.global .notification-hide
 {
 background: none;
 border: none;
 float: right;
 margin-top: 10px;
 @media only screen and (min-width : 980px) {
-position: absolute;
+position: relative;
 right: 0;	
 top: 0;
-margin-top: 0;
+margin-bottom: 20px;
 }
 }
 

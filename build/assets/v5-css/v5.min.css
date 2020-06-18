@@ -3729,7 +3729,13 @@ ul.semtabs li a:focus {
 
 .columnsList li {
   padding: 0;
-  background: none; }
+  background: none;
+  -webkit-column-break-inside: avoid;
+  /* Chrome, Safari, Opera */
+  page-break-inside: avoid;
+  /* Firefox */
+  break-inside: avoid;
+  /* IE 10+ */ }
 
 .subscribe img {
   display: inline-block;
@@ -5787,10 +5793,10 @@ dl.dlpretty {
   margin-top: 10px; }
   @media only screen and (min-width: 980px) {
     .notification-hide, .notification-banner.global .notification-hide {
-      position: absolute;
+      position: relative;
       right: 0;
       top: 0;
-      margin-top: 0; } }
+      margin-bottom: 20px; } }
 
 .notification-bar-title {
   font-weight: bold;
