@@ -56,7 +56,6 @@
 	    if($(this).attr("href").includes(orphanindex)) {
 			
 		// Add active page class to first list item
-			
     $(this).addClass("active-page no-active-style");
     $(this).attr('aria-current','page');
 		$(this).parent().parent().addClass("active");
