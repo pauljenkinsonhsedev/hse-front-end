@@ -18,8 +18,8 @@ height: 17px;
 }
 
 #breadCrumb ol li.home {
-    background:0 0;
-    padding:0;
+background:0 0;
+padding:0;
 }
 
 #breadCrumb ol li.home::before {
@@ -28,7 +28,7 @@ display: none;
 
 #breadCrumb {
 margin-bottom: 20px !important;
-background: $gray;
+background-color: $gray;
 margin: 0;
 float: left;
 }

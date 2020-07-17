@@ -5865,12 +5865,6 @@ li.first a.active-page {
 .slinky-menu li.first a {
   width: 100%; }
 
-.slinky-menu a span {
-  text-decoration: none; }
-
-.slinky-menu a span:hover, .slinky-menu a {
-  text-decoration: none; }
-
 .slinky-menu .header .title {
   color: white; }
 

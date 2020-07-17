@@ -11,7 +11,7 @@ text-decoration: none;
 
 #cookieContainer button {
 float: left;
-background: $red;
+background-color: $red;
 border: none;
 color: white;
 padding: 10px;
@@ -73,7 +73,7 @@ padding: 6px 0 0 0;
 /* Notification bar */
 
 .notification-banner {
-background: $gray;
+background-color: $gray;
 width: 100%;
 height: auto;
 float: left;
@@ -83,7 +83,7 @@ line-height: normal !important;
 }
 
 .notification-banner.global {
-background: $hseblack;
+background-color: $hseblack;
 border-bottom: 2px solid $focus;
 }
 

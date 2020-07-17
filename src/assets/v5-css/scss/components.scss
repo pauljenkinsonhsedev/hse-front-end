@@ -2,45 +2,45 @@
 
 // itemThumbBook
 
-.box ul.itemThumbBook a:link {
-text-decoration: none !important;
-}
-
-
 ul.itemThumbBook .header, ul.itemThumbBook .resourceTitle {
 color: $red;
-text-decoration: underline;   
 }
 
 ul.itemThumbBook .header:hover , ul.itemThumbBook .resourceTitle:hover, ul.itemThumbBook a:focus .header, ul.itemThumbBook a:focus .resourceTitle {
 color: $black !important;
 }
 
-#contentContainer ul.itemThumbBook .subText {
+ul.itemThumbBook .subText {
 width: 100% !important;
 }
 
-#contentContainer ul.itemThumbBook {
+ul.itemThumbBook {
 margin: 0 !important;
 }
 
-#contentContainer ul.itemThumbBook a {
+ul.itemThumbBook a {
 float: left !important;
 width: 100%;
+text-decoration: none;
 }
 
-#contentContainer ul.itemThumbBook li {
+ul.itemThumbBook a:hover .resourcePrice {
+text-decoration: none;
+color: $hseblack;
+}
+
+ul.itemThumbBook li {
 float: left;
 padding: 0 !important;
 margin-bottom: 10px;
 width: 100%;
 }
 
-#contentContainer ul.itemThumbBook li p {
+ul.itemThumbBook li p {
 margin: 0 !important;
 }
 
-#contentContainer ul.itemThumbBook span {
+ul.itemThumbBook span {
 padding-right: 0;
 }
 
@@ -101,19 +101,19 @@ clear: none !important;
 
 
 .publications-products a {
-background: #2846A5;
+background-color: #2846A5;
 }
 
 .training a {
-background: #4F2170;
+background-color: #4F2170;
 }
 
 .testing a {
-background: #CE421B;
+background-color: #CE421B;
 }
 
 .research a {
-background: #287826;	
+background-color: #287826;	
 }
 
 
@@ -127,7 +127,7 @@ margin-bottom: 10px !important;
 .lightbox li {
 background: none;
 padding-right: 0 !important;
-background: $gray;
+background-color: $gray;
 border: 5px solid $gray;
 }
 
@@ -152,7 +152,7 @@ left: auto !important;
 
 .ddmswitch input.button {
 position: relative;
-background: $red;
+background-color: $red;
 color: white;
 }
 
@@ -228,7 +228,7 @@ margin-bottom: 20px;
 // Tables 
 
 table caption {
-background: $hseblack;
+background-color: $hseblack;
 padding: 10px;
 color: white;
 }
@@ -326,7 +326,7 @@ cursor: pointer;
 
 
 .ui-accordion-header.ui-state-focus  {
-background: $focus !important;
+background-color: $focus !important;
 color: $black !important;
 text-decoration: none !important;
 }
@@ -373,9 +373,6 @@ margin-bottom: 20px;
 
 .column.multiCol {
 margin-bottom: 0;
-@media only screen and (min-width : $desktop) {
-margin-bottom: 20px;
-}
 }
 
 .column.multiCol.col3 {
@@ -386,6 +383,17 @@ column-count: 1;
 -webkit-column-count: 3; /* Chrome, Safari, Opera */
 -moz-column-count: 3; /* Firefox */
 column-count: 3;
+}
+}
+
+.column.multiCol.col2 {
+-webkit-column-count: 1; /* Chrome, Safari, Opera */
+-moz-column-count: 1; /* Firefox */
+column-count: 1;
+@media only screen and (min-width : $desktop) {
+-webkit-column-count: 2; /* Chrome, Safari, Opera */
+-moz-column-count: 2; /* Firefox */
+column-count: 2;
 }
 }
 

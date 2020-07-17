@@ -26,7 +26,7 @@ display: block;
 	border: 2px solid #f3f3f3;
 	padding: 10px 14px;	
 	text-align:center;
-	background: #fff;
+	background-color: #fff;
 	color: #c2c2c2;
 }
 
@@ -38,19 +38,19 @@ ul.alphabetList li a {
 	border: 2px solid #f3f3f3;
 	padding: 10px 14px;	
 	text-align:center;
-	background: #fff;
+	background-color: #fff;
 	text-decoration: none !important;
 }
 
 ul.alphabetList li a:hover {
-background: $red;
+background-color: $red;
 color: white !important;
 text-decoration: none !important;
 }
 
 .AtoZSelected {
 	color: #000 !important;
-	background: #D5D5D5 !important;
+	background-color: #D5D5D5 !important;
 	border: 1px solid #E90542 !important;
 } 
 
@@ -65,7 +65,7 @@ clear: both;
 
 .listAtoZ h2 {
 display: inline-block;
-background: $red;
+background-color: $red;
 color: white;
 padding: 10px 14px;
 }

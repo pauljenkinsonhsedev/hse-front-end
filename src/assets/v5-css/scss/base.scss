@@ -25,10 +25,10 @@ $desktop: 980px;
 
 // Background box colour
 .backgroundRed {
-background: $red !important;
+background-color: $red !important;
 }
 .backgroundGray {
-background: $gray !important;
+background-color: $gray !important;
 }
 
 .backgroundRed a, .backgroundRed h2, .backgroundRed h3, .backgroundRed p {
@@ -38,25 +38,26 @@ color: white !important;
 
 // Links 
 
-a {
+a, a span {
 text-decoration: underline;
 }
 
-#contentContainer a:link,
-#contentContainer a:visited,
-#contentContainer a {
+a:link,
+a:visited,
+a {
 color: $red;
 text-decoration: underline;
 }
 
 
-#contentContainer a:hover,
-#contentContainer a:active,
-#contentContainer a:focus
+a:hover,
+a:active,
+a:focus, a span.subText, a:hover span
 {
 text-decoration: none !important;
 color: $redhover;
 }
+
 
 
 #contentContainer .linkList li {
@@ -151,10 +152,6 @@ padding-left: 0;
 display: block; 
 }
 
-#contentContainer .linkArrow li a {
-text-decoration: none !important; 
-}
-
 #contentContainer .linkArrow li a:hover {
 text-decoration: underline !important; 
 }
@@ -246,7 +243,7 @@ float: left;
 clear: both;
 width: 100%;
 background: none;
-background: $gray;
+background-color: $gray;
 margin: 5px 0;
 padding: 0;
 }
@@ -258,7 +255,7 @@ padding: 10px;
 }
 
 #contentContainer ul.boxList li:hover {
-background: $darkergray;
+background-color: $darkergray;
 }
 
 #contentContainer ul.boxList li h3 {
@@ -297,7 +294,7 @@ padding: 5px;
 }
 
 .eBulletinButton {
-background: $red;
+background-color: $red;
 color: white;
 padding: 5px;
 margin-top: 10px;

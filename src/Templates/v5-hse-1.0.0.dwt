@@ -57,17 +57,24 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <!-- GTM -->
 
-<noscript>
+<noscript aria-hidden="true" aria-label="GTM-PJPWMNL">
 <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PJPWMNL" height="0" width="0" style="display:none;visibility:hidden" aria-hidden="true"></iframe>
 </noscript>
-<div id="top"> <!-- TemplateBeginMultipleIf --><!-- TemplateBeginIfClause cond="weblite == false" --> <a href="#contentContainer" class="skip">Skip to content</a> <!-- TemplateEndIfClause --><!-- TemplateEndMultipleIf --> </div>
+<section id="top" aria-label="Skip to content"> <!-- TemplateBeginMultipleIf --><!-- TemplateBeginIfClause cond="weblite == false" --> <a href="#contentContainer" class="skip">Skip to content</a> <!-- TemplateEndIfClause --><!-- TemplateEndMultipleIf --> </section>
 <!-- TemplateBeginMultipleIf --> <!-- TemplateBeginIfClause cond="platform == 'v5'" -->
-<div id="printBanner"> <img src="../assets/v4-images/website/print/print-logo.jpg" width="193" height="65" alt="Health and Safety Executive" id="printLogo"/> </div>
+<section id="printBanner"> <img src="../assets/v4-images/website/print/print-logo.jpg" width="193" height="65" alt="Health and Safety Executive" id="printLogo"/> </section>
 <header id="headerContainer">
   <div id="header">
     <div class="headerTop header js-header">
-      <h1 id="headerLogo" class="headerLogo"><a href="index.htm">Health and Safety<br />
+		<!-- TemplateBeginMultipleIf --> <!-- TemplateBeginIfClause cond="bodyClass != 'home'" -->
+		<div id="headerLogo" class="headerLogo"><a href="../index.htm">Health and Safety<br />
+        Executive</a></div>
+		<!-- TemplateEndIfClause --><!-- TemplateEndMultipleIf -->
+		<!-- TemplateBeginMultipleIf --> <!-- TemplateBeginIfClause cond="bodyClass == 'home'" -->
+		<h1 id="headerLogo" class="headerLogo"><a href="../index.htm">Health and Safety<br />
         Executive</a></h1>
+	  	<!-- TemplateEndIfClause --><!-- TemplateEndMultipleIf -->
+		
       <div id="globalSearch" class="desktop-gcs-search">
         <gcse:searchbox-only></gcse:searchbox-only>
       </div>
@@ -76,7 +83,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <!-- JS Main Navigation -->
     
     <div class="menuContainer">
-      <nav id="main-menu" class="menu js-menu" role="navigation">
+      <nav id="main-menu" class="menu js-menu">
         <ul>
           <li class="home"><a href="../index.htm">Home</a></li>
           <li class="news"><a href="../news/index.htm">News</a></li>
@@ -136,7 +143,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <main id="contentContainer" class="column@@(_document['layout'])@@ column@@(_document['columnLayout'])@@">
 <!-- TemplateBeginMultipleIf --><!-- TemplateBeginIfClause cond="rdfa == true" -->
 <div class="rdfa" about="#this" typeof="foaf:Document">
-<span rel="dc:publisher" resource="http://www.hse.gov.uk/" content="Health and Safety Executive"></span> <span rel="dc:source" resource=""></span> <span property="dc:language" content="en"></span> <!-- TemplateEndIfClause --><!-- TemplateEndMultipleIf --> <!-- TemplateBeginEditable name="content" --> <!-- TemplateEndEditable --> <!-- TemplateEndIfClause --><!-- TemplateEndMultipleIf --> 
+<span rel="dc:publisher" resource="http://www.hse.gov.uk/" content="Health and Safety Executive"></span> <span rel="dc:source" resource=""></span> <span property="dc:language" content="en"></span> <!-- TemplateEndIfClause --><!-- TemplateEndMultipleIf --> 
+	
+<!-- TemplateBeginEditable name="content" --> <!-- TemplateEndEditable -->
+
+<!-- TemplateBeginEditable name="contentAside" --><aside id="contentAside"></aside><!-- TemplateEndEditable -->
+	
+<!-- TemplateEndIfClause --><!-- TemplateEndMultipleIf --> 
 
 <!-- Beta two column (top task) --> 
 
@@ -208,12 +221,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- TemplateEndIfClause --><!-- TemplateEndMultipleIf -->
 </div>
 <!-- TemplateBeginMultipleIf --> <!-- TemplateBeginIfClause cond="feedback == true" -->
-<div id="feedback">
+<section id="feedback">
   <div class="feedback-container">
     <p class="feedback-message"><strong>Is this page useful?</strong></p>
     <div class="feedback-links"> <a id="userYes" href="#userYes">Yes</a> <a id="userNo" href="#userNo">No</a> </div>
   </div>
-</div>
+</section>
 <!-- TemplateEndIfClause --> <!-- TemplateEndMultipleIf -->
 <nav id="footer-nav" aria-label="Footer menu">
   <footer id="footerContainer">
@@ -243,8 +256,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     </div>
   </footer>
 </nav>
-<div id="lastUpdated"><!-- TemplateBeginEditable name="updated" -->Updated:<!-- #BeginDate format:IS1 -->2020-06-19<!-- #EndDate --> 
-  <!-- TemplateEndEditable --></div>
+<section id="lastUpdated"><!-- TemplateBeginEditable name="updated" -->Updated:<!-- #BeginDate format:IS1 -->2020-07-13<!-- #EndDate --> 
+  <!-- TemplateEndEditable --></section>
 <script src="../assets/v5-js/jquery.min.js"></script> 
 <script src="../assets/v5-js/v5-footer.min.js"></script> 
 <!-- TemplateBeginMultipleIf --> <!-- TemplateBeginIfClause cond="columnLayout == 2" --> 
@@ -289,7 +302,6 @@ searchInput.removeAttribute('cellspacing');
 };	
 </script> 
 	
-<!-- TemplateInfo codeOutsideHTMLIsLocked="true" --> 
 <!-- TemplateParam name="bodyClass" type="text" value="guidance" --> 
 <!-- TemplateParam name="layout" type="text" value="betacontentpage" --> 
 <!-- TemplateParam name="columnLayout" type="number" value="2" --> 

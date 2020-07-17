@@ -8,17 +8,17 @@ margin-top: 0px;
 }
 
 #globalSearch tr, #globalSearchMobile  tr {
-background: $red;
+background-color: $red;
 }
 
 .gsc-search-box {
 margin: 0 !important;	
-background: $red;
+background-color: $red;
 }
 
 input.gsc-input {
 width: 100% !important;
-background: white !important;	
+background-color: white !important;	
 background-color: white !important;
 text-indent: 10px !important;
 padding: 10px !important;
@@ -44,7 +44,7 @@ border-bottom-left-radius: 0 !important;
 .gsc-search-button {
 float: left !important;
 margin-left: 0 !important;
-background: $hseblack !important;
+background-color: $hseblack !important;
 width: auto !important;
 padding: 0px !important;
 }
@@ -67,7 +67,7 @@ fill: white !important;
 }
 
 td.gsib_b {
-background: white !important;
+background-color: white !important;
 }
 .gsst_a .gscb_a {
 color: $red !important;
@@ -79,6 +79,8 @@ top: 2px;
 #globalSearch #gsc-i-id1 {
 margin: 0 !important;
 height: 38px !important;
+background: none !important;
+background-color: white !important;
 }
 
 .gsst_b {
@@ -140,7 +142,7 @@ padding: 0 !important;
 }
 	
 .gsc-search-button-v2 {
-background: $red !important;
+background-color: $red !important;
 }
 
 	

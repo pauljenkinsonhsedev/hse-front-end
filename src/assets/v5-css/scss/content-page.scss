@@ -10,7 +10,7 @@ font-size: 1.1em;
 }
 
 #backTo {
-background: $hseblack;
+background-color: $hseblack;
 }
 
 #backTo a {
@@ -114,12 +114,12 @@ text-indent: 0 !important;
 
 
 #navSecondary .ui-accordion .ui-accordion-header.ui-state-active a {
-background: $red;
+background-color: $red;
 color: white;
 }
 
 #navSecondary .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
-background: $red;
+background-color: $red;
 }
 
 #navSecondary .ui-state-default a, .ui-state-default a:link, .ui-state-default a:visited {
@@ -159,7 +159,7 @@ font-size: 1.1em !important;
 // Box
 
 .box {
-background: $gray;	
+background-color: $gray;	
 }
 
 
@@ -208,13 +208,13 @@ width: 32.26%;
 
 
 .gallery {
-background: $gray;
+background-color: $gray;
 padding-top: 0;
 margin-bottom: 20px !important;
 }
 
 .gallery:hover {
-background: $darkergray;
+background-color: $darkergray;
 }
 
 .gallery:hover h3, .gallery:hover p  {
@@ -329,7 +329,7 @@ height: auto;
 float: left;
 width: 100%;
 padding: 10px;
-background: $hseblack;
+background-color: $hseblack;
 color: white;
 clear: both;
 text-align: center;
@@ -373,6 +373,11 @@ margin: 0 !important;
 
 .resourceTitle span, .resourcePrice span {
 display: inline-block;
+}
+
+.resourcePrice {
+text-decoration: none;
+color: $hseblack;
 }
 
 .subText {

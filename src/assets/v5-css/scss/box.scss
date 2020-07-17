@@ -11,8 +11,6 @@ width: 100%;
 position: relative;
 }
 
-
-
 .hasMore {
 padding-bottom: 0 !important;
 }
@@ -31,7 +29,7 @@ color: $red !important;
 
 .boxSplit {
 @media only screen and (max-width : 979px) {
-background: none !important;}
+background-color: none !important;}
 }
 
 .box p:last-child {

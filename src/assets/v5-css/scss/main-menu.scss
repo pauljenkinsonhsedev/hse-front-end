@@ -57,7 +57,7 @@ margin: 0 auto;
 }
 clear: both;
 font-size: 1rem;
-background: $gray;
+background-color: $gray;
 }
 
 .menu li {
@@ -73,14 +73,14 @@ margin: 0;
 float: left;
 text-align: center;
 position: relative;
-background: $red;
+background-color: $red;
 border-bottom: none;
 }
 
 }
 
 .menu li a:hover {
-background: $black;
+background-color: $black;
 color: white;
 }
 
@@ -107,7 +107,7 @@ display: block;
 
 .menu li a:hover {
 @media only screen and (min-width : $desktop) {
-background: $hseblack;
+background-color: $hseblack;
 }
 
 }

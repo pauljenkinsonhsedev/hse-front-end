@@ -5,12 +5,12 @@ float: left;
 max-width: 100%;
 min-width: 100%;
 background-image: none;
-background: $red;
+background-color: $red;
 }
 
 #header {
 width: 100%;
-background: $red;
+background-color: $red;
 }
 
 
@@ -126,9 +126,9 @@ background: none;
 width: 100%;
 float: left;
 margin-top: 20px;
-background: $gray;
+background-color: $gray;
 @media only screen and (min-width : $desktop) {
-background: $red;
+background-color: $red;
 margin-bottom: 0;
 }
 }
@@ -150,7 +150,7 @@ display: none;
 .aboutyou .menu li.aboutyou,
 .abouthse .menu li.abouthse,
 .contact .menu li.contact, .freeUpdates .menu li.freeUpdates  {
-	background:#333; /*changed by Sarah 26/2/19 from #59031b*//* add darker background colour for selected tab */
+	background-color:#333; /*changed by Sarah 26/2/19 from #59031b*//* add darker background colour for selected tab */
 	border-radius:0px; /*changed by Sarah from 5px 5px 0 0 20/2/19*/
 }
 

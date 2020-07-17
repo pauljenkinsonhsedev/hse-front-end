@@ -14,6 +14,10 @@ list-style: none;
 margin: 0; }
 .slinky-menu ul {
 width: 100%; }
+.slinky-menu li.first a:hover span {
+color: white;
+text-decoration: underline;
+}
 .slinky-menu a {
 align-items: center;
 display: flex; }
@@ -39,7 +43,7 @@ margin: 0;
 order: 1; }
 
 .slinky-theme-default {
-background: $gray; }
+background-color: $gray; }
 .slinky-theme-default .title {
 color: #333;
 padding: 1em; }
@@ -49,11 +53,11 @@ line-height: 1; }
 color: #333;
 padding: 14px !important; }
 .slinky-theme-default a:not(.back):hover {
-background: $darkgray; 
+background-color: $darkgray; 
 color: black;
 }
 .slinky-theme-default a:not(.back):active {
-background: $darkgray; 
+background-color: $darkgray; 
 color: black;}
 
 
@@ -111,7 +115,7 @@ padding: 0;
 
 .slinky-menu li.first {
 font-weight: bold;
-background: $red;
+background-color: $red;
 }
 
 .slinky-menu li.first a {
@@ -119,20 +123,20 @@ color: white;
 }
 
 .slinky-menu li.first a:hover{
-background: $red;
+background-color: $red;
 color: white;
 } 
 
 // Active page
 
 li a.active-page {
-background: $darkgray;
+background-color: $darkgray;
 border-left: 3px solid $red;
 text-decoration: none;
 }
 
 li.first a.active-page {
-background: $red;
+background-color: $red;
 }
 
 .no-active-style {
@@ -145,7 +149,7 @@ border-left: none !important;
 
 .slinky-menu li a.back {
 width: 100%;
-background: $red;
+background-color: $red;
 color: white;
 }
 
@@ -155,12 +159,12 @@ width: 100%;
 
 // links
 
-.slinky-menu a span {
-text-decoration: none;	
+.slinky-menu li.first a:hover span, .slinky-menu li.header a:hover {
+text-decoration: underline !important;
 }
 
-.slinky-menu a span:hover, .slinky-menu a {
-text-decoration: none;	
+.slinky-menu a, .slinky-menu a span {
+text-decoration: none;
 }
 
 .slinky-menu .header .title {
@@ -176,12 +180,10 @@ color: $black !important;
 }
 
 .slinky-menu li a:focus-within {
-background: $focus;
+background-color: $focus;
 color: $black !important;
 }
-.slinky-menu li a.back {
-padding: 14px !important;
-}
+
 .slinky-theme-default a.back:focus::before {
 content: " ";
 background-image: url('../../assets/v5-images/icons/svg/solid/arrow-left-black.svg') !important;

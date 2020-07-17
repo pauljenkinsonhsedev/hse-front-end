@@ -4,7 +4,7 @@
 padding: 10px;
 width: 100%;
 float: left;
-background: $gray;
+background-color: $gray;
 margin-bottom: 20px;
 }
 
@@ -20,7 +20,7 @@ clear: both;
 }
 
 .v5-radio-button-container {
-background: #333333;
+background-color: #333333;
 float: left;
 color: white;
 margin-right: 10px;
@@ -30,8 +30,8 @@ margin-bottom: 10px;
 .v5-button {
 float: left;
 margin: 10px 10px 10px 0;
-background: $red;
-color: white;
+background-color: $red;
+color: rgb(165, 165, 165);
 }
 
 .v5-button:focus {
@@ -45,12 +45,12 @@ border: 0;
 
 .v5-button:hover {
 cursor: pointer;
-background: $hseblack;
+background-color: $hseblack;
 }
 
 .v5-button a {
 float: left;
-background: $red;
+background-color: $red;
 padding: 10px;
 color: white;
 text-decoration: none;
@@ -78,7 +78,6 @@ cursor: pointer !important;
 }
 
 input[type=radio] {
-float: left;  
 width: auto;
 display: inline-block;
 }

@@ -3,10 +3,10 @@
   display: none !important; }
 
 .backgroundRed {
-  background: #981e32 !important; }
+  background-color: #981e32 !important; }
 
 .backgroundGray {
-  background: #eee !important; }
+  background-color: #eee !important; }
 
 .backgroundRed a, .backgroundRed h2, .backgroundRed h3, .backgroundRed p {
   color: white !important; }

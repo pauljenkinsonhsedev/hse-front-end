@@ -8,7 +8,7 @@ z-index: 100;
 .slinky-menu ul li a:focus {
 outline: solid transparent !important;
 text-decoration: none !important;
-background: $focus !important;
+background-color: $focus !important;
 color: $black !important;
 border-bottom: 2px solid $black !important;    
 }
@@ -29,7 +29,7 @@ color: $black !important;
 }
 
 #contentContainer li a:focus-within {
-background: $focus;
+background-color: $focus;
 outline: solid transparent !important;
 color: $black;
 }
@@ -46,7 +46,7 @@ color: $black;
 #contentContainer .backgroundRed p a:focus, #beta-user-testing p a:focus, #contentContainer .backgroundRed li a:focus-within, .hsl-links a:focus-within, .footer-links-container li a:focus-within, .breadCrumbContainer li a:focus, .skip:focus, .slinky-menu ul li a:focus, .v5-button a:focus, .v5-hide-button:focus, button.v5-button:focus, .menu li a:focus, .multistep li a:focus, .listCaret li a:focus, .pagination-text a:focus, .listLinks a:focus  {
 outline: solid transparent !important;
 text-decoration: none !important;
-background: $focus !important;
+background-color: $focus !important;
 color: $black !important;
 border-bottom: 2px solid $black !important;
 }
@@ -82,11 +82,6 @@ background-color: $focus;
 }
 
 .box ul.itemThumbBook li a:focus .resourceTitle {
-color: $black;
-text-decoration: underline !important;
-}
-
-.box ul.itemThumbBook li a:hover .resourcePrice {
-color: $black;
+color: $hseblack;
 }
 
