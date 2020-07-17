@@ -45,6 +45,8 @@
 
   var numActiveItems = $("#menu .active-page").length;
 
+  console.log(numActiveItems);
+
   // If not get orphan page url
   
   var segment = url.split("/").length - 1 - (url.indexOf("//")==-1?0:2);
@@ -52,12 +54,14 @@
   if (numActiveItems == 0) {
 
         $(".slinky-menu ul li a").each(function (id, element) {
-						
-	    if($(this).attr("href").includes(orphanindex)) {
-			
-		// Add active page class to first list item
-    $(this).addClass("active-page no-active-style");
-    $(this).attr('aria-current','page');
+      
+      console.log(orphanindex);
+		
+	    if($(this).prop("href").includes(orphanindex)) {
+
+			console.log('yes');
+    $(this).addClass("active-page-hi no-active-style");
+    // Add active page class to first list item
 		$(this).parent().parent().addClass("active");
 		} 
 		
@@ -65,7 +69,6 @@
 			
 		if($(segment == 2) || (this).prop("href").includes(hseonline)) {
     $(".first").addClass("active-page");
-    $(".first").attr('aria-current','page');
 		$(".first").parent().addClass("active");
 		}
 		
