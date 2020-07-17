@@ -53,13 +53,13 @@
   
   if (numActiveItems == 0) {
 
-        $(".slinky-menu ul li a").each(function (id, element) {
-      
-      console.log(orphanindex);
-		
-	    if($(this).prop("href").includes(orphanindex)) {
+    console.log(orphanindex);
 
-			console.log('yes');
+
+        $(".slinky-menu ul li a").each(function (id, element) {
+      		
+	    if($(this).attr("href").includes(orphanindex)) {
+
     $(this).addClass("active-page-hi no-active-style");
     // Add active page class to first list item
 		$(this).parent().parent().addClass("active");
@@ -67,7 +67,7 @@
 		
 		// If URL is 2 segments
 			
-		if($(segment == 2) || (this).prop("href").includes(hseonline)) {
+		if($(segment == 2) || (this).prop("href").includes('hseonline')) {
     $(".first").addClass("active-page");
 		$(".first").parent().addClass("active");
 		}
