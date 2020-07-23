@@ -4,27 +4,33 @@
 
 .homepageBanner {
 padding-top: 0;
-padding-bottom: 0;
+padding-bottom: 20px;
 @media only screen and (min-width : $desktop) {
 margin-bottom: 20px !important;
+padding-bottom: 0;
 }
 }
 
-.homepageBanner:hover h2 {
+.homepageBanner a p {
 text-decoration: underline;
 }
 
+.homepageBanner a:hover p {
+text-decoration: none;
+}
+
+
+
 .homepageBannerText {
-white-space: nowrap; 
 width: 100%;
 float: left;
 @media only screen and (min-width : $desktop) {
-width: auto;
-position: absolute;
-max-width: 60%;
+width: 100%;
+// position: absolute;
+// max-width: 310px;
 }
 position: relative;
-bottom: 20px;
+bottom: 0;
 background-color: $red;
 color: white;
 padding: 10px;
@@ -32,6 +38,12 @@ max-width: 100%;
 z-index: 999;
 }
 
+.homepageBannerText.covidBlue {
+background-color: #1372b7;
+}
+
+
+/*
 .homepageBannerText h2::after {
 content: " ";
 background-image: url('../../assets/v5-images/icons/svg/solid/caret-right-white.svg');
@@ -42,19 +54,24 @@ margin-left: 10px;
 width: 20px;
 height: 20px;
 }
-
+*/
 
 
 .homepageBannerText h2 {
 margin: 0;
 padding: 0;
 clear: none;
-white-space: nowrap; 
 }
 
 .homepageBannerText p  {
 color: white;
 margin: 0;
+}
+
+.homepageBanner {
+/*@media only screen and (min-width : 980px) {
+	max-height: 256.83px !important;
+}*/
 }
 
 .homepageBanner a {
@@ -64,15 +81,16 @@ width: 100%;
 
 .homepageBanner img {
 height: auto;
-	@media only screen and (min-width : 979px) {
-		max-height: 265.14px !important;
-	}
+	
 }
 
 .mostPopular {
-@media only screen and (min-width : 979px) {
-		max-height: 265.14px !important;
+height: 328px;	
+	/*
+@media only screen and (min-width : 980px) {
+		max-height: 256.83px !important;
 	}	
+*/
 }
 
 .subText {

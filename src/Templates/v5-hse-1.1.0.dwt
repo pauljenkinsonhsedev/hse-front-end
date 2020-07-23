@@ -18,7 +18,8 @@ new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-PJPWMNL');</script>
-	
+
+<meta charset="utf-8">
 	
 <!-- TemplateBeginMultipleIf -->
 <!-- TemplateBeginIfClause cond="printGuide == true" -->
@@ -38,7 +39,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	
 <!-- TemplateBeginEditable name="doctitle" -->
 <title></title>
-<meta charset="utf-8">
 <meta name="keywords" content=" " />
 <meta name="description" content=" " />
 <!-- TemplateEndEditable -->

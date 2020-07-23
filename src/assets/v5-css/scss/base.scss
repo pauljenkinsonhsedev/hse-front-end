@@ -38,7 +38,7 @@ color: white !important;
 
 // Links 
 
-a, a span {
+a {
 text-decoration: underline;
 }
 
@@ -52,7 +52,7 @@ text-decoration: underline;
 
 a:hover,
 a:active,
-a:focus, a span.subText, a:hover span
+a:focus, a span.subText
 {
 text-decoration: none !important;
 color: $redhover;
@@ -344,4 +344,8 @@ outline-width: 5px !important;
 
 .v5-inline {
 display: inline-block;
+}
+
+.no-wrap {
+white-space: nowrap;
 }
