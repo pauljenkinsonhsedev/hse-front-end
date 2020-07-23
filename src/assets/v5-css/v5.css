@@ -4778,7 +4778,7 @@ display: none;
   bottom: 0;
   background-color: #981e32;
   color: white;
-  padding: 10px;
+  padding: 10px 20px;
   max-width: 100%;
   z-index: 999; }
   @media only screen and (min-width: 980px) {
