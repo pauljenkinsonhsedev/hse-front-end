@@ -58,7 +58,13 @@ text-decoration: none !important;
 color: $redhover;
 }
 
+button {
+text-decoration: underline;
+}
 
+button:hover {
+text-decoration: none;
+}
 
 #contentContainer .linkList li {
 background: none;

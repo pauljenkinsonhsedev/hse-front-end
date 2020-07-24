@@ -8,11 +8,11 @@ Error: Undefined variable: "$red".
 4: 
 5: ul.itemThumbBook .header, ul.itemThumbBook .resourceTitle {
 6: color: $red;
-7: text-decoration: underline;   
-8: }
-9: 
-10: ul.itemThumbBook .header:hover , ul.itemThumbBook .resourceTitle:hover, ul.itemThumbBook a:focus .header, ul.itemThumbBook a:focus .resourceTitle {
-11: color: $black !important;
+7: }
+8: 
+9: ul.itemThumbBook .header:hover , ul.itemThumbBook .resourceTitle:hover, ul.itemThumbBook a:focus .header, ul.itemThumbBook a:focus .resourceTitle {
+10: color: $black !important;
+11: }
 
 Backtrace:
 /Users/pjenkinson/Dev/sites/hse-front-end/src/assets/v5-css/scss/components.scss:6
@@ -61,4 +61,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$red\".\A         on line 6 of /Users/pjenkinson/Dev/sites/hse-front-end/src/assets/v5-css/scss/components.scss\A \A 1: /* Components */\A 2: \A 3: // itemThumbBook\A 4: \A 5: ul.itemThumbBook .header, ul.itemThumbBook .resourceTitle {\A 6: color: $red;\A 7: text-decoration: underline;   \A 8: }\A 9: \A 10: ul.itemThumbBook .header:hover , ul.itemThumbBook .resourceTitle:hover, ul.itemThumbBook a:focus .header, ul.itemThumbBook a:focus .resourceTitle {\A 11: color: $black !important;"; }
+  content: "Error: Undefined variable: \"$red\".\A         on line 6 of /Users/pjenkinson/Dev/sites/hse-front-end/src/assets/v5-css/scss/components.scss\A \A 1: /* Components */\A 2: \A 3: // itemThumbBook\A 4: \A 5: ul.itemThumbBook .header, ul.itemThumbBook .resourceTitle {\A 6: color: $red;\A 7: }\A 8: \A 9: ul.itemThumbBook .header:hover , ul.itemThumbBook .resourceTitle:hover, ul.itemThumbBook a:focus .header, ul.itemThumbBook a:focus .resourceTitle {\A 10: color: $black !important;\A 11: }"; }

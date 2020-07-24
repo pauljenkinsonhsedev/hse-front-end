@@ -26,6 +26,12 @@ a:focus, a span.subText {
   text-decoration: none !important;
   color: #333333; }
 
+button {
+  text-decoration: underline; }
+
+button:hover {
+  text-decoration: none; }
+
 #contentContainer .linkList li {
   background: none;
   padding-left: 0; }
@@ -3732,6 +3738,9 @@ ul.semtabs li a:focus {
       break-inside: avoid;
       /* IE 10+ */
       min-height: 82.2px; } }
+
+.addToBasket a {
+  background: #981e32; }
 
 .subscribe img {
   display: inline-block;
