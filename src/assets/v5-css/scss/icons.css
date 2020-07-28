@@ -9,7 +9,7 @@ Error: Undefined variable: "$desktop".
 140: width: 100%;
 141: @media only screen and (min-width : $desktop) {
 142: width: 232px;
-143: margin-left: 3px;
+143: margin-right: 3px;
 144: }
 145: float: left;
 146: padding: 0 0 10px 0;
@@ -65,4 +65,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$desktop\".\A         on line 141 of /Users/pjenkinson/Dev/sites/hse-front-end/src/assets/v5-css/scss/icons.scss\A \A 136: /* HSL */\A 137: \A 138: .hsl-links li {\A 139: background: none;\A 140: width: 100%;\A 141: @media only screen and (min-width : $desktop) {\A 142: width: 232px;\A 143: margin-left: 3px;\A 144: }\A 145: float: left;\A 146: padding: 0 0 10px 0;"; }
+  content: "Error: Undefined variable: \"$desktop\".\A         on line 141 of /Users/pjenkinson/Dev/sites/hse-front-end/src/assets/v5-css/scss/icons.scss\A \A 136: /* HSL */\A 137: \A 138: .hsl-links li {\A 139: background: none;\A 140: width: 100%;\A 141: @media only screen and (min-width : $desktop) {\A 142: width: 232px;\A 143: margin-right: 3px;\A 144: }\A 145: float: left;\A 146: padding: 0 0 10px 0;"; }
