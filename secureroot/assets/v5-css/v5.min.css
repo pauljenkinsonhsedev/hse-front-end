@@ -3439,7 +3439,12 @@ ul.itemThumbBook {
 
 ul.itemThumbBook a {
   float: left !important;
-  width: 100%;
+  width: 100%; }
+
+ul.itemThumbBook a span {
+  text-decoration: underline; }
+
+ul.itemThumbBook a:hover span {
   text-decoration: none; }
 
 ul.itemThumbBook a:hover .resourcePrice {
@@ -3463,9 +3468,6 @@ ul.itemThumbBook span {
 
 .hsl-links {
   margin: 0 !important; }
-
-ul.itemThumbBook.publications a {
-  text-decoration: underline !important; }
 
 ul.itemThumbBook.publications li {
   width: 100% !important; }
@@ -4830,13 +4832,9 @@ height: 20px;
 .homepageBanner img {
   height: auto; }
 
-.mostPopular {
-  height: 328px;
-  /*
-@media only screen and (min-width : 980px) {
-		max-height: 256.83px !important;
-	}	
-*/ }
+@media only screen and (min-width: 980px) {
+  .mostPopular {
+    min-height: 256.83px !important; } }
 
 .subText {
   color: #333333; }
@@ -5965,9 +5963,13 @@ p.moreLink a {
 /* HSL */
 .hsl-links li {
   background: none;
-  float: left;
   width: 100%;
+  float: left;
   padding: 0 0 10px 0; }
+  @media only screen and (min-width: 980px) {
+    .hsl-links li {
+      width: 232px;
+      margin-left: 3px; } }
 
 .hsl-links li a:hover {
   background-color: #333333; }

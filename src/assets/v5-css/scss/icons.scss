@@ -137,8 +137,12 @@ margin: 0;
 
 .hsl-links li {
 background: none;
-float: left;
 width: 100%;
+@media only screen and (min-width : $desktop) {
+width: 232px;
+margin-left: 3px;
+}
+float: left;
 padding: 0 0 10px 0;
 }
 
