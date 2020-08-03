@@ -1,21 +1,21 @@
 /*
 Error: Undefined variable: "$hseblack".
-        on line 167 of /Users/pjenkinson/Dev/sites/hse-front-end/src/assets/v5-css/scss/icons.scss
+        on line 146 of /Users/pjenkinson/Dev/sites/hse-front-end/src/assets/v5-css/scss/icons.scss
 
-162: width: 100%;
-163: padding: 0 0 10px 0;
-164: }
-165: 
-166: .hsl-links li a:hover {
-167: background: $hseblack;
-168: }
-169: 
-170: .hsl-links a {
-171: float: left;
-172: width: 100%;
+141: width: 100%;
+142: padding: 0 0 10px 0;
+143: }
+144: 
+145: .hsl-links li a:hover {
+146: background-color: $hseblack;
+147: }
+148: 
+149: .hsl-links a {
+150: float: left;
+151: width: 100%;
 
 Backtrace:
-/Users/pjenkinson/Dev/sites/hse-front-end/src/assets/v5-css/scss/icons.scss:167
+/Users/pjenkinson/Dev/sites/hse-front-end/src/assets/v5-css/scss/icons.scss:146
 /Applications/Adobe Dreamweaver 2020/Adobe Dreamweaver 2020.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/script/tree/variable.rb:49:in `_perform'
 /Applications/Adobe Dreamweaver 2020/Adobe Dreamweaver 2020.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/script/tree/node.rb:50:in `perform'
 /Applications/Adobe Dreamweaver 2020/Adobe Dreamweaver 2020.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/tree/visitors/perform.rb:402:in `visit_prop'
@@ -61,4 +61,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$hseblack\".\A         on line 167 of /Users/pjenkinson/Dev/sites/hse-front-end/src/assets/v5-css/scss/icons.scss\A \A 162: width: 100%;\A 163: padding: 0 0 10px 0;\A 164: }\A 165: \A 166: .hsl-links li a:hover {\A 167: background: $hseblack;\A 168: }\A 169: \A 170: .hsl-links a {\A 171: float: left;\A 172: width: 100%;"; }
+  content: "Error: Undefined variable: \"$hseblack\".\A         on line 146 of /Users/pjenkinson/Dev/sites/hse-front-end/src/assets/v5-css/scss/icons.scss\A \A 141: width: 100%;\A 142: padding: 0 0 10px 0;\A 143: }\A 144: \A 145: .hsl-links li a:hover {\A 146: background-color: $hseblack;\A 147: }\A 148: \A 149: .hsl-links a {\A 150: float: left;\A 151: width: 100%;"; }
