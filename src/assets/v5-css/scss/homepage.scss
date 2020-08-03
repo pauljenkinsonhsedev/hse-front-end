@@ -80,13 +80,14 @@ width: 100%;
 }
 
 .homepageBanner img {
-height: auto;
-	
+@media only screen and (min-width : 980px) {
+
+}
 }
 
 .mostPopular {
 @media only screen and (min-width : 980px) {
-		min-height: 256.83px !important;
+		margin-bottom: 20px;
 	}	
 }
 
