@@ -45,7 +45,7 @@
       // Hide
       menu.classList.remove('active');
       $('#globalSearch').removeClass('desktop-hide');
-      menu.setAttribute('aria-hidden', 'true');
+      menu.setAttribute('aria-hidden', 'false');
       menuButton.setAttribute('aria-expanded', 'false');
       menuButton.classList.add('main-menu');
       menuButton.classList.remove('main-menu-expanded');
@@ -55,7 +55,7 @@
       // Show
       menu.classList.add('active');
       $('#globalSearch').addClass('desktop-hide');
-      menu.setAttribute('aria-hidden', 'false');
+      menu.setAttribute('aria-hidden', 'true');
       menuButton.setAttribute('aria-expanded', 'true');
       menuButton.classList.add('main-menu-expanded');
       menuButton.setAttribute('aria-label', 'Close menu');
