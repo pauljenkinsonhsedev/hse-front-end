@@ -21,8 +21,16 @@ margin: 0 !important;
 ul.itemThumbBook a {
 float: left !important;
 width: 100%;
+}
+
+ul.itemThumbBook a span {
+text-decoration: underline;
+}
+
+ul.itemThumbBook a:hover span {
 text-decoration: none;
 }
+
 
 ul.itemThumbBook a:hover .resourcePrice {
 text-decoration: none;
@@ -53,10 +61,6 @@ float: right !important
 
 .hsl-links {
 margin: 0 !important;
-}
-
-ul.itemThumbBook.publications a {
-text-decoration: underline !important;
 }
 
 ul.itemThumbBook.publications li {
