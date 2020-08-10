@@ -3,7 +3,11 @@
   "version": "5.0.0",
   "description": "",
   "main": "gulpfile.babel.js",
-  "scripts": {},
+  "scripts": {
+    "gulp": "gulp",
+    "gulp-dev": "NODE_ENV='development' gulp development",
+    "gulp-prod": "NODE_ENV='production' gulp"
+  },
   "author": "",
   "license": "ISC",
   "devDependencies": {

@@ -5,37 +5,15 @@ import * as config from '../../config.json';
 import os from 'os';
 import connect from 'gulp-connect';
 import open from 'gulp-open';
-
-const mode = require('gulp-mode')({
-  modes: ['production', 'development', 'staging', 'default'],
-  default: 'default',
-  verbose: false
-});
-
-const isDefault = mode.default();
-const isDev = mode.development();
-const isStaging = mode.staging();
+import { isDefault, isProd, isDev } from './mode.js';
 
 let root;
-
-if (isDefault || isStaging) {
+if (isDefault) {
     root = 'secureroot';
 }
 
 if (isDev) {
     root = 'workspace';
-}
-
-switch(mode) {
-    case 'development':
-        console.log(`mode: development`);
-    break;
-    case 'staging':
-        console.log(`mode: staging`);
-    break;
-    case 'production':
-        console.log(`mode: production`);
-    break;
 }
 
 // Check to see which platform the user requires for their browser
@@ -51,6 +29,7 @@ function openBrowser() {
         uri: `${config.server.uri}:${config.server.port}`
     }));
 }
+
 function server() {
     connect.server({
         root: root,
