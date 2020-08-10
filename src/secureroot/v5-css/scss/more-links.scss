@@ -1,0 +1,38 @@
+// More links
+
+p.moreLinkSide {
+clear: both;	
+}
+
+// More link child column
+.columnFull .column p.moreLink {
+font-weight: 700;
+clear: both;
+margin: 0 !important;
+margin-top: auto !important;
+}
+
+// More link column row
+
+.columnFull p.moreLink {
+font-weight: 700;
+clear: both;
+margin-top: auto !important;
+}
+
+.moreFlex {
+display: -webkit-box;  
+display: -ms-flexbox; 
+display: -webkit-flex;
+display: flex;        
+flex-flow: column;
+}
+
+p.moreLink a {
+padding: 0;
+}
+
+
+
+
+

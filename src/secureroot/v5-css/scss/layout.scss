@@ -1,0 +1,92 @@
+#contentContainer * {
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+}
+
+#pageContainer {
+width: 90%;
+}
+
+#sideBar {
+width: 100%;
+float: left;
+}
+
+#sideBar .box {
+box-sizing: border-box !important;
+}
+
+.fixed-container {
+width: 100%;
+margin: auto;
+@media only screen and (min-width : $desktop) {
+width: 940px;
+}
+}
+
+.breadCrumbContainer, #backTo {
+width: 90%;
+padding: 10px 5%;
+}
+
+// Column gutter
+
+.column {
+margin: 0 1.5% 20px 0;
+}
+
+.column.noBoxPadding {
+margin: 0 1.5% 0 0;
+}
+
+/* Spacing & Borders */
+
+#contentContainer .border {
+margin-bottom: 20px;
+border-bottom: 2px solid $red;
+}
+
+
+#contentContainer .columnFull {
+width: 100%;
+float: left;
+height: auto;
+clear: both;
+padding: 0;
+}
+
+#contentContainer .columnFull:first-of-type {
+padding-top: 0;
+}
+
+#contentContainer {
+width: 100%;
+.oneThird, .twoThird, .half, .twoThirdHalf, .mostPopular, .homepageBanner {
+width: 100%;
+}
+}
+
+.noBoxPadding .column {
+padding-left: 0 !important;
+padding-right: 0 !important;
+}
+
+.noBoxPadding.column {
+padding-left: 0;
+padding-right: 0;
+}
+
+.column {
+float: left;
+width: 100%;
+position: relative;
+padding: 10px;
+}
+
+.column.backgroundRed {
+padding: 20px;
+}
+#beta-user-testing, #pageTitle {
+width: 100%;
+}

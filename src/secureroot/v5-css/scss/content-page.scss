@@ -1,0 +1,421 @@
+// Secondary nav 
+
+#navSecondary {
+margin-bottom: 20px;
+width: 100%;	
+}
+
+.normalFont #breadCrumb ol {
+font-size: 1.1em;	
+}
+
+#backTo {
+background-color: $hseblack;
+}
+
+#backTo a {
+color: white;
+}
+
+.backto {
+box-sizing: border-box;
+padding-top: 10px;
+margin: 0;
+display: inline-block;
+width: 100%;
+@media only screen and (min-width : $desktop) {
+display: none;
+}
+}
+
+p.backto  {
+font-size: 1.2em;
+padding: 0;
+}
+
+@media only screen and (min-width : $desktop) {
+
+#navSecondary {
+width: 220px;
+margin: 0 ;
+margin-right: 20px;
+}	
+
+}
+
+
+// 2 Col
+
+/* Desktop */
+@media only screen and (min-width : $desktop) {
+
+/* Layout */
+
+.columnbetacontentpage .columnFull:first-of-type {
+padding-top: 0 !important;
+}
+
+
+#contentContainer.columnbetacontentpage .columnFull {
+width: 700px;
+}
+
+#contentContainer.columnbetacontentpage.column1 .columnFull {
+width: 100% !important;
+}
+
+
+/* No box padding */
+
+/* One column layout */
+#contentContainer.columnbetacontentpage.column1 .noBoxPadding.oneThird {
+width: 300px;
+margin-right: 20px;
+}
+
+#contentContainer.columnbetacontentpage .noBoxPadding.oneThird {
+width: 215px;
+margin-right: 20px;
+}
+
+
+}
+
+
+// Responsive secondary nav
+
+#menu {
+margin-bottom: 20px;
+}
+
+
+#navSecondary .ui-accordion .ui-accordion-content {
+padding: 0;	
+}
+
+#navSecondary h2 {
+font-size: 1.1em !important;
+}
+
+#navSecondary h2 a {
+padding: 1em;
+}
+
+#navSecondary .ui-corner-all {
+border-radius: 0;
+}
+
+#navSecondary .ui-accordion .ui-accordion-header .ui-icon {
+right: .5em !important;
+left: auto !important;
+background-image: none !important;
+text-indent: 0 !important;
+}
+
+
+#navSecondary .ui-accordion .ui-accordion-header.ui-state-active a {
+background-color: $red;
+color: white;
+}
+
+#navSecondary .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+background-color: $red;
+}
+
+#navSecondary .ui-state-default a, .ui-state-default a:link, .ui-state-default a:visited {
+color: white;
+
+}
+
+
+
+#navSecondary h2 {
+margin: 0;
+}
+
+#responsivemenu {
+padding: 0 !important;
+margin: 0;
+}
+
+
+
+.v5 #responsivemenu h2 {
+margin: 0;
+}
+
+.ui-widget-content #menu  li a {
+color: $hseblack;
+}
+
+.ui-widget-content #menu li.header a, .ui-widget-content #menu li.first a {
+color: white !important;
+}
+
+.slinky-menu {
+font-size: 1.1em !important;
+}
+
+// Box
+
+.box {
+background-color: $gray;	
+}
+
+
+
+// Construction - overiding custom.css
+
+#lwet-steps {
+margin-bottom: 20px !important;
+}
+
+#feature-home {
+background-position: center center !important;
+background-size: cover !important;
+}
+
+#feature-home a {
+text-decoration: underline !important;
+}
+
+#feature-home a span, #feature-home a:link span {
+color: white !important;
+text-decoration: none !important;
+}
+
+#lwet-steps li a {
+box-sizing: content-box !important;
+color: white !important;
+}
+
+body.lwet #feature-home ol {
+border-top: none;
+}
+
+body.lwet #feature-home {
+margin-bottom: 20px;
+}
+
+// Gallery
+@media only screen and (min-width : 639px) {
+
+#contentContainer .oneThird.gallery {
+width: 32.26%;
+}
+
+}
+
+
+.gallery {
+background-color: $gray;
+padding-top: 0;
+margin-bottom: 20px !important;
+}
+
+.gallery:hover {
+background-color: $darkergray;
+}
+
+.gallery:hover h3, .gallery:hover p  {
+color: white;
+}
+
+.gallery h3 {
+text-align: center;
+color: $red;
+padding: 20px 10px 10px 10px;
+margin: 0;
+min-height: 66px;
+}
+
+.gallery p {
+clear: both;
+padding: 0 10px 10px 10px;
+margin: 0;
+}
+
+.gallery img {
+margin: 0;
+}
+
+
+
+// Box layout 
+
+#contentContainer.columnbetacontentpage .box1col, #contentContainer.columnbetacontentpage .box2col, #contentContainer.columnbetacontentpage .box3col, #contentContainer.columnbetacontentpage .boxHalfLeft, #contentContainer.columnbetacontentpage .boxHalfRight {
+width: 100%;
+}
+
+#contentContainer.columnbetacontentpage .boxHalfRight {
+margin-left: 0 !important;
+}
+
+.box3col .more, .box2col .more, .box1col .more, .box .more {
+width: 100% !important; 	
+}
+
+@media only screen and (min-width : $desktop) {
+
+#contentContainer.columnbetacontentpage .box1col {
+width: 220px !important;
+}
+
+#contentContainer.columnbetacontentpage .box2col {
+width: 459px !important;
+}
+	
+#contentContainer.columnbetacontentpage .box3col {
+width: 100% !important;
+}
+	
+#contentContainer.columnbetacontentpage .boxHalfLeft, #contentContainer.columnbetacontentpage .boxHalfRight  {
+width: 345px !important;
+float: left;
+}	
+
+#contentContainer.columnbetacontentpage  {
+.box1col, .box2col {
+display: flex;
+flex-direction: column;
+}
+}
+
+#contentContainer.columnbetacontentpage	.hasMore .more {
+margin-top: auto !important;
+
+}
+
+
+}
+
+
+
+// Pubns
+
+.catalogue {
+background-color: #fff;
+border: 2px solid #981e32;
+}
+
+// Media
+
+.v5-figure {
+float: left;
+width: auto !important;
+margin-bottom: 20px;
+width: auto;
+}
+
+.v5-figure-border {
+border: 1px solid $hseblack;	
+border-bottom: 0;
+}
+
+.v5-figure img {
+float: left;
+	@media only screen and (max-width : 500px) {
+	width: 100%;
+	height: auto;
+	}
+}
+
+.v5-figure.full-width, .v5-figure.full-width img {
+width: 100%;
+height: auto;
+}
+
+.v5-figure figcaption {
+float: left;
+width: 100%;
+padding: 10px;
+background-color: $hseblack;
+color: white;
+clear: both;
+text-align: center;
+}
+
+
+.v5-youtube-embed {
+float: left;
+width: 100%;
+position:relative;
+padding-bottom:56.25%;
+height:0;
+// overflow:hidden;
+margin-bottom: 20px;
+}
+
+.v5-youtube-embed iframe
+{
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+}
+
+
+
+// Print page
+#printGuide {
+float: left;
+margin-top: 20px;
+}
+
+
+//
+
+.resourceTitle, .resourcePrice {
+width: 100%;
+margin: 0 !important;
+}
+
+.resourceTitle span, .resourcePrice span {
+display: inline-block;
+}
+
+.resourcePrice {
+text-decoration: none;
+color: $hseblack;
+}
+
+.subText {
+display: inline-block !important;
+clear: both;
+}
+
+.itemThumbBook abbr {
+display: inline-block;
+}
+
+/* JQuery UI Tabs */
+
+.tabPanel {
+width: 100% !important;
+}
+
+#contentContainer ul.tabs {
+margin-bottom: 0 !important;
+}
+
+#contentContainer ul.tabs a, #contentContainer ul.tabs a:visited {
+color: white;
+}
+
+#contentContainer ul.tabs li.active a {
+color: $hseblack;
+}
+
+.tabPanel {
+border-radius: 0 !important;	
+}
+
+ul.semtabs li {
+border-radius: 0 !important;
+padding: 5px;
+}
+
+ul.semtabs li a {
+border-bottom: none !important;
+}

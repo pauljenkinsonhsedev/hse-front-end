@@ -1,0 +1,36 @@
+// Subscribe box
+
+.subscribe img {
+display: inline-block;
+float: left;
+}
+
+.subscribe h2:before {
+content:url('../../assets/images/icons/emaili.png'); 
+position:relative;
+z-index:100000;
+left:0;
+top: 5px;
+padding-right: 10px;
+}
+
+.subscribe .eBulletinButton {
+width: auto;
+font-size: 1em;
+}
+
+.subscribe label {
+color: #4E4E4E;
+}
+
+.subscribe input[type=submit] {
+padding:5px 15px;
+margin-top: 10px;
+background-color:#ccc; 
+border:0 none;
+cursor:pointer;
+-webkit-border-radius: 5px;
+border-radius: 5px;
+background-color: #a61333;
+color: white;
+}
