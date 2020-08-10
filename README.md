@@ -68,3 +68,27 @@ src/
     └───────utils/
     └──app.js
 ```
+### Loader utility
+Injects script and link tags into the head or body of the DOM.
+
+```
+src/
+└──shared/
+    └──js/
+    └───────utils/
+    └───────────────asset-loader.js
+```
+#### Usage
+
+```
+    Promise.all([
+        load.js('./js/vendor/your-fave-library.js'),
+        load.css('./css/vendor/your-fave-library.css')
+    ])
+    .then(() => {
+        // do some cool stuff
+    })
+    .catch((err) => {
+        console.error(`something went wrong ${err}`)
+    });
+```
