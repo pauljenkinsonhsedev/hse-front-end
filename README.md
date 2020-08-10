@@ -19,13 +19,18 @@ There are only three tasks you need to know:
 Yarn specifies the environment which is needed for each task.
 
 ## Source files
-There are two main areas for source files.
-### Secure Root
-For all the HSE website assets (outputs: secureroot)
-### Digital Workspace
-The HSE Digital Workspace is a resource for web based tools and to showcase components, helpful for unit testing (outputs: workspace)
+There are two main areas for source files:
+- Secure root
+- Digital workspace
 
-Additionally there is a 'shared' directory which currently is being used for phasing in new javascript
+### Secure Root
+For all the HSE website assets
+(outputs: secureroot)
+### Digital Workspace
+The HSE Digital Workspace is a resource for web based tools and to showcase components, helpful for unit testing.
+s(outputs: workspace)
+
+Additionally there is a 'shared' directory which currently is being used for phasing in new javascript.
 
 ## Styles
 ### HSE website
