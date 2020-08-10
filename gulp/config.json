@@ -1,0 +1,72 @@
+{
+    "server": {
+        "file": "index.html",
+        "uri": "http://localhost",
+        "port": "8080"
+    },
+    "shared": {
+        "js": {
+            "entrypoint": "./src/shared/js/app.js",
+            "outputSecureroot": "./secureroot/assets/v5-js",
+            "outputWorkspace": "./workspace/js"
+        }
+    },
+    "secureroot": {
+        "all": [
+            "./src/secureroot/**/*+(js|css|html|png|jpg|jpeg|gif|svg|ico)"
+        ],
+        "copy": {
+            "all": "./src/secureroot/copy/**/*",
+            "output": "./secureroot/assets/"
+        },
+        "html": {
+            "all": "./src/secureroot/html/**/*.html",
+            "output": "./secureroot/"
+        },
+        "scripts": {
+            "all": [
+                "./src/secureroot/v5-scripts/google-custom-search.js",
+                "./src/secureroot/v5-scripts/base64-poly.js",
+                "./src/secureroot/v5-scripts/js-cookie.js",
+                "./src/secureroot/v5-scripts/js-main-menu.js",
+                "./src/secureroot/v5-scripts/v5-hse-primary.min.js",
+                "./src/secureroot/v5-scripts/slinky-ie11-fix.js",
+                "./src/secureroot/v5-scripts/aria.js",
+                "./src/secureroot/v5-scripts/website-feedback.src.js",
+                "./src/secureroot/v5-scripts/content-page.js",
+                "./src/secureroot/v5-scripts/notification-bar.js",
+                "./src/secureroot/v5-scripts/top-tasks.js",
+                "./src/secureroot/v5-scripts/left-nav.js"
+            ],
+            "entry": "./src/secureroot/v5-js/v5-footer.js",
+            "output": "./secureroot/assets/v5-js"
+        },
+        "styles": {
+            "all": "./src/secureroot/v5-css/scss/**/*.scss",
+            "entry": "./src/secureroot/v5-css/scss/v5.scss",
+            "output": "./secureroot/assets/v5-css/"
+        },
+        "images": {
+            "main": {
+                "all": "./src/secureroot/images/**/*.+(png|jpg|jpeg|gif|svg|ico)",
+                "entry": "./src/secureroot/images/",
+                "output": "./secureroot/assets/images/"
+            },
+            "v4": {
+                "all": "./src/secureroot/v4-images/**/*.+(png|jpg|jpeg|gif|svg|ico)",
+                "entry": "./src/secureroot/v4-images/",
+                "output": "./secureroot/assets/v4-images/"
+            },
+            "v4homepage": {
+                "all": "./src/secureroot/v4-homepage/**/*.+(png|jpg|jpeg|gif|svg|ico)",
+                "entry": "./src/secureroot/v4-homepage/",
+                "output": "./secureroot/assets/v4-homepage/"
+            },
+            "v5": {
+                "all": "./src/secureroot/v5-images/**/*.+(png|jpg|jpeg|gif|svg|ico)",
+                "entry": "./src/secureroot/v5-images/",
+                "output": "./secureroot/assets/v5-images/"
+            }
+        }
+    }
+}
