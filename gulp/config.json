@@ -68,5 +68,23 @@
                 "output": "./secureroot/assets/v5-images/"
             }
         }
+    },
+    "workspace": {
+        "styles": {
+            "entry": "./src/workspace/styles/app.scss",
+            "input": "./src/workspace/styles/*.scss",
+            "output": "./workspace/styles"
+        },
+        "markup": {
+            "pages": "./src/workspace/markup/pages/*.njk",
+            "data": "./src/workspace/markup/data/data",
+            "dataModel": "./src/workspace/markup/data/model/",
+            "templates": "./src/workspace/markup/templates/",
+            "output": "./workspace/"
+        },
+        "images": {
+            "all": "./src/workspace/images/**/*.+(png|jpg|jpeg|gif|svg|ico)",
+            "output": "./workspace/images"
+        }
     }
 }
