@@ -1,9 +1,8 @@
-import gulp from 'gulp';
+import { src, dest, task} from 'gulp';
 import webpack from 'webpack';
 import webpackStream from 'webpack-stream';
 import webpackConfig from './webpack.config.js';
 import * as config from '../../config.json';
-
 
 const mode = require('gulp-mode')({
   modes: ['production', 'development', 'staging', 'default'],
@@ -15,17 +14,20 @@ const isDev = mode.development();
 const isDefault = mode.default();
 const isStaging = mode.staging();
 const isProd = mode.production();
-let dest;
+let workspaceDest;
 
-if (isDefault) {
-    dest = config.shared.js.outputWorkspace
-} else {
-    dest = config.shared.js.outputSecureroot
+if (isDev) {
+    workspaceDest = config.shared.js.outputWorkspace
 }
 
-gulp.task('shared-scripts', (sharedScriptsDone) => {
-    gulp.src(config.shared.js.entrypoint)
+if(isDefault){
+    workspaceDest = config.shared.js.outputSecureroot
+}
+
+function sharedScripts() {
+    return src(config.shared.js.entrypoint)
     .pipe(webpackStream(webpackConfig), webpack)
-    .pipe(gulp.dest(dest));
-    sharedScriptsDone();
-});
+    .pipe(dest(workspaceDest));
+}
+
+task('sharedScripts', sharedScripts);
