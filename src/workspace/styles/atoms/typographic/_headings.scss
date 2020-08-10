@@ -1,0 +1,93 @@
+/*doc
+---
+title: Headings
+name: d-headings
+category: Typography - Headings
+---
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+```html_example_table
+<p class="caption-xl">Caption xl</p>
+<h1 class="heading-xl">Heading xl</h1>
+<p class="caption-l">Caption l</p>
+<h2 class="heading-l">Heading l</h2>
+<p class="caption-m">Caption m</p>
+<h3 class="heading-m">Heading m</h3>
+<h4 class="heading-s">Heading s</h4>
+```
+
+*/
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+}
+
+h1,
+.heading-xl {
+  @extend .font-size-63;
+  font-family: $heading-font;
+  font-weight: 700;
+  margin: 0 0 rvr(1.4) 0;
+  line-height: rvr(3);
+}
+
+h2,
+.heading-l {
+  @extend .font-size-49;
+  font-family: $heading-font;
+  font-weight: 700;
+  margin: 0 0 rvr(0.75) 0;
+  line-height: rvr(2.6);
+}
+
+h3,
+.heading-m {
+  @extend .font-size-39;
+  font-family: $heading-font;
+  font-weight: 700;
+  margin: 0 0 rvr(1) 0;
+  line-height: rvr(2);
+}
+
+h4,
+.heading-s {
+  @extend .font-size-31;
+  font-family: $heading-font;
+  font-weight: 700;
+  margin: 0 0 rvr(0.75) 0;
+  line-height: rvr(1.6);
+}
+
+.heading-xs {
+  @extend .font-size-24;
+  font-family: $heading-font;
+  font-weight: 700;
+  margin: 0 0 rvr(0.5) 0;
+  line-height: rvr(1.6);
+}
+
+[class^='caption-'] {
+  color: $mono-d;
+}
+
+.caption-xl {
+  @extend .font-size-31;
+  margin: 0 0 rvr(0.75) 0;
+  line-height: rvr(1.8);
+}
+
+.caption-l {
+  @extend .font-size-24;
+  margin: 0 0 rvr(0.25) 0;
+  line-height: rvr(1.6);
+}
+
+.caption-m {
+  @extend .font-size-19;
+  margin: 0 0 rvr(0.1) 0;
+  line-height: rvr(1.2);
+}

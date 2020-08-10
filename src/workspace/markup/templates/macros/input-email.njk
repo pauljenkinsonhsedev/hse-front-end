@@ -1,0 +1,13 @@
+{% from "macros/form-header.njk" import formHeader %}
+{% macro fieldInputEmail(field_id, form_heading, form_instruction, field_label, field_label_hint, field_type, field_class, value = '') %}
+  <div class="form-group">
+    {{ formHeader(form_heading, form_instruction) }}
+    <label for="{{ field_id }}">{{ field_label }}</label>
+    {% if field_label_hint %}
+      <span id="{{ field_id }}-hint" class="hint">
+        {{field_label_hint}}
+      </span>
+    {% endif %}
+    <input class="input {{ field_class }}" id="{{ field_id }}" name="{{ field_id }}" type="{{ field_type }}" name="{{ field_id }}" value="{{ value | escape }}"/>
+  </div>
+{% endmacro %}

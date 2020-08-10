@@ -1,0 +1,172 @@
+/*doc
+---
+title: Spacers
+name: a-spacers
+category: Foundations - Branding
+---
+
+  - mt: margin-top
+  - mb: margin-bottom
+  - ml: margin-left
+  - mr: margin-right
+  - mx: margin x axis
+  - my: margin y axis
+
+```html_example
+<div class="row" data-margin="mb-l">
+  <div data-span="12" data-padding="my-s">
+    <h2 class="heading-s">Margins</h2>
+    <div class="place-holder--margin" data-margin="mt-l">
+      <p class="subtext">Spacing top - Large</p>
+    </div>
+    <div class="place-holder--margin" data-margin="mt-m">
+      <p class="subtext">Spacing top - Medium</p>
+    </div>
+    <div class="place-holder--margin" data-margin="mt-s">
+      <p class="subtext">Spacing top - Small</p>
+    </div>
+    <div class="place-holder--margin" data-margin="mt-s">
+      <p class="subtext">Spacing top - Small</p>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div data-span="12">
+    <h2 class="heading-s">Paddings</h2>
+  </div>
+
+  <div class="place-holder--padding" data-span="4" data-padding="py-l">
+    <p>Spacing top</p>
+    <p>Large</p>
+  </div>
+
+  <div class="place-holder--padding" data-span="4" data-padding="py-m">
+    <p>Spacing top</p>
+    <p>Medium</p>
+  </div>
+
+  <div class="place-holder--padding" data-span="4 last" data-padding="py-s">
+    <p>Spacing top</p>
+    <p>Small</p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="place-holder--padding" data-span="4" data-padding="px-l">
+    <p>Spacing top</p>
+    <p>Large</p>
+  </div>
+
+  <div class="place-holder--padding" data-span="4" data-padding="px-m">
+    <p>Spacing top</p>
+    <p>Medium</p>
+  </div>
+
+  <div class="place-holder--padding" data-span="4 last" data-padding="px-s">
+    <p>Spacing top</p>
+    <p>Small</p>
+  </div>
+</div>
+```
+
+*/
+.place-holder {
+  &--padding {
+    background-color: $mono-f;
+    border: 1px solid $mono-d;
+    background-color: yellow;
+    background-clip: content-box, padding-box;
+
+    font-weight: 700;
+    text-align: center;
+  }
+  &--margin {
+    font-weight: 700;
+    padding: $dp;
+    border: 1px solid $mono-d;
+
+    p {
+      margin: 0;
+    }
+  }
+}
+
+$marginAxis: (
+  mt: 'margin-top',
+  mb: 'margin-bottom',
+  ml: 'margin-left',
+  mr: 'margin-right',
+  mx: 'margin',
+  my: 'margin'
+);
+
+$paddingAxis: (
+  pt: 'padding-top',
+  pb: 'padding-bottom',
+  pl: 'padding-left',
+  pr: 'padding-right',
+  px: 'padding',
+  py: 'padding'
+);
+
+@each $name, $value in $marginAxis {
+  [data-margin*='#{$name}-l'] {
+    @if ($name == px) {
+      #{$value}: 0 ($dp * 5);
+    } @else if ($name == my) {
+      #{$value}: ($dp * 5) 0;
+    } @else {
+      #{$value}: $dp * 5;
+    }
+  }
+  [data-margin*='#{$name}-m'] {
+    @if ($name == px) {
+      #{$value}: 0 ($dp * 3);
+    } @else if ($name == my) {
+      #{$value}: ($dp * 3) 0;
+    } @else {
+      #{$value}: $dp * 3;
+    }
+  }
+  [data-margin*='#{$name}-s'] {
+    @if ($name == px) {
+      #{$value}: 0 $dp;
+    } @else if ($name == my) {
+      #{$value}: $dp 0;
+    } @else {
+      #{$value}: $dp;
+    }
+  }
+}
+
+
+@each $name, $value in $paddingAxis {
+  [data-padding*='#{$name}-l'] {
+    @if ($name == px) {
+      #{$value}: 0 ($dp * 5);
+    } @else if ($name == py) {
+      #{$value}: ($dp * 5) 0;
+    } @else {
+      #{$value}: $dp * 5;
+    }
+  }
+  [data-padding*='#{$name}-m'] {
+    @if ($name == px) {
+      #{$value}: 0 ($dp * 3);
+    } @else if ($name == py) {
+      #{$value}: ($dp * 3) 0;
+    } @else {
+      #{$value}: $dp * 3;
+    }
+  }
+  [data-padding*='#{$name}-s'] {
+    @if ($name == px) {
+      #{$value}: 0 $dp;
+    } @else if ($name == py) {
+      #{$value}: $dp 0;
+    } @else {
+      #{$value}: $dp;
+    }
+  }
+}

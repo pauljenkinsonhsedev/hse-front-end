@@ -1,0 +1,125 @@
+{
+  "components": [
+    {
+      "type": "hero",
+      "className": "component-hero",
+      "row": "hero-row",
+      "grid": "12",
+      "objects": [
+        {
+          "title": "Hero title",
+          "copy": "Hero copy",
+          "images": [
+            {
+              "desktop": "MS/images/hero/hero_home_desktop.jpg",
+              "tablet": "MS/images/hero/hero_home_tablet.jpg",
+              "mobile": "MS/images/hero/hero_home_mobile.jpg",
+              "alt_text": "A picture of an old illustration"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "cards",
+      "row": "components.-row",
+      "grid": "12",
+      "objects": [
+        {
+          "title": "Block title",
+          "copy": "Block copy"
+        }
+      ],
+      "childObjects": [
+        {
+          "grid": "6",
+          "title": "Block content A",
+          "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "childObjects": [
+            {
+              "grid": "6",
+              "title": "Block content A I",
+              "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            },
+            {
+              "grid": "6 last",
+              "title": "Block content A II",
+              "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            }
+          ]
+        },
+        {
+          "grid": "6 last",
+          "title": "Block content",
+          "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        }
+      ]
+    },
+    {
+      "type": "form",
+      "row": "formRow",
+      "grid": "12",
+      "objects": [
+        {
+          "id": "searchForm",
+          "action": "results.html"
+        }
+      ],
+      "childObjects": [
+        {
+          "id": "nameField",
+          "heading": "What is your first name?",
+          "instruction": "",
+          "label": "First name",
+          "label_hint": "",
+          "type": "text",
+          "group": "formGroup"
+        },
+        {
+          "id": "surnameField",
+          "heading": "What is your surname?",
+          "instruction": "",
+          "label": "Surname name",
+          "label_hint": "",
+          "type": "text",
+          "group": "formGroup"
+        },
+        {
+          "id": "emailField",
+          "heading": "What is your email address?",
+          "instruction": "Please provide a personal or work email.",
+          "label": "Email",
+          "label_hint": "type some shit yo",
+          "type": "email",
+          "group": "formGroup"
+        },
+        {
+          "id": "consentField",
+          "heading": "Do you consent?",
+          "instruction": "",
+          "label": "",
+          "label_hint": "This includes changing your last name or spelling your name differently.",
+          "type": "radio",
+          "group": "formGroup",
+          "options": [
+            {
+              "label": "Yes"
+            },
+            {
+              "label": "No"
+            }
+          ]
+        },
+        {
+          "id": "submitField",
+          "heading": "",
+          "instruction": "",
+          "label": "Submit",
+          "label_hint": "",
+          "type": "submit",
+          "group": "formGroup"
+        }
+      ]
+    }
+  ]
+}

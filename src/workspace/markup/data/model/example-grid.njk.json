@@ -1,0 +1,46 @@
+{
+  "components": [
+    {
+      "type": "exampleGrid",
+      "className": "example-grid",
+      "row": "grid-row",
+      "grid": "12",
+      "objects": [
+        {
+          "title": "Block title",
+          "copy": "Block copy"
+        }
+      ],
+      "childObjects": [
+        {
+          "className": "example-grid",
+          "grid": "6",
+          "title": "Block content A",
+          "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "childObjects": [
+            {
+              "className": "example-grid",
+              "spacing": "mb-l",
+              "grid": "6",
+              "title": "Block content A I",
+              "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            },
+            {
+              "className": "example-grid",
+              "spacing": "my",
+              "grid": "6 last",
+              "title": "Block content A II",
+              "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            }
+          ]
+        },
+        {
+          "className": "example-grid",
+          "grid": "6 last",
+          "title": "Block content",
+          "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        }
+      ]
+    }
+  ]
+}

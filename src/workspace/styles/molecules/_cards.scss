@@ -1,0 +1,133 @@
+/*doc
+---
+title: Cards
+name: z-site-e-cards
+category: Page features - Cards
+---
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+```html_example
+
+<div class="row cards-container">
+    <div data-span="4" class="card-cell">
+        <div class="card">
+            <img src="https://via.placeholder.com/400x150/09F/FFF/" />
+            <div class="card-body">
+                <h3 class="heading-xs">Aute irure dolor in</h3>
+                <p class="card-copy">Dillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident</p>
+            </div>
+            <div class="card-footer">
+                <button class="btn btn-green">Button</button>
+            </div>
+        </div>
+    </div>
+    <div data-span="4" class="card-cell">
+        <div class="card">
+            <img src="https://via.placeholder.com/400x150/09F/FFF/" />
+            <div class="card-body">
+                <h3 class="heading-xs">Aute irure dolor in</h3>
+                <p class="card-copy">Dillum dolore eu fugiat nulla pariatur.</p>
+            </div>
+            <div class="card-footer">
+                <button class="btn btn-green">Button</button>
+            </div>
+        </div>
+    </div>
+    <div data-span="4 last" class="card-cell">
+        <div class="card">
+            <img src="https://via.placeholder.com/400x150/09F/FFF/" />
+            <div class="card-body">
+                <h3 class="heading-xs">Aute irure dolor in</h3>
+                <p class="card-copy">Dillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident</p>
+            </div>
+            <div class="card-footer">
+                <button class="btn btn-green">Button</button>
+            </div>
+        </div>
+    </div>
+
+        <div data-span="4" class="card-cell">
+        <div class="card">
+            <img src="https://via.placeholder.com/400x150/09F/FFF/" />
+            <div class="card-body">
+                <h3 class="heading-xs">Aute irure dolor in</h3>
+                <p class="card-copy">Dillum dolore eu fugiat nulla pariatur.</p>
+            </div>
+            <div class="card-footer">
+                <button class="btn btn-green">Button</button>
+            </div>
+        </div>
+    </div>
+    <div data-span="4" class="card-cell">
+        <div class="card">
+            <img src="https://via.placeholder.com/400x150/09F/FFF/" />
+            <div class="card-body">
+                <h3 class="heading-xs">Aute irure dolor in</h3>
+                <p class="card-copy">Dillum dolore eu fugiat nulla pariatur.</p>
+            </div>
+            <div class="card-footer">
+                <button class="btn btn-green">Button</button>
+            </div>
+        </div>
+    </div>
+    <div data-span="4 last" class="card-cell">
+        <div class="card">
+            <img src="https://via.placeholder.com/400x150/09F/FFF/" />
+            <div class="card-body">
+                <h3 class="heading-xs">Aute irure dolor in</h3>
+                <p class="card-copy">Excepteur sint occaecat cupidatat non proident</p>
+            </div>
+            <div class="card-footer">
+                <button class="btn btn-green">Button</button>
+            </div>
+        </div>
+    </div>
+</div>
+```
+
+*/
+.cards-container {
+  display: flex;
+  //   flex-wrap: wrap;
+  //   flex-direction: row;
+  flex-flow: row wrap;
+  //   align-items: stretch;
+  overflow: hidden;
+}
+
+.card-cell {
+  display: flex;
+  flex: 1 0 auto;
+  flex-direction: row;
+  padding: 0 !important;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+
+  //   border: $dp solid $mono-e;
+}
+
+.card-body {
+  flex: 1 0 auto;
+  padding: $dp * 2;
+  background-color: $mono-f;
+}
+
+.card-copy {
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.card-footer {
+  display: flex;
+  justify-items: center;
+  background-color: $mono-e;
+  padding: $dp * 2;
+
+  .btn {
+    margin: 0 auto;
+  }
+}

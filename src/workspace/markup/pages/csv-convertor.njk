@@ -1,0 +1,128 @@
+{% set pageTitle = "CSV Convertor" %}
+{% extends "layouts/layout.njk" %}
+{% set data = default %}
+{% block content %}
+    <div class="row">
+        <div class="block divider mb-l" data-span="12 last">
+            <h1 class="heading-l">CSV to HighCharts</h1>
+            <p class="subtext">This tool converts .csv files into html tables to be rendered with HighCharts.</p>
+            <p class="subtext">Export your .csv file from your favorite spreadsheet (Excel, Google sheets, Numbers) and then convert it into a html chart.</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div data-span="4">
+            <form action="#" id="csvconvertor">
+                <div class="form-group">
+                    <fieldset class="fieldset" aria-describedby="csv-hint">
+                        <legend class="fieldset__legend fieldset__legend--xl">
+                            <h3 class="fieldset__heading">Upload your csv</h3>
+                        </legend>
+                        <p class="hint">Your file must have a file extension of .csv</p>
+                        <input class="input-file" id="csvUpload" name="csvUpload" type="file" accept=".csv" title="Browse files">
+                        <label class="label" for="csvUpload">Choose a file to upload</label>
+                    </fieldset>
+                </div>
+            </form>
+            <form action="#" id="tableMeta" class="table-meta">
+                <fieldset class="fieldset" aria-describedby="table-meta-hint">
+                    <legend class="fieldset__legend fieldset__legend--xl">
+                        <h3 class="fieldset__heading">Chart meta data</h3>
+                    </legend>
+                    <div class="form-group">
+                        <label class="label" for="chartTitle">Chart title</label>
+                        <p class="hint">25 characters maximum</p>
+                        <input class="input input-watch input-full chartTitle" id="chartTitle" name="chartTitle" type="text">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="label" for="chartSubtitle">Chart subtitle</label>
+                        <p class="hint">25 characters maximum</p>
+                        <input class="input input-watch input-full chartSubtitle" id="chartSubtitle" name="chartSubtitle" type="text">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="label" for="chartDescription">Chart description</label>
+                        <p class="hint">300 characters maximum</p>
+                        <textarea class="input input-watch input-full chartDescription" id="chartDescription" name="chartDescription"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="label" for="chartType">Type of chart</label>
+                        <div class="select-styled">
+                            <select class="select input-watch input-full chartType" id="chartType" name="chartType">
+                                <option value="line">Line</option>
+                                <option value="bar">Bar</option>
+                                <option value="column">Column</option>
+                                <option value="pie">Pie</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group" id="formGroupUnits">
+                        <label class="label" for="chartUnits">Units</label>
+                        <div class="select-styled">
+                            <select class="select input-watch input-full chartUnits" id="chartUnits" name="chartUnits">
+                                <option value="unit">Numeric units</option>
+                                <option value="percentage">Percentage</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group" id="formGroupXAxis">
+                        <label class="label" for="chartXAxisTitle">X Axis title (optional)</label>
+                        <p class="hint">20 characters maximum</p>
+                        <input class="input input-watch input-full chartXAxisTitle" id="chartXAxisTitle" name="chartXAxisTitle" type="text">
+                    </div>
+
+                    <div class="form-group" id="formGroupYAxis">
+                        <label class="label" for="chartYAxisTitle">Y Axis title (optional)</label>
+                        <p class="hint">20 characters maximum</p>
+                        <input class="input input-watch input-full chartYAxisTitle" id="chartYAxisTitle" name="chartYAxisTitle" type="text">
+                    </div>
+
+                    <div class="form-group">
+                        <button class="btn btn-green update-table-meta" type="submit">Update</button>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+
+        <div class="" data-span="8 last">
+            <h2 class="heading-xs">Output</h2>
+            <h3 class="heading-s" id="outputHeading">Please upload a file using the form</h3>
+            <div class="table-output">
+                <div class="data-previews">
+                    <button class="btn btn-mono-f preview-code-action">Code</button>
+                    <button class="btn btn-mono-f preview-table-action">Table</button>
+                    <button class="btn btn-mono-f preview-chart-action">Chart</button>
+                </div>
+                <div class="table-output-container">
+                    <div id="code" class="preview preview-code">
+                        <h3 class="heading-xs">Preview code</h3>
+                        <div class="table-output-controls">
+                            <p class="visually-hidden">Copy the html into your clipboard or download as .html</p>
+                            <button type="button" class="copy btn btn-small btn-yellow">Copy to clipboard</button>
+                            {# <button type="button" class="download btn btn-small btn-yellow">Download</button> #}
+                        </div>
+                        <textarea class="table-output-textarea"></textarea>
+                        <pre class="">
+                        <code class="language-markup table-output-code"></code>
+                    </pre>
+                    </div>
+                    <div id="table" class="preview preview-table">
+                        <h3 class="heading-xs">Preview table</h3>
+                        <div class="table-output-preview"></div>
+                    </div>
+
+                    <div id="chart" class="preview preview-chart">
+                        <h3 class="heading-xs">Preview chart</h3>
+                        <div class="chart-output-preview"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="feedback-container"></div>
+{% endblock %}

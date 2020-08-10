@@ -1,0 +1,3 @@
+<h1>Forms</h1>
+{% from "macros/date.njk" import fieldInputDate %}
+{{ fieldInputDate(elem.id, elem.heading, elem.instruction, elem.label, elem.label_hint, elem.type) }}

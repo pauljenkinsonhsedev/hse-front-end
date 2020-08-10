@@ -1,0 +1,149 @@
+/*doc
+---
+title: Buttons outlined
+name: a-button-outlined
+category: Page features - Buttons (outlined)
+---
+
+```html_example
+<div>
+  <a class="btn btn-outlined-yellow" href="#" role="button">Link</a>
+  <button class="btn btn-outlined-yellow" type="submit">Button</button>
+  <input class="btn btn-outlined-yellow" type="button" value="Input">
+  <input class="btn btn-outlined-yellow" type="submit" value="Submit">
+  <input class="btn btn-outlined-yellow" type="reset" value="Reset">
+</div>
+
+<div>
+  <a class="btn btn-outlined-green" href="#" role="button">Link</a>
+  <button class="btn btn-outlined-green" type="submit">Button</button>
+  <input class="btn btn-outlined-green" type="button" value="Input">
+  <input class="btn btn-outlined-green" type="submit" value="Submit">
+  <input class="btn btn-outlined-green" type="reset" value="Reset">
+</div>
+
+<div>
+  <a class="btn btn-outlined-blue" href="#" role="button">Link</a>
+  <button class="btn btn-outlined-blue" type="submit">Button</button>
+  <input class="btn btn-outlined-blue" type="button" value="Input">
+  <input class="btn btn-outlined-blue" type="submit" value="Submit">
+  <input class="btn btn-outlined-blue" type="reset" value="Reset">
+</div>
+
+<div>
+  <a class="btn btn-outlined-red" href="#" role="button">Link</a>
+  <button class="btn btn-outlined-red" type="submit">Button</button>
+  <input class="btn btn-outlined-red" type="button" value="Input">
+  <input class="btn btn-outlined-red" type="submit" value="Submit">
+  <input class="btn btn-outlined-red" type="reset" value="Reset">
+</div>
+
+<div>
+  <a class="btn btn-outlined-white" href="#" role="button">Link</a>
+  <button class="btn btn-outlined-white" type="submit">Button</button>
+  <input class="btn btn-outlined-white" type="button" value="Input">
+  <input class="btn btn-outlined-white" type="submit" value="Submit">
+  <input class="btn btn-outlined-white" type="reset" value="Reset">
+</div>
+
+<div>
+  <a class="btn btn-outlined-muted" href="#" role="button">Link</a>
+  <button class="btn btn-outlined-muted" type="submit">Button</button>
+  <input class="btn btn-outlined-muted" type="button" value="Input">
+  <input class="btn btn-outlined-muted" type="submit" value="Submit">
+  <input class="btn btn-outlined-muted" type="reset" value="Reset">
+</div>
+
+<div>
+  <a class="btn btn-outlined-black" href="#" role="button">Link</a>
+  <button class="btn btn-outlined-black" type="submit">Button</button>
+  <input class="btn btn-outlined-black" type="button" value="Input">
+  <input class="btn btn-outlined-black" type="submit" value="Submit">
+  <input class="btn btn-outlined-black" type="reset" value="Reset">
+</div>
+```
+
+*/
+
+.btn-outlined {
+  @extend %button-cosmetic;
+  background-color: transparent;
+
+  &-black {
+    border-color: $black;
+    color: $black;
+
+    &:hover,
+    &:focus {
+      background-color: $black;
+      color: $white;
+    }
+  }
+
+  &-white {
+    border-color: $black;
+    color: $black;
+
+    &:hover,
+    &:focus {
+      background-color: $black;
+      border-color: $black;
+      color: $white;
+    }
+  }
+
+  &-green {
+    border-color: $dialog-success;
+    color: $dialog-success;
+
+    &:hover,
+    &:focus {
+      background-color: $dialog-success;
+      color: $white;
+    }
+  }
+
+  &-red {
+    border-color: $dialog-danger;
+    color: $dialog-danger;
+
+    &:hover,
+    &:focus {
+      background-color: $dialog-danger;
+      color: $white;
+    }
+  }
+
+  &-yellow {
+    border-color: $dialog-warning;
+    color: $mono-a;
+
+    &:hover,
+    &:focus {
+      background-color: $dialog-warning;
+      color: $mono-a;
+    }
+  }
+
+  &-blue {
+    border-color: $dialog-important;
+    color: $dialog-important;
+
+    &:hover,
+    &:focus {
+      background-color: $dialog-important;
+      color: $white;
+    }
+  }
+
+  &-muted {
+    border-color: $dialog-muted;
+    color: $dialog-muted;
+
+    &:hover,
+    &:focus {
+      background-color: $dialog-muted;
+      color: $white;
+    }
+  }
+}

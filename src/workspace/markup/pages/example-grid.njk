@@ -1,0 +1,9 @@
+{% set pageTitle = "Example grid" %}
+{% extends "layouts/layout.njk" %}
+{% block content %}
+   {% for component in components %}
+      {{blocks(component)}}
+   {% endfor %}
+</div>
+</div>
+{% endblock %}

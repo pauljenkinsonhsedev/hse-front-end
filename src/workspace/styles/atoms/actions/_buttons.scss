@@ -1,0 +1,466 @@
+/*doc
+---
+title: Buttons
+name: a-button
+category: Page features - Buttons
+---
+
+Button styles can be applied to any element. Typically you'll want to use either a `<button>` or an `<a>` element:
+
+```slim_example
+
+<h3>Branding</h3>
+
+<div>
+  <a class="btn btn-brand-a" href="#" role="button">Link</a>
+  <button class="btn btn-brand-a" type="submit">Button</button>
+  <input class="btn btn-brand-a" type="button" value="Input">
+  <input class="btn btn-brand-a" type="submit" value="Submit">
+  <input class="btn btn-brand-a" type="reset" value="Reset">
+</div>
+
+<div>
+  <a class="btn btn-brand-b" href="#" role="button">Link</a>
+  <button class="btn btn-brand-b" type="submit">Button</button>
+  <input class="btn btn-brand-b" type="button" value="Input">
+  <input class="btn btn-brand-b" type="submit" value="Submit">
+  <input class="btn btn-brand-b" type="reset" value="Reset">
+</div>
+
+<div>
+  <a class="btn btn-brand-c" href="#" role="button">Link</a>
+  <button class="btn btn-brand-c" type="submit">Button</button>
+  <input class="btn btn-brand-c" type="button" value="Input">
+  <input class="btn btn-brand-c" type="submit" value="Submit">
+  <input class="btn btn-brand-c" type="reset" value="Reset">
+</div>
+
+<div>
+  <a class="btn btn-brand-d" href="#" role="button">Link</a>
+  <button class="btn btn-brand-d" type="submit">Button</button>
+  <input class="btn btn-brand-d" type="button" value="Input">
+  <input class="btn btn-brand-d" type="submit" value="Submit">
+  <input class="btn btn-brand-d" type="reset" value="Reset">
+</div>
+
+<div>
+  <a class="btn btn-brand-e" href="#" role="button">Link</a>
+  <button class="btn btn-brand-e" type="submit">Button</button>
+  <input class="btn btn-brand-e" type="button" value="Input">
+  <input class="btn btn-brand-e" type="submit" value="Submit">
+  <input class="btn btn-brand-e" type="reset" value="Reset">
+</div>
+
+<div>
+  <a class="btn btn-brand-f" href="#" role="button">Link</a>
+  <button class="btn btn-brand-f" type="submit">Button</button>
+  <input class="btn btn-brand-f" type="button" value="Input">
+  <input class="btn btn-brand-f" type="submit" value="Submit">
+  <input class="btn btn-brand-f" type="reset" value="Reset">
+</div>
+
+
+<h3>Monochrome</h3>
+
+<div>
+  <a class="btn btn-black" href="#" role="button">Link</a>
+  <button class="btn btn-black" type="submit">Button</button>
+  <input class="btn btn-black" type="button" value="Input">
+  <input class="btn btn-black" type="submit" value="Submit">
+  <input class="btn btn-black" type="reset" value="Reset">
+</div>
+
+<div>
+  <a class="btn btn-mono-a" href="#" role="button">Link</a>
+  <button class="btn btn-mono-a" type="submit">Button</button>
+  <input class="btn btn-mono-a" type="button" value="Input">
+  <input class="btn btn-mono-a" type="submit" value="Submit">
+  <input class="btn btn-mono-a" type="reset" value="Reset">
+</div>
+
+<div>
+  <a class="btn btn-mono-b" href="#" role="button">Link</a>
+  <button class="btn btn-mono-b" type="submit">Button</button>
+  <input class="btn btn-mono-b" type="button" value="Input">
+  <input class="btn btn-mono-b" type="submit" value="Submit">
+  <input class="btn btn-mono-b" type="reset" value="Reset">
+</div>
+
+<div>
+  <a class="btn btn-mono-c" href="#" role="button">Link</a>
+  <button class="btn btn-mono-c" type="submit">Button</button>
+  <input class="btn btn-mono-c" type="button" value="Input">
+  <input class="btn btn-mono-c" type="submit" value="Submit">
+  <input class="btn btn-mono-c" type="reset" value="Reset">
+</div>
+
+<div>
+  <a class="btn btn-mono-d" href="#" role="button">Link</a>
+  <button class="btn btn-mono-d" type="submit">Button</button>
+  <input class="btn btn-mono-d" type="button" value="Input">
+  <input class="btn btn-mono-d" type="submit" value="Submit">
+  <input class="btn btn-mono-d" type="reset" value="Reset">
+</div>
+
+<div>
+  <a class="btn btn-mono-e" href="#" role="button">Link</a>
+  <button class="btn btn-mono-e" type="submit">Button</button>
+  <input class="btn btn-mono-e" type="button" value="Input">
+  <input class="btn btn-mono-e" type="submit" value="Submit">
+  <input class="btn btn-mono-e" type="reset" value="Reset">
+</div>
+
+<div>
+  <a class="btn btn-mono-f" href="#" role="button">Link</a>
+  <button class="btn btn-mono-f" type="submit">Button</button>
+  <input class="btn btn-mono-f" type="button" value="Input">
+  <input class="btn btn-mono-f" type="submit" value="Submit">
+  <input class="btn btn-mono-f" type="reset" value="Reset">
+</div>
+
+<div>
+  <a class="btn btn-white" href="#" role="button">Link</a>
+  <button class="btn btn-white" type="submit">Button</button>
+  <input class="btn btn-white" type="button" value="Input">
+  <input class="btn btn-white" type="submit" value="Submit">
+  <input class="btn btn-white" type="reset" value="Reset">
+</div>
+
+<h3>Warning colours</h3>
+
+<div>
+  <a class="btn btn-yellow" href="#" role="button">Link</a>
+  <button class="btn btn-yellow" type="submit">Button</button>
+  <input class="btn btn-yellow" type="button" value="Input">
+  <input class="btn btn-yellow" type="submit" value="Submit">
+  <input class="btn btn-yellow" type="reset" value="Reset">
+</div>
+
+<div>
+  <a class="btn btn-green" href="#" role="button">Link</a>
+  <button class="btn btn-green" type="submit">Button</button>
+  <input class="btn btn-green" type="button" value="Input">
+  <input class="btn btn-green" type="submit" value="Submit">
+  <input class="btn btn-green" type="reset" value="Reset">
+</div>
+
+<div>
+  <a class="btn btn-blue" href="#" role="button">Link</a>
+  <button class="btn btn-blue" type="submit">Button</button>
+  <input class="btn btn-blue" type="button" value="Input">
+  <input class="btn btn-blue" type="submit" value="Submit">
+  <input class="btn btn-blue" type="reset" value="Reset">
+</div>
+
+<div>
+  <a class="btn btn-red" href="#" role="button">Link</a>
+  <button class="btn btn-red" type="submit">Button</button>
+  <input class="btn btn-red" type="button" value="Input">
+  <input class="btn btn-red" type="submit" value="Submit">
+  <input class="btn btn-red" type="reset" value="Reset">
+</div>
+
+<div>
+  <a class="btn btn-muted" href="#" role="button">Link</a>
+  <button class="btn btn-muted" type="submit">Button</button>
+  <input class="btn btn-muted" type="button" value="Input">
+  <input class="btn btn-muted" type="submit" value="Submit">
+  <input class="btn btn-muted" type="reset" value="Reset">
+</div>
+```
+
+*/
+
+@function set-color($bgcolor, $color) {
+  @if (lightness($bgcolor) > 50) {
+    @return darken($color, 35%); // Lighter backgorund, return dark color
+    // @debug $color;
+    // @return compliment($color);
+  } @else {
+    @return lighten($color, 40%); // Darker background, return light color
+  }
+}
+
+%button-cosmetic {
+  appearance: none;
+  outline: 0;
+  display: inline-block;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: top;
+  user-select: none;
+  padding: ($dp) ($dp * 3);
+  text-decoration: none;
+  border-width: $border-width;
+  border-style: solid;
+  border-color: transparent;
+  border-radius: $button-border-radius;
+  cursor: pointer;
+
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 18px;
+  @media (min-width: $bp-tablet) {
+    font-size: 16px;
+    line-height: 21px;
+  }
+
+  transition: all 300ms ease-in-out;
+}
+
+.btn {
+  @extend %button-cosmetic;
+
+  .codeExample & {
+    margin: 0 0 $vr 0;
+  }
+
+  &-brand-a {
+    background-color: $brand-a;
+    border-color: $brand-a;
+    // color: $white;
+    color: set-color($brand-a, $white);
+
+    &:hover,
+    &:focus {
+      background-color: $white;
+      border-color: $white;
+      color: set-color($white, $brand-a);
+    }
+  }
+
+  &-brand-b {
+    background-color: $brand-b;
+    border-color: $brand-b;
+    color: $white;
+
+    &:hover,
+    &:focus {
+      background-color: $white;
+      border-color: $white;
+      // color: $brand-b;
+      color: set-color($white, $brand-b);
+    }
+  }
+
+  &-brand-c {
+    background-color: $brand-c;
+    border-color: $brand-c;
+    color: $white;
+
+    &:hover,
+    &:focus {
+      background-color: $white;
+      border-color: $white;
+      // color: $brand-c;
+      color: set-color($white, $brand-c);
+    }
+  }
+
+  &-brand-d {
+    background-color: $brand-d;
+    border-color: $brand-d;
+    color: $white;
+
+    &:hover,
+    &:focus {
+      background-color: $white;
+      border-color: $white;
+      color: set-color($white, $brand-d);
+    }
+  }
+
+  &-brand-e {
+    background-color: $brand-e;
+    border-color: $brand-e;
+    color: $white;
+
+    &:hover,
+    &:focus {
+      background-color: $white;
+      border-color: $white;
+      color: set-color($white, $brand-e);
+    }
+  }
+
+  &-brand-f {
+    background-color: $brand-f;
+    border-color: $brand-f;
+    color: set-color($brand-f, $white);
+
+    &:hover,
+    &:focus {
+      background-color: $white;
+      border-color: $white;
+      color: set-color($white, $brand-f);
+    }
+  }
+
+  &-mono-a {
+    background-color: $mono-a;
+    border-color: $mono-a;
+    color: $mono-f;
+
+    &:hover,
+    &:focus {
+      background-color: $mono-f;
+      border-color: $mono-f;
+      color: $mono-a;
+    }
+  }
+
+  &-mono-b {
+    background-color: $mono-b;
+    border-color: $mono-b;
+    color: $mono-f;
+
+    &:hover,
+    &:focus {
+      background-color: $mono-f;
+      border-color: $mono-f;
+      color: $mono-a;
+    }
+  }
+
+  &-mono-c {
+    background-color: $mono-c;
+    border-color: $mono-c;
+    color: $mono-f;
+
+    &:hover,
+    &:focus {
+      background-color: $mono-f;
+      border-color: $mono-f;
+      color: $mono-a;
+    }
+  }
+
+  &-mono-d {
+    background-color: $mono-d;
+    border-color: $mono-d;
+    color: $mono-a;
+
+    &:hover,
+    &:focus {
+      background-color: $mono-a;
+      border-color: $mono-a;
+      color: $mono-f;
+    }
+  }
+
+  &-mono-e {
+    background-color: $mono-e;
+    border-color: $mono-e;
+    color: $mono-a;
+
+    &:hover,
+    &:focus {
+      background-color: $mono-a;
+      border-color: $mono-a;
+      color: $mono-f;
+    }
+  }
+
+  &-mono-f {
+    background-color: $mono-f;
+    border-color: $mono-f;
+    color: $mono-a;
+
+    &:hover,
+    &:focus {
+      background-color: $mono-a;
+      border-color: $mono-a;
+      color: $mono-f;
+    }
+  }
+
+  &-black {
+    background-color: $black;
+    border-color: $black;
+    color: $white;
+
+    &:hover {
+      background-color: $mono-b;
+      border-color: $mono-b;
+      color: $white;
+    }
+  }
+
+  &-white {
+    background-color: $white;
+    border-color: $white;
+    color: $black;
+
+    &:hover,
+    &:focus {
+      background-color: $mono-b;
+      border-color: $mono-b;
+      color: $white;
+    }
+  }
+
+  &-green {
+    background-color: $dialog-success;
+    border-color: $dialog-success;
+    color: $white;
+
+    &:hover,
+    &:focus {
+      border-color: lighten($dialog-success, 15%);
+      background-color: lighten($dialog-success, 15%);
+      color: $white;
+    }
+  }
+
+  &-red {
+    background-color: $dialog-danger;
+    border-color: $dialog-danger;
+    color: $white;
+
+    &:hover,
+    &:focus {
+      background-color: lighten($dialog-danger, 15%);
+      border-color: lighten($dialog-danger, 15%);
+      color: $white;
+    }
+  }
+
+  &-yellow {
+    background-color: $dialog-warning;
+    border-color: $dialog-warning;
+    color: $mono-a;
+
+    &:hover,
+    &:focus {
+      background-color: lighten($dialog-warning, 15%);
+      border-color: lighten($dialog-warning, 15%);
+      color: $mono-a;
+    }
+  }
+
+  &-blue {
+    background-color: $dialog-important;
+    border-color: $dialog-important;
+    color: $white;
+
+    &:hover,
+    &:focus {
+      background-color: lighten($dialog-important, 15%);
+      border-color: lighten($dialog-important, 15%);
+      color: $white;
+    }
+  }
+
+  &-muted {
+    background-color: $dialog-muted;
+    border-color: $dialog-muted;
+    color: $mono-a;
+
+    &:hover,
+    &:focus {
+      background-color: $mono-f;
+      border-color: $mono-f;
+      color: $mono-a;
+    }
+  }
+}
