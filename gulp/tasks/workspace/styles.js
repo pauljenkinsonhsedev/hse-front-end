@@ -11,7 +11,6 @@ import pxtorem from "gulp-pxtorem";
 sass.compiler = require('node-sass');
 
   function workspaceStyles() {
-      console.log('workspaceStyles');
     return src(config.workspace.styles.input)
       .pipe(sourcemaps.init())
       .pipe(
