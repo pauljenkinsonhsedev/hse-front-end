@@ -1,14 +1,15 @@
 'use strict';
 
-import gulp from 'gulp';
+import { src, dest, task} from 'gulp';
+
 import imagemin from 'gulp-imagemin';
 import imageminJpegtran from 'imagemin-jpegtran';
 import imageminPngquant from 'imagemin-pngquant';
 import imageminJpegRecompress from 'imagemin-jpeg-recompress';
 import * as config from '../../config.json';
 
-gulp.task('imagesWorkspace', (imagesDone) => {
-  gulp.src(config.workspace.images.main.all)
+function workspaceImages() {
+  return src(config.workspace.images.all)
     .pipe(imagemin([
         imagemin.gifsicle(),
         imagemin.optipng(),
@@ -17,6 +18,7 @@ gulp.task('imagesWorkspace', (imagesDone) => {
         imageminPngquant(),
         imageminJpegRecompress(),
     ]))
-    .pipe(gulp.dest(config.workspace.images.output));
-    imagesDone();
-});
+    .pipe(dest(config.workspace.images.output));
+}
+
+task('workspaceImages', workspaceImages);
