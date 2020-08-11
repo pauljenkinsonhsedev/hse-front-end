@@ -12,7 +12,7 @@ You must install globally
 
 ## Running tasks
 There are only three tasks you need to know:
-- default - `yarn run gulp` (Opens local HSE website)
+- default - `yarn run gulp-hse` (Opens local HSE website)
 - development - `yarn run gulp-dev` (Opens local Digial Workspace)
 - production - `yarn run gulp-prod` (Minifies and zips contents)
 

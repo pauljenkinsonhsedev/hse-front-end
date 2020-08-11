@@ -4,8 +4,8 @@
   "description": "",
   "main": "gulpfile.babel.js",
   "scripts": {
-    "gulp": "gulp --development",
-    "gulp-hse": "gulp --development",
+    "gulp": "gulp",
+    "gulp-hse": "gulp",
     "gulp-dev": "NODE_ENV='development' gulp development",
     "gulp-prod": "NODE_ENV='production' gulp production"
   },
