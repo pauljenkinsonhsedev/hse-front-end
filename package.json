@@ -6,7 +6,7 @@
   "scripts": {
     "gulp": "gulp --development",
     "gulp-hse": "gulp --development",
-    "gulp-dev": "NODE_ENV='development' gulp --development",
+    "gulp-dev": "NODE_ENV='development' gulp development",
     "gulp-prod": "NODE_ENV='production' gulp production"
   },
   "author": "",
