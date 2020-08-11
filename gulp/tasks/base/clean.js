@@ -1,7 +1,7 @@
 const del = require('del');
 import * as config from '../../config.json';
 
-function cleanhseScripts () {
+function cleanScriptsSecure () {
     return del([config.secureroot.scripts.output]);
 };
 

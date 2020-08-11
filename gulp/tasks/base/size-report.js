@@ -3,7 +3,7 @@
 const { src, task } = require('gulp');
 import report from 'gulp-sizereport';
 import path from 'path';
-import { isDefault, isProd, isDev } from './mode.js';
+import { isDefault, isDev } from './mode.js';
 
 let root;
 if (isDefault) {

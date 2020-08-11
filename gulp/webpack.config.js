@@ -1,15 +1,9 @@
 const webpack = require('webpack');
 const path = require('path');
-// const nodeExternals = require('webpack-node-externals');
 
 module.exports = {
   devtool: 'source-map',
   target: 'web',
-  // externals: [
-  //   nodeExternals({
-  //     importType: 'umd'
-  //   })
-  // ],
   entry: [
     './src/scripts/app.js'
   ],
@@ -26,8 +20,6 @@ module.exports = {
           loader: 'babel-loader',
           options: {
             presets: ['@babel/preset-env'],
-            // plugins: ['add-module-exports']
-            // presets: ['es2015'],
           },
         },
         parser: {

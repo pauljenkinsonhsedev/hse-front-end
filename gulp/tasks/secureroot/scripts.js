@@ -1,6 +1,6 @@
 'use strict';
 
-const { src, dest, series, task } = require('gulp');
+const { src, dest, task } = require('gulp');
 import * as config from '../../config.json';
 import concat from 'gulp-concat';
 import rename from 'gulp-rename';
