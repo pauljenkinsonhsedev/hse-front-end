@@ -12,26 +12,37 @@ You must install globally
 
 ## Running tasks
 There are only three tasks you need to know:
-- default - `yarn run gulp`
-- development - `yarn run gulp-dev`
-- production - `yarn run gulp-prod`
+- default - `yarn run gulp` (Opens local HSE website)
+- development - `yarn run gulp-dev` (Opens local Digial Workspace)
+- production - `yarn run gulp-prod` (Minifies and zips contents)
 
 Yarn specifies the environment which is needed for each task.
 
 ## Source files
 There are two main areas for source files:
-- Secure root
-- Digital workspace
-
+```
+src/
+└──secureroot/
+└──workspace/
+```
 ### Secure Root
-For all the HSE website assets
-(outputs: secureroot)
+For all the HSE website assets and page testing.
+
+Page tests can be hosted in the html dir:
+```
+src/
+└──secureroot/
+    └──html/
+```
 ### Digital Workspace
-The HSE Digital Workspace is a resource for web based tools and to showcase components, helpful for unit testing.
-s(outputs: workspace)
+The HSE Digital Workspace is a resource for unit testing, web based tools and to showcase components.
 
 Additionally there is a 'shared' directory which currently is being used for phasing in new javascript.
-
+```
+src/
+└──shared/
+    └──js/
+```
 ## Styles
 ### HSE website
 ```
