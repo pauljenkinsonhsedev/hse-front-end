@@ -22,6 +22,12 @@ const browser = os.platform() === 'linux' ? 'google-chrome' : (
   os.platform() === 'darwin' ? 'google chrome' : (
   os.platform() === 'win32' ? 'chrome' : 'firefox'));
 
+function server() {
+    connect.server({
+        root: root,
+        livereload: true,
+    });
+}
 
 function openBrowser() {
     return src(`${root}/${config.server.file}`)
@@ -31,13 +37,7 @@ function openBrowser() {
     }));
 }
 
-function server() {
-    connect.server({
-        root: root,
-        livereload: true
-    });
-}
-
-const toReturn = series(server, openBrowser);
+// const toReturn = series(server, openBrowser);
+const toReturn = series(openBrowser, server);
 
 task('browser', toReturn)
