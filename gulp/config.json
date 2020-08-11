@@ -18,6 +18,7 @@
         "all": [
             "./src/secureroot/**/*+(js|css|html|png|jpg|jpeg|gif|svg|ico)"
         ],
+        "output": "./secureroot",
         "copy": {
             "all": "./src/secureroot/copy/**/*",
             "output": "./secureroot/assets/"
@@ -73,6 +74,7 @@
         }
     },
     "workspace": {
+        "output": "./workspace",
         "styles": {
             "entry": "./src/workspace/styles/app.scss",
             "input": "./src/workspace/styles/*.scss",

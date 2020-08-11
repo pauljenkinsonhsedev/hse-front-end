@@ -7,6 +7,7 @@ import connect from 'gulp-connect';
 import open from 'gulp-open';
 import { isDefault, isProd, isDev } from './mode.js';
 
+// serve from
 let root;
 if (isDefault) {
     root = 'secureroot';

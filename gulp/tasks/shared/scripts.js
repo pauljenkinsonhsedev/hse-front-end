@@ -6,20 +6,21 @@ import webpackConfig from './webpack.config.js';
 import * as config from '../../config.json';
 import { isDefault, isProd, isDev } from '../base/mode.js';
 
-let workspaceDest;
-if (isDev) {
-    workspaceDest = config.shared.js.outputWorkspace
-}
+// let outputPath;
+// if (isDev) {
+//     outputPath = config.shared.js.outputWorkspace
+// }
 
-if(isDefault){
-    workspaceDest = config.shared.js.outputSecureroot
-}
+// if(isDefault || isProd){
+//     outputPath = config.shared.js.outputSecureroot
+// }
 
 function sharedScripts() {
     return src(config.shared.js.entrypoint)
     .pipe(webpackStream(webpackConfig), webpack)
     .pipe(connect.reload())
-    .pipe(dest(workspaceDest));
+    .pipe(dest(config.shared.js.outputWorkspace))
+    .pipe(dest(config.shared.js.outputSecureroot));
 }
 
 task('sharedScripts', sharedScripts);

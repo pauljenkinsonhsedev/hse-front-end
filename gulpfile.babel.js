@@ -7,7 +7,7 @@
 /* -------------------------------------------------------------------------------- */
 
 const { task, series } = require('gulp');
-import { hseBuild, workspaceBuild, commonTasks } from './gulp/tasks/base/build';
+import { hseBuild, workspaceBuild, commonTasks, prodTasks } from './gulp/tasks/base/build';
 import { watchTask } from './gulp/tasks/base/watch';
 import requireDir from 'require-dir';
 
@@ -37,3 +37,6 @@ task('default', series(hseBuild, commonTasks));
 
 // Development task
 task('development', series(workspaceBuild, commonTasks));
+
+// Production task
+task('production', series(hseBuild, workspaceBuild, prodTasks));

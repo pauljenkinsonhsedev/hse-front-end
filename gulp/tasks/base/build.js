@@ -14,5 +14,8 @@ export const hseBuild = parallel('hseStyles', 'hseScripts', 'sharedScripts', 'hs
 // Define combined workspace
 export const workspaceBuild = parallel('sharedScripts', 'workspaceStyles', 'workspaceImages', 'workspaceMarkup', 'workspaceCopyAssets', 'workspaceHighChats');
 
+// Define production Tasks
+export const prodTasks = series(parallel('zipWorkspace', 'zipSecureroot', 'sizeReport'));
+
 // Define common Tasks
 export const commonTasks = series(parallel('watchTask', 'sizeReport', 'browser'));

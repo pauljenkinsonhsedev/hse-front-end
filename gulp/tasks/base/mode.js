@@ -9,9 +9,9 @@ export const isDefault = mode.default();
 export const isDev = mode.development();
 
 if (isDefault) {
-root = 'secureroot';
+    root = 'secureroot';
 }
 
 if (isDev) {
-root = 'workspace';
+    root = 'workspace';
 }
