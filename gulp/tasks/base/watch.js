@@ -9,12 +9,10 @@ import { isDefault, isDev } from './mode.js';
 function watchTask(){
     let rebuild;
     if (isDefault) {
-        console.log('watch hse');
         rebuild = hseBuild;
     }
 
     if (isDev) {
-        console.log('watch work');
         rebuild = workspaceBuild;
     }
     const time = format.asString('hh:mm:ss', new Date());
