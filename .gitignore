@@ -19,3 +19,5 @@ package-lock.json
 /yarn.lock
 /workspace
 /yarn-error.log
+/secureroot.zip
+/workspace.zip
