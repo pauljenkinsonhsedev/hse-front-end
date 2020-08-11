@@ -1,4 +1,7 @@
 {
+    "all": [
+        "./src/**/*+(js|scss|css|html|njk|png|jpg|jpeg|gif|svg|ico)"
+    ],
     "server": {
         "file": "index.html",
         "uri": "http://localhost",
