@@ -18,3 +18,4 @@ package-lock.json
 /secureroot
 /yarn.lock
 /workspace
+/yarn-error.log
