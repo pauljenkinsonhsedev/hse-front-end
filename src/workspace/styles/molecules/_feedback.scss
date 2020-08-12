@@ -12,3 +12,38 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 ```
 
 */
+
+.feedback-container {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: $max-width / 1.5;
+    width: 100%;
+}
+
+.feedback {
+    padding: $dp*3;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    border-left: $dp solid $dialog-success;
+    background-color: $white;
+    position: relative;
+    bottom: $dp*4;
+    width: 100%;
+    height: auto;
+    transform: translateY(10%);
+    opacity: 0;
+    transition: all 600ms ease-in-out;
+    z-index: 9999;
+    margin-bottom: $dp;
+
+    p {
+        text-align: center;
+        margin: 0;
+    }
+
+    &.in {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
