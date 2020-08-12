@@ -223,7 +223,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <nav id="footer-nav" aria-label="Footer menu">
   <footer id="footerContainer">
     <div id="footer">
-      <h2 class="hide">Footer links</h2>
       <div class="footer-links-container">
         <ul>
           <li class="first"><a href="../search/search-results.htm">Search</a></li>
