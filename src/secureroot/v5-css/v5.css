@@ -11,7 +11,7 @@
 .backgroundRed a, .backgroundRed h2, .backgroundRed h3, .backgroundRed p {
   color: white !important; }
 
-a, a span {
+a {
   text-decoration: underline; }
 
 a:link,
@@ -22,9 +22,15 @@ a {
 
 a:hover,
 a:active,
-a:focus, a span.subText, a:hover span {
+a:focus, a span.subText {
   text-decoration: none !important;
   color: #333333; }
+
+button {
+  text-decoration: underline; }
+
+button:hover {
+  text-decoration: none; }
 
 #contentContainer .linkList li {
   background: none;
@@ -224,6 +230,9 @@ input.gsc-input:focus, #baseStrip ul.ddmswitch li a:focus {
 /* V5 global styles */
 .v5-inline {
   display: inline-block; }
+
+.no-wrap {
+  white-space: nowrap; }
 
 a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, canvas, caption, center, cite, code, dd, del, details, dfn, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, output, p, pre, q, ruby, s, samp, section, small, span, strike, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video {
   margin: 0;
@@ -3430,7 +3439,12 @@ ul.itemThumbBook {
 
 ul.itemThumbBook a {
   float: left !important;
-  width: 100%;
+  width: 100%; }
+
+ul.itemThumbBook a span {
+  text-decoration: underline; }
+
+ul.itemThumbBook a:hover span {
   text-decoration: none; }
 
 ul.itemThumbBook a:hover .resourcePrice {
@@ -3454,9 +3468,6 @@ ul.itemThumbBook span {
 
 .hsl-links {
   margin: 0 !important; }
-
-ul.itemThumbBook.publications a {
-  text-decoration: underline !important; }
 
 ul.itemThumbBook.publications li {
   width: 100% !important; }
@@ -3729,6 +3740,9 @@ ul.semtabs li a:focus {
       break-inside: avoid;
       /* IE 10+ */
       min-height: 82.2px; } }
+
+.addToBasket a {
+  background: #981e32; }
 
 .subscribe img {
   display: inline-block;
@@ -4756,64 +4770,67 @@ display: none;
 
 .homepageBanner {
   padding-top: 0;
-  padding-bottom: 0; }
+  padding-bottom: 20px; }
   @media only screen and (min-width: 980px) {
     .homepageBanner {
-      margin-bottom: 20px !important; } }
+      margin-bottom: 20px !important;
+      padding-bottom: 0; } }
 
-.homepageBanner:hover h2 {
+.homepageBanner a p {
   text-decoration: underline; }
 
+.homepageBanner a:hover p {
+  text-decoration: none; }
+
 .homepageBannerText {
-  white-space: nowrap;
   width: 100%;
   float: left;
   position: relative;
-  bottom: 20px;
+  bottom: 0;
   background-color: #981e32;
   color: white;
-  padding: 10px;
+  padding: 10px 20px;
   max-width: 100%;
   z-index: 999; }
   @media only screen and (min-width: 980px) {
     .homepageBannerText {
-      width: auto;
-      position: absolute;
-      max-width: 60%; } }
+      width: 100%; } }
 
+.homepageBannerText.covidBlue {
+  background-color: #1372b7; }
+
+/*
 .homepageBannerText h2::after {
-  content: " ";
-  background-image: url("../../assets/v5-images/icons/svg/solid/caret-right-white.svg");
-  background-repeat: no-repeat;
-  background-position: left;
-  display: inline-block;
-  margin-left: 10px;
-  width: 20px;
-  height: 20px; }
-
+content: " ";
+background-image: url('../../assets/v5-images/icons/svg/solid/caret-right-white.svg');
+background-repeat: no-repeat;
+background-position: left;
+display: inline-block;
+margin-left: 10px;
+width: 20px;
+height: 20px;
+}
+*/
 .homepageBannerText h2 {
   margin: 0;
   padding: 0;
-  clear: none;
-  white-space: nowrap; }
+  clear: none; }
 
 .homepageBannerText p {
   color: white;
   margin: 0; }
 
+@media only screen and (min-width: 980px) {
+  .homepageBanner {
+    max-height: 258px !important; } }
+
 .homepageBanner a {
   float: left;
   width: 100%; }
 
-.homepageBanner img {
-  height: auto; }
-  @media only screen and (min-width: 979px) {
-    .homepageBanner img {
-      max-height: 265.14px !important; } }
-
-@media only screen and (min-width: 979px) {
+@media only screen and (min-width: 980px) {
   .mostPopular {
-    max-height: 265.14px !important; } }
+    margin-bottom: 20px; } }
 
 .subText {
   color: #333333; }
@@ -5272,8 +5289,7 @@ ul.semtabs li a {
   #contentContainer .sevenEighths {
     width: 820px !important; }
   #contentContainer .mostPopular {
-    width: 300px;
-    min-height: 256.84px; }
+    width: 300px; }
   #contentContainer .homepageBanner {
     width: 620px; }
   #contentContainer .noPadding.twoThird {
@@ -5943,9 +5959,13 @@ p.moreLink a {
 /* HSL */
 .hsl-links li {
   background: none;
-  float: left;
   width: 100%;
+  float: left;
   padding: 0 0 10px 0; }
+  @media only screen and (min-width: 980px) {
+    .hsl-links li {
+      width: 232px;
+      margin-right: 3px; } }
 
 .hsl-links li a:hover {
   background-color: #333333; }

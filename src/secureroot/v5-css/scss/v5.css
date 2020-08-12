@@ -5117,11 +5117,11 @@ h2.multistepHeading10::before {
   height: auto; }
   @media only screen and (min-width: 979px) {
     .homepageBanner img {
-      max-height: 265.14px !important; } }
+      max-height: 256.83px !important; } }
 
 @media only screen and (min-width: 979px) {
   .mostPopular {
-    max-height: 265.14px !important; } }
+    max-height: 256.83px !important; } }
 
 .subText {
   color: #333333; }

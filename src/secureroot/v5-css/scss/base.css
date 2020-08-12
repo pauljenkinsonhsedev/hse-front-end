@@ -14,17 +14,23 @@
 a {
   text-decoration: underline; }
 
-#contentContainer a:link,
-#contentContainer a:visited,
-#contentContainer a {
+a:link,
+a:visited,
+a {
   color: #981e32;
   text-decoration: underline; }
 
-#contentContainer a:hover,
-#contentContainer a:active,
-#contentContainer a:focus {
+a:hover,
+a:active,
+a:focus, a span.subText {
   text-decoration: none !important;
   color: #333333; }
+
+button {
+  text-decoration: underline; }
+
+button:hover {
+  text-decoration: none; }
 
 #contentContainer .linkList li {
   background: none;
@@ -56,9 +62,8 @@ dd {
 
 #contentContainer .columnFull ul.listCaret li {
   background-image: none;
-  position: relative;
-  padding-left: 0;
-}
+  position: relative; }
+
 #contentContainer .backgroundRed p, #contentContainer .backgroundRed ul li {
   color: white !important; }
 
@@ -87,9 +92,6 @@ dd {
 
 #contentContainer .linkArrow li {
   display: block; }
-
-#contentContainer .linkArrow li a {
-  text-decoration: none !important; }
 
 #contentContainer .linkArrow li a:hover {
   text-decoration: underline !important; }
@@ -159,7 +161,7 @@ dd {
   clear: both;
   width: 100%;
   background: none;
-  background: #eee;
+  background-color: #eee;
   margin: 5px 0;
   padding: 0; }
 
@@ -169,7 +171,7 @@ dd {
   padding: 10px; }
 
 #contentContainer ul.boxList li:hover {
-  background: #4e4e4e; }
+  background-color: #4e4e4e; }
 
 #contentContainer ul.boxList li h3 {
   color: #981e32 !important; }
@@ -192,7 +194,7 @@ input#email {
   padding: 5px; }
 
 .eBulletinButton {
-  background: #981e32;
+  background-color: #981e32;
   color: white;
   padding: 5px;
   margin-top: 10px;
@@ -226,3 +228,6 @@ input.gsc-input:focus, #baseStrip ul.ddmswitch li a:focus {
 /* V5 global styles */
 .v5-inline {
   display: inline-block; }
+
+.no-wrap {
+  white-space: nowrap; }
