@@ -1,0 +1,33 @@
+
+
+pre.code-example {
+    margin: 0;
+    padding: 0;
+    display: block;
+    tab-size: 2;
+    white-space: pre-wrap;
+
+    code {
+        display: block;
+        padding: $dp;
+        background-color: $mono-a;
+
+        font-family: monospace, monospace;
+        padding: $dp*2;
+        margin-bottom: $dp*2;
+        width: 100%;
+        font-size: 16px;
+        line-height: 24px;
+        color: rgb(141, 224, 141);
+        white-space: pre;
+        word-wrap: wrap;
+        word-break: break-all;
+        overflow-x: visible;
+        overflow-y: hidden;
+    }
+}
+
+.sticky-contents {
+    position: sticky;
+    top: 1rem;
+}

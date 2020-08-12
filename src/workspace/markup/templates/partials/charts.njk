@@ -1,0 +1,212 @@
+<style>
+    .js-enabled .datacontent {
+        visibility: hidden;
+    }
+    .chart {
+        position: relative;
+        margin-bottom: 1rem;
+    }
+
+    .hse-loader {
+        display: inline-block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80px;
+        height: 80px;
+
+        opacity: 0;
+        transition: opacity 600ms ease-in-out;
+    }
+
+    .hse-loader.loader-in {
+        opacity: 1;
+    }
+
+    .hse-loader div {
+        box-sizing: border-box;
+        display: block;
+        position: absolute;
+        width: 64px;
+        height: 64px;
+        margin: 8px;
+        border: 8px solid #000;
+        border-radius: 50%;
+        animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+        border-color: #000 transparent transparent transparent;
+    }
+    .hse-loader div:nth-child(1) {
+        animation-delay: -0.45s;
+    }
+    .hse-loader div:nth-child(2) {
+        animation-delay: -0.3s;
+    }
+    .hse-loader div:nth-child(3) {
+        animation-delay: -0.15s;
+    }
+    @keyframes lds-ring {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+</style>
+
+<div class="box boxNoBackground">
+    <div class="chart" data-chart-type="pie" data-chart-units="unit" data-chart-title="Fatal injuries to workers by main industry" data-chart-subtitle="Chart showing amount of fatal injuries to workers divided by industry sector" data-table-desc-x="Description of X" data-table-desc-y="Description of Y">
+        <div class="displayChart"></div>
+        <figure class="datacontent">
+            <h2 class="datacontent__title">Fatal injuries to workers by main industry</h2>
+            <h3 class="datacontent__subtitle">Fatal injuries to workers by main industry</h3>
+            <p class="datacontent__description"> Chart showing amount of fatal injuries to workers divided by industry sector. </p>
+            <table class="tabledata" id="table1">
+                <thead>
+                    <tr>
+                        <th>Main industry</th>
+                        <th>Number of fatal injuries</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th class="category">Agriculture, forestry and fishing</th>
+                        <td class="unit">20</td>
+                    </tr>
+                    <tr>
+                        <th class="category">Construction</th>
+                        <td class="unit">40</td>
+                    </tr>
+                    <tr>
+                        <th class="category">Manufacturing</th>
+                        <td class="unit">15</td>
+                    </tr>
+                    <tr>
+                        <th class="category">Transport and storage</th>
+                        <td class="unit">11</td>
+                    </tr>
+                    <tr>
+                        <th class="category">Wholesale, retail, motor, repair, Accommodation and food</th>
+                        <td class="unit">6</td>
+                    </tr>
+                    <tr>
+                        <th class="category">Admin and support services</th>
+                        <td class="unit">6</td>
+                    </tr>
+                    <tr>
+                        <th class="category">Waste</th>
+                        <td class="unit">5</td>
+                    </tr>
+                    <tr>
+                        <th class="category">Other</th>
+                        <td class="unit">8</td>
+                    </tr>
+                </tbody>
+            </table>
+        </figure>
+    </div>
+    <div class="chart" data-chart-type="pie" data-chart-units="unit" data-chart-title="Fatal injuries to workers by age" data-chart-subtitle="Chart showing amount of fatal injuries to workers divided by age" data-table-desc-x="Description of X" data-table-desc-y="Description of Y">
+        <div class="displayChart"></div>
+        <figure class="datacontent">
+            <h2 class="center-text">Fatal injuries to workers by age</h2>
+            <p class="highcharts-description"> Chart showing amount of fatal injuries to workers divided by age. </p>
+            <table class="tabledata" id="table2">
+                <thead>
+                    <tr>
+                        <th>Age group</th>
+                        <th>Number of fatal injuries</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th class="category">Aged 60 plus</th>
+                        <td class="unit">30</td>
+                    </tr>
+                    <tr>
+                        <th class="category">Aged 16-59</th>
+                        <td class="unit">80</td>
+                    </tr>
+                    <tr>
+                        <th class="category">Age not known</th>
+                        <td class="unit">1</td>
+                    </tr>
+                </tbody>
+            </table>
+        </figure>
+    </div>
+</div>
+<div class="box boxNoBackground">
+    <div class="chart" data-chart-type="bar" data-chart-units="unit" data-chart-title="Main kinds of fatal accident for workers" data-chart-subtitle="Chart showing the main kinds of fatal accident for workers" data-table-desc-x="Description of X" data-table-desc-y="Description of Y">
+        <div class="displayChart" id="chartdisplay"></div>
+        <figure class="datacontent">
+            <h2 class="center-text">Main kinds of fatal accident for workers</h2>
+            <p class="highcharts-description"> Chart showing amount of fatal injuries to workers divided by age. </p>
+            <table class="tabledata" id="table3">
+                <thead>
+                    <tr>
+                        <th>Type of accident</th>
+                        <th>Number of accidents</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th class="category">Falls from a height</th>
+                        <td class="unit">29</td>
+                    </tr>
+                    <tr>
+                        <th class="category">Struck by a moving vehicle</th>
+                        <td class="unit">20</td>
+                    </tr>
+                    <tr>
+                        <th class="category">Struck by a moving object</th>
+                        <td class="unit">18</td>
+                    </tr>
+                    <tr>
+                        <th class="category">Trapped by something <br/>collapsing/overturning</th>
+                        <td class="unit">15</td>
+                    </tr>
+                    <tr>
+                        <th class="category">Contact with moving machinery</th>
+                        <td class="unit">11</td>
+                    </tr>
+                </tbody>
+            </table>
+        </figure>
+    </div>
+</div>
+<div class="box boxNoBackground">
+    <div class="chart" data-chart-type="line" data-chart-units="unit" data-chart-title="Rate of fatal injury per 100,000 workers" data-chart-subtitle="Chart showing the rate of fatal injury per 100,000 workers" data-table-desc-x="Description of X" data-table-desc-y="Description of Y">
+        <div class="displayChart"></div>
+        <figure class="datacontent">
+            <h2 class="center-text">Rate of fatal injury per 100,000 workers</h2>
+            <p class="highcharts-description"> Chart showing the rate of fatal injury per 100,000 workers. </p>
+            <table class="tabledata" id="table4">
+                <thead>
+                    <tr>
+                        <th>Rate of fatal injury (per 100,000 workers)</th>
+                        <th>Years 1981 - 2020</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th class="category">2020</th>
+                        <td class="unit">30</td>
+                    </tr>
+                    <tr>
+                        <th class="category">2020</th>
+                        <td class="unit">80</td>
+                    </tr>
+                    <tr>
+                        <th class="category">2019</th>
+                        <td class="unit">86</td>
+                    </tr>
+                    <tr>
+                        <th class="category">2018</th>
+                        <td class="unit">144</td>
+                    </tr>
+                </tbody>
+            </table>
+        </figure>
+    </div>
+</div>

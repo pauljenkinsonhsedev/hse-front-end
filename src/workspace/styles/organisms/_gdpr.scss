@@ -1,0 +1,75 @@
+/*doc
+---
+title: GDPR
+name: gdpr
+category: Site features - GDPR
+---
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+```html_example
+<div class="notification notification__gdpr">
+    <div class="notification__body" data-span="8">
+        <h2 class="heading-m">We value your privacy</h2>
+        <p class="subtext">We use necessary cookies to make our site work. We'd also like to set optional analytics cookies to help us improve it. We won't set optional cookies unless you enable them. Using this tool will set a cookie on your device to remember your preferences.</p>
+        <div class="divider" data-spacing="my-m"></div>
+        <p class="subtext">Necessary cookies enable core functionality such as security, network management, and accessibility. You may disable these by changing your browser settings, but this may affect how the website functions.</p>
+        <div class="divider" data-spacing="my-s"></div>
+        <p class="subtext">For more detailed information about the cookies we use, see <a href="#">our cookie policy</a></p>
+    </div>
+    <div class="notification__actions" data-span="4 last">
+        <ul class="notification__actions-list">
+            <li>Analytics cookies {slider}</li>
+            <li class="notification__actions-item"><button class="btn btn-black gdpr__yes">Accept and close</button></li>
+            <li class="notification__actions-item"><button class="btn btn-outlined-white gdpr__no">I do not accept</button></li>
+        </ul>
+    </div>
+</div>
+```
+
+*/
+
+.notification {
+    background-color: $white;
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width: $bp-tablet) {
+    flex-direction: row;
+    }
+}
+
+.notification__body {
+    display: flex;
+    flex-direction: column;
+
+    p {
+        margin: 0;
+    }
+}
+
+.notification__actions {
+    display: flex;
+}
+
+.notification__actions-list {
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 auto;
+    justify-content: center;
+
+    margin: 0;
+    padding: 0;
+    width: 100%;
+
+    list-style: none;
+}
+.notification__actions-item {
+    display: block;
+}
+
+.gdpr__yes,
+.gdpr__no {
+    width: 100%;
+    text-transform: uppercase;
+}

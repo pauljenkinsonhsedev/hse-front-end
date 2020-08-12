@@ -14,3 +14,10 @@ brexit/
 coronavirus/
 news/
 asbestos
+package-lock.json
+/secureroot
+/yarn.lock
+/workspace
+/yarn-error.log
+/secureroot.zip
+/workspace.zip

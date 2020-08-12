@@ -1,0 +1,161 @@
+/*doc
+---
+title: Tables
+name: tables
+category: Page features - Tables
+---
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+```html_example
+<table class="table">
+    <caption class="table__caption">Case status</caption>
+    <thead class="table__head">
+      <tr class="table__row">
+        <th scope="col" class="table__header">Case manager</th>
+        <th scope="col" class="table__header">Cases opened</th>
+        <th scope="col" class="table__header">Cases closed</th>
+      </tr>
+    </thead>
+    <tbody class="table__body">
+      <tr class="table__row">
+        <td class="table__cell" data-label="Case manager">David Francis</td>
+        <td class="table__cell" data-label="Cases opened">3</td>
+        <td class="table__cell" data-label="Cases closed">0</td>
+      </tr>
+      <tr class="table__row">
+        <td class="table__cell" data-label="Case manager">Paul Farmer</td>
+        <td class="table__cell" data-label="Cases opened">1</td>
+        <td class="table__cell" data-label="Cases closed">0</td>
+      </tr>
+      <tr class="table__row">
+        <td class="table__cell" data-label="Case manager">Rita Patel</td>
+        <td class="table__cell" data-label="Cases opened">2</td>
+        <td class="table__cell" data-label="Cases closed">0</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <table class="table">
+    <caption class="table__caption">Dates and amounts</caption>
+    <thead class="table__head">
+      <tr class="table__row">
+        <th scope="col" class="table__header">Date</th>
+        <th scope="col" class="table__header">Amount</th>
+      </tr>
+    </thead>
+    <tbody class="table__body">
+      <tr class="table__row">
+        <th scope="row" class="table__header">First 6 weeks</th>
+        <td class="table__cell" data-label="First 6 weeks">£109.80 per week</td>
+      </tr>
+      <tr class="table__row">
+        <th scope="row" class="table__header">Next 33 weeks</th>
+        <td class="table__cell" data-label="First 33 weeks">£109.80 per week</td>
+      </tr>
+      <tr class="table__row">
+        <th scope="row" class="table__header">Total estimated pay</th>
+        <td class="table__cell" data-label="Total estimated pay">£4,282.20</td>
+      </tr>
+    </tbody>
+  </table>
+*/
+
+table,
+thead,
+tbody,
+th,
+td,
+tr {
+  @media (max-width: $bp-tablet) {
+    display: block;
+  }
+}
+
+tr {
+  @media (max-width: $bp-tablet) {
+    &:nth-child(odd) {
+      background-color: $mono-f;
+    }
+  }
+}
+td {
+  @media (max-width: $bp-tablet) {
+    &:before {
+      display: inline-block;
+      margin: 0 $dp 0 0;
+      content: attr(data-label);
+      font-weight: 700;
+    }
+  }
+}
+
+.table {
+  width: 100%;
+  margin: $dp 0 $dp * 4 0;
+  border-spacing: 0;
+  border-collapse: collapse;
+  border: 1px solid $mono-d;
+
+  @media (min-width: $bp-tablet) {
+    border: 0;
+  }
+}
+
+.table__caption {
+  @media (max-width: $bp-tablet) {
+    display: block;
+    width: 100%;
+    padding: $dp * 2 $dp;
+  }
+  text-align: left;
+  padding: $dp * 2 0;
+  border-bottom: 1px solid $mono-e;
+  font-weight: 700;
+}
+
+.table__head {
+  .table__header {
+    border-bottom: 1px solid $mono-c;
+    padding: ($dp * 2) 0;
+  }
+}
+.table__header {
+  @extend .font-size-19;
+  text-align: left;
+
+  @media (min-width: $bp-tablet) {
+    padding: $dp $dp $dp 0;
+  }
+
+  @media (max-width: $bp-tablet) {
+    display: none;
+  }
+}
+
+.table__body {
+}
+.table__row {
+  transition: all 300ms ease-in-out;
+  border-bottom: 1px solid $mono-e;
+
+  &:hover,
+  &:focus {
+    background-color: $mono-f;
+    border-bottom: 1px solid $mono-d;
+  }
+
+  .table__head & {
+    background-color: $white;
+  }
+}
+.table__cell {
+  text-align: left;
+  margin: 0;
+  padding: $dp * 2 $dp;
+  @extend .font-size-19;
+
+  @media (min-width: $bp-tablet) {
+    padding: ($dp * 2) $dp ($dp * 2) 0;
+  }
+}

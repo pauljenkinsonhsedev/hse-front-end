@@ -1,0 +1,129 @@
+.table-output {
+    display: none;
+    opacity: 0;
+    // border: 1px solid $mono-e;
+    // padding: $dp*4;
+    // background-color: $mono-e;
+    transition: opacity 300ms ease-in-out;
+    p {
+        color: $black;
+        margin-bottom: $dp*2;
+        @extend .subtext;
+    }
+
+    &.in {
+        display: block;
+    }
+
+    &.show {
+        opacity: 1;
+    }
+}
+.table-output-container {
+    position: relative;
+    background-color: $white;
+    padding: $dp*2;
+    margin-bottom: $dp*2;
+    border: 1px solid $mono-e;
+}
+.table-output-controls {
+    // padding: $dp*2 $dp*3;
+    position: absolute;
+    top: $dp*10;
+    right: $dp*3;
+}
+
+.table-output-textarea {
+    @extend .visually-hidden;
+}
+
+.feedback-container {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: $max-width;
+    width: 100%;
+}
+
+.feedback {
+    padding: $dp*3;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    border-left: $dp solid $dialog-success;
+    background-color: $white;
+    position: relative;
+    bottom: $dp*4;
+    width: 100%;
+    height: auto;
+    transform: translateY(10%);
+    opacity: 0;
+    transition: all 600ms ease-in-out;
+    z-index: 9999;
+    margin-bottom: $dp;
+
+    p {
+        text-align: center;
+        margin: 0;
+    }
+
+    &.in {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.table-meta {
+    display: none;
+    opacity: 0;
+    transition: opacity 600ms ease-in-out;
+
+    &.in {
+        display: block;
+    }
+    &.show {
+        opacity: 1;
+    }
+}
+
+.preview {
+    display: none;
+    opacity: 0;
+    transition: opacity 600ms ease-in-out;
+
+    &.in {
+        display: block;
+    }
+
+    &.show {
+        opacity: 1;
+    }
+}
+
+code {
+    font-family: monospace, monospace;
+    padding: $dp*2;
+    margin-bottom: $dp*2;
+    width: 100%;
+    background-color: $black;
+    @extend .font-size-19;
+    color: rgb(141, 224, 141);
+    white-space: pre;
+}
+
+pre {
+    overflow: hidden;
+}
+pre > code {
+    display: block;
+    word-wrap: break-word;
+}
+
+pre[class*="language-"] {
+    font-size: 16px !important;
+    border-radius: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+    margin: 0 !important;
+    overflow: hidden !important;
+    padding: $dp*5 $dp*2 $dp*2 $dp*2 !important;
+}

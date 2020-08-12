@@ -1,0 +1,38 @@
+{% from "macros/blocks.njk" import blocks %}
+
+<!DOCTYPE html>
+<html class="no-js grid-overlay" lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>
+            {% if pageTitle %}
+                {{pagetitle}}
+            {% else %}
+                {{project_name}}
+            {% endif %}
+        </title>
+        {% include "partials/meta.njk" %}
+        {% include "partials/styles.njk" %}
+        {% include "partials/favicons.njk" %}
+        {% include "partials/scripts-top.njk" %}
+    </head>
+    <body>
+        {% include "partials/scripts-gtm.njk" -%}
+
+        <script>
+            document.body.className = (
+                (document.body.className)
+                ? document.body.className + ' js-enabled'
+                : 'js-enabled');
+        </script>
+        {% include "partials/header.njk" %}
+        <div class="layout{% if expPage %} layout-experience-page{% endif %}">
+            {% block content %}{% endblock %}
+        </div>
+        {% include "partials/scripts-bottom.njk" %}
+        {% include "partials/cookie-consent.njk" %}
+        {% include "partials/footer.njk" %}
+    </body>
+</html>

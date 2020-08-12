@@ -1,0 +1,133 @@
+/*doc
+---
+title: Grid System
+name: grid-system
+category: Foundations - Grid system
+---
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+```html_example
+<div class="row">
+    <div data-span="12" class="block">12/12</div>
+</div>
+
+<div class="row">
+    <div data-span="1" class="block">1/12</div>
+    <div data-span="11 last" class="block">11/12</div>
+</div>
+
+<div class="row">
+    <div data-span="2" class="block"> 2/12</div>
+    <div data-span="10 last" class="block"> 10/12</div>
+</div>
+
+<div class="row">
+    <div data-span="3" class="block"> 3/12</div>
+    <div data-span="9 last" class="block"> 9/12</div>
+</div>
+
+<div class="row">
+    <div data-span="4" class="block"> 4/12</div>
+    <div data-span="8 last" class="block"> 8/12</div>
+</div>
+
+<div class="row">
+    <div data-span="5" class="block"> 5/12</div>
+    <div data-span="7 last" class="block"> 7/12</div>
+</div>
+
+<div class="row">
+    <div data-span="6" class="block"> 6/12</div>
+    <div data-span="6 last" class="block"> 6/12</div>
+</div>
+
+<div class="row">
+    <div data-span="7" class="block"> 7/12</div>
+    <div data-span="5 last" class="block"> 5/12</div>
+</div>
+
+<div class="row">
+    <div data-span="8" class="block"> 8/12</div>
+    <div data-span="4 last" class="block"> 4/12</div>
+</div>
+
+<div class="row">
+    <div data-span="9" class="block"> 9/12</div>
+    <div data-span="3 last" class="block"> 3/12</div>
+</div>
+
+<div class="row">
+    <div data-span="10" class="block"> 10/12</div>
+    <div data-span="2 last" class="block"> 2/12</div>
+</div>
+
+<div class="row">
+    <div data-span="11" class="block"> 11/12</div>
+    <div data-span="1 last" class="block">1/12</div>
+</div>
+```
+*/
+
+.block {
+  .cortana-body & {
+    background: rgba($dialog-information, 0.2);
+    border: 1px solid rgba($dialog-information, 0.25);
+    color: $mono-b;
+    font-size: 12px;
+  }
+}
+
+@import 'susy';
+
+$susy: (
+  'columns': susy-repeat(12),
+  'gutters': 0.25,
+  'spread': 'narrow',
+  'container-spread': 'narrow'
+);
+
+[data-span] {
+  float: left;
+  margin-bottom: $vr * 2;
+
+  &:not([data-span*='last']) {
+    margin-right: gutter();
+  }
+}
+
+@for $span from 1 through length(susy-get('columns')) {
+  [data-span*='#{$span}'] {
+    width: span($span);
+
+    @media (max-width: $bp-tablet) {
+      width: 100%;
+    }
+  }
+}
+
+.row {
+  &:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+}
+
+.example-grid {
+  border: 1px dashed $black;
+}
+
+.hide-desktop {
+  display: none;
+  @media (max-width: $bp-tablet) {
+    display: inline-block;
+  }
+}
+
+.hide-mobile {
+  display: none;
+  @media (min-width: $bp-tablet) {
+    display: inline-block;
+  }
+}

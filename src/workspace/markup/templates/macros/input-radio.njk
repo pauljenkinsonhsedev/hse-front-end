@@ -1,0 +1,23 @@
+{% from "macros/form-header.njk" import formHeader %}
+{% macro fieldInputRadio(field_id, form_heading, form_instruction, field_label, field_label_hint, field_type, field_options) %}
+  <div class="form-group">
+    <fieldset class="fieldset" aria-describedby="{{ field_id }}-hint">
+      {{ formHeader(form_heading, form_instruction) }}
+      {% if field_label_hint != "" %}
+        <span id="{{ field_id }}-hint" class="hint">
+          {{field_label_hint}}
+        </span>
+      {% endif %}
+      <div class="radios radios--inline">
+        {% for item in field_options %}
+          <div class="radios__item">
+            <input class="radios__input" id="{{ field_id }}" name="{{ field_id }}" type="radio" value="{{item.label}}">
+            <label class="label radios__label" for="{{ field_id }}">
+              {{item.label}}
+            </label>
+          </div>
+        {% endfor %}
+      </div>
+    </fieldset>
+  </div>
+{% endmacro %}

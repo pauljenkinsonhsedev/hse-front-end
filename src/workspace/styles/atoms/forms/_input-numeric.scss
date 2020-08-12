@@ -1,0 +1,18 @@
+/*doc
+---
+title: Input (numeric)
+name: b-forms-a-input-numeric
+category: Page features - Form elements
+---
+
+```html_example
+    <form>
+        <div class="form-group">
+            <label class="label">Enter a number less than or equal to 20</label>
+            <input class="input" type="number" name="numeric" pattern="[0-9]+" max="20">
+            <button class="btn btn-green">Validate</button>
+        </div>
+    </form>
+```
+
+*/

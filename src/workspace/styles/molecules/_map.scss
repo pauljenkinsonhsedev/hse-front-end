@@ -1,0 +1,18 @@
+/*doc
+---
+title: Google Map
+name: google-map
+category: Page features - Google Map
+---
+
+```html_example
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAGjiKBJy1WMq-mirTy1C8PpXs1PZz3btY&callback=initMap" type="text/javascript" async defer></script>
+
+    <div id="map" class="map" data-map-lat="51.54532" data-map-lon="-0.057953" data-map-zoom-level=""></div>
+```
+
+*/
+.map {
+  width: 100%;
+  padding-top: 100%;
+}

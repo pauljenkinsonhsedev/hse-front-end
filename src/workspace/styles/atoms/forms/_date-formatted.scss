@@ -1,0 +1,59 @@
+/*doc
+---
+title: Date
+name: b-forms-f-date
+category: Page features - Form elements
+---
+
+```html_example
+<form>
+  <div class="form-group">
+    <fieldset class="fieldset" role="group" aria-describedby="date-format-hint">
+      <legend class="fieldset__legend fieldset__legend--xl">
+        <h2 class="fieldset__heading">
+          What is your date of birth?
+        </h2>
+      </legend>
+      <span id="date-format-hint" class="hint">
+        For example, 12 11 2007
+      </span>
+      <div class="date-input" id="passport-issued">
+        <div class="date-input__item">
+          <div class="form-group">
+            <label class="label date-input__label" for="date-day">
+              Day
+            </label>
+            <input class="input date-input__input input--width-2" id="date-day" name="date-day" type="text" max="31" minlength="2" maxlength="2" inputmode="numeric"required title="Please enter a day">
+          </div>
+        </div>
+        <div class="date-input__item">
+          <div class="form-group">
+            <label class="label date-input__label" for="date-month">
+              Month
+            </label>
+            <input class="input date-input__input input--width-2" id="date-month" name="date-month" type="text" max="12" minlength="2" maxlength="2" inputmode="numeric"required title="Please enter a month">
+          </div>
+        </div>
+        <div class="date-input__item">
+          <div class="form-group">
+            <label class="label date-input__label" for="date-year">
+              Year
+            </label>
+            <input class="input date-input__input input--width-4" id="date-year" name="date-year" type="text"  minlength="4" maxlength="4" inputmode="numeric" required title="Please enter a year">
+          </div>
+        </div>
+      </div>    <button class="btn btn-green">Validate</button>
+
+    </fieldset>
+  </div>
+  <div class="form-group">
+  </div>
+</form>
+```
+
+*/
+
+.date-input__item {
+  display: inline-block;
+  margin-right: $dp;
+}

@@ -1,0 +1,62 @@
+/*doc
+---
+title: YouTube
+name: video-youtube
+category: Media - YouTube
+---
+
+```html_example
+<div class="media-container">
+    <h2 class="heading-m">YouTube video title text</h2>
+    <p>Ad aliquip reprehenderit sint voluptate sint aliquip laboris sit reprehenderit velit magna.</p>
+    <div class="media">
+        <div class="media-video media-video-youtube">
+            <div class="media-video-player">
+                <iframe width="800" height="560" src="https://www.youtube.com/embed/6UqiDs-_1A8" frameborder="0" allowfullscreen=""></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+```
+
+*/
+
+video,
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}
+
+.media-container {
+  margin: $dp 0;
+}
+
+.media-video {
+  padding-top: 56.25%;
+  position: relative;
+
+  video,
+  iframe,
+  object,
+  embed {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    right: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 100%;
+
+    .media-html5 & {
+      top: 50%;
+      bottom: 50%;
+      transform: translate(-50%, -50%);
+      width: auto;
+      height: 100%;
+    }
+  }
+}
+
+.media-poster-mobile {
+}

@@ -1,0 +1,6 @@
+{% from "macros/form-header.njk" import formHeader %}
+{% macro fieldInputSubmit(field_id, form_heading, form_instruction, field_label, field_label_hint) %}
+  <div class="form-group">
+    <input class="btn btn-green" type="submit" value="{{ field_label | escape }}"/>
+  </div>
+{% endmacro %}
