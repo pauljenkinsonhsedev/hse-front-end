@@ -55,6 +55,7 @@
     "gulp-connect": "^5.7.0",
     "gulp-open": "^3.0.1",
     "highcharts": "^8.1.2",
+    "moment": "^2.27.0",
     "os": "^0.1.1",
     "tidy-html5": "^0.1.1"
   }
