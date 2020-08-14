@@ -1,5 +1,5 @@
 import CsvConvert from './combined/classes/csv-convertor';
-import ChartsDefault from './combined/classes/charts';
+import ChartsDefault from './combined/classes/charts/charts';
 
 // Window load
 window.addEventListener('load',() => {
