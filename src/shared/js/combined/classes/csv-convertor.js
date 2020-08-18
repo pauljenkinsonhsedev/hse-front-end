@@ -1,5 +1,5 @@
 import { feedback } from './feedback.mjs';
-import ChartsDefault from './charts';
+import ChartsDefault from './charts/charts';
 import load from '../utils/asset-loader';
 
 class CsvConvert {
@@ -26,9 +26,9 @@ class CsvConvert {
 
   // loadVendorFn() {
   //   Promise.all([
-  //     load.css('./js/vendor/prismjs/prism-twilight.css'),
-  //     load.js('./js/vendor/prismjs/prism.js'),
-  //     load.js('./js/vendor/tidy/tidy.js')
+  // //     load.css('./js/vendor/prismjs/prism-twilight.css'),
+  // //     load.js('./js/vendor/prismjs/prism.js'),
+  // //     load.js('./js/vendor/tidy/tidy.js')
   //   ])
   //   .then(function() {
   //     console.log('Vendors loaded');
@@ -46,6 +46,7 @@ class CsvConvert {
     let fileReader = new FileReader();
     fileReader.onload = () => {
         this.createTableFn(fileReader.result);
+        this.disableOptions(fileReader.result);
         this.tableMetaForm.classList.add('in');
         setTimeout(() => {
           this.tableMetaForm.classList.add('show');
@@ -60,21 +61,21 @@ class CsvConvert {
         }
     };
 
-    // Display units field
-    this.formGroupUnits.style.display = 'none';
-    this.chartTypeField.addEventListener('change', (e) => {
-      console.log(e.target.value);
-      if (e.target.value === 'pie') {
-        this.formGroupUnits.style.display = 'block';
-        this.formGroupXAxis.style.display = 'none';
-        this.formGroupYAxis.style.display = 'none';
 
-      } else {
-        this.formGroupUnits.style.display = 'none';
-        this.formGroupXAxis.style.display = 'block';
-        this.formGroupYAxis.style.display = 'block';
-      }
-    });
+    // Display units field
+    // this.chartTypeField.addEventListener('change', (e) => {
+      // console.log(e.target.value);
+      // if (e.target.value === 'pie' || e.target.value === 'columnrange') {
+      //   this.formGroupUnits.disabled = false;
+      //   this.formGroupXAxis.disabled = true;
+      //   this.formGroupYAxis.disabled = true;
+
+      // } else {
+      //   this.formGroupUnits.disabled = false;
+      //   this.formGroupXAxis.disabled = false;
+      //   this.formGroupYAxis.disabled = true;
+      // }
+    // });
 
     // Copy table
     this.copyButton.addEventListener('click', () => {
@@ -131,6 +132,31 @@ class CsvConvert {
     }
   }
 
+  disableOptions(data) {
+    // set flags
+    let allRows = data.split(/\r?\n|\r/);
+    for (let singleRow = 0; singleRow < allRows.length; singleRow++) {
+      const rowCells = allRows[singleRow].split(',');
+      if (rowCells.length > 2) {
+        this.disableSelectOption = true;
+      } else {
+        this.disableSelectOption = false;
+      }
+    }
+
+    // disable / enable options
+    const op = document.getElementById('chartType').getElementsByTagName('option');
+    for (let i = 0; i < op.length; i++) {
+      if (op[i].value.toLowerCase() == 'pie' && this.disableSelectOption == true) {
+        op[i].disabled = true;
+        op[i].style.color = '#F00';
+      } else {
+        op[i].disabled = false;
+        op[i].style.color = '#FFF';
+      }
+    }
+  }
+
   getFormData() {
     const outputData = {};
     const formData = new FormData(this.tableMetaForm)
@@ -177,6 +203,7 @@ class CsvConvert {
 
     // Set variables
     let csvData = [];
+    let rangeValues = [];
 
     const chartContainer = document.createElement('div');
     chartContainer.className = 'chart';
@@ -188,6 +215,7 @@ class CsvConvert {
     chartContainer.setAttribute('data-table-desc-x', metaXTitle);
     chartContainer.setAttribute('data-table-desc-y', metaYTitle);
 
+    // create html
     const figure = document.createElement('figure');
     figure.className = 'datacontent';
 
@@ -209,6 +237,7 @@ class CsvConvert {
     const tableBody = document.createElement('tbody');
     const tableHead = document.createElement('thead');
 
+    table.classList.add('table');
     table.classList.add('tabledata');
     table.id = 'previewTable';
     tableBody.classList.add('table__body');
@@ -227,6 +256,9 @@ class CsvConvert {
       rowData.forEach(function(cellData, i) {
         if (rowCount === 0) {
           cell = document.createElement('th');
+          let dataAttr = cellData.toLowerCase();
+          dataAttr = dataAttr.replace(/[^a-zA-Z0-9+]/g, '');
+          rangeValues.push(dataAttr);
         } else {
           cell = document.createElement('td');
         }
@@ -249,6 +281,11 @@ class CsvConvert {
         tableBody.appendChild(row);
       }
     });
+
+
+    if (this.chartTypeField.value === 'arearange') {
+      this.createRanges(rangeValues);
+    }
 
     const displayChart = document.createElement('div');
     displayChart.className = 'displayChart';
@@ -308,8 +345,9 @@ class CsvConvert {
     chartPreview.innerHTML = chartContainer.outerHTML;
 
     const chartDisplayContainer = document.getElementById('chart');
-    const chartDisplay = chartDisplayContainer.querySelector('.chart')
-    this.charts.buildChartsFn(chartDisplay);
+    const chartDisplay = chartDisplayContainer.querySelector('.chart');
+    const options = this.charts.options(chartDisplay);
+    this.charts.build(chartDisplay, options);
 
     // Display table meta form
     output.classList.add('in');
@@ -317,9 +355,34 @@ class CsvConvert {
       output.classList.add('show');
     }, 100);
   }
-  getChartsFn() {
-    const charts = new ChartsDefault();
-    charts.init();
+
+  createRanges(ranges) {
+    const rangeAxis = document.getElementById('rangeAxis');
+    const rangeAverage = document.getElementById('rangeAverage');
+    const rangeLow = document.getElementById('rangeLow');
+    const rangeHigh = document.getElementById('rangeHigh');
+
+    // only populate if doesn't already have values
+    if (rangeAxis.options.length < 5) {
+      rangeAxis.options[rangeAxis.options.length] = new Option('Select a range', null, false, false);
+      rangeAverage.options[rangeAverage.options.length] = new Option('Select a range', null, false, false);
+      rangeLow.options[rangeLow.options.length] = new Option('Select a range', null, false, false);
+      rangeHigh.options[rangeHigh.options.length] = new Option('Select a range', null, false, false);
+    }
+
+    // create options
+    for (let data of ranges) {
+      const optionElem = document.createElement('option');
+      optionElem.value = data;
+      optionElem.innerHTML = data;
+      // only populate if doesn't already have values
+      if (rangeAxis.options.length < 5) {
+        rangeAxis.options[rangeAxis.options.length] = new Option(data, data, false, false);
+        rangeAverage.options[rangeAverage.options.length] = new Option(data, data, false, false);
+        rangeLow.options[rangeLow.options.length] = new Option(data, data, false, false);
+        rangeHigh.options[rangeHigh.options.length] = new Option(data, data, false, false);
+      }
+    }
   }
 };
 
