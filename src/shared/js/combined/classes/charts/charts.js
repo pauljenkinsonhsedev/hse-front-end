@@ -11,28 +11,23 @@ class ChartsDefault {
     }
 
     loadChartsFn() {
-        Promise.all([
-            load.js('./js/vendor/highcharts/highcharts.js'),
-            load.js('./js/vendor/highcharts/highcharts-more.js'),
-            load.js('./js/vendor/highcharts/data.js'),
-            load.js('./js/vendor/highcharts/exporting.js'),
-            load.js('./js/vendor/highcharts/accessibility.js'),
-            load.js('./js/vendor/moment/moment.js'),
+        return Promise.all([
+            load.js('../assets/v5-js/vendor/highcharts/highcharts.js'),
+            load.js('../assets/v5-js/vendor/highcharts/highcharts-more.js'),
+            load.js('../assets/v5-js/vendor/highcharts/data.js'),
+            load.js('../assets/v5-js/vendor/highcharts/exporting.js'),
+            load.js('../assets/v5-js/vendor/highcharts/accessibility.js'),
+            load.js('../assets/v5-js/vendor/moment/moment.js'),
         ])
         .then(() => {
             console.log('HighCharts scripts loaded');
         }).catch((err) => {
             console.error(`Error initiating charts: ${err}`);
-            reject(err);
         });
     }
 
     init() {
-        const init = new Promise((resolve) => {
-            this.loadChartsFn();
-            resolve();
-        })
-        init.then(() => {
+        return this.loadChartsFn().then(() => {
             const chartContainer = document.querySelectorAll('.chart');
             const chartArray = [...chartContainer];
 
@@ -45,21 +40,16 @@ class ChartsDefault {
         .catch((err) => {
             console.error(`There was an error initialising charts: ${err}`);
         });
-
-        return init;
     }
 
     build(container, options){
-        setTimeout(() =>{
-            this.chart = new Highcharts.chart(container, options);
-            const msg = this.chart ? 'successful' : 'unsuccessful';
-            console.log(`Charts loaded ${msg}`);
-        }, 100);
+        this.chart = new Highcharts.chart(container, options);
+        const msg = this.chart ? 'successful' : 'unsuccessful';
+        console.log(`Charts loaded ${msg}`);
     }
 
     labelFormatter(units){
         console.log(`units ${units}`);
-
     }
 
     options(container) {
@@ -149,15 +139,6 @@ class ChartsDefault {
             accessibility :{
                 description: this.description
             },
-            xAxis: [{
-                labels: {
-                    formatter: function () {
-                        const date = moment(this.value).format('DD MMMM');
-                        console.log(`formatDate ${date}`);
-                        return date;
-                    }
-                }
-            }],
             legend: {
                 enabled: this.showLegend,
                 itemStyle: {
@@ -182,6 +163,10 @@ class ChartsDefault {
                 options = this.barStackedOptions(options, categories);
             break;
 
+            case 'arearange':
+                options = this.areaRangeOptions(options);
+            break;
+
             default:
                 options = this.defaultChartOptions(options, categories);
             break;
@@ -191,6 +176,7 @@ class ChartsDefault {
     }
 
     defaultChartOptions(getOptions, categories) {
+
         let xAxis = [{
             categories: categories,
             title: {
@@ -198,6 +184,14 @@ class ChartsDefault {
             },
             accessibility: {
                 description: this.title
+            },
+            labels: {
+                // here
+                // formatter: function () {
+                //     const date = moment(this.value).format('DD MMMM');
+                //     console.log(`formatDate ${date}`);
+                //     return date;
+                // }
             }
         }];
         let yAxis = [{
@@ -213,8 +207,11 @@ class ChartsDefault {
                 showInLegend: this.legend
             }
         }
+        let tooltip = {
+            // shared: true
+        };
 
-        const options = { ...getOptions, plotOptions, xAxis, yAxis};
+        const options = { ...getOptions, plotOptions, xAxis, yAxis, tooltip};
 
         return options;
     }
@@ -242,6 +239,45 @@ class ChartsDefault {
         };
 
         const options = { ...getOptions, chart, xAxis, yAxis, legend, plotOptions};
+
+        return options;
+    }
+
+    areaRangeOptions(getOptions){
+        let tooltip = {
+            crosshairs: true,
+            shared: true,
+            valueSuffix: '°C'
+        };
+
+        let series = [{
+            name: 'Temperature',
+            zIndex: 1,
+            marker: {
+                fillColor: 'white',
+                lineWidth: 2,
+                lineColor: this.colours[0]
+            }
+        }, {
+            name: 'Range',
+            type: 'arearange',
+            lineWidth: 0,
+            linkedTo: ':previous',
+            color: this.colours[0],
+            fillOpacity: 0.3,
+            zIndex: 0,
+            marker: {
+                enabled: false
+            }
+        }];
+
+        let yAxis = {
+            title: {
+                text: null
+            }
+        }
+
+        const options = { ...getOptions, tooltip, series, yAxis};
 
         return options;
     }
