@@ -23,7 +23,7 @@ const highchartsAssets = [
 
 function copyHighchartsjs() {
   return src(highchartsAssets)
-    .pipe(dest('./workspace/js/vendor/highcharts'))
+    .pipe(dest('./workspace/assets/v5-js/vendor/highcharts'))
 };
 
 // gulp.task('copy-pages', function() {
@@ -34,10 +34,10 @@ function copyHighchartsjs() {
 
 function copyWorkspaceAssets() {
   const tidy = src(['./node_modules/tidy-html5/tidy.js'])
-  .pipe(dest('./workspace/js/vendor/tidy'));
+  .pipe(dest('./workspace/assets/v5-js/vendor/tidy'));
 
   const moment = src(['./node_modules/moment/moment.js'])
-  .pipe(dest('./workspace/js/vendor/moment'));
+  .pipe(dest('./workspace/assets/v5-js/vendor/moment'));
 
   const scripts = src(['./public/js/**/*'])
   .pipe(dest('./workspace/js'));
