@@ -8,16 +8,17 @@ class ChartsDefault {
         this.loader.innerHTML = '<div></div><div></div><div></div><div></div>';
         this.chart = window.chart || {};
         this.optionSettings;
+        this.path = `${window.location.protocol}//${window.location.host}`;
     }
 
     loadChartsFn() {
         return Promise.all([
-            load.js('../assets/v5-js/vendor/highcharts/highcharts.js'),
-            load.js('../assets/v5-js/vendor/highcharts/highcharts-more.js'),
-            load.js('../assets/v5-js/vendor/highcharts/data.js'),
-            load.js('../assets/v5-js/vendor/highcharts/exporting.js'),
-            load.js('../assets/v5-js/vendor/highcharts/accessibility.js'),
-            load.js('../assets/v5-js/vendor/moment/moment.js'),
+            load.js(this.path + '/assets/v5-js/vendor/highcharts/highcharts.js'),
+            load.js(this.path + '/assets/v5-js/vendor/highcharts/highcharts-more.js'),
+            load.js(this.path + '/assets/v5-js/vendor/highcharts/data.js'),
+            load.js(this.path + '/assets/v5-js/vendor/highcharts/exporting.js'),
+            load.js(this.path + '/assets/v5-js/vendor/highcharts/accessibility.js'),
+            load.js(this.path + '/assets/v5-js/vendor/moment/moment.js'),
         ])
         .then(() => {
             console.log('HighCharts scripts loaded');
@@ -207,6 +208,7 @@ class ChartsDefault {
                 showInLegend: this.legend
             }
         }
+
         let tooltip = {
             // shared: true
         };
