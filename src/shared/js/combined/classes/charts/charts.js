@@ -206,6 +206,9 @@ class ChartsDefault {
         let plotOptions = {
             series: {
                 showInLegend: this.legend
+            },
+            column: {
+                maxPointWidth: 75
             }
         }
 
