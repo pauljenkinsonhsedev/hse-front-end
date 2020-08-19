@@ -12,10 +12,10 @@ class ChartsDefault {
     loadChartsFn() {
         const promise = new Promise((reslove, reject) => {
             try {
-                load.js('./js/vendor/highcharts/highcharts.js');
-                load.js('./js/vendor/highcharts/data.js');
-                load.js('./js/vendor/highcharts/exporting.js');
-                load.js('./js/vendor/highcharts/accessibility.js');
+                load.js('./assets/v5-js/vendor/highcharts/highcharts.js');
+                load.js('./assets/v5-js/vendor/highcharts/data.js');
+                load.js('./assets/v5-js/vendor/highcharts/exporting.js');
+                load.js('./assets/v5-js/vendor/highcharts/accessibility.js');
                 reslove();
             } catch (err) {
                 console.error(`Error initiating charts: ${err}`);
@@ -26,11 +26,14 @@ class ChartsDefault {
     }
 
    init() {
+        const getUrl = window.location;
+        const path = `${getUrl.protocol}//${getUrl.host}`;
+
         Promise.all([
-            load.js('./js/vendor/highcharts/highcharts.js'),
-            load.js('./js/vendor/highcharts/data.js'),
-            load.js('./js/vendor/highcharts/exporting.js'),
-            load.js('./js/vendor/highcharts/accessibility.js')
+            load.js(path + '/assets/v5-js/vendor/highcharts/highcharts.js'),
+            load.js(path + '/assets/v5-js/vendor/highcharts/data.js'),
+            load.js(path + '/assets/v5-js/vendor/highcharts/exporting.js'),
+            load.js(path + '/assets/v5-js/vendor/highcharts/accessibility.js')
         ])
         .then(() => {
             // remove loaders
@@ -214,6 +217,10 @@ class ChartsDefault {
                     plotOptions = {
                         series: {
                             showInLegend: this.legend
+                        },
+                        column: {
+                            /* Here is the setting to limit the maximum column width. */
+                            maxPointWidth: 75
                         }
                     }
 
