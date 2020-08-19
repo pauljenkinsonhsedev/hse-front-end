@@ -21,3 +21,4 @@ package-lock.json
 /yarn-error.log
 /secureroot.zip
 /workspace.zip
+src/secureroot/html
