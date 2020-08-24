@@ -23,3 +23,4 @@ package-lock.json
 /workspace.zip
 src/secureroot/html/
 /gulp/tasks/shared/workspace/js/report.html
+/report.html
