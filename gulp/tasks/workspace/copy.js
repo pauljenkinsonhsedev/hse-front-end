@@ -36,6 +36,9 @@ function copyWorkspaceAssets() {
   const tidy = src(['./node_modules/tidy-html5/tidy.js'])
   .pipe(dest('./workspace/assets/v5-js/vendor/tidy'));
 
+  // const lodash = src(['./node_modules/lodash/*.js'])
+  // .pipe(dest('./src/shared/js/combined/vendor'));
+
   const moment = src(['./node_modules/moment/moment.js'])
   .pipe(dest('./workspace/assets/v5-js/vendor/moment'));
 

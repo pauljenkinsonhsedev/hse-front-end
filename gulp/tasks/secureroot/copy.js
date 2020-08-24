@@ -24,7 +24,7 @@ const highchartsAssets = [
   "./node_modules/highcharts/highcharts-more.js.map"
 ];
 
-function jsVendor() {
+function highCharts() {
   return src(highchartsAssets)
     .pipe(dest('./secureroot/assets/v5-js/vendor/highcharts'))
 }
@@ -39,5 +39,5 @@ function misc() {
   .pipe(dest(config.secureroot.copy.output));
 }
 
-const toReturn = series(misc, html, jsVendor);
+const toReturn = series(misc, html, highCharts);
 task('hseCopy', toReturn)
