@@ -1,5 +1,12 @@
 import { ChartOptions } from './dependencies';
 
+/*
+    @ChartOptionsPie
+    extends ChartOptions charts/options.js
+
+    sets options for pie chart
+*/
+
 export class ChartOptionsPie extends ChartOptions {
     constructor(container, collection){
         super(container, collection);
@@ -8,14 +15,12 @@ export class ChartOptionsPie extends ChartOptions {
     }
 
     init() {
-
-        console.log(this.defaults);
         let pieOptions = {
             allowPointSelect: true,
             cursor: 'pointer',
             dataLabels: {
                 enabled: true,
-                format: this.dataLabelsUnits,
+                format: this.dataLabelsSuffix,
                 connectorColor: 'silver'
             }
         }
@@ -25,7 +30,7 @@ export class ChartOptionsPie extends ChartOptions {
                 cursor: 'pointer',
                 dataLabels: {
                     enabled: true,
-                    format: this.dataLabelsUnits,
+                    format: this.dataLabelsSuffix,
                     connectorColor: 'silver'
                 }
             }
@@ -35,6 +40,3 @@ export class ChartOptionsPie extends ChartOptions {
         return this.collection;
     }
 }
-
-
-export default ChartOptionsPie;

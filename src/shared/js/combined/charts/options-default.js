@@ -1,5 +1,10 @@
 import { ChartOptions } from './dependencies';
 
+/*
+    @ChartOptionsArearange
+    extends ChartOptions charts/options.js
+*/
+
 export class ChartOptionsDefault extends ChartOptions {
     constructor(container, collection){
         super(container, collection);

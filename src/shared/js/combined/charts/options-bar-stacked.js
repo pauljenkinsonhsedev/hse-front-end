@@ -1,5 +1,12 @@
 import { ChartOptions } from './dependencies';
 
+/*
+    @ChartOptionsBarStacked
+    extends ChartOptions charts/options.js
+
+    sets options for stacked bar chart
+*/
+
 export class ChartOptionsBarStacked extends ChartOptions {
     constructor(container, collection){
         super(container, collection);

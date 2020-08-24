@@ -14,7 +14,7 @@ export class ChartOptions {
         this.tableDescXText = container.dataset.tableDescX;
         this.units = container.dataset.chartUnits;
         this.colWidth = 75;
-        this.dataLabelsUnits = this.displayUnits(this.units);
+        this.dataLabelsSuffix = this.displaySuffix(this.units);
         this.categories = this.chartCategories(this.container);
         this.defaults = new Array;
         this.collection = new Array;
@@ -51,6 +51,33 @@ export class ChartOptions {
                     fontWeight: 'regular'
                 }
             },
+            xAxis: [{
+                categories: this.categories,
+                title: {
+                    text: this.tableDescXText
+                },
+                accessibility: {
+                    description: this.title
+                },
+                labels: {
+                    // here
+                    format: this.dataLabelsSuffix,
+                    // formatter: function () {
+
+                    //     const date = moment(this.value).format('DD MMMM');
+                    //     console.log(`formatDate ${date}`);
+                    //     return date;
+                    // }
+                }
+            }],
+
+            // series: [{
+            //     name: 'Temperature',
+            //     data: this.dataTable,
+            //     tooltip: {
+            //     valueSuffix: this.dataLabelsSuffix
+            // },
+            // }],
             credits: {
                 enabled: false
             },
@@ -99,7 +126,7 @@ export class ChartOptions {
         return categories;
     }
 
-    displayUnits(units) {
+    displaySuffix(units) {
         let result = new String;
         switch (units) {
         case 'percentage':
@@ -107,6 +134,12 @@ export class ChartOptions {
             break;
         case 'unit':
             result = `<b>{point.name}</b>: {point.y}`
+            break;
+        case 'celsius':
+            result = `<b>{point.name}</b>: {point.y}°C`
+            break;
+        case 'fahrenheit':
+            result = `<b>{point.name}</b>: {point.y}°F`
             break;
         case 'date':
             // this.labelFormatter(this.units);
@@ -264,7 +297,7 @@ export class ChartOptions {
     //         cursor: 'pointer',
     //         dataLabels: {
     //             enabled: true,
-    //             format: this.dataLabelsUnits,
+    //             format: this.dataLabelsSuffix,
     //             connectorColor: 'silver'
     //         }
     //     }
@@ -274,7 +307,7 @@ export class ChartOptions {
     //             cursor: 'pointer',
     //             dataLabels: {
     //                 enabled: true,
-    //                 format: this.dataLabelsUnits,
+    //                 format: this.dataLabelsSuffix,
     //                 connectorColor: 'silver'
     //             }
     //         }
