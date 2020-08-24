@@ -21,10 +21,19 @@ category: Page features - Details
 
 */
 
+.details {
+}
+
 .details__summary {
+  font-size: 19px;
+  font-weight: 700;
   color: $link-link;
+  margin-bottom: $dp*3;
+
+  &:focus {
+    outline: none;
+  }
 }
 .details__text {
   padding: $dp * 2 $dp;
-  @extend .font-size-19;
 }
