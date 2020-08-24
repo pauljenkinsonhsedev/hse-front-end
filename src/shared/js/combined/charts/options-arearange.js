@@ -1,6 +1,13 @@
 import { seriesDataRanges } from './series-data-ranges.js';
 import { ChartOptions } from './dependencies';
 
+/*
+    @ChartOptionsArearange
+    extends ChartOptions charts/options.js
+
+    sets options for 'area range' chart
+
+*/
 export class ChartOptionsArearange extends ChartOptions {
     constructor(container, collection){
         super(container, collection);
@@ -22,11 +29,27 @@ export class ChartOptionsArearange extends ChartOptions {
         let exporting = this.defaults.exporting;
         let credits = this.defaults.credit;
 
+        let borderColor = this.defaults.chart.borderColor;
+        let borderWidth = this.defaults.chart.borderWidth;
+        let spacingBottom = this.defaults.chart.spacingBottom;
+        let spacingTop = this.defaults.chart.spacingTop;
+        let spacingLeft = this.defaults.chart.spacingLeft;
+        let spacingRight = this.defaults.chart.spacingRight;
+
+
+        let chart = {
+            borderColor: borderColor,
+            borderWidth: borderWidth,
+            spacingBottom: spacingBottom,
+            spacingTop: spacingTop,
+            spacingLeft: spacingLeft,
+            spacingRight: spacingRight
+        };
 
         let tooltip = {
             crosshairs: true,
             shared: true,
-            valueSuffix: '°C'
+            valueSuffix: this.dataLabelsSuffix
         };
 
         let series = [{
@@ -67,9 +90,7 @@ export class ChartOptionsArearange extends ChartOptions {
             }
         }
 
-        this.collection = {title, subtitle, xAxis, yAxis, tooltip, series, exporting, credits};
+        this.collection = {title, subtitle, xAxis, yAxis, tooltip, series, exporting, credits, chart};
         return this.collection;
     }
 }
-
-export default ChartOptionsArearange;
