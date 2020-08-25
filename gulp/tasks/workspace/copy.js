@@ -11,6 +11,9 @@ const highchartsAssets = [
   "./node_modules/highcharts/modules/exporting.js",
   "./node_modules/highcharts/modules/exporting.src.js",
   "./node_modules/highcharts/modules/exporting.js.map",
+  "./node_modules/highcharts/modules/export-data.js",
+  "./node_modules/highcharts/modules/export-data.src.js",
+  "./node_modules/highcharts/modules/export-data.js.map",
   "./node_modules/highcharts/modules/accessibility.js",
   "./node_modules/highcharts/modules/accessibility.src.js",
   "./node_modules/highcharts/modules/accessibility.js.map",
@@ -20,7 +23,7 @@ const highchartsAssets = [
 
 function copyHighchartsjs() {
   return src(highchartsAssets)
-    .pipe(dest('./workspace/js/vendor/highcharts'))
+    .pipe(dest('./workspace/assets/v5-js/vendor/highcharts'))
 };
 
 // gulp.task('copy-pages', function() {
@@ -31,7 +34,13 @@ function copyHighchartsjs() {
 
 function copyWorkspaceAssets() {
   const tidy = src(['./node_modules/tidy-html5/tidy.js'])
-  .pipe(dest('./workspace/js/vendor/tidy'));
+  .pipe(dest('./workspace/assets/v5-js/vendor/tidy'));
+
+  // const lodash = src(['./node_modules/lodash/*.js'])
+  // .pipe(dest('./src/shared/js/combined/vendor'));
+
+  const moment = src(['./node_modules/moment/moment.js'])
+  .pipe(dest('./workspace/assets/v5-js/vendor/moment'));
 
   const scripts = src(['./public/js/**/*'])
   .pipe(dest('./workspace/js'));
@@ -42,7 +51,7 @@ function copyWorkspaceAssets() {
   const favicons = src(['./src/workspace/fav/**/*'])
   .pipe(dest('./workspace/fav'));
 
-  return merge(scripts, tidy, images, favicons);
+  return merge(scripts, tidy, moment, images, favicons);
 };
 
 task('workspaceHighChats', copyHighchartsjs);
