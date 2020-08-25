@@ -16,6 +16,6 @@ window.addEventListener('load',() => {
   // HighCharts JS
   const chartSelector = document.querySelector('.chart');
   if (document.body.contains(chartSelector)) {
-      new ChartsDefault();
+    new ChartsDefault();
   }
 }); // end window load
