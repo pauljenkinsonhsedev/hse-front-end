@@ -14,7 +14,7 @@ module.exports = {
     './src/shared/js/app.js'
   ],
   output: {
-    filename: 'app.min.js',
+    filename: 'v5-main.min.js',
   },
   module : {
     rules: [
@@ -25,8 +25,6 @@ module.exports = {
           loader: 'babel-loader',
           options: {
             presets: ['@babel/preset-env'],
-            // plugins: ['add-module-exports']
-            // presets: ['es2015'],
           },
         },
         parser: {
@@ -37,11 +35,5 @@ module.exports = {
     ],
   },
   stats: 'errors-only',
-  // devServer: {
-  //   contentBase: path.join(__dirname, 'public/js'),
-  //   compress: true,
-  //   port: 3000,
-  //   open: true,
-  // },
   plugins: [],
 };
