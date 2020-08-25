@@ -1,7 +1,10 @@
 .js-enabled .chart table {
     display: none;
 }
+
 .chart {
     position: relative;
+    border: 1px solid $mono-e;
+    padding: $dp;
     margin-bottom: 1rem;
 }
