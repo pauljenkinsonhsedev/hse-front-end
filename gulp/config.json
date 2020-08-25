@@ -11,7 +11,7 @@
         "js": {
             "entrypoint": "./src/shared/js/app.js",
             "outputSecureroot": "./secureroot/assets/v5-js",
-            "outputWorkspace": "./workspace/js"
+            "outputWorkspace": "./workspace/assets/v5-js"
         }
     },
     "secureroot": {

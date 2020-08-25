@@ -21,4 +21,6 @@ package-lock.json
 /yarn-error.log
 /secureroot.zip
 /workspace.zip
-src/secureroot/html
+src/secureroot/html/
+/gulp/tasks/shared/workspace/js/report.html
+/report.html

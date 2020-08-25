@@ -1,5 +1,5 @@
-import CsvConvert from './combined/classes/csv-convertor';
-import ChartsDefault from './combined/classes/charts';
+import CsvConvert from './combined/csv-convertor/csv-convertor';
+import ChartsDefault from './combined/charts/charts';
 
 // Window load
 window.addEventListener('load',() => {
@@ -16,7 +16,6 @@ window.addEventListener('load',() => {
   // HighCharts JS
   const chartSelector = document.querySelector('.chart');
   if (document.body.contains(chartSelector)) {
-      const charts = new ChartsDefault();
-      charts.init();
+      new ChartsDefault();
   }
 }); // end window load
