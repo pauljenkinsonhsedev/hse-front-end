@@ -1,6 +1,6 @@
 {
     "all": [
-        "./src/**/*+(js|scss|css|html|njk|png|jpg|jpeg|gif|svg|ico)"
+        "./src/**/*+(js|scss|css|htm|html|njk|png|jpg|jpeg|gif|svg|ico)"
     ],
     "server": {
         "file": "index.html",
@@ -24,7 +24,7 @@
             "output": "./secureroot/assets/"
         },
         "html": {
-            "all": "./src/secureroot/html/**/*.html",
+            "all": "./src/secureroot/html/**/*",
             "output": "./secureroot/"
         },
         "scripts": {

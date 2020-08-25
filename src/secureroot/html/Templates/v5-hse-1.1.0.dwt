@@ -248,8 +248,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     </div>
   </footer>
 </nav>
-<section id="lastUpdated"><!-- TemplateBeginEditable name="updated" -->Updated:<!-- #BeginDate format:IS1 -->2020-07-17<!-- #EndDate --> 
-  <!-- TemplateEndEditable --></section>
+<section id="lastUpdated">
+	<!-- TemplateBeginEditable name="updated" -->Updated:<!-- #BeginDate format:IS1 -->2020-08-19<!-- #EndDate --><!-- TemplateEndEditable -->
+</section>
+<script src="../assets/v5-js/v5-main.min.js"></script>
 <script src="../assets/v5-js/jquery.min.js"></script> 
 <script src="../assets/v5-js/v5-footer.min.js"></script> 
 <!-- TemplateBeginMultipleIf --> <!-- TemplateBeginIfClause cond="columnLayout == 2" --> 
