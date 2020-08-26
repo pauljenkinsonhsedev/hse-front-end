@@ -1,5 +1,6 @@
 import { ChartOptions } from './dependencies';
 import load from '../utils/asset-loader';
+import {loading} from '../utils/loader';
 
 class ChartsDefault {
     constructor() {
@@ -10,6 +11,7 @@ class ChartsDefault {
     }
 
     loadChartsFn() {
+        console.log('charts loader');
         return Promise.all([
             load.js(this.path + '/assets/v5-js/vendor/highcharts/highcharts.js'),
             load.js(this.path + '/assets/v5-js/vendor/highcharts/highcharts-more.js'),
@@ -36,10 +38,10 @@ class ChartsDefault {
                 let defaultOptions = new ChartOptions(container);
                 this.buildFn(container, defaultOptions.collection.collection);
             });
+        })
+        .catch((err) => {
+            console.error(`There was an error initialising charts: ${err}`);
         });
-        // .catch((err) => {
-        //     console.error(`There was an error initialising charts: ${err}`);
-        // });
     }
 
     buildFn(container, params){
