@@ -2,10 +2,11 @@ import { seriesDataRanges } from './series-data-ranges.js';
 import { ChartOptions } from './dependencies';
 
 /*
-    @ChartOptionsArearange
-    extends ChartOptions charts/options.js
+    Class @ChartOptionsArearange
 
-    sets options for 'area range' chart
+    Description:
+    - extends ChartOptions charts/options.js
+    - sets options for 'area range' chart
 
 */
 export class ChartOptionsArearange extends ChartOptions {

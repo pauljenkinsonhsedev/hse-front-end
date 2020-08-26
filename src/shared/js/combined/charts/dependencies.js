@@ -1,3 +1,9 @@
+/*
+    Description:
+    - exports classes at the top level to avoid circular referencing
+
+*/
+
 export * from './options';
 export * from './options-default';
 export * from './options-pie';

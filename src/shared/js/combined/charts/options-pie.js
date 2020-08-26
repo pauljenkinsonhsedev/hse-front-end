@@ -1,10 +1,11 @@
 import { ChartOptions } from './dependencies';
 
 /*
-    @ChartOptionsPie
-    extends ChartOptions charts/options.js
+    Class @ChartOptionsPie
 
-    sets options for pie chart
+    Description:
+    - extends ChartOptions charts/options.js
+    - sets options for pie chart
 */
 
 export class ChartOptionsPie extends ChartOptions {
