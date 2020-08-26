@@ -1,10 +1,12 @@
+import { seriesData } from './series-data.js';
 import { ChartOptions } from './dependencies';
 
 /*
-    @ChartOptionsLine
-    extends ChartOptions charts/options.js
+    Class @ChartOptionsLine
 
-    sets options for line chart
+    Description:
+    - extends ChartOptions charts/options.js
+    - sets options for line chart
 */
 
 export class ChartOptionsLine extends ChartOptions {
@@ -15,9 +17,24 @@ export class ChartOptionsLine extends ChartOptions {
     }
 
     init() {
+        const getSeriesData = seriesData(this.dataTable);
+        let series = getSeriesData[0];
+
+        let plotOptions = {
+                series: {
+                label: {
+                    connectorAllowed: false
+                },
+                pointStart: 0
+            }
+        };
+
+        let xAxis = {
+            categories: this.categories
+        };
 
         const defaults = this.defaults;
-        this.collection = {...defaults};
+        this.collection = {...defaults, xAxis, plotOptions, series};
         return this.collection;
     }
 }
