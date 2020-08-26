@@ -1,10 +1,11 @@
 import { ChartOptions } from './dependencies';
 
 /*
-    @ChartOptionsBarStacked
-    extends ChartOptions charts/options.js
+    Class @ChartOptionsBarStacked
 
-    sets options for stacked bar chart
+    Description:
+    - extends ChartOptions charts/options.js
+    - sets options for stacked bar chart
 */
 
 export class ChartOptionsBarStacked extends ChartOptions {
@@ -19,7 +20,7 @@ export class ChartOptionsBarStacked extends ChartOptions {
             type: 'bar'
         };
         let xAxis = {
-            categories: categories
+            categories: this.categories
         };
         let yAxis = {
             min: 0,
