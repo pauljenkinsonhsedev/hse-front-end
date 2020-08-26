@@ -9,6 +9,7 @@ pre.code-example {
 
     code {
         display: block;
+        margin: 0;
         padding: $dp;
         background-color: $mono-a;
 
@@ -16,7 +17,7 @@ pre.code-example {
         padding: $dp*2;
         margin-bottom: $dp*2;
         width: 100%;
-        font-size: 16px;
+        font-size: 16px !important;
         line-height: 24px;
         color: rgb(141, 224, 141);
         white-space: pre;
