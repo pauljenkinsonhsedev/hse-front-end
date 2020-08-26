@@ -12,7 +12,8 @@ export function seriesDataRanges(data) {
             const date = parseInt(moment(getDate).format('x'));
             const average = parseFloat(rangeAverage[i].textContent);
             const array = new Array;
-            array.push(date, average)
+            array.push(date, average);
+
             return array;
         });
 
