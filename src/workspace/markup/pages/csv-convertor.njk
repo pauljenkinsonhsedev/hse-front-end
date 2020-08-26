@@ -29,6 +29,22 @@
                     <legend class="fieldset__legend fieldset__legend--xl">
                         <h3 class="fieldset__heading">Chart meta data</h3>
                     </legend>
+
+                    <div class="form-group">
+                        <label class="label" for="chartType">Type of chart</label>
+                        <div class="select-styled">
+                            <select class="select input-watch input-full chartType" id="chartType" name="chartType">
+                                <option value="line">Line</option>
+                                <option value="arearange">Area range</option>
+                                <option value="bar">Bar</option>
+                                <option value="barstacked">Bar (stacked)</option>
+                                <option value="column">Column</option>
+                                <option value="columnrange">Column range</option>
+                                <option value="pie">Pie</option>
+                            </select>
+                        </div>
+                    </div>
+
                     <div class="form-group">
                         <label class="label" for="chartTitle">Chart title</label>
                         <p class="hint">25 characters maximum</p>
@@ -45,21 +61,6 @@
                         <label class="label" for="chartDescription">Chart description</label>
                         <p class="hint">300 characters maximum</p>
                         <textarea class="input input-watch input-full chartDescription" id="chartDescription" name="chartDescription"></textarea>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="label" for="chartType">Type of chart</label>
-                        <div class="select-styled">
-                            <select class="select input-watch input-full chartType" id="chartType" name="chartType">
-                                <option value="line">Line</option>
-                                <option value="arearange">Area range</option>
-                                <option value="bar">Bar</option>
-                                <option value="barstacked">Bar (stacked)</option>
-                                <option value="column">Column</option>
-                                <option value="columnrange">Column range</option>
-                                <option value="pie">Pie</option>
-                            </select>
-                        </div>
                     </div>
 
                     <div class="form-group" id="formRanges">
