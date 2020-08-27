@@ -7,19 +7,6 @@ import imageminPngquant from 'imagemin-pngquant';
 import imageminJpegRecompress from 'imagemin-jpeg-recompress';
 import * as config from '../../config.json';
 
-function imagesMain() {
-  return src(config.secureroot.images.main.all)
-    .pipe(imagemin([
-        imagemin.gifsicle(),
-        imagemin.optipng(),
-        imagemin.svgo(),
-        imageminJpegtran(),
-        imageminPngquant(),
-        imageminJpegRecompress(),
-    ]))
-    .pipe(dest(config.secureroot.images.main.output));
-};
-
 function imagesV4() {
   return src(config.secureroot.images.v4.all)
     .pipe(imagemin([
@@ -59,5 +46,5 @@ function imagesV4Homepage() {
     .pipe(dest(config.secureroot.images.v4homepage.output));
 };
 
-const toReturn = series(imagesMain, imagesV4, imagesV5, imagesV4Homepage);
+const toReturn = series(imagesV4, imagesV5, imagesV4Homepage);
 task('hseImages', toReturn)

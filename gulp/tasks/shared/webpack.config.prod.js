@@ -1,9 +1,10 @@
 const webpack = require('webpack');
 const path = require('path');
 const nodeExternals = require('webpack-node-externals');
+const prod = process.env.NODE_ENV === 'production';
 
 module.exports = {
-  devtool: 'source-map',
+  mode: 'production',
   target: 'web',
   externals: [
     nodeExternals({
@@ -35,5 +36,11 @@ module.exports = {
     ],
   },
   stats: 'errors-only',
-  plugins: [],
+  plugins: [
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: JSON.stringify(process.env.NODE_ENV),
+      }
+    })
+  ]
 };

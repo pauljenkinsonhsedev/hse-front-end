@@ -7,8 +7,8 @@
     "bundle-report": "webpack-bundle-analyzer --port 8081 dist/stats.json",
     "gulp": "gulp",
     "gulp-hse": "gulp",
-    "gulp-dev": "NODE_ENV='development' gulp development",
-    "gulp-prod": "NODE_ENV='production' gulp production"
+    "gulp-dev": "NODE_ENV='development' gulp development --env.development",
+    "gulp-prod": "NODE_ENV='production' gulp production --env.production"
   },
   "author": "",
   "license": "ISC",
