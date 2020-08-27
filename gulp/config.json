@@ -9,6 +9,7 @@
     },
     "shared": {
         "js": {
+            "all": "./src/shared/js/**/*.js",
             "entrypoint": "./src/shared/js/app.js",
             "outputSecureroot": "./secureroot/assets/v5-js",
             "outputWorkspace": "./workspace/assets/v5-js"
@@ -51,11 +52,6 @@
             "output": "./secureroot/assets/v5-css/"
         },
         "images": {
-            "main": {
-                "all": "./src/secureroot/images/**/*.+(png|jpg|jpeg|gif|svg|ico)",
-                "entry": "./src/secureroot/images/",
-                "output": "./secureroot/assets/images/"
-            },
             "v4": {
                 "all": "./src/secureroot/v4-images/**/*.+(png|jpg|jpeg|gif|svg|ico)",
                 "entry": "./src/secureroot/v4-images/",
@@ -76,11 +72,13 @@
     "workspace": {
         "output": "./workspace",
         "styles": {
+            "all": "./src/workspace/styles/**/*.scss",
             "entry": "./src/workspace/styles/app.scss",
             "input": "./src/workspace/styles/*.scss",
             "output": "./workspace/styles"
         },
         "markup": {
+            "all": "./src/workspace/markup/**/*.njk",
             "pages": "./src/workspace/markup/pages/*.njk",
             "data": "./src/workspace/markup/data/data",
             "dataModel": "./src/workspace/markup/data/model/",
