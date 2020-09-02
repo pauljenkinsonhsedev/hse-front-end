@@ -23,13 +23,9 @@
 	background: url(../../assets/v4-images/website/logos/hselogo.gif) no-repeat 0 0;
 }
 
-#headerContainer, #baseStrip, th, div.diaryMonth h2, .boxSubscribe {
+#headerContainer, #baseStrip, div.diaryMonth h2, .boxSubscribe {
 	background-color: #981e32;
 }
-
-
-
-
 
 /* ----------------------------------------------------- */
 /* Typography & Basic Definitions */
@@ -139,11 +135,8 @@ tr.even > td {
 }
 
 th {
-	border-top: 1px solid #7F032A;
-	border-bottom: 1px solid #7F032A;
-	border-right: 1px solid #B94869;
-	border-left: 1px solid #B94869;
-	color:#FFF;
+	border: 1px solid #787878;
+	font-weight: bold;
 }
 
 th a {
