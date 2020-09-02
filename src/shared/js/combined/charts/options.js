@@ -13,6 +13,7 @@
     });
 */
 
+import { seriesData } from './series-data.js';
 import { ChartOptionsDefault, ChartOptionsLine, ChartOptionsArearange, ChartOptionsPie, ChartOptionsBarStacked } from './dependencies';
 
 export class ChartOptions {
@@ -46,14 +47,15 @@ export class ChartOptions {
             }
         }
 
+        // get series information
+        const getSeriesData = seriesData(this.container);
+
         this.defaults = {
             chart: {
                 type: this.type,
                 renderTo: this.chartRender
             },
-            data: {
-                table: this.dataTable
-            },
+            series: getSeriesData,
             title: {
                 text: this.title,
                 style:{
@@ -112,6 +114,9 @@ export class ChartOptions {
                 itemHoverStyle:{
                     color: 'gray'
                 }
+            },
+            accessibility: {
+                description: this.description
             },
             credits: {
                 enabled: false

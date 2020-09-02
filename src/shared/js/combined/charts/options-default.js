@@ -14,32 +14,8 @@ export class ChartOptionsDefault extends ChartOptions {
     }
 
     init() {
-        let accessibility = {
-            description: this.description
-        };
-
-        let legend = {
-            enabled: true,
-            itemStyle: {
-                font: 'Arial, Helvetica, sans-serif',
-                color: '#000'
-            },
-            itemHoverStyle:{
-                color: 'gray'
-            }
-        };
-
-        let yAxis = [{
-            title: {
-                text: this.yAxisText,
-            },
-            accessibility: {
-                description: this.title
-            }
-        }];
-
         const defaults = this.defaults;
-        this.collection = {...defaults, accessibility};
+        this.collection = {...defaults};
         return this.collection;
     }
 }
