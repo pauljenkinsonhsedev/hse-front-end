@@ -1,6 +1,6 @@
 import { feedback } from './feedback.mjs';
+import { ChartOptions } from '../charts/dependencies';
 import ChartsDefault from '../charts/charts';
-import load from '../utils/asset-loader';
 
 class CsvConvert {
   constructor(csvForm) {
@@ -24,23 +24,7 @@ class CsvConvert {
     this.charts = new ChartsDefault();
   }
 
-  // loadVendorFn() {
-  //   Promise.all([
-  // //     load.css('./js/vendor/prismjs/prism-twilight.css'),
-  // //     load.js('./js/vendor/prismjs/prism.js'),
-  // //     load.js('./js/vendor/tidy/tidy.js')
-  //   ])
-  //   .then(function() {
-  //     console.log('Vendors loaded');
-  //   })
-  //   .catch(function(err) {
-  //     console.log(`There was a problem loading some vendors: ${err}`);
-  //   });
-  // }
-
   init() {
-    // this.loadVendorFn();
-    this.charts.loadChartsFn();
     // Events
     // Input CSV
     let fileReader = new FileReader();
@@ -196,7 +180,7 @@ class CsvConvert {
     let metaTitle = meta ? meta.chartTitle : '';
     let metaSubtitle = meta ? meta.chartSubtitle : '';
     let metaDescription = meta ? meta.chartDescription : '';
-    let metaType = meta ? meta.chartType : '';
+    let metaType = meta ? meta.chartType : 'line';
     let metaUnits = meta ? meta.chartUnits : '';
     let metaXTitle = meta ? meta.chartXAxisTitle : '';
     let metaYTitle = meta ? meta.chartYAxisTitle : '';
@@ -217,8 +201,8 @@ class CsvConvert {
     chartContainer.setAttribute('data-chart-title', metaTitle);
     chartContainer.setAttribute('data-chart-subtitle', metaSubtitle);
     chartContainer.setAttribute('data-chart-description', metaDescription);
-    chartContainer.setAttribute('data-table-desc-x', metaXTitle);
-    chartContainer.setAttribute('data-table-desc-y', metaYTitle);
+    chartContainer.setAttribute('data-xaxis-text', metaXTitle);
+    chartContainer.setAttribute('data-yaxis-text', metaYTitle);
 
     // create html
     const figure = document.createElement('figure');
@@ -277,29 +261,38 @@ class CsvConvert {
             cell.classList.add('unit');
           }
 
+          if (cellCount === 0) {
+            cell.classList.add('series-range-axis');
+          }
+          if (cellCount === 1) {
+            cell.classList.add('series-range-average');
+          }
+          if (cellCount === 2) {
+            cell.classList.add('series-range-low');
+          }
+          if (cellCount === 3) {
+            cell.classList.add('series-range-high');
+          }
+
           switch(cellCount) {
             case rangeAxis:
-              console.log(`cellCount ${cellCount}: rangeAxis ${rangeAxis}`);
-              // cell.setAttribute('data-series-range-axis', true);
+              // console.log(`cellCount ${cellCount}: rangeAxis ${rangeAxis}`);
               cell.classList.add('series-range-axis');
             break;
 
             case rangeAverage:
-              console.log(`cellCount ${cellCount}: rangeAxis ${rangeAverage}`);
+              // console.log(`cellCount ${cellCount}: rangeAxis ${rangeAverage}`);
               cell.classList.add('series-range-average');
-              // cell.setAttribute('data-series-range-average', true);
             break;
 
             case rangeLow:
-              console.log(`cellCount ${cellCount}: rangeAxis ${rangeLow}`);
+              // console.log(`cellCount ${cellCount}: rangeAxis ${rangeLow}`);
               cell.classList.add('series-range-low');
-            // cell.setAttribute('data-series-range-low', true);
             break;
 
             case rangeHigh:
-              console.log(`cellCount ${cellCount}: rangeAxis ${rangeHigh}`);
+              // console.log(`cellCount ${cellCount}: rangeAxis ${rangeHigh}`);
               cell.classList.add('series-range-high');
-            // cell.setAttribute('data-series-range-high', true);
             break;
           }
 
@@ -316,7 +309,7 @@ class CsvConvert {
 
 
     if (this.chartTypeField.value === 'arearange') {
-      this.createRanges(rangeValues);
+      this.rangeOptions(rangeValues);
     }
 
     const displayChart = document.createElement('div');
@@ -378,8 +371,8 @@ class CsvConvert {
 
     const chartDisplayContainer = document.getElementById('chart');
     const chartDisplay = chartDisplayContainer.querySelector('.chart');
-    const options = this.charts.options(chartDisplay);
-    this.charts.build(chartDisplay, options);
+    const chartOptions = new ChartOptions(chartDisplay);
+    this.charts.buildFn(chartDisplay, chartOptions.collection.collection);
 
     // Display table meta form
     output.classList.add('in');
@@ -388,7 +381,7 @@ class CsvConvert {
     }, 100);
   }
 
-  createRanges(ranges) {
+  rangeOptions(ranges) {
     const rangeAxis = document.getElementById('rangeAxis');
     const rangeAverage = document.getElementById('rangeAverage');
     const rangeLow = document.getElementById('rangeLow');
@@ -412,6 +405,11 @@ class CsvConvert {
         rangeHigh.options[rangeHigh.options.length] = new Option(data, i, false, false);
       }
     });
+
+    rangeAxis.options[1].setAttribute("selected", true);
+    rangeAverage.options[2].setAttribute("selected", true);
+    rangeLow.options[3].setAttribute("selected", true);
+    rangeHigh.options[4].setAttribute("selected", true);
   }
 };
 

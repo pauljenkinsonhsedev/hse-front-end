@@ -2,10 +2,11 @@ import { seriesDataRanges } from './series-data-ranges.js';
 import { ChartOptions } from './dependencies';
 
 /*
-    @ChartOptionsArearange
-    extends ChartOptions charts/options.js
+    Class @ChartOptionsArearange
 
-    sets options for 'area range' chart
+    Description:
+    - extends ChartOptions charts/options.js
+    - sets options for 'area range' chart
 
 */
 export class ChartOptionsArearange extends ChartOptions {
@@ -29,23 +30,6 @@ export class ChartOptionsArearange extends ChartOptions {
         let exporting = this.defaults.exporting;
         let credits = this.defaults.credit;
 
-        let borderColor = this.defaults.chart.borderColor;
-        let borderWidth = this.defaults.chart.borderWidth;
-        let spacingBottom = this.defaults.chart.spacingBottom;
-        let spacingTop = this.defaults.chart.spacingTop;
-        let spacingLeft = this.defaults.chart.spacingLeft;
-        let spacingRight = this.defaults.chart.spacingRight;
-
-
-        let chart = {
-            borderColor: borderColor,
-            borderWidth: borderWidth,
-            spacingBottom: spacingBottom,
-            spacingTop: spacingTop,
-            spacingLeft: spacingLeft,
-            spacingRight: spacingRight
-        };
-
         let tooltip = {
             crosshairs: true,
             shared: true,
@@ -53,7 +37,7 @@ export class ChartOptionsArearange extends ChartOptions {
         };
 
         let series = [{
-            name: 'Temperature',
+            name: `${this.xAxisText} average`,
             data: averagesData[0],
             zIndex: 1,
             fillOpacity: 0.3,
@@ -64,7 +48,7 @@ export class ChartOptionsArearange extends ChartOptions {
                 lineColor: this.brandColours[0]
             }
         }, {
-            name: 'Range',
+            name: 'Range low to high',
             data: rangesData[0],
             type: 'arearange',
             lineWidth: 0,
@@ -77,10 +61,18 @@ export class ChartOptionsArearange extends ChartOptions {
             }
         }];
 
+        const { 0: first, length, [length -1]: last } = rangesData[0]; //getting first and last el from array
+        const dateRange = { first, last }
+        const dateFirst = moment(dateRange.first[0]).format('DD MMM YYYY');
+        const dateLast = moment(dateRange.last[0]).format('DD MMM YYYY');
+
         let xAxis = {
             type: 'datetime',
+            title: {
+                text: `${dateFirst} to ${dateLast}.`,
+            },
             accessibility: {
-                rangeDescription: 'Range: Jul 1st 2009 to Jul 31st 2009.'
+                rangeDescription: `Range: ${dateFirst} to ${dateLast}.`
             }
         }
 
@@ -88,9 +80,23 @@ export class ChartOptionsArearange extends ChartOptions {
             title: {
                 text: null
             }
-        }
+        };
 
-        this.collection = {title, subtitle, xAxis, yAxis, tooltip, series, exporting, credits, chart};
+        let plotOptions = {
+            series: {
+                showInLegend: true,
+                events: {
+                    legendItemClick: function() {
+                        if (this.index === 1) {
+                            return true;
+                        }
+                        return false;
+                    }
+                }
+            }
+        };
+
+        this.collection = {title, subtitle, xAxis, yAxis, plotOptions, tooltip, series, exporting, credits};
         return this.collection;
     }
 }
