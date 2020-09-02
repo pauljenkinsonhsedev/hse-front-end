@@ -18,7 +18,7 @@ export class ChartOptionsLine extends ChartOptions {
 
     init() {
         const getSeriesData = seriesData(this.dataTable);
-        let series = getSeriesData[0];
+        let series = getSeriesData;
 
         let plotOptions = {
                 series: {
