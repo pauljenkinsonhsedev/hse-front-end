@@ -180,7 +180,7 @@ class CsvConvert {
     let metaTitle = meta ? meta.chartTitle : '';
     let metaSubtitle = meta ? meta.chartSubtitle : '';
     let metaDescription = meta ? meta.chartDescription : '';
-    let metaType = meta ? meta.chartType : '';
+    let metaType = meta ? meta.chartType : 'line';
     let metaUnits = meta ? meta.chartUnits : '';
     let metaXTitle = meta ? meta.chartXAxisTitle : '';
     let metaYTitle = meta ? meta.chartYAxisTitle : '';
