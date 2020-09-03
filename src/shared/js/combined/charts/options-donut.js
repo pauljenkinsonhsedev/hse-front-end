@@ -32,11 +32,9 @@ export class ChartOptionsDonut extends ChartOptions {
         }
 
         const getSeriesData = seriesDataSingular(this.dataTable);
-
         let series = getSeriesData;
 
         const titleText = this.title.replace(/ /g, '<br />');
-        console.log(titleText);
 
         let title = {
             text: titleText,
