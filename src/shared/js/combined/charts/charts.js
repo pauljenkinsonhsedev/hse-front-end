@@ -4,9 +4,8 @@ import {loading} from '../utils/loader';
 
 class ChartsDefault {
     constructor() {
-        // this.brandColours = ['#981E32', '#BB253E', '#D7334E', '#DD556B', '#E47789', '#EB99A6', '#F2BBC4', '#F8DDE1'];
         this.chart = window.chart || {};
-        this.path = `${window.location.protocol}//${window.location.host}`;
+        this.path = location.href.substring(0, location.href.lastIndexOf("/")+1)
         this.init();
     }
 
