@@ -58,20 +58,20 @@ function watchTask(){
         series('workspaceMarkup')
     );
 
-    // const hseStyles = watch(
-    //     config.secureroot.styles.all,
-    //     series('hseStyles')
-    // );
+    const hseStyles = watch(
+        config.secureroot.styles.all,
+        series('hseStyles')
+    );
 
-    // const hseScripts = watch(
-    //     config.secureroot.scripts.all,
-    //     series('hseScripts')
-    // );
+    const hseScripts = watch(
+        config.secureroot.scripts.all,
+        series('hseScripts')
+    );
 
-    // const hseHTML = watch(
-    //     config.secureroot.html.all,
-    //     series('hseCopy')
-    // );
+    const hseHTML = watch(
+        config.secureroot.html.all,
+        series('hseCopy')
+    );
 
     // const hseImages = watch(
     //     [config.secureroot.v4.all, config.secureroot.v4homepage.all, config.secureroot.v5.all],
