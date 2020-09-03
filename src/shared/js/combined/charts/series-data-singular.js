@@ -1,58 +1,54 @@
 export function seriesDataSingular(data) {
+    const thead = data.querySelector('.table__head');
+    const title = thead.rows[0].cells[1].textContent;
     const tbody = data.querySelector('.table__body');
     /*
-        function @seriesData
+        function @seriesDataSingular
 
-        Description: sets default series data for HighCharts options
+        Description: sets default series data for HighCharts options where singular data sets are used
 
         usage:
 
-        const getSeriesData = seriesData(tableObject);
-        let series = getSeriesData[0]; // can then be pushed into options array
+        const getSeriesData = seriesDataSingular(tableObject);
+        let series = getSeriesData; // can then be pushed into options array
 
         Outputs something like...
 
         series: [{
-            name: 'Tokyo',
-            data: [7.0, 6.9, 9.5, 14.5, 18.4, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6]
-        }, {
-            name: 'London',
-            data: [3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8]
+            "name": "Number of fruit",
+            "data": [
+                {"name": "Apples", "y" :7},
+                {"name": "Pears", "y" :4},
+                {"name": "Banana", "y" :3},
+                {"name": "Plums", "y" :10},
+                {"name": "Oranges", "y" :12}
+            ]
         }]
     */
 
     // build data set
-    function getCol(col) {
-        let n = tbody.rows.length;
-        let i, units = [], tr, td, values;
+    const seriesData = [].reduce.call(tbody.rows, function (seriesData, row) {
+        const cells = row.cells;
+        const categories = [...cells].filter(element => element.classList.contains('category'));
+        const units = [...cells].filter(element => element.classList.contains('unit'));
 
-        if (col < 0) {
-            return null;
-        }
+        const collection = categories.map((e, i) => {
+            const category = categories[i].textContent;
+            const unit = parseFloat(units[i].textContent);
+            const obj = { name: category, y: unit };
+            return obj;
+        });
 
-        for (i = 0; i < n; i++) {
-            tr = tbody.rows[i];
-            if (tr.cells.length > col) {
-                td = tr.cells[col];
-                const data = td.innerText;
-                // console.log(`data 1: ${data[col]}`);
-                // console.log(`data 2: ${data[col]}`);
-                values = {name: data, y: parseInt(data)}
+        seriesData.push([].reduce.call(collection, function(res, cell) {
+            const array = [];
+            array.push({data: cell});
+            return cell;
+        }, []));
 
-            }
-            units.push(values);
-        }
-        return units;
-    }
-
+        return seriesData;
+    }, []);
 
     let seriesArray = new Array;
-    const unitLength = tbody.rows[0].cells.length;
-    for (let i = 0; i < unitLength; i++) {
-        const data = getCol(i);
-        console.log(data)
-    }
-
-    console.log(JSON.stringify(seriesArray));
+    seriesArray.push({name: title, data: seriesData});
     return seriesArray;
 }
