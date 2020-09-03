@@ -29,7 +29,7 @@
             }
         },
         "html": {
-            "all": "./src/secureroot/html/**/*",
+            "all": "./src/secureroot/html/**/*.htm",
             "output": "./secureroot/"
         },
         "scripts": {
