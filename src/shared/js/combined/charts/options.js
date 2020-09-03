@@ -14,12 +14,20 @@
 */
 
 import { seriesData } from './series-data.js';
-import { ChartOptionsDefault, ChartOptionsLine, ChartOptionsArearange, ChartOptionsPie, ChartOptionsBarStacked } from './dependencies';
+import {
+    ChartOptionsDefault,
+    ChartOptionsLine,
+    ChartOptionsArearange,
+    ChartOptionsPie,
+    ChartOptionsDonut,
+    ChartOptionsBarStacked
+} from './dependencies';
 
 export class ChartOptions {
     constructor(container) {
         this.container = container;
         this.brandColours = ['#981E32', '#BB253E', '#D7334E', '#DD556B', '#E47789', '#EB99A6', '#F2BBC4', '#F8DDE1'];
+        this.fontFamily = 'Arial, Helvetica, sans-serif';
         this.chartRender = container.querySelector('.displayChart');
         this.dataTable = container.querySelector('.tabledata');
         this.type = container.dataset.chartType;
@@ -60,7 +68,7 @@ export class ChartOptions {
                 text: this.title,
                 style:{
                     color: '#000',
-                    fontFamily: 'Arial, Helvetica, sans-serif',
+                    fontFamily: this.fontFamily,
                     fontSize: '1.1rem',
                     fontWeight: 'bold'
                 }
@@ -69,7 +77,7 @@ export class ChartOptions {
                 text: this.subtitle,
                 style: {
                     color: '#000',
-                    fontFamily: 'Arial, Helvetica, sans-serif',
+                    fontFamily: this.fontFamily,
                     fontSize: '0.9rem',
                     fontWeight: 'regular'
                 }
@@ -108,7 +116,7 @@ export class ChartOptions {
             legend: {
                 enabled: true,
                 itemStyle: {
-                    font: 'Arial, Helvetica, sans-serif',
+                    font: this.fontFamily,
                     color: '#000'
                 },
                 itemHoverStyle:{
@@ -134,6 +142,10 @@ export class ChartOptions {
         switch(this.type) {
             case 'pie':
                 this.collection = new ChartOptionsPie(this.container);
+            break;
+
+            case 'donut':
+                this.collection = new ChartOptionsDonut(this.container);
             break;
 
             case 'line':
