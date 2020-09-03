@@ -35,15 +35,10 @@ export function seriesDataSingular(data) {
             if (tr.cells.length > col) {
                 td = tr.cells[col];
                 const data = td.innerText;
-                let name = String;
-                let number = Number;
-                if (Number(data)) {
-                    number = parseInt(data);
-                }
-                if (!Number(data)) {
-                    name = data;
-                }
+                // console.log(`data 1: ${data[col]}`);
+                // console.log(`data 2: ${data[col]}`);
                 values = {name: data, y: parseInt(data)}
+
             }
             units.push(values);
         }
@@ -58,6 +53,6 @@ export function seriesDataSingular(data) {
         console.log(data)
     }
 
-    // console.log(JSON.stringify(seriesArray));
+    console.log(JSON.stringify(seriesArray));
     return seriesArray;
 }
