@@ -39,5 +39,10 @@ function misc() {
   .pipe(dest(config.secureroot.copy.output));
 }
 
-const toReturn = series(misc, html, highCharts);
+function templates() {
+  return src(config.secureroot.copy.templates.entrypoint)
+  .pipe(dest(config.secureroot.copy.templates.output));
+}
+
+const toReturn = series(misc, html, templates, highCharts);
 task('hseCopy', toReturn)

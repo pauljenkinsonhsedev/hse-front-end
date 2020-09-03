@@ -22,7 +22,11 @@
         "output": "./secureroot",
         "copy": {
             "all": "./src/secureroot/copy/**/*",
-            "output": "./secureroot/assets/"
+            "output": "./secureroot/assets/",
+            "templates": {
+                "entrypoint": "./src/secureroot/templates/**/*",
+                "output": "./src/secureroot/html/templates"
+            }
         },
         "html": {
             "all": "./src/secureroot/html/**/*",

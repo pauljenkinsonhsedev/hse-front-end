@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en-GB">
 <head>
 
@@ -18,7 +18,8 @@ new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-PJPWMNL');</script>
-	
+
+<meta charset="utf-8">
 	
 <!-- TemplateBeginMultipleIf -->
 <!-- TemplateBeginIfClause cond="printGuide == true" -->
@@ -38,7 +39,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	
 <!-- TemplateBeginEditable name="doctitle" -->
 <title></title>
-<meta charset="utf-8">
 <meta name="keywords" content=" " />
 <meta name="description" content=" " />
 <!-- TemplateEndEditable -->
@@ -223,7 +223,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <nav id="footer-nav" aria-label="Footer menu">
   <footer id="footerContainer">
     <div id="footer">
-      <h2 class="hide">Footer links</h2>
+      <h2 class="visually-hidden">Footer links</h2>
       <div class="footer-links-container">
         <ul>
           <li class="first"><a href="../search/search-results.htm">Search</a></li>
@@ -248,13 +248,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     </div>
   </footer>
 </nav>
-<section id="lastUpdated"><!-- TemplateBeginEditable name="updated" -->Updated:<!-- #BeginDate format:IS1 -->2020-07-17<!-- #EndDate --> 
-  <!-- TemplateEndEditable --></section>
+<section id="lastUpdated">
+<!-- TemplateBeginEditable name="updated" -->Updated:<!-- #BeginDate format:IS1 -->2020-08-26<!-- #EndDate --><!-- TemplateEndEditable -->
+</section>
+<script src="../assets/v5-js/v5-main.min.js"></script>
 <script src="../assets/v5-js/jquery.min.js"></script> 
 <script src="../assets/v5-js/v5-footer.min.js"></script> 
-<!-- TemplateBeginMultipleIf --> <!-- TemplateBeginIfClause cond="columnLayout == 2" --> 
+<!-- TemplateBeginMultipleIf -->
+	
+<!-- TemplateBeginIfClause cond="columnLayout == 2" --> 
 <script src="../assets/v5-js/v5-footer-slinky-js.min.js"></script> 
-<!-- TemplateEndIfClause --> <!-- TemplateEndMultipleIf --> <!-- TemplateBeginMultipleIf --><!-- TemplateBeginIfClause cond="printGuide == true" --> 
+<!-- TemplateEndIfClause -->
+<!-- TemplateEndMultipleIf -->
+
+<!-- TemplateBeginMultipleIf -->
+<!-- TemplateBeginIfClause cond="printGuide == true" --> 
 <script>
 $( document ).ready(function() {
 window.print();
@@ -291,26 +299,6 @@ searchTable2.removeAttribute('cellspacing');
 searchTable3.removeAttribute('cellspacing');
 searchInput.removeAttribute('cellspacing');
 };	
-	
-window.onload = function(){
-
-// Replaces default Google custom search placeholder text
-
-addGoogleAlt()
-
-searchInput = document.querySelector('#gs_tti50'),
-searchLabel = document.createElement('label');
-
-
-searchLabel.innerHTML = 'Search hse.gov.uk';
-searchLabel.classList.add('hide');
-searchLabel.setAttribute('for', 'gsc-i-id1');
-
-searchInput.prepend(searchLabel);
-
-document.getElementById('gsc-i-id1').placeholder = 'Search hse.gov.uk';
-};
-	
 </script> 
 	
 <!-- TemplateParam name="bodyClass" type="text" value="guidance" --> 
