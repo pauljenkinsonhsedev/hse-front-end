@@ -1,4 +1,5 @@
 import { ChartOptions } from './dependencies';
+import { seriesDataSingular } from './series-data-singular.js';
 
 /*
     Class @ChartOptionsPie
@@ -16,6 +17,9 @@ export class ChartOptionsPie extends ChartOptions {
     }
 
     init() {
+        const getSeriesData = seriesDataSingular(this.dataTable);
+        let series = getSeriesData;
+
         let pieOptions = {
             allowPointSelect: true,
             cursor: 'pointer',
@@ -37,7 +41,7 @@ export class ChartOptionsPie extends ChartOptions {
             }
         };
         const defaults = this.defaults;
-        this.collection = {...defaults, pieOptions, plotOptions};
+        this.collection = {...defaults, series, pieOptions, plotOptions};
         return this.collection;
     }
 }
