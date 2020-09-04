@@ -126,7 +126,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- Beta content page --> 
 
 <!-- TemplateBeginMultipleIf --><!-- TemplateBeginIfClause cond="layout == 'betacontentpage'" --> <!-- TemplateBeginMultipleIf --> <!-- TemplateBeginIfClause cond="columnLayout == 2" -->
-<nav id="navSecondary"> <!-- TemplateBeginEditable name="Subnav" -->
+<nav id="navSecondary" aria-label="Secondary"> <!-- TemplateBeginEditable name="Subnav" -->
   <div id="menu" class="slinky-menu slinky-theme-default">
     <ul>
       <li class="first"><a href="#">Microsite homepage</a></li>
