@@ -6,14 +6,17 @@ const mode = require('gulp-mode')({
 
 export let root;
 export const isDefault = mode.default();
+export const isStaging = mode.staging();
 export const isDev = mode.development();
 export const isProd = mode.production();
 
-if (isDefault) {
+if (isDefault || isStaging) {
+    console.log('hse');
     root = 'secureroot';
 }
 
 if (isDev) {
+    console.log('workspace');
     root = 'workspace';
 }
 

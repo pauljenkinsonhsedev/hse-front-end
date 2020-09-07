@@ -5,12 +5,12 @@ import {loading} from '../utils/loader';
 class ChartsDefault {
     constructor() {
         this.chart = window.chart || {};
-        this.path = location.href.substring(0, location.href.lastIndexOf("/")+1)
+        this.path = window.location.protocol + '//' + window.location.host + '/';
+        // this.path = window.location.protocol + '//' + window.location.host + '/' + window.location.pathname.split('/')[1]; // for use on testbed
         this.init();
     }
 
     loadChartsFn() {
-        console.log('charts loader');
         return Promise.all([
             load.js(this.path + '/assets/v5-js/vendor/highcharts/highcharts.js'),
             load.js(this.path + '/assets/v5-js/vendor/highcharts/highcharts-more.js'),
@@ -19,9 +19,6 @@ class ChartsDefault {
             load.js(this.path + '/assets/v5-js/vendor/highcharts/accessibility.js'),
             load.js(this.path + '/assets/v5-js/vendor/moment/moment.js'),
         ])
-        .then(() => {
-            console.log('HighCharts scripts loaded');
-        })
         .catch((err) => {
             console.error(`Error initiating charts: ${err}`);
         });

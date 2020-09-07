@@ -5,11 +5,11 @@ import * as config from '../../config.json';
 import os from 'os';
 import connect from 'gulp-connect';
 import open from 'gulp-open';
-import { isDefault, isProd, isDev } from './mode.js';
+import { isDefault, isStaging, isDev } from './mode.js';
 
 // serve from
 let root;
-if (isDefault) {
+if (isDefault || isStaging) {
     root = 'secureroot';
 }
 

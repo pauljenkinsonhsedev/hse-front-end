@@ -29,6 +29,11 @@ function highCharts() {
     .pipe(dest('./secureroot/assets/v5-js/vendor/highcharts'))
 }
 
+function moment() {
+  return src(['./node_modules/moment/moment.js'])
+  .pipe(dest('./secureroot/assets/v5-js/vendor/moment'));
+}
+
 function html() {
   return src(config.secureroot.html.all)
   .pipe(dest(config.secureroot.html.output));
@@ -44,5 +49,5 @@ function templates() {
   .pipe(dest(config.secureroot.copy.templates.output));
 }
 
-const toReturn = series(misc, html, templates, highCharts);
+const toReturn = series(misc, html, templates, moment, highCharts);
 task('hseCopy', toReturn)

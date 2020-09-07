@@ -5,12 +5,12 @@ import webpackStream from 'webpack-stream';
 import webpackConfigDev from './webpack.config.dev.js';
 import webpackConfigProd from './webpack.config.prod.js';
 import * as config from '../../config.json';
-import { isProd, isDev } from '../base/mode.js';
+import { isStaging, isDefault, isProd, isDev } from '../base/mode.js';
 
 function sharedScripts() {
 
     let webpackConfig;
-    if (isDev) {
+    if (isDev || isStaging || isDefault) {
         webpackConfig = webpackConfigDev;
     }
 
