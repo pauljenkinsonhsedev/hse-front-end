@@ -4,7 +4,7 @@ import * as config from '../../config.json';
 import format from 'date-format';
 import colors from 'colors';
 import { hseBuild, workspaceBuild } from './build'
-import { isDefault, isDev } from './mode.js';
+import { isDefault, isDev, isStaging } from './mode.js';
 
 import requireDir from 'require-dir';
 
@@ -13,18 +13,19 @@ requireDir('../', { recurse: true });
 
 function watchTask(){
     let rebuild;
-    if (isDefault) {
+    if (isDefault || isStaging) {
+        console.log('build hse');
         rebuild = hseBuild;
     }
 
     if (isDev) {
         rebuild = workspaceBuild;
     }
+
     const time = format.asString('hh:mm:ss', new Date());
     const timestamp = "[".white + time.grey + "]".white;
     const watcher = watch(
-        config.all,
-        // rebuild
+        config.all
     );
 
     watcher.on('change', function(path) {

@@ -5,8 +5,8 @@
   "main": "gulpfile.babel.js",
   "scripts": {
     "bundle-report": "webpack-bundle-analyzer --port 8081 dist/stats.json",
-    "gulp": "gulp",
-    "gulp-hse": "gulp",
+    "gulp": "NODE_ENV='development' gulp --env.development",
+    "gulp-hse": "NODE_ENV='staging' gulp --env.staging",
     "gulp-dev": "NODE_ENV='development' gulp development --env.development",
     "gulp-prod": "NODE_ENV='production' gulp production --env.production"
   },
