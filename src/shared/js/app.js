@@ -2,7 +2,7 @@ import CsvConvert from './combined/csv-convertor/csv-convertor';
 import ChartsDefault from './combined/charts/charts';
 
 // Window load
-window.addEventListener('load',() => {
+window.addEventListener('DOMContentLoaded',() => {
   const htmlDoc = document.getElementsByTagName('html')[0];
   htmlDoc.classList.add('js-enabled');
 
