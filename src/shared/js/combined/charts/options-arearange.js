@@ -67,9 +67,13 @@ export class ChartOptionsArearange extends ChartOptions {
         const dateLast = moment(dateRange.last[0]).format('DD MMM YYYY');
 
         let xAxis = {
+            labels: {
+                overflow: 'justify',
+            },
             type: 'datetime',
             title: {
                 text: `${dateFirst} to ${dateLast}.`,
+                align: 'high'
             },
             accessibility: {
                 rangeDescription: `Range: ${dateFirst} to ${dateLast}.`
