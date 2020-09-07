@@ -26,7 +26,7 @@ import {
 export class ChartOptions {
     constructor(container) {
         this.container = container;
-        this.brandColours = ['#981E32', '#BB253E', '#D7334E', '#DD556B', '#E47789', '#EB99A6', '#F2BBC4', '#F8DDE1'];
+        this.brandColours = ['#b2182b', '#d6604d', '#f4a582', '#fddbc7', '#d1e5f0', '#92c5de', '#4393c3', '#2166ac'];
         this.fontFamily = 'Arial, Helvetica, sans-serif';
         this.chartRender = container.querySelector('.displayChart');
         this.dataTable = container.querySelector('.tabledata');
