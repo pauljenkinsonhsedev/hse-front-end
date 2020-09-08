@@ -18,17 +18,17 @@ export function feedback (msg) {
     console.log(`message ${msg}`);
     feedbackContainer.appendChild(feedback);
   }).then(
-    setTimeout(() => {
+    setTimeout(function() {
         console.log('runs after 1 seconds');
         feedback.classList.add('in');
       },10)
   ).then(
-    setTimeout(() => {
+    setTimeout(function() {
         console.log('runs after 2 seconds');
         feedback.classList.remove('in');
       },3000)
   ).then(
-    setTimeout(() => {
+    setTimeout(function() {
         console.log('runs after 2 seconds');
         feedbackContainer.removeChild(feedback);
       }, 3600)

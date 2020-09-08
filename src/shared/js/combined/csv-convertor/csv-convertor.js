@@ -32,7 +32,7 @@ class CsvConvert {
         this.createTableFn(fileReader.result);
         this.disableOptions(fileReader.result);
         this.tableMetaForm.classList.add('in');
-        setTimeout(() => {
+        setTimeout(function() {
           this.tableMetaForm.classList.add('show');
         }, 100);
     };
@@ -77,7 +77,7 @@ class CsvConvert {
       tableBlock.setAttribute("class", "preview");
       chartBlock.setAttribute("class", "preview");
       codeBlock.classList.add('in');
-      setTimeout(() => {
+      setTimeout(function() {
         codeBlock.classList.add('show');
       }, 100);
     });
@@ -86,7 +86,7 @@ class CsvConvert {
       codeBlock.setAttribute("class", "preview");
       chartBlock.setAttribute("class", "preview");
       tableBlock.classList.add('in');
-      setTimeout(() => {
+      setTimeout(function() {
         tableBlock.classList.add('show');
       }, 100);
     });
@@ -96,7 +96,7 @@ class CsvConvert {
       codeBlock.setAttribute("class", "preview");
       chartBlock.classList.add('in');
 
-      setTimeout(() => {
+      setTimeout(function() {
         chartBlock.classList.add('show');
       }, 100);
     });
@@ -376,7 +376,7 @@ class CsvConvert {
 
     // Display table meta form
     output.classList.add('in');
-    setTimeout(() => {
+    setTimeout(function() {
       output.classList.add('show');
     }, 100);
   }
