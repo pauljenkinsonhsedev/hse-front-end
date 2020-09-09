@@ -22,10 +22,10 @@ function workspaceMarkup() {
     .pipe(
         nunjucks({
             data: {
-            css_path: 'styles/',
-            js_path: 'assets/v5-js/',
-            vendor_path: 'assets/v5-js//vendor/',
-            data_path: 'data/'
+                css_path: 'styles/',
+                js_path: 'assets/v5-js/',
+                vendor_path: 'assets/v5-js/vendor/',
+                data_path: 'data/'
             },
             path: config.workspace.markup.templates
         })
