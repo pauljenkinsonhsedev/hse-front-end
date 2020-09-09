@@ -11,13 +11,13 @@ class ChartsDefault {
                 this.path = window.location.protocol + '//' + window.location.host + '/';
             break;
             case 'staging':
-                this.path = window.location.protocol + '//' + window.location.host + '/' + window.location.pathname.split('/')[0];
+                this.path = window.location.protocol + '//' + window.location.host;
             break;
             case 'production':
-                this.path = window.location.protocol + '//' + window.location.host + '/' + window.location.pathname.split('/')[0];
+                this.path = window.location.protocol + '//' + window.location.host;
             break;
             default:
-                this.path = window.location.protocol + '//' + window.location.host + '/' + window.location.pathname.split('/')[0];
+                this.path = window.location.protocol + '//' + window.location.host;
             break;
         }
 
