@@ -26,12 +26,12 @@ const highchartsAssets = [
 
 function highCharts() {
   return src(highchartsAssets)
-    .pipe(dest('./secureroot/assets/v5-js/vendor/highcharts'))
+    .pipe(dest(`${config.secureroot.assetPath}/v5-js/vendor/highcharts`))
 }
 
 function moment() {
   return src(['./node_modules/moment/moment.js'])
-  .pipe(dest('./secureroot/assets/v5-js/vendor/moment'));
+  .pipe(dest(`${config.secureroot.assetPath}/v5-js/vendor/moment`));
 }
 
 function html() {

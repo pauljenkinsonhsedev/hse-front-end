@@ -4,6 +4,7 @@
     ],
     "server": {
         "file": "index.html",
+        "locationStaging": "secureroot/hseonline/website/livelive/secureroot",
         "uri": "http://localhost",
         "port": "8080"
     },
@@ -11,7 +12,7 @@
         "js": {
             "all": "./src/shared/js/**/*.js",
             "entrypoint": "./src/shared/js/app.js",
-            "outputSecureroot": "./secureroot/assets/v5-js",
+            "outputSecureroot": "./secureroot/hseonline/website/livelive/secureroot/assets/v5-js",
             "outputWorkspace": "./workspace/assets/v5-js"
         }
     },
@@ -19,18 +20,19 @@
         "all": [
             "./src/secureroot/**/*+(js|css|html|png|jpg|jpeg|gif|svg|ico)"
         ],
+        "assetPath": "./secureroot/hseonline/website/livelive/secureroot/assets",
         "output": "./secureroot",
         "copy": {
             "all": "./src/secureroot/copy/**/*",
-            "output": "./secureroot/assets/",
+            "output": "./secureroot/hseonline/website/livelive/secureroot",
             "templates": {
                 "entrypoint": "./src/secureroot/templates/**/*",
                 "output": "./src/secureroot/html/templates"
             }
         },
         "html": {
-            "all": "./src/secureroot/html/**/*.htm",
-            "output": "./secureroot/"
+            "all": "./src/secureroot/html/**/*+(htm|html)",
+            "output": "./secureroot/hseonline/website/livelive/secureroot"
         },
         "scripts": {
             "all": [
@@ -48,28 +50,28 @@
                 "./src/secureroot/v5-scripts/left-nav.js"
             ],
             "entry": "./src/secureroot/v5-js/v5-footer.js",
-            "output": "./secureroot/assets/v5-js"
+            "output": "./secureroot/hseonline/website/livelive/secureroot/assets/v5-js"
         },
         "styles": {
             "all": "./src/secureroot/v5-css/scss/**/*.scss",
             "entry": "./src/secureroot/v5-css/scss/v5.scss",
-            "output": "./secureroot/assets/v5-css/"
+            "output": "./secureroot/hseonline/website/livelive/secureroot/assets/v5-css/"
         },
         "images": {
             "v4": {
                 "all": "./src/secureroot/v4-images/**/*.+(png|jpg|jpeg|gif|svg|ico)",
                 "entry": "./src/secureroot/v4-images/",
-                "output": "./secureroot/assets/v4-images/"
+                "output": "./secureroot/hseonline/website/livelive/secureroot/assets/v4-images/"
             },
             "v4homepage": {
                 "all": "./src/secureroot/v4-homepage/**/*.+(png|jpg|jpeg|gif|svg|ico)",
                 "entry": "./src/secureroot/v4-homepage/",
-                "output": "./secureroot/assets/v4-homepage/"
+                "output": "./secureroot/hseonline/website/livelive/secureroot/assets/v4-homepage/"
             },
             "v5": {
                 "all": "./src/secureroot/v5-images/**/*.+(png|jpg|jpeg|gif|svg|ico)",
                 "entry": "./src/secureroot/v5-images/",
-                "output": "./secureroot/assets/v5-images/"
+                "output": "./secureroot/hseonline/website/livelive/secureroot/assets/v5-images/"
             }
         }
     },
