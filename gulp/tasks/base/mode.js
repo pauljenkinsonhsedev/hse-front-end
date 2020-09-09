@@ -11,12 +11,10 @@ export const isDev = mode.development();
 export const isProd = mode.production();
 
 if (isDefault || isStaging) {
-    console.log('hse');
     root = 'secureroot';
 }
 
 if (isDev) {
-    console.log('workspace');
     root = 'workspace';
 }
 

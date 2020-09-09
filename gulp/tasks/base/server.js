@@ -9,8 +9,13 @@ import { isDefault, isStaging, isDev } from './mode.js';
 
 // serve from
 let root;
-if (isDefault || isStaging) {
-    root = 'secureroot';
+
+if (isDefault) {
+    root = config.server.locationStaging;
+}
+
+if (isStaging) {
+    root = config.server.locationStaging;
 }
 
 if (isDev) {
@@ -25,8 +30,8 @@ const browser = os.platform() === 'linux' ? 'google-chrome' : (
 function server() {
     connect.server({
         root: root,
-        livereload: true,
-    });
+        livereload: true
+    })
 }
 
 function openBrowser() {
@@ -37,7 +42,6 @@ function openBrowser() {
     }));
 }
 
-// const toReturn = series(server, openBrowser);
 const toReturn = series(openBrowser, server);
 
 task('browser', toReturn)
