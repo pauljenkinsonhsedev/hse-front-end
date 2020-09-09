@@ -5,8 +5,22 @@ import {loading} from '../utils/loader';
 class ChartsDefault {
     constructor() {
         this.chart = window.chart || {};
-        this.path = window.location.protocol + '//' + window.location.host + '/';
-        // this.path = window.location.protocol + '//' + window.location.host + '/' + window.location.pathname.split('/')[1]; // for use on testbed
+
+        switch(process.env.NODE_ENV) {
+            case 'development':
+                this.path = window.location.protocol + '//' + window.location.host + '/';
+            break;
+            case 'staging':
+                this.path = window.location.protocol + '//' + window.location.host + '/' + window.location.pathname.split('/')[0];
+            break;
+            case 'production':
+                this.path = window.location.protocol + '//' + window.location.host + '/' + window.location.pathname.split('/')[0];
+            break;
+            default:
+                this.path = window.location.protocol + '//' + window.location.host + '/' + window.location.pathname.split('/')[0];
+            break;
+        }
+
         this.init();
     }
 
@@ -42,8 +56,11 @@ class ChartsDefault {
 
     buildFn(container, params){
         this.chart = new Highcharts.chart(container, params);
-        const msg = this.chart ? 'successful' : 'unsuccessful';
-        console.log(`Charts loaded ${msg}`);
+
+        if (process.env.NODE_ENV === 'development') {
+            const msg = this.chart ? 'successful' : 'unsuccessful';
+            console.log(`Charts loaded ${msg}`);
+        }
     }
 }
 
