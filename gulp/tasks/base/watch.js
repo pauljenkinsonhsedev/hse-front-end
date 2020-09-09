@@ -14,7 +14,6 @@ requireDir('../', { recurse: true });
 function watchTask(){
     let rebuild;
     if (isDefault || isStaging) {
-        console.log('build hse');
         rebuild = hseBuild;
     }
 
