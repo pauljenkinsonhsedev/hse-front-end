@@ -4,7 +4,8 @@ import mainMenu from './combined/main-menu';
 
 // Window load
 window.addEventListener('DOMContentLoaded',() => {
-  mainMenu(document);
+  // small device menu
+  mainMenu();
 
   const htmlDoc = document.getElementsByTagName('html')[0];
   htmlDoc.classList.add('js-enabled');

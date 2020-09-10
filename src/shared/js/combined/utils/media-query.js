@@ -1,20 +1,14 @@
 const mediaQuery = (function() {
+const smallDevice = window.matchMedia("(min-width: 576px)");
 
-    const _mqLarge = window.matchMedia('(min-width: 1200px)');
-    // const _mqMedium = window.matchMedia('(min-width: 768px)');
-    // const _mqSmall = window.matchMedia('(min-width: 576px)');
-     
-    // Check if the media query is true
-    _mqLarge() {
-      if (_mqLarge.matches) {
-          return true;
-      }
-      // return false;
-    }
+// smallDevice.addListener(handleDeviceChange);
 
-    return {
-        mqLarge: _mqLarge
-    }
+function handleDeviceChange(e) {
+  if (e.matches) {
+    console.log("Bigger Than Mobile");
+  }
+};
+
 });
 
 export default mediaQuery;
