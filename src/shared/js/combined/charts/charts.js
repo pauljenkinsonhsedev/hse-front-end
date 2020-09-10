@@ -22,9 +22,9 @@ class ChartsDefault {
         }
 
         // conditional for shadow directory
-        if (window.location.href.match(/(?:\b|_)(?:livelive)(?:\b|_)/i)) {
-            this.path = window.location.protocol + '//' + window.location.host + '/secureroot/hseonline/website/livelive/secureroot';
-        }
+        // if (window.location.href.match(/(?:\b|_)(?:livelive)(?:\b|_)/i)) {
+        //     this.path = window.location.protocol + '//' + window.location.host + '/secureroot/hseonline/website/livelive/secureroot';
+        // }
 
         console.log('pathname');
         console.log(`${this.path}`);
