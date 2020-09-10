@@ -14,7 +14,7 @@ class ChartsDefault {
                 this.path = window.location.protocol + '//' + window.location.host;
             break;
             case 'production':
-                this.path = window.location.protocol + '//' + window.location.host + '/' + window.location.pathname.split('/')[1];
+                this.path = window.location.protocol + '//' + window.location.host;
             break;
             default:
                 this.path = window.location.protocol + '//' + window.location.host;
@@ -22,9 +22,9 @@ class ChartsDefault {
         }
 
         // conditional for shadow directory
-        // if (window.location.href.match(/(?:\b|_)(?:livelive)(?:\b|_)/i)) {
-        //     this.path = window.location.protocol + '//' + window.location.host + '/secureroot/hseonline/website/livelive/secureroot';
-        // }
+        if (window.location.href.match(/(?:\b|_)(?:livelive)(?:\b|_)/i)) {
+            this.path = window.location.protocol + '//' + window.location.host + '/website/livelive/secureroot';
+        }
 
         console.log('pathname');
         console.log(`${this.path}`);
