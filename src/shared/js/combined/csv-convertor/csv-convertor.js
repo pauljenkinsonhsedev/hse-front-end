@@ -24,7 +24,15 @@ class CsvConvert {
   }
 
   init() {
-    // Events
+    /*
+         Events
+    */
+
+    // CSV Upload
+    this.form.onsubmit = (e) => {
+      e.preventDefault();
+    };
+
     // Input CSV
     let fileReader = new FileReader();
     fileReader.onload = () => {
