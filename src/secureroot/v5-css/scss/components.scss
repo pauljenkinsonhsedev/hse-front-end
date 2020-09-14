@@ -239,6 +239,39 @@ color: white;
 
 // Tabs 
 
+
+/* JQuery UI Tabs */
+
+.tabPanel {
+    width: 100% !important;
+    }
+    
+    #contentContainer ul.tabs {
+    margin-bottom: 0 !important;
+    }
+    
+    #contentContainer ul.tabs a, #contentContainer ul.tabs a:visited {
+    color: white;
+    }
+    
+    #contentContainer ul.tabs li.active a {
+    color: $hseblack;
+    }
+    
+    .tabPanel {
+    border-radius: 0 !important;	
+    }
+    
+    ul.semtabs li {
+    border-radius: 0 !important;
+    padding: 5px;
+    background: $hseblack;
+    }
+    
+    ul.semtabs li a {
+    border-bottom: none !important;
+    }
+
 .tabs.semtabs {
 width: 100%;
 @media only screen and (min-width : $desktop) {
