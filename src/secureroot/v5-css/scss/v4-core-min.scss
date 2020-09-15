@@ -182,9 +182,10 @@ display:none;
 display:none;
 }
 .query{
-background-color:red;
+background-color: $red;
 color:#fff;
 font-weight:700;
+padding: 5px;
 }
 .cf:after,.cf:before{
 content:"";
