@@ -67,7 +67,7 @@ ul.itemThumbBook.publications li {
 width: 100% !important;
 }
 
-ul.itemThumbBook.publications a {
+ul.itemThumbBook.publications li {
 
 @media only screen and (min-width : 756px) {
 width: 47% !important;	
@@ -88,10 +88,14 @@ margin-right: 0px !important;
 }
 
 
-.publications .itemThumbBook img {
+.publications.itemThumbBook img {
 margin: 0 0 10px 0 !important;
 }
 
+
+ul.itemThumbBook.publications li a:hover span {
+color: $hseblack !important;
+}
 
 .mobile {
 display: none;

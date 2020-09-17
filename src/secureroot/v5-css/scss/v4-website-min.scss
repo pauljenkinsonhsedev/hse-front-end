@@ -101,7 +101,11 @@ ul.listexclaim li {
 /* Subscribe */
 
 .itemThumbBook li a:hover span {
-color:#981e32;/*changed from #b82533 by Sarah 27/2/19*/
+color:#981e32;
+}
+
+.itemThumbBook li a:hover span.subText {
+color: $hseblack !important;
 }
 
 /* ----------------------------------------------------- */
