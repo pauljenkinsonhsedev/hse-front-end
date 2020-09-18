@@ -12,6 +12,7 @@ class CsvConvert {
     this.previewChartButton = document.querySelector('.preview-chart-action');
     this.previewCodeOutput = document.querySelector('.table-output-code');
     this.fileCsvButton = document.querySelector('.input-file');
+    this.formFieldDisplay = document.querySelectorAll('.form-field-display');
     this.tableMetaForm = document.getElementById('tableMeta');
     this.tableMetaFormInputs = document.querySelectorAll('.input-watch');
     this.chartTypeField = document.querySelector('.chartType');
@@ -19,7 +20,7 @@ class CsvConvert {
     this.formGroupXAxis = document.getElementById('formGroupXAxis');
     this.formGroupYAxis = document.getElementById('formGroupYAxis');
     this.storedCsvData = [];
-
+    this.headingData = String;
     this.charts = new ChartsDefault();
   }
 
@@ -43,6 +44,21 @@ class CsvConvert {
           this.tableMetaForm.classList.add('show');
         }, 100);
     };
+
+    // show hide form fields
+    for(let elem of this.formFieldDisplay) {
+        const target = elem.dataset.target;
+        elem.onchange = (event) => {
+            this.headingData = target;
+            const targetElem = document.querySelector(`.${target}`);
+            if (event.target.value === 'Yes') {
+                targetElem.classList.remove('form-group-hide');
+            } else {
+                targetElem.classList.add('form-group-hide');
+            }
+        }
+    }
+
     this.fileCsvButton.onchange = function(event) {
         this.sendCsvData = fileReader.readAsText(event.target.files[0]);
 
@@ -181,9 +197,12 @@ class CsvConvert {
     let rangeLow = meta ? parseInt(meta.rangeLow) : '';
     let rangeHigh = meta ? parseInt(meta.rangeHigh) : '';
 
+    let intervalLow = meta ? parseInt(meta.intervalLow) : '';
+    let intervalHigh = meta ? parseInt(meta.intervalHigh) : '';
+
     // Set variables
     let csvData = [];
-    let rangeValues = [];
+    let headingData = [];
 
     const chartContainer = document.createElement('div');
     chartContainer.className = 'chart';
@@ -238,7 +257,7 @@ class CsvConvert {
           cell = document.createElement('th');
           let dataAttr = cellData.toLowerCase();
           dataAttr = dataAttr.replace(/[^a-zA-Z0-9+]/g, '');
-          rangeValues.push(dataAttr);
+          headingData.push(dataAttr);
         } else {
           cell = document.createElement('td');
         }
@@ -299,8 +318,18 @@ class CsvConvert {
     });
 
 
-    if (this.chartTypeField.value === 'arearange') {
-      this.rangeOptions(rangeValues);
+    // if (this.chartTypeField.value === 'arearange') {
+    //   this.rangeOptions(headingData);
+    // }
+
+    console.log(this.headingData);
+    switch (this.headingData) {
+        case 'range-inputs':
+          this.rangeOptions(headingData);
+        break;
+        case 'interval-inputs':
+          this.intervalOptions(headingData);
+        break;
     }
 
     const displayChart = document.createElement('div');
@@ -401,6 +430,29 @@ class CsvConvert {
     rangeAverage.options[2].setAttribute("selected", true);
     rangeLow.options[3].setAttribute("selected", true);
     rangeHigh.options[4].setAttribute("selected", true);
+  }
+
+  intervalOptions(ranges) {
+    const intervalLow = document.getElementById('intervalLow');
+    const intervalHigh = document.getElementById('intervalHigh');
+
+    // only populate if doesn't already have values
+    if (intervalLow.options.length < 5) {
+      intervalLow.options[intervalLow.options.length] = new Option('Select an interval', null, false, false);
+      intervalHigh.options[intervalHigh.options.length] = new Option('Select an interval', null, false, false);
+    }
+
+    // create options
+    ranges.forEach(function (data, i) {
+      // only populate if doesn't already have values
+      if (intervalLow.options.length < 5) {
+        intervalLow.options[intervalLow.options.length] = new Option(data, i, false, false);
+        intervalHigh.options[intervalHigh.options.length] = new Option(data, i, false, false);
+      }
+    });
+
+    intervalLow.options[1].setAttribute("selected", true);
+    intervalHigh.options[2].setAttribute("selected", true);
   }
 };
 
