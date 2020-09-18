@@ -62,7 +62,8 @@ class ChartsDefault {
 
             // initialise charts
             chartArray.forEach((container) => {
-                switch(this.type) {
+                const type = container.dataset.chartType;
+                switch(type) {
                     case 'pie':
                         this.collection = new ChartOptionsPie(container);
                     break;
@@ -87,7 +88,7 @@ class ChartsDefault {
                         this.collection = new ChartOptionsDefault(container);
                     break;
                 }
-                // console.log(`defaultOptions ${JSON.stringify(this.collection, null, 2)}`);
+                console.log(`defaultOptions ${JSON.stringify(this.collection, null, 2)}`);
                 this.buildFn(container, this.collection);
             });
         })
