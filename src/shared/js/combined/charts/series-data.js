@@ -1,10 +1,8 @@
 export function seriesData(data) {
-    const thead = data.querySelector('.table__head');
-    const tbody = data.querySelector('.table__body');
     /*
         function @seriesData
 
-        Description: sets default series data for HighCharts options
+        Description: sets default series data to be used in HighCharts options
 
         usage:
 
@@ -21,53 +19,70 @@ export function seriesData(data) {
             data: [3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8]
         }]
     */
+    const thead = data.querySelector('.table__head');
+    const tbody = data.querySelector('.table__body');
 
-    // build data set
-    function getHeading(col) {
-        let n = thead.rows.length;
-        let i, headings = [], tr, th;
+    function getData() {
+        let unitLength = tbody.rows[0].querySelectorAll('.unit').length,
+            rowLength = tbody.rows.length,
+            headingsArray = new Array,
+            seriesData = new Array;
 
-        if (col < 0) {
+        if (unitLength < 0) {
             return null;
         }
 
-        for (i = 0; i < n; i++) {
-            tr = thead.rows[i];
-            if (tr.cells.length > col) {
-                th = tr.cells[col];
-                const data = th.innerText;
-                headings.push(data);
+        for (let u = 0; u < unitLength; u++) {
+            const unitArray = new Array;
+            const errorArray = new Array;
+            const heading = thead.rows[0].querySelectorAll('.heading');
+            headingsArray.push(heading[u].innerText);
+
+            for (let i = 0; i < rowLength; i++) {
+                const text = tbody.rows[i].querySelectorAll('.unit');
+
+                for (let j = 0; j < unitLength; j++) {
+                    let value = parseFloat(text[j].innerText);
+                    if (j === u) {
+                        unitArray.push(value);
+                    }
+                }
+
+                for (let k = 0; k < unitLength; k++) {
+                    const low = tbody.rows[i].querySelectorAll('.error-low');
+                    const high = tbody.rows[i].querySelectorAll('.error-high');
+
+
+                    if (low.length > 0 && k === u) {
+                        const errorLowText = parseFloat(low[k].innerText);
+                        const errorHighText = parseFloat(high[k].innerText);
+                        errorArray.push([errorLowText, errorHighText]);
+                    }
+                }
             }
+
+            const unitdata = {
+                name: headingsArray[u],
+                yAxis: 0,
+                data: unitArray
+            };
+
+            const errorBar = {
+                name: `${headingsArray[u]} interval`,
+                type: 'errorbar',
+                yAxis: 0,
+                data: errorArray,
+                showInLegend: false,
+                tooltip: {
+                    pointFormat: `(Interval range: <strong>{point.low}-{point.high}</strong><br />`
+                }
+            };
+
+            seriesData.push(unitdata, errorBar);
         }
-        return headings;
+        return seriesData;
     }
 
-    function getCol(col) {
-        let n = tbody.rows.length;
-        let i, units = [], tr, td;
-
-        if (col < 0) {
-            return null;
-        }
-
-        for (i = 0; i < n; i++) {
-            tr = tbody.rows[i];
-            if (tr.cells.length > col) {
-                td = tr.cells[col];
-                const data = parseFloat(td.innerText);
-                units.push(data);
-            }
-        }
-        return units;
-    }
-
-    let seriesArray = new Array;
-    const unitLength = tbody.rows[0].cells.length;
-    for (let i = 1; i < unitLength; i++) {
-        const name = getHeading(i);
-        const data = getCol(i);
-        seriesArray.push({name: name, data: data});
-    }
-
-    return seriesArray;
+    const seriesDataOutput = getData();
+    return seriesDataOutput;
 }
