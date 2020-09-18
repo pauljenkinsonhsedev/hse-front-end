@@ -30,21 +30,9 @@ export class ChartOptions {
         this.xAxisText = container.dataset.xaxisText;
         this.units = container.dataset.chartUnits;
         this.colWidth = 75;
-        this.dataLabelsSuffix = this.displaySuffix(this.units);
         this.categories = this.chartCategories(this.container);
         this.defaults = new Array;
         this.collection = new Array;
-
-        /*
-            Plot events boolean
-            - diables click events if only one set of data
-        */
-        for (let row of this.dataTable.rows) {
-            const cells = row.querySelectorAll('td');
-            if (cells.length > 2) {
-                this.plotEvents = true;
-            }
-        }
 
         // get series information
         const getSeriesData = seriesData(this.container);
@@ -84,19 +72,6 @@ export class ChartOptions {
             tooltip: {
                 shared: true
             },
-            plotOptions: {
-                series: {
-                    showInLegend: true,
-                    events: {
-                        legendItemClick: () => {
-                            return this.plotEvents;
-                        }
-                    }
-                },
-                column: {
-                    maxPointWidth: this.colWidth
-                }
-            },
             legend: {
                 enabled: true,
                 itemStyle: {
@@ -135,30 +110,5 @@ export class ChartOptions {
         });
 
         return categories;
-    }
-
-    displaySuffix(units) {
-        let result = new String;
-        switch (units) {
-        case 'percentage':
-            result = `<b>{point.name}</b>: {point.percentage:.1f}%`
-            break;
-        case 'unit':
-            result = `<b>{point.name}</b>: {point.y}`
-            break;
-        case 'celsius':
-            result = `°C`
-            break;
-        case 'fahrenheit':
-            result = `°F`
-            break;
-        case 'date':
-            // this.labelFormatter(this.units);
-            break;
-        default:
-            result = `<b>{point.name}</b>: {point.y}`
-            break;
-        }
-        return result;
     }
 }
