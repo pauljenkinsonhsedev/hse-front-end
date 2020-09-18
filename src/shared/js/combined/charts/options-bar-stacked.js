@@ -12,7 +12,7 @@ export class ChartOptionsBarStacked extends ChartOptions {
     constructor(container, collection){
         super(container, collection);
         this.defaults;
-        this.init();
+        // this.init();
     }
 
     init() {
