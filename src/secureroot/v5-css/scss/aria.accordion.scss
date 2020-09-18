@@ -42,6 +42,7 @@
 	cursor: pointer;
 	display: block;
 	font-size: inherit;
+	line-height: inherit;
 	font-weight: 700;
 	margin: 0;
 	padding: 10px;
@@ -170,4 +171,8 @@ padding: 0;
 
 ol.accordion {
 font-size: inherit;
+}
+
+#contentContainer .accordion ul {
+margin: 0;
 }
