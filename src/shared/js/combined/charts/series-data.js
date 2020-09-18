@@ -78,7 +78,11 @@ export function seriesData(data) {
                 }
             };
 
-            seriesData.push(unitdata, errorBar);
+            if (errorArray.length > 0) {
+                seriesData.push(unitdata, errorBar);
+            } else {
+                seriesData.push(unitdata);
+            }
         }
         return seriesData;
     }
