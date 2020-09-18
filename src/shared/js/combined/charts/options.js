@@ -14,14 +14,6 @@
 */
 
 import { seriesData } from './series-data.js';
-import {
-    ChartOptionsDefault,
-    ChartOptionsLine,
-    ChartOptionsArearange,
-    ChartOptionsPie,
-    ChartOptionsDonut,
-    ChartOptionsBarStacked
-} from './dependencies';
 
 export class ChartOptions {
     constructor(container) {
@@ -47,7 +39,6 @@ export class ChartOptions {
             Plot events boolean
             - diables click events if only one set of data
         */
-        this.plotEvents = false;
         for (let row of this.dataTable.rows) {
             const cells = row.querySelectorAll('td');
             if (cells.length > 2) {
@@ -63,7 +54,6 @@ export class ChartOptions {
                 type: this.type,
                 renderTo: this.chartRender
             },
-            series: getSeriesData,
             title: {
                 text: this.title,
                 style:{
@@ -89,17 +79,11 @@ export class ChartOptions {
                 },
                 accessibility: {
                     description: this.title
-                },
-                labels: {
-                    format: this.dataLabelsSuffix,
-                    // formatter: function () {
-
-                    //     const date = moment(this.value).format('DD MMMM');
-                    //     console.log(`formatDate ${date}`);
-                    //     return date;
-                    // }
                 }
             }],
+            tooltip: {
+                shared: true
+            },
             plotOptions: {
                 series: {
                     showInLegend: true,
@@ -126,6 +110,7 @@ export class ChartOptions {
             accessibility: {
                 description: this.description
             },
+            series: getSeriesData,
             credits: {
                 enabled: false
             },
@@ -135,37 +120,7 @@ export class ChartOptions {
             colors: this.brandColours
         };
 
-        this.init();
-    }
-
-    init() {
-        switch(this.type) {
-            case 'pie':
-                this.collection = new ChartOptionsPie(this.container);
-            break;
-
-            case 'donut':
-                this.collection = new ChartOptionsDonut(this.container);
-            break;
-
-            case 'line':
-                this.collection = new ChartOptionsLine(this.container);
-            break;
-
-            case 'barstacked':
-                this.collection = new ChartOptionsBarStacked(this.container);
-            break;
-
-            case 'arearange':
-                this.collection = new ChartOptionsArearange(this.container);
-            break;
-
-            default:
-                this.collection = new ChartOptionsDefault(this.container);
-            break;
-        }
-
-        return this.collection;
+        return this.defaults;
     }
 
     chartCategories(container){

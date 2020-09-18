@@ -1,4 +1,13 @@
-import { ChartOptions } from './dependencies';
+import {
+    ChartOptions,
+    ChartOptionsDefault,
+    ChartOptionsLine,
+    ChartOptionsArearange,
+    ChartOptionsPie,
+    ChartOptionsDonut,
+    ChartOptionsBarStacked
+} from './dependencies';
+
 import load from '../utils/asset-loader';
 import {loading} from '../utils/loader';
 
@@ -26,8 +35,8 @@ class ChartsDefault {
             this.path = window.location.protocol + '//' + window.location.host + '/website/livelive/secureroot';
         }
 
-        console.log('pathname');
-        console.log(`${this.path}`);
+        // console.log('pathname');
+        // console.log(`${this.path}`);
 
         this.init();
     }
@@ -53,8 +62,33 @@ class ChartsDefault {
 
             // initialise charts
             chartArray.forEach((container) => {
-                let defaultOptions = new ChartOptions(container);
-                this.buildFn(container, defaultOptions.collection.collection);
+                switch(this.type) {
+                    case 'pie':
+                        this.collection = new ChartOptionsPie(container);
+                    break;
+
+                    case 'donut':
+                        this.collection = new ChartOptionsDonut(container);
+                    break;
+
+                    case 'line':
+                        this.collection = new ChartOptionsLine(container);
+                    break;
+
+                    case 'barstacked':
+                        this.collection = new ChartOptionsBarStacked(container);
+                    break;
+
+                    case 'arearange':
+                        this.collection = new ChartOptionsArearange(container);
+                    break;
+
+                    default:
+                        this.collection = new ChartOptionsDefault(container);
+                    break;
+                }
+                // console.log(`defaultOptions ${JSON.stringify(this.collection, null, 2)}`);
+                this.buildFn(container, this.collection);
             });
         })
         .catch((err) => {
