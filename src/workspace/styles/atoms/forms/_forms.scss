@@ -78,6 +78,10 @@ input:required:invalid:not(:placeholder-shown) + .validation {
 .form-group {
   position: relative;
   margin-bottom: $dp * 2;
+
+  &-hide {
+    display: none;
+  }
 }
 
 /* Fieldsets */
@@ -90,6 +94,7 @@ input:required:invalid:not(:placeholder-shown) + .validation {
 .label {
   display: block;
   @extend .font-size-19;
+  font-weight: normal;
   margin-bottom: $dp;
 }
 
