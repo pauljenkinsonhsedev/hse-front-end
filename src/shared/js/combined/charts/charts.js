@@ -88,7 +88,7 @@ class ChartsDefault {
                         this.collection = new ChartOptionsDefault(container);
                     break;
                 }
-                console.log(`defaultOptions ${JSON.stringify(this.collection, null, 2)}`);
+                console.log(`this.collection ${JSON.stringify(this.collection, null, 2)}`);
                 this.buildFn(container, this.collection);
             });
         })
