@@ -1,5 +1,6 @@
 import { ChartOptions } from './dependencies';
 import { seriesData } from './series-data.js';
+import { chartCategories } from './chart-categories';
 import { displaySuffix } from './data-suffix.js';
 
 /*
@@ -14,30 +15,35 @@ export class ChartOptionsPie extends ChartOptions {
     constructor(container){
         super(container);
         this.dataTable = container.querySelector('.tabledata');
-        this.defaults;
+        this.units = container.dataset.chartUnits;
+        this.xAxisText = container.dataset.xaxisText;
 
         const dataLabelsSuffix = displaySuffix(this.units);
+        const getCategories = chartCategories(container);
         const getSeriesData = seriesData(this.dataTable);
 
         let series = getSeriesData;
 
-        let chart = {
-            type: 'pie'
-        }
-
         let plotOptions = {
-            series: {
-                showInLegend: false
-            },
             pie: {
                 allowPointSelect: true,
                 cursor: 'pointer',
                 dataLabels: {
                     enabled: true,
-                    format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+                    format: dataLabelsSuffix
                 }
             }
         };
+
+        let xAxis = [{
+            categories: getCategories,
+            title: {
+                text: this.xAxisText
+            },
+            accessibility: {
+                description: this.description
+            }
+        }];
 
         let accessibility = {
             point: {
@@ -46,41 +52,12 @@ export class ChartOptionsPie extends ChartOptions {
         };
 
         let tooltip = {
-            pointFormat: '{point.name}: <b>{point.percentage:.1f}%</b>'
+            pointFormat: dataLabelsSuffix
         };
 
-        const defaults = this.defaults;
-        this.collection = {series, plotOptions, accessibility, tooltip};
+        const collection = this.collection;
+        this.collection = {...collection, plotOptions, xAxis, accessibility, tooltip};
 
-        // console.log(`collection ${JSON.stringify(this.collection, null, 2)}`);
-    }
-
-    init() {
-        // const getSeriesData = seriesDataSingular(this.dataTable);
-        // let series = getSeriesData;
-
-        // let pieOptions = {
-        //     allowPointSelect: true,
-        //     cursor: 'pointer',
-        //     dataLabels: {
-        //         enabled: true,
-        //         format: this.dataLabelsSuffix,
-        //         connectorColor: 'silver'
-        //     }
-        // }
-        // let plotOptions = {
-        //     pie: {
-        //         allowPointSelect: true,
-        //         cursor: 'pointer',
-        //         dataLabels: {
-        //             enabled: true,
-        //             format: this.dataLabelsSuffix,
-        //             connectorColor: 'silver'
-        //         }
-        //     }
-        // };
-        // const defaults = this.defaults;
-        // this.collection = {...defaults, series, pieOptions, plotOptions};
-        // return this.collection;
+        return this.collection;
     }
 }

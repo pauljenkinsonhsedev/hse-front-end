@@ -9,13 +9,10 @@ import { ChartOptions } from './dependencies';
 */
 
 export class ChartOptionsBarStacked extends ChartOptions {
-    constructor(container, collection){
-        super(container, collection);
-        this.defaults;
-        // this.init();
-    }
+    constructor(container){
+        super(container);
+        this.collection;
 
-    init() {
         let chart = {
             type: 'bar'
         };
@@ -37,8 +34,8 @@ export class ChartOptionsBarStacked extends ChartOptions {
             }
         };
 
-        const defaults = this.defaults;
-        this.collection = {...defaults, chart, xAxis, yAxis, legend, plotOptions};
+        const collection = this.collection;
+        this.collection = {...collection, chart, xAxis, yAxis, legend, plotOptions};
         return this.collection;
     }
 }

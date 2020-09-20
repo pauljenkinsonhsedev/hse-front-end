@@ -1,4 +1,5 @@
 import { seriesData } from './series-data.js';
+import { chartCategories } from './chart-categories';
 import { ChartOptions } from './dependencies';
 
 /*
@@ -10,31 +11,19 @@ import { ChartOptions } from './dependencies';
 */
 
 export class ChartOptionsLine extends ChartOptions {
-    constructor(container, collection){
-        super(container, collection);
-        this.defaults;
-        // this.init();
-    }
+    constructor(container){
+        super(container);
 
-    init() {
+        const categoryData = chartCategories(this.container);
         const getSeriesData = seriesData(this.dataTable);
-        let series = getSeriesData;
+        const series = getSeriesData;
 
-        let plotOptions = {
-                series: {
-                label: {
-                    connectorAllowed: false
-                },
-                pointStart: 0
-            }
+        const xAxis = {
+            categories: categoryData,
         };
 
-        let xAxis = {
-            categories: this.categories
-        };
-
-        const defaults = this.defaults;
-        this.collection = {...defaults, xAxis, plotOptions, series};
+        const collection = this.collection;
+        this.collection = {...collection, xAxis, series};
         return this.collection;
     }
 }

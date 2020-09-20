@@ -9,10 +9,9 @@ import { ChartOptions } from './dependencies';
 
 
 export class ChartOptionsDefault extends ChartOptions {
-    constructor(container, collection){
-        super(container, collection);
+    constructor(container){
+        super(container);
         this.dataTable = container.querySelector('.tabledata');
-        this.defaults;
        /*
             Plot events boolean
             - diables click events if only one set of data
@@ -37,11 +36,9 @@ export class ChartOptionsDefault extends ChartOptions {
                 maxPointWidth: this.colWidth
             }
         };
-        const defaults = this.defaults;
-        this.collection = {...defaults, plotOptions};
-    }
 
-    init() {
-        return this.defaults;
+        const collection = this.collection;
+        this.collection = {...collection, plotOptions};
+        return this.collection;
     }
 }

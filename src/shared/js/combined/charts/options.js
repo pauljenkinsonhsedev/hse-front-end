@@ -14,6 +14,8 @@
 */
 
 import { seriesData } from './series-data.js';
+import { chartCategories } from './chart-categories';
+import { displaySuffix } from './data-suffix.js';
 
 export class ChartOptions {
     constructor(container) {
@@ -30,14 +32,20 @@ export class ChartOptions {
         this.xAxisText = container.dataset.xaxisText;
         this.units = container.dataset.chartUnits;
         this.colWidth = 75;
-        this.categories = this.chartCategories(this.container);
-        this.defaults = new Array;
         this.collection = new Array;
+
+        console.log(`y ${this.yAxisText}`);
+        console.log(`x ${this.xAxisText}`);
 
         // get series information
         const getSeriesData = seriesData(this.container);
 
-        this.defaults = {
+        const categories = new Array;
+        const categoryData = chartCategories(this.container);
+        const dataLabelsSuffix = displaySuffix(this.units);
+
+
+        this.collection = {
             chart: {
                 type: this.type,
                 renderTo: this.chartRender
@@ -60,17 +68,35 @@ export class ChartOptions {
                     fontWeight: 'regular'
                 }
             },
-            xAxis: [{
-                categories: this.categories,
+            xAxis: {
+                categories: categoryData,
                 title: {
-                    text: this.xAxisText
+                    text: this.xAxisText,
+                    align: 'high'
+                },
+                labels: {
+                    overflow: 'justify',
                 },
                 accessibility: {
-                    description: this.title
-                }
-            }],
+                    description: this.description
+                },
+            },
+            yAxis: {
+                title: {
+                    text: this.yAxisText
+                },
+            },
             tooltip: {
-                shared: true
+                shared: true,
+                formatter: function () {
+                    return [].concat(
+                    this.points ?
+                    this.points.map(function (point) {
+                        let key = point.key;
+                        return `<b>${key}</b><br />${point.series.name}: ${point.y}${dataLabelsSuffix} `;
+                    }) : []
+            );
+                }
             },
             legend: {
                 enabled: true,
@@ -85,30 +111,14 @@ export class ChartOptions {
             accessibility: {
                 description: this.description
             },
-            series: getSeriesData,
             credits: {
                 enabled: false
             },
             exporting: {
                 enabled: false
             },
-            colors: this.brandColours
+            colors: this.brandColours,
+            series: getSeriesData
         };
-
-        return this.defaults;
-    }
-
-    chartCategories(container){
-         // Categories data collection
-        const chartCategories = container.querySelectorAll('.category');
-        const categoryArray = [...chartCategories];
-        let categories = [];
-        // Loop through categories
-        categoryArray.forEach((category) => {
-            // Set categories
-            categories.push(category.textContent);
-        });
-
-        return categories;
     }
 }

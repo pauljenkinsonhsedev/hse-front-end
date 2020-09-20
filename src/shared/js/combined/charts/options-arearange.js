@@ -1,5 +1,6 @@
 import { seriesDataRanges } from './series-data-ranges.js';
 import { ChartOptions } from './dependencies';
+import { displaySuffix } from './data-suffix.js';
 
 /*
     Class @ChartOptionsArearange
@@ -10,30 +11,27 @@ import { ChartOptions } from './dependencies';
 
 */
 export class ChartOptionsArearange extends ChartOptions {
-    constructor(container, collection){
-        super(container, collection);
-        this.defaults;
-        // this.init();
-    }
+    constructor(container){
+        super(container);
 
-    init() {
         const seriesRangeData = seriesDataRanges(this.dataTable);
         const averagesData = seriesRangeData.averagesData();
         const rangesData = seriesRangeData.rangesData();
+        const dataLabelsSuffix = displaySuffix(this.units);
 
-        let title = this.defaults.title;
+        let title = this.collection.title;
         title.text = this.title;
 
-        let subtitle = this.defaults.subtitle;
+        let subtitle = this.collection.subtitle;
         subtitle.text = this.subtitle;
 
-        let exporting = this.defaults.exporting;
-        let credits = this.defaults.credit;
+        let exporting = this.collection.exporting;
+        let credits = this.collection.credit;
 
         let tooltip = {
             crosshairs: true,
             shared: true,
-            valueSuffix: this.dataLabelsSuffix
+            valueSuffix: dataLabelsSuffix
         };
 
         let series = [{
