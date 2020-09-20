@@ -22,6 +22,8 @@ export function seriesData(data) {
     const thead = data.querySelector('.table__head');
     const tbody = data.querySelector('.table__body');
 
+    const dateRegEx = /^\d{4}[./-]\d{2}[./-]\d{2}$/;
+
     function getData() {
         let unitLength = tbody.rows[0].querySelectorAll('.unit').length,
             rowLength = tbody.rows.length,
@@ -39,12 +41,18 @@ export function seriesData(data) {
             headingsArray.push(heading[u].innerText);
 
             for (let i = 0; i < rowLength; i++) {
+                const category = tbody.rows[i].querySelectorAll('.category');
                 const text = tbody.rows[i].querySelectorAll('.unit');
+                let categoryTitle = category[0].innerText;
+
+                if (categoryTitle.match(dateRegEx)) {
+                    categoryTitle = moment(categoryTitle).format('DD MMM YYYY').toString();
+                }
 
                 for (let j = 0; j < unitLength; j++) {
                     let value = parseFloat(text[j].innerText);
                     if (j === u) {
-                        unitArray.push(value);
+                        unitArray.push({name: categoryTitle, y: value});
                     }
                 }
 
