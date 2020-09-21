@@ -1,6 +1,6 @@
 import { ChartOptions } from './dependencies';
 import { seriesData } from './series-data.js';
-import { displaySuffix } from './data-suffix.js';
+import { dataLabel } from './data-label.js';
 
 /*
     Class @ChartOptionsChartOptionsDonut
@@ -15,7 +15,7 @@ export class ChartOptionsDonut extends ChartOptions {
         super(container);
 
         this.units = container.dataset.chartUnits;
-        const dataLabelsSuffix = displaySuffix(this.units);
+        const getDataLabel = dataLabel(this.units);
 
         let chart = {
             type: 'pie'
@@ -45,7 +45,7 @@ export class ChartOptionsDonut extends ChartOptions {
             x: 0,
             style: {
                 color: '#000',
-                fontFamily: this.collection.fontFamily,
+                fontFamily: this.fontFamily,
                 fontSize: '16px',
                 fontWeight: 'bold'
             }
@@ -63,7 +63,7 @@ export class ChartOptionsDonut extends ChartOptions {
                 innerSize: '50%',
                 dataLabels: {
                     enabled: true,
-                    format: dataLabelsSuffix,
+                    format: getDataLabel,
                     connectorColor: 'silver'
                 }
             },
@@ -79,7 +79,7 @@ export class ChartOptionsDonut extends ChartOptions {
         };
 
         const collection = this.collection;
-        this.collection = {...collection, chart, series, title, pieOptions, plotOptions};
+        this.collection = {...collection, chart, title, pieOptions, plotOptions};
         return this.collection;
     }
 }
