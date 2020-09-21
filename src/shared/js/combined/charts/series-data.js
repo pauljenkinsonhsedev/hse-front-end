@@ -7,7 +7,7 @@ export function seriesData(data) {
         usage:
 
         const getSeriesData = seriesData(tableObject);
-        let series = getSeriesData[0]; // can then be pushed into options array
+        let series = getSeriesData; // can then be pushed into options array
 
         Outputs something like...
 
@@ -92,6 +92,7 @@ export function seriesData(data) {
                 seriesData.push(unitdata);
             }
         }
+
         return seriesData;
     }
 
