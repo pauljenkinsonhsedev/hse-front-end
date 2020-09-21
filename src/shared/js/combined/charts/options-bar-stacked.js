@@ -13,29 +13,22 @@ export class ChartOptionsBarStacked extends ChartOptions {
         super(container);
         this.collection;
 
-        let chart = {
+        const chart = {
             type: 'bar'
         };
-        let xAxis = {
-            categories: this.categories
-        };
-        let yAxis = {
-            min: 0,
-            title: {
-                text: this.title
-            }
-        };
-        let legend = {
+
+        const legend = {
             reversed: true
         };
-        let plotOptions = {
+
+        const plotOptions = {
             series: {
                 stacking: 'normal'
             }
         };
 
         const collection = this.collection;
-        this.collection = {...collection, chart, xAxis, yAxis, legend, plotOptions};
+        this.collection = {...collection, chart, legend, plotOptions};
         return this.collection;
     }
 }
