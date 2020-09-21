@@ -19,7 +19,6 @@ export class ChartOptionsLine extends ChartOptions {
         const getSeriesData = seriesData(this.dataTable);
         const getPlotBand = plotBand(this.container, colours);
 
-        console.log(`getPlotBand ${JSON.stringify(getPlotBand, null, 2)}`);
         const series = getSeriesData;
 
         const chart = {
