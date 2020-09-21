@@ -1,7 +1,7 @@
 import { ChartOptions } from './dependencies';
-import { seriesData } from './series-data.js';
 import { chartCategories } from './chart-categories';
 import { displaySuffix } from './data-suffix.js';
+import { dataLabel } from './data-label.js';
 
 /*
     Class @ChartOptionsPie
@@ -20,9 +20,7 @@ export class ChartOptionsPie extends ChartOptions {
 
         const dataLabelsSuffix = displaySuffix(this.units);
         const getCategories = chartCategories(container);
-        const getSeriesData = seriesData(this.dataTable);
-
-        let series = getSeriesData;
+        const getDataLabel = dataLabel(this.units);
 
         let plotOptions = {
             pie: {
@@ -30,7 +28,7 @@ export class ChartOptionsPie extends ChartOptions {
                 cursor: 'pointer',
                 dataLabels: {
                     enabled: true,
-                    format: dataLabelsSuffix
+                    format: getDataLabel
                 }
             }
         };
@@ -47,12 +45,13 @@ export class ChartOptionsPie extends ChartOptions {
 
         let accessibility = {
             point: {
-                valueSuffix: '%'
+                valueSuffix: dataLabelsSuffix
             }
         };
 
         let tooltip = {
-            pointFormat: dataLabelsSuffix
+            pointFormat: getDataLabel,
+            valueSuffix: ` ${dataLabelsSuffix}`
         };
 
         const collection = this.collection;
