@@ -47,6 +47,44 @@
                     </div>
 
                     <div class="form-group">
+                        <h3 class="label">Ranges</h3>
+                        <p class="hint">Does this chart have range values?</p>
+                        <div class="radios radios--inline">
+                            <div class="radios__item">
+                                <input class="radios__input form-field-display" id="chartRangeYes" name="chartRangeBoolean" type="radio" value="Yes" data-target="range-inputs">
+                                <label class="label radios__label" for="chartRangeYes">
+                                Yes
+                                </label>
+                            </div>
+                            <div class="radios__item">
+                                <input class="radios__input form-field-display" id="chartRangeNo" name="chartRangeBoolean" type="radio" value="No" data-target="range-inputs" checked="checked">
+                                <label class="label radios__label" for="chartRangeNo">
+                                No
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <h3 class="label">Intervals</h3>
+                        <p class="hint">Does this chart have interval values?</p>
+                        <div class="radios radios--inline">
+                            <div class="radios__item">
+                                <input class="radios__input form-field-display" id="chartIntervalYes" name="chartIntervalBoolean" type="radio" data-target="interval-inputs" value="Yes">
+                                <label class="label radios__label" for="chartIntervalYes">
+                                Yes
+                                </label>
+                            </div>
+                            <div class="radios__item">
+                                <input class="radios__input form-field-display" id="chartIntervalNo" name="chartIntervalBoolean" type="radio" data-target="interval-inputs" value="No" checked>
+                                <label class="label radios__label" for="chartIntervalNo">
+                                No
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
                         <label class="label" for="chartTitle">Chart title</label>
                         <p class="hint">25 characters maximum</p>
                         <input class="input input-watch input-full chartTitle" id="chartTitle" name="chartTitle" type="text">
@@ -64,7 +102,25 @@
                         <textarea class="input input-watch input-full chartDescription" id="chartDescription" name="chartDescription"></textarea>
                     </div>
 
-                    <div class="form-group" id="formRanges">
+                    <div class="form-group form-group-hide interval-inputs">
+                        <div class="form-group">
+                            <label class="label" for="rangeAxis">Interval (low)</label>
+                            <p class="hint">Refer to table headings</p>
+                            <div class="select-styled">
+                                <select class="select input-watch input-full intervalSelect" id="intervalLow" name="intervalLow"></select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="label" for="rangeAxis">Interval (high)</label>
+                            <p class="hint">Refer to table headings</p>
+                            <div class="select-styled">
+                                <select class="select input-watch input-full intervalSelect" id="intervalHigh" name="intervalHigh"></select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group form-group-hide range-inputs" id="formRanges">
                         <div class="form-group">
                             <label class="label" for="rangeAxis">Range axis</label>
                             <p class="hint">Refer to table headings</p>

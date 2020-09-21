@@ -14,14 +14,9 @@
 */
 
 import { seriesData } from './series-data.js';
-import {
-    ChartOptionsDefault,
-    ChartOptionsLine,
-    ChartOptionsArearange,
-    ChartOptionsPie,
-    ChartOptionsDonut,
-    ChartOptionsBarStacked
-} from './dependencies';
+import { chartCategories } from './chart-categories';
+import { displaySuffix } from './data-suffix.js';
+import { dataLabel } from './data-label.js';
 
 export class ChartOptions {
     constructor(container) {
@@ -38,32 +33,20 @@ export class ChartOptions {
         this.xAxisText = container.dataset.xaxisText;
         this.units = container.dataset.chartUnits;
         this.colWidth = 75;
-        this.dataLabelsSuffix = this.displaySuffix(this.units);
-        this.categories = this.chartCategories(this.container);
-        this.defaults = new Array;
         this.collection = new Array;
-
-        /*
-            Plot events boolean
-            - diables click events if only one set of data
-        */
-        this.plotEvents = false;
-        for (let row of this.dataTable.rows) {
-            const cells = row.querySelectorAll('td');
-            if (cells.length > 2) {
-                this.plotEvents = true;
-            }
-        }
 
         // get series information
         const getSeriesData = seriesData(this.container);
+        const categoryData = chartCategories(this.container);
+        const getDataLabel = dataLabel(this.units);
+        const dataLabelsSuffix = displaySuffix(this.units);
 
-        this.defaults = {
+
+        this.collection = {
             chart: {
                 type: this.type,
                 renderTo: this.chartRender
             },
-            series: getSeriesData,
             title: {
                 text: this.title,
                 style:{
@@ -82,36 +65,28 @@ export class ChartOptions {
                     fontWeight: 'regular'
                 }
             },
-            xAxis: [{
-                categories: this.categories,
+            xAxis: {
+                categories: categoryData,
                 title: {
-                    text: this.xAxisText
-                },
-                accessibility: {
-                    description: this.title
+                    text: this.xAxisText,
+                    align: 'high'
                 },
                 labels: {
-                    format: this.dataLabelsSuffix,
-                    // formatter: function () {
-
-                    //     const date = moment(this.value).format('DD MMMM');
-                    //     console.log(`formatDate ${date}`);
-                    //     return date;
-                    // }
-                }
-            }],
-            plotOptions: {
-                series: {
-                    showInLegend: true,
-                    events: {
-                        legendItemClick: () => {
-                            return this.plotEvents;
-                        }
-                    }
+                    overflow: 'justify',
                 },
-                column: {
-                    maxPointWidth: this.colWidth
-                }
+                accessibility: {
+                    description: this.description
+                },
+            },
+            yAxis: {
+                title: {
+                    text: this.yAxisText
+                },
+            },
+            tooltip: {
+                shared: true,
+                format: getDataLabel,
+                valueSuffix: `${dataLabelsSuffix}`
             },
             legend: {
                 enabled: true,
@@ -132,78 +107,8 @@ export class ChartOptions {
             exporting: {
                 enabled: false
             },
-            colors: this.brandColours
+            colors: this.brandColours,
+            series: getSeriesData
         };
-
-        this.init();
-    }
-
-    init() {
-        switch(this.type) {
-            case 'pie':
-                this.collection = new ChartOptionsPie(this.container);
-            break;
-
-            case 'donut':
-                this.collection = new ChartOptionsDonut(this.container);
-            break;
-
-            case 'line':
-                this.collection = new ChartOptionsLine(this.container);
-            break;
-
-            case 'barstacked':
-                this.collection = new ChartOptionsBarStacked(this.container);
-            break;
-
-            case 'arearange':
-                this.collection = new ChartOptionsArearange(this.container);
-            break;
-
-            default:
-                this.collection = new ChartOptionsDefault(this.container);
-            break;
-        }
-
-        return this.collection;
-    }
-
-    chartCategories(container){
-         // Categories data collection
-        const chartCategories = container.querySelectorAll('.category');
-        const categoryArray = [...chartCategories];
-        let categories = [];
-        // Loop through categories
-        categoryArray.forEach((category) => {
-            // Set categories
-            categories.push(category.textContent);
-        });
-
-        return categories;
-    }
-
-    displaySuffix(units) {
-        let result = new String;
-        switch (units) {
-        case 'percentage':
-            result = `<b>{point.name}</b>: {point.percentage:.1f}%`
-            break;
-        case 'unit':
-            result = `<b>{point.name}</b>: {point.y}`
-            break;
-        case 'celsius':
-            result = `°C`
-            break;
-        case 'fahrenheit':
-            result = `°F`
-            break;
-        case 'date':
-            // this.labelFormatter(this.units);
-            break;
-        default:
-            result = `<b>{point.name}</b>: {point.y}`
-            break;
-        }
-        return result;
     }
 }
