@@ -16,6 +16,7 @@
 import { seriesData } from './series-data.js';
 import { chartCategories } from './chart-categories';
 import { displaySuffix } from './data-suffix.js';
+import { dataLabel } from './data-label.js';
 
 export class ChartOptions {
     constructor(container) {
@@ -34,14 +35,10 @@ export class ChartOptions {
         this.colWidth = 75;
         this.collection = new Array;
 
-        console.log(`y ${this.yAxisText}`);
-        console.log(`x ${this.xAxisText}`);
-
         // get series information
         const getSeriesData = seriesData(this.container);
-
-        const categories = new Array;
         const categoryData = chartCategories(this.container);
+        const getDataLabel = dataLabel(this.units);
         const dataLabelsSuffix = displaySuffix(this.units);
 
 
@@ -88,15 +85,8 @@ export class ChartOptions {
             },
             tooltip: {
                 shared: true,
-                formatter: function () {
-                    return [].concat(
-                    this.points ?
-                    this.points.map(function (point) {
-                        let key = point.key;
-                        return `<b>${key}</b><br />${point.series.name}: ${point.y}${dataLabelsSuffix} `;
-                    }) : []
-            );
-                }
+                format: getDataLabel,
+                valueSuffix: `${dataLabelsSuffix}`
             },
             legend: {
                 enabled: true,
