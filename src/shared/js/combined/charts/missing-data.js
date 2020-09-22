@@ -29,9 +29,9 @@ export function missingData(data) {
             const previous = units[i - 1].y;
             const next = units[i + 1].y;
             unit = null;
-            console.log(previous);
-            console.log(next);
-            console.log(units[i]);
+            // console.log(previous);
+            // console.log(next);
+            // console.log(units[i]);
         }
     }
 }

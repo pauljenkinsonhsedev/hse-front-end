@@ -22,7 +22,7 @@ export class ChartOptionsLine extends ChartOptions {
         const series = getSeriesData;
         const getMissingData = missingData(getSeriesData);
 
-        console.log(getMissingData);
+        // console.log(getMissingData);
 
         const chart = {
             marginTop: 90

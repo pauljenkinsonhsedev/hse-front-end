@@ -25,7 +25,6 @@ export function mediaQuery() {
   }
 
   function mediumDeviceChange(e) {
-    console.log(e);
     if (e.matches) {
       result = 'medium';
     }
