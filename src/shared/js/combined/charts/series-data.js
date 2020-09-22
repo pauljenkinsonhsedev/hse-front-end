@@ -34,6 +34,12 @@ export function seriesData(data) {
             return null;
         }
 
+        const containsNull = [...document.querySelectorAll('.unit')].filter(element => element.innerText === '0');
+
+        if (containsNull === true) {
+            console.log(`containsNull ${containsNull}`);
+        }
+
         for (let u = 0; u < unitLength; u++) {
             const unitArray = new Array;
             const errorArray = new Array;
@@ -59,7 +65,6 @@ export function seriesData(data) {
                 for (let k = 0; k < unitLength; k++) {
                     const low = tbody.rows[i].querySelectorAll('.error-low');
                     const high = tbody.rows[i].querySelectorAll('.error-high');
-
 
                     if (low.length > 0 && k === u) {
                         const errorLowText = parseFloat(low[k].innerText);
