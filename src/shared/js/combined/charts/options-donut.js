@@ -1,5 +1,6 @@
 import { ChartOptions } from './dependencies';
-import { seriesDataSingular } from './series-data-singular.js';
+import { seriesData } from './series-data.js';
+import { dataLabel } from './data-label.js';
 
 /*
     Class @ChartOptionsChartOptionsDonut
@@ -10,13 +11,12 @@ import { seriesDataSingular } from './series-data-singular.js';
 */
 
 export class ChartOptionsDonut extends ChartOptions {
-    constructor(container, collection){
-        super(container, collection);
-        this.defaults;
-        this.init();
-    }
+    constructor(container){
+        super(container);
 
-    init() {
+        this.units = container.dataset.chartUnits;
+        const getDataLabel = dataLabel(this.units);
+
         let chart = {
             type: 'pie'
         };
@@ -31,7 +31,7 @@ export class ChartOptionsDonut extends ChartOptions {
             }
         }
 
-        const getSeriesData = seriesDataSingular(this.dataTable);
+        const getSeriesData = seriesData(this.dataTable);
         let series = getSeriesData;
 
         const titleText = this.title.replace(/ /g, '<br />');
@@ -63,7 +63,7 @@ export class ChartOptionsDonut extends ChartOptions {
                 innerSize: '50%',
                 dataLabels: {
                     enabled: true,
-                    format: this.dataLabelsSuffix,
+                    format: getDataLabel,
                     connectorColor: 'silver'
                 }
             },
@@ -78,8 +78,8 @@ export class ChartOptionsDonut extends ChartOptions {
             }
         };
 
-        const defaults = this.defaults;
-        this.collection = {...defaults, chart, series, title, pieOptions, plotOptions};
+        const collection = this.collection;
+        this.collection = {...collection, chart, title, pieOptions, plotOptions};
         return this.collection;
     }
 }

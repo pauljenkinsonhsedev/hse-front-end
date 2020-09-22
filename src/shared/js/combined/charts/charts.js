@@ -1,4 +1,13 @@
-import { ChartOptions } from './dependencies';
+import {
+    ChartOptions,
+    ChartOptionsDefault,
+    ChartOptionsLine,
+    ChartOptionsArearange,
+    ChartOptionsPie,
+    ChartOptionsDonut,
+    ChartOptionsBarStacked
+} from './dependencies';
+
 import load from '../utils/asset-loader';
 import {loading} from '../utils/loader';
 
@@ -11,15 +20,24 @@ class ChartsDefault {
                 this.path = window.location.protocol + '//' + window.location.host + '/';
             break;
             case 'staging':
-                this.path = window.location.protocol + '//' + window.location.host + '/' + window.location.pathname.split('/')[0];
+                this.path = window.location.protocol + '//' + window.location.host + '/testbed/';
             break;
             case 'production':
-                this.path = window.location.protocol + '//' + window.location.host + '/' + window.location.pathname.split('/')[0];
+                this.path = window.location.protocol + '//' + window.location.host;
             break;
             default:
-                this.path = window.location.protocol + '//' + window.location.host + '/' + window.location.pathname.split('/')[0];
+                this.path = window.location.protocol + '//' + window.location.host;
             break;
         }
+
+        // conditional for shadow directory
+        if (window.location.href.match(/(?:\b|_)(?:livelive)(?:\b|_)/i)) {
+            this.path = window.location.protocol + '//' + window.location.host + '/website/livelive/secureroot';
+        }
+
+        sftp://b3t4-dev@193.39.254.161:2020/var/www/vhosts/hse.gov.uk/beta/httpdocs/testbed/assets/v5-js/vendor/highcharts/highcharts.js
+        console.log('pathname');
+        console.log(`${this.path}`);
 
         this.init();
     }
@@ -45,8 +63,33 @@ class ChartsDefault {
 
             // initialise charts
             chartArray.forEach((container) => {
-                let defaultOptions = new ChartOptions(container);
-                this.buildFn(container, defaultOptions.collection.collection);
+                const type = container.dataset.chartType;
+                switch(type) {
+                    case 'pie':
+                        this.collection = new ChartOptionsPie(container);
+                    break;
+
+                    case 'donut':
+                        this.collection = new ChartOptionsDonut(container);
+                    break;
+
+                    case 'line':
+                        this.collection = new ChartOptionsLine(container);
+                    break;
+
+                    case 'barstacked':
+                        this.collection = new ChartOptionsBarStacked(container);
+                    break;
+
+                    case 'arearange':
+                        this.collection = new ChartOptionsArearange(container);
+                    break;
+
+                    default:
+                        this.collection = new ChartOptionsDefault(container);
+                    break;
+                }
+                this.buildFn(container, this.collection);
             });
         })
         .catch((err) => {

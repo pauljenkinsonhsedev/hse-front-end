@@ -18,6 +18,7 @@ const highchartsAssets = [
   "./node_modules/highcharts/modules/accessibility.src.js",
   "./node_modules/highcharts/modules/accessibility.js.map",
   "./node_modules/highcharts/highcharts-more.js",
+  "./node_modules/highcharts/highcharts-more.src.js",
   "./node_modules/highcharts/highcharts-more.js.map"
 ];
 

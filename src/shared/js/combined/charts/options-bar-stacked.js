@@ -9,36 +9,26 @@ import { ChartOptions } from './dependencies';
 */
 
 export class ChartOptionsBarStacked extends ChartOptions {
-    constructor(container, collection){
-        super(container, collection);
-        this.defaults;
-        this.init();
-    }
+    constructor(container){
+        super(container);
+        this.collection;
 
-    init() {
-        let chart = {
+        const chart = {
             type: 'bar'
         };
-        let xAxis = {
-            categories: this.categories
-        };
-        let yAxis = {
-            min: 0,
-            title: {
-                text: this.title
-            }
-        };
-        let legend = {
+
+        const legend = {
             reversed: true
         };
-        let plotOptions = {
+
+        const plotOptions = {
             series: {
                 stacking: 'normal'
             }
         };
 
-        const defaults = this.defaults;
-        this.collection = {...defaults, chart, xAxis, yAxis, legend, plotOptions};
+        const collection = this.collection;
+        this.collection = {...collection, chart, legend, plotOptions};
         return this.collection;
     }
 }
