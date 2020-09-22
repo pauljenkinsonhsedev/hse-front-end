@@ -25,7 +25,7 @@ export function mainMenu(){
   menuListItem.innerHTML = '<a href="https://www.hse.gov.uk/search/search-results.htm">Search</a>';
 
   // Menu properties
-  if (mediaquery === 'medium' || mediaquery === 'large') {
+  if (mediaquery === 'large') {
     menu.setAttribute('aria-hidden', 'false');
   } else {
     menu.setAttribute('aria-hidden', 'true');
