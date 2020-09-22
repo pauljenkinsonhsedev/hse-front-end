@@ -1,9 +1,10 @@
 import CsvConvert from './combined/csv-convertor/csv-convertor';
 import ChartsDefault from './combined/charts/charts';
-import mainMenu from './combined/main-menu';
+import { mainMenu } from './combined/main-menu';
 
 // Window load
 window.addEventListener('DOMContentLoaded',() => {
+
   // small device menu
   mainMenu();
 
