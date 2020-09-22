@@ -1,5 +1,8 @@
-function mainMenu(document){
-  const header = document.querySelector('.js-header');
+import { mediaQuery } from './utils/media-query.js';
+
+export function mainMenu(){
+  const mediaquery = mediaQuery();
+  const header = document.querySelector('.headerTop');
   const menu = document.querySelector('.js-menu');
   const menuLocation = document.querySelector('#globalSearch');
   const searchLinkLocation = document.querySelector('#main-menu ul');
@@ -22,9 +25,12 @@ function mainMenu(document){
   menuListItem.innerHTML = '<a href="https://www.hse.gov.uk/search/search-results.htm">Search</a>';
 
   // Menu properties
-  menu.setAttribute('aria-hidden', 'true');
+  if (mediaquery === 'medium' || mediaquery === 'large') {
+    menu.setAttribute('aria-hidden', 'false');
+  } else {
+    menu.setAttribute('aria-hidden', 'true');
+  }
   menu.setAttribute('aria-labelledby', 'main-menu');
-
 
   // Add button to page
   header.insertBefore(menuButton, menuLocation);
@@ -60,5 +66,3 @@ function mainMenu(document){
   }, false);
 
 };
-
-export default mainMenu;
