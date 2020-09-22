@@ -12,11 +12,11 @@ window.addEventListener('DOMContentLoaded',() => {
   htmlDoc.classList.add('js-enabled');
 
   // CSV Convertor
-  const csvForm = document.getElementById('csvconvertor');
-  if (document.body.contains(csvForm)) {
-    const convert = new CsvConvert(csvForm);
-    convert.init(csvForm);
-  }
+  // const csvForm = document.getElementById('csvconvertor');
+  // if (document.body.contains(csvForm)) {
+  //   const convert = new CsvConvert(csvForm);
+  //   convert.init(csvForm);
+  // }
 
   // HighCharts JS
   const chartSelector = document.querySelector('.chart');
