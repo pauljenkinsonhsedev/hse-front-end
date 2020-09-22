@@ -1,14 +1,41 @@
-const mediaQuery = (function() {
-const smallDevice = window.matchMedia("(min-width: 576px)");
+export function mediaQuery() {
+  let result;
 
-// smallDevice.addListener(handleDeviceChange);
+  const small = '375';
+  const medium = '768';
+  const large = '1200';
 
-function handleDeviceChange(e) {
-  if (e.matches) {
-    console.log("Bigger Than Mobile");
+  const smallDeviceQuery = window.matchMedia(`(min-width: ${small}px)`);
+  const mediumDeviceQuery = window.matchMedia(`(min-width: ${medium}px)`);
+  const largeDeviceQuery = window.matchMedia(`(min-width: ${large}px)`);
+
+  smallDeviceQuery.addListener(smallDeviceChange);
+  mediumDeviceQuery.addListener(mediumDeviceChange);
+  largeDeviceQuery.addListener(largeDeviceChange);
+
+  // initiate
+  smallDeviceChange(smallDeviceQuery);
+  mediumDeviceChange(mediumDeviceQuery);
+  largeDeviceChange(largeDeviceQuery);
+
+  function smallDeviceChange(e) {
+    if (e.matches) {
+      result = 'small';
+    }
   }
-};
 
-});
+  function mediumDeviceChange(e) {
+    console.log(e);
+    if (e.matches) {
+      result = 'medium';
+    }
+  }
 
-export default mediaQuery;
+  function largeDeviceChange(e) {
+    if (e.matches) {
+      result = 'large';
+    }
+  }
+
+  return result;
+}
