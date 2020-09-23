@@ -55,19 +55,21 @@ padding-top: 10px;
 text-decoration: underline;
 }
 
-#pagination .next-page {
+#pagination .next-page, #pagination .previous-page { 
+@media only screen and (min-width : $desktop) {
 margin-left: -10px;
+}
 }
 
 #pagination div:nth-child(2) {
-margin-left: -10px;
 @media only screen and (min-width : $desktop) {
 margin-left: 10px;
 }
 }
 
-#pagination .previous-page {
-margin-left: -10px;
+.next-page:hover .pagination-text, .previous-page:hover .pagination-text {
+text-decoration: none !important;
+color: $hseblack !important;
 }
 
 #pagination .next-page a, #pagination .previous-page a {
@@ -75,6 +77,10 @@ width: 100%;
 padding: 10px;
 box-sizing: border-box;
 float: left;
+}
+
+#pagination ul, #pagination ul li {
+width: 100%;
 }
 
 
