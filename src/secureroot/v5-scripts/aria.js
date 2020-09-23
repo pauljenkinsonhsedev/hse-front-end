@@ -1,9 +1,6 @@
 // V5 Aria roles
 
 $(document).ready(function () {
-  $("body noscript").attr({
-    "title" : "GTM-PJPWMNL"
-  });
   $('#breadCrumb').attr('aria-label','Previous pages:');
   $('#cookieContainer').attr('aria-label','Cookie banner');
   $('#printBanner').attr('aria-label','Print banner');
