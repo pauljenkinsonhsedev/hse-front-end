@@ -1,6 +1,5 @@
 import { seriesData } from './series-data.js';
 import { plotBand } from './plot-band';
-import { missingData } from './missing-data.js';
 import { chartCategories } from './chart-categories';
 import { ChartOptions } from './dependencies';
 /*
@@ -20,9 +19,6 @@ export class ChartOptionsLine extends ChartOptions {
         const getPlotBand = plotBand(this.container, colours);
 
         const series = getSeriesData;
-        const getMissingData = missingData(getSeriesData);
-
-        console.log(getMissingData);
 
         const chart = {
             marginTop: 90
