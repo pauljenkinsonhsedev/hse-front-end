@@ -6,7 +6,10 @@ import { mainMenu } from './combined/main-menu';
 window.addEventListener('DOMContentLoaded',() => {
 
   // small device menu
-  mainMenu();
+  const menu = document.querySelector('.js-menu');
+  if (menu) {
+    mainMenu();
+  }
 
   const htmlDoc = document.getElementsByTagName('html')[0];
   htmlDoc.classList.add('js-enabled');
