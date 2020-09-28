@@ -76,8 +76,12 @@ h2 a:focus {
 /* List styles */
 
 li,
-ol ul li {
+ol ul li, p.linkBullet {
 	background:url(../../assets/v4-images/website/sprites/bullets.png) 0 0.7em no-repeat;
+}
+
+.linkBullet {
+padding-left: 15px;
 }
 
 ul.listtick li,
