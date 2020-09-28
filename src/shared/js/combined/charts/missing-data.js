@@ -33,32 +33,28 @@ export function missingData(data) {
         return arr
     }
 
+    function groupBy(collection, property) {
+        var i = 0, val, index,
+            values = [], result = [];
+        for (; i < collection.length; i++) {
+            val = collection[i][property];
+            index = values.indexOf(val);
+            if (index > -1)
+                result[index].push(collection[i]);
+            else {
+                values.push(val);
+                result.push([collection[i]]);
+            }
+        }
+        return result;
+    }
+
     for (var items in data) {
         const withData = new Array;
         const withoutData = new Array;
         const zero = new Array;
         const units = data[items].data;
         const length = data[items].data.length;
-
-
-        function groupBy(collection, property) {
-            var i = 0, val, index,
-                values = [], result = [];
-            for (; i < collection.length; i++) {
-                val = collection[i][property];
-                index = values.indexOf(val);
-                if (index > -1)
-                    result[index].push(collection[i]);
-                else {
-                    values.push(val);
-                    result.push([collection[i]]);
-                }
-            }
-            return result;
-        }
-
-        var obj = groupBy(units, "y");
-        console.log(obj);
 
         // find index of value 0
         for (var key in units) {
@@ -69,17 +65,18 @@ export function missingData(data) {
             const index = parseInt(key);
             const value = units[key].y;
             const next = parseInt(key)+1;
+            let rangeValues;
 
             if (value === 0) {
                 withData.push(null);
             } else {
                 withData.push(value);
             }
-                // console.log(`index ${key}`);
+
+            console.log(`value ${value}`);
 
             if (value === 0) {
                 // set previous and next
-
 
                 if(key > 0) {
                     previousKey = index-1;
@@ -93,18 +90,20 @@ export function missingData(data) {
                 } else {
                     nextValue = null;
                 }
-                const rangeValues = range(previousValue, nextValue, removeItem.length);
-                console.log(`zero ${JSON.stringify(zero)}`);
+
+                if (units[previousKey].y >= 0 && units[nextKey].y >= 0) {
+                    console.log(`previousValue ${previousValue}`);
+                    console.log(`nextValue ${nextValue}`);
+                }
+                rangeValues = range(previousValue, nextValue, removeItem.length);
+
                 // console.log(`previousValue ${JSON.stringify(previousValue)}`);
                 // console.log(`nextValue ${JSON.stringify(nextValue)}`);
                 // console.log(`rangeValues ${JSON.stringify(rangeValues)}`);
 
                 // set items to remove
                 removeItem.push(previousKey, nextKey);
-
-
-
-                withoutData.push(previousValue, nextValue);
+                withoutData.push(previousValue, rangeValues, nextValue);
 
             } else {
                 withoutData.push(null);
@@ -115,6 +114,10 @@ export function missingData(data) {
         for (let i of removeItem) {
             withoutData.splice(i, 1);
         }
+
+        // console.log(JSON.stringify(withoutData, null, 2));
+        // var obj = groupBy(withoutData);
+        // console.log(obj);
 
         // console.log(`withoutData: ${JSON.stringify(withoutData, null, 2)}`)
         const seriesDataWithMissing =
@@ -137,4 +140,4 @@ export function missingData(data) {
 
         return seriesDataWithMissing;
     }
-    }
+}
