@@ -75,14 +75,26 @@ h2 a:focus {
 
 /* List styles */
 
-li,
-ol ul li, p.linkBullet {
-	background:url(../../assets/v4-images/website/sprites/bullets.png) 0 0.7em no-repeat;
+#contentContainer li {
+padding-left: 0;
 }
 
-.linkBullet {
-padding-left: 15px;
-}
+#contentContainer li::before,
+#contentContainer ol ul li::before, #contentContainer p.linkBullet::before {
+	float: left;
+	content: "";
+	position: relative;
+	background-image: url('../../assets/v5-images/icons/svg/solid/square-full-solid-red.svg');
+	background-repeat: no-repeat;
+	height: 4px;
+	width: 4px;
+	top: 8px;
+	margin-right: 10px;}
+
+	#contentContainer .backgroundRed li::before,
+	#contentContainer .backgroundRed ol ul li::before, #contentContainer .backgroundRed p.linkBullet::before {
+		background-image: url('../../assets/v5-images/icons/svg/solid/square-full-solid-white.svg') !important;
+	}
 
 ul.listtick li,
 ul.tick li {
