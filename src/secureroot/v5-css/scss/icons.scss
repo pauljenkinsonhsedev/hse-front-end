@@ -202,6 +202,19 @@ top: 5px;
 margin-right: 3px;
 }
 
+#contentContainer .backgroundRed .linkList li::before, #contentContainer .backgroundRed p.linkList a::before, #contentContainer .backgroundRed .more a::before,
+.backgroundRed .moreAboveSplit a::before  {
+content: " ";
+float: left;
+position: relative;
+background-image: url('../../assets/v5-images/icons/svg/solid/caret-right-white.svg');
+background-repeat: no-repeat;
+height: 11px;
+width: 11px;
+top: 5px;
+margin-right: 3px;
+}
+
 #contentContainer p.linkList a {
 text-decoration: underline;
 }
