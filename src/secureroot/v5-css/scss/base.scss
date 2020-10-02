@@ -76,13 +76,12 @@ button:hover {
 text-decoration: none;
 }
 
-#contentContainer .linkList li {
+#contentContainer ul.linkList li {
 background: none;
-padding-left: 0;
 }
 
-#contentContainer .linkList {
-margin: 0 0 1em 0;
+#contentContainer ul.linkList, .aside ul, ul.social  {
+margin: 0 0 10px 0px !important;
 }
 
 #contentContainer .backgroundRed .linkList li a::before {
@@ -118,31 +117,8 @@ margin: 10px 0;
 color: white;
 }
 
-#contentContainer .columnFull ul.listCaret {
-margin-bottom: 0 !important;
-}
-
-#contentContainer .columnFull  ul.listCaret li {
-background-image: none;
-position: relative;
-}
-
-
 #contentContainer .backgroundRed p, #contentContainer .backgroundRed ul li  {
 color: white !important;
-}
-
-
-
-
-
-#contentContainer .columnFull ul.listLinks {
-margin: 0 0 15px 0px !important;
-float: left;
-}
-
-#contentContainer .columnFull ul.articleList {
-margin-bottom: 0 !important;	
 }
 
 #contentContainer ol.multistep li {
@@ -232,10 +208,6 @@ margin-bottom: 10px;
 clear: both;
 float: left;
 }
-}
-
-#contentContainer .columnFull ul {
-margin: 0 0 15px 0px !important;
 }
 
 .columnFull .guidanceList li {
