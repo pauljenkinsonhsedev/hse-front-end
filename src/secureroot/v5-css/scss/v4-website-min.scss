@@ -138,7 +138,7 @@ position: relative;
 	left: 0;
 }
 
-#contentContainer p.linkList::before {
+#contentContainer p.linkList::before  {
 	content: "";
 	position: absolute;
 	background-image: url('../../assets/v5-images/icons/svg/solid/caret-right-red.svg');
@@ -147,6 +147,19 @@ position: relative;
 	width: 10px;
 	top: 6px;
 	left: 0;
+}
+
+#contentContainer p.more::before {
+	content: "";
+	float: left;
+	margin-right: 3px;
+	position: relative;
+	background-image: url('../../assets/v5-images/icons/svg/solid/caret-right-red.svg');
+	background-repeat: no-repeat;
+	height: 10px;
+	width: 10px;
+	top: 6px;
+	left: 0;	
 }
 
 #contentContainer .backgroundRed p.linkList::before {
