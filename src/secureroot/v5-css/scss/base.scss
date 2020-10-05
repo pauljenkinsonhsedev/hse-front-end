@@ -84,6 +84,10 @@ background: none;
 margin: 0 0 10px 0px !important;
 }
 
+#contentContainer .mostPopular ul.linkList {
+margin-bottom: 0 !important;
+}
+
 #contentContainer .backgroundRed .linkList li a::before {
 background-image: none;
 padding-right: 0;
