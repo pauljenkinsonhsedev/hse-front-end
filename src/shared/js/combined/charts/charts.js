@@ -92,12 +92,13 @@ class ChartsDefault {
                         this.collection = new ChartOptionsDefault(container);
                     break;
                 }
+                // console.log(`collection ${JSON.stringify(this.collection, null, 2)}`);
                 this.buildFn(container, this.collection);
             });
-        })
-        .catch((err) => {
-            console.error(`There was an error initialising charts: ${err}`);
         });
+        // .catch((err) => {
+        //     console.error(`There was an error initialising charts: ${err}`);
+        // });
     }
 
     buildFn(container, params){
@@ -105,7 +106,7 @@ class ChartsDefault {
 
         if (process.env.NODE_ENV === 'development') {
             const msg = this.chart ? 'successful' : 'unsuccessful';
-            console.log(`Charts loaded ${msg}`);
+            // console.log(`Charts loaded ${msg}`);
         }
     }
 }

@@ -1,37 +1,142 @@
-//     series: [{
-//       data: [4, 5, 1, null, 3, 4, 2, null, 5, 6],
-//       connectNulls: false,
-//       zIndex: 2
-//     }, {
-//       /* differently formatted series for "null" values in first series
-//       prevent from showing up in legend and prevent series from showing in tooltip on mouse over */
-//       data: [null, null, 1, 2, 3, null, 2, 3.5, 5, null],
-//       connectNulls: false,
-//       color: 'red',
-//       marker: {
-//         enabled: false
-//       },
-//       dashStyle: 'dash',
-//       zIndex: 1,
-//       showInLegend: false,
-//       enableMouseTracking: false
-//     }]
-
+/*
+    series: [{
+       data: [1, 2, 3, 4, 5, 6, 7, null, 9],
+       connectNulls: false,
+       zIndex: 2
+     }, {
+       data: [null, null, null, null, null, null, 7, 8, 9],
+       connectNulls: false,
+       color: 'red',
+       marker: {
+         enabled: false
+       },
+       dashStyle: 'dash',
+       zIndex: 1,
+       showInLegend: false,
+       enableMouseTracking: false
+     }]
+*/
 
 export function missingData(data) {
-    const units = data[0].data;
-    const length = data[0].data.length;
+    // collect all data
+    for (var items in data) {
+        const withData = [];
+        const withoutDataAll = [];
+        const PrevNext = [];
+        const units = data[items].data;
+        const heading = data[items].name;
 
-    for (let i = 0; i < length; i++) {
-        const unit = units[i].y;
+        // find index of value 0
+        for (var key in units) {
+            const value = units[key].y;
 
-        if (unit === 0) {
-            const previous = units[i - 1].y;
-            const next = units[i + 1].y;
-            unit = null;
-            // console.log(previous);
-            // console.log(next);
-            // console.log(units[i]);
+            if (value === 0) {
+                withData.push(null);
+            } else {
+                withData.push(value);
+            }
         }
+
+        // console.log('------------------------------------');
+
+        // set the previous and next values
+        let emptyLength = 0;
+        withData.map(function(a, i) {
+            const prev = withData[i - 1];
+            const next = withData[i + 1];
+            const current = withData[i];
+            emptyLength += (current === null);
+
+            if (current === null) {
+                if (prev != null) {
+                    PrevNext.push(i);
+                    PrevNext.push(prev);
+                }
+                if (next != null) {
+                    PrevNext.push(next);
+                    PrevNext.push(emptyLength);
+                    emptyLength = 0;
+                }
+            }
+        }, []);
+
+        function* chunks(arr, n) {
+            for (let i = 0; i < arr.length; i += n) {
+                const num = parseInt(i + n);
+                yield arr.slice(i, num);
+            }
+        };
+
+        const range = (min, max, numberOfSteps) => {
+            const _numberOfSteps = numberOfSteps - 1
+            const scaleBy = (max - min) / _numberOfSteps
+
+            const arr = []
+            for (let i = 0; i <= _numberOfSteps; i += 1) {
+                arr.push(parseInt(min + scaleBy * i))
+            }
+            return arr;
+        }
+
+        const missingData = () => {
+            const prevNextData = [...chunks(PrevNext, 4)];
+            const missingDataArr = [];
+            for (let i = 0; i < prevNextData.length; i++) {
+                let pos = prevNextData[i][0];
+                let prev = prevNextData[i][1];
+                let next = prevNextData[i][2];
+                let between = prevNextData[i][3] + 2;
+                const ranges = range(prev, next, between);
+                const toReturn = {
+                    "pos": pos-1,
+                    "data": ranges
+                };
+                missingDataArr.push(toReturn);
+            }
+
+            const subtract = Object.keys(missingDataArr).reduce((a, b) => missingDataArr[b].data.length + a, 0);
+            const remainder = withData.length - subtract;
+
+            for (let i = 0; i < remainder; i++) {
+                withoutDataAll.push(null);
+            }
+
+            for (let item of missingDataArr) {
+                const pos = item.pos;
+                const values = item.data;
+
+                values.reverse();
+
+                for (let item of values) {
+                    withoutDataAll.splice(pos, 0, item);
+                }
+            }
+
+            return withoutDataAll;
+        }
+
+        missingData();
+
+        const seriesDataWithMissing =
+            [{
+                name: heading,
+                data: withData,
+                connectNulls: false,
+                zIndex: 2
+            },{
+                name: 'Missing data',
+                data: withoutDataAll,
+                connectNulls: false,
+                color: '#999999',
+                marker: {
+                    'enabled': false
+                },
+                dashStyle: 'ShortDash',
+                zIndex: 1,
+                showInLegend: true,
+                enableMouseTracking: false
+            }];
+
+        return seriesDataWithMissing;
     }
 }

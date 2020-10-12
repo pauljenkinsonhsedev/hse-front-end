@@ -1,3 +1,5 @@
+
+import { missingData } from './missing-data.js';
 export function seriesData(data) {
     /*
         function @seriesData
@@ -21,8 +23,11 @@ export function seriesData(data) {
     */
     const thead = data.querySelector('.table__head');
     const tbody = data.querySelector('.table__body');
-
+    const elems = data.querySelectorAll('.unit');
+    const containsNull = [...elems].filter(element => element.textContent === '0');
+    let checkForNull;
     const dateRegEx = /^\d{4}[./-]\d{2}[./-]\d{2}$/;
+    let flag = false;
 
     function getData() {
         let unitLength = tbody.rows[0].querySelectorAll('.unit').length,
@@ -40,7 +45,7 @@ export function seriesData(data) {
             let heading = thead.rows[0].querySelectorAll('.heading');
 
             if (unitLength === 1) {
-                headingsArray.push(heading[1].innerText);
+                headingsArray.push(heading[0].innerText);
             } else {
                 headingsArray.push(heading[u].innerText);
             }
@@ -56,6 +61,7 @@ export function seriesData(data) {
 
                 for (let j = 0; j < unitLength; j++) {
                     let value = parseFloat(text[j].innerText);
+
                     if (j === u) {
                         unitArray.push({name: categoryTitle, y: value});
                     }
@@ -95,11 +101,25 @@ export function seriesData(data) {
             } else {
                 seriesData.push(unitdata);
             }
+
+            checkForNull = seriesData.reduce(function (result, item) {
+                for (let a of item.data) {
+                    if (a.y === 0) {
+                        flag = true;
+                    }
+                }
+                return flag;
+            }, 0);
+        }
+
+        if (checkForNull === true) {
+            seriesData = missingData(seriesData);
         }
 
         return seriesData;
     }
 
     const seriesDataOutput = getData();
+
     return seriesDataOutput;
 }
