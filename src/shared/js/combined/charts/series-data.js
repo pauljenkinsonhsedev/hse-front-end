@@ -42,8 +42,13 @@ export function seriesData(data) {
         for (let u = 0; u < unitLength; u++) {
             const unitArray = new Array;
             const errorArray = new Array;
-            const heading = thead.rows[0].querySelectorAll('.heading');
-            headingsArray.push(heading[u].innerText);
+            let heading = thead.rows[0].querySelectorAll('.heading');
+
+            if (unitLength === 1) {
+                headingsArray.push(heading[1].innerText);
+            } else {
+                headingsArray.push(heading[u].innerText);
+            }
 
             for (let i = 0; i < rowLength; i++) {
                 const category = tbody.rows[i].querySelectorAll('.category');

@@ -20,7 +20,7 @@ class ChartsDefault {
                 this.path = window.location.protocol + '//' + window.location.host + '/';
             break;
             case 'staging':
-                this.path = window.location.protocol + '//' + window.location.host + '/testbed/';
+                this.path = window.location.protocol + '//' + window.location.host;
             break;
             case 'production':
                 this.path = window.location.protocol + '//' + window.location.host;
@@ -35,9 +35,12 @@ class ChartsDefault {
             this.path = window.location.protocol + '//' + window.location.host + '/website/livelive/secureroot';
         }
 
-        sftp://b3t4-dev@193.39.254.161:2020/var/www/vhosts/hse.gov.uk/beta/httpdocs/testbed/assets/v5-js/vendor/highcharts/highcharts.js
-        console.log('pathname');
-        console.log(`${this.path}`);
+        if (window.location.href.match(/(?:\b|_)(?:testbed)(?:\b|_)/i)) {
+            this.path = window.location.protocol + '//' + window.location.host + '/testbed';
+        }
+
+        // console.log('pathname');
+        // console.log(`${this.path}`);
 
         this.init();
     }

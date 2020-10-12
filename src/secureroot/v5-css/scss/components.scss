@@ -438,9 +438,15 @@ column-count: 2;
 }
 }
 
+ul.columnsList {
+margin: 0 0 10px 0 !important;
+}
+
+
 .columnsList li {
-padding: 0;
+padding: 0 !important;
 background: none;
+background-image: none !important;
 @media only screen and (min-width : $desktop) {
 -webkit-column-break-inside: avoid; /* Chrome, Safari, Opera */
 page-break-inside: avoid; /* Firefox */
