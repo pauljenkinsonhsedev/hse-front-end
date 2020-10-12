@@ -1,5 +1,3 @@
-import {Z_BUF_ERROR} from 'zlib';
-
 /*
     series: [{
        data: [1, 2, 3, 4, 5, 6, 7, null, 9],
@@ -20,121 +18,122 @@ import {Z_BUF_ERROR} from 'zlib';
 */
 
 export function missingData(data) {
-    const removeItem = new Array;
-
-    const range = (min, max, numberOfSteps) => {
-        const _numberOfSteps = numberOfSteps - 1
-        const scaleBy = (max - min) / _numberOfSteps
-
-        const arr = []
-        for (let i = 0; i <= _numberOfSteps; i += 1) {
-            arr.push(min + scaleBy * i)
-        }
-        return arr
-    }
-
-    function groupBy(collection, property) {
-        var i = 0, val, index,
-            values = [], result = [];
-        for (; i < collection.length; i++) {
-            val = collection[i][property];
-            index = values.indexOf(val);
-            if (index > -1)
-                result[index].push(collection[i]);
-            else {
-                values.push(val);
-                result.push([collection[i]]);
-            }
-        }
-        return result;
-    }
-
+    // collect all data
     for (var items in data) {
-        const withData = new Array;
-        const withoutData = new Array;
-        const zero = new Array;
+        const withData = [];
+        const withoutDataAll = [];
+        const PrevNext = [];
         const units = data[items].data;
-        const length = data[items].data.length;
+        const heading = data[items].name;
 
         // find index of value 0
         for (var key in units) {
-            let previousKey;
-            let nextKey;
-            let previousValue;
-            let nextValue;
-            const index = parseInt(key);
             const value = units[key].y;
-            const next = parseInt(key)+1;
-            let rangeValues;
 
             if (value === 0) {
                 withData.push(null);
             } else {
                 withData.push(value);
             }
+        }
 
-            console.log(`value ${value}`);
+        // console.log('------------------------------------');
 
-            if (value === 0) {
-                // set previous and next
+        // set the previous and next values
+        let emptyLength = 0;
+        withData.map(function(a, i) {
+            const prev = withData[i - 1];
+            const next = withData[i + 1];
+            const current = withData[i];
+            emptyLength += (current === null);
 
-                if(key > 0) {
-                    previousKey = index-1;
-                    previousValue = units[previousKey].y;
-                } else {
-                    previousValue = null;
+            if (current === null) {
+                if (prev != null) {
+                    PrevNext.push(i);
+                    PrevNext.push(prev);
                 }
-                if(key <= length) {
-                    nextKey = index+1;
-                    nextValue = units[nextKey].y;
-                } else {
-                    nextValue = null;
+                if (next != null) {
+                    PrevNext.push(next);
+                    PrevNext.push(emptyLength);
+                    emptyLength = 0;
                 }
-
-                if (units[previousKey].y >= 0 && units[nextKey].y >= 0) {
-                    console.log(`previousValue ${previousValue}`);
-                    console.log(`nextValue ${nextValue}`);
-                }
-                rangeValues = range(previousValue, nextValue, removeItem.length);
-
-                // console.log(`previousValue ${JSON.stringify(previousValue)}`);
-                // console.log(`nextValue ${JSON.stringify(nextValue)}`);
-                // console.log(`rangeValues ${JSON.stringify(rangeValues)}`);
-
-                // set items to remove
-                removeItem.push(previousKey, nextKey);
-                withoutData.push(previousValue, rangeValues, nextValue);
-
-            } else {
-                withoutData.push(null);
             }
+        }, []);
+
+        function* chunks(arr, n) {
+            for (let i = 0; i < arr.length; i += n) {
+                const num = parseInt(i + n);
+                yield arr.slice(i, num);
+            }
+        };
+
+        const range = (min, max, numberOfSteps) => {
+            const _numberOfSteps = numberOfSteps - 1
+            const scaleBy = (max - min) / _numberOfSteps
+
+            const arr = []
+            for (let i = 0; i <= _numberOfSteps; i += 1) {
+                arr.push(parseInt(min + scaleBy * i))
+            }
+            return arr;
         }
 
-        // remove items
-        for (let i of removeItem) {
-            withoutData.splice(i, 1);
+        const missingData = () => {
+            const prevNextData = [...chunks(PrevNext, 4)];
+            const missingDataArr = [];
+            for (let i = 0; i < prevNextData.length; i++) {
+                let pos = prevNextData[i][0];
+                let prev = prevNextData[i][1];
+                let next = prevNextData[i][2];
+                let between = prevNextData[i][3] + 2;
+                const ranges = range(prev, next, between);
+                const toReturn = {
+                    "pos": pos-1,
+                    "data": ranges
+                };
+                missingDataArr.push(toReturn);
+            }
+
+            const subtract = Object.keys(missingDataArr).reduce((a, b) => missingDataArr[b].data.length + a, 0);
+            const remainder = withData.length - subtract;
+
+            for (let i = 0; i < remainder; i++) {
+                withoutDataAll.push(null);
+            }
+
+            for (let item of missingDataArr) {
+                const pos = item.pos;
+                const values = item.data;
+
+                values.reverse();
+
+                for (let item of values) {
+                    withoutDataAll.splice(pos, 0, item);
+                }
+            }
+
+            return withoutDataAll;
         }
 
-        // console.log(JSON.stringify(withoutData, null, 2));
-        // var obj = groupBy(withoutData);
-        // console.log(obj);
+        missingData();
 
-        // console.log(`withoutData: ${JSON.stringify(withoutData, null, 2)}`)
         const seriesDataWithMissing =
             [{
+                name: heading,
                 data: withData,
                 connectNulls: false,
                 zIndex: 2
             },{
-                data: withoutData,
+                name: 'Missing data',
+                data: withoutDataAll,
                 connectNulls: false,
-                color: '#CCC',
+                color: '#999999',
                 marker: {
                     'enabled': false
                 },
-                dashStyle: 'dash',
+                dashStyle: 'ShortDash',
                 zIndex: 1,
-                showInLegend: false,
+                showInLegend: true,
                 enableMouseTracking: false
             }];
 
