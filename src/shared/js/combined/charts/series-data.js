@@ -45,7 +45,7 @@ export function seriesData(data) {
             let heading = thead.rows[0].querySelectorAll('.heading');
 
             if (unitLength === 1) {
-                headingsArray.push(heading[1].innerText);
+                headingsArray.push(heading[0].innerText);
             } else {
                 headingsArray.push(heading[u].innerText);
             }
@@ -120,5 +120,6 @@ export function seriesData(data) {
     }
 
     const seriesDataOutput = getData();
+
     return seriesDataOutput;
 }
