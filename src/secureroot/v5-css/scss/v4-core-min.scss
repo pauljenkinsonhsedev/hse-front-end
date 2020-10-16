@@ -62,9 +62,6 @@ font-size:1em;
 strong{
 font-weight:700;
 }
-em{
-font-style:italic;
-}
 p{
 margin:0 0 1em 0;
 }
@@ -1063,7 +1060,6 @@ width:130px;
 width:195px;
 }
 .icapll,.icaplr,.icapml,.icapmr,.icapsl,.icapsr{
-font-style:italic;
 background-color:#e8e8e8;
 background-image:linear-gradient(to bottom,#e8e8e8,#dbdbdb);
 }
@@ -1122,7 +1118,6 @@ display:block;
 }
 .tooltip{
 position:relative;
-font-style:italic;
 border-bottom:1px dashed #111;
 cursor:help;
 }
