@@ -182,38 +182,6 @@ height: 30px;
 padding-right: 5px;
 margin: 0;
 }
-
-.menu li a::before {
-content: " ";
-background-image: url('../../assets/v5-images/icons/svg/solid/chevron-right-gray.svg');
-@media only screen and (min-width : $desktop) {
-display: none;
-}
-float: right;
-background-repeat: no-repeat;
-display: inline-block;
-width: 25px;
-height: 25px;
-margin: 0;
-}
-
-.menu li a:hover::before {
-content: " ";
-background-image: url('../../assets/v5-images/icons/svg/solid/chevron-right-white.svg');
-@media only screen and (min-width : $desktop) {
-display: none;
-}
-float: right;
-background-repeat: no-repeat;
-display: inline-block;
-width: 25px;
-height: 25px;
-margin: 0;
-}
-
-.menu li a:focus::before {
-background-image: url('../../assets/v5-images/icons/svg/solid/chevron-right-dark-gray.svg');
-}
 	
 #contentContainer ul.boxList li:hover a::after  {
 content: " ";

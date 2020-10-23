@@ -91,6 +91,7 @@ width: 100%;
 color: $body;
 box-sizing: border-box;
 padding: 15px 5% 15px 5%;
+line-height: 25px;
 @media only screen and (min-width : $desktop) {
 position: relative;
 background-image: none;
@@ -101,6 +102,7 @@ padding: 6px 19px 0 19px;
 height: 33px;
 text-decoration: none;
 display: block;
+line-height: inherit;
 }
 
 }
@@ -131,4 +133,38 @@ width: 100%;
 
 .responsive-nav-container .menu li:hover a::before {
 color: white;	
+}
+
+// icons
+
+.menu li a::before {
+content: " ";
+background-image: url('../../assets/v5-images/icons/svg/solid/chevron-right-gray.svg');
+@media only screen and (min-width : $desktop) {
+display: none;
+}
+float: right;
+background-repeat: no-repeat;
+display: inline-block;
+width: 25px;
+height: 25px;
+margin: 0;
+}
+
+.menu li a:hover::before {
+content: " ";
+background-image: url('../../assets/v5-images/icons/svg/solid/chevron-right-white.svg');
+@media only screen and (min-width : $desktop) {
+display: none;
+}
+float: right;
+background-repeat: no-repeat;
+display: inline-block;
+width: 25px;
+height: 25px;
+margin: 0;
+}
+
+.menu li a:focus::before {
+background-image: url('../../assets/v5-images/icons/svg/solid/chevron-right-dark-gray.svg');
 }
