@@ -18,6 +18,9 @@ export class ChartOptionsArearange extends ChartOptions {
         const averagesData = seriesRangeData.averagesData();
         const rangesData = seriesRangeData.rangesData();
         const dataLabelsSuffix = displaySuffix(this.units);
+        const thead = this.dataTable.querySelector('.table__head');
+        let rangeHeading = thead.rows[0].querySelectorAll('.heading')[1].textContent;
+
 
         let title = this.collection.title;
         title.text = this.title;
@@ -35,7 +38,7 @@ export class ChartOptionsArearange extends ChartOptions {
         };
 
         let series = [{
-            name: `${this.xAxisText} average`,
+            name: `${rangeHeading} average`,
             data: averagesData[0],
             zIndex: 1,
             fillOpacity: 0.3,
