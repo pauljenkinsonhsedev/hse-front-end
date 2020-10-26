@@ -6,7 +6,7 @@ export function dataLabel(units) {
 
     switch (units) {
     case 'percentage':
-        result = `<b>{series.name}</b>: {point.percentage:.1f}${dataLabelsSuffix}`;
+        result = `<b>{point.name}</b>: {point.percentage:.1f}${dataLabelsSuffix}`;
         break;
     default:
         result = `{point.name}: <b>{point.y}${dataLabelsSuffix}</b>`;
