@@ -17,6 +17,8 @@ import { seriesData } from './series-data.js';
 import { chartCategories } from './chart-categories';
 import { displaySuffix } from './data-suffix.js';
 import { dataLabel } from './data-label.js';
+import { plotBand } from './plot-band';
+import {bold} from 'ansi-colors';
 
 export class ChartOptions {
     constructor(container) {
@@ -40,14 +42,16 @@ export class ChartOptions {
         const categoryData = chartCategories(this.container);
         const getDataLabel = dataLabel(this.units);
         const dataLabelsSuffix = displaySuffix(this.units);
-
-
+        const getPlotBand = plotBand(this.container, this.brandColours);
+console.log('getPlotBand', getPlotBand);
         this.collection = {
             chart: {
                 type: this.type,
-                renderTo: this.chartRender
+                renderTo: this.chartRender,
+                marginTop: 90
             },
             title: {
+                useHTML: true,
                 text: this.title,
                 style:{
                     color: '#000',
@@ -57,6 +61,7 @@ export class ChartOptions {
                 }
             },
             subtitle: {
+                useHTML: true,
                 text: this.subtitle,
                 style: {
                     color: '#000',
@@ -73,14 +78,19 @@ export class ChartOptions {
                 },
                 labels: {
                     overflow: 'justify',
+                    useHTML: true
                 },
                 accessibility: {
                     description: this.description
                 },
+                plotBands: getPlotBand
             },
             yAxis: {
                 title: {
-                    text: this.yAxisText
+                    text: this.yAxisText,
+                    style: {
+                        fontWeight: 'bold',
+                    }
                 },
             },
             tooltip: {

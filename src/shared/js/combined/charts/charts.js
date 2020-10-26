@@ -5,7 +5,8 @@ import {
     ChartOptionsArearange,
     ChartOptionsPie,
     ChartOptionsDonut,
-    ChartOptionsBarStacked
+    ChartOptionsBarStacked,
+    ChartOptionsColumnStacked
 } from './dependencies';
 
 import load from '../utils/asset-loader';
@@ -15,32 +16,29 @@ class ChartsDefault {
     constructor() {
         this.chart = window.chart || {};
 
-        switch(process.env.NODE_ENV) {
-            case 'development':
-                this.path = window.location.protocol + '//' + window.location.host + '/';
-            break;
-            case 'staging':
-                this.path = window.location.protocol + '//' + window.location.host;
-            break;
-            case 'production':
-                this.path = window.location.protocol + '//' + window.location.host;
-            break;
-            default:
-                this.path = window.location.protocol + '//' + window.location.host;
-            break;
-        }
+        // switch(process.env.NODE_ENV) {
+        //     case 'development':
+        //         this.path = window.location.protocol + '//' + window.location.host + '/';
+        //     break;
+        //     case 'staging':
+        //         this.path = window.location.protocol + '//' + window.location.host;
+        //     break;
+        //     case 'production':
+        //         this.path = window.location.protocol + '//' + window.location.host;
+        //     break;
+        //     default:
+        //         this.path = window.location.protocol + '//' + window.location.host;
+        //     break;
+        // }
 
         // conditional for shadow directory
+        this.path = window.location.protocol + '//' + window.location.host;
         if (window.location.href.match(/(?:\b|_)(?:livelive)(?:\b|_)/i)) {
             this.path = window.location.protocol + '//' + window.location.host + '/website/livelive/secureroot';
         }
-
         if (window.location.href.match(/(?:\b|_)(?:testbed)(?:\b|_)/i)) {
-            this.path = window.location.protocol + '//' + window.location.host + '/testbed';
+            this.path = window.location.protocol + '//' + window.location.host + '/testbed/';
         }
-
-        // console.log('pathname');
-        // console.log(`${this.path}`);
 
         this.init();
     }
@@ -82,6 +80,10 @@ class ChartsDefault {
 
                     case 'barstacked':
                         this.collection = new ChartOptionsBarStacked(container);
+                    break;
+
+                    case 'columnstacked':
+                        this.collection = new ChartOptionsColumnStacked(container);
                     break;
 
                     case 'arearange':

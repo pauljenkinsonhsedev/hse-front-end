@@ -255,6 +255,8 @@
 //       rowData.forEach(function(cellData, i) {
 //         if (rowCount === 0) {
 //           cell = document.createElement('th');
+//           cell.classList.add('heading');
+
 //           let dataAttr = cellData.toLowerCase();
 //           dataAttr = dataAttr.replace(/[^a-zA-Z0-9+]/g, '');
 //           headingData.push(dataAttr);
@@ -318,9 +320,9 @@
 //     });
 
 
-//     // if (this.chartTypeField.value === 'arearange') {
-//     //   this.rangeOptions(headingData);
-//     // }
+//     if (this.chartTypeField.value === 'arearange') {
+//       this.rangeOptions(headingData);
+//     }
 
 //     console.log(this.headingData);
 //     switch (this.headingData) {
@@ -392,7 +394,7 @@
 //     const chartDisplayContainer = document.getElementById('chart');
 //     const chartDisplay = chartDisplayContainer.querySelector('.chart');
 //     const chartOptions = new ChartOptions(chartDisplay);
-//     this.charts.buildFn(chartDisplay, chartOptions.collection.collection);
+//     this.charts.buildFn(chartDisplay, chartOptions.collection);
 
 //     // Display table meta form
 //     output.classList.add('in');
@@ -406,6 +408,8 @@
 //     const rangeAverage = document.getElementById('rangeAverage');
 //     const rangeLow = document.getElementById('rangeLow');
 //     const rangeHigh = document.getElementById('rangeHigh');
+
+//     console.log('rangeAxis');
 
 //     // only populate if doesn't already have values
 //     if (rangeAxis.options.length < 5) {

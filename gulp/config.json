@@ -31,7 +31,7 @@
             }
         },
         "html": {
-            "all": "./src/secureroot/html/**/*+(htm|html)",
+            "all": "./src/secureroot/html/**/*+(htm|html|jpg|jpeg|png|gif|pdf|docx|word|xlsx)",
             "output": "./secureroot/hseonline/website/livelive/secureroot"
         },
         "scripts": {

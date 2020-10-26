@@ -1,7 +1,7 @@
 import { seriesData } from './series-data.js';
-import { plotBand } from './plot-band';
 import { chartCategories } from './chart-categories';
 import { ChartOptions } from './dependencies';
+import { missingData } from './missing-data.js';
 /*
     Class @ChartOptionsLine
 
@@ -13,23 +13,30 @@ import { ChartOptions } from './dependencies';
 export class ChartOptionsLine extends ChartOptions {
     constructor(container){
         super(container);
-        const colours = this.brandColours;
         const categoryData = chartCategories(this.container);
         const getSeriesData = seriesData(this.dataTable);
-        const getPlotBand = plotBand(this.container, colours);
+        let flag = false;
+        const checkForNull = getSeriesData.reduce(function (result, item) {
+            for (let a of item.data) {
+                if (a.y === 0) {
+                    flag = true;
+                }
+            }
+            return flag;
+        }, 0);
 
-        const series = getSeriesData;
+        let series = getSeriesData;
 
-        const chart = {
-            marginTop: 90
+        if (checkForNull === true) {
+            series = missingData(getSeriesData);
         }
+
         const xAxis = {
             categories: categoryData,
-            plotBands: getPlotBand
         };
 
         const collection = this.collection;
-        this.collection = {...collection, chart, xAxis, series};
+        this.collection = {...collection, xAxis, series};
         return this.collection;
     }
 }

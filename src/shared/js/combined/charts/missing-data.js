@@ -21,7 +21,7 @@ export function missingData(data) {
     // collect all data
     for (var items in data) {
         const withData = [];
-        const withoutDataAll = [];
+        const withoutData = [];
         const PrevNext = [];
         const units = data[items].data;
         const heading = data[items].name;
@@ -36,8 +36,6 @@ export function missingData(data) {
                 withData.push(value);
             }
         }
-
-        // console.log('------------------------------------');
 
         // set the previous and next values
         let emptyLength = 0;
@@ -67,6 +65,7 @@ export function missingData(data) {
             }
         };
 
+        // create ranges
         const range = (min, max, numberOfSteps) => {
             const _numberOfSteps = numberOfSteps - 1
             const scaleBy = (max - min) / _numberOfSteps
@@ -78,8 +77,10 @@ export function missingData(data) {
             return arr;
         }
 
-        const missingData = () => {
+        // create missing data
+        function missingData() {
             const prevNextData = [...chunks(PrevNext, 4)];
+            // console.log('prevNextData', prevNextData)
             const missingDataArr = [];
             for (let i = 0; i < prevNextData.length; i++) {
                 let pos = prevNextData[i][0];
@@ -98,44 +99,49 @@ export function missingData(data) {
             const remainder = withData.length - subtract;
 
             for (let i = 0; i < remainder; i++) {
-                withoutDataAll.push(null);
+                withoutData.push(null);
             }
 
             for (let item of missingDataArr) {
                 const pos = item.pos;
                 const values = item.data;
 
+
                 values.reverse();
 
-                for (let item of values) {
-                    withoutDataAll.splice(pos, 0, item);
+                // console.log(values.length);
+
+                for (let val of values) {
+                    // console.log('val', val);
+                    withoutData.splice(pos, 0, val);
                 }
             }
 
-            return withoutDataAll;
+            return withoutData;
         }
+        const missing = missingData();
 
-        missingData();
+        // console.log(JSON.stringify(missing, null, 2));
 
-        const seriesDataWithMissing =
-            [{
-                name: heading,
-                data: withData,
-                connectNulls: false,
-                zIndex: 2
-            },{
-                name: 'Missing data',
-                data: withoutDataAll,
-                connectNulls: false,
-                color: '#999999',
-                marker: {
-                    'enabled': false
-                },
-                dashStyle: 'ShortDash',
-                zIndex: 1,
-                showInLegend: true,
-                enableMouseTracking: false
-            }];
+        // set series data
+        const seriesDataWithMissing = [{
+            name: heading,
+            data: withData,
+            connectNulls: false,
+            zIndex: 2
+        },{
+            name: 'Missing data',
+            data: missing,
+            connectNulls: false,
+            color: '#999999',
+            marker: {
+                'enabled': false
+            },
+            dashStyle: 'ShortDash',
+            zIndex: 1,
+            showInLegend: true,
+            enableMouseTracking: false
+        }];
 
         return seriesDataWithMissing;
     }
