@@ -43,7 +43,7 @@ export class ChartOptions {
         const getDataLabel = dataLabel(this.units);
         const dataLabelsSuffix = displaySuffix(this.units);
         const getPlotBand = plotBand(this.container, this.brandColours);
-console.log('getPlotBand', getPlotBand);
+// console.log('getPlotBand', getPlotBand);
         this.collection = {
             chart: {
                 type: this.type,
