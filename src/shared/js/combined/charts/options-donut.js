@@ -17,6 +17,10 @@ export class ChartOptionsDonut extends ChartOptions {
         this.units = container.dataset.chartUnits;
         const getDataLabel = dataLabel(this.units);
 
+        // const width = container.offsetWidth;
+
+        // console.log(getDataLabel);
+
         let chart = {
             type: 'pie'
         };
@@ -31,18 +35,14 @@ export class ChartOptionsDonut extends ChartOptions {
             }
         }
 
-        const getSeriesData = seriesData(this.dataTable);
-        let series = getSeriesData;
-
-        const titleText = this.title.replace(/ /g, '<br />');
-
         let title = {
-            text: titleText,
+            text: this.title,
             align: 'center',
             verticalAlign: 'middle',
             floating: true,
-            y: 25,
+            y: 10,
             x: 0,
+            widthAdjust: -200,
             style: {
                 color: '#000',
                 fontFamily: this.fontFamily,
@@ -54,17 +54,17 @@ export class ChartOptionsDonut extends ChartOptions {
         let plotOptions = {
             pie: {
                 slicedOffset: 0,
-                size: '100%',
-                dataLabels: {
-                    enabled: false
-                },
+                size: '300px',
                 allowPointSelect: true,
                 cursor: 'pointer',
                 innerSize: '50%',
                 dataLabels: {
                     enabled: true,
                     format: getDataLabel,
-                    connectorColor: 'silver'
+                    connectorColor: 'silver',
+                    style: {
+                        width: '150px'
+                    }
                 }
             },
             series: {
