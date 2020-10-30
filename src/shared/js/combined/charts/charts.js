@@ -10,7 +10,7 @@ import {
 } from './dependencies';
 
 import load from '../utils/asset-loader';
-import {loading} from '../utils/loader';
+// import {loading} from '../utils/loader';
 
 class ChartsDefault {
     constructor() {
@@ -104,6 +104,11 @@ class ChartsDefault {
     }
 
     buildFn(container, params){
+        Highcharts.setOptions({
+            lang: {
+                numericSymbols: [' thousands', ' millions', ' billions']
+            }
+        });
         this.chart = new Highcharts.chart(container, params);
 
         if (process.env.NODE_ENV === 'development') {
