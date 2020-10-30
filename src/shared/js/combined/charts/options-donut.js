@@ -22,7 +22,7 @@ export class ChartOptionsDonut extends ChartOptions {
         // console.log(getDataLabel);
 
         let chart = {
-            type: 'pie'
+            type: 'pie',
         };
 
         let pieOptions = {
@@ -42,7 +42,7 @@ export class ChartOptionsDonut extends ChartOptions {
             floating: true,
             y: 10,
             x: 0,
-            widthAdjust: -200,
+            widthAdjust: -500,
             style: {
                 color: '#000',
                 fontFamily: this.fontFamily,
@@ -57,7 +57,7 @@ export class ChartOptionsDonut extends ChartOptions {
                 size: '300px',
                 allowPointSelect: true,
                 cursor: 'pointer',
-                innerSize: '50%',
+                innerSize: '60%',
                 dataLabels: {
                     enabled: true,
                     format: getDataLabel,
