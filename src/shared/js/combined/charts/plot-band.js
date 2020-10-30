@@ -13,7 +13,7 @@ export function plotBand(data, colours) {
     for (let k = 0; k < plotLength; k++) {
         const title = plotArea[k].querySelectorAll('.plot-title');
         const band = plotArea[k].querySelectorAll('.plot-band');
-        const titleText = title[0].textContent;
+        const titleText = title[0].textContent.trim();
         const from = band[0].textContent;
         const to = band[1].textContent;
 
