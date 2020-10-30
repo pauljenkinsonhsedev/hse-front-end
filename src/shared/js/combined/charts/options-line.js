@@ -2,6 +2,7 @@ import { seriesData } from './series-data.js';
 import { chartCategories } from './chart-categories';
 import { ChartOptions } from './dependencies';
 import { missingData } from './missing-data.js';
+import { plotBand } from './plot-band';
 /*
     Class @ChartOptionsLine
 
@@ -26,6 +27,7 @@ export class ChartOptionsLine extends ChartOptions {
         }, 0);
 
         let series = getSeriesData;
+        const getPlotBand = plotBand(this.container, this.brandColours);
 
         if (checkForNull === true) {
             series = missingData(getSeriesData);
@@ -33,6 +35,7 @@ export class ChartOptionsLine extends ChartOptions {
 
         const xAxis = {
             categories: categoryData,
+            plotBands: getPlotBand
         };
 
         const collection = this.collection;
