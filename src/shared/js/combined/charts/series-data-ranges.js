@@ -1,3 +1,6 @@
+// import { missingDataaverages } from './missing-data-averages.js';
+// import { missingDataRanges } from './missing-data-ranges.js';
+
 export function seriesDataRanges(data) {
     const tbody = data.querySelector('.table__body');
 
@@ -49,6 +52,16 @@ export function seriesDataRanges(data) {
     let rangesDataArray = new Array;
     averagesDataArray.push(averages);
     rangesDataArray.push(ranges);
+
+    // const missingAverages = missingDataaverages(averagesDataArray);
+    // const missingRanges = missingDataRanges(rangesDataArray);
+
+
+    // console.log('missingAverages', JSON.stringify(missingAverages, null, 2));
+    // console.log('missingRanges', JSON.stringify(missingRanges, null, 2));
+    // console.log('------------------------------------------------');
+    // console.log('averagesDataArray', JSON.stringify(averagesDataArray, null, 2));
+    // console.log('averagesDataArray', JSON.stringify(rangesDataArray, null, 2));
 
     const fn = {
         averagesData(){

@@ -15,6 +15,7 @@
 
 import { seriesData } from './series-data.js';
 import { chartCategories } from './chart-categories';
+import { displayPrefix } from './data-prefix.js';
 import { displaySuffix } from './data-suffix.js';
 import { dataLabel } from './data-label.js';
 import { plotBand } from './plot-band';
@@ -41,9 +42,10 @@ export class ChartOptions {
         const getSeriesData = seriesData(this.container);
         const categoryData = chartCategories(this.container);
         const getDataLabel = dataLabel(this.units);
+        const dataLabelsPrefix = displayPrefix(this.units);
         const dataLabelsSuffix = displaySuffix(this.units);
         const getPlotBand = plotBand(this.container, this.brandColours);
-// console.log('getPlotBand', getPlotBand);
+
         this.collection = {
             chart: {
                 type: this.type,
@@ -78,7 +80,9 @@ export class ChartOptions {
                 },
                 labels: {
                     overflow: 'justify',
-                    useHTML: true
+                    useHTML: true,
+
+
                 },
                 accessibility: {
                     description: this.description
@@ -91,11 +95,12 @@ export class ChartOptions {
                     style: {
                         fontWeight: 'bold',
                     }
-                },
+                }
             },
             tooltip: {
                 shared: true,
                 format: getDataLabel,
+                valuePrefix: `${dataLabelsPrefix}`,
                 valueSuffix: `${dataLabelsSuffix}`
             },
             legend: {
@@ -120,5 +125,6 @@ export class ChartOptions {
             colors: this.brandColours,
             series: getSeriesData
         };
+        // console.log('options', this.collection);
     }
 }

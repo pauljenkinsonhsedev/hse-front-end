@@ -1,3 +1,5 @@
+import {isNumber} from 'util';
+
 export function seriesData(data) {
     /*
         function @seriesData
@@ -41,11 +43,12 @@ export function seriesData(data) {
             const unitArray = new Array;
             const errorArray = new Array;
             let heading = thead.rows[0].querySelectorAll('.heading');
+            const headingIndex = u + 1;
 
             if (unitLength === 1) {
                 headingsArray.push(heading[1].innerText);
             } else {
-                headingsArray.push(heading[u].innerText);
+                headingsArray.push(heading[headingIndex].innerText);
             }
 
             for (let i = 0; i < rowLength; i++) {
@@ -99,20 +102,7 @@ export function seriesData(data) {
             } else {
                 seriesData.push(unitdata);
             }
-
-            // checkForNull = seriesData.reduce(function (result, item) {
-            //     for (let a of item.data) {
-            //         if (a.y === 0) {
-            //             flag = true;
-            //         }
-            //     }
-            //     return flag;
-            // }, 0);
         }
-
-        // if (checkForNull === true) {
-        //     seriesData = missingData(seriesData);
-        // }
 
         return seriesData;
     }

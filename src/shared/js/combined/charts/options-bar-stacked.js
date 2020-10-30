@@ -21,14 +21,32 @@ export class ChartOptionsBarStacked extends ChartOptions {
             reversed: true
         };
 
+        const yAxis = {
+            min: 0,
+            stackLabels: {
+                enabled: true,
+            }
+        }
+
         const plotOptions = {
+            column: {
+            stacking: 'normal',
+                dataLabels: {
+                    enabled: true
+                }
+            },
             series: {
+                borderWidth: 0,
                 stacking: 'normal'
             }
         };
 
+        const tooltip = {
+            shared: false
+        }
+
         const collection = this.collection;
-        this.collection = {...collection, chart, legend, plotOptions};
+        this.collection = {...collection, chart, yAxis, legend, plotOptions, tooltip};
         return this.collection;
     }
 }
