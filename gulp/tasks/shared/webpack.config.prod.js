@@ -6,32 +6,19 @@ const prod = process.env.NODE_ENV === 'production';
 module.exports = {
   mode: 'production',
   target: 'web',
-  externals: [
-    nodeExternals({
-      importType: 'umd'
-    })
-  ],
   entry: [
     './src/shared/js/app.js'
   ],
   output: {
     filename: 'v5-main.min.js',
   },
-  module : {
+  module: {
     rules: [
       {
         test: /\.js$/,
-        exclude: /node_modules/,
         use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-env'],
-          },
+          loader: 'babel-loader'
         },
-        parser: {
-          amd: false, // disable AMD
-          commonjs: false, // disable CommonJS
-        }
       },
     ],
   },
