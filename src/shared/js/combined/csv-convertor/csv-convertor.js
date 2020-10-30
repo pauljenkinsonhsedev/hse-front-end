@@ -324,7 +324,6 @@
 //       this.rangeOptions(headingData);
 //     }
 
-//     console.log(this.headingData);
 //     switch (this.headingData) {
 //         case 'range-inputs':
 //           this.rangeOptions(headingData);
@@ -409,7 +408,6 @@
 //     const rangeLow = document.getElementById('rangeLow');
 //     const rangeHigh = document.getElementById('rangeHigh');
 
-//     console.log('rangeAxis');
 
 //     // only populate if doesn't already have values
 //     if (rangeAxis.options.length < 5) {
