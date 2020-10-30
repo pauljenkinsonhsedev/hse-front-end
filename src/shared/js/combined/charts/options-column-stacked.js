@@ -18,6 +18,9 @@ export class ChartOptionsColumnStacked extends ChartOptions {
         };
 
         const plotOptions = {
+            series: {
+                borderWidth: 0
+            },
             column: {
                 stacking: 'normal',
             }
