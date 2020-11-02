@@ -1,4 +1,5 @@
 import { ChartOptions } from './dependencies';
+import { displaySuffix } from './data-suffix.js';
 
 /*
     Class @ChartOptionsDefault
@@ -12,6 +13,9 @@ export class ChartOptionsDefault extends ChartOptions {
     constructor(container){
         super(container);
         this.dataTable = container.querySelector('.tabledata');
+
+        this.units = container.dataset.chartUnits;
+        this.dataLabelsSuffix = displaySuffix(this.units);
        /*
             Plot events boolean
             - diables click events if only one set of data
@@ -24,11 +28,17 @@ export class ChartOptionsDefault extends ChartOptions {
         }
 
         const plotOptions = {
+            bar: {
+                dataLabels: {
+                    enabled: true,
+                    format: `{point.y:,.0f}${this.dataLabelsSuffix}`
+                }
+            },
             series: {
                 showInLegend: true,
                 events: {
                     legendItemClick: () => {
-                        return this.plotEvents;
+                        return false;
                     }
                 }
             },
