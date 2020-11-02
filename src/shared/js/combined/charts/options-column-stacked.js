@@ -26,8 +26,12 @@ export class ChartOptionsColumnStacked extends ChartOptions {
             }
         };
 
+        const tooltip = {
+            shared: true
+        }
+
         const collection = this.collection;
-        this.collection = {...collection, chart, plotOptions};
+        this.collection = {...collection, chart, plotOptions, tooltip};
 
         return this.collection;
     }
