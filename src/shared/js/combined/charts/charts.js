@@ -106,7 +106,8 @@ class ChartsDefault {
     buildFn(container, params){
         Highcharts.setOptions({
             lang: {
-                numericSymbols: [' thousands', ' millions', ' billions']
+                thousandsSep: ',',
+                numericSymbols: [' thousand', ' million', ' billion']
             }
         });
         this.chart = new Highcharts.chart(container, params);
