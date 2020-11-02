@@ -38,7 +38,7 @@ export class ChartOptionsArearange extends ChartOptions {
         };
 
         let series = [{
-            name: `${rangeHeading} average`,
+            name: `${rangeHeading}`,
             data: averagesData[0],
             zIndex: 1,
             fillOpacity: 0.3,
@@ -49,7 +49,7 @@ export class ChartOptionsArearange extends ChartOptions {
                 lineColor: this.brandColours[0]
             }
         }, {
-            name: 'Range low to high',
+            name: 'Confidence interval',
             data: rangesData[0],
             type: 'arearange',
             lineWidth: 0,

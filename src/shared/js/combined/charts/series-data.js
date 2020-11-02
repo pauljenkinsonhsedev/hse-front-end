@@ -1,5 +1,3 @@
-import {isNumber} from 'util';
-
 export function seriesData(data) {
     /*
         function @seriesData
@@ -22,6 +20,7 @@ export function seriesData(data) {
         }]
     */
     const thead = data.querySelector('.table__head');
+
     const tbody = data.querySelector('.table__body');
     const elems = data.querySelectorAll('.unit');
     const containsNull = [...elems].filter(element => element.textContent === '0');
@@ -79,6 +78,7 @@ export function seriesData(data) {
                     }
                 }
             }
+
 
             const unitdata = {
                 name: headingsArray[u],
