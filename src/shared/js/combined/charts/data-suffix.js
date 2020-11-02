@@ -5,6 +5,18 @@ export function displaySuffix(units) {
     case 'percentage':
         result = '%'
         break;
+    case 'hundreds':
+        result = ' hundred'
+        break;
+    case 'thousands':
+        result = ' thousand'
+        break;
+    case 'millions':
+        result = ' million'
+        break;
+    case 'billions':
+        result = ' billion'
+        break;
     case 'celsius':
         result = '°C'
         break;
