@@ -35,11 +35,26 @@ export class ChartOptionsLine extends ChartOptions {
 
         const xAxis = {
             categories: categoryData,
-            plotBands: getPlotBand
+            plotBands: getPlotBand,
+            title: {
+                text: this.xAxisText,
+                align: 'high'
+            }
         };
 
+        const yAxis = {
+            title: {
+                text: this.yAxisText,
+                style: {
+                    fontWeight: 'bold',
+                }
+            },
+            max: null,
+            min: 0
+        }
+
         const collection = this.collection;
-        this.collection = {...collection, xAxis, series};
+        this.collection = {...collection, xAxis, yAxis, series};
         return this.collection;
     }
 }
