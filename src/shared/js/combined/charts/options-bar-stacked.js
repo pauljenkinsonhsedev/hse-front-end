@@ -42,7 +42,7 @@ export class ChartOptionsBarStacked extends ChartOptions {
         };
 
         const tooltip = {
-            shared: false
+            shared: true
         }
 
         const collection = this.collection;
