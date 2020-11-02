@@ -54,7 +54,7 @@ export class ChartOptions {
             },
             title: {
                 useHTML: true,
-                text: this.title,
+                text: '<div style="text-align: center;">' + this.title + '</div>',
                 style:{
                     color: '#000',
                     fontFamily: this.fontFamily,
@@ -81,8 +81,6 @@ export class ChartOptions {
                 labels: {
                     overflow: 'justify',
                     useHTML: true,
-
-
                 },
                 accessibility: {
                     description: this.description
@@ -95,10 +93,12 @@ export class ChartOptions {
                     style: {
                         fontWeight: 'bold',
                     }
-                }
+                },
+                labels: {
+                    format: '{value:,.1f}'
+                    }
             },
             tooltip: {
-                shared: true,
                 format: getDataLabel,
                 valuePrefix: `${dataLabelsPrefix}`,
                 valueSuffix: `${dataLabelsSuffix}`
@@ -109,9 +109,9 @@ export class ChartOptions {
                     font: this.fontFamily,
                     color: '#000'
                 },
-                itemHoverStyle:{
-                    color: 'gray'
-                }
+                // itemHoverStyle:{
+                //     color: 'gray'
+                // }
             },
             accessibility: {
                 description: this.description
