@@ -40,7 +40,10 @@ export class ChartOptionsPie extends ChartOptions {
             },
             accessibility: {
                 description: this.description
-            }
+            },
+                labels: {
+                   format: '{value:,.1f}'
+                }
         }];
 
         let accessibility = {
@@ -51,7 +54,7 @@ export class ChartOptionsPie extends ChartOptions {
 
         let tooltip = {
             pointFormat: getDataLabel,
-            valueSuffix: ` ${dataLabelsSuffix}`
+            // valueSuffix: ` ${dataLabelsSuffix}`
         };
 
         const collection = this.collection;
