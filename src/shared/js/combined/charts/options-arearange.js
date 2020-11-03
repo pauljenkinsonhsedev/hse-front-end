@@ -1,6 +1,7 @@
 import { seriesDataRanges } from './series-data-ranges.js';
 import { ChartOptions } from './dependencies';
 import { displaySuffix } from './data-suffix.js';
+import { displayPrefix } from './data-prefix.js';
 
 /*
     Class @ChartOptionsArearange
@@ -14,10 +15,15 @@ export class ChartOptionsArearange extends ChartOptions {
     constructor(container){
         super(container);
 
+        let areaRangeTitle = container.dataset.areaRangeTitle;
+        if (areaRangeTitle === 'undefined' || areaRangeTitle === undefined) {
+            areaRangeTitle = 'Confidence interval';
+        }
         const seriesRangeData = seriesDataRanges(this.dataTable);
         const averagesData = seriesRangeData.averagesData();
         const rangesData = seriesRangeData.rangesData();
         const dataLabelsSuffix = displaySuffix(this.units);
+        const dataLabelsPrefix = displayPrefix(this.units);
         const thead = this.dataTable.querySelector('.table__head');
         let rangeHeading = thead.rows[0].querySelectorAll('.heading')[1].textContent;
 
@@ -34,7 +40,8 @@ export class ChartOptionsArearange extends ChartOptions {
         let tooltip = {
             crosshairs: true,
             shared: true,
-            valueSuffix: dataLabelsSuffix
+            valuePrefix: `${dataLabelsPrefix}`,
+            valueSuffix: `${dataLabelsSuffix}`,
         };
 
         let series = [{
@@ -49,7 +56,7 @@ export class ChartOptionsArearange extends ChartOptions {
                 lineColor: this.brandColours[0]
             }
         }, {
-            name: 'Confidence interval',
+            name: areaRangeTitle,
             data: rangesData[0],
             type: 'arearange',
             lineWidth: 0,
@@ -68,14 +75,28 @@ export class ChartOptionsArearange extends ChartOptions {
         const dateLast = moment(dateRange.last[0]).format('DD MMM YYYY');
 
         let xAxis = {
+            maxPadding: 0,
+            endOnTick: true,
             labels: {
+                align: 'right',
+                style: {
+                    // margin: '10px'
+                },
                 overflow: 'justify',
+                formatter() {
+                    // console.log(this)
+                    if(this.isFirst || this.isLast) {
+                        return moment(this.value).format('YYYY')
+                    } else {
+                        return ''
+                    }
+                }
             },
             type: 'datetime',
-            title: {
-                text: `${dateFirst} to ${dateLast}.`,
-                align: 'high'
-            },
+            // title: {
+            //     text: `${dateFirst} to ${dateLast}.`,
+            //     align: 'high'
+            // },
             accessibility: {
                 rangeDescription: `Range: ${dateFirst} to ${dateLast}.`
             }
@@ -84,8 +105,10 @@ export class ChartOptionsArearange extends ChartOptions {
         let yAxis = {
             title: {
                 text: null
-            }
-        };
+            },
+            max: null,
+            min: 0
+        }
 
         let plotOptions = {
             series: {
