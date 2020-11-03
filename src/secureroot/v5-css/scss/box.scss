@@ -18,20 +18,27 @@ width:440px;
 #contentContainer .box3col{
 width:680px;
 }
+
+// box split
+
 .boxSplit{
+background-color: white;
+@media only screen and (max-width : $desktop) {
+display:none;}
 height:15px;
 padding:0;
 margin:0 0 4px -10px;
 float:left;
 }
 .box1col .boxSplit{
-background-color: white;
 width:220px;
 }
 .box2col .boxSplit{
 width:460px;
-background-color: white;
 }
+
+// box promo image
+
 .boxPromoImage img{
 float:right;
 margin:0 0 10px 10px;
@@ -347,10 +354,7 @@ width: 100% !important;
 color: $red !important;
 }
 
-.boxSplit {
-@media only screen and (max-width : 979px) {
-background-color: none !important;}
-}
+
 
 .box p:last-child {
 margin-bottom: 0 !important;
@@ -380,65 +384,65 @@ margin-bottom: 0 !important;
 // Box V5
 
 #contentContainer.columnbetacontentpage .box1col, #contentContainer.columnbetacontentpage .box2col, #contentContainer.columnbetacontentpage .box3col, #contentContainer.columnbetacontentpage .boxHalfLeft, #contentContainer.columnbetacontentpage .boxHalfRight {
-    width: 100%;
-    }
-    
-    #contentContainer.columnbetacontentpage .boxHalfRight {
-    margin-left: 0 !important;
-    }
-    
-    .box3col .more, .box2col .more, .box1col .more, .box .more {
-    width: 100% !important; 	
-    }
+width: 100%;
+}
 
-    @media only screen and (max-width: $desktop) and (min-width: 550px) {
+#contentContainer.columnbetacontentpage .boxHalfRight {
+margin-left: 0 !important;
+}
+
+.box3col .more, .box2col .more, .box1col .more, .box .more {
+width: 100% !important; 	
+}
+
+@media only screen and (max-width: $desktop) and (min-width: 550px) {
 
 
-    #contentContainer.columnbetacontentpage  .boxHalfLeft, #contentContainer.columnbetacontentpage .boxHalfRight  {
-    width: 49%;
-    }
+#contentContainer.columnbetacontentpage  .boxHalfLeft, #contentContainer.columnbetacontentpage .boxHalfRight  {
+width: 49%;
+}
 
-    #contentContainer .boxHalfLeft {
-    margin-right: 2%;
-    }
+#contentContainer .boxHalfLeft {
+margin-right: 2%;
+}
 
 }
-    
-    @media only screen and (min-width : $desktop) {
-    
-    #contentContainer.columnbetacontentpage .box1col {
-    width: 220px !important;
-    }
-    
-    #contentContainer.columnbetacontentpage .box2col {
-    width: 459px !important;
-    }
-        
-    #contentContainer.columnbetacontentpage .box3col {
-    width: 100% !important;
-    }
-        
-    #contentContainer.columnbetacontentpage .boxHalfLeft, #contentContainer.columnbetacontentpage .boxHalfRight  {
-    width: 345px !important;
-    float: left;
-    }	
 
-    #contentContainer.columnbetacontentpage .box .boxHalfLeft, #contentContainer.columnbetacontentpage .box .boxHalfRight  {
-    width: 335px !important;
-    float: left;
-    }
-    
-    #contentContainer.columnbetacontentpage  {
-    .box1col, .box2col {
-    display: flex;
-    flex-direction: column;
-    }
-    }
-    
-    #contentContainer.columnbetacontentpage	.hasMore .more {
-    margin-top: auto !important;
-    
-    }
-    
-    
-    }
+@media only screen and (min-width : $desktop) {
+
+#contentContainer.columnbetacontentpage .box1col {
+width: 220px !important;
+}
+
+#contentContainer.columnbetacontentpage .box2col {
+width: 459px !important;
+}
+
+#contentContainer.columnbetacontentpage .box3col {
+width: 100% !important;
+}
+
+#contentContainer.columnbetacontentpage .boxHalfLeft, #contentContainer.columnbetacontentpage .boxHalfRight  {
+width: 345px !important;
+float: left;
+}	
+
+#contentContainer.columnbetacontentpage .box .boxHalfLeft, #contentContainer.columnbetacontentpage .box .boxHalfRight  {
+width: 335px !important;
+float: left;
+}
+
+#contentContainer.columnbetacontentpage  {
+.box1col, .box2col {
+display: flex;
+flex-direction: column;
+}
+}
+
+#contentContainer.columnbetacontentpage	.hasMore .more {
+margin-top: auto !important;
+
+}
+
+
+}
