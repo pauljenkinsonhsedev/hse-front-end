@@ -1,7 +1,8 @@
 import { ChartOptions } from './dependencies';
 import { chartCategories } from './chart-categories';
-import { displaySuffix } from './data-suffix.js';
 import { dataLabel } from './data-label.js';
+import { displayPrefix } from './data-prefix.js';
+import { displaySuffix } from './data-suffix.js';
 
 /*
     Class @ChartOptionsPie
@@ -18,10 +19,11 @@ export class ChartOptionsPie extends ChartOptions {
         this.units = container.dataset.chartUnits;
         this.xAxisText = container.dataset.xaxisText;
 
-        const dataLabelsSuffix = displaySuffix(this.units);
         const getCategories = chartCategories(container);
         const getDataLabel = dataLabel(this.units);
-
+        const dataLabelsPrefix = displayPrefix(this.units);
+        const dataLabelsSuffix = displaySuffix(this.units);
+        
         let plotOptions = {
             pie: {
                 allowPointSelect: true,
@@ -41,9 +43,9 @@ export class ChartOptionsPie extends ChartOptions {
             accessibility: {
                 description: this.description
             },
-                labels: {
-                   format: '{value:,.1f}'
-                }
+            labels: {
+                format: '{value:,.1f}'
+            }
         }];
 
         let accessibility = {
@@ -53,8 +55,7 @@ export class ChartOptionsPie extends ChartOptions {
         };
 
         let tooltip = {
-            pointFormat: getDataLabel,
-            // valueSuffix: ` ${dataLabelsSuffix}`
+            pointFormat: `${dataLabelsPrefix}<b>{point.y:,.0f}</b>${dataLabelsSuffix}`
         };
 
         const collection = this.collection;

@@ -1,6 +1,8 @@
 import { ChartOptions } from './dependencies';
 import { seriesData } from './series-data.js';
 import { dataLabel } from './data-label.js';
+import { displayPrefix } from './data-prefix.js';
+import { displaySuffix } from './data-suffix.js';
 
 /*
     Class @ChartOptionsChartOptionsDonut
@@ -16,6 +18,8 @@ export class ChartOptionsDonut extends ChartOptions {
 
         this.units = container.dataset.chartUnits;
         const getDataLabel = dataLabel(this.units);
+        const dataLabelsPrefix = displayPrefix(this.units);
+        const dataLabelsSuffix = displaySuffix(this.units);
 
         // const width = container.offsetWidth;
 
@@ -78,8 +82,12 @@ export class ChartOptionsDonut extends ChartOptions {
             }
         };
 
+        let tooltip = {
+            pointFormat: `${dataLabelsPrefix}<b>{point.y:,.1f}</b>${dataLabelsSuffix}`
+        };
+
         const collection = this.collection;
-        this.collection = {...collection, chart, title, pieOptions, plotOptions};
+        this.collection = {...collection, chart, title, pieOptions, plotOptions, tooltip};
         return this.collection;
     }
 }

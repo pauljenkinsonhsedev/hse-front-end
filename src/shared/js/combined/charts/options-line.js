@@ -27,13 +27,14 @@ export class ChartOptionsLine extends ChartOptions {
         }, 0);
 
         let series = getSeriesData;
-        const getPlotBand = plotBand(this.container, this.brandColours);
+        const getPlotBand = plotBand(this.container, this.brandGrayscale);
 
         if (checkForNull === true) {
             series = missingData(getSeriesData);
         }
 
         const xAxis = {
+            showLastlabel: true,
             categories: categoryData,
             plotBands: getPlotBand,
             title: {

@@ -21,7 +21,7 @@ export function plotBand(data, colours) {
             {
                 from: from,
                 to: to,
-                color: hex_to_rgba(colours[k], 0.3),
+                color: hex_to_rgba(colours[k], 1),
                 label: {
                     text: titleText,
                     align: 'left',

@@ -24,6 +24,7 @@ import {bold} from 'ansi-colors';
 export class ChartOptions {
     constructor(container) {
         this.container = container;
+        this.brandGrayscale = ['#CCCCCC', '#999999', '#666666']
         this.brandColours = ['#b2182b', '#d6604d', '#f4a582', '#fddbc7', '#d1e5f0', '#92c5de', '#4393c3', '#2166ac'];
         this.fontFamily = 'Arial, Helvetica, sans-serif';
         this.chartRender = container.querySelector('.displayChart');
@@ -44,7 +45,7 @@ export class ChartOptions {
         const getDataLabel = dataLabel(this.units);
         const dataLabelsPrefix = displayPrefix(this.units);
         const dataLabelsSuffix = displaySuffix(this.units);
-        const getPlotBand = plotBand(this.container, this.brandColours);
+        const getPlotBand = plotBand(this.container, this.brandGrayscale);
 
         this.collection = {
             chart: {
@@ -64,7 +65,7 @@ export class ChartOptions {
             },
             subtitle: {
                 useHTML: true,
-                text: this.subtitle,
+                text: '<div style="text-align: center;">' + this.subtitle + '</div>',
                 style: {
                     color: '#000',
                     fontFamily: this.fontFamily,
@@ -95,13 +96,29 @@ export class ChartOptions {
                     }
                 },
                 labels: {
-                    format: '{value:,.1f}'
-                    }
+                    format: '{value:,.0f}'
+                }
             },
             tooltip: {
                 format: getDataLabel,
                 valuePrefix: `${dataLabelsPrefix}`,
-                valueSuffix: `${dataLabelsSuffix}`
+                valueSuffix: `${dataLabelsSuffix}`,
+                useHTML: true,
+                backgroundColor: null,
+                padding: 1,
+                formatter: function(){
+                    const value = Number(parseFloat(this.y).toFixed(2)).toLocaleString('en', {minimumFractionDigits: 0});
+                    return `
+                    <div style="background-color: #FFFFFF; padding: 7px;">
+                        <div style="margin-bottom: 5px;">
+                            <strong>${this.series.name}</strong>
+                        </div>
+                        <div>
+                            ${this.key}
+                            <strong>${dataLabelsPrefix}${value}${dataLabelsSuffix}</strong>
+                        </div>
+                    </div>`;
+                }
             },
             legend: {
                 enabled: true,
