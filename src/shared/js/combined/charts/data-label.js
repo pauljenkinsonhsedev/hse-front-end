@@ -11,10 +11,10 @@ export function dataLabel(units) {
         result = `<b>{point.name}</b>: {point.percentage:.0f}${dataLabelsSuffix}`;
         break;
     case 'pounds':
-        result = `{point.name}: <b>${dataLabelsPrefix}{point.y}</b>${dataLabelsSuffix}`;
+        result = `{point.name}: <b>${dataLabelsPrefix}{point.y:,.1f}</b>${dataLabelsSuffix}`;
         break;
     default:
-        result = `{point.name}: <b>{point.y:,.0f}${dataLabelsSuffix}</b>`;
+        result = `{point.name}: <b>{point.y:,.1f}${dataLabelsSuffix}</b>`;
         break;
     }
     return result;
