@@ -232,7 +232,17 @@ margin-bottom: 0;
 
 // Box lists
 
-#contentContainer ul.boxList li {
+.boxList{
+@media only screen and (min-width : $desktop) {
+column-count: 2;
+}
+margin-bottom: 10px !important;
+}
+
+#contentContainer .boxList ul {
+margin: 0 0 10px 0 !important;
+}
+.boxList ul li {
 float: left;
 clear: both;
 width: 100%;
@@ -240,30 +250,28 @@ background: none;
 background-color: $gray;
 margin: 5px 0;
 padding: 0;
+background-image: none !important;
 }
-
-#contentContainer ul.boxList li a {
+.boxList ul li:last-of-type {
+@media only screen and (max-width : $desktop) {
+margin-bottom: 0;
+}
+}
+.boxList ul li a {
 width: 100%;
 float: left;
 padding: 10px;
 }
-
-#contentContainer ul.boxList li:hover {
+.boxList ul li:hover {
 background-color: $darkergray;
 }
-
-#contentContainer ul.boxList li h3 {
+.boxList ul li h3 {
 color: $red !important;
 }
-
-
-
-#contentContainer ul.boxList li h3 {
+.boxList ul li h3 {
 margin: 0;
 display: inline;
 }
-
-
 
 // Main content 
 

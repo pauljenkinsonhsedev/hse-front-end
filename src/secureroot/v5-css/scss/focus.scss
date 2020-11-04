@@ -24,7 +24,7 @@ color: $redhover;
 
 // Content focus
 
-#contentContainer ul.boxList li a:focus h3 {
+.boxList ul li a:focus h3 {
 color: $black !important;
 }
 
