@@ -20,10 +20,12 @@ text-decoration: underline;
 }
 .slinky-menu a {
 align-items: center;
-display: flex; }
+display: flex; 
+overflow: auto; }
 .slinky-menu a span {
 flex: 1;
-line-height: 1.4; }
+line-height: 1.4;
+overflow: auto; }
 .slinky-menu li ul {
 //display: none;
 left: 100%;
