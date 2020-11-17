@@ -183,7 +183,7 @@ padding-right: 5px;
 margin: 0;
 }
 	
-#contentContainer ul.boxList li:hover a::after  {
+.boxList ul li:hover a::after  {
 content: " ";
 background-image: url('../../assets/v5-images/icons/svg/solid/arrow-right-white.svg');
 background-repeat: no-repeat;
@@ -193,15 +193,14 @@ top: 5px;
 float: right;
 width: 16px;
 height: 16px;
-right: 10px;
 margin: 0;
 }
 
-#contentContainer ul.boxList li:hover h3 {
+.boxList ul li:hover h3 {
 color: white !important;
 }
 
-#contentContainer ul.boxList li a::after {
+.boxList ul li a::after {
 content: " ";
 background-image: url('../../assets/v5-images/icons/svg/solid/arrow-right-red.svg');
 background-repeat: no-repeat;
@@ -211,7 +210,6 @@ top: 5px;
 float: right;
 width: 16px;
 height: 16px;
-right: 10px;
 margin: 0;
 }
 
