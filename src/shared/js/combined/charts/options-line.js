@@ -50,6 +50,9 @@ export class ChartOptionsLine extends ChartOptions {
                     fontWeight: 'bold',
                 }
             },
+            labels: {
+                format: '{value:,.0f}'
+            },
             max: null,
             min: 0
         }
