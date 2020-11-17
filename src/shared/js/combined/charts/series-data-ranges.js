@@ -12,11 +12,11 @@ export function seriesDataRanges(data) {
 
         const averageData = rangeAxis.map((e, i) => {
             const getDate = new Date(rangeAxis[i].textContent);
-            const date = parseInt(moment(getDate).format('x'));
+            // const date = parseInt(moment(getDate).format('x'));
             const average = Number(parseFloat(rangeAverage[i].textContent).toFixed(2).toLocaleString('en', {minimumFractionDigits: 0}));
 
             const array = new Array;
-            array.push(date, average);
+            array.push(getDate, average);
 
             return array;
         });
@@ -35,11 +35,11 @@ export function seriesDataRanges(data) {
 
         const rangeData = rangeAxis.map((e, i) => {
             const getDate = new Date(rangeAxis[i].textContent);
-            const date = parseInt(moment(getDate).format('x'));
+            // const date = parseInt(moment(getDate).format('x'));
             const range1 = Number(parseFloat(rangeLow[i].textContent).toFixed(2).toLocaleString('en', {minimumFractionDigits: 0}));
             const range2 = Number(parseFloat(rangeHigh[i].textContent).toFixed(2).toLocaleString('en', {minimumFractionDigits: 0}));
             const array = new Array;
-            array.push(date, range1, range2);
+            array.push(getDate, range1, range2);
             return array;
         });
 

@@ -1,4 +1,5 @@
 import { ChartOptions } from './dependencies';
+import { dataTooltip } from './tooltip.js';
 
 /*
     Class @ChartOptionsBarStacked
@@ -12,6 +13,12 @@ export class ChartOptionsColumnStacked extends ChartOptions {
     constructor(container){
         super(container);
         this.collection;
+        let units = container.querySelectorAll('.unit');
+        let total = 0;
+        for (let i = 0; i < units.length; i++) {
+            total += Number(units[i].innerText)
+        }
+        const getTooltip = dataTooltip(this.type, this.units, this.decimals, total);
 
         const chart = {
             type: 'column'
@@ -27,7 +34,8 @@ export class ChartOptionsColumnStacked extends ChartOptions {
         };
 
         const tooltip = {
-            shared: true
+            shared: true,
+            formatter: getTooltip
         }
 
         const collection = this.collection;

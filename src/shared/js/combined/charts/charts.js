@@ -97,17 +97,17 @@ class ChartsDefault {
                 // console.log(`collection ${JSON.stringify(this.collection, null, 2)}`);
                 this.buildFn(container, this.collection);
             });
+        })
+        .catch((err) => {
+            console.error(`There was an error initialising charts: ${err}`);
         });
-        // .catch((err) => {
-        //     console.error(`There was an error initialising charts: ${err}`);
-        // });
     }
 
     buildFn(container, params){
         Highcharts.setOptions({
             lang: {
                 thousandsSep: ',',
-                numericSymbols: ['k', ' million', ' billion']
+                // numericSymbols: ['k', ' million', ' billion']
             }
         });
         this.chart = new Highcharts.chart(container, params);

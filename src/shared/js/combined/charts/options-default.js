@@ -1,6 +1,7 @@
 import { ChartOptions } from './dependencies';
 import { displaySuffix } from './data-suffix.js';
-
+import { displayPrefix } from './data-prefix.js';
+import { dataLabel } from './data-label.js';
 /*
     Class @ChartOptionsDefault
 
@@ -16,6 +17,10 @@ export class ChartOptionsDefault extends ChartOptions {
 
         this.units = container.dataset.chartUnits;
         this.dataLabelsSuffix = displaySuffix(this.units);
+        this.dataLabelsPrefix = displayPrefix(this.units);
+        this.decimals = container.dataset.decimalPoint;
+        const getDataLabel = dataLabel(this.units, this.decimals);
+
        /*
             Plot events boolean
             - diables click events if only one set of data
@@ -31,8 +36,12 @@ export class ChartOptionsDefault extends ChartOptions {
             bar: {
                 dataLabels: {
                     enabled: true,
-                    format: `{point.y:,.0f}${this.dataLabelsSuffix}`
+                    format: `{y}${this.dataLabelsSuffix}`
                 }
+            },
+            dataLabels: {
+                enabled: true,
+                formatter: getDataLabel
             },
             series: {
                 showInLegend: true,

@@ -55,7 +55,7 @@
   <div data-span="9 last">
     <div class="divider">
       <h2 class="heading-xs" id="piePercentage">Donut chart with &quot;percentage&quot; values</h2>
-      <div class="chart" data-chart-type="donut" data-chart-units="percentage" data-chart-title="Donut chart with title" data-chart-subtitle="" data-chart-description="Chart description" data-xaxis-text="X Axis Text" data-yaxis-text="">
+      <div class="chart" data-chart-type="donut" data-chart-units="percentage" data-decimal-point="0" data-chart-title="Donut chart with title" data-chart-subtitle="" data-chart-description="Chart description" data-xaxis-text="X Axis Text" data-yaxis-text="">
         <div class="displayChart"></div>
         <figure class="datacontent">
           <h2 class="datacontent__title">Donut chart with title</h2>
@@ -141,7 +141,7 @@
       <div class="row divider">
         <div>
           <h2 class="heading-xs" id="pieUnit">Pie chart with &quot;unit&quot; values</h2>
-          <div class="chart" data-chart-type="pie" data-chart-units="unit" data-chart-title="Pie chart" data-chart-subtitle="A pie chart with title and subtitle" data-chart-description="Chart descriptionLorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eget pharetra nibh. Mauris dictum ultrices commodo. Praesent sed dictum velit. Cras sed mauris at enim maximus rutrum. Etiam sed fringilla." data-xaxis-text="X Axis Text" data-yaxis-text="">
+          <div class="chart" data-chart-type="pie" data-chart-units="unit" data-chart-title="Pie chart" data-chart-subtitle="A pie chart with title and subtitle" data-chart-description="Chart descriptionLorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eget pharetra nibh. Mauris dictum ultrices commodo. Praesent sed dictum velit. Cras sed mauris at enim maximus rutrum. Etiam sed fringilla." data-xaxis-text="X Axis Text" data-yaxis-text="" data-decimal-place="3">
             <div class="displayChart"></div>
             <figure class="datacontent">
               <h2 class="datacontent__title">Pie chart</h2>
@@ -238,7 +238,7 @@
               <table class="tabledata" id="previewTable">
                 <thead class="table__head">
                   <tr class="table__row">
-                    <th class="table__cell">Name of fruit</th>
+                    <th class="table__cell heading">Name of fruit</th>
                     <th class="table__cell heading">Number of fruit Timmy ate</th>
                     <th class="table__cell heading">Number of fruit Jannet ate</th>
                   </tr>
@@ -294,7 +294,7 @@
             <table class="table tabledata" id="previewTable">
               <thead class="table__head">
                 <tr class="table__row">
-                  <th class="table__cell">Category</th>
+                  <th class="table__cell heading">Category</th>
                   <th class="table__cell heading">John</th>
                   <th class="table__cell heading">Jane</th>
                   <th class="table__cell heading">Joe</th>
@@ -340,7 +340,7 @@
       <div class="row divider">
         <div>
           <h2 class="heading-xs" id="column">Column chart</h2>
-          <div class="chart" data-chart-type="column" data-chart-units="percentage" data-chart-title="column chart" data-chart-subtitle="A column chart of fruit consumed" data-chart-description="Chart description" data-xaxis-text="Types of fruit" data-yaxis-text="Fruit consumed">
+          <div class="chart" data-chart-type="column" data-chart-units="percentage" data-decimal-point="0" data-chart-title="column chart" data-chart-subtitle="A column chart of fruit consumed" data-chart-description="Chart description" data-xaxis-text="Types of fruit" data-yaxis-text="Fruit consumed">
             <div class="displayChart"></div>
             <figure class="datacontent">
               <h2 class="datacontent__title">Column chart</h2>
@@ -395,7 +395,7 @@
               <table class="table tabledata" id="previewTable">
                 <thead class="table__head">
                   <tr class="table__row">
-                    <th scope="col" valign="top" rowspan="2" class="table__cell">Category</th>
+                    <th scope="col" valign="top" rowspan="2" class="table__cell heading">Category</th>
                     <th scope="col" valign="top" rowspan="2" class="table__cell heading">2019</th>
                     <th scope="col" colspan="2" class="table__cell">2019 Error</th>
                     <th scope="col" valign="top" rowspan="2" class="table__cell heading">2020</th>
@@ -515,7 +515,7 @@
               <table class="table tabledata" id="previewTable">
                 <thead class="table__head">
                   <tr class="table__row">
-                    <th class="table__cell">Category</th>
+                    <th class="table__cell heading">Category</th>
                     <th class="table__cell heading">2019</th>
                     <th class="table__cell heading">2020</th>
                   </tr>
@@ -590,7 +590,7 @@
               <table class="table tabledata" id="previewTable">
                 <thead class="table__head">
                   <tr class="table__row">
-                    <th class="table__cell">Category</th>
+                    <th class="table__cell heading">Category</th>
                     <th class="table__cell heading">Market shares</th>
                   </tr>
                 </thead>
@@ -648,7 +648,7 @@
 
       <div class="row">
         <h2 class="heading-xs" id="plotband">Line chart (with plot bands)</h2>
-        <div class="chart" data-chart-type="line" data-chart-units="timeline" data-chart-title="Line chart" data-chart-subtitle="Range of temperatures in July 2009" data-chart-description="Chart description" data-yaxis-text="Temperature (C)" data-data-xaxis-text="Range of temperatures in July 2009">
+        <div class="chart" data-chart-type="line" data-chart-units="celsius" data-chart-title="Line chart" data-chart-subtitle="Range of temperatures in July 2009" data-chart-description="Chart description" data-yaxis-text="Temperature (C)" data-data-xaxis-text="Range of temperatures in July 2009">
           <div class="displayChart"></div>
           <figure class="datacontent">
             <h2 class="datacontent__title">Line chart with plot bands</h2>
@@ -1019,6 +1019,132 @@
         </summary>
         <div class="details__text"></div>
       </details>
+    </div>
+
+    <div class="row">
+      <div class="chart" data-chart-type="column"
+              data-chart-units="pounds" data-chart-title="Individuals bear the
+              majority of costs" data-chart-subtitle=""
+              data-chart-description="Chart provides breakdown of total costs by
+              cost bearer." data-xaxis-text="" data-yaxis-text="Cost (per
+              billion £)">
+        <div class="displayChart"></div>
+        <figure class="datacontent">
+          <h2 class="datacontent__title">Individuals bear the majority of
+                  costs</h2>
+          <p class="datacontent__description">Individual costs make up
+                  £9.6bn, employer costs of £3.2bn and government have costs of
+                  £3.5bn</p>
+          <table class="table tabledata" id="previewTable">
+            <thead class="table__head">
+              <tr class="table__row">
+                <th class="table__cell heading">Category</th>
+                <th class="table__cell heading">Individuals</th>
+                <th class="table__cell heading">Employer</th>
+                <th class="table__cell heading">Government</th>
+              </tr>
+            </thead>
+            <tbody class="table__body">
+              <tr class="table__row">
+                <th class="table__cell category">Workplace self-reported injuries</th>
+                <td class="table__cell unit">9600000000</td>
+                <td class="table__cell unit">3200000000</td>
+                <td class="table__cell unit">3500000000</td>
+              </tr>
+            </tbody>
+          </table>
+        </figure>
+      </div>
+
+      <div class="row">
+        <div class="chart" data-chart-type="donut" data-chart-units="pounds" data-chart-title="£16.2 bn Cost of workplace injury and ill health
+              2018/19" data-chart-subtitle="" data-chart-description="Total
+              costs to Britain of workplace injury and new cases of ill health
+              were £16.2 billion in 2018/19, with £10.6 billion resulting from
+              ill health and £5.6 billion from injury" data-x-axis-text="" data-y-axis-text="">
+          <div class="displayChart"></div>
+          <figure class="datacontent">
+            <table class="table tabledata" id="previewTable">
+              <thead class="table__head">
+                <tr class="table__row">
+                  <th class="table__cell heading">Injury and ill health</th>
+                  <th class="table__cell heading">Cost</th>
+                </tr>
+              </thead>
+              <tbody class="table__body">
+                <tr class="table__row">
+                  <td class="table__cell category">Injury</td>
+                  <td class="table__cell unit">5600000000</td>
+                </tr>
+                <tr class="table__row">
+                  <td class="table__cell category">Ill health</td>
+                  <td class="table__cell unit">10600000000</td>
+                </tr>
+              </tbody>
+            </table>
+          </figure>
+        </div>
+      </div>
+
+      <div class="row">
+      <div class="chart" data-chart-type="bar" data-chart-units="percentage"
+          data-chart-title="Non-fatal injuries to employees by most common
+          accident kinds"
+          data-chart-subtitle="(Non-fatal injuries reported under RIDDOR
+          2019/20, includes those accident kinds that account for 5% or more of
+          the total)"
+          data-chart-description="Non-fatal injuries reported under RIDDOR
+          2019/20 where accident kinds account for 5% or more of the total,
+          Slips, trips or falls on same level 29%, Handling, lifting or carrying
+          19%, Struck by moving object 11%, Acts of violence 9% and falls from
+          height 8%"
+          data-xaxis-text="" data-yaxis-text="">
+          <div class="displayChart"></div>
+          <figure class="datacontent">
+            <h2 class="datacontent__title">Non-fatal injuries to employees by
+              most common accident kinds</h2>
+            <h3 class="datacontent__subtitle">(Non-fatal injuries reported under
+              RIDDOR 2019/20, includes those accident kinds
+              that account for 5% or more of the total)</h3>
+            <p class="datacontent__description">Non-fatal injuries reported
+              under RIDDOR 2019/20 where accident kinds account
+              for 5% or more of the total, Slips, trips or falls on same level
+              29%, Handling, lifting or carrying 19%, Struck by
+              moving object 11%, Acts of violence 9% and falls from height 8%</p>
+            <table class="table tabledata" id="previewTable">
+              <thead class="table__head">
+                <tr class="table__row">
+                  <th class="heading table__cell">Type of injury</th>
+                  <th class="heading table__cell">Percentage of injuries</th>
+                </tr>
+              </thead>
+              <tbody class="table__body">
+                <tr class="table__row">
+                  <td class="table__cell category">Slips trips or falls on same level</td>
+                  <td class="table__cell unit">29</td>
+                </tr>
+                <tr class="table__row">
+                  <td class="table__cell category">Handling lifting or carrying</td>
+                  <td class="table__cell unit">19</td>
+                </tr>
+                <tr class="table__row">
+                  <td class="table__cell category">Struck by moving object</td>
+                  <td class="table__cell unit">11</td>
+                </tr>
+                <tr class="table__row">
+                  <td class="table__cell category">Acts of violence</td>
+                  <td class="table__cell unit">9</td>
+                </tr>
+                <tr class="table__row">
+                  <td class="table__cell category">Falls from a height</td>
+                  <td class="table__cell unit">8</td>
+                </tr>
+              </tbody>
+            </table>
+          </figure>
+        </div>
+      </div>
+
     </div>
   </div>
 </div>

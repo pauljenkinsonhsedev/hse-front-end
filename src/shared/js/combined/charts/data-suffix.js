@@ -5,6 +5,9 @@ export function displaySuffix(units) {
     case 'percentage':
         result = '%'
         break;
+    case 'percentage-calc':
+        result = '%'
+        break;
     case 'hundreds':
         result = ' hundred'
         break;

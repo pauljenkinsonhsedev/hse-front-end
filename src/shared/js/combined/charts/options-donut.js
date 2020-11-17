@@ -16,10 +16,18 @@ export class ChartOptionsDonut extends ChartOptions {
     constructor(container){
         super(container);
 
+        let units = container.querySelectorAll('.unit');
+        let total = 0;
+        for (let i = 0; i < units.length; i++) {
+            total += Number(units[i].innerText)
+        }
+
         this.units = container.dataset.chartUnits;
-        const getDataLabel = dataLabel(this.units);
+        this.decimals = container.dataset.decimalPoint;
+        const getDataLabel = dataLabel(this.units, this.decimals, total);
         const dataLabelsPrefix = displayPrefix(this.units);
         const dataLabelsSuffix = displaySuffix(this.units);
+
 
         // const width = container.offsetWidth;
 
@@ -34,7 +42,7 @@ export class ChartOptionsDonut extends ChartOptions {
             cursor: 'pointer',
             dataLabels: {
                 enabled: true,
-                format: this.dataLabelsSuffix,
+                // format: this.dataLabelsSuffix,
                 connectorColor: 'silver'
             }
         }
@@ -64,7 +72,7 @@ export class ChartOptionsDonut extends ChartOptions {
                 innerSize: '60%',
                 dataLabels: {
                     enabled: true,
-                    format: getDataLabel,
+                    formatter: getDataLabel,
                     connectorColor: 'silver',
                     style: {
                         width: '150px'
@@ -82,12 +90,8 @@ export class ChartOptionsDonut extends ChartOptions {
             }
         };
 
-        let tooltip = {
-            pointFormat: `${dataLabelsPrefix}<b>{point.y:,.1f}</b>${dataLabelsSuffix}`
-        };
-
         const collection = this.collection;
-        this.collection = {...collection, chart, title, pieOptions, plotOptions, tooltip};
+        this.collection = {...collection, chart, title, pieOptions, plotOptions};
         return this.collection;
     }
 }

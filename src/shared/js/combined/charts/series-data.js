@@ -20,13 +20,8 @@ export function seriesData(data) {
         }]
     */
     const thead = data.querySelector('.table__head');
-
     const tbody = data.querySelector('.table__body');
-    const elems = data.querySelectorAll('.unit');
-    const containsNull = [...elems].filter(element => element.textContent === '0');
     const dateRegEx = /^\d{4}[./-]\d{2}[./-]\d{2}$/;
-    let flag = false;
-    let checkForNull;
 
     function getData() {
         let unitLength = tbody.rows[0].querySelectorAll('.unit').length,
@@ -87,6 +82,7 @@ export function seriesData(data) {
             };
 
             const errorBar = {
+                useHTML: true,
                 name: `${headingsArray[u]} interval`,
                 type: 'errorbar',
                 yAxis: 0,

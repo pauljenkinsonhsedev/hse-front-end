@@ -17,7 +17,7 @@ import { seriesData } from './series-data.js';
 import { chartCategories } from './chart-categories';
 import { displayPrefix } from './data-prefix.js';
 import { displaySuffix } from './data-suffix.js';
-import { dataLabel } from './data-label.js';
+import { dataTooltip } from './tooltip.js';
 import { plotBand } from './plot-band';
 import {bold} from 'ansi-colors';
 
@@ -36,15 +36,20 @@ export class ChartOptions {
         this.yAxisText = container.dataset.yaxisText;
         this.xAxisText = container.dataset.xaxisText;
         this.units = container.dataset.chartUnits;
+        this.decimals = container.dataset.decimalPoint;
         this.colWidth = 75;
         this.collection = new Array;
 
         // get series information
+        let units = container.querySelectorAll('.unit');
+        let total = 0;
+        for (let i = 0; i < units.length; i++) {
+            total += Number(units[i].innerText)
+        }
+
         const getSeriesData = seriesData(this.container);
         const categoryData = chartCategories(this.container);
-        const getDataLabel = dataLabel(this.units);
-        const dataLabelsPrefix = displayPrefix(this.units);
-        const dataLabelsSuffix = displaySuffix(this.units);
+        const getTooltip = dataTooltip(this.type, this.units, this.decimals, total);
         const getPlotBand = plotBand(this.container, this.brandGrayscale);
 
         this.collection = {
@@ -86,38 +91,29 @@ export class ChartOptions {
                 accessibility: {
                     description: this.description
                 },
-                plotBands: getPlotBand
+                plotBands: getPlotBand,
+                // min: 0,
+                // max: 2
             },
             yAxis: {
+                labels: {
+                    format: '{value:,.0f}'
+                },
                 title: {
                     text: this.yAxisText,
                     style: {
                         fontWeight: 'bold',
                     }
                 },
-                labels: {
-                    format: '{value:,.0f}'
-                }
             },
             tooltip: {
-                format: getDataLabel,
-                valuePrefix: `${dataLabelsPrefix}`,
-                valueSuffix: `${dataLabelsSuffix}`,
                 useHTML: true,
-                backgroundColor: null,
+                formatter: getTooltip,
+                backgroundColor: 'rgba(255, 255, 255, 1)',
+                borderWidth: 1,
                 padding: 1,
-                formatter: function(){
-                    const value = Number(parseFloat(this.y).toFixed(2)).toLocaleString('en', {minimumFractionDigits: 0});
-                    return `
-                    <div style="background-color: #FFFFFF; padding: 7px;">
-                        <div style="margin-bottom: 5px;">
-                            <strong>${this.series.name}</strong>
-                        </div>
-                        <div>
-                            ${this.key}
-                            <strong>${dataLabelsPrefix}${value}${dataLabelsSuffix}</strong>
-                        </div>
-                    </div>`;
+                style: {
+                    opacity: 1
                 }
             },
             legend: {
@@ -125,10 +121,7 @@ export class ChartOptions {
                 itemStyle: {
                     font: this.fontFamily,
                     color: '#000'
-                },
-                // itemHoverStyle:{
-                //     color: 'gray'
-                // }
+                }
             },
             accessibility: {
                 description: this.description
@@ -142,6 +135,5 @@ export class ChartOptions {
             colors: this.brandColours,
             series: getSeriesData
         };
-        // console.log('options', this.collection);
     }
 }

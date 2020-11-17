@@ -17,20 +17,28 @@ export class ChartOptionsPie extends ChartOptions {
         super(container);
         this.dataTable = container.querySelector('.tabledata');
         this.units = container.dataset.chartUnits;
+        this.decimals = container.dataset.decimalPoint;
         this.xAxisText = container.dataset.xaxisText;
 
+        let units = container.querySelectorAll('.unit');
+        let total = 0;
+        for (let i = 0; i < units.length; i++) {
+            total += Number(units[i].innerText)
+        }
+
         const getCategories = chartCategories(container);
-        const getDataLabel = dataLabel(this.units);
+        const getDataLabel = dataLabel(this.units, this.decimals, total);
+
         const dataLabelsPrefix = displayPrefix(this.units);
         const dataLabelsSuffix = displaySuffix(this.units);
-        
+
         let plotOptions = {
             pie: {
                 allowPointSelect: true,
                 cursor: 'pointer',
                 dataLabels: {
                     enabled: true,
-                    format: getDataLabel
+                    formatter: getDataLabel
                 }
             }
         };
@@ -42,24 +50,18 @@ export class ChartOptionsPie extends ChartOptions {
             },
             accessibility: {
                 description: this.description
-            },
-            labels: {
-                format: '{value:,.1f}'
             }
         }];
 
         let accessibility = {
             point: {
+                valuePrefix: dataLabelsPrefix,
                 valueSuffix: dataLabelsSuffix
             }
         };
 
-        let tooltip = {
-            pointFormat: `${dataLabelsPrefix}<b>{point.y:,.0f}</b>${dataLabelsSuffix}`
-        };
-
         const collection = this.collection;
-        this.collection = {...collection, plotOptions, xAxis, accessibility, tooltip};
+        this.collection = {...collection, plotOptions, xAxis, accessibility};
 
         return this.collection;
     }
