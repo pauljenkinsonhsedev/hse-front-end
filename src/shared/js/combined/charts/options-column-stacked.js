@@ -35,7 +35,7 @@ export class ChartOptionsColumnStacked extends ChartOptions {
 
         const tooltip = {
             shared: true,
-            formatter: getTooltip
+            // formatter: getTooltip
         }
 
         const collection = this.collection;
