@@ -1,21 +1,47 @@
 import { displaySuffix } from './data-suffix.js';
 import { displayPrefix } from './data-prefix.js';
+import { abbreviateNumber } from '../utils/number-abbreiviation.js';
 
-export function dataLabel(units) {
+export function dataLabel(units, decimal, total) {
     const dataLabelsSuffix = displaySuffix(units);
     const dataLabelsPrefix = displayPrefix(units);
+
+    let decimals = new Number;
     let result = new String;
 
-    switch (units) {
-    case 'percentage':
-        result = `<b>{point.name}</b>: {point.percentage:.0f}${dataLabelsSuffix}`;
-        break;
-    case 'pounds':
-        result = `{point.name}: <b>${dataLabelsPrefix}{point.y:,.1f}</b>${dataLabelsSuffix}`;
-        break;
-    default:
-        result = `{point.name}: <b>{point.y:,.1f}${dataLabelsSuffix}</b>`;
-        break;
+    decimal ? decimals = decimal : decimals = 0;
+
+    const round = (num, dec) => {
+        const factorOfTen = Math.pow(10, dec);
+        return Math.round(num * factorOfTen) / factorOfTen;
     }
-    return result;
+
+    const labelFormatted = function () {
+        // console.log(this);
+        const name = this.key;
+        const number = round(this.y, decimals);
+        const percentage = Math.floor((this.y / total) * 100);
+        let value = new Number;
+        if (this.y > 1000000) {
+            value = abbreviateNumber(number);
+        } else {
+            value = number.toLocaleString('en-GB', {maximumFractionDigits:2}) ;
+        }
+        switch (units) {
+            case 'percentage':
+                result = `<div>${name}: <strong>${value}${dataLabelsSuffix}</strong></div>`;
+                break;
+            case 'percentage-calc':
+                result = `<div>${name}: <strong>${percentage}${dataLabelsSuffix}</strong></div>`;
+                break;
+            default:
+                result = `<div>${name}: <strong>${dataLabelsPrefix}${value}${dataLabelsSuffix}</strong></div>`;
+                break;
+        }
+
+        return result;
+    };
+
+    return labelFormatted
+
 }
