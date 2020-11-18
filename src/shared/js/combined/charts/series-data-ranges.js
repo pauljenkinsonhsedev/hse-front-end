@@ -1,8 +1,9 @@
-// import { missingDataaverages } from './missing-data-averages.js';
-// import { missingDataRanges } from './missing-data-ranges.js';
+import { missingDataArearange } from './missing-data-arearange.js';
 
 export function seriesDataRanges(data) {
     const tbody = data.querySelector('.table__body');
+
+    const missingArray = new Array;
 
     // build data sets
     const averages = [].reduce.call(tbody.rows, function (averages, row) {
@@ -11,12 +12,14 @@ export function seriesDataRanges(data) {
         const rangeAverage = [...cells].filter(element => element.classList.contains('series-range-average'));
 
         const averageData = rangeAxis.map((e, i) => {
-            const getDate = new Date(rangeAxis[i].textContent);
-            const date = parseInt(moment(getDate).format('x'));
+            const getDate = rangeAxis[i].textContent;
             const average = Number(parseFloat(rangeAverage[i].textContent).toFixed(2).toLocaleString('en', {minimumFractionDigits: 0}));
 
             const array = new Array;
-            array.push(date, average);
+            array.push(getDate, average);
+
+            missingArray.push(average)
+
 
             return array;
         });
@@ -26,6 +29,7 @@ export function seriesDataRanges(data) {
         }, []));
         return averages;
     }, []);
+    const test = missingDataArearange(missingArray);
 
     const ranges = [].reduce.call(tbody.rows, function (ranges, row) {
         const cells = row.cells;
@@ -34,12 +38,11 @@ export function seriesDataRanges(data) {
         const rangeHigh = [...cells].filter(element => element.classList.contains('series-range-high'));
 
         const rangeData = rangeAxis.map((e, i) => {
-            const getDate = new Date(rangeAxis[i].textContent);
-            const date = parseInt(moment(getDate).format('x'));
+            const getDate = rangeAxis[i].textContent;
             const range1 = Number(parseFloat(rangeLow[i].textContent).toFixed(2).toLocaleString('en', {minimumFractionDigits: 0}));
             const range2 = Number(parseFloat(rangeHigh[i].textContent).toFixed(2).toLocaleString('en', {minimumFractionDigits: 0}));
             const array = new Array;
-            array.push(date, range1, range2);
+            array.push(getDate, range1, range2);
             return array;
         });
 
@@ -54,7 +57,7 @@ export function seriesDataRanges(data) {
     averagesDataArray.push(averages);
     rangesDataArray.push(ranges);
 
-    // const missingAverages = missingDataaverages(averagesDataArray);
+    // const missingAverages = missingDataAverages(averagesDataArray);
     // const missingRanges = missingDataRanges(rangesDataArray);
 
 

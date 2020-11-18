@@ -1,7 +1,12 @@
+import { seriesData } from './series-data.js';
+import { chartCategories } from './chart-categories';
 import { seriesDataRanges } from './series-data-ranges.js';
+import { missingDataArearange } from './missing-data-arearange.js';
 import { ChartOptions } from './dependencies';
 import { displaySuffix } from './data-suffix.js';
 import { displayPrefix } from './data-prefix.js';
+import { dataTooltip } from './tooltip.js';
+import { plotBand } from './plot-band';
 
 /*
     Class @ChartOptionsArearange
@@ -15,17 +20,34 @@ export class ChartOptionsArearange extends ChartOptions {
     constructor(container){
         super(container);
 
+        let units = container.querySelectorAll('.unit');
+        let total = 0;
+        for (let i = 0; i < units.length; i++) {
+            total += Number(units[i].innerText)
+        }
+
         let areaRangeTitle = container.dataset.areaRangeTitle;
         if (areaRangeTitle === 'undefined' || areaRangeTitle === undefined) {
             areaRangeTitle = 'Confidence interval';
         }
+        const getTooltip = dataTooltip(this.type, this.units, this.decimals, total, areaRangeTitle);
+        const getPlotBand = plotBand(this.container, this.brandGrayscale);
+        const categoryData = chartCategories(this.container);
         const seriesRangeData = seriesDataRanges(this.dataTable);
         const averagesData = seriesRangeData.averagesData();
         const rangesData = seriesRangeData.rangesData();
         const dataLabelsSuffix = displaySuffix(this.units);
         const dataLabelsPrefix = displayPrefix(this.units);
+        const firstLast = container.dataset.xaxisFirstlast;
         const thead = this.dataTable.querySelector('.table__head');
         let rangeHeading = thead.rows[0].querySelectorAll('.heading')[1].textContent;
+
+
+        // let missingAverages = missingDataArearange(averagesData[0]);
+            // series = missingData(getSeriesData);
+
+        // console.log('missingAverages', missingAverages);
+
 
 
         let title = this.collection.title;
@@ -42,6 +64,15 @@ export class ChartOptionsArearange extends ChartOptions {
             shared: true,
             valuePrefix: `${dataLabelsPrefix}`,
             valueSuffix: `${dataLabelsSuffix}`,
+            useHTML: true,
+            backgroundColor: 'rgba(255, 255, 255, 1)',
+            borderWidth: 1,
+            padding: 1,
+            style: {
+                fontSize: '12px',
+                opacity: 1
+            },
+            formatter: getTooltip
         };
 
         let series = [{
@@ -71,38 +102,45 @@ export class ChartOptionsArearange extends ChartOptions {
 
         const { 0: first, length, [length -1]: last } = rangesData[0]; //getting first and last el from array
         const dateRange = { first, last }
-        const dateFirst = moment(dateRange.first[0]).format('DD MMM YYYY');
-        const dateLast = moment(dateRange.last[0]).format('DD MMM YYYY');
 
-        let xAxis = {
+        const xAxis = {
+            showLastlabel: true,
+            categories: categoryData,
+            plotBands: getPlotBand,
             maxPadding: 0,
             endOnTick: true,
+            crosshair: {
+                width: 1,
+                color: this.brandGrayscale[0]
+            },
             labels: {
                 align: 'right',
-                style: {
-                    // margin: '10px'
-                },
                 overflow: 'justify',
-                formatter() {
-                    // console.log(this)
-                    if(this.isFirst || this.isLast) {
-                        return moment(this.value).format('YYYY')
+                formatter: function () {
+                    if (firstLast === 'true') {
+                        if(this.isFirst || this.isLast) {
+                            return this.value
+                        } else {
+                            return ''
+                        }
                     } else {
-                        return ''
+                        return this.value
                     }
                 }
             },
-            type: 'datetime',
-            // title: {
-            //     text: `${dateFirst} to ${dateLast}.`,
-            //     align: 'high'
-            // },
             accessibility: {
-                rangeDescription: `Range: ${dateFirst} to ${dateLast}.`
+                rangeDescription: `Range: ${dateRange.first[0]} to ${dateRange.last[0]}.`
+            },
+            title: {
+                text: this.xAxisText,
+                align: 'high'
             }
-        }
+        };
 
         let yAxis = {
+            labels: {
+                format: '{value:,.0f}'
+            },
             title: {
                 text: null
             },
