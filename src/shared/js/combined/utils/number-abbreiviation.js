@@ -10,7 +10,7 @@ export function abbreviateNumber(num) {
         // scale the number
         const scaled = num / scale;
         // format number and add suffix
-        result = parseFloat(scaled.toFixed(2).replace('.0', '')) + suffix;
+        result = parseFloat(scaled.toFixed(2)) + suffix;
     }
     return result;
 }

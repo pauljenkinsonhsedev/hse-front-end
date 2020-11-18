@@ -2,7 +2,7 @@ import { displaySuffix } from './data-suffix.js';
 import { displayPrefix } from './data-prefix.js';
 import { abbreviateNumber } from '../utils/number-abbreiviation.js';
 
-export function dataLabel(units, decimal, total) {
+export function dataValue(units, decimal, total) {
     const dataLabelsSuffix = displaySuffix(units);
     const dataLabelsPrefix = displayPrefix(units);
 
@@ -16,31 +16,31 @@ export function dataLabel(units, decimal, total) {
         return Math.round(num * factorOfTen) / factorOfTen;
     }
 
-    const labelFormatted = function () {
-        const name = this.key;
+    const valueFormatted = function () {
         const number = round(this.y, decimals);
-        const percentage = Math.floor((this.y / total) * 100);
+        const percentage = Math.floor((number / total) * 100);
         let value = new Number;
+
         if (this.y > 1000000) {
             value = abbreviateNumber(number);
         } else {
             value = number.toLocaleString('en-GB', {maximumFractionDigits:2}) ;
         }
+
         switch (units) {
             case 'percentage':
-                result = `<div>${name}: <strong>${value}${dataLabelsSuffix}</strong></div>`;
+                result = `${value}${dataLabelsSuffix}`;
                 break;
             case 'percentage-calc':
-                result = `<div>${name}: <strong>${percentage}${dataLabelsSuffix}</strong></div>`;
+                result = `${percentage}${dataLabelsSuffix}`;
                 break;
             default:
-                result = `<div>${name}: <strong>${dataLabelsPrefix}${value}${dataLabelsSuffix}</strong></div>`;
+                result = `${dataLabelsPrefix}${value}${dataLabelsSuffix}`;
                 break;
         }
 
         return result;
     };
 
-    return labelFormatted
-
+    return valueFormatted
 }

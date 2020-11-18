@@ -2,6 +2,7 @@ import { ChartOptions } from './dependencies';
 import { displaySuffix } from './data-suffix.js';
 import { displayPrefix } from './data-prefix.js';
 import { dataLabel } from './data-label.js';
+import { dataValue } from './data-value.js';
 /*
     Class @ChartOptionsDefault
 
@@ -13,13 +14,20 @@ import { dataLabel } from './data-label.js';
 export class ChartOptionsDefault extends ChartOptions {
     constructor(container){
         super(container);
-        this.dataTable = container.querySelector('.tabledata');
 
+        let units = container.querySelectorAll('.unit');
+        let total = 0;
+        for (let i = 0; i < units.length; i++) {
+            total += Number(units[i].innerText)
+        }
+
+        this.dataTable = container.querySelector('.tabledata');
         this.units = container.dataset.chartUnits;
         this.dataLabelsSuffix = displaySuffix(this.units);
         this.dataLabelsPrefix = displayPrefix(this.units);
         this.decimals = container.dataset.decimalPoint;
         const getDataLabel = dataLabel(this.units, this.decimals);
+        const getValue = dataValue(this.units, this.decimals, total);
 
        /*
             Plot events boolean
@@ -32,11 +40,13 @@ export class ChartOptionsDefault extends ChartOptions {
             }
         }
 
+
+
         const plotOptions = {
             bar: {
                 dataLabels: {
                     enabled: true,
-                    format: `{y}${this.dataLabelsSuffix}`
+                    formatter: getValue
                 }
             },
             dataLabels: {
