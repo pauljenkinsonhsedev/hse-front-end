@@ -24,17 +24,22 @@ export function dataTooltip(type, units, decimal, total, areaRangeTitle) {
         if (this.y > 1000000) {
             value = abbreviateNumber(number);
         } else {
-            value = number.toLocaleString('en-GB', {maximumFractionDigits:2}) ;
+            value = number.toLocaleString('en-GB', {maximumFractionDigits:2});
         }
 
         // Area Range charts requires more information for tooltips
-        let ranges = new String;        
-        
+        let ranges = new String;
+
         if (type === 'arearange') {
             const low = this.points[1].point.low;
             const high = this.points[1].point.high;
-            const lowValue = abbreviateNumber(low);
-            const highValue = abbreviateNumber(high);
+            let lowValue = low.toLocaleString('en-GB', {maximumFractionDigits:2});
+            let highValue = high.toLocaleString('en-GB', {maximumFractionDigits:2});
+
+            if (low > 10000 || high > 10000) {
+                lowValue = abbreviateNumber(low);
+                highValue = abbreviateNumber(high);
+            }
 
             ranges = `
             <div style="background-color: #FFFFFF; padding: 7px; font-size: 12px;">
@@ -42,8 +47,8 @@ export function dataTooltip(type, units, decimal, total, areaRangeTitle) {
             <ul style="margin: 0; padding: 0;">
             <li style="font-size: 12px; margin: 0; padding: 4px 0 4px 10px;">${this.points[0].point.series.name}: <strong>${dataLabelsPrefix}${value}</strong></li>
             <li style="font-size: 12px; margin: 0; padding: 4px 0 4px 10px;">${areaRangeTitle} <strong>${dataLabelsPrefix}${lowValue} - ${dataLabelsPrefix}${highValue}</strong></li>
-            </ul>         
-            </div>   
+            </ul>
+            </div>
             `;
         }
 
