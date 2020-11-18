@@ -27,11 +27,14 @@ export function dataLabel(units, decimal, total) {
         } else {
             value = number.toLocaleString('en-GB', {maximumFractionDigits:2}) ;
         }
+        console.log(`units ${units}`);
         switch (units) {
             case 'percentage':
+                console.log('percentage');
                 result = `<div>${name}: <strong>${value}${dataLabelsSuffix}</strong></div>`;
                 break;
             case 'percentage-calc':
+                console.log('percentage-calc');
                 result = `<div>${name}: <strong>${percentage}${dataLabelsSuffix}</strong></div>`;
                 break;
             default:
