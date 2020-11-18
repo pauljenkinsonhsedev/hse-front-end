@@ -1,7 +1,5 @@
-import { seriesData } from './series-data.js';
 import { chartCategories } from './chart-categories';
 import { seriesDataRanges } from './series-data-ranges.js';
-import { missingDataArearange } from './missing-data-arearange.js';
 import { ChartOptions } from './dependencies';
 import { displaySuffix } from './data-suffix.js';
 import { displayPrefix } from './data-prefix.js';
@@ -41,14 +39,6 @@ export class ChartOptionsArearange extends ChartOptions {
         const firstLast = container.dataset.xaxisFirstlast;
         const thead = this.dataTable.querySelector('.table__head');
         let rangeHeading = thead.rows[0].querySelectorAll('.heading')[1].textContent;
-
-
-        // let missingAverages = missingDataArearange(averagesData[0]);
-            // series = missingData(getSeriesData);
-
-        // console.log('missingAverages', missingAverages);
-
-
 
         let title = this.collection.title;
         title.text = this.title;
