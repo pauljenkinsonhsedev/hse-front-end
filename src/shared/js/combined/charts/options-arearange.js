@@ -1,5 +1,7 @@
+import { seriesData } from './series-data.js';
 import { chartCategories } from './chart-categories';
 import { seriesDataRanges } from './series-data-ranges.js';
+import { missingDataArearange } from './missing-data-arearange.js';
 import { ChartOptions } from './dependencies';
 import { displaySuffix } from './data-suffix.js';
 import { displayPrefix } from './data-prefix.js';
@@ -39,6 +41,13 @@ export class ChartOptionsArearange extends ChartOptions {
         const firstLast = container.dataset.xaxisFirstlast;
         const thead = this.dataTable.querySelector('.table__head');
         let rangeHeading = thead.rows[0].querySelectorAll('.heading')[1].textContent;
+
+
+        // let missingAverages = missingDataArearange(averagesData[0]);
+            // series = missingData(getSeriesData);
+
+        // console.log('missingAverages', missingAverages);
+
 
 
         let title = this.collection.title;
@@ -93,8 +102,6 @@ export class ChartOptionsArearange extends ChartOptions {
 
         const { 0: first, length, [length -1]: last } = rangesData[0]; //getting first and last el from array
         const dateRange = { first, last }
-        const dateFirst = moment(dateRange.first[0]).format('YYYY');
-        const dateLast = moment(dateRange.last[0]).format('YYYY');
 
         const xAxis = {
             showLastlabel: true,
@@ -122,7 +129,7 @@ export class ChartOptionsArearange extends ChartOptions {
                 }
             },
             accessibility: {
-                rangeDescription: `Range: ${dateFirst} to ${dateLast}.`
+                rangeDescription: `Range: ${dateRange.first[0]} to ${dateRange.last[0]}.`
             },
             title: {
                 text: this.xAxisText,
