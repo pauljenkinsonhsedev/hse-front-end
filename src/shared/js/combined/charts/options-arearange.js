@@ -1,5 +1,6 @@
 import { chartCategories } from './chart-categories';
 import { seriesDataRanges } from './series-data-ranges.js';
+import { missingDataArearange } from './missing-data-arearange.js';
 import { ChartOptions } from './dependencies';
 import { displaySuffix } from './data-suffix.js';
 import { displayPrefix } from './data-prefix.js';
@@ -40,6 +41,9 @@ export class ChartOptionsArearange extends ChartOptions {
         const thead = this.dataTable.querySelector('.table__head');
         let rangeHeading = thead.rows[0].querySelectorAll('.heading')[1].textContent;
 
+        const missingData = missingDataArearange(averagesData[0]);
+
+
         let title = this.collection.title;
         title.text = this.title;
 
@@ -65,30 +69,40 @@ export class ChartOptionsArearange extends ChartOptions {
             formatter: getTooltip
         };
 
-        let series = [{
-            name: `${rangeHeading}`,
-            data: averagesData[0],
-            zIndex: 1,
-            fillOpacity: 0.3,
-            color: this.brandColours[0],
-            marker: {
-                fillColor: 'white',
-                lineWidth: 2,
-                lineColor: this.brandColours[0]
+        // console.log('options averagesData', averagesData);
+
+        let series = [
+            // {
+            //     name: `${rangeHeading}`,
+            //     data: averagesData[0],
+            //     zIndex: 1,
+            //     fillOpacity: 0.3,
+            //     color: this.brandColours[0],
+            //     marker: {
+            //         fillColor: 'white',
+            //         lineWidth: 2,
+            //         lineColor: this.brandColours[0]
+            //     }
+            // },
+            {
+                name: areaRangeTitle,
+                data: rangesData[0],
+                type: 'arearange',
+                lineWidth: 0,
+                linkedTo: ':previous',
+                color: this.brandColours[0],
+                fillOpacity: 0.3,
+                zIndex: 0,
+                marker: {
+                    enabled: false
+                }
             }
-        }, {
-            name: areaRangeTitle,
-            data: rangesData[0],
-            type: 'arearange',
-            lineWidth: 0,
-            linkedTo: ':previous',
-            color: this.brandColours[0],
-            fillOpacity: 0.3,
-            zIndex: 0,
-            marker: {
-                enabled: false
-            }
-        }];
+        ];
+        missingData[0].name = `${rangeHeading}`;
+        series.push(missingData[0]);
+        series.push(missingData[1]);
+
+        console.log(series);
 
         const { 0: first, length, [length -1]: last } = rangesData[0]; //getting first and last el from array
         const dateRange = { first, last }
