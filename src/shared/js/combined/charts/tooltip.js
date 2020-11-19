@@ -43,11 +43,11 @@ export function dataTooltip(type, units, decimal, total, areaRangeTitle) {
 
             ranges = `
             <div style="background-color: #FFFFFF; padding: 7px; font-size: 12px;">
-            <strong style="display: block; margin-bottom: 4px;">${this.points[0].x}</strong>
-            <ul style="margin: 0; padding: 0;">
-            <li style="font-size: 12px; margin: 0; padding: 4px 0 4px 10px;">${this.points[0].point.series.name}: <strong>${dataLabelsPrefix}${value}</strong></li>
-            <li style="font-size: 12px; margin: 0; padding: 4px 0 4px 10px;">${areaRangeTitle} <strong>${dataLabelsPrefix}${lowValue} - ${dataLabelsPrefix}${highValue}</strong></li>
-            </ul>
+                <strong style="display: block; margin-bottom: 4px;">${this.points[0].x}</strong>
+                <ul style="margin: 0; padding: 0;">
+                    <li style="font-size: 12px; margin: 0; padding: 4px 0 4px 10px;">${this.points[0].point.series.name}: <strong>${dataLabelsPrefix}${value}</strong></li>
+                    <li style="font-size: 12px; margin: 0; padding: 4px 0 4px 10px;">${areaRangeTitle} <strong>${dataLabelsPrefix}${lowValue} - ${dataLabelsPrefix}${highValue}</strong></li>
+                </ul>
             </div>
             `;
         }
