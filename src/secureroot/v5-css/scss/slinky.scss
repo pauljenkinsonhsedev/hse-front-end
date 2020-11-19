@@ -25,7 +25,8 @@ overflow: auto; }
 .slinky-menu a span {
 flex: 1;
 line-height: 1.4;
-overflow: auto; }
+overflow: auto;
+display: block; }
 .slinky-menu li ul {
 //display: none;
 left: 100%;
