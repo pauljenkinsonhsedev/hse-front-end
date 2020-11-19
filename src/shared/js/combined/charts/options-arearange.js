@@ -43,7 +43,6 @@ export class ChartOptionsArearange extends ChartOptions {
 
         const missingData = missingDataArearange(averagesData[0]);
 
-
         let title = this.collection.title;
         title.text = this.title;
 
@@ -66,10 +65,8 @@ export class ChartOptionsArearange extends ChartOptions {
                 fontSize: '12px',
                 opacity: 1
             },
-            formatter: getTooltip
+            // formatter: getTooltip
         };
-
-        // console.log('options averagesData', averagesData);
 
         let series = [
             // {
