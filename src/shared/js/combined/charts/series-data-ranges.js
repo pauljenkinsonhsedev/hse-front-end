@@ -1,5 +1,3 @@
-import { missingDataArearange } from './missing-data-arearange.js';
-
 export function seriesDataRanges(data) {
     const tbody = data.querySelector('.table__body');
 
@@ -29,7 +27,6 @@ export function seriesDataRanges(data) {
         }, []));
         return averages;
     }, []);
-    const test = missingDataArearange(missingArray);
 
     const ranges = [].reduce.call(tbody.rows, function (ranges, row) {
         const cells = row.cells;
