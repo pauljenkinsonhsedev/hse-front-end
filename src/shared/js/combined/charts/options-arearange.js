@@ -57,10 +57,10 @@ export class ChartOptionsArearange extends ChartOptions {
             shared: true,
             valuePrefix: `${dataLabelsPrefix}`,
             valueSuffix: `${dataLabelsSuffix}`,
-            useHTML: true,
+            // useHTML: true,
             backgroundColor: 'rgba(255, 255, 255, 1)',
-            borderWidth: 1,
-            padding: 1,
+            // borderWidth: 1,
+            // padding: 1,
             style: {
                 fontSize: '12px',
                 opacity: 1
@@ -68,36 +68,37 @@ export class ChartOptionsArearange extends ChartOptions {
             // formatter: getTooltip
         };
 
-        let series = [
-            // {
-            //     name: `${rangeHeading}`,
-            //     data: averagesData[0],
-            //     zIndex: 1,
-            //     fillOpacity: 0.3,
-            //     color: this.brandColours[0],
-            //     marker: {
-            //         fillColor: 'white',
-            //         lineWidth: 2,
-            //         lineColor: this.brandColours[0]
-            //     }
-            // },
-            {
-                name: areaRangeTitle,
-                data: rangesData[0],
-                type: 'arearange',
-                lineWidth: 0,
-                linkedTo: ':previous',
-                color: this.brandColours[0],
-                fillOpacity: 0.3,
-                zIndex: 0,
-                marker: {
-                    enabled: false
-                }
+        let series = [];
+        const seriesAverage = {
+            name: `${rangeHeading}`,
+            data: averagesData[0],
+            zIndex: 1,
+            fillOpacity: 0.3,
+            color: this.brandColours[0],
+            marker: {
+                fillColor: 'white',
+                lineWidth: 2,
+                lineColor: this.brandColours[0]
             }
-        ];
+        };
+        const seriesRange ={
+            name: areaRangeTitle,
+            data: rangesData[0],
+            type: 'arearange',
+            lineWidth: 0,
+            linkedTo: ':previous',
+            color: this.brandColours[0],
+            fillOpacity: 0.3,
+            zIndex: 0,
+            marker: {
+                enabled: false
+            }
+        };
+
         missingData[0].name = `${rangeHeading}`;
         series.push(missingData[0]);
         series.push(missingData[1]);
+        series.push(seriesRange);
 
         console.log(series);
 
