@@ -26,11 +26,13 @@ overflow: auto; }
 flex: 1;
 line-height: 1.4;
 overflow: auto;
-display: block; }
+display: block;
+width: 100%;
+height: auto;}
 .slinky-menu li ul {
 //display: none;
 left: 100%;
-position: absolute; // Applied only if browser has JS - accesibility 
+// position: absolute; Applied only if browser has JS - accesibility 
 top: 0; }
 .slinky-menu .header {
 display: flex;
