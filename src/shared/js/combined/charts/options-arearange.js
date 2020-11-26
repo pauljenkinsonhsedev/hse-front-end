@@ -1,10 +1,11 @@
 import { chartCategories } from './chart-categories';
 import { seriesDataRanges } from './series-data-ranges.js';
-import { missingDataArearange } from './missing-data-arearange.js';
+import { missingDataAverage } from './missing-data-average.js';
+import { missingDataRanges } from './missing-data-ranges.js';
 import { ChartOptions } from './dependencies';
 import { displaySuffix } from './data-suffix.js';
 import { displayPrefix } from './data-prefix.js';
-import { dataTooltip } from './tooltip.js';
+// import { dataTooltip } from './tooltip.js';
 import { plotBand } from './plot-band';
 
 /*
@@ -29,7 +30,7 @@ export class ChartOptionsArearange extends ChartOptions {
         if (areaRangeTitle === 'undefined' || areaRangeTitle === undefined) {
             areaRangeTitle = 'Confidence interval';
         }
-        const getTooltip = dataTooltip(this.type, this.units, this.decimals, total, areaRangeTitle);
+        // const getTooltip = dataTooltip(this.type, this.units, this.decimals, total, areaRangeTitle);
         const getPlotBand = plotBand(this.container, this.brandGrayscale);
         const categoryData = chartCategories(this.container);
         const seriesRangeData = seriesDataRanges(this.dataTable);
@@ -41,7 +42,10 @@ export class ChartOptionsArearange extends ChartOptions {
         const thead = this.dataTable.querySelector('.table__head');
         let rangeHeading = thead.rows[0].querySelectorAll('.heading')[1].textContent;
 
-        const missingData = missingDataArearange(averagesData[0]);
+        const missingAverage = missingDataAverage(averagesData[0]);
+        // const missingRanges = missingDataRanges(rangesData[0]);
+
+        // console.log('rangesData[0]', rangesData[0]);
 
         let title = this.collection.title;
         title.text = this.title;
@@ -51,22 +55,6 @@ export class ChartOptionsArearange extends ChartOptions {
 
         let exporting = this.collection.exporting;
         let credits = this.collection.credit;
-
-        let tooltip = {
-            crosshairs: true,
-            shared: true,
-            valuePrefix: `${dataLabelsPrefix}`,
-            valueSuffix: `${dataLabelsSuffix}`,
-            // useHTML: true,
-            backgroundColor: 'rgba(255, 255, 255, 1)',
-            // borderWidth: 1,
-            // padding: 1,
-            style: {
-                fontSize: '12px',
-                opacity: 1
-            },
-            // formatter: getTooltip
-        };
 
         let series = [];
         const seriesAverage = {
@@ -95,12 +83,15 @@ export class ChartOptionsArearange extends ChartOptions {
             }
         };
 
-        missingData[0].name = `${rangeHeading}`;
-        series.push(missingData[0]);
-        series.push(missingData[1]);
+        missingAverage[0].name = `${rangeHeading}`;
+        series.push(missingAverage[0]);
+        series.push(missingAverage[1]);
+        // series.push(seriesAverage);
         series.push(seriesRange);
 
-        console.log(series);
+
+
+        // console.log(series);
 
         const { 0: first, length, [length -1]: last } = rangesData[0]; //getting first and last el from array
         const dateRange = { first, last }
@@ -118,17 +109,17 @@ export class ChartOptionsArearange extends ChartOptions {
             labels: {
                 align: 'right',
                 overflow: 'justify',
-                formatter: function () {
-                    if (firstLast === 'true') {
-                        if(this.isFirst || this.isLast) {
-                            return this.value
-                        } else {
-                            return ''
-                        }
-                    } else {
-                        return this.value
-                    }
-                }
+                // formatter: function () {
+                //     if (firstLast === 'true') {
+                //         if(this.isFirst || this.isLast) {
+                //             return this.value
+                //         } else {
+                //             return ''
+                //         }
+                //     } else {
+                //         return this.value
+                //     }
+                // }
             },
             accessibility: {
                 rangeDescription: `Range: ${dateRange.first[0]} to ${dateRange.last[0]}.`
@@ -150,10 +141,79 @@ export class ChartOptionsArearange extends ChartOptions {
             min: 0
         }
 
+        let tooltip = {
+            crosshairs: true,
+            shared: true,
+            // split: true,
+            valuePrefix: `${dataLabelsPrefix}`,
+            valueSuffix: `${dataLabelsSuffix}`,
+            useHTML: true,
+            backgroundColor: 'rgba(255, 255, 255, 1)',
+            // borderWidth: 1,
+            // padding: 1,
+            style: {
+                fontSize: '12px',
+                opacity: 1
+            },
+            backgroundColor: '#fff',
+            // pointFormatter: function() {
+            //     const index = this.index;
+            //     console.log(this);
+            //     const tooltip = `
+            //         <div style="color: red">
+            //         ${this.category}
+            //         ${areaRangeTitle} <strong>${this.plotLow} - ${this.plotHigh}</strong>
+            //         </div>
+            //     `;
+            //     if (myIndexes[index].tooltip === false) {
+            //         // areaRangeTitle = null
+            //         this.name = null;
+            //     } else {
+            //         return tooltip;
+            //     }
+            //     // return 'No data recorded'
+            // },
+            // nullFormat: 'Value is not available.',
+            formatter: function (e, i) {
+                const index = this.index;
+                console.log('show/hide ', myIndexes);
+                console.log('series data ', series[2].data.indexOf( this.point ));
+                // if (myIndexes[index].tooltip === false) {
+                // }
+            }
+        };
+        function noTooltip(dataArray) {
+            return dataArray.map(function (item, index) {
+                let tooltip = true;
+                if (item[0] === 0) {
+                    console.log('zero');
+                    tooltip = false;
+                } else {
+                    tooltip = true;
+                }
+                return {index: index, tooltip: tooltip};
+            });
+        };
+        const myIndexes = noTooltip(averagesData[0]);
+        // console.log(averagesData[0]);
+        // console.log(myIndexes);
+
         let plotOptions = {
+            // arearange: {
+            //     tooltip: {
+            //         formatter: function () {
+            //             console.log('area range ', this);
+            //         }
+            //     }
+            // },
             series: {
                 showInLegend: true,
                 events: {
+                    // mouseOver: function () {
+                    //     // const series = this.series;
+                    //     console.log('mouse over ', this);
+
+                    // },
                     legendItemClick: function() {
                         if (this.index === 1) {
                             return true;
