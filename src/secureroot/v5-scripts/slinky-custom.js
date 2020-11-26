@@ -39,11 +39,12 @@
     }
     });
 
-
   // Orphan page fix
   // Check if menu contains class of active.page
 
   var numActiveItems = $("#menu .active-page").length;
+
+  console.log(numActiveItems);
 
   // If not get orphan page url
   
@@ -129,11 +130,11 @@
 
     if (id === 0) {
 
-      text = $(element).parents('.slinky-menu ul').find('li.first a span').text();
+      text = $(element).parents('.slinky-menu ul').find('li.first a').text();
 
     } else {
 
-      text = $(element).parent().parent().parent().parent().parent().find('a.next-new span').first().text();
+      text = $(element).parent().parent().parent().parent().parent().find('a.next-new').first().text();
 
     }
 
@@ -156,9 +157,9 @@
 	
   $('#menu ul li ul li.header').each(function (id, element) {
 	  
-  var overviewTitle = $(element).parent().parent().find('a.next span').first().text();
+  var overviewTitle = $(element).parent().parent().find('a.next').first().text();
   $(element).next('li').find('a').attr("title", "Overview: " + overviewTitle);
-  $(element).next('li').find('a').html('<span>' + "Overview" + '</span>' + '<span class="hide">: ' + overviewTitle + '</span>');
+  $(element).next('li').find('a').html( "Overview"  + '<span class="hide">: ' + overviewTitle + '</span>');
 
 	  
   });
