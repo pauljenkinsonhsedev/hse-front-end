@@ -68,8 +68,7 @@ color: black;}
 content: " ";
 background-image: url('../../assets/v5-images/icons/svg/solid/arrow-left-white.svg');
 background-repeat: no-repeat;
-float: left;
-display: block;
+display: inline-block;
 height: 16px;
 margin: 0;
 transform: translateX(10px) !important; // Important to reverse slinky transform CSS
@@ -85,7 +84,7 @@ text-decoration: none;
 content: " ";
 background-image: url('../../assets/v5-images/icons/svg/solid/arrow-right.svg');
 background-repeat: no-repeat;
-display: block;
+display: inline-block;
 width: 16px;
 height: 16px;
 right: 10px;
@@ -97,7 +96,7 @@ position: absolute !important;
 content: " ";
 background-image: url('../../assets/v5-images/icons/svg/solid/arrow-right-red.svg');
 background-repeat: no-repeat;
-display: block;
+display: inline-block;
 width: 16px;
 height: 16px;
 right: 10px;
@@ -191,8 +190,4 @@ color: $black !important;
 .slinky-theme-default a.back:focus::before {
 content: " ";
 background-image: url('../../assets/v5-images/icons/svg/solid/arrow-left-black.svg') !important;
-}
-.slinky-theme-default a.next::after {
-content: " ";
-background-image: url('../../assets/v5-images/icons/svg/solid/arrow-right-black.svg') !important;  
 }
