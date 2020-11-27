@@ -1,10 +1,11 @@
 import { chartCategories } from './chart-categories';
 import { seriesDataRanges } from './series-data-ranges.js';
+import { missingDataAverage } from './missing-data-average.js';
 import { ChartOptions } from './dependencies';
 import { displaySuffix } from './data-suffix.js';
 import { displayPrefix } from './data-prefix.js';
-import { dataTooltip } from './tooltip.js';
 import { plotBand } from './plot-band';
+import { abbreviateNumber } from '../utils/number-abbreiviation.js';
 
 /*
     Class @ChartOptionsArearange
@@ -28,7 +29,7 @@ export class ChartOptionsArearange extends ChartOptions {
         if (areaRangeTitle === 'undefined' || areaRangeTitle === undefined) {
             areaRangeTitle = 'Confidence interval';
         }
-        const getTooltip = dataTooltip(this.type, this.units, this.decimals, total, areaRangeTitle);
+        // const getTooltip = dataTooltip(this.type, this.units, this.decimals, total, areaRangeTitle);
         const getPlotBand = plotBand(this.container, this.brandGrayscale);
         const categoryData = chartCategories(this.container);
         const seriesRangeData = seriesDataRanges(this.dataTable);
@@ -40,6 +41,24 @@ export class ChartOptionsArearange extends ChartOptions {
         const thead = this.dataTable.querySelector('.table__head');
         let rangeHeading = thead.rows[0].querySelectorAll('.heading')[1].textContent;
 
+        const missingAverage = missingDataAverage(averagesData[0]);
+
+        // console.log(checkForNull(averagesData[0]))
+
+
+        function noTooltip(dataArray) {
+            return dataArray.map(function (item, index) {
+                let tooltip = true;
+                if (item[0] === 0) {
+                    tooltip = false;
+                } else {
+                    tooltip = true;
+                }
+                return {index: index, tooltip: tooltip};
+            });
+        };
+        const tooltipCheck = noTooltip(averagesData[0]);
+
         let title = this.collection.title;
         title.text = this.title;
 
@@ -49,23 +68,8 @@ export class ChartOptionsArearange extends ChartOptions {
         let exporting = this.collection.exporting;
         let credits = this.collection.credit;
 
-        let tooltip = {
-            crosshairs: true,
-            shared: true,
-            valuePrefix: `${dataLabelsPrefix}`,
-            valueSuffix: `${dataLabelsSuffix}`,
-            useHTML: true,
-            backgroundColor: 'rgba(255, 255, 255, 1)',
-            borderWidth: 1,
-            padding: 1,
-            style: {
-                fontSize: '12px',
-                opacity: 1
-            },
-            formatter: getTooltip
-        };
-
-        let series = [{
+        let series = [];
+        const seriesAverage = {
             name: `${rangeHeading}`,
             data: averagesData[0],
             zIndex: 1,
@@ -76,7 +80,8 @@ export class ChartOptionsArearange extends ChartOptions {
                 lineWidth: 2,
                 lineColor: this.brandColours[0]
             }
-        }, {
+        };
+        const seriesRange ={
             name: areaRangeTitle,
             data: rangesData[0],
             type: 'arearange',
@@ -87,8 +92,30 @@ export class ChartOptionsArearange extends ChartOptions {
             zIndex: 0,
             marker: {
                 enabled: false
+            },
+            enableMouseTracking: false
+        };
+
+        let flag = false;
+
+        const checkForNull = averagesData[0].reduce(function (result, item) {
+            if (item[0] === 0) {
+                flag = true;
             }
-        }];
+            return flag;
+        }, 0);
+
+        console.log(checkForNull);
+
+        if (checkForNull === true) {
+            series.push(missingAverage[0]);
+            series.push(missingAverage[1]);
+        } else {
+            series.push(seriesAverage);
+        }
+
+        missingAverage[0].name = `${rangeHeading}`;
+        series.push(seriesRange);
 
         const { 0: first, length, [length -1]: last } = rangesData[0]; //getting first and last el from array
         const dateRange = { first, last }
@@ -138,12 +165,58 @@ export class ChartOptionsArearange extends ChartOptions {
             min: 0
         }
 
+        let tooltip = {
+            crosshairs: true,
+            shared: false,
+            valuePrefix: `${dataLabelsPrefix}`,
+            valueSuffix: `${dataLabelsSuffix}`,
+            backgroundColor: 'rgba(255, 255, 255, 1)',
+            // borderWidth: 1,
+            // padding: 1,
+            style: {
+                fontSize: '12px',
+                opacity: 1
+            },
+            backgroundColor: '#fff',
+            formatter: function() {
+                const series = this.point.series.chart.series;
+                const index = this.point.series.xData.indexOf(this.point.x);
+
+                if (tooltipCheck[index].tooltip === false) {
+                    return false;
+                } else {
+                    let rangeIndex;
+                    if (checkForNull === true) {
+                        rangeIndex = 2;
+                    } else {
+                        rangeIndex = 1;
+                    }
+
+                
+
+
+                    return `
+                        <div>
+                            <span><strong>${series[0].points[index].category}</strong></span>
+                            <br/>
+                            <span><span style="color: ${series[0].color};">●</span> ${series[0].name} <strong>${dataLabelsPrefix}${abbreviateNumber(series[0].yData[index])}${dataLabelsSuffix}</strong></span><br/>
+                            <span><span style="color: ${series[0].color};">●</span> ${series[rangeIndex].name} <strong>${dataLabelsPrefix}${abbreviateNumber(series[rangeIndex].yData[index][0])}${dataLabelsSuffix} - ${dataLabelsPrefix}${abbreviateNumber(series[rangeIndex].yData[index][1])}${dataLabelsSuffix}</strong></span>
+                        </div>
+                    `;
+                }
+            }
+        };
+
         let plotOptions = {
             series: {
                 showInLegend: true,
                 events: {
                     legendItemClick: function() {
-                        if (this.index === 1) {
+                        let targetIndex = 1;
+                        if (checkForNull === true) {
+                            targetIndex = 2;
+                        }
+                        if (this.index === targetIndex) {
                             return true;
                         }
                         return false;
