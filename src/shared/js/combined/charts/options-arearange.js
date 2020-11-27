@@ -1,11 +1,9 @@
 import { chartCategories } from './chart-categories';
 import { seriesDataRanges } from './series-data-ranges.js';
 import { missingDataAverage } from './missing-data-average.js';
-import { missingDataRanges } from './missing-data-ranges.js';
 import { ChartOptions } from './dependencies';
 import { displaySuffix } from './data-suffix.js';
 import { displayPrefix } from './data-prefix.js';
-// import { dataTooltip } from './tooltip.js';
 import { plotBand } from './plot-band';
 
 /*
@@ -43,9 +41,22 @@ export class ChartOptionsArearange extends ChartOptions {
         let rangeHeading = thead.rows[0].querySelectorAll('.heading')[1].textContent;
 
         const missingAverage = missingDataAverage(averagesData[0]);
-        // const missingRanges = missingDataRanges(rangesData[0]);
 
-        // console.log('rangesData[0]', rangesData[0]);
+        // console.log(checkForNull(averagesData[0]))
+
+
+        function noTooltip(dataArray) {
+            return dataArray.map(function (item, index) {
+                let tooltip = true;
+                if (item[0] === 0) {
+                    tooltip = false;
+                } else {
+                    tooltip = true;
+                }
+                return {index: index, tooltip: tooltip};
+            });
+        };
+        const tooltipCheck = noTooltip(averagesData[0]);
 
         let title = this.collection.title;
         title.text = this.title;
@@ -80,18 +91,30 @@ export class ChartOptionsArearange extends ChartOptions {
             zIndex: 0,
             marker: {
                 enabled: false
-            }
+            },
+            enableMouseTracking: false
         };
 
+        let flag = false;
+
+        const checkForNull = averagesData[0].reduce(function (result, item) {
+            if (item[0] === 0) {
+                flag = true;
+            }
+            return flag;
+        }, 0);
+
+        console.log(checkForNull);
+
+        if (checkForNull === true) {
+            series.push(missingAverage[0]);
+            series.push(missingAverage[1]);
+        } else {
+            series.push(seriesAverage);
+        }
+
         missingAverage[0].name = `${rangeHeading}`;
-        series.push(missingAverage[0]);
-        series.push(missingAverage[1]);
-        // series.push(seriesAverage);
         series.push(seriesRange);
-
-
-
-        // console.log(series);
 
         const { 0: first, length, [length -1]: last } = rangesData[0]; //getting first and last el from array
         const dateRange = { first, last }
@@ -109,17 +132,17 @@ export class ChartOptionsArearange extends ChartOptions {
             labels: {
                 align: 'right',
                 overflow: 'justify',
-                // formatter: function () {
-                //     if (firstLast === 'true') {
-                //         if(this.isFirst || this.isLast) {
-                //             return this.value
-                //         } else {
-                //             return ''
-                //         }
-                //     } else {
-                //         return this.value
-                //     }
-                // }
+                formatter: function () {
+                    if (firstLast === 'true') {
+                        if(this.isFirst || this.isLast) {
+                            return this.value
+                        } else {
+                            return ''
+                        }
+                    } else {
+                        return this.value
+                    }
+                }
             },
             accessibility: {
                 rangeDescription: `Range: ${dateRange.first[0]} to ${dateRange.last[0]}.`
@@ -143,11 +166,9 @@ export class ChartOptionsArearange extends ChartOptions {
 
         let tooltip = {
             crosshairs: true,
-            shared: true,
-            // split: true,
+            shared: false,
             valuePrefix: `${dataLabelsPrefix}`,
             valueSuffix: `${dataLabelsSuffix}`,
-            useHTML: true,
             backgroundColor: 'rgba(255, 255, 255, 1)',
             // borderWidth: 1,
             // padding: 1,
@@ -156,66 +177,41 @@ export class ChartOptionsArearange extends ChartOptions {
                 opacity: 1
             },
             backgroundColor: '#fff',
-            // pointFormatter: function() {
-            //     const index = this.index;
-            //     console.log(this);
-            //     const tooltip = `
-            //         <div style="color: red">
-            //         ${this.category}
-            //         ${areaRangeTitle} <strong>${this.plotLow} - ${this.plotHigh}</strong>
-            //         </div>
-            //     `;
-            //     if (myIndexes[index].tooltip === false) {
-            //         // areaRangeTitle = null
-            //         this.name = null;
-            //     } else {
-            //         return tooltip;
-            //     }
-            //     // return 'No data recorded'
-            // },
-            // nullFormat: 'Value is not available.',
-            formatter: function (e, i) {
-                const index = this.index;
-                console.log('show/hide ', myIndexes);
-                console.log('series data ', series[2].data.indexOf( this.point ));
-                // if (myIndexes[index].tooltip === false) {
-                // }
+            formatter: function() {
+                const series = this.point.series.chart.series;
+                const index = this.point.series.xData.indexOf(this.point.x);
+                if (tooltipCheck[index].tooltip === false) {
+                    return false;
+                } else {
+                    let rangeIndex;
+                    if (checkForNull === true) {
+                        rangeIndex = 2;
+                    } else {
+                        rangeIndex = 1;
+                    }
+
+                    return `
+                        <div>
+                            <span><strong>${series[0].points[index].category}</strong></span>
+                            <br/>
+                            <span><span style="color: ${series[0].color};">●</span> ${series[0].name} <strong>${series[0].yData[index]}${dataLabelsSuffix}</strong></span><br/>
+                            <span><span style="color: ${series[0].color};">●</span> ${series[rangeIndex].name} <strong>${series[rangeIndex].yData[index][0]}${dataLabelsSuffix} - ${series[rangeIndex].yData[index][1]}${dataLabelsSuffix}</strong></span>
+                        </div>
+                    `;
+                }
             }
         };
-        function noTooltip(dataArray) {
-            return dataArray.map(function (item, index) {
-                let tooltip = true;
-                if (item[0] === 0) {
-                    console.log('zero');
-                    tooltip = false;
-                } else {
-                    tooltip = true;
-                }
-                return {index: index, tooltip: tooltip};
-            });
-        };
-        const myIndexes = noTooltip(averagesData[0]);
-        // console.log(averagesData[0]);
-        // console.log(myIndexes);
 
         let plotOptions = {
-            // arearange: {
-            //     tooltip: {
-            //         formatter: function () {
-            //             console.log('area range ', this);
-            //         }
-            //     }
-            // },
             series: {
                 showInLegend: true,
                 events: {
-                    // mouseOver: function () {
-                    //     // const series = this.series;
-                    //     console.log('mouse over ', this);
-
-                    // },
                     legendItemClick: function() {
-                        if (this.index === 1) {
+                        let targetIndex = 1;
+                        if (checkForNull === true) {
+                            targetIndex = 2;
+                        }
+                        if (this.index === targetIndex) {
                             return true;
                         }
                         return false;
