@@ -14,6 +14,8 @@ background-color: $red;
 .gsc-search-box {
 margin: 0 !important;	
 background-color: $red;
+background: none !important;
+font-size: 0.9rem !important;
 }
 
 input.gsc-input {
@@ -29,6 +31,7 @@ td.gsc-input {
 padding: 0 !important;
 margin: 0 !important;
 width: 100% !important;
+font-size: 0.9rem !important;
 }
 
 td.gsib_a, td.gsib_b  {
@@ -44,18 +47,22 @@ border-bottom-left-radius: 0 !important;
 .gsc-search-button {
 float: left !important;
 margin-left: 0 !important;
-background-color: $hseblack !important;
 width: auto !important;
-padding: 0px !important;
+padding: 0 !important;
+background: $hseblack !important;
+min-width: 38px !important;
+max-width: 38px !important;
+min-height: 38px !important;
+max-height: 38px !important;
 }
 
 .gsc-search-button-v2 {
+font-size: 0.9rem !important;
 background-color: $hseblack !important;
 border: 0 !important;
 border-radius: 0 !important;
 -webkit-border-radius: 0 !important;
-height: 38px !important;
-width: 38px !important;
+padding: 0 !important;
 }
 
 .gsc-search-button-v2:hover {
@@ -122,6 +129,7 @@ font-size: 1.0rem !important;
 border: none !important;
 margin: 0 !important;
 height: 36px !important;
+font-size: 0.9rem !important;
 }
 	
 .gsc-input-box {
@@ -131,10 +139,6 @@ border-top-left-radius: 0 !important;
 border-bottom-left-radius: 0 !important;
 margin: 0 !important;
 height: 38px !important;
-}
-	
-.gsc-search-box {
-background: none !important;
 }
 	
 .gsst_b {

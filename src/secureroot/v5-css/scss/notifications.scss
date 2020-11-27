@@ -87,6 +87,10 @@ background-color: $hseblack;
 border-bottom: 2px solid $focus;
 }
 
+.notification-banner p {
+font-size: 0.9rem;
+}
+
 .notification-banner.global p {
 color: white;
 }

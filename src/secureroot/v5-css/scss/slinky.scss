@@ -21,15 +21,16 @@ text-decoration: underline;
 .slinky-menu a {
 align-items: center;
 display: flex; 
-overflow: auto; }
+overflow: visible; }
 .slinky-menu a span {
 flex: 1;
-line-height: 1.4;
-overflow: auto; }
+overflow: visible;
+width: 100%;
+height: auto;}
 .slinky-menu li ul {
 //display: none;
 left: 100%;
-position: absolute; // Applied only if browser has JS - accesibility 
+// position: absolute; Applied only if browser has JS - accesibility 
 top: 0; }
 .slinky-menu .header {
 display: flex;
@@ -50,7 +51,7 @@ background-color: $gray; }
 color: #333;
 padding: 1em; }
 .slinky-theme-default li {
-line-height: 1; }
+line-height: 1.4; }
 .slinky-theme-default a:not(.back) {
 color: #333;
 padding: 14px !important; }
@@ -67,8 +68,7 @@ color: black;}
 content: " ";
 background-image: url('../../assets/v5-images/icons/svg/solid/arrow-left-white.svg');
 background-repeat: no-repeat;
-float: left;
-display: block;
+display: inline-block;
 height: 16px;
 margin: 0;
 transform: translateX(10px) !important; // Important to reverse slinky transform CSS
@@ -79,23 +79,24 @@ border-right: 10px solid transparent;
 text-decoration: none;
 }
 
-.slinky-theme-default  a.next::after
+.slinky-theme-default a.next::after
 {
 content: " ";
 background-image: url('../../assets/v5-images/icons/svg/solid/arrow-right.svg');
 background-repeat: no-repeat;
-display: block;
+display: inline-block;
 width: 16px;
 height: 16px;
 right: 10px;
 margin: 0;
+position: absolute !important;
 }
 
 .slinky-theme-default a.next:hover::after, .slinky-theme-default a.next:focus::after {
 content: " ";
 background-image: url('../../assets/v5-images/icons/svg/solid/arrow-right-red.svg');
 background-repeat: no-repeat;
-display: block;
+display: inline-block;
 width: 16px;
 height: 16px;
 right: 10px;
@@ -189,8 +190,4 @@ color: $black !important;
 .slinky-theme-default a.back:focus::before {
 content: " ";
 background-image: url('../../assets/v5-images/icons/svg/solid/arrow-left-black.svg') !important;
-}
-.slinky-theme-default a.next::after {
-content: " ";
-background-image: url('../../assets/v5-images/icons/svg/solid/arrow-right-black.svg') !important;  
 }
