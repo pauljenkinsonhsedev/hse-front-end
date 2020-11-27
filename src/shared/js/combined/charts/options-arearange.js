@@ -5,6 +5,7 @@ import { ChartOptions } from './dependencies';
 import { displaySuffix } from './data-suffix.js';
 import { displayPrefix } from './data-prefix.js';
 import { plotBand } from './plot-band';
+import { abbreviateNumber } from '../utils/number-abbreiviation.js';
 
 /*
     Class @ChartOptionsArearange
@@ -180,6 +181,7 @@ export class ChartOptionsArearange extends ChartOptions {
             formatter: function() {
                 const series = this.point.series.chart.series;
                 const index = this.point.series.xData.indexOf(this.point.x);
+
                 if (tooltipCheck[index].tooltip === false) {
                     return false;
                 } else {
@@ -190,12 +192,15 @@ export class ChartOptionsArearange extends ChartOptions {
                         rangeIndex = 1;
                     }
 
+                
+
+
                     return `
                         <div>
                             <span><strong>${series[0].points[index].category}</strong></span>
                             <br/>
-                            <span><span style="color: ${series[0].color};">●</span> ${series[0].name} <strong>${series[0].yData[index]}${dataLabelsSuffix}</strong></span><br/>
-                            <span><span style="color: ${series[0].color};">●</span> ${series[rangeIndex].name} <strong>${series[rangeIndex].yData[index][0]}${dataLabelsSuffix} - ${series[rangeIndex].yData[index][1]}${dataLabelsSuffix}</strong></span>
+                            <span><span style="color: ${series[0].color};">●</span> ${series[0].name} <strong>${dataLabelsPrefix}${abbreviateNumber(series[0].yData[index])}${dataLabelsSuffix}</strong></span><br/>
+                            <span><span style="color: ${series[0].color};">●</span> ${series[rangeIndex].name} <strong>${dataLabelsPrefix}${abbreviateNumber(series[rangeIndex].yData[index][0])}${dataLabelsSuffix} - ${dataLabelsPrefix}${abbreviateNumber(series[rangeIndex].yData[index][1])}${dataLabelsSuffix}</strong></span>
                         </div>
                     `;
                 }
