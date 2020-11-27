@@ -144,8 +144,4 @@ export function missingDataAverage(data) {
     }];
 
     return seriesDataWithMissing;
-
-        // console.log('withData', withData);
-        // console.log('withoutData', withoutData);
-
 }
