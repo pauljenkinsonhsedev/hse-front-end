@@ -1,6 +1,7 @@
 import CsvConvert from './combined/csv-convertor/csv-convertor';
 import ChartsDefault from './combined/charts/charts';
 import { mainMenu } from './combined/main-menu';
+import { fileTypeFunction } from './combined/file-type.js';
 
 // Window load
 window.addEventListener('DOMContentLoaded',() => {
@@ -25,5 +26,11 @@ window.addEventListener('DOMContentLoaded',() => {
   const chartSelector = document.querySelector('.chart');
   if (document.body.contains(chartSelector)) {
     new ChartsDefault();
+  }
+
+  // Append file types to anchors
+  const anchorSelector = document.querySelector('#pageContainer a');
+  if (document.body.contains(anchorSelector)) {
+    fileTypeFunction();
   }
 }); // end window load
