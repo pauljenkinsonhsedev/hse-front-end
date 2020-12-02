@@ -88,7 +88,7 @@ export class ChartOptions {
             chart: {
                 type: this.type,
                 renderTo: this.chartRender,
-                marginTop: 90
+                marginTop: 100
             },
             title: {
                 useHTML: true,
@@ -107,7 +107,8 @@ export class ChartOptions {
                     color: '#000',
                     fontFamily: this.fontFamily,
                     fontSize: '0.9rem',
-                    fontWeight: 'regular'
+                    fontWeight: 'regular',
+
                 }
             },
             xAxis: {
