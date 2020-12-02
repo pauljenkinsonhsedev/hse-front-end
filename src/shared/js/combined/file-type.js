@@ -1,9 +1,9 @@
 export function fileTypeFunction() {
 
-    const anchors = document.querySelectorAll('#contentContainer a');
+    const anchors = document.querySelectorAll('#pageContainer a');
 
     // Add file extentions and descriptions here
-    const fileTypes = [
+    const fileTypeArr = [
         {
             ext: 'pdf',
             shortText: 'PDF',
@@ -15,7 +15,7 @@ export function fileTypeFunction() {
             longText: 'Microsoft Word document',
         },
         {
-            ext: 'doc',
+            ext: 'docx',
             shortText: '.docx',
             longText: 'Microsoft Word document'
         },
@@ -60,7 +60,7 @@ export function fileTypeFunction() {
         const path = elem.href;
         const [extension] = path.split('.').reverse();
 
-        fileTypes.filter(function(file) {
+        fileTypeArr.filter(function(file) {
             if (file.ext === extension) {
                 elem.innerHTML += `
                     <span class="fileType">
