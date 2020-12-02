@@ -60,14 +60,14 @@ export function fileTypeFunction() {
         const path = elem.href;
         const [extension] = path.split('.').reverse();
 
-        // fileTypes.filter(function(file) {
-        //     if (file.ext === extension) {
-        //         elem.innerHTML += `
-        //             <span class="fileType">
-        //                 <span> (<abbr title="${file.longText}">${file.shortText}</abbr>)</span>
-        //             </span>`
-        //         ;
-        //     }
-        // });
+        fileTypes.filter(function(file) {
+            if (file.ext === extension) {
+                elem.innerHTML += `
+                    <span class="fileType">
+                        <span> (<abbr title="${file.longText}">${file.shortText}</abbr>)</span>
+                    </span>`
+                ;
+            }
+        });
     });
 }
