@@ -29,7 +29,7 @@ window.addEventListener('DOMContentLoaded',() => {
   }
 
   // Append file types to anchors
-  const anchorSelector = document.querySelector('a');
+  const anchorSelector = document.querySelector('#pageContainer a');
   if (document.body.contains(anchorSelector)) {
     fileTypeFunction();
   }
