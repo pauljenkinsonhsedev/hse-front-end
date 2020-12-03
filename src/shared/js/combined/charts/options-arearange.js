@@ -105,8 +105,6 @@ export class ChartOptionsArearange extends ChartOptions {
             return flag;
         }, 0);
 
-        console.log(checkForNull);
-
         if (checkForNull === true) {
             series.push(missingAverage[0]);
             series.push(missingAverage[1]);
@@ -162,7 +160,9 @@ export class ChartOptionsArearange extends ChartOptions {
                 text: null
             },
             max: null,
-            min: 0
+            min: 0,
+            gridLineWidth: this.gridLineWidth,
+            minorGridLineWidth: this.gridLineWidth,
         }
 
         let tooltip = {
@@ -192,7 +192,7 @@ export class ChartOptionsArearange extends ChartOptions {
                         rangeIndex = 1;
                     }
 
-                
+
 
 
                     return `

@@ -42,10 +42,23 @@ export class ChartOptions {
         this.yAxisText = container.dataset.yaxisText;
         this.xAxisText = container.dataset.xaxisText;
         this.colorScheme = container.dataset.colorScheme;
+        this.gridLine = container.dataset.gridline;
         this.units = container.dataset.chartUnits;
         this.decimals = container.dataset.decimalPoint;
         this.colWidth = 75;
         this.collection = new Array;
+
+        switch (this.gridLine) {
+            case 'true':
+                this.gridLineWidth = 1;
+                break;
+            case 'false':
+                this.gridLineWidth = 0;
+                break;
+            default:
+                this.gridLineWidth = 1;
+                break;
+        }
 
         // Set colour scheme
         switch (this.colorScheme) {
@@ -138,6 +151,8 @@ export class ChartOptions {
                         fontWeight: 'bold',
                     }
                 },
+                gridLineWidth: this.gridLineWidth,
+                minorGridLineWidth: this.gridLineWidth
             },
             tooltip: {
                 useHTML: true,
