@@ -30,12 +30,14 @@ export class ChartOptionsDonut extends ChartOptions {
 
         if (mediaquery === 'small') {
             this.alignTo = 'plotEdges';
-            this.pieSize = '150px';
+            this.pieSize = '160px';
             this.fontSize = '12px';
+            this.titleY = -78;
         } else {
             this.alignTo = false;
-            this.pieSize = '300px';
+            this.pieSize = '220px';
             this.fontSize = '16px';
+            this.titleY = -30;
         }
 
         let chart = {
@@ -55,10 +57,10 @@ export class ChartOptionsDonut extends ChartOptions {
             text: this.title,
             align: 'center',
             verticalAlign: 'middle',
-            floating: true,
-            y: 10,
+            floating: false,
+            y: this.titleY,
             x: 0,
-            widthAdjust: -500,
+            widthAdjust: -550,
             style: {
                 color: '#000',
                 fontFamily: this.fontFamily,
@@ -73,12 +75,12 @@ export class ChartOptionsDonut extends ChartOptions {
                 size: this.pieSize,
                 allowPointSelect: true,
                 cursor: 'pointer',
-                innerSize: '60%',
+                innerSize: '65%',
                 dataLabels: {
                     enabled: true,
                     alignTo: this.alignTo,
                     formatter: getDataLabel,
-                    // connectorColor: 'silver',
+                    connectorColor: '#ccc',
                     style: {
                         width: '150px'
                     }

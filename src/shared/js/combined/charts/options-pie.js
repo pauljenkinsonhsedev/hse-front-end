@@ -32,7 +32,7 @@ export class ChartOptionsPie extends ChartOptions {
             this.pieSize = '150px';
             this.alignTo = 'plotEdges';
         } else {
-            this.pieSize = '260px';
+            this.pieSize = '220px';
             this.alignTo = false;
         }
 
@@ -50,6 +50,7 @@ export class ChartOptionsPie extends ChartOptions {
                 dataLabels: {
                     enabled: true,
                     alignTo: this.alignTo,
+                    connectorColor: '#ccc',
                     formatter: getDataLabel
                 }
             }
