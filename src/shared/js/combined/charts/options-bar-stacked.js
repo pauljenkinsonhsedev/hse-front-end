@@ -55,7 +55,7 @@ export class ChartOptionsBarStacked extends ChartOptions {
 
         const tooltip = {
             shared: true,
-            formatter: getTooltip
+            backgroundColor: 'rgba(255, 255, 255, 1)',
         }
 
         const collection = this.collection;
