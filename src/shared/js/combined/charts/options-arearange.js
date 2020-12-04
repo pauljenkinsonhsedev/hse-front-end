@@ -29,7 +29,6 @@ export class ChartOptionsArearange extends ChartOptions {
         if (areaRangeTitle === 'undefined' || areaRangeTitle === undefined) {
             areaRangeTitle = 'Confidence interval';
         }
-        // const getTooltip = dataTooltip(this.type, this.units, this.decimals, total, areaRangeTitle);
         const getPlotBand = plotBand(this.container, this.brandGrayscale);
         const categoryData = chartCategories(this.container);
         const seriesRangeData = seriesDataRanges(this.dataTable);
@@ -42,9 +41,6 @@ export class ChartOptionsArearange extends ChartOptions {
         let rangeHeading = thead.rows[0].querySelectorAll('.heading')[1].textContent;
 
         const missingAverage = missingDataAverage(averagesData[0]);
-
-        // console.log(checkForNull(averagesData[0]))
-
 
         function noTooltip(dataArray) {
             return dataArray.map(function (item, index) {
@@ -81,7 +77,7 @@ export class ChartOptionsArearange extends ChartOptions {
                 lineColor: this.brandColours[0]
             }
         };
-        const seriesRange ={
+        const seriesRange = {
             name: areaRangeTitle,
             data: rangesData[0],
             type: 'arearange',
@@ -171,8 +167,6 @@ export class ChartOptionsArearange extends ChartOptions {
             valuePrefix: `${dataLabelsPrefix}`,
             valueSuffix: `${dataLabelsSuffix}`,
             backgroundColor: 'rgba(255, 255, 255, 1)',
-            // borderWidth: 1,
-            // padding: 1,
             style: {
                 fontSize: '12px',
                 opacity: 1
@@ -191,9 +185,6 @@ export class ChartOptionsArearange extends ChartOptions {
                     } else {
                         rangeIndex = 1;
                     }
-
-
-
 
                     return `
                         <div>
