@@ -203,13 +203,6 @@ export class ChartOptionsArearange extends ChartOptions {
                 showInLegend: true,
                 events: {
                     legendItemClick: function() {
-                        let targetIndex = 1;
-                        if (checkForNull === true) {
-                            targetIndex = 2;
-                        }
-                        if (this.index === targetIndex) {
-                            return true;
-                        }
                         return false;
                     }
                 }

@@ -44,7 +44,12 @@ export class ChartOptionsBarStacked extends ChartOptions {
             },
             series: {
                 borderWidth: 0,
-                stacking: 'normal'
+                stacking: 'normal',
+                events: {
+                    legendItemClick: function() {
+                        return false;
+                    }
+                }
             }
         };
 

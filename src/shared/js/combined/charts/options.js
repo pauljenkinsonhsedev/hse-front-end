@@ -96,7 +96,6 @@ export class ChartOptions {
         }
 
         // set caption
-        console.log(this.caption);
         if (this.caption) {
             this.captionText = this.caption;
         } else {
@@ -206,11 +205,6 @@ export class ChartOptions {
                 showInLegend: true,
                 events: {
                     legendItemClick: function() {
-                        let targetIndex = 1;
-                        console.log('this.index', this.index);
-                        if (this.index === targetIndex) {
-                            return true;
-                        }
                         return false;
                     }
                 }
