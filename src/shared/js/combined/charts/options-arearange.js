@@ -18,6 +18,7 @@ import { abbreviateNumber } from '../utils/number-abbreiviation.js';
 export class ChartOptionsArearange extends ChartOptions {
     constructor(container){
         super(container);
+        const colours = this.colours;
 
         let units = container.querySelectorAll('.unit');
         let total = 0;
@@ -40,7 +41,7 @@ export class ChartOptionsArearange extends ChartOptions {
         const thead = this.dataTable.querySelector('.table__head');
         let rangeHeading = thead.rows[0].querySelectorAll('.heading')[1].textContent;
 
-        const missingAverage = missingDataAverage(averagesData[0]);
+        const missingAverage = missingDataAverage(averagesData[0], colours);
 
         function noTooltip(dataArray) {
             return dataArray.map(function (item, index) {
@@ -70,11 +71,11 @@ export class ChartOptionsArearange extends ChartOptions {
             data: averagesData[0],
             zIndex: 1,
             fillOpacity: 0.3,
-            color: this.brandColours[0],
+            color: this.colours[0],
             marker: {
                 fillColor: 'white',
                 lineWidth: 2,
-                lineColor: this.brandColours[0]
+                lineColor: this.colours[0]
             }
         };
         const seriesRange = {
@@ -83,7 +84,7 @@ export class ChartOptionsArearange extends ChartOptions {
             type: 'arearange',
             lineWidth: 0,
             linkedTo: ':previous',
-            color: this.brandColours[0],
+            color: this.colours[0],
             fillOpacity: 0.3,
             zIndex: 0,
             marker: {
@@ -186,16 +187,42 @@ export class ChartOptionsArearange extends ChartOptions {
                         rangeIndex = 1;
                     }
 
+                    let average = series[0].yData[index];
+                    let low = series[rangeIndex].yData[index][0];
+                    let high = series[rangeIndex].yData[index][1];
+
+                    let rangeAverage = average.toLocaleString('en-GB', {maximumFractionDigits:2});
+                    let rangeLow = low.toLocaleString('en-GB', {maximumFractionDigits:2});
+                    let rangeHigh = high.toLocaleString('en-GB', {maximumFractionDigits:2});
+
+                    if (average > 1000000 || low > 1000000 || high > 1000000) {
+                        rangeAverage = abbreviateNumber(average);
+                        rangeLow = abbreviateNumber(low);
+                        rangeHigh = abbreviateNumber(high);
+                    }
+
                     return `
                         <div>
                             <span><strong>${series[0].points[index].category}</strong></span>
                             <br/>
-                            <span><span style="color: ${series[0].color};">●</span> ${series[0].name} <strong>${dataLabelsPrefix}${abbreviateNumber(series[0].yData[index])}${dataLabelsSuffix}</strong></span><br/>
-                            <span><span style="color: ${series[0].color};">●</span> ${series[rangeIndex].name} <strong>${dataLabelsPrefix}${abbreviateNumber(series[rangeIndex].yData[index][0])}${dataLabelsSuffix} - ${dataLabelsPrefix}${abbreviateNumber(series[rangeIndex].yData[index][1])}${dataLabelsSuffix}</strong></span>
+                            <span><span style="color: ${series[0].color};">●</span> ${series[0].name} <strong>${dataLabelsPrefix}${rangeHigh}${dataLabelsSuffix}</strong></span><br/>
+                            <span><span style="color: ${series[0].color};">●</span> ${series[rangeIndex].name} <strong>${dataLabelsPrefix}${rangeLow}${dataLabelsSuffix} - ${dataLabelsPrefix}${rangeHigh}${dataLabelsSuffix}</strong></span>
                         </div>
                     `;
                 }
             }
+        };
+
+        // set caption
+        if (this.caption) {
+            this.captionText = this.caption;
+        } else {
+            this.captionText = null;
+        }
+
+        let caption = {
+            useHTML: true,
+            text: this.caption
         };
 
         let plotOptions = {
@@ -209,7 +236,7 @@ export class ChartOptionsArearange extends ChartOptions {
             }
         };
 
-        this.collection = {title, subtitle, xAxis, yAxis, plotOptions, tooltip, series, exporting, credits};
+        this.collection = {title, subtitle, xAxis, yAxis, plotOptions, tooltip, series, caption, exporting, credits};
         return this.collection;
     }
 }
