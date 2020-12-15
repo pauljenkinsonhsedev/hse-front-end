@@ -20,7 +20,7 @@ import { displaySuffix } from './data-suffix.js';
 import { dataTooltip } from './tooltip.js';
 import { plotBand } from './plot-band';
 import {bold} from 'ansi-colors';
-import { mediaQuery } from '../utils/media-query.js';
+import resizer from '../utils/resizer.js';
 
 export class ChartOptions {
     constructor(container) {
@@ -50,12 +50,29 @@ export class ChartOptions {
         this.colWidth = 75;
         this.collection = new Array;
 
-        const mediaquery = mediaQuery();
-        if (mediaquery === 'small') {
-            this.height = (16 / 9 * 100) + '%';
-        } else {
-            this.height = (3 / 4 * 100) + '%';
+
+        // define height of chart
+        const captionLength = (this.caption != undefined) ? this.caption.length: 0;
+        const chartRatio = () => {
+            if (container.clientWidth <= 400) {
+                this.height = (4 / 3 * 100) + '%';
+            } else {
+                this.height = (3 / 4 * 100) + '%';
+            }
+
+
+            // increase height for captions
+            // if (captionLength >= 0) {
+            //     console.log(container.clientWidth / captionLength );
+            // }
+
+
+            return this.height;
         }
+
+        // watch chartRatio on resize
+        const chartHeight = resizer(chartRatio);
+        console.log(chartHeight);
 
         // Set gridlines
         switch (this.gridLine) {
@@ -116,7 +133,6 @@ export class ChartOptions {
 
         let flag = false;
         const checkForNull = getSeriesData.reduce(function (result, item, index) {
-            console.log(index);
             if (index === 0) {
                 flag = true;
             }
