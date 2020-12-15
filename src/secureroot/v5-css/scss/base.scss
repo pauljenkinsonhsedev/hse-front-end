@@ -305,6 +305,13 @@ border: 0;
 
 // Responsive images 
 
+picture,
+img {
+    height: auto;
+    max-width: 100%;
+    vertical-align: bottom !important;
+}
+
 img.featuredImg {
 width: 100%;
 @media only screen and (min-width : $desktop) {
