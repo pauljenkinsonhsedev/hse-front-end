@@ -32,12 +32,10 @@ export class ChartOptionsDonut extends ChartOptions {
             this.alignTo = 'plotEdges';
             this.pieSize = '160px';
             this.fontSize = '12px';
-            this.titleY = -78;
         } else {
             this.alignTo = false;
             this.pieSize = '220px';
             this.fontSize = '16px';
-            this.titleY = -30;
         }
 
         let chart = {
@@ -58,7 +56,7 @@ export class ChartOptionsDonut extends ChartOptions {
             align: 'center',
             verticalAlign: 'middle',
             floating: false,
-            y: this.titleY,
+            y: 0,
             x: 0,
             widthAdjust: -550,
             style: {
