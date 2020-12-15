@@ -18,7 +18,7 @@
      }]
 */
 
-export function missingDataAverage(data) {
+export function missingDataAverage(data, colours) {
     const withData = [];
     const withoutData = [];
     const PrevNext = [];
@@ -113,8 +113,6 @@ export function missingDataAverage(data) {
     }
     const missing = missingData();
 
-    // console.log('missing', missing);
-
     // set series data
     const seriesDataWithMissing = [{
         name: 'heading',
@@ -122,18 +120,18 @@ export function missingDataAverage(data) {
         connectNulls: false,
         zIndex: 2,
         fillOpacity: 0.3,
-        color: '#b2182b',
+        color: colours[0],
         marker: {
             fillColor: 'white',
             lineWidth: 2,
             symbol: 'circle',
-            lineColor: '#b2182b'
+            lineColor: colours[0]
         }
     },{
         name: 'Missing data',
         data: missing,
         connectNulls: false,
-        color: '#d6604d',
+        color: colours[3],
         marker: {
             'enabled': false
         },
