@@ -3,7 +3,7 @@
         "./src/**/*+(js|scss|css|htm|html|njk|png|jpg|jpeg|gif|svg|ico)"
     ],
     "server": {
-        "file": "index.html",
+        "file": "index.htm",
         "locationStaging": "secureroot/hseonline/website/livelive/secureroot",
         "uri": "http://localhost",
         "port": "8080"
