@@ -5,11 +5,10 @@
   "main": "gulpfile.babel.js",
   "scripts": {
     "bundle-report": "webpack-bundle-analyzer --port 8081 dist/stats.json",
-    "gulp": "SET NODE_ENV='development' && gulp --env.development",
-    "gulp-hse": "SET NODE_ENV='staging' && gulp --env.staging",
-    "gulp-dev": "SET NODE_ENV='development' && gulp development --env.development",
-    "gulp-prod": "SET NODE_ENV='production' && gulp production --env.production",
-    "test": "SET \"NODE_ENV=test\""
+    "gulp": "NODE_ENV='development' gulp --env.development",
+    "gulp-hse": "NODE_ENV='staging' gulp --env.staging",
+    "gulp-dev": "NODE_ENV='development' gulp development --env.development",
+    "gulp-prod": "NODE_ENV='production' gulp production --env.production"
   },
   "author": "",
   "license": "ISC",
