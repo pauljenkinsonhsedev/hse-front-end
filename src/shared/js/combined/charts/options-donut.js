@@ -3,6 +3,7 @@ import { seriesData } from './series-data.js';
 import { dataLabel } from './data-label.js';
 import { displayPrefix } from './data-prefix.js';
 import { displaySuffix } from './data-suffix.js';
+import { mediaQuery } from '../utils/media-query.js';
 
 /*
     Class @ChartOptionsChartOptionsDonut
@@ -25,13 +26,17 @@ export class ChartOptionsDonut extends ChartOptions {
         this.units = container.dataset.chartUnits;
         this.decimals = container.dataset.decimalPoint;
         const getDataLabel = dataLabel(this.units, this.decimals, total);
-        const dataLabelsPrefix = displayPrefix(this.units);
-        const dataLabelsSuffix = displaySuffix(this.units);
+        const mediaquery = mediaQuery();
 
-
-        // const width = container.offsetWidth;
-
-        // console.log(getDataLabel);
+        if (mediaquery === 'small') {
+            this.alignTo = 'plotEdges';
+            this.pieSize = '160px';
+            this.fontSize = '12px';
+        } else {
+            this.alignTo = false;
+            this.pieSize = '220px';
+            this.fontSize = '16px';
+        }
 
         let chart = {
             type: 'pie',
@@ -42,7 +47,6 @@ export class ChartOptionsDonut extends ChartOptions {
             cursor: 'pointer',
             dataLabels: {
                 enabled: true,
-                // format: this.dataLabelsSuffix,
                 connectorColor: 'silver'
             }
         }
@@ -51,14 +55,14 @@ export class ChartOptionsDonut extends ChartOptions {
             text: this.title,
             align: 'center',
             verticalAlign: 'middle',
-            floating: true,
-            y: 10,
+            floating: false,
+            y: 0,
             x: 0,
-            widthAdjust: -500,
+            widthAdjust: -550,
             style: {
                 color: '#000',
                 fontFamily: this.fontFamily,
-                fontSize: '16px',
+                fontSize: this.fontSize,
                 fontWeight: 'bold'
             }
         };
@@ -66,14 +70,15 @@ export class ChartOptionsDonut extends ChartOptions {
         let plotOptions = {
             pie: {
                 slicedOffset: 0,
-                size: '300px',
+                size: this.pieSize,
                 allowPointSelect: true,
                 cursor: 'pointer',
-                innerSize: '60%',
+                innerSize: '65%',
                 dataLabels: {
                     enabled: true,
+                    alignTo: this.alignTo,
                     formatter: getDataLabel,
-                    connectorColor: 'silver',
+                    connectorColor: '#ccc',
                     style: {
                         width: '150px'
                     }

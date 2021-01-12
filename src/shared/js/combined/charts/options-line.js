@@ -54,7 +54,9 @@ export class ChartOptionsLine extends ChartOptions {
                 format: '{value:,.0f}'
             },
             max: null,
-            min: 0
+            min: 0,
+            gridLineWidth: this.gridLineWidth,
+            minorGridLineWidth: this.gridLineWidth
         }
 
         const collection = this.collection;

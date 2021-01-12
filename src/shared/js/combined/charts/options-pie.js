@@ -3,6 +3,7 @@ import { chartCategories } from './chart-categories';
 import { dataLabel } from './data-label.js';
 import { displayPrefix } from './data-prefix.js';
 import { displaySuffix } from './data-suffix.js';
+import { mediaQuery } from '../utils/media-query.js';
 
 /*
     Class @ChartOptionsPie
@@ -26,6 +27,15 @@ export class ChartOptionsPie extends ChartOptions {
             total += Number(units[i].innerText)
         }
 
+        const mediaquery = mediaQuery();
+        if (mediaquery === 'small') {
+            this.pieSize = '150px';
+            this.alignTo = 'plotEdges';
+        } else {
+            this.pieSize = '220px';
+            this.alignTo = false;
+        }
+
         const getCategories = chartCategories(container);
         const getDataLabel = dataLabel(this.units, this.decimals, total);
 
@@ -36,8 +46,11 @@ export class ChartOptionsPie extends ChartOptions {
             pie: {
                 allowPointSelect: true,
                 cursor: 'pointer',
+                size: this.pieSize,
                 dataLabels: {
                     enabled: true,
+                    alignTo: this.alignTo,
+                    connectorColor: '#ccc',
                     formatter: getDataLabel
                 }
             }

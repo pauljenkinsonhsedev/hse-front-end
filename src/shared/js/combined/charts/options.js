@@ -20,11 +20,12 @@ import { displaySuffix } from './data-suffix.js';
 import { dataTooltip } from './tooltip.js';
 import { plotBand } from './plot-band';
 import {bold} from 'ansi-colors';
+import resizer from '../utils/resizer.js';
 
 export class ChartOptions {
     constructor(container) {
         this.container = container;
-        this.brandGrayscale = ['#CCCCCC', '#999999', '#666666']
+        this.brandGrayscale = ['#e5e5e5', '#d5d5d5', '#d1d1d1']
         this.brandColours = ['#b2182b', '#d6604d', '#f4a582', '#fddbc7', '#d1e5f0', '#92c5de', '#4393c3', '#2166ac'];
         this.brandColourRed = ['#683636', '#904A4A', '#B06666', '#BF8383', '#CEA0A0', '#E0C2C2', '#EFDFDF'];
         this.brandColourBlue = ['#2C486E', '#3D6497', '#5782BB', '#789AC8', '#96B1D4', '#BCCDE4', '#DDE5F1'];
@@ -38,14 +39,53 @@ export class ChartOptions {
         this.type = container.dataset.chartType;
         this.title = container.dataset.chartTitle;
         this.subtitle = container.dataset.chartSubtitle;
+        this.caption = container.dataset.chartCaption;
         this.description = container.querySelector('.datacontent__description');
         this.yAxisText = container.dataset.yaxisText;
         this.xAxisText = container.dataset.xaxisText;
         this.colorScheme = container.dataset.colorScheme;
+        this.gridLine = container.dataset.gridline;
         this.units = container.dataset.chartUnits;
         this.decimals = container.dataset.decimalPoint;
         this.colWidth = 75;
         this.collection = new Array;
+
+
+        // define height of chart
+        const captionLength = (this.caption != undefined) ? this.caption.length: 0;
+        const chartRatio = () => {
+            if (container.clientWidth <= 400) {
+                this.height = (4 / 3 * 100) + '%';
+            } else {
+                this.height = (3 / 4 * 100) + '%';
+            }
+
+
+            // increase height for captions
+            // if (captionLength >= 0) {
+            //     console.log(container.clientWidth / captionLength );
+            // }
+
+
+            return this.height;
+        }
+
+        // watch chartRatio on resize
+        const chartHeight = resizer(chartRatio);
+        // console.log(chartHeight);
+
+        // Set gridlines
+        switch (this.gridLine) {
+            case 'true':
+                this.gridLineWidth = 1;
+                break;
+            case 'false':
+                this.gridLineWidth = 0;
+                break;
+            default:
+                this.gridLineWidth = 1;
+                break;
+        }
 
         // Set colour scheme
         switch (this.colorScheme) {
@@ -72,6 +112,13 @@ export class ChartOptions {
                 break;
         }
 
+        // set caption
+        if (this.caption) {
+            this.captionText = this.caption;
+        } else {
+            this.captionText = null;
+        }
+
         // get series information
         let units = container.querySelectorAll('.unit');
         let total = 0;
@@ -84,11 +131,20 @@ export class ChartOptions {
         const getTooltip = dataTooltip(this.type, this.units, this.decimals, total);
         const getPlotBand = plotBand(this.container, this.brandGrayscale);
 
+        let flag = false;
+        const checkForNull = getSeriesData.reduce(function (result, item, index) {
+            if (index === 0) {
+                flag = true;
+            }
+            return flag;
+        }, 0);
+
         this.collection = {
             chart: {
                 type: this.type,
                 renderTo: this.chartRender,
-                marginTop: 90
+                marginTop: 100,
+                height: this.height
             },
             title: {
                 useHTML: true,
@@ -107,8 +163,12 @@ export class ChartOptions {
                     color: '#000',
                     fontFamily: this.fontFamily,
                     fontSize: '0.9rem',
-                    fontWeight: 'regular'
+                    fontWeight: 'regular',
+
                 }
+            },
+            caption: {
+                text: this.captionText
             },
             xAxis: {
                 categories: categoryData,
@@ -123,9 +183,7 @@ export class ChartOptions {
                 accessibility: {
                     description: this.description
                 },
-                plotBands: getPlotBand,
-                // min: 0,
-                // max: 2
+                plotBands: getPlotBand
             },
             yAxis: {
                 labels: {
@@ -137,6 +195,8 @@ export class ChartOptions {
                         fontWeight: 'bold',
                     }
                 },
+                gridLineWidth: this.gridLineWidth,
+                minorGridLineWidth: this.gridLineWidth
             },
             tooltip: {
                 useHTML: true,
@@ -155,8 +215,31 @@ export class ChartOptions {
                     color: '#000'
                 }
             },
+            plotOptions: {
+            series: {
+                borderWidth: 0,
+                showInLegend: true,
+                events: {
+                    legendItemClick: function() {
+                        return false;
+                    }
+                }
+            }
+        },
             accessibility: {
-                description: this.description
+                description: this.description,
+                screenReaderSection: {
+                    beforeChartFormat: '<h4>{chartTitle}</h4>' +
+                        '<div>{typeDescription}</div>' +
+                        '<div>{chartSubtitle}</div>' +
+                        '<div>{chartLongdesc}</div>' +
+                        '<div>{playAsSoundButton}</div>' +
+                        '<div>{viewTableButton}</div>' +
+                        '<div>{xAxisDescription}</div>' +
+                        '<div>{yAxisDescription}</div>' +
+                        '<div>{annotationsTitle}</div>' +
+                        '<div>{annotationsList}</div>'
+                }
             },
             credits: {
                 enabled: false

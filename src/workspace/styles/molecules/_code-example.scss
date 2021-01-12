@@ -29,6 +29,10 @@ pre.code-example {
 }
 
 .sticky-contents {
-    position: sticky;
+    position: relative;
     top: 1rem;
+
+    @media (min-width: $bp-tablet) {
+        position: sticky;
+    }
 }

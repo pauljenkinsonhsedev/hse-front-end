@@ -18,6 +18,7 @@ import { abbreviateNumber } from '../utils/number-abbreiviation.js';
 export class ChartOptionsArearange extends ChartOptions {
     constructor(container){
         super(container);
+        const colours = this.colours;
 
         let units = container.querySelectorAll('.unit');
         let total = 0;
@@ -29,7 +30,6 @@ export class ChartOptionsArearange extends ChartOptions {
         if (areaRangeTitle === 'undefined' || areaRangeTitle === undefined) {
             areaRangeTitle = 'Confidence interval';
         }
-        // const getTooltip = dataTooltip(this.type, this.units, this.decimals, total, areaRangeTitle);
         const getPlotBand = plotBand(this.container, this.brandGrayscale);
         const categoryData = chartCategories(this.container);
         const seriesRangeData = seriesDataRanges(this.dataTable);
@@ -41,10 +41,7 @@ export class ChartOptionsArearange extends ChartOptions {
         const thead = this.dataTable.querySelector('.table__head');
         let rangeHeading = thead.rows[0].querySelectorAll('.heading')[1].textContent;
 
-        const missingAverage = missingDataAverage(averagesData[0]);
-
-        // console.log(checkForNull(averagesData[0]))
-
+        const missingAverage = missingDataAverage(averagesData[0], colours);
 
         function noTooltip(dataArray) {
             return dataArray.map(function (item, index) {
@@ -74,20 +71,20 @@ export class ChartOptionsArearange extends ChartOptions {
             data: averagesData[0],
             zIndex: 1,
             fillOpacity: 0.3,
-            color: this.brandColours[0],
+            color: this.colours[0],
             marker: {
                 fillColor: 'white',
                 lineWidth: 2,
-                lineColor: this.brandColours[0]
+                lineColor: this.colours[0]
             }
         };
-        const seriesRange ={
+        const seriesRange = {
             name: areaRangeTitle,
             data: rangesData[0],
             type: 'arearange',
             lineWidth: 0,
             linkedTo: ':previous',
-            color: this.brandColours[0],
+            color: this.colours[0],
             fillOpacity: 0.3,
             zIndex: 0,
             marker: {
@@ -104,8 +101,6 @@ export class ChartOptionsArearange extends ChartOptions {
             }
             return flag;
         }, 0);
-
-        console.log(checkForNull);
 
         if (checkForNull === true) {
             series.push(missingAverage[0]);
@@ -162,7 +157,9 @@ export class ChartOptionsArearange extends ChartOptions {
                 text: null
             },
             max: null,
-            min: 0
+            min: 0,
+            gridLineWidth: this.gridLineWidth,
+            minorGridLineWidth: this.gridLineWidth,
         }
 
         let tooltip = {
@@ -171,8 +168,6 @@ export class ChartOptionsArearange extends ChartOptions {
             valuePrefix: `${dataLabelsPrefix}`,
             valueSuffix: `${dataLabelsSuffix}`,
             backgroundColor: 'rgba(255, 255, 255, 1)',
-            // borderWidth: 1,
-            // padding: 1,
             style: {
                 fontSize: '12px',
                 opacity: 1
@@ -192,19 +187,42 @@ export class ChartOptionsArearange extends ChartOptions {
                         rangeIndex = 1;
                     }
 
-                
+                    let average = series[0].yData[index];
+                    let low = series[rangeIndex].yData[index][0];
+                    let high = series[rangeIndex].yData[index][1];
 
+                    let rangeAverage = average.toLocaleString('en-GB', {maximumFractionDigits:2});
+                    let rangeLow = low.toLocaleString('en-GB', {maximumFractionDigits:2});
+                    let rangeHigh = high.toLocaleString('en-GB', {maximumFractionDigits:2});
+
+                    if (average > 1000000 || low > 1000000 || high > 1000000) {
+                        rangeAverage = abbreviateNumber(average);
+                        rangeLow = abbreviateNumber(low);
+                        rangeHigh = abbreviateNumber(high);
+                    }
 
                     return `
                         <div>
                             <span><strong>${series[0].points[index].category}</strong></span>
                             <br/>
-                            <span><span style="color: ${series[0].color};">●</span> ${series[0].name} <strong>${dataLabelsPrefix}${abbreviateNumber(series[0].yData[index])}${dataLabelsSuffix}</strong></span><br/>
-                            <span><span style="color: ${series[0].color};">●</span> ${series[rangeIndex].name} <strong>${dataLabelsPrefix}${abbreviateNumber(series[rangeIndex].yData[index][0])}${dataLabelsSuffix} - ${dataLabelsPrefix}${abbreviateNumber(series[rangeIndex].yData[index][1])}${dataLabelsSuffix}</strong></span>
+                            <span><span style="color: ${series[0].color};">●</span> ${series[0].name} <strong>${dataLabelsPrefix}${rangeHigh}${dataLabelsSuffix}</strong></span><br/>
+                            <span><span style="color: ${series[0].color};">●</span> ${series[rangeIndex].name} <strong>${dataLabelsPrefix}${rangeLow}${dataLabelsSuffix} - ${dataLabelsPrefix}${rangeHigh}${dataLabelsSuffix}</strong></span>
                         </div>
                     `;
                 }
             }
+        };
+
+        // set caption
+        if (this.caption) {
+            this.captionText = this.caption;
+        } else {
+            this.captionText = null;
+        }
+
+        let caption = {
+            useHTML: true,
+            text: this.caption
         };
 
         let plotOptions = {
@@ -212,20 +230,13 @@ export class ChartOptionsArearange extends ChartOptions {
                 showInLegend: true,
                 events: {
                     legendItemClick: function() {
-                        let targetIndex = 1;
-                        if (checkForNull === true) {
-                            targetIndex = 2;
-                        }
-                        if (this.index === targetIndex) {
-                            return true;
-                        }
                         return false;
                     }
                 }
             }
         };
 
-        this.collection = {title, subtitle, xAxis, yAxis, plotOptions, tooltip, series, exporting, credits};
+        this.collection = {title, subtitle, xAxis, yAxis, plotOptions, tooltip, series, caption, exporting, credits};
         return this.collection;
     }
 }

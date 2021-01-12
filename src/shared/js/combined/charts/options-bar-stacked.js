@@ -44,13 +44,18 @@ export class ChartOptionsBarStacked extends ChartOptions {
             },
             series: {
                 borderWidth: 0,
-                stacking: 'normal'
+                stacking: 'normal',
+                events: {
+                    legendItemClick: function() {
+                        return false;
+                    }
+                }
             }
         };
 
         const tooltip = {
             shared: true,
-            formatter: getTooltip
+            backgroundColor: 'rgba(255, 255, 255, 1)',
         }
 
         const collection = this.collection;
