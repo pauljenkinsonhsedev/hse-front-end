@@ -129,6 +129,8 @@ ul.touchcarousel-container {
 	padding: 20px;
 	order: 2;
 
+	overflow: hidden;
+
 	@media only screen and (min-width : 600px) {
 		order: 1;
 	}
@@ -139,6 +141,10 @@ ul.touchcarousel-container {
 	@media only screen and (min-width : 600px) {
 		order: 2;
 		overflow: hidden;
+	}
+
+	@media only screen and (min-width : $desktop) {
+		max-width: 460px;
 	}
 }
 
