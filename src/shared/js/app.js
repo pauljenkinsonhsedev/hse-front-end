@@ -1,16 +1,17 @@
 import CsvConvert from './combined/csv-convertor/csv-convertor';
 import ChartsDefault from './combined/charts/charts';
 import { mainMenu } from './combined/main-menu';
+import { loadPicturefillFn } from './combined/utils/picture-elem.js';
 import { fileTypeFunction } from './combined/file-type.js';
 
 // Window load
 window.addEventListener('DOMContentLoaded',() => {
 
-  if (navigator.userAgent.indexOf("MSIE") != -1 ) {
-    console.log(navigator.userAgent);
+  // picturefill.min.js
+  const pictureElem = document.getElementsByTagName('picture')[0];
+  if (pictureElem && navigator.userAgent.indexOf("MSIE") != -1) {
+    loadPicturefillFn();
   }
-  console.log("Internet Exploder");
-
 
   // small device menu
   const menu = document.querySelector('.js-menu');
