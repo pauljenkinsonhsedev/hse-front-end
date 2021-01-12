@@ -3,13 +3,14 @@ import ChartsDefault from './combined/charts/charts';
 import { mainMenu } from './combined/main-menu';
 import { loadPicturefillFn } from './combined/utils/picture-elem.js';
 import { fileTypeFunction } from './combined/file-type.js';
+import { getInternetExplorerVersion } from './combined/utils/internet-explorer-detection.js';
 
 // Window load
 window.addEventListener('DOMContentLoaded',() => {
 
   // picturefill.min.js
   const pictureElem = document.getElementsByTagName('picture')[0];
-  if (pictureElem && navigator.userAgent.indexOf("MSIE") != -1) {
+  if (pictureElem && getInternetExplorerVersion() <= 11) {
     loadPicturefillFn();
   }
 
