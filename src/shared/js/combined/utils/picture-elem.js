@@ -2,7 +2,6 @@ import load from './asset-loader';
 
 
 export function loadPicturefillFn() {
-    console.log('has a pic');
     let path = String;
 
     path = window.location.protocol + '//' + window.location.host;
