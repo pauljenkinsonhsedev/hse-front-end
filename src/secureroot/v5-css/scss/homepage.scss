@@ -3,43 +3,47 @@
 // Homepage banner
 
 .homepageBanner {
-padding-top: 0;
-padding-bottom: 20px;
-@media only screen and (min-width : $desktop) {
-margin-bottom: 20px !important;
-padding-bottom: 0;
-}
+	padding: 0;
+	margin-bottom: 20px !important;
+	overflow: hidden;
+	@media only screen and (min-width : $desktop) {
+		margin-bottom: 0;
+		a {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: nowrap;
+ 			justify-content: flex-start;
+		}
+	}
 }
 
 .homepageBanner a p {
-text-decoration: underline;
+	text-decoration: none;
 }
 
 .homepageBanner a:hover p {
-text-decoration: none;
+	text-decoration: none;
 }
 
 
 
 .homepageBannerText {
-width: 100%;
-float: left;
-@media only screen and (min-width : $desktop) {
-width: 100%;
-// position: absolute;
-// max-width: 310px;
-}
-position: relative;
-bottom: 0;
-background-color: $red;
-color: white;
-padding: 10px 20px;
-max-width: 100%;
-z-index: 999;
+	width: 100%;
+	float: left;
+	@media only screen and (min-width : $desktop) {
+		width: 100%;
+	}
+	position: relative;
+	bottom: 0;
+	background-color: $red;
+	color: white;
+	padding: 10px 20px;
+	max-width: 100%;
+	z-index: 999;
 }
 
 .homepageBannerText.covidBlue {
-background-color: #1372b7;
+	background-color: #1372b7;
 }
 
 
@@ -58,62 +62,115 @@ height: 20px;
 
 
 .homepageBannerText h2 {
-margin: 0;
-padding: 0;
-clear: none;
+	margin: 0;
+	padding: 0;
+	clear: none;
 }
 
 .homepageBannerText p  {
-color: white;
-margin: 0;
+	color: white;
+	margin: 0;
 }
 
 .homepageBanner {
-@media only screen and (min-width : 980px) {
-	max-height: 258px !important;
-}
+	@media only screen and (min-width : 980px) {
+		max-height: 258px !important;
+	}
 }
 
 .homepageBanner a {
-float: left;
-width: 100%;
+	float: left;
+	width: 100%;
 }
 
 .homepageBanner img {
-@media only screen and (min-width : 980px) {
+	@media only screen and (min-width : 980px) {
 
-}
+	}
 }
 
 .mostPopular {
-@media only screen and (min-width : 980px) {
+	@media only screen and (min-width : 980px) {
 		margin-bottom: 20px;
-	}	
+	}
 }
 
 .mostPopular {
-min-height: 256.62px;
+	min-height: 256.62px;
 }
 
 
 .subText {
-color: $hseblack;
+	color: $hseblack;
 }
 
 // Responsive carousel
 
 #homepageCarousel {
-width: 100% !important;
+	width: 100% !important;
 }
 
 .touchcarousel-item img {
-border-radius: 0 !important;
+	border-radius: 0 !important;
 }
 
 ul.touchcarousel-container {
-width: 1200px!important;
+	width: 1200px!important;
 }
 
 .homepageRecommended {
-margin-bottom: 20px;
+	margin-bottom: 20px;
+}
+
+.homepageBannerInner {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	padding: 20px;
+	order: 2;
+
+	overflow: hidden;
+
+	@media only screen and (min-width : 600px) {
+		order: 1;
+	}
+}
+
+.homepageBannerImage {
+	order: 1;
+	@media only screen and (min-width : 600px) {
+		order: 2;
+		overflow: hidden;
+	}
+
+	@media only screen and (min-width : $desktop) {
+		max-width: 460px;
+	}
+}
+
+.coronaPoster {
+	background-color: #3272b2;
+	font-weight: 100;
+	letter-spacing: 1px;
+
+	a p {
+		font-size: 22px;
+		line-height: 28px;
+		font-weight: 700;
+		text-decoration: none;
+		color: #FFFFFF;
+	}
+
+	a:link,
+	a:hover,
+	a:visited,
+	a:active {
+		text-decoration: none;
+		color: #FFFFFF;
+	}
+}
+
+.stayAlertBanner {
+	margin-top: auto;
+	align-items: flex-end;
 }
