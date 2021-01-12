@@ -3,7 +3,7 @@ import { series, task, watch } from 'gulp';
 import * as config from '../../config.json';
 import format from 'date-format';
 import colors from 'colors';
-import { hseBuild, workspaceBuild } from './build'
+import { hseBuild, workspaceBuild } from './build.js'
 import { isDefault, isDev, isStaging } from './mode.js';
 
 import requireDir from 'require-dir';

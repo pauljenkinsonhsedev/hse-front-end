@@ -164,9 +164,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           <li><a href="#">Page five</a></li>
           <li><a href="#">Page six</a></li>
         </ol>
-        <!-- TemplateEndEditable --> 
+        <!-- TemplateEndEditable -->
     </nav>
-	</div>
+    </div>
     <div id="asideTop" class="column oneThird boxLast noBoxPadding"> <!-- TemplateBeginEditable name="asideTop" --> <!-- TemplateEndEditable --> </div>
   </div>
   <div class="columnFull noBoxPadding">
@@ -182,7 +182,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <!-- TemplateEndEditable --> </article>
     <aside id="asideBottom" class="column oneThird border-top-red aside noBoxPadding boxLast"> <!-- TemplateBeginEditable name="asideBottom" -->
       <div class="backgroundRed exploreTopic">
-        <ul class="listCaret">
+        <ul class="linkList">
           <li><a href="#">List item</a></li>
           <li><a href="#">List item</a></li>
           <li><a href="#">List item</a></li>
@@ -250,7 +250,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   </footer>
 </nav>
 <section id="lastUpdated" aria-label="Last updated">
-<!-- TemplateBeginEditable name="updated" -->Updated:<!-- #BeginDate format:IS1 -->2020-10-12<!-- #EndDate --><!-- TemplateEndEditable -->
+<!-- TemplateBeginEditable name="updated" -->Updated:<!-- #BeginDate format:IS1 -->2020-10-02<!-- #EndDate --><!-- TemplateEndEditable -->
 </section>
 <script src="../assets/v5-js/v5-main.min.js"></script>
 <script src="../assets/v5-js/jquery.min.js"></script> 

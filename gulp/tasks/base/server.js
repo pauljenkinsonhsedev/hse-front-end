@@ -29,13 +29,13 @@ const browser = os.platform() === 'linux' ? 'google-chrome' : (
 
 function server() {
     connect.server({
-        root: root,
+        root: 'secureroot/hseonline/website/livelive/secureroot',
         livereload: true
     })
 }
 
 function openBrowser() {
-    return src(`${root}/${config.server.file}`)
+    return src(`secureroot/hseonline/website/livelive/secureroot/${config.server.file}`)
     .pipe(open({
         app: browser,
         uri: `${config.server.uri}:${config.server.port}`

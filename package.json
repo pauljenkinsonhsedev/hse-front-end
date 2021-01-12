@@ -62,6 +62,7 @@
     "highcharts": "^8.2.0",
     "moment": "2.27.0",
     "os": "^0.1.1",
+    "picturefill": "^3.0.3",
     "tidy-html5": "^0.1.1"
   }
 }
