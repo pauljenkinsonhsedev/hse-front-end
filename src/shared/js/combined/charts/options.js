@@ -72,7 +72,7 @@ export class ChartOptions {
 
         // watch chartRatio on resize
         const chartHeight = resizer(chartRatio);
-        console.log(chartHeight);
+        // console.log(chartHeight);
 
         // Set gridlines
         switch (this.gridLine) {
@@ -227,7 +227,19 @@ export class ChartOptions {
             }
         },
             accessibility: {
-                description: this.description
+                description: this.description,
+                screenReaderSection: {
+                    beforeChartFormat: '<h4>{chartTitle}</h4>' +
+                        '<div>{typeDescription}</div>' +
+                        '<div>{chartSubtitle}</div>' +
+                        '<div>{chartLongdesc}</div>' +
+                        '<div>{playAsSoundButton}</div>' +
+                        '<div>{viewTableButton}</div>' +
+                        '<div>{xAxisDescription}</div>' +
+                        '<div>{yAxisDescription}</div>' +
+                        '<div>{annotationsTitle}</div>' +
+                        '<div>{annotationsList}</div>'
+                }
             },
             credits: {
                 enabled: false
