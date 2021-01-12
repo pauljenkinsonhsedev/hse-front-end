@@ -6,6 +6,12 @@ import { fileTypeFunction } from './combined/file-type.js';
 // Window load
 window.addEventListener('DOMContentLoaded',() => {
 
+  if (navigator.userAgent.indexOf("MSIE") != -1 ) {
+    console.log(navigator.userAgent);
+  }
+  console.log("Internet Exploder");
+
+
   // small device menu
   const menu = document.querySelector('.js-menu');
   if (menu) {
