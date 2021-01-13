@@ -2,7 +2,6 @@ import load from './asset-loader';
 
 
 export function loadPicturefillFn() {
-    console.log('has a pic');
     let path = String;
 
     path = window.location.protocol + '//' + window.location.host;
@@ -12,7 +11,6 @@ export function loadPicturefillFn() {
     if (window.location.href.match(/(?:\b|_)(?:testbed)(?:\b|_)/i)) {
         path = window.location.protocol + '//' + window.location.host + '/testbed/';
     }
-
 
     return Promise.all([
         load.js(path + '/assets/v5-js/vendor/picturefill/picturefill.min.js'),
