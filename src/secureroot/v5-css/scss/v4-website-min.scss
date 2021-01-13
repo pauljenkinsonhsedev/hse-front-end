@@ -1,5 +1,5 @@
 /* v4.2.8 (V5 Edit) */
-/* 
+/*
 	Contents
 
 	- Framework core styles
@@ -8,7 +8,7 @@
 	- jQueryUI
 */
 
-/* v4.2.5 minified with http://cssminifier.com/ 
+/* v4.2.5 minified with http://cssminifier.com/
 *  Yui @ http://refresh-sf.com/yui/ created socail media layout issues
 *  minifycss @ http://www.minifycss.com/css-compressor/ lost 'x' close on pop-ups
 */
@@ -44,7 +44,7 @@
 }
 
 #navSub li.active {
-	border-left:#B30030 solid 3px;	
+	border-left:#B30030 solid 3px;
 }
 
 p,
@@ -56,7 +56,7 @@ h4 {
 a,
 a:visited {
 	color:#981e32;/*changed from #b82533 by Sarah 27/2/19*/
-}	
+}
 
 h1 {
 	color:#981e32;/*changed from #a50532 by Sarah 27/2/19*/
@@ -91,7 +91,7 @@ background: none !important;
 ul.tabs li, ul.social li {
 background-image: none !important;
 }
-	
+
 #contentContainer  ul li {
 background-image: url('../../assets/v5-images/icons/svg/solid/square-full-solid-red.svg');
 background-position: 0 10px;
@@ -114,7 +114,7 @@ background-repeat: no-repeat;
 background-image: url('../../assets/v5-images/icons/svg/solid/caret-right-white.svg');
 background-position: 0 7px;
 background-size: 10px 10px;
-background-repeat: no-repeat;	
+background-repeat: no-repeat;
 }
 
 
@@ -159,7 +159,7 @@ position: relative;
 	height: 10px;
 	width: 10px;
 	top: 6px;
-	left: 0;	
+	left: 0;
 }
 
 #contentContainer .backgroundRed p.linkList::before {
@@ -217,12 +217,25 @@ color: $hseblack !important;
 
 /* Table Styles */
 
-tr.odd td {
-	background-color:#EDEDED;
-}
+// tr.odd td {
+// 	background-color:#EDEDED;
+// }
 
-tr.even > td {
-	background-color:#E0E0E0;
+// tr.even > td {
+// 	background-color:#E0E0E0;
+// }
+
+tbody tr {
+	&:nth-child(even) {
+		td {
+			background: #E0E0E0;
+		}
+	}
+	&:nth-child(odd) {
+		td {
+			background: #EDEDED;
+		}
+	}
 }
 
 th {
@@ -258,7 +271,7 @@ div#nyroModalWrapper div.wrapperImg div#nyroModalContent a.nyroModalNext {
 
 #contentContainer ul.lightbox li div a {
 	background:url(../../assets/v4-images/website/icons/download_small.gif) left center no-repeat;
-}	
+}
 
 .expand {
 	background:url(../../assets/v4-images/website/lightbox/expand.png) no-repeat;
@@ -299,7 +312,7 @@ div#contentContainer div.diaryMonth li.even {
 /* jQuery UI HSE specific styles */
 
 div.accordion .ui-widget-content a,
-div.tabs .ui-widget-content a { 
+div.tabs .ui-widget-content a {
 	color:#981e32;/*changed from #b82533 by Sarah 27/2/19*/
 }
 
@@ -423,7 +436,7 @@ div.tabs .ui-widget-content a {
 .ui-accordion .ui-accordion-li-fix { display: inline; }
 .ui-accordion .ui-accordion-header-active { border-bottom: 0 !important; }
 .ui-accordion .ui-accordion-header a { display: block; font-size: 1em; padding: .5em .5em .5em 2.2em;/*was 0.7em*/}
-.ui-accordion .ui-accordion-header.ui-state-active a { 
+.ui-accordion .ui-accordion-header.ui-state-active a {
 background-color:#f1f1f1;}
 /*.ui-accordion-icons .ui-accordion-header a { padding-left: 2.2em; }*/
 .ui-accordion .ui-accordion-header .ui-icon { position: absolute; left: .5em; top: 50%; margin-top: -8px; }
@@ -441,8 +454,8 @@ background-color:#f1f1f1;}
 .ui-button { display: inline-block; position: relative; padding: 0; margin-right: .1em; text-decoration: none !important; cursor: pointer; text-align: center; zoom: 1; overflow: visible; } /* the overflow property removes extra width in IE */
 .ui-button-icon-only { width: 2.2em; } /* to make room for the icon, a width needs to be set here */
 button.ui-button-icon-only { width: 2.4em; } /* button elements seem to need a little more width */
-.ui-button-icons-only { width: 3.4em; } 
-button.ui-button-icons-only { width: 3.7em; } 
+.ui-button-icons-only { width: 3.4em; }
+button.ui-button-icons-only { width: 3.7em; }
 
 /*button text element */
 .ui-button .ui-button-text { display: block; line-height: 1.4;  }
@@ -478,7 +491,7 @@ button.ui-button::-moz-focus-inner { border: 0; padding: 0; } /* reset extra pad
  */
 .ui-dialog { position: absolute; padding: .2em; width: 300px; overflow: hidden; }
 .ui-dialog .ui-dialog-titlebar { padding: .4em 1em; position: relative;  }
-.ui-dialog .ui-dialog-title { float: left; margin: .1em 16px .1em 0; } 
+.ui-dialog .ui-dialog-title { float: left; margin: .1em 16px .1em 0; }
 .ui-dialog .ui-dialog-titlebar-close { position: absolute; right: .3em; top: 50%; width: 19px; margin: -10px 0 0 0; padding: 1px; height: 18px; }
 .ui-dialog .ui-dialog-titlebar-close span { display: block; margin: 1px; }
 .ui-dialog .ui-dialog-titlebar-close:hover, .ui-dialog .ui-dialog-titlebar-close:focus { padding: 0; }
@@ -504,7 +517,7 @@ button.ui-button::-moz-focus-inner { border: 0; padding: 0; } /* reset extra pad
 .ui-tabs .ui-tabs-nav li a { float: left; padding: .5em 1em; text-decoration: none; }
 .ui-tabs .ui-tabs-nav li.ui-tabs-selected { margin-bottom: 0; padding-bottom: 1px; }
 .ui-tabs .ui-tabs-nav li.ui-tabs-selected a, .ui-tabs .ui-tabs-nav li.ui-state-disabled a, .ui-tabs .ui-tabs-nav li.ui-state-processing a { cursor: text; }
-.ui-tabs .ui-tabs-nav li a, .ui-tabs.ui-tabs-collapsible .ui-tabs-nav li.ui-tabs-selected a { cursor: pointer; } 
+.ui-tabs .ui-tabs-nav li a, .ui-tabs.ui-tabs-collapsible .ui-tabs-nav li.ui-tabs-selected a { cursor: pointer; }
 .ui-tabs .ui-tabs-panel { display: block; border-width: 0; padding: 1em 1.4em; background: none; }
 .ui-tabs .ui-tabs-hide { display: none !important; }
 
