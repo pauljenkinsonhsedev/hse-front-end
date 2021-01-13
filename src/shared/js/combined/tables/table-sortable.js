@@ -3,7 +3,7 @@ export function tableSortable(elem){
     var table = document.querySelectorAll(`table.${elem.className}`);
 
     table.forEach(() => {
-        
+
     });
 
     var rows, i, x, y, count = 0;
