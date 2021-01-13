@@ -12,7 +12,6 @@ export function loadPicturefillFn() {
         path = window.location.protocol + '//' + window.location.host + '/testbed/';
     }
 
-
     return Promise.all([
         load.js(path + '/assets/v5-js/vendor/picturefill/picturefill.min.js'),
     ])
