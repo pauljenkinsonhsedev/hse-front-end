@@ -12,8 +12,9 @@ export function mainMenu(){
   const hseBooks = document.querySelector('#main-menu ul li.hseBooks a');
 
   // hseBooks
-
-  hseBooks.innerHTML = 'HSE Books';
+  if (hseBooks) {
+    hseBooks.innerHTML = 'HSE Books';
+  }
 
   // Button properties
   menuButton.classList.add('menu-button');

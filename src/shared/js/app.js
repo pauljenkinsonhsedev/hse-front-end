@@ -4,13 +4,14 @@ import { mainMenu } from './combined/main-menu';
 import { loadPicturefillFn } from './combined/utils/picture-elem.js';
 import { fileTypeFunction } from './combined/file-type.js';
 import { getInternetExplorerVersion } from './combined/utils/internet-explorer-detection.js';
+import { tableSortable } from './combined/tables/table-sortable.js';
 
 // Window load
 window.addEventListener('DOMContentLoaded',() => {
 
   // picturefill.min.js
-  const pictureElem = document.getElementsByTagName('picture')[0];
-  if (pictureElem && getInternetExplorerVersion() <= 11) {
+  const pictureElemSelector = document.getElementsByTagName('picture')[0];
+  if (pictureElemSelector && getInternetExplorerVersion() <= 11) {
     loadPicturefillFn();
   }
 
@@ -20,8 +21,15 @@ window.addEventListener('DOMContentLoaded',() => {
     mainMenu();
   }
 
+  // JS Enabled flag
   const htmlDoc = document.getElementsByTagName('html')[0];
   htmlDoc.classList.add('js-enabled');
+
+  // Tables
+  const tableSortableSelector = document.querySelector('.sortable');
+  if (document.body.contains(tableSortableSelector)) {
+    tableSortable(tableSortableSelector);
+  }
 
   // CSV Convertor
   // const csvForm = document.getElementById('csvconvertor');
