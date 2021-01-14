@@ -1,0 +1,46 @@
+
+
+tbody tr {
+	&:nth-child(even) {
+		td {
+			background: #E0E0E0;
+		}
+	}
+	&:nth-child(odd) {
+		td {
+			background: #EDEDED;
+		}
+	}
+}
+
+th {
+	border: 1px solid #787878;
+	font-weight: bold;
+}
+
+th a {
+	color:#FFF;
+}
+
+th a:hover {
+	color:#FFF;
+}
+
+.sortable {
+    th {
+        position: relative;
+        cursor: pointer;
+        padding-right: 20px;
+        background-image: url('../../assets/v5-images/icons/svg/tables/table-sortable.svg');
+        background-size: 10px 13px;
+        background-position: top 8px right 5px;
+        background-repeat: no-repeat;
+
+        &.sorted-asc {
+            background-image: url('../../assets/v5-images/icons/svg/tables/table-sortable-up.svg');
+        }
+        &.sorted-desc {
+            background-image: url('../../assets/v5-images/icons/svg/tables/table-sortable-down.svg');
+        }
+    }
+}
