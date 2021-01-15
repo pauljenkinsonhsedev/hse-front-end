@@ -1,9 +1,41 @@
-export function tableSortable(elem){
-    const tableHeaders = elem.querySelectorAll('thead th');
+import load from '../utils/asset-loader';
+import pathEnv from '../utils/asset-env-path';
+
+function loadmomentFn() {
+    return Promise.all([
+        load.js(pathEnv + '/assets/v5-js/vendor/moment/moment.js'),
+    ])
+    .catch((err) => {
+        console.error(`Error initiating charts: ${err}`);
+    });
+}
+
+// Check if the value is a date
+function validateDate(date) {
+    try {
+        if (date.length > 6) {
+            new Date(date).toISOString();
+            return true;
+        }
+    } catch (e) {
+        return false;
+    }
+}
+
+function convertDate(date) {
+    const x = new Date(date).toISOString();
+    return moment(x).format('YYYY/DD/MM').toString();
+}
+
+export function tableSortable(container){
+    const tableHeaders = container.querySelectorAll('thead th');
+
+    // Load moment.js for date conversions
+    loadmomentFn();
 
     // Sorting event
     for (let i = 0; i < tableHeaders.length; i++) {
-        tableHeaders[i].addEventListener('click', function (e) {
+        tableHeaders[i].addEventListener('click', function () {
             sortTable(i);
         });
     };
@@ -28,9 +60,9 @@ export function tableSortable(elem){
     });
 
     function sortTable(n) {
-        const table = elem.querySelector('tbody');
+        const table = container.querySelector('tbody');
 
-        let i, x, y, count = 0;
+        let i, cell, cellNext, count = 0;
         let switching = true;
 
         let direction = 'ascending';
@@ -42,16 +74,24 @@ export function tableSortable(elem){
             for (i = 0; i < (rows.length - 1); i++) {
                 var Switch = false;
 
-                x = rows[i].getElementsByTagName('td')[n];
-                y = rows[i + 1].getElementsByTagName('td')[n];
+                cell = rows[i].getElementsByTagName('td')[n];
+                cellNext = rows[i + 1].getElementsByTagName('td')[n];
+
+                let cellText = cell.innerHTML.toLowerCase();
+                let cellNextText = cellNext.innerHTML.toLowerCase();
+
+                if (validateDate(cellText) === true) {
+                    cellText = convertDate(cellText);
+                    cellNextText = convertDate(cellNextText);
+                }
 
                 if (direction == 'ascending') {
-                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                    if (cellText > cellNextText) {
                         Switch = true;
                         break;
                     }
                 } else if (direction == 'descending') {
-                    if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                    if (cellText < cellNextText) {
                         Switch = true;
                         break;
                     }
