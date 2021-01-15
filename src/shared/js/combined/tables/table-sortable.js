@@ -1,5 +1,37 @@
+import load from '../utils/asset-loader';
+import pathEnv from '../utils/asset-env-path';
+
+function loadmomentFn() {
+    return Promise.all([
+        load.js(pathEnv + '/assets/v5-js/vendor/moment/moment.js'),
+    ])
+    .catch((err) => {
+        console.error(`Error initiating charts: ${err}`);
+    });
+}
+
+// Check if the value is a date
+function validateDate(date) {
+    try {
+        if (date.length > 6) {
+            new Date(date).toISOString();
+            return true;
+        }
+    } catch (e) {
+        return false;
+    }
+}
+
+function convertDate(date) {
+    const x = new Date(date).toISOString();
+    return moment(x).format('YYYY/DD/MM').toString();
+}
+
 export function tableSortable(container){
     const tableHeaders = container.querySelectorAll('thead th');
+
+    // Load moment.js for date conversions
+    loadmomentFn();
 
     // Sorting event
     for (let i = 0; i < tableHeaders.length; i++) {
@@ -27,18 +59,6 @@ export function tableSortable(container){
         });
     });
 
-    // Check if the value is a date
-    function validateDate(date) {
-        try {
-            if (date.length > 6) {
-                new Date(date).toISOString()
-                return true;
-            }
-        } catch (e) {
-            return false;
-        }
-    }
-
     function sortTable(n) {
         const table = container.querySelector('tbody');
 
@@ -60,18 +80,9 @@ export function tableSortable(container){
                 let cellText = cell.innerHTML.toLowerCase();
                 let cellNextText = cellNext.innerHTML.toLowerCase();
 
-                let date1;
-                let date2;
-
                 if (validateDate(cellText) === true) {
-                    // date1 = Date.parse(cellText);
-                    date1 = new Date(cellText).toISOString();
-                    date2 = new Date(cellNextText).toISOString();
-                    console.log('new date 1', date1);
-                    console.log('new date 2', date2);
-
-                    cellText = date1;
-                    cellNextText = date2;
+                    cellText = convertDate(cellText);
+                    cellNextText = convertDate(cellNextText);
                 }
 
                 if (direction == 'ascending') {
