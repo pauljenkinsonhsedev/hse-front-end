@@ -5,7 +5,7 @@
 .homepageBanner {
 	padding: 0;
 	margin-bottom: 20px !important;
-	overflow: hidden;
+
 	@media only screen and (min-width : $desktop) {
 		margin-bottom: 0;
 		a {
@@ -14,10 +14,7 @@
 			flex-direction: row;
 			flex-wrap: nowrap;
 			justify-content: flex-start;
-
-			&:focus {
-				border: $focus 4px solid;
-			}
+			border-image-width: 0;
 		}
 	}
 }
