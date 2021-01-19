@@ -5,6 +5,7 @@ import { loadPicturefillFn } from './combined/utils/picture-elem.js';
 import { fileTypeFunction } from './combined/file-type.js';
 import { getInternetExplorerVersion } from './combined/utils/internet-explorer-detection.js';
 import { tableSortable } from './combined/tables/table-sortable.js';
+import { tabs } from './combined/tabs.js';
 
 // Window load
 window.addEventListener('DOMContentLoaded',() => {
@@ -15,7 +16,7 @@ window.addEventListener('DOMContentLoaded',() => {
     loadPicturefillFn();
   }
 
-  // small device menu
+  // Small device menu
   const menu = document.querySelector('.js-menu');
   if (menu) {
     mainMenu();
@@ -29,6 +30,12 @@ window.addEventListener('DOMContentLoaded',() => {
   const tableSortableSelector = document.querySelector('.sortable');
   if (document.body.contains(tableSortableSelector)) {
     tableSortable(tableSortableSelector);
+  }
+
+  // Tabs
+  const tabSelector = document.querySelector('.tabContainer');
+  if (document.body.contains(tabSelector)) {
+    tabs(tabSelector);
   }
 
   // CSV Convertor
