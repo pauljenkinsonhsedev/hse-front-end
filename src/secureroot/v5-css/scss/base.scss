@@ -31,8 +31,9 @@ $beta: #014a82;
 $focus: #ffdd00;
 $yes: #005500;
 
-// Responsive breakpoints 
+// Responsive breakpoints
 
+$tablet: 800px;
 $desktop: 980px;
 
 // Background box colour
@@ -48,7 +49,7 @@ color: white !important;
 }
 
 
-// Links 
+// Links
 
 a {
 text-decoration: underline;
@@ -112,10 +113,10 @@ border-bottom: none;
 
 }
 
-// Lists 
+// Lists
 
 dd {
-margin: 10px 0;	
+margin: 10px 0;
 }
 
 .backgroundRed ul.listCaret li:before {
@@ -147,18 +148,18 @@ padding-left: 0;
 }
 
 #contentContainer .linkArrow li {
-display: block; 
+display: block;
 }
 
 #contentContainer .linkArrow li a:hover {
-text-decoration: underline !important; 
+text-decoration: underline !important;
 }
 
 @media only screen and (min-width : 992px) {
 
 .linkArrow li {
 display: block;
-}	
+}
 
 }
 #contentContainer ul.listLinks li
@@ -223,11 +224,11 @@ margin-bottom: 20px !important;
 #contentContainer ul.list li {
 background: none;
 list-style-type: none;
-padding: 0;	
+padding: 0;
 }
 
 #contentContainer .mb0 {
-margin-bottom: 0;	
+margin-bottom: 0;
 }
 
 // Box lists
@@ -273,14 +274,14 @@ margin: 0;
 display: inline;
 }
 
-// Main content 
+// Main content
 
 #contentContainer ol {
 margin-bottom: 0;
 }
 
 #contentContainer .pressReleases li {
-padding-bottom: 20px;	
+padding-bottom: 20px;
 }
 
 #contentContainer .safetyAlerts li {
@@ -288,7 +289,7 @@ list-style-type: none;
 }
 
 
-// Forms 
+// Forms
 
 input#email {
 box-sizing: border-box;
@@ -303,7 +304,7 @@ margin-top: 10px;
 border: 0;
 }
 
-// Responsive images 
+// Responsive images
 
 picture,
 img {
@@ -328,7 +329,7 @@ height: auto;
 }
 
 #pageContainer {
-margin: 20px auto; 
+margin: 20px auto;
 clear: both;
 }
 
