@@ -1,0 +1,92 @@
+$btnSize: 30px;
+
+.lightbox__container {
+    position: relative;
+    height: 100%;
+}
+
+.lightbox__content {
+    position: relative;
+    // padding-bottom: $btnSize / 2;
+    width: auto;
+    transition: width 300ms ease-in-out;
+
+    &--panel {
+        display: none;
+
+        img {
+            margin-bottom: 10px;
+        }
+
+        &.active {
+            display: block;
+        }
+    }
+}
+
+.lighbox__caption {
+    text-align: left;
+    padding: 5px ($btnSize + 15px);
+    color: #333;
+    white-space: pre-line;
+
+    p {
+        margin: 0;
+    }
+}
+
+.lighbox__footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.lighbox__prev,
+.lighbox__next {
+    box-sizing: border-box;
+    position: relative;
+    appearance: none;
+    padding: 0;
+    background-color: #eee;
+
+    &:focus {
+        outline: none;
+        background-color: #fd0;
+    }
+
+    width: $btnSize;
+    height: $btnSize;
+    border: none;
+    border-radius: $btnSize;
+    cursor: pointer;
+
+    &:before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 0;
+        height: 0;
+        border-style: solid;
+    }
+
+    span {
+        @extend .visually-hidden;
+    }
+}
+
+.lighbox__prev {
+    &:before {
+        border-width: 8px 12px 8px 0;
+        border-color: transparent $black transparent transparent;
+    }
+}
+.lighbox__next {
+    &:before {
+        border-width: 8px  0 8px 12px;
+        border-color: transparent transparent transparent $black;
+    }
+}
