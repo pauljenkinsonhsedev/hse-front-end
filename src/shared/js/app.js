@@ -1,10 +1,12 @@
 import CsvConvert from './combined/csv-convertor/csv-convertor';
 import ChartsDefault from './combined/charts/charts';
+import Modal from './combined/modal';
 import { mainMenu } from './combined/main-menu';
 import { loadPicturefillFn } from './combined/utils/picture-elem.js';
 import { fileTypeFunction } from './combined/file-type.js';
 import { getInternetExplorerVersion } from './combined/utils/internet-explorer-detection.js';
 import { tableSortable } from './combined/tables/table-sortable.js';
+import { lightbox } from './combined/lightbox.js';
 
 // Window load
 window.addEventListener('DOMContentLoaded',() => {
@@ -49,4 +51,13 @@ window.addEventListener('DOMContentLoaded',() => {
   if (document.body.contains(anchorSelector)) {
     fileTypeFunction();
   }
+
+  // const options = {
+  //   size: 'default',
+  //   transition: true,
+  //   // overlay: true
+  // }
+  // const content = '<p>Some stuff</p>';
+  // new Modal(content, options);
+lightbox();
 }); // end window load
