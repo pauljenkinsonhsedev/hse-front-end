@@ -1,0 +1,19 @@
+.btn {
+    appearance: none;
+    outline: none;
+    background-color: #ccc;
+    color: $black;
+    font-weight: 700;
+
+    padding: 7px 10px;
+    border-radius: 5px;
+    border: none;
+
+    text-decoration: none;
+    cursor: pointer;
+
+    &:focus {
+        background-color: #fd0;
+        outline: 0;
+    }
+}
