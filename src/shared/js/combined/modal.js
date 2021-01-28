@@ -60,9 +60,17 @@ class Modal {
     }
 
     modalEvents() {
+        // close modal
         customEventListener('.modal__close', 'click', () => {
             this.modalClose();
         });
+
+        // close modal escape key
+        window.addEventListener('keydown', (e) => {
+            if (e.keyCode == 27) {
+                this.modalClose();
+            }
+        }, false);
 
         // close modal if clicked outside
         window.addEventListener('mouseup', (e) => {
