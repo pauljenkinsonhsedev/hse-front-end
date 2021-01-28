@@ -1,4 +1,4 @@
-import { customEventListener } from './utils/add-custom-event-listener';
+import { customEventListener } from './add-custom-event-listener';
 
 /*
 
@@ -6,14 +6,6 @@ import { customEventListener } from './utils/add-custom-event-listener';
     type: notification, warning, information, dialog
     size: default, fullscreen
     transition: [scale, fadein, slide]
-
-    const modalOptions = {
-    size: 'default',
-    transition: true,
-    // overlay: true
-    }
-
-    new Modal(html, modalOptions);
 */
 
 class Modal {
@@ -60,7 +52,7 @@ class Modal {
 
     modalEvents() {
         // close modal
-        customEventListener('.modal__close', 'click' , ()=> {
+        customEventListener('.close-action', 'click' , ()=> {
             this.modalClose();
         });
 
@@ -103,7 +95,7 @@ class Modal {
         const modalAction = options.action.url ? `<div class="modal__action"><a href="${options.action.url}">${options.action.title}</a></div>` : '';
         const html = `
         <div class="modal__header">
-            <button class="modal__close">
+            <button class="modal__close close-action">
                 <div class="close-icon"></div>
                 <span>Close</span>
             </button>
