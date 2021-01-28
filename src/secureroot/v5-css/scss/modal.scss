@@ -8,8 +8,6 @@ html, body {
     }
     background-color: #FFF;
     height: auto;
-    min-height: 200px;
-    min-width: 320px;
     padding: 15px;
     border: 1px solid #d8d8d8;
 
@@ -24,6 +22,7 @@ html, body {
     &.has-overlay {
         box-shadow: none;
     }
+
     @media only screen and (min-width : $tablet) {
         transform: translateX(-50%) translateY(-50%) scale(0);
         transition: transform 150ms ease-in, opacity 250ms ease-in-out;
@@ -40,7 +39,6 @@ html, body {
         }
     }
 
-
     &.fullscreen {
         position: absolute;
         top: 0;
@@ -48,9 +46,6 @@ html, body {
         width: 100%;
         height: 100%;
     }
-    // &.transition {
-    //     transform: translateY(-10%);
-    // }
 }
 
 .modal__overlay {
