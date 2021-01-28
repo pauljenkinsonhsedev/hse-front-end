@@ -1,0 +1,23 @@
+a.btn,
+button.btn,
+.btn {
+    appearance: none;
+    outline: 0;
+    border: 0;
+    background-color: #eee;
+    color: $black;
+    text-decoration: none;
+    font-weight: 700;
+    padding: 7px 10px;
+    cursor: pointer;
+
+    &:focus {
+        outline: none;
+        background-color: #fd0;
+    }
+}
+
+.btn-green {
+    background-color: #00830b;
+    color: #FFF;
+}
