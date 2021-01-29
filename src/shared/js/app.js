@@ -6,6 +6,7 @@ import { fileTypeFunction } from './combined/file-type.js';
 import { getInternetExplorerVersion } from './combined/utils/internet-explorer-detection.js';
 import { tableSortable } from './combined/tables/table-sortable.js';
 import { feedbackSurvey } from './combined/feedback-survey.js';
+import { dialogModal } from './combined/dialogs.js';
 
 // Window load
 window.addEventListener('DOMContentLoaded',() => {
@@ -30,6 +31,12 @@ window.addEventListener('DOMContentLoaded',() => {
   const tableSortableSelector = document.querySelector('.sortable');
   if (document.body.contains(tableSortableSelector)) {
     tableSortable(tableSortableSelector);
+  }
+
+  // Dialogs
+  const dialog = document.querySelector('.dialog');
+  if (document.body.contains(dialog)) {
+    dialogModal(dialog);
   }
 
   // CSV Convertor
