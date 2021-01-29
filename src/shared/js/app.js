@@ -6,6 +6,7 @@ import { fileTypeFunction } from './combined/file-type.js';
 import { getInternetExplorerVersion } from './combined/utils/internet-explorer-detection.js';
 import { tableSortable } from './combined/tables/table-sortable.js';
 import { dialogModal } from './combined/dialogs.js';
+import { scrollPos } from './combined/utils/feedback-position';
 
 // Window load
 window.addEventListener('DOMContentLoaded',() => {
@@ -15,6 +16,8 @@ window.addEventListener('DOMContentLoaded',() => {
   if (pictureElemSelector && getInternetExplorerVersion() <= 11) {
     loadPicturefillFn();
   }
+
+  scrollPos();
 
   // small device menu
   const menu = document.querySelector('.js-menu');
