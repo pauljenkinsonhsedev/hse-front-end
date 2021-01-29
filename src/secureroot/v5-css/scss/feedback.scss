@@ -1,31 +1,40 @@
 /* P Jenkinson 06/12/2018 - yes/no user feedback (Responsive) */
 
 #feedback {
-float: left;
-width: 100%;
+    clear: both;
+    width: 100%;
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    // border-bottom: 10px solid $red;
+
+    background-color: $red;
+    padding: 4px 0;
+
+        opacity: 0;
+        transition: opacity 300ms ease-in-out;
+
+    .feedback-in & {
+        opacity: 1;
+    }
 }
 
 .feedback-container {
-width: 100%;
-margin: auto;
-background-color: $red;
-padding: 10px 0 10px 0;
-text-align: center;
+    width: 100%;
+    margin: auto;
+    text-align: center;
+
 }
 
 /* Large Devices, Wide Screens */
 @media only screen and (min-width : 1170px) {
 
 .feedback-container {
-width: 460px;
-border-top-left-radius: 10px;
-border-top-right-radius: 10px;
-padding: 10px 10px 0 10px;
-border-bottom: 1px solid $red;;
-}
-
-#feedback {
-border-bottom: 10px solid $red;
+    width: 460px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    // padding: 10px 10px 0 10px;
+    border-bottom: 1px solid $red;;
 }
 
 }
@@ -72,6 +81,6 @@ color: #111;
 color: #014a82;
 }
 
-
-
-
+.feedback-survey {
+    display: none;
+}
