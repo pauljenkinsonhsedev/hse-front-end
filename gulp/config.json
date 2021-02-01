@@ -82,11 +82,7 @@
             "output": "./devguide/assets/v5-css"
         },
         "markup": {
-            "all": "./src/devguide/markup/**/*.njk",
-            "pages": "./src/devguide/markup/pages/*.njk",
-            "data": "./src/devguide/markup/data/data",
-            "dataModel": "./src/devguide/markup/data/model/",
-            "templates": "./src/devguide/markup/templates/",
+            "all": "./src/devguide/html/**/*.+(htm|html)",
             "output": "./devguide/"
         },
         "images": {
@@ -107,6 +103,10 @@
             }
         },
         "scripts": {
+            "output": "./devguide/assets/v5-js"
+        },
+        "copyjs": {
+            "all": "./src/secureroot/copy/assets/v5-js/**/*",
             "output": "./devguide/assets/v5-js"
         }
     }
