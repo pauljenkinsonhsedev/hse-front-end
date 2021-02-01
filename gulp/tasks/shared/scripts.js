@@ -21,7 +21,7 @@ function sharedScripts() {
     return src(config.shared.js.entrypoint)
     .pipe(webpackStream(webpackConfig), webpack)
     .pipe(connect.reload())
-    .pipe(dest(config.shared.js.outputWorkspace))
+    .pipe(dest(config.shared.js.outputdevguide))
     .pipe(dest(config.shared.js.outputSecureroot));
 }
 

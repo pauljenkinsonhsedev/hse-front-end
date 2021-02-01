@@ -1,7 +1,6 @@
 *.DS_Store
 *.lbi
 node_modules
-src/**/*.htm
 src/assets/v4-homepage
 build/assets/v4-homepage
 build/**/*.htm
@@ -15,11 +14,11 @@ coronavirus/
 news/
 asbestos
 /secureroot
-/workspace
+/devguide
 /secureroot.zip
-/workspace.zip
+/devguide.zip
 /src/secureroot/html
-/gulp/tasks/shared/workspace/js/report.html
+/gulp/tasks/shared/devguide/js/report.html
 /report.html
 /yarn-error.log
 /yarn.lock

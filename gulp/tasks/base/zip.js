@@ -13,12 +13,12 @@ function zipSecureroot() {
     .pipe(notify({message: `${proj.name} production zipped`, onLast: true}))
 }
 
-function zipWorkspace() {
-    return src([config.workspace.output])
-    .pipe(zip('workspace.zip'))
+function zipdevguide() {
+    return src([config.devguide.output])
+    .pipe(zip('devguide.zip'))
     .pipe(dest('./'))
     .pipe(notify({message: `${proj.name} production zipped`, onLast: true}))
 }
 
 task('zipSecureroot', zipSecureroot);
-task('zipWorkspace', zipWorkspace);
+task('zipdevguide', zipdevguide);
