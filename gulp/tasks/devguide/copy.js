@@ -38,7 +38,6 @@ function copydevguideAssets() {
   const html = src([config.devguide.markup.all])
   .pipe(dest(config.devguide.markup.output));
 
-  console.log(config.devguide.copyjs.all);
   const misc = src([config.devguide.copyjs.all])
   .pipe(dest(config.devguide.copyjs.output));
 
