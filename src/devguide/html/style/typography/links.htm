@@ -29,7 +29,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
 
-<link rel="stylesheet" href="assets/v5-css/v5.min.css" type="text/css" media="screen,print" />
+<link rel="stylesheet" href="../../assets/v5-css/v5.min.css" type="text/css" media="screen,print" />
 <style>
 #globalSearch {
 display: none;
@@ -46,14 +46,17 @@ display: none;
 <meta name="description" content=" " />
 <!-- InstanceEndEditable -->
 <meta name="HSE.contentType" content="default" />
-<link rel="shortcut icon" href="favicon.ico" />
-<link rel="apple-touch-icon" href="assets/v4-images/shared/apple-touch-icon.png" />
-<link rel="home" href="index.htm" />
+<link rel="shortcut icon" href="../../favicon.ico" />
+<link rel="apple-touch-icon" href="../../assets/v4-images/shared/apple-touch-icon.png" />
+<link rel="home" href="../../index.htm" />
 
+
+<!-- ie 11 fix for left-hand navigation --> 
+<script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
 
 
 </head>
-<body class="home normalFont">
+<body class="style normalFont">
 
 <!-- GTM -->
 
@@ -62,15 +65,15 @@ display: none;
 </noscript>
 <section id="top" aria-label="Skip to content">  <a href="#contentContainer" class="skip">Skip to content</a>  </section>
  
-<section id="printBanner" aria-label="Print banner"> <img src="assets/v4-images/website/print/print-logo.jpg" width="193" height="65" alt="Health and Safety Executive" id="printLogo"/> </section>
+<section id="printBanner" aria-label="Print banner"> <img src="../../assets/v4-images/website/print/print-logo.jpg" width="193" height="65" alt="Health and Safety Executive" id="printLogo"/> </section>
 <header id="headerContainer">
   <div id="header">
     <div class="headerTop header js-header">
 		 
+		<div id="headerLogo" class="headerLogo"><a href="../../index.htm">Health and Safety<br />
+        Executive</a></div>
+		
 		 
-		<h1 id="headerLogo" class="headerLogo"><a href="index.htm">Health and Safety<br />
-        Executive</a></h1>
-	  	
 		
       <div id="globalSearch" class="desktop-gcs-search">
         <gcse:searchbox-only></gcse:searchbox-only>
@@ -82,18 +85,32 @@ display: none;
     <div class="menuContainer">
       <nav id="main-menu"  class="menu js-menu">
         <ul>
-          <li class="home"><a href="index.htm">Design system</a></li>
-          <li class="brand"><a href="brand/index.htm">Brand</a></li>
-          <li class="style"><a href="style/index.htm">Styles</a></li>
-          <li class="components"><a href="components/index.htm">Components</a></li>
-          <li class="patterns"><a href="patterns/index.htm">Patterns</a></li>
-          <li class="template"><a href="framework/index.htm">Framework</a></li>
+          <li class="home"><a href="../../index.htm">Design system</a></li>
+          <li class="brand"><a href="../../brand/index.htm">Brand</a></li>
+          <li class="style"><a href="../index.htm">Styles</a></li>
+          <li class="components"><a href="../../components/index.htm">Components</a></li>
+          <li class="patterns"><a href="../../patterns/index.htm">Patterns</a></li>
+          <li class="template"><a href="../../framework/index.htm">Framework</a></li>
         </ul>
       </nav>
     </div>
   </div>
    </header>
-    
+   
+<nav id="breadCrumb" aria-label="Previous pages:">
+  <div class="breadCrumbContainer"> <!-- InstanceBeginEditable name="Breadcrumbs" -->
+		<ol>
+			<li class="home"><a href="../../index.htm">Design System</a></li>
+			<li><a href="../index.htm">Style</a></li>
+			<li><a href="index.htm">Typography</a></li>
+			<li>Links</li>
+		</ol>
+		<!-- InstanceEndEditable --> </div>
+  <div id="backTo">
+    <p class="backto"><a id="backnav" href="index.htm">Back to</a></p>
+  </div>
+</nav>
+ 
 <div id="pageContainer" class="v5" xmlns:argot="http://purl.oclc.org/argot/" xmlns:dc="http://purl.org/dc/terms/" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:v="http://www.w3.org/2006/vcard/ns#" xmlns:dbp="http://dbpedia.org/resource/">
 <!-- InstanceBeginEditable name="beta-survey" --> 
 
@@ -103,33 +120,45 @@ display: none;
 <!-- Beta content page --> 
 
   
-<main id="contentContainer" class="columnbetacontentpage column1">
+<nav id="navSecondary" aria-label="Secondary"> <!-- InstanceBeginEditable name="Subnav" --><!-- #BeginLibraryItem "/Library/_v5-typography.lbi" --><div id="menu" class="slinky-menu slinky-theme-default">
+<ul>
+<li class="first"><a href="index.htm">Typography</a></li>
+        <li><a href="font.htm">Font</a></li>
+        <li><a href="headings.htm">Headings</a></li>
+        <li><a href="paragraphs.htm">Paragraphs</a></li>
+        <li><a href="links.htm">Links</a></li>
+        <li><a href="lists.htm">Lists</a></li>
+    <li><a href="section-break.htm">Section break</a></li>
+ </ul>
+</div>
+<!-- #EndLibraryItem --><!-- InstanceEndEditable --> </nav>
+
+<main id="contentContainer" class="columnbetacontentpage column2">
  
 	
 <!-- InstanceBeginEditable name="content" -->
-  <h1>HSE Design System</h1>
+<h1>Links</h1>
+	
+	
+	<h2>Link</h2>
   
-  <p>Design your service using HSE.GOV.UK styles, components and patterns.</p>
-
+	<p><a href="#">Link</a></p> 
 	
-<h2>Overview</h2>
-
 	
-<div class="columnFull noBoxPadding">
+	<h2>Link with list style marker</h2>
+  
+	<p class="linkList"><a href="#">Link</a></p> 
 	
-<div class="column multiCol col3">
 	
-<ul class="columnsList">
-<li><h3><a href="components/index.htm">Components</a></h3><p>Reusable parts of the user interface that have been made to support a variety of webpages</p></li>
-<li><h3><a href="style/index.htm">Style</a></h3><p>	Make your service look and feel like the HSE website with these tested styles</p></li>
-<li><h3><a href="patterns/index.htm">Patterns</a></h3><p>Patterns are best practice design solutions for specific user-focused tasks and page types</p></li>
-<li><h3><a href="framework/index.htm">Template</a></h3><p>HSE.GOV.UK uses one Dreamweaver template to manage multiple pages.</p></li>
-<li><h3><a href="brand/index.htm">Brand</a></h3><p>Our brand reflects who we are and how we want our users to experience HSE.GOV.UK</p></li>
-
-</ul>	
-</div>
+	<h2>Link with bullet point</h2>
 	
-	</div>  
+	<p class="linkBullet"><a href="#">Link</a></p> 
+	
+	
+	
+  
+  
+        
   <!-- InstanceEndEditable -->
 	
  
@@ -156,20 +185,23 @@ display: none;
   </footer>
 </nav>
 <section id="lastUpdated" aria-label="Last updated">
-<!-- InstanceBeginEditable name="updated" -->Updated:<!-- #BeginDate format:IS1 -->2020-09-14<!-- #EndDate -->-->
+<!-- InstanceBeginEditable name="updated" -->Updated:<!-- #BeginDate format:IS1 -->2020-11-19<!-- #EndDate -->
   <!-- InstanceEndEditable -->
 </section>
-<script src="assets/v5-js/v5-main.min.js"></script>
-<script src="assets/v5-js/jquery.min.js"></script> 
-<script src="assets/v5-js/v5-footer.min.js"></script> 
+<script src="../../assets/v5-js/v5-main.min.js"></script>
+<script src="../../assets/v5-js/jquery.min.js"></script> 
+<script src="../../assets/v5-js/v5-footer.min.js"></script> 
 
 	
+ 
+<script src="../../assets/v5-js/v5-footer-slinky-js.min.js"></script> 
 
 
 
 
 
-<div id="gutter"><!-- InstanceBeginEditable name="gutter" --> <!-- InstanceEndEditable --></div>
+<div id="gutter"><!-- InstanceBeginEditable name="gutter" --> 
+<!-- InstanceEndEditable --></div>
 
 <!-- SiteImprove JS --> 
 <script type="text/javascript">
@@ -201,9 +233,9 @@ searchInput.removeAttribute('cellspacing');
 };	
 </script> 
 	
-<!-- InstanceParam name="bodyClass" type="text" value="home" --> 
+<!-- InstanceParam name="bodyClass" type="text" value="style" --> 
 <!-- InstanceParam name="layout" type="text" value="betacontentpage" --> 
-<!-- InstanceParam name="columnLayout" type="number" value="1" --> 
+<!-- InstanceParam name="columnLayout" type="number" value="2" --> 
 <!-- InstanceParam name="platform" type="text" value="v5" --> 
 <!-- InstanceParam name="rdfa" type="boolean" value="false" --> 
 <!-- InstanceParam name="welsh" type="boolean" value="false" --> 
