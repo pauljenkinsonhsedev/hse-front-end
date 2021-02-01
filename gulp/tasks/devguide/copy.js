@@ -24,27 +24,30 @@ const highchartsAssets = [
 
 function copyHighchartsjs() {
   return src(highchartsAssets)
-    .pipe(dest('./workspace/assets/v5-js/vendor/highcharts'))
+    .pipe(dest('./devguide/assets/v5-js/vendor/highcharts'))
 };
 
-function copyWorkspaceAssets() {
+function copydevguideAssets() {
   const tidy = src(['./node_modules/tidy-html5/tidy.js'])
-  .pipe(dest('./workspace/assets/v5-js/vendor/tidy'));
+  .pipe(dest('./devguide/assets/v5-js/vendor/tidy'));
 
   const moment = src(['./node_modules/moment/moment.js'])
-  .pipe(dest('./workspace/assets/v5-js/vendor/moment'));
+  .pipe(dest('./devguide/assets/v5-js/vendor/moment'));
 
   const scripts = src(['./public/js/**/*'])
-  .pipe(dest('./workspace/js'));
+  .pipe(dest('./devguide/js'));
 
-  const images = src(['./src/workspace/images/**/*'])
-  .pipe(dest('./workspace/images'));
+  const images = src(['./src/devguide/images/**/*'])
+  .pipe(dest('./devguide/images'));
 
-  const favicons = src(['./src/workspace/fav/**/*'])
-  .pipe(dest('./workspace/fav'));
+  const html = src(['./src/devguide/html/**/*'])
+  .pipe(dest('./devguide'));
 
-  return merge(scripts, tidy, moment, images, favicons);
+  const favicons = src(['./src/devguide/fav/**/*'])
+  .pipe(dest('./devguide/fav'));
+
+  return merge(html, scripts, tidy, moment, images, favicons);
 };
 
-task('workspaceHighChats', copyHighchartsjs);
-task('workspaceCopyAssets', copyWorkspaceAssets);
+task('devguideHighChats', copyHighchartsjs);
+task('devguideCopyAssets', copydevguideAssets);

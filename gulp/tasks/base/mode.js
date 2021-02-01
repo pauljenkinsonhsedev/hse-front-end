@@ -15,7 +15,7 @@ if (isDefault || isStaging) {
 }
 
 if (isDev) {
-    root = 'workspace';
+    root = 'devguide';
 }
 
 if (isProd) {

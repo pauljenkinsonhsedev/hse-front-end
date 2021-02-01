@@ -8,16 +8,16 @@ import path from "path";
 import connect from "gulp-connect";
 import * as config from '../../config.json';
 
-function workspaceMarkup() {
-    return src(config.workspace.markup.pages)
+function devguideMarkup() {
+    return src(config.devguide.markup.pages)
     .pipe(
         data(function() {
-            return JSON.parse(fs.readFileSync(`${config.workspace.markup.data}.json`));
+            return JSON.parse(fs.readFileSync(`${config.devguide.markup.data}.json`));
         })
     )
     .pipe(
         data(function(file) {
-            return JSON.parse(fs.readFileSync(`${config.workspace.markup.dataModel}/${path.basename(file.path)}.json`));
+            return JSON.parse(fs.readFileSync(`${config.devguide.markup.dataModel}/${path.basename(file.path)}.json`));
         }))
     .pipe(
         nunjucks({
@@ -27,10 +27,10 @@ function workspaceMarkup() {
                 vendor_path: 'assets/v5-js/vendor/',
                 data_path: 'data/'
             },
-            path: config.workspace.markup.templates
+            path: config.devguide.markup.templates
         })
     )
     .pipe(connect.reload())
-    .pipe(dest(config.workspace.markup.output));
+    .pipe(dest(config.devguide.markup.output));
 }
-task('workspaceMarkup', workspaceMarkup);
+task('devguideMarkup', devguideMarkup);

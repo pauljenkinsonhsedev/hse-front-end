@@ -15,11 +15,11 @@ coronavirus/
 news/
 asbestos
 /secureroot
-/workspace
+/devguide
 /secureroot.zip
-/workspace.zip
+/devguide.zip
 /src/secureroot/html
-/gulp/tasks/shared/workspace/js/report.html
+/gulp/tasks/shared/devguide/js/report.html
 /report.html
 /yarn-error.log
 /yarn.lock

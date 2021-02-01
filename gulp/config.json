@@ -13,7 +13,7 @@
             "all": "./src/shared/js/**/*.js",
             "entrypoint": "./src/shared/js/app.js",
             "outputSecureroot": "./secureroot/hseonline/website/livelive/secureroot/assets/v5-js",
-            "outputWorkspace": "./workspace/assets/v5-js"
+            "outputdevguide": "./devguide/assets/v5-js"
         }
     },
     "secureroot": {
@@ -75,25 +75,25 @@
             }
         }
     },
-    "workspace": {
-        "output": "./workspace",
+    "devguide": {
+        "output": "./devguide",
         "styles": {
-            "all": "./src/workspace/styles/**/*.scss",
-            "entry": "./src/workspace/styles/app.scss",
-            "input": "./src/workspace/styles/*.scss",
-            "output": "./workspace/styles"
+            "all": "./src/devguide/styles/**/*.scss",
+            "entry": "./src/devguide/styles/app.scss",
+            "input": "./src/devguide/styles/*.scss",
+            "output": "./devguide/styles"
         },
         "markup": {
-            "all": "./src/workspace/markup/**/*.njk",
-            "pages": "./src/workspace/markup/pages/*.njk",
-            "data": "./src/workspace/markup/data/data",
-            "dataModel": "./src/workspace/markup/data/model/",
-            "templates": "./src/workspace/markup/templates/",
-            "output": "./workspace/"
+            "all": "./src/devguide/markup/**/*.njk",
+            "pages": "./src/devguide/markup/pages/*.njk",
+            "data": "./src/devguide/markup/data/data",
+            "dataModel": "./src/devguide/markup/data/model/",
+            "templates": "./src/devguide/markup/templates/",
+            "output": "./devguide/"
         },
         "images": {
-            "all": "./src/workspace/images/**/*.+(png|jpg|jpeg|gif|svg|ico)",
-            "output": "./workspace/images"
+            "all": "./src/devguide/images/**/*.+(png|jpg|jpeg|gif|svg|ico)",
+            "output": "./devguide/images"
         }
     }
 }

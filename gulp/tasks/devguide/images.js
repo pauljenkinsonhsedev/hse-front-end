@@ -8,8 +8,8 @@ import imageminPngquant from 'imagemin-pngquant';
 import imageminJpegRecompress from 'imagemin-jpeg-recompress';
 import * as config from '../../config.json';
 
-function workspaceImages() {
-  return src(config.workspace.images.all)
+function devguideImages() {
+  return src(config.devguide.images.all)
     .pipe(imagemin([
         imagemin.gifsicle(),
         imagemin.optipng(),
@@ -18,7 +18,7 @@ function workspaceImages() {
         imageminPngquant(),
         imageminJpegRecompress(),
     ]))
-    .pipe(dest(config.workspace.images.output));
+    .pipe(dest(config.devguide.images.output));
 }
 
-task('workspaceImages', workspaceImages);
+task('devguideImages', devguideImages);

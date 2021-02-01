@@ -10,8 +10,8 @@ import pxtorem from "gulp-pxtorem";
 
 sass.compiler = require('node-sass');
 
-function workspaceStyles() {
-  return src(config.workspace.styles.input)
+function devguideStyles() {
+  return src(config.devguide.styles.input)
     .pipe(sourcemaps.init())
     .pipe(
       sass({
@@ -24,7 +24,7 @@ function workspaceStyles() {
     .pipe(sourcemaps.write())
     .pipe(pxtorem())
     .pipe(connect.reload())
-    .pipe(dest(config.workspace.styles.output));
+    .pipe(dest(config.devguide.styles.output));
 }
 
-task('workspaceStyles', workspaceStyles);
+task('devguideStyles', devguideStyles);

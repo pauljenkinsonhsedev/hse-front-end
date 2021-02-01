@@ -13,19 +13,19 @@ function cleanImagesSecure() {
     return del([config.secureroot.images.output]);
 };
 
-function cleanScriptsWorkspace() {
-    return del([config.workspace.scripts.output]);
+function cleanScriptsdevguide() {
+    return del([config.devguide.scripts.output]);
 };
 
-function cleanStylesWorkspace() {
-    return del([config.workspace.styles.output]);
+function cleanStylesdevguide() {
+    return del([config.devguide.styles.output]);
 };
 
-function cleanImagesWorkspace() {
-    return del([config.workspace.images.output]);
+function cleanImagesdevguide() {
+    return del([config.devguide.images.output]);
 };
 
 function cleanMarkup() {
-    return del([config.workspace.scripts.output]);
+    return del([config.devguide.scripts.output]);
 };
 

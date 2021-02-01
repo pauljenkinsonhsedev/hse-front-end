@@ -19,7 +19,7 @@ if (isStaging) {
 }
 
 if (isDev) {
-    root = 'workspace';
+    root = 'devguide';
 }
 
 // Check to see which platform the user requires for their browser
