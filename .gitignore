@@ -1,7 +1,6 @@
 *.DS_Store
 *.lbi
 node_modules
-src/**/*.htm
 src/assets/v4-homepage
 build/assets/v4-homepage
 build/**/*.htm
