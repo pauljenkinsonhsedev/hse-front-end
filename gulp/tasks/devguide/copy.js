@@ -34,19 +34,10 @@ function copydevguideAssets() {
   const moment = src(['./node_modules/moment/moment.js'])
   .pipe(dest('./devguide/assets/v5-js/vendor/moment'));
 
-  const scripts = src(['./public/js/**/*'])
-  .pipe(dest('./devguide/js'));
-
-  const images = src(['./src/devguide/images/**/*'])
-  .pipe(dest('./devguide/images'));
-
   const html = src(['./src/devguide/html/**/*'])
   .pipe(dest('./devguide'));
 
-  const favicons = src(['./src/devguide/fav/**/*'])
-  .pipe(dest('./devguide/fav'));
-
-  return merge(html, scripts, tidy, moment, images, favicons);
+  return merge(html, tidy, moment);
 };
 
 task('devguideHighChats', copyHighchartsjs);

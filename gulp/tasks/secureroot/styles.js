@@ -8,7 +8,22 @@ import sourcemaps from "gulp-sourcemaps";
 import autoprefixer from "gulp-autoprefixer";
 import pxtorem from "gulp-pxtorem";
 import rename from 'gulp-rename';
+import { isDefault, isStaging, isDev } from '../base/mode.js';
 const mode = require('gulp-mode')();
+
+let output;
+
+if (isDefault) {
+    output = config.secureroot.styles.output;
+}
+
+if (isStaging) {
+    output = config.secureroot.styles.output;
+}
+
+if (isDev) {
+    output = config.devguide.styles.output;
+}
 
 sass.compiler = require('node-sass');
 
@@ -28,7 +43,7 @@ function hseStyles() {
     .pipe(rename('v5.min.css'))
     .pipe(mode.development(sourcemaps.write()))
     .pipe(connect.reload())
-    .pipe(dest(config.secureroot.styles.output));
+    .pipe(dest(output));
 }
 
 task('hseStyles', hseStyles);

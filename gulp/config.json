@@ -3,8 +3,9 @@
         "./src/**/*+(js|scss|css|htm|html|njk|png|jpg|jpeg|gif|svg|ico)"
     ],
     "server": {
-        "file": "index.htm",
+        "file": "./index.htm",
         "locationStaging": "secureroot/hseonline/website/livelive/secureroot",
+        "locationDevelopment": "devguide",
         "uri": "http://localhost",
         "port": "8080"
     },
@@ -78,10 +79,7 @@
     "devguide": {
         "output": "./devguide",
         "styles": {
-            "all": "./src/devguide/styles/**/*.scss",
-            "entry": "./src/devguide/styles/app.scss",
-            "input": "./src/devguide/styles/*.scss",
-            "output": "./devguide/styles"
+            "output": "./devguide/assets/v5-css"
         },
         "markup": {
             "all": "./src/devguide/markup/**/*.njk",
@@ -92,8 +90,24 @@
             "output": "./devguide/"
         },
         "images": {
-            "all": "./src/devguide/images/**/*.+(png|jpg|jpeg|gif|svg|ico)",
-            "output": "./devguide/images"
+            "v4": {
+                "all": "./src/secureroot/v4-images/**/*.+(png|jpg|jpeg|gif|svg|ico)",
+                "entry": "./src/secureroot/v4-images/",
+                "output": "./devguide/assets/v4-images/"
+            },
+            "v4homepage": {
+                "all": "./src/secureroot/v4-homepage/**/*.+(png|jpg|jpeg|gif|svg|ico)",
+                "entry": "./src/secureroot/v4-homepage/",
+                "output": "./devguide/assets/v4-homepage/"
+            },
+            "v5": {
+                "all": "./src/secureroot/v5-images/**/*.+(png|jpg|jpeg|gif|svg|ico)",
+                "entry": "./src/secureroot/v5-images/",
+                "output": "./devguide/assets/v5-images/"
+            }
+        },
+        "scripts": {
+            "output": "./devguide/assets/v5-js"
         }
     }
 }

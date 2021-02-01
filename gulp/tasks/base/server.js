@@ -19,8 +19,10 @@ if (isStaging) {
 }
 
 if (isDev) {
-    root = 'devguide';
+    root = config.server.locationDevelopment;
 }
+
+console.log(config.server.file);
 
 // Check to see which platform the user requires for their browser
 const browser = os.platform() === 'linux' ? 'google-chrome' : (
@@ -29,13 +31,13 @@ const browser = os.platform() === 'linux' ? 'google-chrome' : (
 
 function server() {
     connect.server({
-        root: 'secureroot/hseonline/website/livelive/secureroot',
+        root: root,
         livereload: true
     })
 }
 
 function openBrowser() {
-    return src(`secureroot/hseonline/website/livelive/secureroot/${config.server.file}`)
+    return src(`${root}/${config.server.file}`)
     .pipe(open({
         app: browser,
         uri: `${config.server.uri}:${config.server.port}`

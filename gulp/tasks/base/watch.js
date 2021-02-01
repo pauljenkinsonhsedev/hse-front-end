@@ -44,20 +44,6 @@ function watchTask(){
         series('sharedScripts')
     );
 
-    const styles = watch(
-        config.devguide.styles.all,
-        series('devguideStyles')
-    );
-    const images = watch(
-        config.devguide.images.all,
-        series('devguideImages')
-    );
-
-    const markup = watch(
-        config.devguide.markup.all,
-        series('devguideMarkup')
-    );
-
     const hseStyles = watch(
         config.secureroot.styles.all,
         series('hseStyles')
