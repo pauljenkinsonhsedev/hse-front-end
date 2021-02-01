@@ -22,14 +22,12 @@ if (isDev) {
     root = config.server.locationDevelopment;
 }
 
-console.log(config.server.file);
-
 // Check to see which platform the user requires for their browser
 const browser = os.platform() === 'linux' ? 'google-chrome' : (
-  os.platform() === 'darwin' ? 'google chrome' : (
-  os.platform() === 'win32' ? 'chrome' : 'firefox'));
+    os.platform() === 'darwin' ? 'google chrome' : (
+    os.platform() === 'win32' ? 'chrome' : 'firefox'));
 
-function server() {
+    function server() {
     connect.server({
         root: root,
         livereload: true
