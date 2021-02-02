@@ -7,6 +7,7 @@ import { getInternetExplorerVersion } from './combined/utils/internet-explorer-d
 import { tableSortable } from './combined/tables/table-sortable.js';
 import { feedbackSurvey } from './combined/feedback-survey.js';
 import { dialogModal } from './combined/dialogs.js';
+import { scrollPos } from './combined/utils/feedback-position';
 
 // Window load
 window.addEventListener('DOMContentLoaded',() => {
@@ -16,6 +17,8 @@ window.addEventListener('DOMContentLoaded',() => {
   if (pictureElemSelector && getInternetExplorerVersion() <= 11) {
     loadPicturefillFn();
   }
+
+  scrollPos();
 
   // small device menu
   const menu = document.querySelector('.js-menu');
