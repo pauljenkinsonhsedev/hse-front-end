@@ -59,6 +59,11 @@ function watchTask(){
         series('hseCopy')
     );
 
+    const devguideHTML = watch(
+        config.devguide.markup.all,
+        series('devguideCopyAssets')
+    );
+
     // const hseImages = watch(
     //     [config.secureroot.v4.all, config.secureroot.v4homepage.all, config.secureroot.v5.all],
     //     series('hseImages', )

@@ -28,7 +28,7 @@ function copyHighchartsjs() {
     .pipe(dest('./devguide/assets/v5-js/vendor/highcharts'))
 };
 
-function copydevguideAssets() {
+function copyDevguideAssets() {
   const tidy = src(['./node_modules/tidy-html5/tidy.js'])
   .pipe(dest('./devguide/assets/v5-js/vendor/tidy'));
 
@@ -46,4 +46,4 @@ function copydevguideAssets() {
 };
 
 task('devguideHighChats', copyHighchartsjs);
-task('devguideCopyAssets', copydevguideAssets);
+task('devguideCopyAssets', copyDevguideAssets);
