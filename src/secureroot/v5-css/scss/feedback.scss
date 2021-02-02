@@ -72,14 +72,8 @@
 .feedback-survey {
     position: relative;
     // min-height: 200px;
-
     background-color: #FFF;
-
     overflow-y: hidden;
-
-    p, li, a {
-        color: $black;
-    }
 
     *{
         box-sizing: border-box;
@@ -134,6 +128,21 @@
 }
 
 .questionaire__title {
+}
+
+.question-agree,
+.question-text {
+    font-size: 16px;
+    color: #000;
+}
+.question-agree {
+    margin: 0;
+    color: #000;
+
+}
+p.question-hint {
+    font-size: 12px;
+    color: #4b4b4b;
 }
 
 .question {
