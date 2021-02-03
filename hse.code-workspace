@@ -2,7 +2,7 @@
 	"folders": [
 		{
 			"name": "HSE front-end",
-			"path": "src"
+			"path": "./"
 		}
 	],
 	"settings": {

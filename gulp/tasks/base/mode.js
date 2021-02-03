@@ -10,16 +10,13 @@ export const isStaging = mode.staging();
 export const isDev = mode.development();
 export const isProd = mode.production();
 
-if (isDefault || isStaging) {
-    console.log('mode: secureroot');
-    root = 'secureroot';
-}
+// if (isDefault || isStaging) {
+//     root = 'secureroot';
+// }
 
-if (isDev) {
-    console.log('mode: devguide');
-    root = 'devguide';
-}
+// if (isDev) {
+//     root = 'devguide';
+// }
 
-if (isProd) {
-    console.log('mode: production');
-}
+// if (isProd) {
+// }
