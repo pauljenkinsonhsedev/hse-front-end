@@ -6,7 +6,7 @@ import { fileTypeFunction } from './combined/file-type.js';
 import { getInternetExplorerVersion } from './combined/utils/internet-explorer-detection.js';
 import { tableSortable } from './combined/tables/table-sortable.js';
 import { dialogModal } from './combined/dialogs.js';
-
+import { backLinks } from './combined/back-link.js';
 // Window load
 window.addEventListener('DOMContentLoaded',() => {
 
@@ -14,6 +14,12 @@ window.addEventListener('DOMContentLoaded',() => {
   const pictureElemSelector = document.getElementsByTagName('picture')[0];
   if (pictureElemSelector && getInternetExplorerVersion() <= 11) {
     loadPicturefillFn();
+  }
+
+  // Back links
+  const backLink = document.querySelector('#backTo');
+  if (backLink) {
+    backLinks();
   }
 
   // Aria
