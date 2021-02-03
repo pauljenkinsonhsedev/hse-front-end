@@ -1,5 +1,4 @@
 *.DS_Store
-*.lbi
 node_modules
 src/assets/v4-homepage
 build/assets/v4-homepage
@@ -13,6 +12,7 @@ brexit/
 coronavirus/
 news/
 asbestos
+src/secureroot/**/*.lbi
 /secureroot
 /devguide
 /secureroot.zip
