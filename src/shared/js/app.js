@@ -16,6 +16,17 @@ window.addEventListener('DOMContentLoaded',() => {
     loadPicturefillFn();
   }
 
+  // Aria
+  const cookieContainer = document.querySelector('#cookieContainer');
+  const breadcrumb = document.querySelector('#breadCrumb');
+  if (breadcrumb) {
+    const lastItem = breadcrumb.querySelector('li:last-of-type');
+    lastItem.setAttribute('aria-current','page');
+  }
+  if (cookieContainer) {
+    cookieContainer.setAttribute('aria-label','Cookie banner');
+  }
+
   // small device menu
   const menu = document.querySelector('.js-menu');
   if (menu) {
