@@ -1,6 +1,7 @@
 import merge from 'merge-stream';
 import { src, dest, task } from 'gulp';
 import * as config from '../../config.json';
+import connect from "gulp-connect";
 
 const highchartsAssets = [
   "./node_modules/highcharts/highcharts.js",
@@ -36,6 +37,7 @@ function copyDevguideAssets() {
   .pipe(dest('./devguide/assets/v5-js/vendor/moment'));
 
   const html = src([config.devguide.markup.all])
+  .pipe(connect.reload())
   .pipe(dest(config.devguide.markup.output));
 
   const misc = src([config.devguide.copyjs.all])
