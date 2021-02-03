@@ -42,7 +42,6 @@
                 "./src/secureroot/v5-scripts/js-cookie.js",
                 "./src/secureroot/v5-scripts/v5-hse-primary.min.js",
                 "./src/secureroot/v5-scripts/slinky-ie11-fix.js",
-                "./src/secureroot/v5-scripts/aria.js",
                 "./src/secureroot/v5-scripts/website-feedback.src.js",
                 "./src/secureroot/v5-scripts/content-page.js",
                 "./src/secureroot/v5-scripts/notification-bar.js",
