@@ -2445,7 +2445,7 @@ div#nyroModalWrapper #nyroModalContent {
     list-style: none; } }
 
 /* v4.2.8 (V5 Edit) */
-/* 
+/*
 	Contents
 
 	- Framework core styles
@@ -2453,7 +2453,7 @@ div#nyroModalWrapper #nyroModalContent {
 	- Google autocomplete styles
 	- jQueryUI
 */
-/* v4.2.5 minified with http://cssminifier.com/ 
+/* v4.2.5 minified with http://cssminifier.com/
 *  Yui @ http://refresh-sf.com/yui/ created socail media layout issues
 *  minifycss @ http://www.minifycss.com/css-compressor/ lost 'x' close on pop-ups
 */
@@ -4094,7 +4094,7 @@ font-size: 2em; }
 color: #fff; }
 
 Font Awesome uses the Unicode Private Use Area (PUA) to ensure screen
-readers do not read off random characters that represent icons 
+readers do not read off random characters that represent icons
 
 .fa-caret-down:before {
 content: "\f0d7"; }
@@ -4266,7 +4266,7 @@ h1.offCanvasHeaderLogo {
   /*
 #navigationContainer, .headerLogo {
 display: none;
-// Hides HSE logo in mobile view  
+// Hides HSE logo in mobile view
 }
 */ }
 
