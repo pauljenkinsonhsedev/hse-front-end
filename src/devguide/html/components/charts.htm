@@ -154,36 +154,75 @@
       <!-- Beta content page -->
 
       <nav id="navSecondary" aria-label="Secondary">
-        <!-- InstanceBeginEditable name="Subnav" --><!-- #BeginLibraryItem "/Library/_v5-components.lbi" --><div id="menu" class="slinky-menu slinky-theme-default">
-<ul>
-    <li class="first"><a href="index.htm">Components</a></li>
-    <li><a href="accordion.htm">Accordion (JS)</a></li>
-    <li><a href="tabs.htm">Tabs (JS)</a></li>
-    <li><a href="boxes.htm">Boxes</a></li>
-    <li><a href="images.htm">Images</a></li>
-    <li><a href="tables.htm">Table</a></li>
-    <li><a href="video.htm">Video (Embed)</a></li>
-	<li><a href="subscribe.htm">Subscribe (Input)</a></li>
-	<li><a href="drop-down.htm">Drop-down list (Input)</a></li>
-	<li><a href="lightbox.htm">Lightbox (JS)</a></li>
-	<li><a href="dialog.htm">Dialog box</a></li>
-	<li><a href="charts.htm">Charts (JS)</a></li>
-	<li><a href="#">Homepage</a>
-	 <ul>
-	  <li><a href="homepage/index.htm">Overview</a></li>
-	  <li><a href="homepage/banner.htm">Banner</a></li>
-	 </ul>
-	</li>
-	<li><a href="#">Navigation</a>
-	 <ul>
-	  <li><a href="navigation/index.htm">Overview</a></li>
-	  <li><a href="navigation/a-z.htm">A-Z</a></li>
-	  <li><a href="navigation/pagination.htm">Pagination</a></li>
-	 </ul>
-	</li>
- </ul>
-</div>
-<!-- #EndLibraryItem --><!-- InstanceEndEditable -->
+        <!-- InstanceBeginEditable name="Subnav" -->
+        <!-- #BeginLibraryItem "/Library/_v5-components.lbi" -->
+        <div id="menu" class="slinky-menu slinky-theme-default">
+          <ul>
+            <li class="first">
+              <a href="index.htm">Components</a>
+            </li>
+            <li>
+              <a href="accordion.htm">Accordion (JS)</a>
+            </li>
+            <li>
+              <a href="tabs.htm">Tabs (JS)</a>
+            </li>
+            <li>
+              <a href="boxes.htm">Boxes</a>
+            </li>
+            <li>
+              <a href="images.htm">Images</a>
+            </li>
+            <li>
+              <a href="tables.htm">Table</a>
+            </li>
+            <li>
+              <a href="video.htm">Video (Embed)</a>
+            </li>
+            <li>
+              <a href="subscribe.htm">Subscribe (Input)</a>
+            </li>
+            <li>
+              <a href="drop-down.htm">Drop-down list (Input)</a>
+            </li>
+            <li>
+              <a href="lightbox.htm">Lightbox (JS)</a>
+            </li>
+            <li>
+              <a href="dialog.htm">Dialog box</a>
+            </li>
+            <li>
+              <a href="charts.htm">Charts (JS)</a>
+            </li>
+            <li>
+              <a href="#">Homepage</a>
+              <ul>
+                <li>
+                  <a href="homepage/index.htm">Overview</a>
+                </li>
+                <li>
+                  <a href="homepage/banner.htm">Banner</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">Navigation</a>
+              <ul>
+                <li>
+                  <a href="navigation/index.htm">Overview</a>
+                </li>
+                <li>
+                  <a href="navigation/a-z.htm">A-Z</a>
+                </li>
+                <li>
+                  <a href="navigation/pagination.htm">Pagination</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <!-- #EndLibraryItem -->
+        <!-- InstanceEndEditable -->
       </nav>
 
       <main id="contentContainer" class="columnbetacontentpage column2">
@@ -354,22 +393,449 @@
         <h2>Chart examples</h2>
 
         <h3>Basic chart</h3>
-        <p>text</p>
-
+        <div class="chart" data-chart-type="line" data-chart-units="unit"
+    data-chart-title="Monthly Average Rainfall"
+    data-chart-subtitle="Source: WorldClimate.com"
+    data-chart-description=""
+    data-xaxis-text="" data-yaxis-text="Rainfall (mm)" data-gridline="">
+          <div class="displayChart"></div>
+          <figure class="datacontent">
+            <h2 class="datacontent__title">Monthly Average Rainfall</h2>
+            <table class="tabledata" summary="Table representation of chart.">
+              <caption>Monthly Average Rainfall</caption>
+              <thead class="table__head">
+                <tr class="table__row">
+                  <th class="heading table__cell" scope="col">Category</th>
+                  <th class="heading table__cell" scope="col">Tokyo</th>
+                  <th class="heading table__cell" scope="col">New York</th>
+                  <th class="heading table__cell" scope="col">London</th>
+                  <th class="heading table__cell" scope="col">Berlin</th>
+                </tr>
+              </thead>
+              <tbody class="table__body">
+                <tr class="table__row">
+                  <th class="table__cell category" scope="row">Jan</th>
+                  <td class="table__cell unit">49.9</td>
+                  <td class="table__cell unit">83.6</td>
+                  <td class="table__cell unit">48.9</td>
+                  <td class="table__cell unit">42.4</td>
+                </tr>
+                <tr class="table__row">
+                  <th class="table__cell category" scope="row">Feb</th>
+                  <td class="table__cell unit">71.5</td>
+                  <td class="table__cell unit">78.8</td>
+                  <td class="table__cell unit">38.8</td>
+                  <td class="table__cell unit">33.2</td>
+                </tr>
+                <tr class="table__row">
+                  <th class="table__cell category" scope="row">Mar</th>
+                  <td class="table__cell unit">106.4</td>
+                  <td class="table__cell unit">98.5</td>
+                  <td class="table__cell unit">39.3</td>
+                  <td class="table__cell unit">34.5</td>
+                </tr>
+                <tr class="table__row">
+                  <th class="table__cell category" scope="row">Apr</th>
+                  <td class="table__cell unit">129.2</td>
+                  <td class="table__cell unit">93.4</td>
+                  <td class="table__cell unit">41.4</td>
+                  <td class="table__cell unit">39.7</td>
+                </tr>
+                <tr class="table__row">
+                  <th class="table__cell category" scope="row">May</th>
+                  <td class="table__cell unit">144</td>
+                  <td class="table__cell unit">106</td>
+                  <td class="table__cell unit">47</td>
+                  <td class="table__cell unit">52.6</td>
+                </tr>
+                <tr class="table__row">
+                  <th class="table__cell category" scope="row">Jun</th>
+                  <td class="table__cell unit">176</td>
+                  <td class="table__cell unit">84.5</td>
+                  <td class="table__cell unit">48.3</td>
+                  <td class="table__cell unit">75.5</td>
+                </tr>
+                <tr class="table__row">
+                  <th class="table__cell category" scope="row">Jul</th>
+                  <td class="table__cell unit">135.6</td>
+                  <td class="table__cell unit">105</td>
+                  <td class="table__cell unit">59</td>
+                  <td class="table__cell unit">57.4</td>
+                </tr>
+                <tr class="table__row">
+                  <th class="table__cell category" scope="row">Aug</th>
+                  <td class="table__cell unit">148.5</td>
+                  <td class="table__cell unit">104.3</td>
+                  <td class="table__cell unit">59.6</td>
+                  <td class="table__cell unit">60.4</td>
+                </tr>
+                <tr class="table__row">
+                  <th class="table__cell category" scope="row">Sep</th>
+                  <td class="table__cell unit">216.4</td>
+                  <td class="table__cell unit">91.2</td>
+                  <td class="table__cell unit">52.4</td>
+                  <td class="table__cell unit">47.6</td>
+                </tr>
+                <tr class="table__row">
+                  <th class="table__cell category" scope="row">Oct</th>
+                  <td class="table__cell unit">194.1</td>
+                  <td class="table__cell unit">83.5</td>
+                  <td class="table__cell unit">65.2</td>
+                  <td class="table__cell unit">39.1</td>
+                </tr>
+                <tr class="table__row">
+                  <th class="table__cell category" scope="row">Nov</th>
+                  <td class="table__cell unit">95.6</td>
+                  <td class="table__cell unit">106.6</td>
+                  <td class="table__cell unit">59.3</td>
+                  <td class="table__cell unit">46.8</td>
+                </tr>
+                <tr class="table__row">
+                  <th class="table__cell category" scope="row">Dec</th>
+                  <td class="table__cell unit">54.4</td>
+                  <td class="table__cell unit">92.3</td>
+                  <td class="table__cell unit">51.2</td>
+                  <td class="table__cell unit">51.1</td>
+                </tr>
+              </tbody>
+            </table>
+          </figure>
+        </div>
         <h3>Chart with plot bands</h3>
         <p>Some data along the plot may require further explanation or supporting text. For example if data between a certain range of years was not recorded, it can be shown that this data was only estimated.</p>
+        <div class="chart" data-chart-type="column" data-chart-units="unit"
+    data-chart-title="Monthly Average Rainfall"
+    data-chart-subtitle="Source: WorldClimate.com"
+    data-chart-description=""
+    data-xaxis-text="" data-yaxis-text="Rainfall (mm)" data-gridline=""a>
+          <div class="displayChart"></div>
+          <figure class="datacontent">
+            <h2 class="datacontent__title">Monthly Average Rainfall</h2>
+            <table class="tabledata" summary="Table representation of chart.">
+              <caption>Monthly Average Rainfall</caption>
+
+              <thead class="table__head">
+                <tr class="table__row">
+                  <th class="heading table__cell" scope="col">Category</th>
+                  <th class="heading table__cell" scope="col">Tokyo</th>
+                  <th class="heading table__cell" scope="col">New York</th>
+                  <th class="heading table__cell" scope="col">London</th>
+                  <th class="heading table__cell" scope="col">Berlin</th>
+                </tr>
+                <tr class="table__row plot-area">
+                  <th colspan="3" class="table__cell plot-title">Estimated data</th>
+                  <th class="table__cell plot-band">0</th>
+                  <th class="table__cell plot-band">5</th>
+                </tr>
+                <tr class="table__row plot-area">
+                  <th colspan="3" class="table__cell plot-title">95% confident data</th>
+                  <th class="table__cell plot-band">5</th>
+                  <th class="table__cell plot-band">8</th>
+                </tr>
+              </thead>
+              <tbody class="table__body">
+                <tr class="table__row">
+                  <th class="table__cell category" scope="row">Jan</th>
+                  <td class="table__cell unit">49.9</td>
+                  <td class="table__cell unit">83.6</td>
+                  <td class="table__cell unit">48.9</td>
+                  <td class="table__cell unit">42.4</td>
+                </tr>
+                <tr class="table__row">
+                  <th class="table__cell category" scope="row">Feb</th>
+                  <td class="table__cell unit">71.5</td>
+                  <td class="table__cell unit">78.8</td>
+                  <td class="table__cell unit">38.8</td>
+                  <td class="table__cell unit">33.2</td>
+                </tr>
+                <tr class="table__row">
+                  <th class="table__cell category" scope="row">Mar</th>
+                  <td class="table__cell unit">106.4</td>
+                  <td class="table__cell unit">98.5</td>
+                  <td class="table__cell unit">39.3</td>
+                  <td class="table__cell unit">34.5</td>
+                </tr>
+                <tr class="table__row">
+                  <th class="table__cell category" scope="row">Apr</th>
+                  <td class="table__cell unit">129.2</td>
+                  <td class="table__cell unit">93.4</td>
+                  <td class="table__cell unit">41.4</td>
+                  <td class="table__cell unit">39.7</td>
+                </tr>
+                <tr class="table__row">
+                  <th class="table__cell category" scope="row">May</th>
+                  <td class="table__cell unit">144</td>
+                  <td class="table__cell unit">106</td>
+                  <td class="table__cell unit">47</td>
+                  <td class="table__cell unit">52.6</td>
+                </tr>
+                <tr class="table__row">
+                  <th class="table__cell category" scope="row">Jun</th>
+                  <td class="table__cell unit">176</td>
+                  <td class="table__cell unit">84.5</td>
+                  <td class="table__cell unit">48.3</td>
+                  <td class="table__cell unit">75.5</td>
+                </tr>
+                <tr class="table__row">
+                  <th class="table__cell category" scope="row">Jul</th>
+                  <td class="table__cell unit">135.6</td>
+                  <td class="table__cell unit">105</td>
+                  <td class="table__cell unit">59</td>
+                  <td class="table__cell unit">57.4</td>
+                </tr>
+                <tr class="table__row">
+                  <th class="table__cell category" scope="row">Aug</th>
+                  <td class="table__cell unit">148.5</td>
+                  <td class="table__cell unit">104.3</td>
+                  <td class="table__cell unit">59.6</td>
+                  <td class="table__cell unit">60.4</td>
+                </tr>
+                <tr class="table__row">
+                  <th class="table__cell category" scope="row">Sep</th>
+                  <td class="table__cell unit">216.4</td>
+                  <td class="table__cell unit">91.2</td>
+                  <td class="table__cell unit">52.4</td>
+                  <td class="table__cell unit">47.6</td>
+                </tr>
+                <tr class="table__row">
+                  <th class="table__cell category" scope="row">Oct</th>
+                  <td class="table__cell unit">194.1</td>
+                  <td class="table__cell unit">83.5</td>
+                  <td class="table__cell unit">65.2</td>
+                  <td class="table__cell unit">39.1</td>
+                </tr>
+                <tr class="table__row">
+                  <th class="table__cell category" scope="row">Nov</th>
+                  <td class="table__cell unit">95.6</td>
+                  <td class="table__cell unit">106.6</td>
+                  <td class="table__cell unit">59.3</td>
+                  <td class="table__cell unit">46.8</td>
+                </tr>
+                <tr class="table__row">
+                  <th class="table__cell category" scope="row">Dec</th>
+                  <td class="table__cell unit">54.4</td>
+                  <td class="table__cell unit">92.3</td>
+                  <td class="table__cell unit">51.2</td>
+                  <td class="table__cell unit">51.1</td>
+                </tr>
+              </tbody>
+            </table>
+          </figure>
+        </div>
 
         <h3>Chart with confidence intervals</h3>
 
         <p>Sometimes an author may want to represent data which is not entirely accurate. Thus confidence intervals can be a good way to indicate how confident the accuracy of each node of data is.</p>
 
+        <div class="chart" data-chart-type="column" data-chart-units="unit"
+    data-chart-title="Monthly Average Rainfall in Tokyo"
+    data-chart-subtitle="Source: WorldClimate.com"
+    data-chart-description=""
+    data-xaxis-text="The error bar represents a 95% confidence interval" data-yaxis-text="Rainfall (mm)">
+          <div class="displayChart"></div>
+          <figure class="datacontent">
+            <h2 class="datacontent__title">Monthly Average Rainfall in Tokyo</h2>
+            <table class="table tabledata" summary="Table representation of chart.">
+              <caption>Monthly Average Rainfall in Tokyo</caption>
+              <thead class="table__head">
+                <tr class="table__row">
+                  <th class="heading table__cell" scope="col">Category</th>
+                  <th class="heading table__cell" scope="col">Tokyo</th>
+                  <th class="table__cell heading" scope="col" rowspan="2" valign="top">Tokyo error</th>
+                  <th class="table__cell" scope="col">Tokyo error</th>
+                </tr>
+              </thead>
+              <tbody class="table__body">
+                <tr class="table__row">
+                  <th class="table__cell category" scope="row">Jan</th>
+                  <td class="table__cell unit">49.9</td>
+                  <td class="table__cell error-low">30</td>
+                  <td class="table__cell error-high">65</td>
+                </tr>
+                <tr class="table__row">
+                  <th class="table__cell category" scope="row">Feb</th>
+                  <td class="table__cell unit">71.5</td>
+                  <td class="table__cell error-low">50</td>
+                  <td class="table__cell error-high">90</td>
+                </tr>
+                <tr class="table__row">
+                  <th class="table__cell category" scope="row">Mar</th>
+                  <td class="table__cell unit">106.4</td>
+                  <td class="table__cell error-low">80</td>
+                  <td class="table__cell error-high">120</td>
+                </tr>
+                <tr class="table__row">
+                  <th class="table__cell category" scope="row">Apr</th>
+                  <td class="table__cell unit">129.2</td>
+                  <td class="table__cell error-low">100</td>
+                  <td class="table__cell error-high">140</td>
+                </tr>
+                <tr class="table__row">
+                  <th class="table__cell category" scope="row">May</th>
+                  <td class="table__cell unit">144</td>
+                  <td class="table__cell error-low">120</td>
+                  <td class="table__cell error-high">165</td>
+                </tr>
+                <tr class="table__row">
+                  <th class="table__cell category" scope="row">Jun</th>
+                  <td class="table__cell unit">176</td>
+                  <td class="table__cell error-low">150</td>
+                  <td class="table__cell error-high">185</td>
+                </tr>
+                <tr class="table__row">
+                  <th class="table__cell category" scope="row">Jul</th>
+                  <td class="table__cell unit">135.6</td>
+                  <td class="table__cell error-low">120</td>
+                  <td class="table__cell error-high">150</td>
+                </tr>
+                <tr class="table__row">
+                  <th class="table__cell category" scope="row">Aug</th>
+                  <td class="table__cell unit">148.5</td>
+                  <td class="table__cell error-low">140</td>
+                  <td class="table__cell error-high">160</td>
+                </tr>
+                <tr class="table__row">
+                  <th class="table__cell category" scope="row">Sep</th>
+                  <td class="table__cell unit">216.4</td>
+                  <td class="table__cell error-low">200</td>
+                  <td class="table__cell error-high">225</td>
+                </tr>
+                <tr class="table__row">
+                  <th class="table__cell category" scope="row">Oct</th>
+                  <td class="table__cell unit">194.1</td>
+                  <td class="table__cell error-low">170</td>
+                  <td class="table__cell error-high">215</td>
+                </tr>
+                <tr class="table__row">
+                  <th class="table__cell category" scope="row">Nov</th>
+                  <td class="table__cell unit">95.6</td>
+                  <td class="table__cell error-low">70</td>
+                  <td class="table__cell error-high">115</td>
+                </tr>
+                <tr class="table__row">
+                  <th class="table__cell category" scope="row">Dec</th>
+                  <td class="table__cell unit">54.4</td>
+                  <td class="table__cell error-low">40</td>
+                  <td class="table__cell error-high">60</td>
+                </tr>
+              </tbody>
+            </table>
+          </figure>
+        </div>
         <h3>Chart with missing data</h3>
         <p>Missing data is easily represented in a bar or column chart, however for line and area-range charts some extra work has to be done behind the scenes to make this work. For ease when developing we can enter a value of ‘0’ to represent the null data.</p>
 
         <p>Currently for area-ranges we must still supply the estimated data for the low band and high band and only supply zero values for the average.</p>
 
         <p>Naturally the tooltip won’t display where we have null data as expected.</p>
-
+        <div class="chart" data-chart-type="line" data-chart-units="unit"
+    data-chart-title="Monthly Average Rainfall"
+    data-chart-subtitle="Source: WorldClimate.com"
+    data-chart-description=""
+    data-xaxis-text="" data-yaxis-text="Rainfall (mm)" data-gridline="">
+          <div class="displayChart"></div>
+          <figure class="datacontent">
+            <h2 class="datacontent__title">Monthly Average Rainfall</h2>
+            <table class="tabledata" summary="Table representation of chart.">
+              <caption>Monthly Average Rainfall</caption>
+              <thead class="table__head">
+                <tr class="table__row">
+                  <th class="heading table__cell" scope="col">Category</th>
+                  <th class="heading table__cell" scope="col">Tokyo</th>
+                  <th class="heading table__cell" scope="col">New York</th>
+                  <th class="heading table__cell" scope="col">London</th>
+                  <th class="heading table__cell" scope="col">Berlin</th>
+                </tr>
+              </thead>
+              <tbody class="table__body">
+                <tr class="table__row">
+                  <th class="table__cell category" scope="row">Jan</th>
+                  <td class="table__cell unit">49.9</td>
+                  <td class="table__cell unit">83.6</td>
+                  <td class="table__cell unit">48.9</td>
+                  <td class="table__cell unit">42.4</td>
+                </tr>
+                <tr class="table__row">
+                  <th class="table__cell category" scope="row">Feb</th>
+                  <td class="table__cell unit">71.5</td>
+                  <td class="table__cell unit">78.8</td>
+                  <td class="table__cell unit">38.8</td>
+                  <td class="table__cell unit">33.2</td>
+                </tr>
+                <tr class="table__row">
+                  <th class="table__cell category" scope="row">Mar</th>
+                  <td class="table__cell unit">0</td>
+                  <td class="table__cell unit">98.5</td>
+                  <td class="table__cell unit">39.3</td>
+                  <td class="table__cell unit">34.5</td>
+                </tr>
+                <tr class="table__row">
+                  <th class="table__cell category" scope="row">Apr</th>
+                  <td class="table__cell unit">0</td>
+                  <td class="table__cell unit">93.4</td>
+                  <td class="table__cell unit">41.4</td>
+                  <td class="table__cell unit">39.7</td>
+                </tr>
+                <tr class="table__row">
+                  <th class="table__cell category" scope="row">May</th>
+                  <td class="table__cell unit">0</td>
+                  <td class="table__cell unit">106</td>
+                  <td class="table__cell unit">47</td>
+                  <td class="table__cell unit">52.6</td>
+                </tr>
+                <tr class="table__row">
+                  <th class="table__cell category" scope="row">Jun</th>
+                  <td class="table__cell unit">0</td>
+                  <td class="table__cell unit">84.5</td>
+                  <td class="table__cell unit">48.3</td>
+                  <td class="table__cell unit">75.5</td>
+                </tr>
+                <tr class="table__row">
+                  <th class="table__cell category" scope="row">Jul</th>
+                  <td class="table__cell unit">135.6</td>
+                  <td class="table__cell unit">105</td>
+                  <td class="table__cell unit">59</td>
+                  <td class="table__cell unit">57.4</td>
+                </tr>
+                <tr class="table__row">
+                  <th class="table__cell category" scope="row">Aug</th>
+                  <td class="table__cell unit">148.5</td>
+                  <td class="table__cell unit">104.3</td>
+                  <td class="table__cell unit">59.6</td>
+                  <td class="table__cell unit">60.4</td>
+                </tr>
+                <tr class="table__row">
+                  <th class="table__cell category" scope="row">Sep</th>
+                  <td class="table__cell unit">216.4</td>
+                  <td class="table__cell unit">91.2</td>
+                  <td class="table__cell unit">52.4</td>
+                  <td class="table__cell unit">47.6</td>
+                </tr>
+                <tr class="table__row">
+                  <th class="table__cell category" scope="row">Oct</th>
+                  <td class="table__cell unit">194.1</td>
+                  <td class="table__cell unit">83.5</td>
+                  <td class="table__cell unit">65.2</td>
+                  <td class="table__cell unit">39.1</td>
+                </tr>
+                <tr class="table__row">
+                  <th class="table__cell category" scope="row">Nov</th>
+                  <td class="table__cell unit">95.6</td>
+                  <td class="table__cell unit">106.6</td>
+                  <td class="table__cell unit">59.3</td>
+                  <td class="table__cell unit">46.8</td>
+                </tr>
+                <tr class="table__row">
+                  <th class="table__cell category" scope="row">Dec</th>
+                  <td class="table__cell unit">54.4</td>
+                  <td class="table__cell unit">92.3</td>
+                  <td class="table__cell unit">51.2</td>
+                  <td class="table__cell unit">51.1</td>
+                </tr>
+              </tbody>
+            </table>
+          </figure>
+        </div>
         <!-- /#secondTab -->
 
         <!-- InstanceEndEditable -->
