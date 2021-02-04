@@ -5,8 +5,10 @@ import { loadPicturefillFn } from './combined/utils/picture-elem.js';
 import { fileTypeFunction } from './combined/file-type.js';
 import { getInternetExplorerVersion } from './combined/utils/internet-explorer-detection.js';
 import { tableSortable } from './combined/tables/table-sortable.js';
+import { tabs } from './combined/tabs.js';
 import { dialogModal } from './combined/dialogs.js';
 import { backLinks } from './combined/back-link.js';
+
 // Window load
 window.addEventListener('DOMContentLoaded',() => {
 
@@ -47,6 +49,12 @@ window.addEventListener('DOMContentLoaded',() => {
   const tableSortableSelector = document.querySelector('.sortable');
   if (document.body.contains(tableSortableSelector)) {
     tableSortable(tableSortableSelector);
+  }
+
+  // Tabs
+  const tabSelector = document.querySelector('.tabs');
+  if (document.body.contains(tabSelector)) {
+    tabs(tabSelector);
   }
 
   // Dialogs

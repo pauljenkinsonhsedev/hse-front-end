@@ -70,7 +70,7 @@ width: 100% !important;
 ul.itemThumbBook.publications li {
 
 @media only screen and (min-width : 756px) {
-width: 47% !important;	
+width: 47% !important;
 }
 
 @media only screen and (min-width : 979px) {
@@ -121,7 +121,7 @@ background-color: #CE421B;
 }
 
 .research a {
-background-color: #287826;	
+background-color: #287826;
 }
 
 
@@ -182,7 +182,7 @@ display: block;
 @media only screen and (min-width : $desktop) {
 width: 100% !important;
 }
-max-width: 100%; 
+max-width: 100%;
 box-sizing: border-box;
 margin: 0;
 border-radius: 0;
@@ -201,7 +201,7 @@ border-color: #888;
 border-color: #aaa;
 box-shadow: 0 0 1px 3px rgba(59, 153, 252, .7);
 box-shadow: 0 0 0 3px -moz-mac-focusring;
-color: #222; 
+color: #222;
 outline: none;
 }
 .ddmStyling select option {
@@ -233,7 +233,7 @@ border: 2px solid $red;
 margin-bottom: 20px;
 }
 
-// Tables 
+// Tables
 
 table caption {
 background-color: $hseblack;
@@ -241,65 +241,7 @@ padding: 10px;
 color: white;
 }
 
-// Tabs 
-
-
-/* JQuery UI Tabs */
-
-.tabPanel {
-    width: 100% !important;
-    }
-    
-    #contentContainer ul.tabs {
-    margin-bottom: 0 !important;
-    }
-    
-    #contentContainer ul.tabs a, #contentContainer ul.tabs a:visited {
-    color: white;
-    }
-    
-    #contentContainer ul.tabs li.active a {
-    color: $hseblack;
-    }
-    
-    .tabPanel {
-    border-radius: 0 !important;	
-    }
-    
-    ul.semtabs li {
-    border-radius: 0 !important;
-    padding: 5px;
-    background: $hseblack;
-    }
-    
-    ul.semtabs li a {
-    border-bottom: none !important;
-    }
-
-.tabs.semtabs {
-width: 100%;
-@media only screen and (min-width : $desktop) {
-
-}
-}
-
-.tabs li {
-width: 100%;
-@media only screen and (min-width : 800px) {
-width: auto;
-}   
-}
-ul.semtabs li a:focus {
-border: none;
-}
-#contentContainer ul.tabs li a:focus {
-border-bottom: none !important;
-color: $hseblack;
-}
-
-#contentContainer ul li a:focus
-
-// Accordion 
+// Accordion
 
 .ui-accordion .ui-accordion-header .ui-icon {
 vertical-align: middle !important;
@@ -383,7 +325,7 @@ border-radius: 0 !important;
 }
 
 .ui-accordion .ui-accordion-content {
-padding: 20px !important;   
+padding: 20px !important;
 }
 
 .ui-accordion .ui-accordion-content-active {
