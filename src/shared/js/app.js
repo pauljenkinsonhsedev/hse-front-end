@@ -52,7 +52,7 @@ window.addEventListener('DOMContentLoaded',() => {
   }
 
   // Tabs
-  const tabSelector = document.querySelector('.tabContainer');
+  const tabSelector = document.querySelector('.tabs');
   if (document.body.contains(tabSelector)) {
     tabs(tabSelector);
   }
