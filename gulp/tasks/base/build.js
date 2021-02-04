@@ -11,11 +11,11 @@ requireDir('../', { recurse: true });
 // Define combined tasks for HSE
 export const hseBuild = parallel('hseStyles', 'hseScripts', 'sharedScripts', 'hseCopy', 'hseImages');
 
-// Define combined workspace
-export const workspaceBuild = parallel('sharedScripts', 'workspaceStyles', 'workspaceImages', 'workspaceMarkup', 'workspaceCopyAssets', 'workspaceHighChats');
+// Define combined devguide
+export const devguideBuild = parallel('hseStyles', 'hseImages', 'hseScripts', 'sharedScripts', 'devguideCopyAssets', 'devguideHighChats');
 
 // Define production Tasks
-export const prodTasks = series(parallel('zipWorkspace', 'zipSecureroot', 'sizeReport'));
+export const prodTasks = series(parallel('zipdevguide', 'zipSecureroot', 'sizeReport'));
 
 // Define common Tasks
 export const commonTasks = series(parallel('watchTask', 'sizeReport', 'browser'));

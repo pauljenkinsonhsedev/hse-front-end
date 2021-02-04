@@ -1,0 +1,10 @@
+<div id="menu" class="slinky-menu slinky-theme-default">
+<ul>
+    <li class="first"><a href="../framework/index.htm">Template</a></li>
+	<li><a href="../framework/template.htm">Applying template</a></li>
+	<li><a href="../framework/regions.htm">Editable regions</a></li>
+    <li><a href="../framework/param.htm">Parameters</a></li>
+	<li><a href="../framework/accessibility.htm">Accessibility</a></li>
+	
+ </ul>
+</div>

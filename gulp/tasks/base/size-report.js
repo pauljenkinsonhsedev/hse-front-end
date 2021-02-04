@@ -11,7 +11,7 @@ if (isDefault) {
 }
 
 if (isDev) {
-    root = 'workspace';
+    root = 'devguide';
 }
 
 function sizeReport() {

@@ -1,0 +1,20 @@
+.dialog__content {
+    @extend .visually-hidden;
+}
+
+.dialog__copy {
+    margin-bottom: 25px;
+}
+
+.dialog__actions {
+    text-align: center;
+
+    a,
+    button {
+        margin-right: 7px;
+
+        &:last-of-type {
+            margin-right: 0;
+        }
+    }
+}

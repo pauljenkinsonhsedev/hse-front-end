@@ -10,13 +10,13 @@ export const isStaging = mode.staging();
 export const isDev = mode.development();
 export const isProd = mode.production();
 
-if (isDefault || isStaging) {
-    root = 'secureroot';
-}
+// if (isDefault || isStaging) {
+//     root = 'secureroot';
+// }
 
-if (isDev) {
-    root = 'workspace';
-}
+// if (isDev) {
+//     root = 'devguide';
+// }
 
-if (isProd) {
-}
+// if (isProd) {
+// }

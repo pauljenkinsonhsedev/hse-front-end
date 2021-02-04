@@ -1,6 +1,0 @@
-{% macro fieldInputDate(field_id, field_label, field_type, field_class, value = '') %}
-  <div class="form-group">
-    <label for="{{ field_id }}">{{ field_label }}</label>
-    <input class="input {{ field_class }}" id="{{ field_id }}" name="{{ field_id }}" type="{{ field_type }}" name="{{ field_id }}" value="{{ value | escape }}"/>
-  </div>
-{% endmacro %}

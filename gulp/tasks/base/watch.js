@@ -3,7 +3,7 @@ import { series, task, watch } from 'gulp';
 import * as config from '../../config.json';
 import format from 'date-format';
 import colors from 'colors';
-import { hseBuild, workspaceBuild } from './build.js'
+import { hseBuild, devguideBuild } from './build.js'
 import { isDefault, isDev, isStaging } from './mode.js';
 
 import requireDir from 'require-dir';
@@ -18,7 +18,7 @@ function watchTask(){
     }
 
     if (isDev) {
-        rebuild = workspaceBuild;
+        rebuild = devguideBuild;
     }
 
     const time = format.asString('hh:mm:ss', new Date());
@@ -44,20 +44,6 @@ function watchTask(){
         series('sharedScripts')
     );
 
-    const styles = watch(
-        config.workspace.styles.all,
-        series('workspaceStyles')
-    );
-    const images = watch(
-        config.workspace.images.all,
-        series('workspaceImages')
-    );
-
-    const markup = watch(
-        config.workspace.markup.all,
-        series('workspaceMarkup')
-    );
-
     const hseStyles = watch(
         config.secureroot.styles.all,
         series('hseStyles')
@@ -71,6 +57,11 @@ function watchTask(){
     const hseHTML = watch(
         config.secureroot.html.all,
         series('hseCopy')
+    );
+
+    const devguideHTML = watch(
+        config.devguide.markup.all,
+        series('devguideCopyAssets')
     );
 
     // const hseImages = watch(

@@ -19,9 +19,35 @@ export function seriesData(data) {
             data: [3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8]
         }]
     */
-    const thead = data.querySelector('.table__head');
+
     const tbody = data.querySelector('.table__body');
+    const thead = data.querySelector('.table__head');
     const dateRegEx = /^\d{4}[./-]\d{2}[./-]\d{2}$/;
+
+
+    // build data sets
+    const errorArray = [].reduce.call(tbody.rows, function (errorArray, row) {
+        const cells = row.cells;
+        const low = [...cells].filter(element => element.classList.contains('error-low'));
+        const high = [...cells].filter(element => element.classList.contains('error-high'));
+
+        const errorData = low.map((e, i) => {
+            const textLow = Number(parseFloat(low[i].textContent).toFixed(2).toLocaleString('en', {minimumFractionDigits: 0}));
+            const textHigh = Number(parseFloat(high[i].textContent).toFixed(2).toLocaleString('en', {minimumFractionDigits: 0}));
+
+            const array = new Array;
+            array.push(textLow, textHigh);
+
+            return array;
+        });
+
+        errorArray.push([].reduce.call(errorData, function(res, cell) {
+            return cell;
+        }, []));
+
+        return errorArray;
+    }, []);
+
 
     function getData() {
         let unitLength = tbody.rows[0].querySelectorAll('.unit').length,
@@ -35,7 +61,7 @@ export function seriesData(data) {
 
         for (let u = 0; u < unitLength; u++) {
             const unitArray = new Array;
-            const errorArray = new Array;
+            // const errorArray = new Array;
             let heading = thead.rows[0].querySelectorAll('.heading');
             const headingIndex = u + 1;
 
@@ -61,19 +87,7 @@ export function seriesData(data) {
                         unitArray.push({name: categoryTitle, y: value});
                     }
                 }
-
-                for (let k = 0; k < unitLength; k++) {
-                    const low = tbody.rows[i].querySelectorAll('.error-low');
-                    const high = tbody.rows[i].querySelectorAll('.error-high');
-
-                    if (low.length > 0 && k === u) {
-                        const errorLowText = parseFloat(low[k].innerText);
-                        const errorHighText = parseFloat(high[k].innerText);
-                        errorArray.push([errorLowText, errorHighText]);
-                    }
-                }
             }
-
 
             const unitdata = {
                 name: headingsArray[u],

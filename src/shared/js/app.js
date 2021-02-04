@@ -6,6 +6,8 @@ import { fileTypeFunction } from './combined/file-type.js';
 import { getInternetExplorerVersion } from './combined/utils/internet-explorer-detection.js';
 import { tableSortable } from './combined/tables/table-sortable.js';
 import { tabs } from './combined/tabs.js';
+import { dialogModal } from './combined/dialogs.js';
+import { backLinks } from './combined/back-link.js';
 
 // Window load
 window.addEventListener('DOMContentLoaded',() => {
@@ -16,7 +18,24 @@ window.addEventListener('DOMContentLoaded',() => {
     loadPicturefillFn();
   }
 
-  // Small device menu
+  // Back links
+  const backLink = document.querySelector('#backTo');
+  if (backLink) {
+    backLinks();
+  }
+
+  // Aria
+  const cookieContainer = document.querySelector('#cookieContainer');
+  const breadcrumb = document.querySelector('#breadCrumb');
+  if (breadcrumb) {
+    const lastItem = breadcrumb.querySelector('li:last-of-type');
+    lastItem.setAttribute('aria-current','page');
+  }
+  if (cookieContainer) {
+    cookieContainer.setAttribute('aria-label','Cookie banner');
+  }
+
+  // small device menu
   const menu = document.querySelector('.js-menu');
   if (menu) {
     mainMenu();
@@ -36,6 +55,12 @@ window.addEventListener('DOMContentLoaded',() => {
   const tabSelector = document.querySelector('.tabContainer');
   if (document.body.contains(tabSelector)) {
     tabs(tabSelector);
+  }
+
+  // Dialogs
+  const dialog = document.querySelector('.dialog');
+  if (document.body.contains(dialog)) {
+    dialogModal(dialog);
   }
 
   // CSV Convertor

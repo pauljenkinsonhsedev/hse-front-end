@@ -19,23 +19,23 @@ if (isStaging) {
 }
 
 if (isDev) {
-    root = 'workspace';
+    root = config.server.locationDevelopment;
 }
 
 // Check to see which platform the user requires for their browser
 const browser = os.platform() === 'linux' ? 'google-chrome' : (
-  os.platform() === 'darwin' ? 'google chrome' : (
-  os.platform() === 'win32' ? 'chrome' : 'firefox'));
+    os.platform() === 'darwin' ? 'google chrome' : (
+    os.platform() === 'win32' ? 'chrome' : 'firefox'));
 
-function server() {
+    function server() {
     connect.server({
-        root: 'secureroot/hseonline/website/livelive/secureroot',
+        root: root,
         livereload: true
     })
 }
 
 function openBrowser() {
-    return src(`secureroot/hseonline/website/livelive/secureroot/${config.server.file}`)
+    return src(`${root}/${config.server.file}`)
     .pipe(open({
         app: browser,
         uri: `${config.server.uri}:${config.server.port}`
