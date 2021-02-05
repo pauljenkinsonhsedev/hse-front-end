@@ -1,40 +1,120 @@
-.font-size-39 {
-  font-size: 39px;
-  line-height: 41px;
-  @media (min-width: $tablet) {
-    font-size: 39px;
-    line-height: 41px;
-  }
+$type-settings: (
+  -1: (
+    font-size: 0.75rem,
+    line-height: 21px
+  ),
+  0: (
+    font-size: 0.9rem,
+    line-height: 21px
+  ),
+  1: (
+    font-size: 2.45em,
+    line-height: 1
+  ),
+  2: (
+    font-size: 1.625rem,
+    line-height: 1.2
+  ),
+  3: (
+    font-size: 1.1rem,
+    line-height: 1.4
+  )
+);
+
+@function type-scale($level) {
+  @return map-get(
+    map-get($type-settings, $level), 'font-size');
 }
 
-.font-size-26 {
-  font-size: 26px;
-  line-height: 31px;
-  @media (min-width: $tablet) {
-    font-size: 26px;
-    line-height: 31px;
-  }
+@function line-height($level) {
+  @return map-get(
+    map-get($type-settings, $level), 'line-height');
 }
 
-.font-size-17 {
-    font-size: 17.6px;
-    line-height: 24.6px;
-    @media (min-width: $tablet) {
-        font-size: 17.6px;
-        line-height: 24.6px;
-    }
+@mixin type-setting($level) {
+  font-size: type-scale($level);
+  line-height: line-height($level);
 }
 
-.font-size-14 {
-  font-size: 14.4px;
-  line-height: 21.6px;
-  @media (min-width: $tablet) {
-    font-size: 14.4px;
-    line-height: 21.6px;
-  }
+body {
+    font-family: $body-font;
+}
+
+h1 {
+    @include type-setting(1);
+    font-weight: 700;
+    margin-bottom: $dp*3;
+    color: $red;
+}
+
+h2 {
+    @include type-setting(2);
+    font-weight: 700;
+    color: $black;
+}
+
+h3 {
+    @include type-setting(3);
+    font-weight: 700;
+    color: $black;
+}
+
+h4 {
+    @include type-setting(3);
+    font-weight: 700;
+    color: $black;
+}
+
+h5 {
+    @include type-setting(3);
+    font-weight: 700;
+    color: $black;
+}
+
+address,
+li,
+dd,
+label,
+p {
+    @include type-setting(0);
+    color: $black;
 }
 
 .subtext {
-  font-size: 12px;
-  line-height: 14px;
+    @include type-setting(-1);
 }
+
+sub,
+sup {
+    @include type-setting(-1);
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+sub {
+    bottom: -0.25em;
+}
+
+sup {
+    top: -0.5em;
+}
+
+small {
+    @include type-setting(-1);
+}
+
+pre,
+code,
+kbd,
+samp {
+    font-family: monospace, monospace;
+    @include type-setting(0);
+}
+
+abbr[title] {
+    border-bottom: none;
+    text-decoration: underline;
+    text-decoration: underline dotted;
+}
+
