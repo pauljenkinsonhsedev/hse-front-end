@@ -6,11 +6,17 @@ import imageminJpegtran from 'imagemin-jpegtran';
 import imageminPngquant from 'imagemin-pngquant';
 import imageminJpegRecompress from 'imagemin-jpeg-recompress';
 import * as config from '../../config.json';
-import { isDefault, isStaging, isDev } from '../base/mode.js';
+import { isDefault, isStaging, isDev, isProd } from '../base/mode.js';
 
 let v4output;
 let v5output;
 let v4Homepage;
+
+if (isProd) {
+    v4output = config.secureroot.images.v4.output;
+    v5output = config.secureroot.images.v5.output;
+    v4Homepage = config.secureroot.images.v4homepage.output;
+}
 
 if (isDefault) {
     v4output = config.secureroot.images.v4.output;
