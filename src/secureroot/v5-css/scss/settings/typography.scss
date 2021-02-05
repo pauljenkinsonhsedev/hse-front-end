@@ -1,0 +1,40 @@
+.font-size-39 {
+  font-size: 39px;
+  line-height: 41px;
+  @media (min-width: $tablet) {
+    font-size: 39px;
+    line-height: 41px;
+  }
+}
+
+.font-size-26 {
+  font-size: 26px;
+  line-height: 31px;
+  @media (min-width: $tablet) {
+    font-size: 26px;
+    line-height: 31px;
+  }
+}
+
+.font-size-17 {
+    font-size: 17.6px;
+    line-height: 24.6px;
+    @media (min-width: $tablet) {
+        font-size: 17.6px;
+        line-height: 24.6px;
+    }
+}
+
+.font-size-14 {
+  font-size: 14.4px;
+  line-height: 21.6px;
+  @media (min-width: $tablet) {
+    font-size: 14.4px;
+    line-height: 21.6px;
+  }
+}
+
+.subtext {
+  font-size: 12px;
+  line-height: 14px;
+}
