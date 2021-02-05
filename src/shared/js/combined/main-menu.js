@@ -6,7 +6,7 @@ export function mainMenu(){
   const menu = document.querySelector('.js-menu');
   const menuLocation = document.querySelector('#globalSearch');
   const searchLinkLocation = document.querySelector('#main-menu ul');
-  const searchListItemLocation = document.querySelector('#main-menu ul li.contact');
+  const searchListItemLocation = document.querySelector('#main-menu ul').lastChild;
   const menuButton = document.createElement('button');
   const menuListItem = document.createElement('li');
   const hseBooks = document.querySelector('#main-menu ul li.hseBooks a');
