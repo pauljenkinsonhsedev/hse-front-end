@@ -235,7 +235,7 @@ display: none;
   </footer>
 </nav>
 <section id="lastUpdated" aria-label="Last updated">
-<!-- TemplateBeginEditable name="updated" -->Updated:<!-- #BeginDate format:IS1 -->2020-11-20<!-- #EndDate --><!-- TemplateEndEditable -->
+<!-- TemplateBeginEditable name="updated" -->Updated:<!-- #BeginDate format:IS1 -->2021-02-05<!-- #EndDate --><!-- TemplateEndEditable -->
 </section>
 <script src="../assets/v5-js/v5-main.min.js"></script>
 <script src="../assets/v5-js/jquery.min.js"></script> 
