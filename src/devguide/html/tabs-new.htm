@@ -41,7 +41,8 @@ display: none;
 <!-- Page title and meta -->
 	
 <!-- InstanceBeginEditable name="doctitle" -->
-    <title>Lightbox - HSE.GOV.UK Design System</title>
+    <title>Tabs - HSE.GOV.UK Design System</title>
+
     <!-- InstanceEndEditable -->
 <meta name="HSE.contentType" content="default" />
 <link rel="shortcut icon" href="favicon.ico" />
@@ -104,7 +105,7 @@ display: none;
           <li>
             <a href="index.htm">Components</a>
           </li>
-          <li>Lightbox</li>
+          <li>Tabs</li>
         </ol>
         <!-- InstanceEndEditable --> </div>
   <div id="backTo">
@@ -114,7 +115,6 @@ display: none;
  
 <div id="pageContainer" class="v5" xmlns:argot="http://purl.oclc.org/argot/" xmlns:dc="http://purl.org/dc/terms/" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:v="http://www.w3.org/2006/vcard/ns#" xmlns:dbp="http://dbpedia.org/resource/">
 <!-- InstanceBeginEditable name="beta-survey" -->
-
       <!-- InstanceEndEditable -->   
 
 <!-- Beta content page --> 
@@ -124,16 +124,16 @@ display: none;
 <ul>
     <li class="first"><a href="components/index.htm">Components</a></li>
     <li><a href="components/accordion.htm">Accordion (JS)</a></li>
-	    <li><a href="components/boxes.htm">Boxes</a></li>
-	<li><a href="components/charts.htm">Charts (JS)</a></li>
-	<li><a href="components/dialog.htm">Dialog box</a></li>
-	<li><a href="components/drop-down.htm">Drop-down list (Input)</a></li>
-	<li><a href="components/images.htm">Images</a></li>
-	<li><a href="components/lightbox.htm">Lightbox (JS)</a></li>
-	<li><a href="components/subscribe.htm">Subscribe (Input)</a></li>
+    <li><a href="components/tabs.htm">Tabs (JS)</a></li>
+    <li><a href="components/boxes.htm">Boxes</a></li>
+    <li><a href="components/images.htm">Images</a></li>
     <li><a href="components/tables.htm">Table</a></li>
-	<li><a href="components/tabs.htm">Tabs (JS)</a></li>
-	<li><a href="components/video.htm">Video (Embed)</a></li>
+    <li><a href="components/video.htm">Video (Embed)</a></li>
+	<li><a href="components/subscribe.htm">Subscribe (Input)</a></li>
+	<li><a href="components/drop-down.htm">Drop-down list (Input)</a></li>
+	<li><a href="components/lightbox.htm">Lightbox (JS)</a></li>
+	<li><a href="components/dialog.htm">Dialog box</a></li>
+	<li><a href="components/charts.htm">Charts (JS)</a></li>
 	<li><a href="#">Homepage</a>
 	 <ul>
 	  <li><a href="components/homepage/index.htm">Overview</a></li>
@@ -155,79 +155,59 @@ display: none;
  
 	
 <!-- InstanceBeginEditable name="content" -->
-        <h1>Lightbox gallery</h1>
+        <h1>Tabs (JS)</h1>
+        <p>The tabs component lets users navigate between related sections of content, displaying one section at a time.</p>
+        <p>Use tabs to allow users to navigate easily between views within the same context.</p>
 
-        <ul class="lightbox">
-          <li>
-            <a href="https://via.placeholder.com/500x250/00fc2a/FFFFFF/" rel="asbestos-gallery"
-                title="Lightbox gallery item 1 caption Lightbox gallery item 1
-                caption Lightbox gallery item 1 caption">
-              <img src="https://via.placeholder.com/160x100/00fc2a/FFFFFF/" alt="Photograph
-                  of
-                  Release of loose fill asbestos fibres" width="160" height="100"
-/>
-                Lightbox gallery item 1
-              </a>
-          </li>
+        <iframe width="100%" height="300" src="//jsfiddle.net/pjenkinsonhse/bhqojydw/embedded/html/dark/" allowfullscreen="allowfullscreen" allowpaymentrequest></iframe>
 
-          <li>
-            <a href="https://via.placeholder.com/600x250/00972d/FFFFFF/" rel="asbestos-gallery"
-                title="Lightbox gallery item 2 caption"><img
-                  src="https://via.placeholder.com/160x100/00972d/FFFFFF/"
-                  alt="Photograph of
-                  Release of loose fill asbestos fibres 2" width="160"
-                  height="100"
-/>Lightbox gallery item 2</a>
-          </li>
+        <div class="tabContainer">
+          <h2 class="tab__heading">Tabs</h2>
 
-          <li>
-            <a href="https://via.placeholder.com/160x100/003097/FFFFFF/" rel="asbestos-gallery"
-                title="Lightbox gallery item 3 caption"><img
-                  src="https://via.placeholder.com/160x100/003097/FFFFFF/" alt="Photograph of
-                  Release of loose fill asbestos fibres 3" width="160"
-                  height="100"
-/>Lightbox gallery item 3</a>
-          </li>
+          <ul class="tabs__list">
+            <li class="tabs__list-item">
+              <a class="tabs__tab" href="#firstTab">Tab 1</a>
+            </li>
+            <li class="tabs__list-item">
+              <a class="tabs__tab" href="#secondTab">Tab 2</a>
+            </li>
+          </ul>
 
-          <li class="last">
-            <a href="https://via.placeholder.com/500x350/97008f/FFFFFF/" rel="asbestos-gallery"
-                title="Lightbox gallery item 4 caption"><img
-                  src="https://via.placeholder.com/160x100/97008f/FFFFFF/" alt="Photograph of
-                  Release of loose fill asbestos fibres" width="160" height="100"
-/>Lightbox gallery item 4</a>
-          </li>
+          <section class="tabs__panel" id="firstTab">
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.</p>
+            <p>Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis. </p>
+          </section>
+          <section class="tabs__panel" id="secondTab">
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.</p>
+            <figure class="v5-figure full-width">
+              <img alt="Inspector Calls" height="394" width="700" src="assets/images/hse-inspector.jpg">
+            </figure>
+            <p>Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis. </p>
+          </section>
+        </div>
 
-          <li>
-            <a href="https://via.placeholder.com/500x250/c45800/FFFFFF/" rel="asbestos-gallery"
-                title="Lightbox gallery item 5 caption"><img
-                  src="https://via.placeholder.com/160x100/c45800/FFFFFF/" alt="Photograph of
-                  Release of loose fill asbestos fibres" width="160" height="100"
-/>Lightbox gallery item 5</a>
-          </li>
+        <h2>How to use</h2>
 
-          <li>
-            <a href="https://via.placeholder.com/200x200/FF0000/FFFFFF/" rel="asbestos-gallery"
-                title="Lightbox gallery item 6 caption"><img
-                  src="https://via.placeholder.com/160x100/FF0000/FFFFFF/" alt="Photograph of
-                  Release of loose fill asbestos fibres" width="160" height="100"
-/>Lightbox gallery item 6</a>
-          </li>
+        <h3>Container</h3>
 
-          <li>
-            <a href="https://via.placeholder.com/500x250/fceb00/FFFFFF/" rel="asbestos-gallery"
-                title="Lightbox gallery item 7 caption"><img
-                  src="https://via.placeholder.com/160x100/fceb00/FFFFFF/" alt="Photograph of
-                  Release of loose fill asbestos fibres" width="160" height="100"
-/>Lightbox gallery item 7</a>
-          </li>
+        <p>To create a tabs component you need to create a container using a <strong>&lt;div&gt;</strong> element and assign it a class of <strong>.tabContainer</strong>.</p>
 
-          <li class="last">
-            <a href="https://via.placeholder.com/500x250/fc008b/FFFFFF/" rel="asbestos-gallery"
-                title="Lightbox gallery item 8 caption"><img
-                  src="https://via.placeholder.com/160x100/fc008b/FFFFFF/" alt="Photograph of
-                  Release of loose fill asbestos fibres" width="160" height="100"
-/>Lightbox gallery item 8</a>
-          </li>
+        <h3>Panels</h3>
+
+        <p>To create a tab panel you need to add a <strong>&lt;div&gt;</strong> inside of the tab container and assign it a class of <strong>.tabPanel</strong>. It is then best practice to assign it a unique id for use with achor links. The panel content can then be inserted within this <strong>&lt;div&gt;</strong>.</p>
+
+        <h3>Panel headings</h3>
+
+        <p>Each panel requires a heading, insert a heading within the tab panel <strong>&lt;div&gt;</strong> container to display a heading on the tab. This heading will also be visible in the panel content.</p>
+
+        <p>Repeat this process to add multiple tab panels.</p>
+
+        <h2>When to use</h2>
+        <p>Tabs can be a helpful way of letting users quickly switch between related information if:</p>
+        <ul>
+          <li>your content can be usefully separated into clearly labelled sections</li>
+          <li>the first section is more relevant than the others for most users</li>
+          <li>users will not need to view all the sections at once</li>
         </ul>
 
         <!-- InstanceEndEditable -->
@@ -256,7 +236,7 @@ display: none;
   </footer>
 </nav>
 <section id="lastUpdated" aria-label="Last updated">
-<!-- InstanceBeginEditable name="updated" -->Updated:<!-- #BeginDate format:IS1 -->2020-11-20<!-- #EndDate --><!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="updated" -->Updated:<!-- #BeginDate format:IS1 -->2020-11-16<!-- #EndDate --><!-- InstanceEndEditable -->
 </section>
 <script src="assets/v5-js/v5-main.min.js"></script>
 <script src="assets/v5-js/jquery.min.js"></script> 
