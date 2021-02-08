@@ -8,10 +8,14 @@ import sourcemaps from "gulp-sourcemaps";
 import autoprefixer from "gulp-autoprefixer";
 import pxtorem from "gulp-pxtorem";
 import rename from 'gulp-rename';
-import { isDefault, isStaging, isDev } from '../base/mode.js';
+import { isDefault, isStaging, isDev, isProd } from '../base/mode.js';
 const mode = require('gulp-mode')();
 
 let output;
+
+if (isProd) {
+    output = config.secureroot.styles.output;
+}
 
 if (isDefault) {
     output = config.secureroot.styles.output;
