@@ -20,13 +20,14 @@
     border-radius: $button-border-radius;
     cursor: pointer;
 
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 18px;
-    @media (min-width: $tablet) {
-        font-size: 16px;
-        line-height: 21px;
-    }
+    // font-size: 16px;
+    // font-weight: 600;
+    // line-height: 18px;
+    // @media (min-width: $tablet) {
+    //     font-size: 16px;
+    //     line-height: 21px;
+    // }
+    @include type-setting(0);
 
     &:focus {
         outline: none;
