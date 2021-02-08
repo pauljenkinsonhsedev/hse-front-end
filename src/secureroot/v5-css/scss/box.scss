@@ -191,40 +191,14 @@ margin:0 .5em 0 0;
 .homepageDropdown .ddmStyling select{
 width:265px;
 }
-.box .ddmStyling input.button,.homepageDropdown .ddmStyling input.button{
+.box .ddmStyling,.homepageDropdown .ddmStyling input.button{
 margin-right:0!important;
 width:3em!important;
 height:1.6em;
 }
-form input[type=text]:focus,form select:focus,form textarea:focus{
-background-color:#eee;
-}
-textarea{
-overflow:auto;
-font-family:Arial,Helvetica,sans-serif;
-}
-form label{
-display:block;
-padding:.6em 0 .3em 0;
-}
-form input,form select,form textarea{
-display:block;
-}
-form input,form textarea{
-width:99%;
-}
-form fieldset{
-clear:both;
-width:100%;
-}
-.box form fieldset {
-padding: 0;
-}
-form select{
-width:auto;
-display:block;
-clear:both;
-}
+
+
+
 form fieldset.visibleFieldset{
 border:1px solid #ababab;
 display:block;
@@ -235,14 +209,11 @@ margin:-1em 0 1em 0;
 .ie7 form fieldset.visibleFieldset{
 position:relative;
 }
-form fieldset legend{
-font-weight:700;
-padding:1em 0 .5em 0;
-}
-form fieldset.visibleFieldset legend{
-padding:0 4px!important;
-margin:1em 0 1em 0;
-}
+
+// form fieldset.visibleFieldset legend{
+// padding:0 4px!important;
+// margin:1em 0 1em 0;
+// }
 form fieldset.radioButton input{
 display:inline;
 width:auto;
@@ -273,24 +244,24 @@ width:auto;
 form fieldset input.checkbox{
 width:auto;
 }
-form button,form input.button,form input.submit{
-margin:0 1em 1em 0;
-width:auto;
-float:left;
-}
-form label span.validationHint,form legend span.validationHint{
-padding:.4em;
-color: $red;
-font-weight:400;
-}
-form label span.error{
-background-color:#d81541;
-color:#fff;
-margin-left:10px;
-}
-form input.error,form textarea.error{
-border:1px solid #d81541;
-}
+// form button,form input.button,form input.submit{
+// margin:0 1em 1em 0;
+// width:auto;
+// float:left;
+// }
+// form label span.validationHint,form legend span.validationHint{
+// padding:.4em;
+// color: $red;
+// font-weight:400;
+// }
+// form label span.error{
+// background-color:#d81541;
+// color:#fff;
+// margin-left:10px;
+// }
+// form input.error,form textarea.error{
+// border:1px solid #d81541;
+// }
 .boxSubscribeSingle{
 margin:.5em 0;
 overflow:hidden;
@@ -360,7 +331,7 @@ color: $red !important;
 margin-bottom: 0 !important;
 }
 .box.hasMore p:last-child {
-margin-bottom: 10px !important;	
+margin-bottom: 10px !important;
 }
 
 .more {
@@ -392,7 +363,7 @@ margin-left: 0 !important;
 }
 
 .box3col .more, .box2col .more, .box1col .more, .box .more {
-width: 100% !important; 	
+width: 100% !important;
 }
 
 @media only screen and (max-width: $desktop) and (min-width: 550px) {
@@ -425,7 +396,7 @@ width: 100% !important;
 #contentContainer.columnbetacontentpage .boxHalfLeft, #contentContainer.columnbetacontentpage .boxHalfRight  {
 width: 345px !important;
 float: left;
-}	
+}
 
 #contentContainer.columnbetacontentpage .box .boxHalfLeft, #contentContainer.columnbetacontentpage .box .boxHalfRight  {
 width: 335px !important;
