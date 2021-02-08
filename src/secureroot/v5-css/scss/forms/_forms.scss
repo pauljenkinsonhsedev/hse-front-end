@@ -1,39 +1,30 @@
-/* General cosmetics */
-
-%form-elem-cosmetics {
-  appearance: none;
-  // width: 100%;
-  padding: $dp;
-  border: 2px solid $mono-a;
-  @include type-setting(3);
-
+%form-focus {
   &:focus {
     outline: 3px solid $form-focus-color;
     outline-offset: 0;
-
-    // &:empty {
-    //   outline: 3px solid $form-focus-color;
-    // }
-    // &:valid {
-    //   outline: 3px solid $yes;
-    // }
-    // &:invalid {
-    //   outline: 3px solid $red;
-    // }
   }
+}
+
+%form-elem-cosmetics {
+  appearance: none;
+  width: 100%;
+  padding: $dp;
+  border: 2px solid $mono-a;
+  @include type-setting(3);
+  @extend %form-focus;
 }
 
 input:required:valid {
   outline: 3px solid $yes;
 }
 
-input:required:invalid:not(:placeholder-shown) {
-  outline: 3px solid $red;
-}
+// input:required:invalid:not(:placeholder-shown) {
+//   outline: 3px solid $red;
+// }
 
-input:required:invalid:not(:placeholder-shown) + .validation {
-  opacity: 1;
-}
+// input:required:invalid:not(:placeholder-shown) + .validation {
+//   opacity: 1;
+// }
 
 %validation-error {
   opacity: 0;
@@ -86,6 +77,7 @@ input:required:invalid:not(:placeholder-shown) + .validation {
 .fieldset__heading {
   @include type-setting(2);
   margin-bottom: $dp * 2;
+  color: $red;
 }
 
 /* Labels */
@@ -123,4 +115,27 @@ fieldset {
 }
 .input--width-4 {
   max-width: 10ex;
+}
+.input-full {
+  max-width: 100%;
+}
+
+.input-email,
+.input-file,
+.input-numeric,
+.input-password,
+.input-telephone,
+.input-text {
+  width: 100%;
+  max-width: 30ex;
+}
+
+
+textarea {
+  width: 100%;
+  max-width: 60ex;
+}
+
+input {
+  margin-right: $dp;
 }

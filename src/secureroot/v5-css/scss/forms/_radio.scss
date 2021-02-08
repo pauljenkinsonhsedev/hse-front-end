@@ -108,6 +108,7 @@ category: Page features - Form elements
 
   &:before {
     content: '';
+    display: block;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     position: absolute;
@@ -136,4 +137,10 @@ category: Page features - Form elements
 
 .radios__input:checked + .radios__label::after {
   opacity: 1;
+}
+
+.radios__input:focus + .radios__label::before,
+.radios__input:checked + .radios__label::before {
+    border-radius: 50%;
+    box-shadow: 0 0 0 3px #fd0;
 }

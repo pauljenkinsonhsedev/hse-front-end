@@ -114,3 +114,8 @@ category: Page features - Form elements
 .checkboxes__input:checked + .checkboxes__label::after {
   opacity: 1;
 }
+
+.checkboxes__input:focus + .checkboxes__label::before,
+.checkboxes__input:checked + .checkboxes__label::before {
+    box-shadow: 0 0 0 3px #fd0;
+}
