@@ -74,6 +74,10 @@ input:required:valid {
   }
 }
 
+.form-group-adjacent {
+  display: flex;
+}
+
 /* Fieldsets */
 .fieldset__heading {
   @include type-setting(2);
@@ -104,33 +108,51 @@ fieldset {
   }
 }
 
-/* Widths */
-.input--width-1 {
-  width: 4ex;
-}
-.input--width-2 {
-  width: 6ex;
-}
-.input--width-3 {
-  width: 8ex;
-}
-.input--width-4 {
-  width: 10ex;
-}
-.input-full {
-  width: 100%;
-  max-width: 100%;
-}
-
 .input-email,
 .input-file,
 .input-numeric,
 .input-password,
 .input-telephone,
 .input-text {
-  width: 100%;
-  max-width: 30ex;
+  display: inline-block;
+  width: 45ex; // default width
 }
+
+/* Widths */
+.input--width-1 {
+  max-width: 4ex;
+}
+.input--width-2 {
+  max-width: 6ex;
+}
+.input--width-3 {
+  max-width: 8ex;
+}
+.input--width-4 {
+  max-width: 10ex;
+}
+
+.input--width-half {
+  width: 50%;
+  max-width: 50%;
+}
+.input--width-full {
+  width: 100%;
+  max-width: 100%;
+}
+
+.input--width-s {
+  max-width: 15ex;
+
+}
+.input--width-m {
+  max-width: 30ex;
+
+}
+.input--width-l {
+  max-width: 45ex;
+}
+
 
 
 textarea {
@@ -141,4 +163,8 @@ textarea {
 input {
   margin-right: $dp;
   margin-bottom: $dp;
+
+  &:last-of-type {
+    margin-right: 0;
+  }
 }
