@@ -21,31 +21,31 @@ var settings = dataObj['cookie-settings'];
 
 // User preference variables (8)
 
-/* Only essential */ var true_false_false_false = {'essential':true,'usage':false,'campaigns':false,'settings':false,};
+/* Only essential */ var essential = {'essential':true,'usage':false,'campaigns':false,'settings':false,};
 
-/* Approve all */    var true_true_true_true = {'essential':true,'usage':true,'campaigns':true,'settings':true};
+/* Approve all */    var approve = {'essential':true,'usage':true,'campaigns':true,'settings':true};
 
-/* Analytics and marketing */ var true_true_true_false = {'essential':true,'usage':true,'campaigns':true,'settings':false};
+/* Analytics and marketing */ var analytics_marketing = {'essential':true,'usage':true,'campaigns':true,'settings':false};
 
-/* Analytics only */ var true_true_false_false = {'essential':true,'usage':true,'campaigns':false,'settings':false};
+/* Analytics only */ var analytics = {'essential':true,'usage':true,'campaigns':false,'settings':false};
 
-/* Campaigns and settings */ var true_false_true_true = {'essential':true,'usage':false,'campaigns':true,'settings':true};
+/* Campaigns and settings */ var campaigns_settings = {'essential':true,'usage':false,'campaigns':true,'settings':true};
 
-/* Analytics and settings */ var true_true_false_true = {'essential':true,'usage':true,'campaigns':false,'settings':true};
+/* Analytics and settings */ var analytics_settings = {'essential':true,'usage':true,'campaigns':false,'settings':true};
 
-/* Just campaigns */ var true_false_true_false = {'essential':true,'usage':false,'campaigns':true,'settings':false};
+/* Just campaigns */ var campaigns = {'essential':true,'usage':false,'campaigns':true,'settings':false};
 
-/* Cookie settings */ var true_false_false_true ={'essential':true,'usage':false,'campaigns':false,'settings':true,};
+/* Cookie settings */ var cookie_settings ={'essential':true,'usage':false,'campaigns':false,'settings':true,};
 
 // Convert JSON to string
-var stringOnlyEssential = JSON.stringify(true_false_false_false);
-var stringAcceptAll = JSON.stringify(true_true_true_true);
-var stringAnalyticsMarketing = JSON.stringify(true_true_true_false);
-var stringAnalytics = JSON.stringify(true_true_false_false);
-var stringCampaignsSettings = JSON.stringify(true_false_true_true);
-var stringAnalyticsSettings = JSON.stringify(true_true_false_true);
-var stringCampaigns = JSON.stringify(true_false_true_false);
-var stringSettings = JSON.stringify(true_false_false_true);
+var stringOnlyEssential = JSON.stringify(essential);
+var stringAcceptAll = JSON.stringify(approve);
+var stringAnalyticsMarketing = JSON.stringify(analytics_marketing);
+var stringAnalytics = JSON.stringify(analytics);
+var stringCampaignsSettings = JSON.stringify(campaigns_settings);
+var stringAnalyticsSettings = JSON.stringify(analytics_settings);
+var stringCampaigns = JSON.stringify(campaigns);
+var stringSettings = JSON.stringify(cookie_settings);
 
 // Encode string: btoa
 
@@ -113,34 +113,6 @@ Cookies.set(cookiePolicy, encodedSettings, {path: '/', domain: 'localhost', secu
 
 }
 
-// Check if cookie notice exists and do nothing
-
-if($('#cookie-preferences-update-notice').length){
-
-// Do nothing
-}
-
-
-else {
-
-// Creates cookie preferences updated notice
-
-
-// Jump to top of content
-location.href = "#contentContainer";
-
-$( "#contentContainer" ).prepend( '<div id="cookie-preferences-update-notice" class="v5-notice-box"><h2>Cookie settings updated</h2><p>Government services may set additional cookies and, if so, will have their own cookie policy and banner.</p><p><a id="#cookiesBackTo" href="#" onclick="goBack(); return; false;">Go back to the page you were looking at</a></p>');
-
-}
-
-
-// Creates cookie to confirm preferences have been set
-
-Cookies.set(cookiePreferences, cookieBannerAccepted , { path: '/', domain: 'localhost', secure: false, expires: 365})
-
-// Removes cookie banner
-$('#cookieContainer').remove();
-
 });
 
 
@@ -192,9 +164,3 @@ document.getElementById('cookie-settings-on').checked = 'checked';
 else { document.getElementById('cookie-settings-off').checked = 'checked'; }
 
 });
-
-/*
-function goBack() {
-window.history.go(-2);
-}
-*/
