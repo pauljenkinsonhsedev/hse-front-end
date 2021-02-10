@@ -1,19 +1,20 @@
 /* P Jenkinson 06/12/2018 - yes/no user feedback (Responsive) */
-
-#feedback {
-    clear: both;
-}
-
 .feedback {
-    display: inline-block;
+    clear: both;
+    display: block;
     width: 100%;
-    position: sticky;
-    bottom: 0;
     background-color: #FFF;
-    transition: all 300ms linear;
-    background-color: $red;
-    opacity: 0;
-    transition: opacity 300ms ease-in-out;
+    border-bottom: 10px solid #981e32;
+
+    &.feedback-beta {
+        position: sticky;
+        bottom: 0;
+        background-color: $red;
+        transition: all 300ms linear;
+        opacity: 0;
+        transition: opacity 300ms ease-in-out;
+        border: 0;
+    }
 
     .feedback-in & {
         opacity: 1;
@@ -38,14 +39,19 @@
     /* Large Devices, Wide Screens */
     @media only screen and (min-width : 1170px) {
         margin: 0 auto;
-    }
-}
 
-.feedback-container p {
-    color: white;
-    display: inline-block;
-    text-align: center;
-    margin: 0;
+        width: 460px;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        padding: 10px 10px 0 10px;
+        border-bottom: 1px solid $red;
+
+        .feedback-beta & {
+            padding: 5px 0;
+            width: 100%;
+            border: 0;
+        }
+    }
 }
 
 .feedback-container a, .feedback-container p {
@@ -91,16 +97,6 @@
     *{
         box-sizing: border-box;
     }
-
-    // &:after {
-    //     content: '';
-    //     display: block;
-    //     width: 100%;
-    //     height: 100%;
-    //     top: 0;
-    //     left: 0;
-    //     position: relative;
-    // }
 
     transform: translateY(100%);
     transition: height 600ms ease-in-out, transform 600ms ease-in-out;
