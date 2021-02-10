@@ -51,24 +51,32 @@ h2 {
     @include type-setting(2);
     font-weight: 700;
     color: $black;
+    margin: 0 0 15px;
 }
 
 h3 {
     @include type-setting(3);
     font-weight: 700;
     color: $black;
+    margin: 0 0 15px;
 }
 
 h4 {
     @include type-setting(3);
     font-weight: 700;
     color: $black;
+    margin: 0 0 15px;
 }
 
 h5 {
     @include type-setting(3);
     font-weight: 700;
     color: $black;
+    margin: 0 0 15px;
+}
+
+p {
+  margin: 0 0 15px;
 }
 
 address,

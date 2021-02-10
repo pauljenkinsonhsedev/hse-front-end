@@ -26,7 +26,7 @@ category: Page features - Form elements
           <label class="label date-input__label" for="passport-issued-day">
             Day
           </label>
-          <input class="input date-input__input input--width-2 input--error" id="passport-issued-day" name="passport-issued-day" type="text" value="6" pattern="[0-9]*" inputmode="numeric">
+          <input class="input date-input__input input-digits-4 input--error" id="passport-issued-day" name="passport-issued-day" type="text" value="6" pattern="[0-9]*" inputmode="numeric">
         </div>
       </div>
       <div class="date-input__item">
@@ -34,7 +34,7 @@ category: Page features - Form elements
           <label class="label date-input__label" for="passport-issued-month">
             Month
           </label>
-          <input class="input date-input__input input--width-2 input--error" id="passport-issued-month" name="passport-issued-month" type="text" value="3" pattern="[0-9]*" inputmode="numeric">
+          <input class="input date-input__input input-digits-4 input--error" id="passport-issued-month" name="passport-issued-month" type="text" value="3" pattern="[0-9]*" inputmode="numeric">
         </div>
       </div>
       <div class="date-input__item">
@@ -42,7 +42,7 @@ category: Page features - Form elements
           <label class="label date-input__label" for="passport-issued-year">
             Year
           </label>
-          <input class="input date-input__input input--width-4 input--error" id="passport-issued-year" name="passport-issued-year" type="text" value="2076" pattern="[0-9]*" inputmode="numeric">
+          <input class="input date-input__input input-digits-4 input--error" id="passport-issued-year" name="passport-issued-year" type="text" value="2076" pattern="[0-9]*" inputmode="numeric">
         </div>
       </div>
     </div>

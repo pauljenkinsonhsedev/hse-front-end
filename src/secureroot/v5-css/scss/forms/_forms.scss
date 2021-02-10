@@ -119,41 +119,47 @@ fieldset {
 }
 
 /* Widths */
-.input--width-1 {
-  max-width: 4ex;
+.input-digits-1 {
+  font-size: 13pt;
+  font-family: monospace;
+  max-width: 3ch;
 }
-.input--width-2 {
-  max-width: 6ex;
+.input-digits-2 {
+  font-size: 13pt;
+  font-family: monospace;
+  max-width: 4ch;
 }
-.input--width-3 {
-  max-width: 8ex;
+.input-digits-3 {
+  font-size: 13pt;
+  font-family: monospace;
+  max-width: 5ch;
 }
-.input--width-4 {
-  max-width: 10ex;
+.input-digits-4 {
+  font-size: 13pt;
+  font-family: monospace;
+  max-width: 6ch;
 }
 
-.input--width-half {
+.input-width-half {
   width: 50%;
   max-width: 50%;
 }
-.input--width-full {
+.input-width-full {
   width: 100%;
   max-width: 100%;
 }
 
-.input--width-s {
+.input-width-s {
   max-width: 15ex;
 
 }
-.input--width-m {
+.input-width-m {
   max-width: 30ex;
 
 }
-.input--width-l {
+.input-width-l {
   max-width: 45ex;
 }
-
-
 
 textarea {
   width: 100%;
