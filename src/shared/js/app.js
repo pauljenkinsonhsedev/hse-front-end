@@ -9,7 +9,6 @@ import { feedbackSurvey } from './combined/feedback-survey.js';
 import { dialogModal } from './combined/dialogs.js';
 import { scrollPos } from './combined/utils/feedback-position';
 import { tabs } from './combined/tabs.js';
-import { dialogModal } from './combined/dialogs.js';
 import { backLinks } from './combined/back-link.js';
 
 // Window load
