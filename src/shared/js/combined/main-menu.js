@@ -9,12 +9,6 @@ export function mainMenu(){
   const searchListItemLocation = document.querySelector('#main-menu ul').lastChild;
   const menuButton = document.createElement('button');
   const menuListItem = document.createElement('li');
-  const hseBooks = document.querySelector('#main-menu ul li.hseBooks a');
-
-  // hseBooks
-  if (hseBooks) {
-    hseBooks.innerHTML = 'HSE Books';
-  }
 
   // Button properties
   menuButton.classList.add('menu-button');
