@@ -229,81 +229,7 @@ z-index:10000;
 text-decoration:underline;
 background-color:#fff;
 }
-li,ol ul li{
-padding:.1em 0;
-padding-left:18px;
-}
-ol li{
-background:0 0;
-padding-left:4px;
-margin-left:2.2em;
-}
-ul.listtick li,ul.tick li{
-padding-left:18px;
-}
-ul.cross li,ul.listcross li{
-padding-left:18px;
-}
-ul.listexclaim li{
-padding-left:18px;
-}
-ol{
-list-style:decimal outside;
-}
-ol.a{
-list-style-type:lower-alpha;
-}
-ol.i{
-list-style-type:lower-roman;
-}
-ul.listhorizontal li.first{
-border:none;
-padding-right:.6em;
-margin-left:-1.6em;
-}
-ul.listhorizontal li{
-background:0 0;
-margin:0;
-padding:0 .6em;
-display:inline;
-border-left-width:1px;
-border-left-style:solid;
-}
-ul.listhorizontal{
-margin:1em 0 2em 0;
-}
-.splitList2 ul{
--moz-column-count:2;
--moz-column-gap:20px;
--webkit-column-count:2;
--webkit-column-gap:20px;
-column-count:2;
-column-gap:20px;
-}
-.splitList3 ul{
--moz-column-count:3;
--moz-column-gap:20px;
--webkit-column-count:3;
--webkit-column-gap:20px;
-column-count:3;
-column-gap:20px;
-}
-.splitList4 ul{
--moz-column-count:4;
--moz-column-gap:20px;
--webkit-column-count:4;
--webkit-column-gap:20px;
-column-count:4;
-column-gap:20px;
-}
-.ie .splitList2 ul,.ie .splitList3 ul,.ie .splitList4 ul{
-float:left;
-margin-left:1em;
-}
-.ie .splitList2 ul:first-child,.ie .splitList3 ul:first-child,.ie .splitList4 ul:first-child{
-float:none;
-clear:both;
-}
+
 table{
 margin:0 0 20px 1px;
 border-spacing:0;
@@ -1247,31 +1173,8 @@ color:#fff;
 ul.semtabs li.active a{
 color:#464646;
 }
-.tabPanel{
-clear:both;
-background-color:#e6e6e6;
-padding:10px 10px 5px 10px;
-margin-bottom:10px;
-display:inline-block;
-border-radius:0 10px 10px 10px;
-}
-.printableTab{
-display:none;
-}
-.tabContainer{
-margin:1em 0;
-}
-ul.semtabs li a{
-border-bottom:1px solid #e6e6e6;
-}
-ul.semtabs li a:focus{
-border:1px dotted #fff;
-text-decoration:underline;
-}
-ul.semtabs li.active a:focus{
-border:1px dotted #b82533;
-text-decoration:underline;
-}
+
+
 div.diaryMonth{
 margin-bottom:30px;
 }

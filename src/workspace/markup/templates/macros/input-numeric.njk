@@ -1,8 +1,0 @@
-{% from "macros/form-header.njk" import formHeader %}
-{% macro fieldInputNumeric(field_id, form_heading, form_instruction, field_label, field_type, field_class, value = '') %}
-  <div class="form-group">
-    {{ formHeader(form_heading, form_instruction) }}
-    <label for="{{ field_id }}">{{ field_label }}</label>
-    <input class="input {{ field_class }}" id="{{ field_id }}" name="{{ field_id }}" type="{{ field_type }}" name="{{ field_id }}" value="{{ value | escape }}"/>
-  </div>
-{% endmacro %}

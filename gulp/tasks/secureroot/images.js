@@ -6,6 +6,35 @@ import imageminJpegtran from 'imagemin-jpegtran';
 import imageminPngquant from 'imagemin-pngquant';
 import imageminJpegRecompress from 'imagemin-jpeg-recompress';
 import * as config from '../../config.json';
+import { isDefault, isStaging, isDev, isProd } from '../base/mode.js';
+
+let v4output;
+let v5output;
+let v4Homepage;
+
+if (isProd) {
+    v4output = config.secureroot.images.v4.output;
+    v5output = config.secureroot.images.v5.output;
+    v4Homepage = config.secureroot.images.v4homepage.output;
+}
+
+if (isDefault) {
+    v4output = config.secureroot.images.v4.output;
+    v5output = config.secureroot.images.v5.output;
+    v4Homepage = config.secureroot.images.v4homepage.output;
+}
+
+if (isStaging) {
+    v4output = config.secureroot.images.v4.output;
+    v5output = config.secureroot.images.v5.output;
+    v4Homepage = config.secureroot.images.v4homepage.output;
+}
+
+if (isDev) {
+    v4output = config.devguide.images.v4.output;
+    v5output = config.devguide.images.v5.output;
+    v4Homepage = config.devguide.images.v4homepage.output;
+}
 
 function imagesV4() {
   return src(config.secureroot.images.v4.all)
@@ -17,7 +46,7 @@ function imagesV4() {
         imageminPngquant(),
         imageminJpegRecompress(),
     ]))
-    .pipe(dest(config.secureroot.images.v4.output));
+    .pipe(dest(v4output));
 };
 
 function imagesV5(){
@@ -30,7 +59,7 @@ function imagesV5(){
         imageminPngquant(),
         imageminJpegRecompress(),
     ]))
-    .pipe(dest(config.secureroot.images.v5.output));
+    .pipe(dest(v5output));
 };
 
 function imagesV4Homepage() {
@@ -43,7 +72,7 @@ function imagesV4Homepage() {
         imageminPngquant(),
         imageminJpegRecompress(),
     ]))
-    .pipe(dest(config.secureroot.images.v4homepage.output));
+    .pipe(dest(v4Homepage));
 };
 
 const toReturn = series(imagesV4, imagesV5, imagesV4Homepage);

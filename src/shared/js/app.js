@@ -8,6 +8,9 @@ import { tableSortable } from './combined/tables/table-sortable.js';
 import { feedbackSurvey } from './combined/feedback-survey.js';
 import { dialogModal } from './combined/dialogs.js';
 import { scrollPos } from './combined/utils/feedback-position';
+import { tabs } from './combined/tabs.js';
+import { dialogModal } from './combined/dialogs.js';
+import { backLinks } from './combined/back-link.js';
 
 // Window load
 window.addEventListener('DOMContentLoaded',() => {
@@ -19,6 +22,22 @@ window.addEventListener('DOMContentLoaded',() => {
   }
 
   scrollPos();
+  // Back links
+  const backLink = document.querySelector('#backTo');
+  if (backLink) {
+    backLinks();
+  }
+
+  // Aria
+  const cookieContainer = document.querySelector('#cookieContainer');
+  const breadcrumb = document.querySelector('#breadCrumb');
+  if (breadcrumb) {
+    const lastItem = breadcrumb.querySelector('li:last-of-type');
+    lastItem.setAttribute('aria-current','page');
+  }
+  if (cookieContainer) {
+    cookieContainer.setAttribute('aria-label','Cookie banner');
+  }
 
   // small device menu
   const menu = document.querySelector('.js-menu');
@@ -34,6 +53,12 @@ window.addEventListener('DOMContentLoaded',() => {
   const tableSortableSelector = document.querySelector('.sortable');
   if (document.body.contains(tableSortableSelector)) {
     tableSortable(tableSortableSelector);
+  }
+
+  // Tabs
+  const tabSelector = document.querySelector('.tabs');
+  if (document.body.contains(tabSelector)) {
+    tabs(tabSelector);
   }
 
   // Dialogs

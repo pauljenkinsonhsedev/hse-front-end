@@ -3,8 +3,9 @@
         "./src/**/*+(js|scss|css|htm|html|njk|png|jpg|jpeg|gif|svg|ico)"
     ],
     "server": {
-        "file": "index.htm",
+        "file": "./index.htm",
         "locationStaging": "secureroot/hseonline/website/livelive/secureroot",
+        "locationDevelopment": "devguide",
         "uri": "http://localhost",
         "port": "8080"
     },
@@ -13,7 +14,7 @@
             "all": "./src/shared/js/**/*.js",
             "entrypoint": "./src/shared/js/app.js",
             "outputSecureroot": "./secureroot/hseonline/website/livelive/secureroot/assets/v5-js",
-            "outputWorkspace": "./workspace/assets/v5-js"
+            "outputdevguide": "./devguide/assets/v5-js"
         }
     },
     "secureroot": {
@@ -41,8 +42,7 @@
                 "./src/secureroot/v5-scripts/js-cookie.js",
                 "./src/secureroot/v5-scripts/v5-hse-primary.min.js",
                 "./src/secureroot/v5-scripts/slinky-ie11-fix.js",
-                "./src/secureroot/v5-scripts/aria.js",
-                "./src/secureroot/v5-scripts/content-page.js",
+                "./src/secureroot/v5-scripts/website-feedback.src.js",
                 "./src/secureroot/v5-scripts/notification-bar.js",
                 "./src/secureroot/v5-scripts/top-tasks.js",
                 "./src/secureroot/v5-scripts/left-nav.js",
@@ -74,25 +74,38 @@
             }
         }
     },
-    "workspace": {
-        "output": "./workspace",
+    "devguide": {
+        "output": "./devguide",
         "styles": {
-            "all": "./src/workspace/styles/**/*.scss",
-            "entry": "./src/workspace/styles/app.scss",
-            "input": "./src/workspace/styles/*.scss",
-            "output": "./workspace/styles"
+            "output": "./devguide/assets/v5-css"
         },
         "markup": {
-            "all": "./src/workspace/markup/**/*.njk",
-            "pages": "./src/workspace/markup/pages/*.njk",
-            "data": "./src/workspace/markup/data/data",
-            "dataModel": "./src/workspace/markup/data/model/",
-            "templates": "./src/workspace/markup/templates/",
-            "output": "./workspace/"
+            "all": "./src/devguide/html/**/*.+(htm|html)",
+            "output": "./devguide/"
         },
         "images": {
-            "all": "./src/workspace/images/**/*.+(png|jpg|jpeg|gif|svg|ico)",
-            "output": "./workspace/images"
+            "v4": {
+                "all": "./src/secureroot/v4-images/**/*.+(png|jpg|jpeg|gif|svg|ico)",
+                "entry": "./src/secureroot/v4-images/",
+                "output": "./devguide/assets/v4-images/"
+            },
+            "v4homepage": {
+                "all": "./src/secureroot/v4-homepage/**/*.+(png|jpg|jpeg|gif|svg|ico)",
+                "entry": "./src/secureroot/v4-homepage/",
+                "output": "./devguide/assets/v4-homepage/"
+            },
+            "v5": {
+                "all": "./src/secureroot/v5-images/**/*.+(png|jpg|jpeg|gif|svg|ico)",
+                "entry": "./src/secureroot/v5-images/",
+                "output": "./devguide/assets/v5-images/"
+            }
+        },
+        "scripts": {
+            "output": "./devguide/assets/v5-js"
+        },
+        "copyjs": {
+            "all": "./src/secureroot/copy/assets/v5-js/**/*",
+            "output": "./devguide/assets/v5-js"
         }
     }
 }
