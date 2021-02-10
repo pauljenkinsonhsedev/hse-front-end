@@ -89,7 +89,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           <li class="news"><a href="../news/index.htm">News</a></li>
           <li class="guidance"><a href="../guidance/index.htm">Guidance</a></li>
           <li class="abouthse"><a href="../aboutus/index.htm">About HSE</a></li>
-          <li class="hseBooks"><a href="https://books.hse.gov.uk/">Books</a></li>
+          <li class="hseBooks"><a href="https://books.hse.gov.uk/">HSE Books</a></li>
           <li class="freeUpdates"><a href="../news/subscribe/index.htm">Free updates</a></li>
           <li class="contact"><a href="../contact/index.htm">Contact</a></li>
         </ul>
@@ -221,16 +221,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   </div>
 </section>
 <!-- TemplateEndIfClause --> <!-- TemplateEndMultipleIf -->
-<!-- TemplateBeginMultipleIf -->
-<!-- TemplateBeginIfClause cond="survey == true" -->
-  <section class="feedback-survey">
-    <div class="feedback-survey__inner">
-      <!-- TemplateBeginEditable name="survey" -->
-      <!-- TemplateEndEditable -->
-    </div>
-  </section>
-<!-- TemplateEndIfClause -->
-<!-- TemplateEndMultipleIf -->
 <nav id="footer-nav" aria-label="Footer menu">
   <footer id="footerContainer">
     <div id="footer">
@@ -260,7 +250,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   </footer>
 </nav>
 <section id="lastUpdated" aria-label="Last updated">
-<!-- TemplateBeginEditable name="updated" -->Updated:<!-- #BeginDate format:IS1 -->2021-01-25<!-- #EndDate --><!-- TemplateEndEditable -->
+<!-- TemplateBeginEditable name="updated" -->Updated:<!-- #BeginDate format:IS1 -->2021-02-10<!-- #EndDate --><!-- TemplateEndEditable -->
 </section>
 <script src="../assets/v5-js/v5-main.min.js"></script>
 <script src="../assets/v5-js/jquery.min.js"></script>
@@ -321,7 +311,6 @@ searchInput.removeAttribute('cellspacing');
 <!-- TemplateParam name="homepage" type="boolean" value="true" -->
 <!-- TemplateParam name="weblite" type="boolean" value="false" -->
 <!-- TemplateParam name="feedback" type="boolean" value="true" -->
-<!-- TemplateParam name="survey" type="boolean" value="false" -->
 <!-- TemplateParam name="contentType" type="text" value="default" -->
 <!-- TemplateParam name="notificationBar" type="boolean" value="false" -->
 <!-- TemplateParam name="printGuide" type="boolean" value="false" -->
