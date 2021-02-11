@@ -7,7 +7,6 @@ import { getInternetExplorerVersion } from './combined/utils/internet-explorer-d
 import { tableSortable } from './combined/tables/table-sortable.js';
 import { feedbackSurvey } from './combined/feedback-survey.js';
 import { dialogModal } from './combined/dialogs.js';
-import { scrollPos } from './combined/utils/feedback-position';
 import { tabs } from './combined/tabs.js';
 import { backLinks } from './combined/back-link.js';
 
@@ -20,7 +19,6 @@ window.addEventListener('DOMContentLoaded',() => {
     loadPicturefillFn();
   }
 
-  scrollPos();
   // Back links
   const backLink = document.querySelector('#backTo');
   if (backLink) {

@@ -5,20 +5,24 @@
     Data is captured in GA, these functions are purely superficial
 
 */
+import { scrollPos } from './utils/feedback-position';
 
 export function feedbackSurvey() {
     const container = document.querySelector('.feedback-container');
-    const questionaire = document.querySelector('.questionaire');
-    const questions = questionaire.querySelectorAll('.question');
+
+    if (!container) {
+        return;
+    }
+    const survey = document.querySelector('.feedback-survey');
+
     const links = container.querySelector('.feedback-links');
     const message = container.querySelector('.feedback-message');
-    const survey = document.querySelector('.feedback-survey');
-    const surveyQuestions = document.querySelectorAll('.question-list__item a');
-    const surveyClose = document.querySelector('.survey-close');
 
     const userYes = document.querySelector('#userYes');
     const userNo = document.querySelector('#userNo');
     const surveyHandle = [userYes, userNo];
+
+    scrollPos();
 
     // open survey
     surveyHandle.forEach((elem) => {
@@ -43,11 +47,15 @@ export function feedbackSurvey() {
     function closeSurvey() {
         survey.classList.remove('survey-show');
         survey.classList.remove('survey-in');
-        // setTimeout(function() {
-        // }, 100);
     }
 
     function showSurvey() {
+        const questionaire = survey.querySelector('.questionaire');
+        const questions = questionaire.querySelectorAll('.question');
+
+        const surveyQuestions = survey.querySelectorAll('.question-list__item a');
+        const surveyClose = survey.querySelector('.survey-close');
+
         [...surveyQuestions].forEach((elem) => {
             // prevent default behaviour
             elem.addEventListener('click', (e) => e.preventDefault());
