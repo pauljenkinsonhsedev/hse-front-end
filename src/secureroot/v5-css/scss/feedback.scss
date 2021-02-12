@@ -186,7 +186,9 @@ p.question-hint {
         margin-right: 0;
     }
 
-    a {
+    button {
+        appearance: none;
+        border: 0;
         font-size: 16px;
         padding: 10px 20px;
         background-color: $yes;
