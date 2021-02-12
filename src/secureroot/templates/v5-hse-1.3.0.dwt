@@ -213,25 +213,31 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <!-- TemplateEndEditable --></div>
 <!-- TemplateEndIfClause --><!-- TemplateEndMultipleIf -->
 </div>
-<!-- TemplateBeginMultipleIf --> <!-- TemplateBeginIfClause cond="feedback == true" -->
+<!-- TemplateBeginMultipleIf -->
+
+<!-- TemplateBeginIfClause cond="feedback == true" -->
 <section id="feedback" class="feedback @@(_document['feedbackClass'])@@" aria-describedby="feedback-message" aria-label="Is this page useful">
   <div class="feedback-container">
     <p class="feedback-message" id="feedback-message"><strong>Is this page useful?</strong></p>
     <div class="feedback-links"> <a id="userYes" href="#userYes">Yes</a> <a id="userNo" href="#userNo">No</a> </div>
   </div>
-</section>
-<!-- TemplateEndIfClause --> <!-- TemplateEndMultipleIf -->
-
-<!-- TemplateBeginMultipleIf -->
-<!-- TemplateBeginIfClause cond="survey == true" -->
-<section class="feedback-survey">
-    <div class="feedback-survey__inner">
-        <!-- TemplateBeginEditable name="survey" -->
-        <!-- TemplateEndEditable -->
-    </div>
+  <!-- TemplateBeginMultipleIf -->
+  <!-- TemplateBeginIfClause cond="survey == true" -->
+  <div class="feedback-survey">
+      <div class="feedback-survey__inner">
+          <!-- TemplateBeginEditable name="survey" -->
+          <!-- TemplateEndEditable -->
+      </div>
+  </div>
+  <!-- TemplateEndIfClause -->
+  <!-- TemplateEndMultipleIf -->
 </section>
 <!-- TemplateEndIfClause -->
+
+
+
 <!-- TemplateEndMultipleIf -->
+
 
 <nav id="footer-nav" aria-label="Footer menu">
   <footer id="footerContainer">
