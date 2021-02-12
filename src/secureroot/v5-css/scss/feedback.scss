@@ -1,7 +1,9 @@
 /* P Jenkinson 06/12/2018 - yes/no user feedback (Responsive) */
+#feedback {
+    clear: both;
+}
 
 .feedback {
-    clear: both;
     z-index: 1;
 
     display: block;
@@ -115,17 +117,6 @@
         transform: translateY(0);
     }
 }
-
-// temporary switch
-// .survey-on .feedback-survey {
-//     &.survey-in {
-//         display: flex;
-//     }
-
-//     &.survey-show {
-//         transform: translateY(0);
-//     }
-// }
 
 .feedback-survey__inner {
     width: 100%;
