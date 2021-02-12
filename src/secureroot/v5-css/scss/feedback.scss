@@ -107,17 +107,6 @@
     bottom: 0;
     display: none;
 
-    // &.survey-in {
-    //     display: flex;
-    // }
-
-    // &.survey-show {
-    //     transform: translateY(0);
-    // }
-}
-
-// temporary switch
-.survey-on .feedback-survey {
     &.survey-in {
         display: flex;
     }
@@ -126,6 +115,17 @@
         transform: translateY(0);
     }
 }
+
+// temporary switch
+// .survey-on .feedback-survey {
+//     &.survey-in {
+//         display: flex;
+//     }
+
+//     &.survey-show {
+//         transform: translateY(0);
+//     }
+// }
 
 .feedback-survey__inner {
     width: 100%;
