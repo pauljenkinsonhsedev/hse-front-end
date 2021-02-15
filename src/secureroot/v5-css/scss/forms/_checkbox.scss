@@ -1,0 +1,121 @@
+/*doc
+---
+title: Checkboxes
+name: b-forms-c-checkbox
+category: Page features - Form elements
+---
+
+```html_example
+<div class="form-group">
+  <fieldset class="fieldset" aria-describedby="waste-hint">
+    <legend class="fieldset__legend fieldset__legend--xl">
+      <h1 class="fieldset__heading">
+        Which types of waste do you transport?
+      </h1>
+    </legend>
+    <span id="waste-hint" class="hint">
+      Select all that apply.
+    </span>
+    <div class="checkboxes">
+      <div class="checkboxes__item">
+        <input class="checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+        <label class="label checkboxes__label" for="waste">
+          Waste from animal carcasses
+        </label>
+      </div>
+      <div class="checkboxes__item">
+        <input class="checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines">
+        <label class="label checkboxes__label" for="waste-2">
+          Waste from mines or quarries
+        </label>
+      </div>
+      <div class="checkboxes__item">
+        <input class="checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm">
+        <label class="label checkboxes__label" for="waste-3">
+          Farm or agricultural waste
+        </label>
+      </div>
+    </div>
+  </fieldset>
+</div>
+```
+
+*/
+.checkboxes__item {
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.25;
+
+  display: block;
+  position: relative;
+  min-height: 40px;
+  margin-bottom: 10px;
+  padding-left: 40px;
+  clear: left;
+}
+
+.checkboxes__input {
+  cursor: pointer;
+  position: absolute;
+  z-index: 1;
+  top: -2px;
+  left: -2px;
+  width: 44px;
+  height: 44px;
+  margin: 0;
+  opacity: 0;
+}
+.checkboxes__label {
+  display: inline-block;
+  margin-bottom: 0;
+  padding: 8px 15px 5px;
+
+  cursor: pointer;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+
+  &:before {
+    content: '';
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    border: 2px solid $black;
+    background: transparent;
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    top: 11px;
+    left: 9px;
+    width: 18px;
+    height: 7px;
+    -webkit-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    border: solid;
+    border-top-color: currentcolor;
+    border-top-width: medium;
+    border-right-width: medium;
+    border-bottom-width: medium;
+    border-left-width: medium;
+    border-width: 0 0 5px 5px;
+    border-top-color: transparent;
+    opacity: 0;
+    background: transparent;
+  }
+}
+
+.checkboxes__input:checked + .checkboxes__label::after {
+  opacity: 1;
+}
+
+.checkboxes__input:focus + .checkboxes__label::before,
+.checkboxes__input:checked + .checkboxes__label::before {
+    box-shadow: 0 0 0 3px #fd0;
+}

@@ -10,7 +10,7 @@ outline: solid transparent !important;
 text-decoration: none !important;
 background-color: $focus !important;
 color: $black !important;
-border-bottom: 2px solid $black !important;    
+border-bottom: 2px solid $black !important;
 }
 
 a:hover, a:focus {
@@ -51,9 +51,9 @@ color: $black !important;
 border-bottom: 2px solid $black !important;
 }
 
-#contentContainer input:focus {
-outline: $focus 5px solid !important;
-}
+// #contentContainer input:focus {
+// outline: $focus 5px solid !important;
+// }
 
 #contentContainer li h3 a:focus, #contentContainer p a:focus {
 outline: solid transparent !important;

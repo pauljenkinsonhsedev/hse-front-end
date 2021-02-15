@@ -1,23 +1,47 @@
-a.btn,
-button.btn,
-.btn {
+%button-cosmetic {
+    box-sizing: border-box;
     appearance: none;
     outline: 0;
-    border: 0;
+    display: inline-block;
     background-color: #eee;
-    color: $black;
+
+    text-align: center;
     text-decoration: none;
     font-weight: 700;
-    padding: 7px 10px;
+    white-space: nowrap;
+    vertical-align: top;
+
+    user-select: none;
+    padding: ($dp) ($dp * 3);
+
+    border-width: $border-width;
+    border-style: solid;
+    border-color: transparent;
+    border-radius: $button-border-radius;
     cursor: pointer;
 
+    @include type-setting(0);
+
     &:focus {
-        outline: none;
-        background-color: #fd0;
+        outline: $focus-width solid #fd0;
     }
+
+  transition: all 300ms ease-in-out;
 }
 
-.btn-green {
-    background-color: #00830b;
-    color: #FFF;
+input,
+button,
+a {
+    &.btn {
+        @extend %button-cosmetic;
+    }
+
+    &.btn-green {
+        background-color: $yes;
+        color: #FFF;
+    }
+    &.btn-red {
+        background-color: $red;
+        color: #FFF;
+    }
 }
