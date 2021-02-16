@@ -96,7 +96,7 @@ input:required:valid {
 /* Fieldset */
 fieldset {
   padding: 0;
-  margin: 0;
+  margin: 0 0 $dp*2 0;
   border: none;
 
   &__legend {
