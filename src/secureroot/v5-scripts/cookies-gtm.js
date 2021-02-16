@@ -8,7 +8,6 @@ const obj = JSON.parse(decodedCookieVal);
 var usageSet = (obj.usage);
 // var campaignsSet = (obj.campaigns);
 // var settingsSet = (obj.settings);
-// console.log('campaignsSet',campaignsSet);
 // console.log('settingsSet',settingsSet);
 
 // When DOM is ready, create function for dynamically loading GTM scripts
@@ -26,7 +25,7 @@ function gtmFunction() {
     gtm.setAttribute("id", "gtm");
 
     // Set the script element `src`
-    gtm.src = '../../assets/v5-js/gtm.js';
+    gtm.src = 'https://www.hse.gov.uk/assets/v5-js/gtm.js';
 
     // Inject the script into the DOM
 
@@ -40,28 +39,24 @@ function gtmFunction() {
 $( document ).ready(function() {
 
 
-$('#acceptAllCookies').click(function() {
-    // Call function on accept all cookies button (Cookie preferences banner)
-    gtmFunction();
-});
+    $('#acceptAllCookies').click(function() {
+        // Call function on accept all cookies button (Cookie preferences banner)
+        gtmFunction();
+    });
 
 // Checks to see if analytics preference is set to true
 
-if (usageSet == true )  {
-    // Call function on accept all cookies button (Cookie preferences banner)
-    gtmFunction();
-}
-
-// If analytics preference is set to false - delete all GTM cookies
-
-else {
-    Cookies.remove('_ga');
-    Cookies.remove('_gid');
-    Cookies.remove('_gali');
-    Cookies.remove('_dc_gtm_UA-324220-1');
-    Cookies.remove('_gat_UA-324220-1');
-    Cookies.remove('_ga_1Y6RD6YT11');
-    Cookies.remove('nmstat'); // Site Improve cookie - invoked by Google Analytics
-}
+    if (usageSet == true )  {
+        // Call function on accept all cookies button (Cookie preferences banner)
+        gtmFunction();
+    }  else { // If analytics preference is set to false - delete all GTM cookies
+        Cookies.remove('_ga');
+        Cookies.remove('_gid');
+        Cookies.remove('_gali');
+        Cookies.remove('_dc_gtm_UA-324220-1');
+        Cookies.remove('_gat_UA-324220-1');
+        Cookies.remove('_ga_1Y6RD6YT11');
+        Cookies.remove('nmstat'); // Site Improve cookie - invoked by Google Analytics
+    }
 
 });
