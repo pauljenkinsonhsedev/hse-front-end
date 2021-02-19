@@ -92,7 +92,8 @@ export function cookiePreferences() {
     */
 
     // settings form submit
-    const submitForm = () => {
+    const submitForm = (event) => {
+        event.preventDefault();
         const outputData = {};
         const formData = new FormData(settingsForm)
         for (var pair of formData.entries()) {
