@@ -100,7 +100,6 @@ export function cookiePreferences() {
             let val = pair[1];
             outputData[key] = val;
         }
-        // console.log('outputData',outputData);
         setCookiePreferences(outputData);
     }
     settingsForm.addEventListener('submit', function(event){
@@ -110,8 +109,6 @@ export function cookiePreferences() {
     });
 
     const choices = document.querySelectorAll('.input-switch');
-    // const decodedPreferences = window.atob(cookiesSet);
-    // const json = JSON.parse(decodedPreferences);
     choices.forEach(elem => {
         elem.addEventListener('change', function(event){
             event.preventDefault();
