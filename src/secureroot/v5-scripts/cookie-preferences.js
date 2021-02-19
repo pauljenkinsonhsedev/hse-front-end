@@ -32,7 +32,7 @@ $( "#cookies-settings" ).submit(function( event ) {
     var stringPreferences = JSON.stringify(preferences);
     var encodedPreferences = window.btoa(stringPreferences);
 
-    Cookies.set(cookiePolicy, encodedPreferences, {path: '/', domain: 'local', secure: false , expires: 365})
+    Cookies.set(cookiePolicy, encodedPreferences, {path: '/', domain: '.localhost', secure: false , expires: 365})
 });
 
 // On click handling
