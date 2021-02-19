@@ -4,7 +4,9 @@ const load = (function() {
       return new Promise(function(resolve, reject) {
         let element = document.createElement(tag);
 
-        if (tag === 'scriptasync') {
+        if (tag === 'scriptAsync') {
+          element = document.createElement('script');
+        } else if (tag === 'scriptHead') {
           element = document.createElement('script');
         } else {
           element = document.createElement(tag);
@@ -25,7 +27,11 @@ const load = (function() {
           case 'script':
             element.async = false;
             break;
-          case 'scriptasync':
+          case 'scriptHead':
+            element.async = true;
+            parent = 'head';
+            break;
+          case 'scriptAsync':
             element.async = true;
             break;
           case 'link':
@@ -45,7 +51,8 @@ const load = (function() {
   return {
     css: _load('link'),
     js: _load('script'),
-    jsasync: _load('scriptasync'),
+    jsHead: _load('scriptHead'),
+    jsAsync: _load('scriptAsync'),
     img: _load('img')
   }
 })();
