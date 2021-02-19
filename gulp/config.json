@@ -47,8 +47,7 @@
                 "./src/secureroot/v5-scripts/notification-bar.js",
                 "./src/secureroot/v5-scripts/top-tasks.js",
                 "./src/secureroot/v5-scripts/left-nav.js",
-                "./src/secureroot/v5-scripts/aria.accordion.min.js",
-                "./src/secureroot/v5-scripts/cookies-gtm.js"
+                "./src/secureroot/v5-scripts/aria.accordion.min.js"
             ],
             "entry": "./src/secureroot/v5-js/v5-footer.js",
             "output": "./secureroot/hseonline/website/livelive/secureroot/assets/v5-js"
