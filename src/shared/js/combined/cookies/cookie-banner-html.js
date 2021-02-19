@@ -1,7 +1,7 @@
 
-export function cookieMessageHTML (status) {
+export function cookieMessageHTML(status) {
     // take user to top of page if cookie banner set
-    location.href = "#cookieContainer";
+    // location.href = "#cookieContainer";
 
     const cookieMessageStart = `
                 <div class="cookies-message">
