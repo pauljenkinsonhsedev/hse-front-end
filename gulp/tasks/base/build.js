@@ -9,10 +9,10 @@ import requireDir from 'require-dir';
 requireDir('../', { recurse: true });
 
 // Define combined tasks for HSE
-export const hseBuild = parallel('hseStyles', 'hseScripts', 'sharedScripts', 'hseCopy', 'hseImages');
+export const hseBuild = parallel('hseStyles', 'hseScripts', 'sharedScripts', 'scriptsVendor', 'hseCopy', 'hseImages');
 
 // Define combined devguide
-export const devguideBuild = parallel('hseStyles', 'hseImages', 'hseScripts', 'sharedScripts', 'devguideCopyAssets', 'devguideHighChats');
+export const devguideBuild = parallel('hseStyles', 'hseImages', 'hseScripts', 'sharedScripts', 'scriptsVendor', 'devguideCopyAssets', 'devguideHighChats');
 
 // Define production Tasks
 export const prodTasks = series(parallel('zipdevguide', 'zipSecureroot', 'sizeReport'));

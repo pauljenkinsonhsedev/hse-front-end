@@ -11,6 +11,8 @@
     },
     "shared": {
         "js": {
+            "vendor": "./src/shared/js/vendor/**/*.js",
+            "vendorOutput": "./secureroot/hseonline/website/livelive/secureroot/assets/v5-js/vendor",
             "all": "./src/shared/js/**/*.js",
             "entrypoint": "./src/shared/js/app.js",
             "outputSecureroot": "./secureroot/hseonline/website/livelive/secureroot/assets/v5-js",
@@ -39,7 +41,6 @@
             "all": [
                 "./src/secureroot/v5-scripts/google-custom-search.js",
                 "./src/secureroot/v5-scripts/base64-poly.js",
-                "./src/secureroot/v5-scripts/js-cookie.js",
                 "./src/secureroot/v5-scripts/v5-hse-primary.min.js",
                 "./src/secureroot/v5-scripts/slinky-ie11-fix.js",
                 "./src/secureroot/v5-scripts/website-feedback.src.js",
@@ -48,15 +49,16 @@
                 "./src/secureroot/v5-scripts/left-nav.js",
                 "./src/secureroot/v5-scripts/aria.accordion.min.js",
                 "./src/secureroot/v5-scripts/cookies-gtm.js"
-
-           ],
+            ],
             "entry": "./src/secureroot/v5-js/v5-footer.js",
             "output": "./secureroot/hseonline/website/livelive/secureroot/assets/v5-js"
         },
         "styles": {
             "all": "./src/secureroot/v5-css/scss/**/*.scss",
             "entry": "./src/secureroot/v5-css/scss/v5.scss",
-            "output": "./secureroot/hseonline/website/livelive/secureroot/assets/v5-css/"
+            "output": "./secureroot/hseonline/website/livelive/secureroot/assets/v5-css/",
+            "vendor": "./src/secureroot/v5-css/vendor/**/*.css",
+            "vendorOutput": "./secureroot/hseonline/website/livelive/secureroot/assets/v5-css/vendor/"
         },
         "images": {
             "v4": {

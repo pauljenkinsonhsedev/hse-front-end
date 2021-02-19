@@ -26,3 +26,10 @@ function sharedScripts() {
 }
 
 task('sharedScripts', sharedScripts);
+
+function scriptsVendor() {
+    return src([config.shared.js.vendor])
+    .pipe(dest(config.shared.js.vendorOutput));
+}
+
+task('scriptsVendor', scriptsVendor);
