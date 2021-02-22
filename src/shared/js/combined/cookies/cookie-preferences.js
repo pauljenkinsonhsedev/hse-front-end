@@ -53,6 +53,7 @@ function controlAnalytics() {
 
         if (gaSettings === true) {
             Cookies.set('optInGoogleTracking', true);
+
             cookiesGTM(true);
         } else {
             Cookies.set('optInGoogleTracking', false);
@@ -106,6 +107,7 @@ export function cookiePreferences() {
                 outputData[key] = val;
             }
             setCookiePreferences(outputData);
+            controlAnalytics();
         }
         settingsForm.addEventListener('submit', function(event){
             event.preventDefault();
@@ -155,7 +157,8 @@ export function cookiePreferences() {
     // form action select all cookies
     customEventListener('#setAllCookies', 'click' , (event) => {
         event.preventDefault();
-        setFields();
         setCookiePreferences({'cookie-essential': true, 'cookie-usage-analytics': true});
+        controlAnalytics();
+        setFields();
     });
 }
