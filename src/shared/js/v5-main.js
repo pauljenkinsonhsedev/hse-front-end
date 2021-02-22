@@ -8,13 +8,9 @@ import { tableSortable } from './combined/tables/table-sortable.js';
 import { tabs } from './combined/tabs.js';
 import { dialogModal } from './combined/dialogs.js';
 import { backLinks } from './combined/back-link.js';
-import { cookiePreferences } from './combined/cookies/cookie-preferences.js';
 
 // Window load
 window.addEventListener('DOMContentLoaded',() => {
-
-  // initiate cookies
-  cookiePreferences();
 
   // picturefill.min.js
   const pictureElemSelector = document.getElementsByTagName('picture')[0];
