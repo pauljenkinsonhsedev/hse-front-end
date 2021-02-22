@@ -123,6 +123,7 @@ display: none;
 <ul>
     <li class="first"><a href="../components/index.htm">Components</a></li>
 	<li><a href="../components/boxes.htm">Boxes</a></li>
+	<li><a href="../components/buttons.htm">Buttons</a></li>
 	<li><a href="../components/charts.htm">Charts (JS)</a></li>
 	<li><a href="../components/dialog.htm">Dialog box</a></li>
 	<li><a href="../components/drop-down.htm">Drop-down list (Input)</a></li>
