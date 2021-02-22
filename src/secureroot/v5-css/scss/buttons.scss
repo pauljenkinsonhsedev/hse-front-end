@@ -27,7 +27,7 @@
     @include type-setting(0);
 
     &:focus {
-        outline: $focus-width solid #fd0;
+        outline: $focus-width solid $focus;
     }
 
     transition: all 300ms ease-in-out;
@@ -45,22 +45,40 @@ a {
     &.btn {
         @extend %button-cosmetic;
 
+        &:disabled {
+            background-color: rgba(#eee, .5);
+            color: #ccc;
+        }
+
         &-small {
             padding: ($vr) $dp+$vr;
         }
     }
 
-    &.btn-green {
+    &.btn-primary {
         background-color: $yes;
         color: #FFF;
+
+        &:disabled {
+            background-color: rgba($yes, .5);
+            color: #FFF;
+        }
     }
-    &.btn-red {
+    &.btn-cautionary {
         background-color: $red;
         color: #FFF;
+         &:disabled {
+            background-color: rgba($red, .5);
+            color: #FFF;
+        }
     }
 
-    &.btn-yellow {
+    &.btn-important {
         background-color: $focus;
         color: #333;
+         &:disabled {
+            background-color: rgba($focus, .5);
+            color: #666;
+        }
     }
 }
