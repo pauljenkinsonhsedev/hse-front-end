@@ -12,22 +12,22 @@ export function cookieMessageHTML(status) {
                     </div>
 
                     <div class="cookies-message__actions">
-                        <a class="btn btn-green" id="acceptAllCookies" href="#">Yes, I’m OK with analytics cookies</a>
-                        <a class="btn btn-green" id="rejectAllCookies" href="#">No, do not use analytics cookies</a>
+                        <a class="btn btn-primary" id="acceptAllCookies" href="#">Yes, I’m OK with analytics cookies</a>
+                        <a class="btn btn-primary" id="rejectAllCookies" href="#">No, do not use analytics cookies</a>
                     </div>
                 </div>
             `;
     const cookieMessageAccept = `
                 <div class="cookies-message__copy cookies-message-accepted">
                     <p>You've accepted analytics cookies. You can change your <a href="cookies.htm">cookie settings</a> at any time.</p>
-                    <button id="cookieNotifyClose" class="btn btn-red">Hide</button>
+                    <button id="cookieNotifyClose" class="btn btn-cautionary">Hide</button>
                 </div>
             `;
 
     const cookieMessageReject = `
                 <div class="cookies-message__copy cookies-message-rejected">
                     <p>You've rejected analytics cookies. You can change your <a href="cookies.htm">cookie settings</a> at any time.</p>
-                    <button id="cookieNotifyClose" class="btn btn-red">Hide</button>
+                    <button id="cookieNotifyClose" class="btn btn-cautionary">Hide</button>
                 </div>
             `;
 

@@ -14,7 +14,7 @@
   + label {
     cursor: pointer; /* "hand" cursor */
     @extend .btn;
-    @extend .btn-green;
+    @extend .btn-primary;
   }
 
   &:focus + label {
