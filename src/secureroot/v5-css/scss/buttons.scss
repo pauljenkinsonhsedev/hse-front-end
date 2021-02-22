@@ -4,7 +4,10 @@
     outline: 0;
     display: inline-block;
     background-color: #eee;
-    margin-bottom: $dp*2;
+
+    #pageContainer & {
+        margin-bottom: $dp*2;
+    }
 
     text-align: center;
     text-decoration: none;
@@ -41,6 +44,10 @@ button,
 a {
     &.btn {
         @extend %button-cosmetic;
+
+        &-small {
+            padding: ($vr) $dp+$vr;
+        }
     }
 
     &.btn-green {
@@ -50,5 +57,10 @@ a {
     &.btn-red {
         background-color: $red;
         color: #FFF;
+    }
+
+    &.btn-yellow {
+        background-color: $focus;
+        color: #333;
     }
 }
