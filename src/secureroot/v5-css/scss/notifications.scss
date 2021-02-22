@@ -143,10 +143,6 @@ text-decoration: underline;
 cursor: pointer;
 }
 
-.notification-banner.global button {
-color: $focus;
-}
-
 
 
 .brexit-icon {
@@ -154,19 +150,20 @@ float: left;
 }
 
 .notification-container {
-width: 90%;
-margin-top: 10px;
-margin-bottom: 10px;
-padding: 10px 5%;
-@media only screen and (min-width : 980px) {
-padding: 0;
-width: 940px;
-margin-top: 20px;
-margin-bottom: 20px;
-float: none;
-}
-float: left;
-position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px 5%;
+    @media only screen and (min-width : 980px) {
+        padding: 0;
+        width: 940px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        // float: none;
+    }
 }
 
 .notification-container p {
@@ -201,19 +198,19 @@ float: left;
 }
 }
 
-.notification-hide, .notification-banner.global .notification-hide
-{
-background: none;
-border: none;
-float: right;
-margin-top: 10px;
-@media only screen and (min-width : 980px) {
-position: relative;
-right: 0;
-top: 0;
-margin-bottom: 20px;
-}
-}
+// .notification-hide, .notification-banner.global .notification-hide
+// {
+// background: none;
+// border: none;
+// float: right;
+// margin-top: 10px;
+// @media only screen and (min-width : 980px) {
+// position: relative;
+// right: 0;
+// top: 0;
+// margin-bottom: 20px;
+// }
+// }
 
 .notification-bar-title {
 font-weight: bold;
