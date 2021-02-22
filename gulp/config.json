@@ -14,7 +14,10 @@
             "vendor": "./src/shared/js/vendor/**/*.js",
             "vendorOutput": "./secureroot/hseonline/website/livelive/secureroot/assets/v5-js/vendor",
             "all": "./src/shared/js/**/*.js",
-            "entrypoint": "./src/shared/js/app.js",
+            "entrypoint": [
+                "./src/shared/js/v5-main.js",
+                "./src/shared/js/v5-cookies.js"
+            ],
             "outputSecureroot": "./secureroot/hseonline/website/livelive/secureroot/assets/v5-js",
             "outputdevguide": "./devguide/assets/v5-js"
         }
@@ -44,7 +47,6 @@
                 "./src/secureroot/v5-scripts/v5-hse-primary.min.js",
                 "./src/secureroot/v5-scripts/slinky-ie11-fix.js",
                 "./src/secureroot/v5-scripts/website-feedback.src.js",
-                "./src/secureroot/v5-scripts/notification-bar.js",
                 "./src/secureroot/v5-scripts/top-tasks.js",
                 "./src/secureroot/v5-scripts/left-nav.js",
                 "./src/secureroot/v5-scripts/aria.accordion.min.js"
