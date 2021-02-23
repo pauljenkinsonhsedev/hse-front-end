@@ -1,6 +1,10 @@
 import Cookies from 'js-cookie';
 import { customEventListener } from '../utils/add-custom-event-listener';
 
+// const setCookiesSettings = { path: '/', domain: 'hse.gov.uk', secure: true, sameSite: 'strict', expires: 1};
+// const setCookiesSettings = { path: '/', domain: 'beta.hse.gov.uk', secure: true, sameSite: 'strict', expires: 1};
+const setCookiesSettings = { path: '/', domain: 'localhost', secure: false, sameSite: 'strict', expires: 1};
+
 // So we can access Cookies inline for Analytics in the HTML
 window.Cookies = Cookies;
 
@@ -26,7 +30,7 @@ export function notificationBanner() {
 
             customEventListener('.notification-hide', 'click', (event) => {
                 event.preventDefault();
-                Cookies.set('global_banner', 'true' , { path: '/', expires: 1});
+                Cookies.set('global_banner', 'true' , setCookiesSettings);
                 globalNotification.remove();
             });
         }

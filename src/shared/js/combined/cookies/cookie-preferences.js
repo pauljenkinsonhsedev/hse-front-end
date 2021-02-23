@@ -1,8 +1,10 @@
 import Cookies from 'js-cookie';
 import { customEventListener } from '../utils/add-custom-event-listener';
 import { cookieMessageHTML } from './cookie-banner-html.js';
-import { cookiesGTM } from './cookie-gtm.js';
 import { dialogModalAjax } from '../dialogs.js';
+// const setCookieSettings = {path: '/', domain: 'hse.gov.uk', secure: true, sameSite: 'strict', expires: 365};
+// const setCookieSettings = { path: '/', domain: 'beta.hse.gov.uk', secure: true, sameSite: 'strict', expires: 365 };
+const setCookieSettings = {path: '/', domain: 'localhost', secure: false, sameSite: 'strict', expires: 365};
 
 // So we can access Cookies inline for Analytics in the HTML
 window.Cookies = Cookies;
@@ -39,26 +41,29 @@ function setCookiePreferences(preferences) {
     });
     const stringPreferences = JSON.stringify(preferences);
     const encodedPreferences = window.btoa(stringPreferences);
-    Cookies.set('cookies_policy', encodedPreferences, {path: '/', domain: 'beta.hse.gov.uk', secure: true , expires: 365});
+    Cookies.set('cookies_policy', encodedPreferences, setCookieSettings);
     setFields();
 }
 
 function controlAnalytics() {
     // set unset GA
     const preferences = Cookies.get('cookies_policy');
-
     if (preferences) {
         const decodedPreferences = window.atob(preferences);
         const json = JSON.parse(decodedPreferences);
         const gaSettings = json['cookie-usage-analytics'];
 
         if (gaSettings === true) {
-            Cookies.set('optInGoogleTracking', true);
-
-            cookiesGTM(true);
+            Cookies.set('optInGoogleTracking', true, setCookieSettings);
         } else {
-            Cookies.set('optInGoogleTracking', false);
-            cookiesGTM(false);
+            Cookies.set('optInGoogleTracking', false, setCookieSettings);
+            Cookies.remove('_ga', setCookieSettings);
+            Cookies.remove('_gid', setCookieSettings);
+            Cookies.remove('_gali', setCookieSettings);
+            Cookies.remove('_dc_gtm_UA-324220-1', setCookieSettings);
+            Cookies.remove('_gat_UA-324220-1', setCookieSettings);
+            Cookies.remove('_ga_1Y6RD6YT11', setCookieSettings);
+            Cookies.remove('nmstat', setCookieSettings); // Site Improve cookie - invoked by Google Analytics
         }
     }
 }
@@ -78,7 +83,9 @@ function formFeedback() {
 }
 
 export function cookiePreferences() {
-    Cookies.set('optInGoogleTracking', false);
+    // Cookies.set('optInGoogleTracking', true, {path: '/', domain: 'hse.gov.uk', secure: true, expires: 365});
+    Cookies.set('optInGoogleTracking', false, setCookieSettings);
+    // Cookies.set('optInGoogleTracking', true, {path: '/', domain: 'localhost', secure: false, expires: 365});
 
     const body = document.getElementsByTagName('body')[0];
     const header = document.getElementById('headerContainer');
@@ -153,7 +160,6 @@ export function cookiePreferences() {
         // set cookies
         setCookiePreferences({'cookie-essential': true, 'cookie-usage-analytics': true});
         controlAnalytics();
-        formFeedback();
         // set message
         messageContainer.innerHTML = cookieMessageHTML('accepted');
     });
