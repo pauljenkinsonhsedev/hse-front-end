@@ -26,11 +26,11 @@
 
     @include type-setting(0);
 
+    transition: all 300ms ease-in-out;
+
     &:focus {
         outline: $focus-width solid $focus;
     }
-
-    transition: all 300ms ease-in-out;
 }
 
 .btn + .btn {
@@ -45,6 +45,9 @@ a {
     &.btn {
         @extend %button-cosmetic;
 
+        &:hover {
+            background-color: darken(#eee, 10%);
+        }
         &:disabled {
             background-color: rgba(#eee, .5);
             color: #ccc;
@@ -57,26 +60,37 @@ a {
 
     &.btn-primary {
         background-color: $yes;
-        color: #FFF;
+        color: $white;
+
+        &:hover {
+            background-color: lighten($yes, 10%);
+        }
 
         &:disabled {
             background-color: rgba($yes, .5);
-            color: #FFF;
+            color: $white;
         }
     }
+
     &.btn-cautionary {
         background-color: $red;
-        color: #FFF;
-         &:disabled {
+        color: $white;
+        &:hover {
+            background-color: lighten($red, 10%);
+        }
+        &:disabled {
             background-color: rgba($red, .5);
-            color: #FFF;
+            color: $white;
         }
     }
 
     &.btn-important {
         background-color: $focus;
         color: #333;
-         &:disabled {
+        &:hover {
+            background-color: lighten($focus, 10%);
+        }
+        &:disabled {
             background-color: rgba($focus, .5);
             color: #666;
         }
