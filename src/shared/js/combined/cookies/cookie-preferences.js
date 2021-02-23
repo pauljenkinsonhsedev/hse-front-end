@@ -2,6 +2,7 @@ import Cookies from 'js-cookie';
 import { customEventListener } from '../utils/add-custom-event-listener';
 import { cookieMessageHTML } from './cookie-banner-html.js';
 import { cookiesGTM } from './cookie-gtm.js';
+import { dialogModalAjax } from '../dialogs.js';
 
 // So we can access Cookies inline for Analytics in the HTML
 window.Cookies = Cookies;
@@ -62,6 +63,20 @@ function controlAnalytics() {
     }
 }
 
+function formFeedback() {
+    const dialog = document.createElement('div');
+    dialog.className = 'dialog dialog-generic';
+    const content = `<div class="dialog__copy">
+        <h2>Your cookie settings were saved</h2>
+        <p>HSE may set additional cookies and, if so, will have their own cookie policy and banner.</p>
+        </div>
+        <div class="dialog__actions">
+        <button class="btn btn-cautionary close-action">Close</button>
+    </div>`;
+    dialog.innerHTML = content;
+    dialogModalAjax(dialog);
+}
+
 export function cookiePreferences() {
     Cookies.set('optInGoogleTracking', false);
 
@@ -113,6 +128,7 @@ export function cookiePreferences() {
             event.preventDefault();
             setFields();
             submitForm();
+            formFeedback();
         });
 
         const choices = document.querySelectorAll('.input-switch');
@@ -137,7 +153,7 @@ export function cookiePreferences() {
         // set cookies
         setCookiePreferences({'cookie-essential': true, 'cookie-usage-analytics': true});
         controlAnalytics();
-
+        formFeedback();
         // set message
         messageContainer.innerHTML = cookieMessageHTML('accepted');
     });
@@ -160,5 +176,6 @@ export function cookiePreferences() {
         setCookiePreferences({'cookie-essential': true, 'cookie-usage-analytics': true});
         controlAnalytics();
         setFields();
+        formFeedback();
     });
 }
