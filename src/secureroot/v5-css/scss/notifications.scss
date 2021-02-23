@@ -45,6 +45,7 @@ cursor: pointer;
 .cookies-message__heading {
     color: $red;
     @include type-setting(1);
+    margin-bottom: 20px;
 }
 
 .cookies-message__copy {
