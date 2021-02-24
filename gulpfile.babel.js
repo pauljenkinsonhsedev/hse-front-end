@@ -7,7 +7,7 @@
 /* -------------------------------------------------------------------------------- */
 
 const { task, series } = require('gulp');
-import { hseBuild, workspaceBuild, commonTasks, prodTasks } from './gulp/tasks/base/build.js';
+import { hseBuild, devguideBuild, commonTasks, prodTasks } from './gulp/tasks/base/build.js';
 import requireDir from 'require-dir';
 
 // index all gulp tasks
@@ -17,7 +17,7 @@ requireDir('./gulp/tasks', { recurse: true });
 task('default', series(hseBuild, commonTasks));
 
 // Development task
-task('development', series(workspaceBuild, commonTasks));
+task('development', series(devguideBuild, commonTasks));
 
 // Production task
-task('production', series(hseBuild, workspaceBuild, prodTasks));
+task('production', series(hseBuild, devguideBuild, prodTasks));

@@ -1769,59 +1769,7 @@ div.icaplr span.download {
   padding: 5px 10px;
   z-index: 999; }
 
-ul.semtabs {
-  margin: 0 auto !important;
-  padding: 0;
-  clear: both;
-  list-style: none;
-  overflow: hidden;
-  float: left; }
 
-ul.semtabs li {
-  float: left;
-  margin: 0 6px 0 0;
-  padding: 0;
-  list-style: none;
-  background-color: #464646;
-  border-radius: 5px 5px 0 0; }
-
-ul.semtabs li.active {
-  background-color: #e6e6e6; }
-
-ul.semtabs li a {
-  display: block;
-  padding: 3px 10px;
-  text-decoration: none;
-  font-weight: 700;
-  color: #fff; }
-
-ul.semtabs li.active a {
-  color: #464646; }
-
-.tabPanel {
-  clear: both;
-  background-color: #e6e6e6;
-  padding: 10px 10px 5px 10px;
-  margin-bottom: 10px;
-  display: inline-block;
-  border-radius: 0 10px 10px 10px; }
-
-.printableTab {
-  display: none; }
-
-.tabContainer {
-  margin: 1em 0; }
-
-ul.semtabs li a {
-  border-bottom: 1px solid #e6e6e6; }
-
-ul.semtabs li a:focus {
-  border: 1px dotted #fff;
-  text-decoration: underline; }
-
-ul.semtabs li.active a:focus {
-  border: 1px dotted #b82533;
-  text-decoration: underline; }
 
 div.diaryMonth {
   margin-bottom: 30px; }
@@ -2445,7 +2393,7 @@ div#nyroModalWrapper #nyroModalContent {
     list-style: none; } }
 
 /* v4.2.8 (V5 Edit) */
-/* 
+/*
 	Contents
 
 	- Framework core styles
@@ -2453,7 +2401,7 @@ div#nyroModalWrapper #nyroModalContent {
 	- Google autocomplete styles
 	- jQueryUI
 */
-/* v4.2.5 minified with http://cssminifier.com/ 
+/* v4.2.5 minified with http://cssminifier.com/
 *  Yui @ http://refresh-sf.com/yui/ created socail media layout issues
 *  minifycss @ http://www.minifycss.com/css-compressor/ lost 'x' close on pop-ups
 */
@@ -4094,7 +4042,7 @@ font-size: 2em; }
 color: #fff; }
 
 Font Awesome uses the Unicode Private Use Area (PUA) to ensure screen
-readers do not read off random characters that represent icons 
+readers do not read off random characters that represent icons
 
 .fa-caret-down:before {
 content: "\f0d7"; }
@@ -4266,7 +4214,7 @@ h1.offCanvasHeaderLogo {
   /*
 #navigationContainer, .headerLogo {
 display: none;
-// Hides HSE logo in mobile view  
+// Hides HSE logo in mobile view
 }
 */ }
 
@@ -5200,28 +5148,7 @@ body.lwet #feature-home {
 .itemThumbBook abbr {
   display: inline-block; }
 
-/* JQuery UI Tabs */
-.tabPanel {
-  width: 100% !important; }
 
-#contentContainer ul.tabs {
-  margin-bottom: 0 !important; }
-
-#contentContainer ul.tabs a, #contentContainer ul.tabs a:visited {
-  color: white; }
-
-#contentContainer ul.tabs li.active a {
-  color: #333333; }
-
-.tabPanel {
-  border-radius: 0 !important; }
-
-ul.semtabs li {
-  border-radius: 0 !important;
-  padding: 5px; }
-
-ul.semtabs li a {
-  border-bottom: none !important; }
 
 /* Desktop */
 @media only screen and (min-width: 980px) {

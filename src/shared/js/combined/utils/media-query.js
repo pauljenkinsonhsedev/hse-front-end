@@ -2,7 +2,7 @@ export function mediaQuery() {
   let result;
 
   const small = '375';
-  const medium = '768';
+  const medium = '800';
   const large = '980';
 
   const smallDeviceQuery = window.matchMedia(`(min-width: ${small}px)`);
