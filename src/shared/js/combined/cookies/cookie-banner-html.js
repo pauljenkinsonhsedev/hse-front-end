@@ -8,12 +8,13 @@ export function cookieMessageHTML(status) {
                     <p class="cookies-message__heading">Can we use cookies in our services?</p>
                     <div class="cookies-message__copy">
                         <p>We’d like to use analytics cookies to collect information about how you use our services. We use this information to improve our service.</p>
-                        <p>You can <a href="privacy-cookies.htm">read more about our cookies</a> before you decide.</p>
                     </div>
 
                     <div class="cookies-message__actions">
                         <a class="btn btn-primary" id="acceptAllCookies" href="#">Yes, I’m OK with analytics cookies</a>
                         <a class="btn btn-primary" id="rejectAllCookies" href="#">No, do not use analytics cookies</a>
+
+                        <p><a href="/cookies.htm">View cookies</a></p>
                     </div>
                 </div>
             `;
