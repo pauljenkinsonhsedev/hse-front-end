@@ -2,9 +2,9 @@ import Cookies from 'js-cookie';
 import { customEventListener } from '../utils/add-custom-event-listener';
 import { cookieMessageHTML } from './cookie-banner-html.js';
 import { dialogModalAjax } from '../dialogs.js';
-// const setCookieSettings = {path: '/', domain: 'hse.gov.uk', secure: true, sameSite: 'strict', expires: 365};
+// const setCookieSettings = { path: '/', domain: 'hse.gov.uk', secure: true, sameSite: 'strict', expires: 365 };
 // const setCookieSettings = { path: '/', domain: 'beta.hse.gov.uk', secure: true, sameSite: 'strict', expires: 365 };
-const setCookieSettings = {path: '/', domain: 'localhost', secure: false, sameSite: 'strict', expires: 365};
+const setCookieSettings = { path: '/', domain: 'localhost', secure: false, sameSite: 'strict', expires: 365 };
 
 // So we can access Cookies inline for Analytics in the HTML
 window.Cookies = Cookies;
