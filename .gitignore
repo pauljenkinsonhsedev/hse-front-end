@@ -10,7 +10,7 @@ brexit/
 coronavirus/
 news/
 asbestos
-/src/secureroot/html
+src/secureroot/html/**/*
 src/secureroot/**/*.lbi
 /secureroot
 /devguide
