@@ -2,6 +2,7 @@ import Cookies from 'js-cookie';
 import { customEventListener } from '../utils/add-custom-event-listener';
 import { cookieMessageHTML } from './cookie-banner-html.js';
 import { dialogModalAjax } from '../dialogs.js';
+
 // const setCookieSettings = { path: '/', domain: 'hse.gov.uk', secure: true, sameSite: 'strict', expires: 365 };
 // const setCookieSettings = { path: '/', domain: 'beta.hse.gov.uk', secure: true, sameSite: 'strict', expires: 365 };
 const setCookieSettings = { path: '/', domain: 'localhost', secure: false, sameSite: 'strict', expires: 365 };
@@ -83,9 +84,7 @@ function formFeedback() {
 }
 
 export function cookiePreferences() {
-    // Cookies.set('optInGoogleTracking', true, {path: '/', domain: 'hse.gov.uk', secure: true, expires: 365});
     Cookies.set('optInGoogleTracking', false, setCookieSettings);
-    // Cookies.set('optInGoogleTracking', true, {path: '/', domain: 'localhost', secure: false, expires: 365});
 
     const body = document.getElementsByTagName('body')[0];
     const header = document.getElementById('headerContainer');
