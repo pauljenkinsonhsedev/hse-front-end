@@ -40,11 +40,15 @@ function copyDevguideAssets() {
   .pipe(connect.reload())
   .pipe(dest(config.devguide.markup.output));
 
+  const imageAssets = src([config.devguide.imageAssets.all])
+  .pipe(connect.reload())
+  .pipe(dest(config.devguide.imageAssets.output));
+
   const misc = src([config.devguide.copyjs.all])
   .pipe(dest(config.devguide.copyjs.output));
 
 
-  return merge(html, tidy, moment, misc);
+  return merge(html, imageAssets, tidy, moment, misc);
 };
 
 task('devguideHighChats', copyHighchartsjs);
