@@ -22,7 +22,6 @@ export function lightbox() {
 
         if (target.classList.contains('prev') || e.key === 'ArrowLeft') {
             if (pos === 0) {
-                console.log('current', pos);
                 goTo = length -1;
             } else {
                 goTo = pos -1;
@@ -31,7 +30,6 @@ export function lightbox() {
 
         if (target.classList.contains('next') || e.key === 'ArrowRight') {
             if (pos === (length -1)) {
-                console.log('current', pos);
                 goTo = 0;
             } else {
                 goTo = pos + 1;
@@ -86,8 +84,10 @@ export function lightbox() {
             height = `${height}px`;
         }
 
-        return `
-        <div class="lightbox__container">
+        // const containerElement = document.createElement('div');
+        // containerElement.className = '.lightbox__container';
+        const html = `
+        <div class=".lightbox__container">
             <div class="lightbox__content" style="max-width: ${width}; max-height: ${height};">
                 <div class="lightbox__content--panel" data-pos="${pos}" data-caption="${caption}">${newImage.outerHTML}</div>
             </div>
@@ -96,6 +96,21 @@ export function lightbox() {
                 <div class="lightbox__caption">${caption}</div>
                 <button class="lightbox__nav next" title="next"></button>
             </div>
-        </div>`;
+        </div>
+        `;
+
+        // containerElement.innerHTML = html;
+        // const modal = document.querySelector('.modal__container');
+
+        // const image = () => Promise.resolve(sourceUrl);
+        // async function imageLoaded(){
+        //     const res = await image();
+        //     console.log(res);
+        //     modal.classList.add('loaded');
+        // }
+
+        // imageLoaded();
+
+        return html;
     }
 }
