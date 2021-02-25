@@ -3,7 +3,7 @@ import { customEventListener } from './utils/add-custom-event-listener.js';
 import { mediaQuery } from './utils/media-query.js';
 
 export function lightbox() {
-    const lightboxHandle = document.querySelectorAll('.lightbox li a');
+    const lightboxHandle = document.querySelectorAll('.lightbox');
     const lightboxArray = [...lightboxHandle];
     const modalOptions = {
         size: 'default',
@@ -15,15 +15,12 @@ export function lightbox() {
     function navigation (e) {
         let goTo = Number;
         const lightbox = document.querySelector('.lightbox__content--panel');
-        const lightboxes = document.querySelectorAll('.lightbox__content--panel');
-        const selected = [...lightboxes].filter(element => element.classList.contains('active'));
         const related = [...lightboxHandle].filter(element => element.rel === 'asbestos-gallery');
         const length = related.length;
         const pos = parseInt(lightbox.dataset.pos);
-
         const target = e.target;
 
-        if (target.classList.contains('prev')) {
+        if (target.classList.contains('prev') || e.key === 'ArrowLeft') {
             if (pos === 0) {
                 console.log('current', pos);
                 goTo = length -1;
@@ -32,7 +29,7 @@ export function lightbox() {
             }
         }
 
-        if (target.classList.contains('next')) {
+        if (target.classList.contains('next') || e.key === 'ArrowRight') {
             if (pos === (length -1)) {
                 console.log('current', pos);
                 goTo = 0;
@@ -40,13 +37,6 @@ export function lightbox() {
                 goTo = pos + 1;
             }
         }
-
-        // console.log('selected', selected);
-        // console.log('related', related);
-        // console.log('related length', length);
-        console.log('goTo', goTo);
-
-        console.log('navigate');
 
         const html = buildLightbox(goTo);
         const modalContent = document.querySelector('.modal__content');
@@ -66,17 +56,17 @@ export function lightbox() {
     // prev next events
     customEventListener('.lightbox__nav', 'click', navigation);
 
-    // window.addEventListener('keydown', (e) => {
-    //     if (e.keyCode === 39 || e.keyCode === 37) {
-    //     console.log('nav');
-    //         navigation();
-    //     }
-    // }, false);
+    // arrow key events
+    window.addEventListener('keydown', (e) => {
+        if (e.keyCode === 39 || e.keyCode === 37) {
+            navigation(e);
+        }
+    }, false);
 
     // build collections
     function buildLightbox(pos) {
         const newImage = document.createElement('img');
-        const source = document.querySelectorAll('.lightbox a')[pos];
+        const source = document.querySelectorAll('.lightbox')[pos];
         const sourceUrl = source.href;
         const caption = source.title;
         newImage.src = source.href;
@@ -96,28 +86,9 @@ export function lightbox() {
             height = `${height}px`;
         }
 
-        // const headers = new Headers({'Access-Control-Allow-Origin': 'https://via.placeholder.com'});
-        // const imagePromise = fetch(sourceUrl, {
-        //     method: 'GET',
-        //     referrerPolicy: 'no-referrer',
-        //     headers: headers,
-        //     credentials: 'include',
-        //     mode: 'cors',
-        //     cache: 'reload'
-        // });
-
-        // Promise
-        // .all([imagePromise])
-        // .then(responses => {
-        //     console.log('imagePromise',responses);
-        // })
-        // .catch(error => {
-        //     console.error(error);
-        // });
-
         return `
         <div class="lightbox__container">
-            <div class="lightbox__content" style="width: ${width}; height: ${height};">
+            <div class="lightbox__content" style="max-width: ${width}; max-height: ${height};">
                 <div class="lightbox__content--panel" data-pos="${pos}" data-caption="${caption}">${newImage.outerHTML}</div>
             </div>
             <div class="lightbox__footer">
@@ -125,7 +96,6 @@ export function lightbox() {
                 <div class="lightbox__caption">${caption}</div>
                 <button class="lightbox__nav next" title="next"></button>
             </div>
-        </div>
-        `;
+        </div>`;
     }
 }
