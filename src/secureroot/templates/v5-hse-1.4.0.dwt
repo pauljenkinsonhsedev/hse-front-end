@@ -94,12 +94,8 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <div id="header">
     <div class="headerTop header js-header">
 		<!-- TemplateBeginMultipleIf --> <!-- TemplateBeginIfClause cond="bodyClass != 'home'" -->
-		<div id="headerLogo">
-    <a class="headerLogo" href="../index.htm">
-    <img src="../assets/v5-images/hse-logo.svg" alt="HSE Logo" />
-    <span>Health and Safety<br />
-        Executive</span>
-    </a></div>
+		<div id="headerLogo" class="headerLogo"><a href="../index.htm">Health and Safety<br>
+        Executive</a></div>
 		<!-- TemplateEndIfClause --><!-- TemplateEndMultipleIf -->
 		<!-- TemplateBeginMultipleIf --> <!-- TemplateBeginIfClause cond="bodyClass == 'home'" -->
 		<h1 id="headerLogo" class="headerLogo"><a href="../index.htm">Health and Safety<br>
