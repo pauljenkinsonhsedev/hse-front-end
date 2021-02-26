@@ -5,16 +5,17 @@ export function cookieMessageHTML(status) {
 
     const cookieMessageStart = `
                 <div class="cookies-message">
-                    <p class="cookies-message__heading">Can we use cookies in our services?</p>
+                    <p class="cookies-message__heading">Cookies on www.hse.gov.uk</p>
                     <div class="cookies-message__copy">
-                        <p>We’d like to use analytics cookies to collect information about how you use our services. We use this information to improve our service.</p>
+                        <p>We use some essential cookies to make this service work.</p>
+                        <p>We’d also like to use analytics cookies so we can understand how you use the service and make improvements.</p>
                     </div>
 
                     <div class="cookies-message__actions">
-                        <a class="btn btn-primary" id="acceptAllCookies" href="#">Yes, I’m OK with analytics cookies</a>
-                        <a class="btn btn-primary" id="rejectAllCookies" href="#">No, do not use analytics cookies</a>
+                        <a class="btn btn-primary" id="acceptAllCookies" href="#">Accept analytics cookies</a>
+                        <a class="btn btn-primary" id="rejectAllCookies" href="#">Reject analytics cookie</a>
 
-                        <p><a href="/cookies.htm">View cookies</a></p>
+                        <p class="cookies-message__link"><a href="/cookies.htm">View cookies</a></p>
                     </div>
                 </div>
             `;

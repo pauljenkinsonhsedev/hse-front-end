@@ -61,6 +61,7 @@ a {
     &.btn-primary {
         background-color: $yes;
         color: $white;
+        margin-bottom: 20px;
 
         &:hover {
             background-color: lighten($yes, 10%);

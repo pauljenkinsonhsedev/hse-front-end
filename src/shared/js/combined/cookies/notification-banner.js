@@ -3,7 +3,7 @@ import { customEventListener } from '../utils/add-custom-event-listener';
 
 // const setCookiesSettings = { path: '/', domain: 'hse.gov.uk', secure: true, sameSite: 'strict', expires: 1};
 // const setCookiesSettings = { path: '/', domain: 'beta.hse.gov.uk', secure: true, sameSite: 'strict', expires: 1};
-const setCookiesSettings = { path: '/', domain: 'localhost', secure: false, sameSite: 'strict', expires: 1};
+   const setCookiesSettings = { path: '/', domain: 'localhost', secure: false, sameSite: 'strict', expires: 1};
 
 // So we can access Cookies inline for Analytics in the HTML
 window.Cookies = Cookies;

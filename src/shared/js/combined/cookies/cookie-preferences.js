@@ -5,7 +5,7 @@ import { dialogModalAjax } from '../dialogs.js';
 
 // const setCookieSettings = { path: '/', domain: 'hse.gov.uk', secure: true, sameSite: 'strict', expires: 365 };
 // const setCookieSettings = { path: '/', domain: 'beta.hse.gov.uk', secure: true, sameSite: 'strict', expires: 365 };
-const setCookieSettings = { path: '/', domain: 'localhost', secure: false, sameSite: 'strict', expires: 365 };
+   const setCookieSettings = { path: '/', domain: 'localhost', secure: false, sameSite: 'strict', expires: 365 };
 
 // So we can access Cookies inline for Analytics in the HTML
 window.Cookies = Cookies;
@@ -74,7 +74,7 @@ function formFeedback() {
     dialog.className = 'dialog dialog-generic';
     const content = `<div class="dialog__copy">
         <h2>Your cookie settings were saved</h2>
-        <p>HSE may set additional cookies and, if so, will have their own cookie policy and banner.</p>
+        <p>Some HSE digital services may set additional cookies and, if so, will have their own cookie policy and banner.</p>
         </div>
         <div class="dialog__actions">
         <button class="btn btn-cautionary close-action">Close</button>
@@ -91,6 +91,10 @@ export function cookiePreferences() {
     const settingsForm = document.getElementById('cookies-settings');
     const cookiesSet = Cookies.get('cookies_policy');
     const messageContainer = document.createElement('section');
+    
+    messageContainer.setAttribute("id", "cookie-message");
+    messageContainer.setAttribute("aria-label", "Cookie message");
+
     let message;
     /*
     ------------------------------------
