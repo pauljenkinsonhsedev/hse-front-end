@@ -94,8 +94,12 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <div id="header">
     <div class="headerTop header js-header">
 		<!-- TemplateBeginMultipleIf --> <!-- TemplateBeginIfClause cond="bodyClass != 'home'" -->
-		<div id="headerLogo" class="headerLogo"><a href="../index.htm">Health and Safety<br>
-        Executive</a></div>
+		<div id="headerLogo">
+    <a class="headerLogo" href="../index.htm">
+    <img src="../assets/v5-images/hse-logo.svg" alt="HSE Logo" />
+    <span>Health and Safety<br />
+        Executive</span>
+    </a></div>
 		<!-- TemplateEndIfClause --><!-- TemplateEndMultipleIf -->
 		<!-- TemplateBeginMultipleIf --> <!-- TemplateBeginIfClause cond="bodyClass == 'home'" -->
 		<h1 id="headerLogo" class="headerLogo"><a href="../index.htm">Health and Safety<br>
@@ -288,7 +292,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   </footer>
 </nav>
 <section id="lastUpdated" aria-label="Last updated">
-<!-- TemplateBeginEditable name="updated" -->Updated:<!-- #BeginDate format:IS1 -->2021-02-24<!-- #EndDate --><!-- TemplateEndEditable -->
+<!-- TemplateBeginEditable name="updated" -->Updated:<!-- #BeginDate format:IS1 -->2021-02-26<!-- #EndDate --><!-- TemplateEndEditable -->
 </section>
 <script src="../assets/v5-js/v5-main.min.js"></script>
 <script src="../assets/v5-js/jquery.min.js"></script>
