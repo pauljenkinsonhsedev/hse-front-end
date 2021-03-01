@@ -39,6 +39,9 @@ class ChartsDefault {
         if (window.location.href.match(/(?:\b|_)(?:testbed)(?:\b|_)/i)) {
             this.path = window.location.protocol + '//' + window.location.host + '/testbed/';
         }
+        if (window.location.href.match(/(?:\b|_)(?:devguide)(?:\b|_)/i)) {
+            this.path = window.location.protocol + '//' + window.location.host + '/devguide/';
+        }
 
         this.init();
     }

@@ -1,8 +1,6 @@
 *.DS_Store
 node_modules
 src/assets/v4-homepage
-build/assets/v4-homepage
-build/**/*.htm
 devkit-v5
 *.bak
 .vscode/settings.json
@@ -12,15 +10,14 @@ brexit/
 coronavirus/
 news/
 asbestos
+src/secureroot/html/**/*
 src/secureroot/**/*.lbi
 /secureroot
 /devguide
 /secureroot.zip
 /devguide.zip
-/src/secureroot/html
 /gulp/tasks/shared/devguide/js/report.html
 /report.html
 /yarn-error.log
 /yarn.lock
 /package-lock.json
-/src/secureroot/html/Templates/v5-hse-1.2.0.dwt

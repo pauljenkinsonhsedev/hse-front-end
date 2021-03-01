@@ -5,8 +5,9 @@ import { loadPicturefillFn } from './combined/utils/picture-elem.js';
 import { fileTypeFunction } from './combined/file-type.js';
 import { getInternetExplorerVersion } from './combined/utils/internet-explorer-detection.js';
 import { tableSortable } from './combined/tables/table-sortable.js';
-import { tabs } from './combined/tabs.js';
+import { feedbackSurvey } from './combined/feedback-survey.js';
 import { dialogModal } from './combined/dialogs.js';
+import { tabs } from './combined/tabs.js';
 import { backLinks } from './combined/back-link.js';
 
 // Window load
@@ -81,4 +82,6 @@ window.addEventListener('DOMContentLoaded',() => {
   if (document.body.contains(anchorSelector)) {
     fileTypeFunction();
   }
+
+  feedbackSurvey();
 }); // end window load

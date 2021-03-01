@@ -119,6 +119,13 @@ export class ChartOptions {
             this.captionText = null;
         }
 
+        let subTitle;
+        if (this.subtitle) {
+            subTitle = '<div style="text-align: center;">' + this.subtitle + '</div>';
+        } else {
+            subTitle = null;
+        }
+
         // get series information
         let units = container.querySelectorAll('.unit');
         let total = 0;
@@ -158,7 +165,7 @@ export class ChartOptions {
             },
             subtitle: {
                 useHTML: true,
-                text: '<div style="text-align: center;">' + this.subtitle + '</div>',
+                text: subTitle,
                 style: {
                     color: '#000',
                     fontFamily: this.fontFamily,
