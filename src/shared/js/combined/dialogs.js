@@ -1,7 +1,6 @@
 import Modal from './utils/modal';
 
 export function dialogModal(container) {
-
     const dialogContainer = document.querySelectorAll('.dialog');
 
     [...dialogContainer].forEach((elem) => {
@@ -12,14 +11,24 @@ export function dialogModal(container) {
         const modalOptions = {
             size: size,
             transition: true,
-            // overlay: true
         };
-
-        console.log('modalOptions', modalOptions);
 
         action.addEventListener('click', () => {
             new Modal(content, modalOptions);
         });
     });
-
 }
+
+
+export function dialogModalAjax(content) {
+    const modalOptions = {
+        size: 'small',
+        transition: true,
+        // overlay: true
+    };
+
+    // console.log('modalOptions', modalOptions);
+    new Modal(content, modalOptions);
+}
+
+

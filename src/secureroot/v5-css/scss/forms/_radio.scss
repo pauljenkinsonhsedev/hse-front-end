@@ -1,0 +1,146 @@
+/*doc
+---
+title: Radio buttons
+name: b-forms-c-radios
+category: Page features - Form elements
+---
+
+```html_example
+<div class="form-group">
+  <fieldset class="fieldset" aria-describedby="changed-name-hint">
+    <legend class="fieldset__legend fieldset__legend--xl">
+      <h1 class="fieldset__heading">
+        Have you changed your name?
+      </h1>
+    </legend>
+    <span id="changed-name-hint" class="hint">
+      This includes changing your last name or spelling your name differently.
+    </span>
+    <div class="radios radios--inline">
+      <div class="radios__item">
+        <input class="radios__input" id="changed-name" name="changed-name" type="radio" value="yes">
+        <label class="label radios__label" for="changed-name">
+          Yes
+        </label>
+      </div>
+      <div class="radios__item">
+        <input class="radios__input" id="changed-name-2" name="changed-name" type="radio" value="no">
+        <label class="label radios__label" for="changed-name-2">
+          No
+        </label>
+      </div>
+    </div>
+  </fieldset>
+</div>
+
+<div class="form-group">
+  <fieldset class="fieldset" aria-describedby="age-consent-hint">
+    <legend class="fieldset__legend fieldset__legend--xl">
+      <h1 class="fieldset__heading">
+        Are you over 18 years old?
+      </h1>
+    </legend>
+    <span id="-consent-hint" class="hint">
+      By selecting yes you are confirming you are legally of age.
+    </span>
+    <div class="radios">
+      <div class="radios__item">
+        <input class="radios__input" id="age-consent" name="-consent" type="radio" value="yes">
+        <label class="label radios__label" for="-consent">
+          Yes
+        </label>
+      </div>
+      <div class="radios__item">
+        <input class="radios__input" id="-consent-2" name="-consent" type="radio" value="no">
+        <label class="label radios__label" for="-consent-2">
+          No
+        </label>
+      </div>
+    </div>
+  </fieldset>
+</div>
+```
+
+*/
+
+.radios {
+  &--inline {
+    .radios__item {
+      display: inline-block;
+    }
+  }
+}
+
+.radios__item {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.25;
+  display: block;
+  position: relative;
+  min-height: 40px;
+  margin-bottom: 10px;
+  padding-left: 40px;
+  clear: left;
+}
+
+.radios__input {
+  cursor: pointer;
+  position: absolute;
+  z-index: 1;
+  top: -2px;
+  left: -2px;
+  width: 44px;
+  height: 44px;
+  margin: 0;
+  opacity: 0;
+}
+
+.radios__label {
+  display: inline-block;
+  margin-bottom: 0;
+  padding: 8px 15px 5px;
+  cursor: pointer;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+
+  &:before {
+    content: '';
+    display: block;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    border: 2px solid $black;
+    border-radius: 50%;
+    background: transparent;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 0;
+    height: 0;
+    border: 10px solid $black;
+    border-radius: 50%;
+    opacity: 0;
+    background: $black;
+  }
+}
+
+.radios__input:checked + .radios__label::after {
+  opacity: 1;
+}
+
+.radios__input:focus + .radios__label::before,
+.radios__input:checked + .radios__label::before {
+    border-radius: 50%;
+    box-shadow: 0 0 0 3px #fd0;
+}

@@ -76,9 +76,11 @@ src/
 └──shared/
     └──js/
     └───────combined/
-    └───────classes/
-    └───────utils/
-    └──app.js
+    └─────────classes/
+    └─────────utils/
+    └──v5-cookies.js
+    └──v5-main.js
+
 ```
 ### Loader utility
 Injects script and link tags into the head or body of the DOM.

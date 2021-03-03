@@ -10,6 +10,10 @@ ol li {
     margin-left: 2.2em;
 }
 
+dd {
+    margin: 10px 0;
+}
+
 ul.listtick li,ul.tick li {
     padding-left: 18px;
 }
@@ -79,4 +83,12 @@ ul.listhorizontal {
 .ie .splitList4 ul:first-child {
     float: none;
     clear: both;
+}
+
+#contentContainer .pressReleases li {
+    padding-bottom: 20px;
+}
+
+#contentContainer .safetyAlerts li {
+    list-style-type: none;
 }

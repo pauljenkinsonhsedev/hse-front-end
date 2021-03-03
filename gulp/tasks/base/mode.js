@@ -9,5 +9,3 @@ export const isDefault = mode.default();
 export const isStaging = mode.staging();
 export const isDev = mode.development();
 export const isProd = mode.production();
-
-console.log('isProd',isProd);

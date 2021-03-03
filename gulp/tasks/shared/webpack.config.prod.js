@@ -6,11 +6,12 @@ const prod = process.env.NODE_ENV === 'production';
 module.exports = {
   mode: 'production',
   target: 'web',
-  entry: [
-    './src/shared/js/app.js'
-  ],
+  entry: {
+    'v5-main.min': ['./src/shared/js/v5-main.js'],
+    'v5-cookies': ['./src/shared/js/v5-cookies.js']
+  },
   output: {
-    filename: 'v5-main.min.js',
+    filename: '[name].js',
   },
   module: {
     rules: [
