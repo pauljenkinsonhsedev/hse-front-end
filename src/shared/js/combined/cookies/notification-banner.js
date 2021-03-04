@@ -10,7 +10,7 @@ window.Cookies = Cookies;
 
 export function notificationBanner() {
     const globalSet = Cookies.get('global_banner');
-    fetch('/ajax/global-message.json')
+    fetch('./assets/ajax/global-message.json')
     .then((response) => response.json())
     .then((data) => {
         const active = data.active;
