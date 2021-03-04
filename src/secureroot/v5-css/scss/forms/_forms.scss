@@ -79,33 +79,28 @@ input:required:valid {
 }
 
 /* Fieldsets */
+.fieldset {
+  padding: 0;
+  margin: 0 0 $dp*2 0;
+  border: none;
+}
 .fieldset__heading {
   @include type-setting(2);
   margin-bottom: $dp * 2;
   color: $red;
 }
 
+.fieldset__legend {
+  margin-bottom: $dp*3;
+}
+
 /* Labels */
 .label {
   display: block;
   @include type-setting(3);
-  font-weight: normal;
+  font-weight: 400;
   margin-bottom: $dp;
-}
-
-/* Fieldset */
-fieldset {
-  padding: 0;
-  margin: 0 0 $dp*2 0;
-  border: none;
-
-  &__legend {
-    background: $red;
-  }
-
-  &__heading {
-    background: $red;
-  }
+  max-width: 55ex;
 }
 
 .input-email,
@@ -163,7 +158,7 @@ fieldset {
 
 textarea {
   width: 100%;
-  max-width: 60ex;
+  max-width: 45ex;
 }
 
 input {
