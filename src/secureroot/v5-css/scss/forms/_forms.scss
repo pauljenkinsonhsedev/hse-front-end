@@ -91,7 +91,15 @@ input:required:valid {
 }
 
 .fieldset__legend {
-  margin-bottom: $dp*3;
+  margin-bottom: $dp;
+
+  p {
+    margin-bottom: $dp;
+
+    &:last-of-type {
+      margin-bottom: $dp*3;
+    }
+  }
 }
 
 /* Labels */

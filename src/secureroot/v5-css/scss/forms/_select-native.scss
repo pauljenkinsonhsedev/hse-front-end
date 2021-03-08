@@ -10,12 +10,6 @@ category: Page features - Form elements
 ```
 
 */
-
-.select {
-    @extend .input;
-    width: 45ex;
-}
-
 .arrow {
     width: 0;
     height: 0;
@@ -35,22 +29,23 @@ category: Page features - Form elements
     }
 }
 
+.select {
+    @extend .input;
+    width: 45ex;
+}
+
 .select-styled {
+    display: inline-block;
     position: relative;
     &:after {
         content: '';
         display: block;
         width: 0;
         height: 0;
-
         position: absolute;
         right: $dp*2;
         top: $dp*2;
 
         @extend .arrow-down;
-
-        &:focus {
-            @extend .arrow-up;
-        }
     }
 }
