@@ -1,0 +1,9 @@
+.date-input__item {
+  display: inline-block;
+  margin-right: $dp;
+}
+
+.date-input__label {
+  @include type-setting(0);
+  font-weight: 400;
+}

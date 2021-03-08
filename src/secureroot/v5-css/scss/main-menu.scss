@@ -1,0 +1,170 @@
+// Main menu
+
+.desktop-hide {
+display: none;
+@media only screen and (min-width : $desktop) {
+    display: block;
+    }
+}
+
+.menu {
+display: none;
+font-size: 1.1em!important;
+@media only screen and (min-width : $desktop) {
+display: block;
+}
+}
+
+@media only screen and (min-width : $desktop) {
+
+.menu-button {
+display: none;
+}
+
+}
+
+.menu-button {
+float: right;
+height: 25px;
+width: 25px;
+padding: 0;
+background: none;
+border: none;
+}
+
+.menu-button:hover {
+cursor: pointer;
+}
+
+.menu.active {
+display: block;
+}
+
+.menu a {
+display: block;
+}
+
+.no-js .menu {
+display: block;
+}
+
+.menu {
+width: 100%;
+@media only screen and (min-width : $desktop) {
+max-width: 940px;
+min-width: 940px;
+margin: 0 auto;
+}
+clear: both;
+font-size: 1rem;
+background-color: $gray;
+}
+
+.menu li {
+width: 100%;
+float: left;
+list-style-type: none;
+background: none;
+padding: 0;
+border-bottom: 1px solid #c2c2c2;
+@media only screen and (min-width : $desktop) {
+width: auto;
+margin: 0;
+float: left;
+text-align: center;
+position: relative;
+background-color: $red;
+border-bottom: none;
+}
+
+}
+
+.menu li a:hover {
+background-color: $black;
+color: white;
+}
+
+.menu li a {
+text-decoration: none;
+float: left;
+width: 100%;
+color: $body;
+box-sizing: border-box;
+padding: 15px 5% 15px 5%;
+line-height: 25px;
+@media only screen and (min-width : $desktop) {
+position: relative;
+background-image: none;
+vertical-align: middle;
+font-weight: bold;
+color: #fff;
+padding: 6px 19px 0 19px;
+height: 33px;
+text-decoration: none;
+display: block;
+line-height: inherit;
+}
+
+}
+
+.menu li a:hover {
+@media only screen and (min-width : $desktop) {
+background-color: $hseblack;
+}
+
+}
+
+
+.full-width-container {
+width: 100%;
+float: left;
+clear: both;
+}
+
+.responsive-container {
+width: 90%;
+padding-left: 5%;
+padding-right: 5%;
+}
+
+.responsive-nav-container {
+width: 100%;
+}
+
+.responsive-nav-container .menu li:hover a::before {
+color: white;	
+}
+
+// icons
+
+.menu li a::before {
+content: " ";
+background-image: url('../../assets/v5-images/icons/svg/solid/chevron-right-gray.svg');
+@media only screen and (min-width : $desktop) {
+display: none;
+}
+float: right;
+background-repeat: no-repeat;
+display: inline-block;
+width: 25px;
+height: 25px;
+margin: 0;
+}
+
+.menu li a:hover::before {
+content: " ";
+background-image: url('../../assets/v5-images/icons/svg/solid/chevron-right-white.svg');
+@media only screen and (min-width : $desktop) {
+display: none;
+}
+float: right;
+background-repeat: no-repeat;
+display: inline-block;
+width: 25px;
+height: 25px;
+margin: 0;
+}
+
+.menu li a:focus::before {
+background-image: url('../../assets/v5-images/icons/svg/solid/chevron-right-dark-gray.svg');
+}

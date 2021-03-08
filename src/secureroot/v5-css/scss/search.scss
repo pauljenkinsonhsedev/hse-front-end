@@ -1,0 +1,182 @@
+// Google Custom Search
+
+#globalSearch, #globalSearchMobile {
+margin-top: 20px;
+@media only screen and (min-width : $desktop) {
+margin-top: 0px;
+}
+}
+
+#globalSearch tr, #globalSearchMobile  tr {
+background-color: $red;
+}
+
+.gsc-search-box {
+margin: 0 !important;	
+background-color: $red;
+background: none !important;
+font-size: 0.9rem !important;
+}
+
+input.gsc-input {
+width: 100% !important;
+background-color: white !important;	
+background-color: white !important;
+text-indent: 10px !important;
+padding: 10px !important;
+padding: 0px !important;
+}
+
+td.gsc-input {
+padding: 0 !important;
+margin: 0 !important;
+width: 100% !important;
+font-size: 0.9rem !important;
+}
+
+td.gsib_a, td.gsib_b  {
+padding: 0 !important;
+}
+
+.gsc-input-box {
+border: 0 !important;	
+border-top-left-radius: 0 !important;
+border-bottom-left-radius: 0 !important;
+}
+
+.gsc-search-button {
+float: left !important;
+margin-left: 0 !important;
+width: auto !important;
+padding: 0 !important;
+background: $hseblack !important;
+min-width: 38px !important;
+max-width: 38px !important;
+min-height: 38px !important;
+max-height: 38px !important;
+}
+
+.gsc-search-button-v2 {
+font-size: 0.9rem !important;
+background-color: $hseblack !important;
+border: 0 !important;
+border-radius: 0 !important;
+-webkit-border-radius: 0 !important;
+padding: 0 !important;
+}
+
+.gsc-search-button-v2:hover {
+cursor: pointer;
+}
+
+.gsc-search-button-v2 svg {
+fill: white !important;
+}
+
+td.gsib_b {
+background-color: white !important;
+}
+.gsst_a .gscb_a {
+color: $red !important;
+font-size: 30px !important;
+position: relative;
+top: 2px;
+}
+
+#globalSearch #gsc-i-id1 {
+margin: 0 !important;
+height: 38px !important;
+background: none !important;
+background-color: white !important;
+}
+
+.gsst_b {
+padding: 0 !important;
+}
+
+// Mobile css fix
+
+.gsc-input-box {
+padding: 0 !important;
+}
+
+// a:focus
+
+input.gsc-input:focus, #baseStrip ul.ddmswitch li a:focus {
+outline: #ffdd00 5px solid !important;
+outline-color: #ffdd00 !important;
+}
+
+td.gsc-search-button button:focus {
+outline: #ffdd00 5px solid !important;
+outline-color: #ffdd00 !important;    
+}
+
+// Search results
+
+.gcs-results {
+	
+.gs-title {
+font-size: 1.4rem !important;
+line-height: normal !important;
+}
+
+.gs-snippet {
+font-size: 1.0rem !important;
+}
+	
+.gsc-input {
+border: none !important;
+margin: 0 !important;
+height: 36px !important;
+font-size: 0.9rem !important;
+}
+	
+.gsc-input-box {
+border: 1px solid $hseblack !important;
+border-right: 0px !important;
+border-top-left-radius: 0 !important;
+border-bottom-left-radius: 0 !important;
+margin: 0 !important;
+height: 38px !important;
+}
+	
+.gsst_b {
+padding: 0 !important;
+}
+	
+.gsc-search-button-v2 {
+background-color: $red !important;
+}
+
+	
+.gsc-control-cse {
+padding: 0!important;
+}
+	
+.gsc-control-cse .gs-spelling, .gsc-control-cse .gs-result .gs-title, .gsc-control-cse .gs-result .gs-title * {
+font-size: 1.4rem !important;
+}
+	
+td.gsib_b {
+background: none;
+}	 
+	
+.gsst_a .gscb_a {
+color: $hseblack !important;
+}
+	
+.gs-visibleUrl {
+color: $hseblack !important;
+}
+	
+.gsc-tabHeader.gsc-tabhActive, .gsc-refinementHeader.gsc-refinementhActive {
+color: $red !important;
+}
+	
+.gsc-tabHeader.gsc-tabhInactive, .gsc-refinementHeader.gsc-refinementhInactive, .gsc-results .gsc-cursor-box .gsc-cursor-page, .gsc-result-info {
+color: $hseblack !important;
+}
+
+}
+

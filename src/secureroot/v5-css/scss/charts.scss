@@ -1,0 +1,15 @@
+.js-enabled .chart table,
+.js-enabled .datacontent__subtitle,
+.js-enabled .datacontent__title,
+.js-enabled .datacontent__description {
+    display: none;
+}
+
+.chart {
+    position: relative;
+    border: 1px solid #e0e0e0;
+    padding: 8px;
+
+    min-height: 400px;
+    margin-bottom: 1rem;
+}

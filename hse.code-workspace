@@ -1,0 +1,15 @@
+{
+	"folders": [
+		{
+			"name": "HSE front-end",
+			"path": "./"
+		}
+	],
+	"settings": {
+		"window.zoomLevel": 2,
+		"workbench.colorCustomizations": {
+			"titleBar.activeBackground": "#b2182b",
+			"titleBar.inactiveBackground": "#b2182b"
+		}
+	}
+}

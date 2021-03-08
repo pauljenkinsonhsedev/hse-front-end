@@ -1,0 +1,88 @@
+/* Footer */
+
+#footerContainer {
+    width: 100%;
+    float: left;
+    margin: 0;
+    min-width: 100% !important;
+}
+
+#footer {
+    width: 100% !important;
+}
+
+#footer h2 {
+    color: white;
+}
+
+.footer-links-container {
+    width: 90%;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+#baseStrip {
+    width: 100%;
+    float: left;
+    min-width: 100%;
+    clear: both;
+    background-image: none;
+    padding: 10px 0 !important;
+}
+
+#baseStrip p {
+    @include type-setting(-1);
+    padding: 0 !important;
+}
+
+#baseStrip {
+    overflow: visible;
+    @media only screen and (min-width : 1170px) {
+        overflow: visible;
+    }
+}
+
+#baseStripInner {
+    width: 90%;
+    padding-left: 0px;
+    padding-right: 0px;
+    @media only screen and (min-width : 1170px) {
+        width: 940px;
+    }
+}
+
+#footer ul li {
+    width: auto;
+    float: left;
+    padding-right: 3% ;
+    text-align: left;
+}
+
+#baseStripInner {
+    @media only screen and (min-width : $desktop) {
+        width: 940px !important;
+    }
+}
+
+#footerContainer {
+    min-width: 940px;
+}
+
+#footer {
+    width: 100%;
+    @media only screen and (min-width : $desktop) {
+        width: 940px !important;
+    }
+}
+
+.guidance-languages {
+    float: left;
+    @media only screen and (min-width : $desktop) {
+        float: right;
+    }
+}
+
+#languagesDropdown-container {
+    width: 100%;
+    float: right !important;
+}

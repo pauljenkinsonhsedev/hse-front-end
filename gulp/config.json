@@ -1,0 +1,115 @@
+{
+    "all": [
+        "./src/**/*+(js|scss|css|htm|html|njk|png|jpg|jpeg|gif|svg|ico)"
+    ],
+    "server": {
+        "file": "./index.htm",
+        "locationStaging": "secureroot/hseonline/website/livelive/secureroot",
+        "locationDevelopment": "devguide",
+        "uri": "http://localhost",
+        "port": "8080"
+    },
+    "shared": {
+        "js": {
+            "vendor": "./src/shared/js/vendor/**/*.js",
+            "vendorOutput": "./secureroot/hseonline/website/livelive/secureroot/assets/v5-js/vendor",
+            "all": "./src/shared/js/**/*.js",
+            "entrypoint": [
+                "./src/shared/js/v5-main.js",
+                "./src/shared/js/v5-cookies.js"
+            ],
+            "outputSecureroot": "./secureroot/hseonline/website/livelive/secureroot/assets/v5-js",
+            "outputdevguide": "./devguide/assets/v5-js"
+        }
+    },
+    "secureroot": {
+        "all": [
+            "./src/secureroot/**/*+(js|css|html|png|jpg|jpeg|gif|svg|ico)"
+        ],
+        "assetPath": "./secureroot/hseonline/website/livelive/secureroot/assets",
+        "output": "./secureroot",
+        "copy": {
+            "all": "./src/secureroot/copy/**/*",
+            "output": "./secureroot/hseonline/website/livelive/secureroot",
+            "templates": {
+                "entrypoint": "./src/secureroot/templates/**/*",
+                "output": "./src/secureroot/html/templates"
+            }
+        },
+        "html": {
+            "all": "./src/secureroot/html/**/*+(htm|html|jpg|jpeg|png|gif|pdf|docx|word|xlsx)",
+            "output": "./secureroot/hseonline/website/livelive/secureroot"
+        },
+        "scripts": {
+            "all": [
+                "./src/secureroot/v5-scripts/google-custom-search.js",
+                "./src/secureroot/v5-scripts/base64-poly.js",
+                "./src/secureroot/v5-scripts/v5-hse-primary.min.js",
+                "./src/secureroot/v5-scripts/slinky-ie11-fix.js",
+                "./src/secureroot/v5-scripts/top-tasks.js",
+                "./src/secureroot/v5-scripts/left-nav.js",
+                "./src/secureroot/v5-scripts/aria.accordion.min.js"
+            ],
+            "entry": "./src/secureroot/v5-js/v5-footer.js",
+            "output": "./secureroot/hseonline/website/livelive/secureroot/assets/v5-js"
+        },
+        "styles": {
+            "all": "./src/secureroot/v5-css/scss/**/*.scss",
+            "entry": "./src/secureroot/v5-css/scss/v5.scss",
+            "output": "./secureroot/hseonline/website/livelive/secureroot/assets/v5-css/",
+            "vendor": "./src/secureroot/v5-css/vendor/**/*.css",
+            "vendorOutput": "./secureroot/hseonline/website/livelive/secureroot/assets/v5-css/vendor/"
+        },
+        "images": {
+            "v4": {
+                "all": "./src/secureroot/v4-images/**/*.+(png|jpg|jpeg|gif|svg|ico)",
+                "entry": "./src/secureroot/v4-images/",
+                "output": "./secureroot/hseonline/website/livelive/secureroot/assets/v4-images/"
+            },
+            "v4homepage": {
+                "all": "./src/secureroot/v4-homepage/**/*.+(png|jpg|jpeg|gif|svg|ico)",
+                "entry": "./src/secureroot/v4-homepage/",
+                "output": "./secureroot/hseonline/website/livelive/secureroot/assets/v4-homepage/"
+            },
+            "v5": {
+                "all": "./src/secureroot/v5-images/**/*.+(png|jpg|jpeg|gif|svg|ico)",
+                "entry": "./src/secureroot/v5-images/",
+                "output": "./secureroot/hseonline/website/livelive/secureroot/assets/v5-images/"
+            }
+        }
+    },
+    "devguide": {
+        "output": "./devguide",
+        "styles": {
+            "output": "./devguide/assets/v5-css"
+        },
+        "markup": {
+            "all": "./src/devguide/html/**/*.+(htm|html)",
+            "output": "./devguide/"
+        },
+        "images": {
+            "v4": {
+                "all": "./src/secureroot/v4-images/**/*.+(png|jpg|jpeg|gif|svg|ico)",
+                "entry": "./src/secureroot/v4-images/",
+                "output": "./devguide/assets/v4-images/"
+            },
+            "v4homepage": {
+                "all": "./src/secureroot/v4-homepage/**/*.+(png|jpg|jpeg|gif|svg|ico)",
+                "entry": "./src/secureroot/v4-homepage/",
+                "output": "./devguide/assets/v4-homepage/"
+            },
+            "v5": {
+                "all": "./src/secureroot/v5-images/**/*.+(png|jpg|jpeg|gif|svg|ico)",
+                "entry": "./src/secureroot/v5-images/",
+                "output": "./devguide/assets/v5-images/"
+            }
+        },
+        "scripts": {
+            "output": "./devguide/assets/v5-js"
+        },
+        "copyjs": {
+            "all": "./src/secureroot/copy/assets/v5-js/**/*",
+            "output": "./devguide/assets/v5-js"
+        }
+    }
+}

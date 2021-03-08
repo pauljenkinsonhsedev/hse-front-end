@@ -1,0 +1,305 @@
+// BASE
+
+.hide-notification {
+    display: none !important;
+}
+
+.visually-hidden {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+    opacity: 0;
+}
+
+// Background box colour
+.backgroundRed {
+    background-color: $red !important;
+}
+.backgroundGray {
+    background-color: $gray !important;
+}
+
+.backgroundRed a, .backgroundRed h2, .backgroundRed h3, .backgroundRed p {
+    color: white !important;
+}
+
+button {
+    text-decoration: underline;
+}
+
+button:hover {
+    text-decoration: none;
+}
+
+#contentContainer ul.linkList li {
+    background: none;
+}
+
+#contentContainer ul.linkList, .aside ul, ul.social  {
+    margin: 0 0 10px 0px !important;
+}
+
+#contentContainer .mostPopular ul.linkList {
+    margin-bottom: 0 !important;
+}
+
+#contentContainer .backgroundRed .linkList li a::before {
+    background-image: none;
+    padding-right: 0;
+}
+
+
+// Margins - Padding - Borders
+
+.p-10 {
+    padding: 10px !important;
+}
+
+#contentContainer {
+    .noPadding {
+        padding: 0 !important;
+    }
+
+    .border:last-of-type {
+        border-bottom: none;
+    }
+}
+
+// Lists
+
+
+
+.backgroundRed ul.listCaret li:before {
+    color: white;
+}
+
+#contentContainer .backgroundRed p, #contentContainer .backgroundRed ul li  {
+    color: white !important;
+}
+
+#contentContainer ol.multistep li {
+    margin-left: 15px;
+    padding: 0;
+    clear: both;
+}
+
+#contentContainer ul.multistep li {
+    padding-left: 0;
+    margin-left: 15px;
+    background: none;
+}
+
+#contentContainer ul.multistep li::before {
+    content: "— ";
+    color: $hseblack;
+}
+#contentContainer ul.linkArrow li {
+    padding-left: 0;
+}
+
+#contentContainer .linkArrow li {
+    display: block;
+}
+
+#contentContainer .linkArrow li a:hover {
+    text-decoration: underline !important;
+}
+
+@media only screen and (min-width : $desktop) {
+    .linkArrow li {
+        display: block;
+    }
+}
+
+#contentContainer ul.listLinks li {
+    background: none;
+    padding-left: 0;
+    list-style-type: none;
+    margin: 0;
+    clear: both;
+    float: left;
+    font-size: 1.1em;
+}
+
+#contentContainer ul.mostPopular li {
+    font-weight: 700;
+}
+
+#contentContainer .columnFull .column.noBoxPadding ul.listLinks {
+    margin-bottom: 10px !important;
+}
+
+#contentContainer ul.listLinks li a {
+    float: left;
+}
+
+#contentContainer ul.listLinks li span {
+    display: inline-block;
+}
+
+#contentContainer ul.listLinks p {
+    clear:both;
+}
+
+// Article lists
+
+#contentContainer .article {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+#contentContainer ul.guidanceList, #contentContainer ul.articleList {
+    font-size: inherit;
+    float: left;
+}
+
+#contentContainer ul.guidanceList li, ul.articleList li {
+    list-style-type: none;
+    background: none;
+    padding: 0;
+    @media only screen and (min-width : $desktop) {
+        min-height: 87px;
+        margin-bottom: 10px;
+        clear: both;
+        float: left;
+    }
+}
+
+.columnFull .guidanceList li {
+    margin-bottom: 20px !important;
+}
+
+#contentContainer ul.list li {
+    background: none;
+    list-style-type: none;
+    padding: 0;
+}
+
+#contentContainer .mb0 {
+    margin-bottom: 0;
+}
+
+// Box lists
+
+.boxList{
+    margin-bottom: 5px !important;
+    @media only screen and (min-width : $desktop) {
+        column-count: 2;
+    }
+}
+
+#contentContainer .boxList ul {
+    margin: 0 0 10px 0 !important;
+}
+.boxList ul li {
+    float: left;
+    clear: both;
+    width: 100%;
+    background: none;
+    background-color: $gray;
+    margin: 5px 0;
+    padding: 0;
+    background-image: none !important;
+}
+.boxList ul li:last-of-type {
+    @media only screen and (max-width : $desktop) {
+        margin-bottom: 0;
+    }
+}
+.boxList ul li a {
+    width: 100%;
+    float: left;
+    padding: 10px;
+}
+.boxList ul li:hover {
+    background-color: $darkergray;
+}
+.boxList ul li h3 {
+    color: $red !important;
+}
+.boxList ul li h3 {
+    margin: 0;
+    display: inline;
+}
+
+// Main content
+
+#contentContainer ol {
+    margin-bottom: 0;
+}
+
+
+// Forms
+input#email {
+    box-sizing: border-box;
+    // padding: 5px;
+}
+
+.eBulletinButton {
+    background-color: $red;
+    color: white;
+    padding: 5px;
+    margin-top: 10px;
+    border: 0;
+}
+
+// Responsive images
+
+picture,
+img {
+    height: auto;
+    max-width: 100%;
+    vertical-align: bottom !important;
+}
+
+img.featuredImg {
+    width: 100%;
+    height: auto;
+    float: left;
+    @media only screen and (min-width : $desktop) {
+        min-height: 200px;
+    }
+}
+
+img.responsiveImg {
+    width: 100%;
+    float: left;
+    height: auto;
+}
+
+#pageContainer {
+    margin: 20px auto;
+    clear: both;
+}
+
+
+#contentContainer {
+    margin: 0 !important;
+// Important fix for Edge
+// 81.0.416.62
+//-webkit-transform: translateZ(0);
+//transform: translateZ(0);
+}
+
+// Input focus fix
+
+input.gsc-input:focus, #baseStrip ul.ddmswitch li a:focus {
+    outline: -webkit-focus-ring-color auto 5px !important;
+    outline-color: -webkit-focus-ring-color !important;
+    outline-style: auto !important;
+    outline-width: 5px !important;
+}
+
+/* V5 global styles */
+
+.v5-inline {
+display: inline-block;
+}
+
+.no-wrap {
+white-space: nowrap;
+}

@@ -1,0 +1,225 @@
+// Cookie notification
+
+#cookieContainer p a {
+// color: $focus;
+text-decoration: underline;
+}
+
+#cookieContainer p a:hover {
+text-decoration: none;
+}
+
+// #cookieContainer button {
+// float: left;
+// background-color: $red;
+// border: none;
+// color: white;
+// padding: 10px;
+// }
+
+#cookieContainer button:hover {
+cursor: pointer;
+}
+
+.cookies-message {
+    display: block;
+    max-width: 680px;
+}
+
+.cookies-message__actions {
+    margin-top: $dp*3;
+}
+
+.cookies-message-accepted,
+.cookies-message-rejected {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    p,
+    .btn {
+        margin: 0;
+    }
+}
+
+.cookies-message__heading {
+    color: $red;
+    @include type-setting(1);
+    margin-bottom: 0;
+}
+
+.cookies-message__copy {
+    p {
+        @include type-setting(3);
+    }
+}
+
+.cookies-message__link {
+margin-bottom: 0;
+}
+
+.v5-span-heading1 {
+color: $black;
+font-size: 2em;
+padding: 0;
+margin-bottom: 10px;
+}
+
+#cookieNotify {
+background: none !important;
+}
+
+#cookieNotify p {
+    padding: 0;
+}
+
+#cookieContainer {
+    float: left;
+    background-color: #eee;
+    display: block;
+}
+
+#cookieNotify {
+width: 100%;
+@media only screen and (min-width : $desktop) {
+width: 940px;
+}
+padding: 0px !important;
+margin: 5px auto;
+background: url(../v4-images/shared/cookie-icon.png) no-repeat 0 4px;
+}
+
+.ie7 #cookieNotify {
+height: 2.667em;
+}
+
+#cookieNotify p {
+    color: $black;
+    // font-size: 1.1em;
+}
+
+/* Cookie notification end */
+
+/* Notification bar */
+
+.notification-banner {
+    background-color: $gray;
+    width: 100%;
+    height: auto;
+    float: left;
+    font-size: 16px;
+    border-bottom: 2px solid $red;
+    line-height: normal !important;
+}
+
+.notification-banner.global {
+background-color: $hseblack;
+border-bottom: 2px solid $focus;
+}
+
+.notification-banner p {
+font-size: 0.9rem;
+line-height: 1.5;
+}
+
+.notification-banner.global p {
+color: white;
+}
+
+.notification-banner.global p a {
+color: $focus;
+text-decoration: underline;
+}
+
+.notification-banner.global p a:hover {
+text-decoration: none;
+}
+
+.notification-banner button {
+padding: 0;
+}
+
+.notification-banner button:hover  {
+text-decoration: none;
+}
+
+.notification-banner button {
+text-decoration: underline;
+cursor: pointer;
+}
+
+
+
+.brexit-icon {
+float: left;
+}
+
+.notification-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px 5%;
+    @media only screen and (min-width : 980px) {
+        padding: 0;
+        width: 940px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        // float: none;
+    }
+}
+
+.notification-container p {
+margin: 0;
+}
+
+.notification-container img {
+float: left;
+margin-right: 20px;
+}
+
+.notification-message {
+margin: 0;
+float: left;
+}
+
+.notification-call-to-action {
+display: block;
+width: 100%;
+@media only screen and (min-width : 980px) {
+margin-left: 54px;
+}
+}
+
+.notification-message img {
+@media only screen and (max-width : 979px) {
+display: none;
+}
+@media only screen and (min-width : 980px) {
+margin-right: 20px;
+float: left;
+}
+}
+
+// .notification-hide, .notification-banner.global .notification-hide
+// {
+// background: none;
+// border: none;
+// float: right;
+// margin-top: 10px;
+// @media only screen and (min-width : 980px) {
+// position: relative;
+// right: 0;
+// top: 0;
+// margin-bottom: 20px;
+// }
+// }
+
+.notification-bar-title {
+font-weight: bold;
+vertical-align: top !important;
+width: 100%;
+}
+/* Notification bar end */

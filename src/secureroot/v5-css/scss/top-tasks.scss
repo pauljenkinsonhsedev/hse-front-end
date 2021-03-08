@@ -1,0 +1,99 @@
+// Beta
+
+.multistep {
+width: 100%;
+}
+
+// Pagination 
+
+#pagination {
+width: 100%;
+float: left;
+margin-top: 10px;
+}
+
+#contentContainer #pagination ul, #contentContainer #pagination ul li {
+float: left;
+background: none;
+margin: 0 !important;
+padding: 0;
+}
+
+#contentContainer #pagination ul span {
+float: left;
+display: inline-block;
+clear: both;
+}
+
+// Top task pagination
+
+#pagination .next-page, #pagination .previous-page {
+width: 50%;
+float: left;
+@media only screen and (max-width : 991px) {
+width: 100%;
+}
+}
+
+
+
+#pagination span {
+color: $red;
+}
+
+#pagination a:hover {
+background-color: $gray;
+}
+
+.pagination-icon {
+font-size: 2.167em;
+}
+
+.pagination-text {
+font-size: 1.167em;
+padding-top: 10px;
+text-decoration: underline;
+}
+
+#pagination .next-page, #pagination .previous-page { 
+@media only screen and (min-width : $desktop) {
+margin-left: -10px;
+}
+}
+
+#pagination div:nth-child(2) {
+@media only screen and (min-width : $desktop) {
+margin-left: 10px;
+}
+}
+
+.next-page:hover .pagination-text, .previous-page:hover .pagination-text {
+text-decoration: none !important;
+color: $hseblack !important;
+}
+
+#pagination .next-page a, #pagination .previous-page a {
+width: 100%;
+padding: 10px;
+box-sizing: border-box;
+float: left;
+}
+
+#pagination ul, #pagination ul li {
+width: 100%;
+}
+
+
+// Aside
+
+.exploreTopic {
+width: 100%;
+float: left;
+box-sizing: border-box;
+padding: 10px;
+margin-bottom: 15px;
+}
+
+#asideBottom h2 {
+font-size: 1.1rem !important;
+}

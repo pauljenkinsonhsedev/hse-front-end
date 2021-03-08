@@ -1,0 +1,94 @@
+li,
+ol ul li {
+    padding:.1em 0;
+    padding-left:18px;
+}
+
+ol li {
+    background: 0 0;
+    padding-left: 4px;
+    margin-left: 2.2em;
+}
+
+dd {
+    margin: 10px 0;
+}
+
+ul.listtick li,ul.tick li {
+    padding-left: 18px;
+}
+
+ul.cross li,ul.listcross li {
+    padding-left: 18px;
+}
+
+ul.listexclaim li {
+    padding-left: 18px;
+}
+
+ol {
+    list-style: decimal outside;
+}
+
+ol.list-alpha,
+ol.a {
+    list-style-type: lower-alpha;
+}
+
+ol.list-numeric,
+ol.i {
+    list-style-type: lower-roman;
+}
+
+ul.listhorizontal li.first {
+    border:none;
+    padding-right:.6em;
+    margin-left:-1.6em;
+}
+
+ul.listhorizontal li {
+    background: 0 0;
+    margin: 0;
+    padding: 0 .6em;
+    display: inline;
+    border-left-width: 1px;
+    border-left-style: solid;
+}
+
+ul.listhorizontal {
+    margin: 1em 0 2em 0;
+}
+
+.splitList2 ul {
+    column-count: 2;
+    column-gap: 20px;
+}
+.splitList3 ul {
+    column-count: 3;
+    column-gap: 20px;
+}
+.splitList4 ul {
+    column-count: 4;
+    column-gap: 20px;
+}
+
+.ie .splitList2 ul,
+.ie .splitList3 ul,
+.ie .splitList4 ul {
+    float: left;
+    margin-left: 1em;
+}
+.ie .splitList2 ul:first-child,
+.ie .splitList3 ul:first-child,
+.ie .splitList4 ul:first-child {
+    float: none;
+    clear: both;
+}
+
+#contentContainer .pressReleases li {
+    padding-bottom: 20px;
+}
+
+#contentContainer .safetyAlerts li {
+    list-style-type: none;
+}

@@ -1,0 +1,160 @@
+/* Forms */
+
+.v5form {
+    label {
+        display: block;
+        font-size: 100%;
+        font-size: 0.9em;
+        padding: .6em 0 .3em 0;
+
+        strong {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font: inherit;
+            vertical-align: baseline;
+            font-weight: bolder;
+        }
+    }
+
+    input {
+        width: 99%;
+    }
+
+    input#email {
+        box-sizing: border-box;
+        padding: 5px;
+    }
+}
+
+.v5-fieldset {
+padding: 10px;
+width: 100%;
+float: left;
+background-color: $gray;
+margin-bottom: 20px;
+}
+
+.v5-legend {
+float: left;
+font-size: 1.5em !important;
+margin-bottom: 10px;
+padding: 0;
+}
+
+.v5-legend + p {
+clear: both;
+}
+
+.v5-radio-button-container {
+background-color: #333333;
+float: left;
+color: white;
+margin-right: 10px;
+margin-bottom: 10px;
+}
+
+.v5-button {
+float: left;
+margin: 10px 10px 10px 0;
+background-color: $red;
+color: rgb(165, 165, 165);
+}
+
+.v5-button:focus {
+outline: #ffdd00 5px solid !important;
+}
+
+button.v5-button {
+padding: 10px;
+border: 0;
+}
+
+.v5-button:hover {
+cursor: pointer;
+background-color: $hseblack;
+}
+
+.v5-button a {
+float: left;
+background-color: $red;
+padding: 10px;
+color: white;
+text-decoration: none;
+}
+
+.v5-label {
+float: left;
+padding: 10px;
+}
+
+
+.v5-radio {
+margin-right: 10px;
+position: relative;
+top: 2px;
+}
+
+.v5-radio-button-container label span {
+position: relative;
+top: 0;
+}
+
+.v5-radio-button-container label:hover {
+cursor: pointer !important;
+}
+
+input[type=radio] {
+width: auto;
+display: inline-block;
+}
+
+.radio-toolbar {
+float: left;
+margin-right: 10px;
+}
+
+.radio-toolbar input[type="radio"] {
+opacity: 0;
+visibility: visible !important;
+width: 0;
+margin-right: 5px;
+}
+
+
+.radio-toolbar .v5-label-on {
+border-right: 0 solid $darkgray;
+}
+
+.radio-toolbar .v5-label-off {
+border-left: 0 solid $darkgray;
+}
+
+.radio-toolbar label {
+display: inline-block;
+background-color: $gray;
+padding: 5px 10px;
+font-family: sans-serif, Arial;
+color: black;
+outline: 2px solid $darkgray;
+}
+
+.radio-toolbar label:hover {
+cursor: pointer;
+}
+
+.radio-toolbar input[type="radio"]:focus + label {
+outline: 3px solid $focus;
+}
+
+.radio-toolbar input[type="radio"]:checked + label {
+background-color: $red;
+color: white;
+}
+
+.radio-toolbar  input.v5-input-on[type="radio"]:checked + label {
+background-color: $yes;
+color: white;
+}
+
