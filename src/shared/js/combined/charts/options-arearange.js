@@ -165,14 +165,15 @@ export class ChartOptionsArearange extends ChartOptions {
         let tooltip = {
             crosshairs: true,
             shared: false,
+            useHTML: true,
             valuePrefix: `${dataLabelsPrefix}`,
             valueSuffix: `${dataLabelsSuffix}`,
-            backgroundColor: 'rgba(255, 255, 255, 1)',
+            padding: 1,
             style: {
+                backgroundColor: 'rgba(255, 255, 255, 1)',
                 fontSize: '12px',
                 opacity: 1
             },
-            backgroundColor: '#fff',
             formatter: function() {
                 const series = this.point.series.chart.series;
                 const index = this.point.series.xData.indexOf(this.point.x);
@@ -202,10 +203,10 @@ export class ChartOptionsArearange extends ChartOptions {
                     }
 
                     return `
-                        <div>
+                        <div style="background-color: #ffffff; padding: 8px;">
                             <span><strong>${series[0].points[index].category}</strong></span>
                             <br/>
-                            <span><span style="color: ${series[0].color};">●</span> ${series[0].name} <strong>${dataLabelsPrefix}${rangeHigh}${dataLabelsSuffix}</strong></span><br/>
+                            <span><span style="color: ${series[0].color};">●</span> ${series[0].name} <strong>${dataLabelsPrefix}${rangeAverage}${dataLabelsSuffix}</strong></span><br/>
                             <span><span style="color: ${series[0].color};">●</span> ${series[rangeIndex].name} <strong>${dataLabelsPrefix}${rangeLow}${dataLabelsSuffix} - ${dataLabelsPrefix}${rangeHigh}${dataLabelsSuffix}</strong></span>
                         </div>
                     `;
@@ -237,6 +238,7 @@ export class ChartOptionsArearange extends ChartOptions {
         };
 
         this.collection = {title, subtitle, xAxis, yAxis, plotOptions, tooltip, series, caption, exporting, credits};
+
         return this.collection;
     }
 }

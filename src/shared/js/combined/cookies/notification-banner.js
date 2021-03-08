@@ -1,16 +1,16 @@
 import Cookies from 'js-cookie';
 import { customEventListener } from '../utils/add-custom-event-listener';
 
-// const setCookiesSettings = { path: '/', domain: 'hse.gov.uk', secure: true, sameSite: 'strict', expires: 1};
+const setCookiesSettings = { path: '/', domain: 'hse.gov.uk', secure: true, sameSite: 'strict', expires: 1};
 // const setCookiesSettings = { path: '/', domain: 'beta.hse.gov.uk', secure: true, sameSite: 'strict', expires: 1};
-   const setCookiesSettings = { path: '/', domain: 'localhost', secure: false, sameSite: 'strict', expires: 1};
+//    const setCookiesSettings = { path: '/', domain: 'localhost', secure: false, sameSite: 'strict', expires: 1};
 
 // So we can access Cookies inline for Analytics in the HTML
 window.Cookies = Cookies;
 
 export function notificationBanner() {
     const globalSet = Cookies.get('global_banner');
-    fetch('/ajax/global-message.json')
+    fetch('/assets/ajax/global-message.json')
     .then((response) => response.json())
     .then((data) => {
         const active = data.active;
