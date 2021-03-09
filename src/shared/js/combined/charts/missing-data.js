@@ -80,7 +80,6 @@ export function missingData(data) {
         // create missing data
         function missingData() {
             const prevNextData = [...chunks(PrevNext, 4)];
-            // console.log('prevNextData', prevNextData)
             const missingDataArr = [];
             for (let i = 0; i < prevNextData.length; i++) {
                 let pos = prevNextData[i][0];
@@ -105,14 +104,10 @@ export function missingData(data) {
             for (let item of missingDataArr) {
                 const pos = item.pos;
                 const values = item.data;
-
-
                 values.reverse();
 
-                // console.log(values.length);
-
                 for (let val of values) {
-                    // console.log('val', val);
+                    // ('val', val);
                     withoutData.splice(pos, 0, val);
                 }
             }
@@ -120,8 +115,6 @@ export function missingData(data) {
             return withoutData;
         }
         const missing = missingData();
-
-        // console.log(JSON.stringify(missing, null, 2));
 
         // set series data
         const seriesDataWithMissing = [{

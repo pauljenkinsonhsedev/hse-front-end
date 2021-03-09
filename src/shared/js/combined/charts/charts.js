@@ -97,7 +97,6 @@ class ChartsDefault {
                         this.collection = new ChartOptionsDefault(container);
                     break;
                 }
-                // console.log(`collection ${JSON.stringify(this.collection, null, 2)}`);
                 this.buildFn(container, this.collection);
             });
         });
@@ -117,7 +116,6 @@ class ChartsDefault {
 
         if (process.env.NODE_ENV === 'development') {
             const msg = this.chart ? 'successful' : 'unsuccessful';
-            // console.log(`Charts loaded ${msg}`);
         }
     }
 }
