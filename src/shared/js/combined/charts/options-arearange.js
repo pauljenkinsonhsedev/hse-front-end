@@ -171,7 +171,7 @@ export class ChartOptionsArearange extends ChartOptions {
             padding: 1,
             style: {
                 backgroundColor: 'rgba(255, 255, 255, 1)',
-                fontSize: '12px',
+                fontSize: '0.9rem',
                 opacity: 1
             },
             formatter: function() {
@@ -204,10 +204,10 @@ export class ChartOptionsArearange extends ChartOptions {
 
                     return `
                         <div style="background-color: #ffffff; padding: 8px;">
-                            <span><strong>${series[0].points[index].category}</strong></span>
+                            <span style="font-size: 0.8rem;"><strong>${series[0].points[index].category}</strong></span>
                             <br/>
-                            <span><span style="color: ${series[0].color};">●</span> ${series[0].name} <strong>${dataLabelsPrefix}${rangeAverage}${dataLabelsSuffix}</strong></span><br/>
-                            <span><span style="color: ${series[0].color};">●</span> ${series[rangeIndex].name} <strong>${dataLabelsPrefix}${rangeLow}${dataLabelsSuffix} - ${dataLabelsPrefix}${rangeHigh}${dataLabelsSuffix}</strong></span>
+                            <span style="font-size: 0.8rem;"><span style="font-size: 0.8rem; color: ${series[0].color};">●</span> ${series[0].name} <strong>${dataLabelsPrefix}${rangeAverage}${dataLabelsSuffix}</strong></span><br/>
+                            <span style="font-size: 0.8rem;"><span style="font-size: 0.8rem; color: ${series[0].color};">●</span> ${series[rangeIndex].name} <strong>${dataLabelsPrefix}${rangeLow}${dataLabelsSuffix} - ${dataLabelsPrefix}${rangeHigh}${dataLabelsSuffix}</strong></span>
                         </div>
                     `;
                 }

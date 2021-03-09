@@ -72,7 +72,6 @@ export class ChartOptions {
 
         // watch chartRatio on resize
         const chartHeight = resizer(chartRatio);
-        // console.log(chartHeight);
 
         // Set gridlines
         switch (this.gridLine) {
@@ -171,7 +170,6 @@ export class ChartOptions {
                     fontFamily: this.fontFamily,
                     fontSize: '0.9rem',
                     fontWeight: 'regular',
-
                 }
             },
             caption: {
@@ -210,6 +208,7 @@ export class ChartOptions {
                 formatter: getTooltip,
                 backgroundColor: 'rgba(255, 255, 255, 1)',
                 borderWidth: 1,
+                fontSize: '0.9rem',
                 padding: 1,
                 style: {
                     opacity: 1
