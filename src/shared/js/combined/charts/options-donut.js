@@ -31,11 +31,11 @@ export class ChartOptionsDonut extends ChartOptions {
         if (mediaquery === 'small') {
             this.alignTo = 'plotEdges';
             this.pieSize = '160px';
-            this.fontSize = '12px';
+            this.fontSize = '0.9rem';
         } else {
             this.alignTo = false;
             this.pieSize = '220px';
-            this.fontSize = '16px';
+            this.fontSize = '0.9rem';
         }
 
         let chart = {
@@ -66,7 +66,6 @@ export class ChartOptionsDonut extends ChartOptions {
                 fontWeight: 'bold'
             }
         };
-
         let plotOptions = {
             pie: {
                 slicedOffset: 0,
@@ -82,7 +81,7 @@ export class ChartOptionsDonut extends ChartOptions {
                     style: {
                         width: '150px'
                     }
-                }
+                },
             },
             series: {
                 states:{
@@ -97,6 +96,7 @@ export class ChartOptionsDonut extends ChartOptions {
 
         const collection = this.collection;
         this.collection = {...collection, chart, title, pieOptions, plotOptions};
+
         return this.collection;
     }
 }

@@ -1,5 +1,33 @@
 /* Forms */
 
+.v5form {
+    label {
+        display: block;
+        font-size: 100%;
+        font-size: 0.9em;
+        padding: .6em 0 .3em 0;
+
+        strong {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font: inherit;
+            vertical-align: baseline;
+            font-weight: bolder;
+        }
+    }
+
+    input {
+        width: 99%;
+    }
+
+    input#email {
+        box-sizing: border-box;
+        padding: 5px;
+    }
+}
+
 .v5-fieldset {
 padding: 10px;
 width: 100%;
@@ -96,11 +124,11 @@ margin-right: 5px;
 
 
 .radio-toolbar .v5-label-on {
-border-right: 0 solid $darkgray;	
+border-right: 0 solid $darkgray;
 }
 
 .radio-toolbar .v5-label-off {
-border-left: 0 solid $darkgray;		
+border-left: 0 solid $darkgray;
 }
 
 .radio-toolbar label {

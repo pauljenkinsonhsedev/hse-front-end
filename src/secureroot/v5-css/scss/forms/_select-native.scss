@@ -1,0 +1,51 @@
+/*doc
+---
+title: Select (native)
+name: b-forms-c-select-native
+category: Page features - Form elements
+---
+
+```html_example
+</>
+```
+
+*/
+.arrow {
+    width: 0;
+    height: 0;
+
+    $arrow-width: 7px;
+
+    &-up {
+        border-left: $arrow-width solid transparent;
+        border-right: $arrow-width solid transparent;
+        border-bottom: $arrow-width solid $black;
+    }
+
+    &-down {
+        border-left: $arrow-width solid transparent;
+        border-right: $arrow-width solid transparent;
+        border-top: $arrow-width solid $black;
+    }
+}
+
+.select {
+    @extend .input;
+    width: 45ex;
+}
+
+.select-styled {
+    display: inline-block;
+    position: relative;
+    &:after {
+        content: '';
+        display: block;
+        width: 0;
+        height: 0;
+        position: absolute;
+        right: $dp*2;
+        top: $dp*2;
+
+        @extend .arrow-down;
+    }
+}

@@ -72,7 +72,6 @@ export class ChartOptions {
 
         // watch chartRatio on resize
         const chartHeight = resizer(chartRatio);
-        // console.log(chartHeight);
 
         // Set gridlines
         switch (this.gridLine) {
@@ -119,6 +118,13 @@ export class ChartOptions {
             this.captionText = null;
         }
 
+        let subTitle;
+        if (this.subtitle) {
+            subTitle = '<div style="text-align: center;">' + this.subtitle + '</div>';
+        } else {
+            subTitle = null;
+        }
+
         // get series information
         let units = container.querySelectorAll('.unit');
         let total = 0;
@@ -158,13 +164,12 @@ export class ChartOptions {
             },
             subtitle: {
                 useHTML: true,
-                text: '<div style="text-align: center;">' + this.subtitle + '</div>',
+                text: subTitle,
                 style: {
                     color: '#000',
                     fontFamily: this.fontFamily,
                     fontSize: '0.9rem',
                     fontWeight: 'regular',
-
                 }
             },
             caption: {
@@ -203,6 +208,7 @@ export class ChartOptions {
                 formatter: getTooltip,
                 backgroundColor: 'rgba(255, 255, 255, 1)',
                 borderWidth: 1,
+                fontSize: '0.9rem',
                 padding: 1,
                 style: {
                     opacity: 1

@@ -1,307 +1,250 @@
 // BASE
 
 .hide-notification {
-display: none !important;
+    display: none !important;
 }
 
 .visually-hidden {
-clip: rect(0 0 0 0);
-clip-path: inset(50%);
-height: 1px;
-overflow: hidden;
-position: absolute;
-white-space: nowrap;
-width: 1px;
-opacity: 0;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+    opacity: 0;
 }
-
-// HSE colours
-
-$gray: #eee;
-$darkgray: #c2c2c2;
-$red: #981e32;
-$boxgray: #f3f3f3;
-$redhover: #333333;
-$darkergray: #4e4e4e;
-$darkred: #58041b;
-$black: #000;
-$hseblack: #333333;
-$body: #111;
-$beta: #014a82;
-$focus: #ffdd00;
-$yes: #005500;
-
-// Responsive breakpoints
-
-$tablet: 800px;
-$desktop: 980px;
 
 // Background box colour
 .backgroundRed {
-background-color: $red !important;
+    background-color: $red !important;
 }
 .backgroundGray {
-background-color: $gray !important;
+    background-color: $gray !important;
 }
 
 .backgroundRed a, .backgroundRed h2, .backgroundRed h3, .backgroundRed p {
-color: white !important;
-}
-
-
-// Links
-
-a {
-text-decoration: underline;
-}
-
-a:link,
-a:visited,
-a {
-color: $red;
-text-decoration: underline;
-}
-
-a:hover,
-a:active,
-a:focus, a span.subText
-{
-text-decoration: none !important;
-color: $redhover;
+    color: white !important;
 }
 
 button {
-text-decoration: underline;
+    text-decoration: underline;
 }
 
 button:hover {
-text-decoration: none;
+    text-decoration: none;
 }
 
 #contentContainer ul.linkList li {
-background: none;
+    background: none;
 }
 
 #contentContainer ul.linkList, .aside ul, ul.social  {
-margin: 0 0 10px 0px !important;
+    margin: 0 0 10px 0px !important;
 }
 
 #contentContainer .mostPopular ul.linkList {
-margin-bottom: 0 !important;
+    margin-bottom: 0 !important;
 }
 
 #contentContainer .backgroundRed .linkList li a::before {
-background-image: none;
-padding-right: 0;
+    background-image: none;
+    padding-right: 0;
 }
 
 
 // Margins - Padding - Borders
 
 .p-10 {
-padding: 10px !important;
+    padding: 10px !important;
 }
+
 #contentContainer {
+    .noPadding {
+        padding: 0 !important;
+    }
 
-.noPadding {
-padding: 0 !important;
-}
-
-.border:last-of-type {
-border-bottom: none;
-}
-
+    .border:last-of-type {
+        border-bottom: none;
+    }
 }
 
 // Lists
 
-dd {
-margin: 10px 0;
-}
+
 
 .backgroundRed ul.listCaret li:before {
-color: white;
+    color: white;
 }
 
 #contentContainer .backgroundRed p, #contentContainer .backgroundRed ul li  {
-color: white !important;
+    color: white !important;
 }
 
 #contentContainer ol.multistep li {
-margin-left: 15px;
-padding: 0;
-clear: both;
+    margin-left: 15px;
+    padding: 0;
+    clear: both;
 }
 
 #contentContainer ul.multistep li {
-padding-left: 0;
-margin-left: 15px;
-background: none;
+    padding-left: 0;
+    margin-left: 15px;
+    background: none;
 }
 
 #contentContainer ul.multistep li::before {
-content: "— ";
-color: $hseblack;
+    content: "— ";
+    color: $hseblack;
 }
 #contentContainer ul.linkArrow li {
-padding-left: 0;
+    padding-left: 0;
 }
 
 #contentContainer .linkArrow li {
-display: block;
+    display: block;
 }
 
 #contentContainer .linkArrow li a:hover {
-text-decoration: underline !important;
+    text-decoration: underline !important;
 }
 
-@media only screen and (min-width : 992px) {
-
-.linkArrow li {
-display: block;
+@media only screen and (min-width : $desktop) {
+    .linkArrow li {
+        display: block;
+    }
 }
 
-}
-#contentContainer ul.listLinks li
-{
-background: none;
-padding-left: 0;
-list-style-type: none;
-margin: 0;
-clear: both;
-float: left;
-font-size: 1.1em;
+#contentContainer ul.listLinks li {
+    background: none;
+    padding-left: 0;
+    list-style-type: none;
+    margin: 0;
+    clear: both;
+    float: left;
+    font-size: 1.1em;
 }
 
 #contentContainer ul.mostPopular li {
-font-weight: 700;
+    font-weight: 700;
 }
 
 #contentContainer .columnFull .column.noBoxPadding ul.listLinks {
-margin-bottom: 10px !important;
+    margin-bottom: 10px !important;
 }
 
 #contentContainer ul.listLinks li a {
-float: left;
+    float: left;
 }
 
 #contentContainer ul.listLinks li span {
-display: inline-block;
+    display: inline-block;
 }
 
 #contentContainer ul.listLinks p {
-clear:both;
+    clear:both;
 }
 
 // Article lists
 
 #contentContainer .article {
-padding-top: 0;
-padding-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
 }
 
 #contentContainer ul.guidanceList, #contentContainer ul.articleList {
-font-size: inherit;
-float: left;
+    font-size: inherit;
+    float: left;
 }
 
 #contentContainer ul.guidanceList li, ul.articleList li {
-list-style-type: none;
-background: none;
-padding: 0;
-@media only screen and (min-width : $desktop) {
-min-height: 87px;
-margin-bottom: 10px;
-clear: both;
-float: left;
-}
+    list-style-type: none;
+    background: none;
+    padding: 0;
+    @media only screen and (min-width : $desktop) {
+        min-height: 87px;
+        margin-bottom: 10px;
+        clear: both;
+        float: left;
+    }
 }
 
 .columnFull .guidanceList li {
-margin-bottom: 20px !important;
+    margin-bottom: 20px !important;
 }
 
 #contentContainer ul.list li {
-background: none;
-list-style-type: none;
-padding: 0;
+    background: none;
+    list-style-type: none;
+    padding: 0;
 }
 
 #contentContainer .mb0 {
-margin-bottom: 0;
+    margin-bottom: 0;
 }
 
 // Box lists
 
 .boxList{
-@media only screen and (min-width : $desktop) {
-column-count: 2;
-}
-margin-bottom: 5px !important;
+    margin-bottom: 5px !important;
+    @media only screen and (min-width : $desktop) {
+        column-count: 2;
+    }
 }
 
 #contentContainer .boxList ul {
-margin: 0 0 10px 0 !important;
+    margin: 0 0 10px 0 !important;
 }
 .boxList ul li {
-float: left;
-clear: both;
-width: 100%;
-background: none;
-background-color: $gray;
-margin: 5px 0;
-padding: 0;
-background-image: none !important;
+    float: left;
+    clear: both;
+    width: 100%;
+    background: none;
+    background-color: $gray;
+    margin: 5px 0;
+    padding: 0;
+    background-image: none !important;
 }
 .boxList ul li:last-of-type {
-@media only screen and (max-width : $desktop) {
-margin-bottom: 0;
-}
+    @media only screen and (max-width : $desktop) {
+        margin-bottom: 0;
+    }
 }
 .boxList ul li a {
-width: 100%;
-float: left;
-padding: 10px;
+    width: 100%;
+    float: left;
+    padding: 10px;
 }
 .boxList ul li:hover {
-background-color: $darkergray;
+    background-color: $darkergray;
 }
 .boxList ul li h3 {
-color: $red !important;
+    color: $red !important;
 }
 .boxList ul li h3 {
-margin: 0;
-display: inline;
+    margin: 0;
+    display: inline;
 }
 
 // Main content
 
 #contentContainer ol {
-margin-bottom: 0;
-}
-
-#contentContainer .pressReleases li {
-padding-bottom: 20px;
-}
-
-#contentContainer .safetyAlerts li {
-list-style-type: none;
+    margin-bottom: 0;
 }
 
 
 // Forms
-
 input#email {
-box-sizing: border-box;
-padding: 5px;
+    box-sizing: border-box;
+    // padding: 5px;
 }
 
 .eBulletinButton {
-background-color: $red;
-color: white;
-padding: 5px;
-margin-top: 10px;
-border: 0;
+    background-color: $red;
+    color: white;
+    padding: 5px;
+    margin-top: 10px;
+    border: 0;
 }
 
 // Responsive images
@@ -314,28 +257,28 @@ img {
 }
 
 img.featuredImg {
-width: 100%;
-@media only screen and (min-width : $desktop) {
-min-height: 200px;
-}
-height: auto;
-float: left;
+    width: 100%;
+    height: auto;
+    float: left;
+    @media only screen and (min-width : $desktop) {
+        min-height: 200px;
+    }
 }
 
 img.responsiveImg {
-width: 100%;
-float: left;
-height: auto;
+    width: 100%;
+    float: left;
+    height: auto;
 }
 
 #pageContainer {
-margin: 20px auto;
-clear: both;
+    margin: 20px auto;
+    clear: both;
 }
 
 
 #contentContainer {
-margin: 0 !important;
+    margin: 0 !important;
 // Important fix for Edge
 // 81.0.416.62
 //-webkit-transform: translateZ(0);
@@ -345,10 +288,10 @@ margin: 0 !important;
 // Input focus fix
 
 input.gsc-input:focus, #baseStrip ul.ddmswitch li a:focus {
-outline: -webkit-focus-ring-color auto 5px !important;
-outline-color: -webkit-focus-ring-color !important;
-outline-style: auto !important;
-outline-width: 5px !important;
+    outline: -webkit-focus-ring-color auto 5px !important;
+    outline-color: -webkit-focus-ring-color !important;
+    outline-style: auto !important;
+    outline-width: 5px !important;
 }
 
 /* V5 global styles */

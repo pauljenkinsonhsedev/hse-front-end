@@ -12,7 +12,7 @@ requireDir('../', { recurse: true });
 export const hseBuild = parallel('hseStyles', 'hseScripts', 'sharedScripts', 'hseCopy', 'hseImages');
 
 // Define combined devguide
-export const devguideBuild = parallel('hseStyles', 'hseImages', 'hseScripts', 'sharedScripts', 'devguideCopyAssets', 'devguideHighChats');
+export const devguideBuild = parallel('hseStyles', 'hseImages', 'hseScripts', 'hseCopy', 'sharedScripts', 'devguideCopyAssets', 'devguideHighChats');
 
 // Define production Tasks
 export const prodTasks = series(parallel('zipdevguide', 'zipSecureroot', 'sizeReport'));

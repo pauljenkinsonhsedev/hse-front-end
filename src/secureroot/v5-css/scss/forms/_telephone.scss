@@ -1,0 +1,20 @@
+/*doc
+---
+title: Input (telephone)
+name: b-forms-a-input-telephone
+category: Page features - Form elements
+---
+
+
+```html_example
+    <form>
+        <div class="form-group">
+            <label class="label">Enter a UK telephone number</label>
+            <p class="hint">Format: 0121 555 5555 (no spaces)</p>
+            <input class="input" type="tel" pattern="[0-9]{4}[0-9]{3}[0-9]{4}" />
+            <button class="btn btn-primary">Validate</button>
+        </div>
+    </form>
+```
+
+*/

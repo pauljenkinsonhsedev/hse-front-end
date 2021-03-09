@@ -1,0 +1,179 @@
+%form-focus {
+  &:focus {
+    outline: $focus-width solid $form-focus-color;
+    outline-offset: 0;
+  }
+}
+
+%form-elem-cosmetics {
+  appearance: none;
+  width: 100%;
+  padding: $dp;
+  border: 2px solid $mono-a;
+  @include type-setting(0);
+
+  @extend %form-focus;
+}
+
+input:required:valid {
+  outline: $focus-width solid $yes;
+}
+
+// input:required:invalid:not(:placeholder-shown) {
+//   outline: 3px solid $red;
+// }
+
+// input:required:invalid:not(:placeholder-shown) + .validation {
+//   opacity: 1;
+// }
+
+%validation-error {
+  opacity: 0;
+  display: block;
+  @extend .subtext;
+  margin: $dp 0;
+  padding: $dp $dp * 2;
+  background-color: $red;
+  color: $white;
+  font-weight: 700;
+}
+.validation {
+  @extend %validation-error;
+  .js-enabled & {
+    display: none;
+  }
+}
+
+.validation-error-message {
+  position: fixed;
+  display: inline-block;
+  max-width: 400px;
+  transform: translateY(70vh);
+  left: calc(-50vw + 50%);
+  right: calc(-50vw + 50%);
+  margin-left: auto;
+  margin-right: auto;
+  transition: top 300ms ease-in-out, opacity 300ms ease-in-out;
+  box-shadow: 0px 10px 26px 0px rgba($black,0.25);
+  z-index: 9999;
+    opacity: 1;
+
+  @extend %validation-error;
+  .invalid & {
+    opacity: 1;
+    transform: translateY(50vh);
+  }
+}
+
+.form-group {
+  position: relative;
+  margin-bottom: $dp * 2;
+
+  &-hide {
+    display: none;
+  }
+}
+
+.form-group-adjacent {
+  display: flex;
+}
+
+/* Fieldsets */
+.fieldset {
+  padding: 0;
+  margin: 0 0 $dp*2 0;
+  border: none;
+}
+.fieldset__heading {
+  @include type-setting(2);
+  margin-bottom: $dp * 2;
+  color: $red;
+}
+
+.fieldset__legend {
+  margin-bottom: $dp;
+
+  p {
+    margin-bottom: $dp;
+
+    &:last-of-type {
+      margin-bottom: $dp*3;
+    }
+  }
+}
+
+/* Labels */
+.label {
+  display: block;
+  @include type-setting(3);
+  font-weight: 400;
+  margin-bottom: $dp;
+  max-width: 55ex;
+}
+
+.input-email,
+.input-file,
+.input-numeric,
+.input-password,
+.input-telephone,
+.input-text {
+  display: inline-block;
+  width: 45ex; // default width
+}
+
+/* Widths */
+.input-digits-1 {
+  font-size: 13pt;
+  font-family: monospace;
+  max-width: 3ch;
+}
+.input-digits-2 {
+  font-size: 13pt;
+  font-family: monospace;
+  max-width: 4ch;
+}
+.input-digits-3 {
+  font-size: 13pt;
+  font-family: monospace;
+  max-width: 5ch;
+}
+.input-digits-4 {
+  font-size: 13pt;
+  font-family: monospace;
+  max-width: 6ch;
+}
+
+.input-width-half {
+  width: 50%;
+  max-width: 50%;
+}
+.input-width-full {
+  width: 100%;
+  max-width: 100%;
+}
+
+.input-width-s {
+  max-width: 15ex;
+
+}
+.input-width-m {
+  max-width: 30ex;
+
+}
+.input-width-l {
+  max-width: 45ex;
+}
+
+textarea {
+  width: 100%;
+  max-width: 45ex;
+}
+
+input {
+  margin-right: $dp;
+  margin-bottom: $dp;
+
+  &:last-of-type {
+    margin-right: 0;
+  }
+}

@@ -91,6 +91,22 @@ class Modal {
 
     modalBulid() {
         const options = this.setModalOptions();
+        let content = String;
+        const htmlContent = this.content;
+        const isHTML = (text) => {
+        try {
+            const fragment = new DOMParser().parseFromString(text,"text/html");
+            return fragment.body.children.length>0
+        } catch(error) { ; }
+           return false;
+        }
+
+        // check if content is loaded from DOM or passed as a string
+        if (isHTML(htmlContent)) {
+            content = htmlContent; // return as DOM
+        } else {
+            content = new XMLSerializer().serializeToString(htmlContent); // convert to string
+        }
         const container = this.container;
         const modalAction = options.action.url ? `<div class="modal__action"><a href="${options.action.url}">${options.action.title}</a></div>` : '';
         const html = `
@@ -103,7 +119,7 @@ class Modal {
         <div class="${this.containerInner}">
 
             <div class="modal__content">
-                ${this.content}
+                ${content}
                 ${modalAction}
             </div>
         </div>

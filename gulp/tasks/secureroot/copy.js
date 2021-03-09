@@ -46,6 +46,16 @@ function html() {
   .pipe(dest(config.secureroot.html.output));
 }
 
+function vendorCSS() {
+  return src(config.secureroot.styles.vendor)
+  .pipe(dest(config.secureroot.styles.vendorOutput));
+}
+
+function vendorJS() {
+  return src([config.shared.js.vendor])
+  .pipe(dest(config.shared.js.vendorOutput));
+}
+
 function misc() {
   return src(config.secureroot.copy.all)
   .pipe(dest(config.secureroot.copy.output));
@@ -56,5 +66,5 @@ function templates() {
   .pipe(dest(config.secureroot.copy.templates.output));
 }
 
-const toReturn = series(misc, html, templates, moment, highCharts, picturefill);
+const toReturn = series(misc, html, vendorCSS, vendorJS, templates, moment, highCharts, picturefill);
 task('hseCopy', toReturn)
