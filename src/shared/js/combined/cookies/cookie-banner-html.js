@@ -21,14 +21,14 @@ export function cookieMessageHTML(status) {
             `;
     const cookieMessageAccept = `
                 <div class="cookies-message__copy cookies-message-accepted">
-                    <p>You've accepted analytics cookies. You can change your <a href="cookies.htm">cookie settings</a> at any time.</p>
+                    <p>You've accepted analytics cookies. You can change your <a href="/cookies.htm">cookie settings</a> at any time.</p>
                     <button id="cookieNotifyClose" class="btn btn-cautionary">Hide</button>
                 </div>
             `;
 
     const cookieMessageReject = `
                 <div class="cookies-message__copy cookies-message-rejected">
-                    <p>You've rejected analytics cookies. You can change your <a href="cookies.htm">cookie settings</a> at any time.</p>
+                    <p>You've rejected analytics cookies. You can change your <a href="/cookies.htm">cookie settings</a> at any time.</p>
                     <button id="cookieNotifyClose" class="btn btn-cautionary">Hide</button>
                 </div>
             `;
