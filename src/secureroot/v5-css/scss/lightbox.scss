@@ -1,5 +1,12 @@
 $btnSize: 30px;
 
+.lightbox {
+    text-align: center;
+    img {
+        display: block;
+    }
+}
+
 .lightbox__container {
     position: relative;
     height: 100%;
@@ -17,18 +24,39 @@ $btnSize: 30px;
     &--panel {
         text-align: center;
         vertical-align: middle;
+        display: none;
+
+        &[data-status="active"] {
+            display: block;
+        }
 
         img {
             position: relative;
         }
     }
 }
+// .lightbox__content--panel {
+//     text-align: center;
+//     vertical-align: middle;
+//     display: none;
+
+//     &[data-status="active"] {
+//         display: block;
+//     }
+
+//     img {
+//         position: relative;
+//     }
+// }
 
 .lightbox__caption {
-    text-align: left;
     padding: 5px ($btnSize + 15px);
     color: #333;
     white-space: pre-line;
+    align-self: center;
+    text-align: left;
+
+    @include type-setting(0);
 
     p {
         margin: 0;
