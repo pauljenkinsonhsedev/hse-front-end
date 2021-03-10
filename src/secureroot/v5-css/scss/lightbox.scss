@@ -2,9 +2,8 @@ $btnSize: 30px;
 
 .lightbox {
     text-align: center;
-    img {
-        display: block;
-    }
+    display: inline-flex;
+    flex-direction: column;
 }
 
 .lightbox__container {
@@ -50,7 +49,7 @@ $btnSize: 30px;
 // }
 
 .lightbox__caption {
-    padding: 5px ($btnSize + 15px);
+    padding: 5px 0;
     color: #333;
     white-space: pre-line;
     align-self: center;
@@ -67,6 +66,7 @@ $btnSize: 30px;
     width: 100%;
     background-color: #FFF;
     display: flex;
+    column-gap: ($btnSize + 15px);
     justify-content: space-between;
     padding-top: $btnSize / 2;
 }
@@ -88,7 +88,7 @@ $btnSize: 30px;
         width: $btnSize;
         height: $btnSize;
         border: none;
-        border-radius: $btnSize;
+        border-radius: 50%;
         cursor: pointer;
 
         &:before {
