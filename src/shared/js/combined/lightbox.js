@@ -72,17 +72,15 @@ export function lightbox() {
         const results = [...images].filter(function(item) {
             return item.rel === rel;
         });
+        const length = results.length -1;
 
         // get the correct postion within the array
         let position = 0;
-        const length = results.length -1;
-        console.log(`i ${index} l ${results.length}`)
-        if (index > length) {
-            position = length - index;
+        if (index >= length) {
+            position = index - length;
         } else {
             position = index;
         }
-        console.log(`p ${position}`)
 
         // build a collection from related images
         results.forEach((target, index) => {
@@ -127,20 +125,11 @@ export function lightbox() {
         footerCaption.innerHTML = caption[0].dataset.caption;
 
         footerElement.append(footerCaption);
-        if (results.length > 1) {
+        if (length > 0) {
             footerElement.insertAdjacentElement('afterbegin', footerPrev);
             footerElement.insertAdjacentElement('beforeend', footerNext);
         }
         containerElement.append(footerElement);
-
-        // const image = () => Promise.resolve(sourceUrl);
-        // async function imageLoaded(){
-        //     const res = await image();
-        //     console.log(res);
-        //     modal.classList.add('loaded');
-        // }
-
-        // imageLoaded();
 
         return containerElement.outerHTML;
     }
