@@ -1,10 +1,9 @@
 import Modal from './modal';
 import { customEventListener } from './utils/add-custom-event-listener.js';
-import { mediaQuery } from './utils/media-query.js';
 
 export function lightbox() {
+
     const lightboxHandle = document.querySelectorAll('.lightbox');
-    const lightboxArray = [...lightboxHandle];
     const modalOptions = {
         size: 'default',
         transition: true,
@@ -14,10 +13,10 @@ export function lightbox() {
     // navigation
     function navigation (e) {
         let goTo = Number;
-        const lightbox = document.querySelector('.lightbox__content--panel');
-        const related = [...lightboxHandle].filter(element => element.rel === 'asbestos-gallery');
-        const length = related.length;
-        const pos = parseInt(lightbox.dataset.pos);
+        const lightboxes = document.querySelectorAll('.lightbox__content--panel');
+        const length = lightboxes.length;
+        const current = document.querySelector("[data-status='active']");
+        const pos = parseInt(current.dataset.pos);
         const target = e.target;
 
         if (target.classList.contains('prev') || e.key === 'ArrowLeft') {
@@ -36,17 +35,21 @@ export function lightbox() {
             }
         }
 
-        const html = buildLightbox(goTo);
-        const modalContent = document.querySelector('.modal__content');
-        modalContent.innerHTML = html;
+        // set active
+        delete current.dataset.status;
+        lightboxes[goTo].dataset.status = 'active';
+
+        // reset caption
+        document.querySelector('.lightbox__caption').innerHTML = lightboxes[goTo].dataset.caption;
     }
 
     // lightbox handle event
     lightboxHandle.forEach(function (target, index) {
         const rel = target.rel;
+
         target.addEventListener('click', function(e) {
             e.preventDefault();
-            const html = buildLightbox(index, rel);
+            const html = buildLightbox(rel, index);
             new Modal(html, modalOptions);
         });
     });
@@ -62,45 +65,73 @@ export function lightbox() {
     }, false);
 
     // build collections
-    function buildLightbox(pos) {
-        const newImage = document.createElement('img');
-        const source = document.querySelectorAll('.lightbox')[pos];
-        const sourceUrl = source.href;
-        const caption = source.title;
-        newImage.src = source.href;
-        newImage.alt = source.title;
-        let width = newImage.naturalWidth;
-        let height = newImage.naturalHeight;
+    function buildLightbox(rel, index) {
+        const images = document.querySelectorAll('.lightbox');
+        const lighboxArray = new Array;
+        // filter by 'rel' attribute
+        const results = [...images].filter(function(item) {
+            return item.rel === rel;
+        });
 
-        if (width === 0) {
-            width = `100%`;
+        // get the correct postion within the array
+        let position = 0;
+        const length = results.length -1;
+        console.log(`i ${index} l ${results.length}`)
+        if (index > length) {
+            position = length - index;
         } else {
-            width = `${width}px`;
+            position = index;
         }
+        console.log(`p ${position}`)
 
-        if (height === 0) {
-            height = `100%`;
-        } else {
-            height = `${height}px`;
+        // build a collection from related images
+        results.forEach((target, index) => {
+            const img = document.createElement('img');
+            img.src = target.href;
+            img.alt = target.title;
+
+            const caption = target.title;
+            const element = document.createElement('div');
+            element.className = 'lightbox__content--panel';
+            element.dataset.pos = index;
+            element.dataset.caption = caption;
+            element.innerHTML = img.outerHTML;
+            if (index === position) {
+                element.dataset.status = 'active';
+            }
+            lighboxArray.push(element);
+        });
+
+        const containerElement = document.createElement('div');
+        const contentElement = document.createElement('div');
+        containerElement.className = 'lightbox__container';
+        contentElement.className = 'lightbox__content';
+
+        // build image set
+        for (let image of lighboxArray) {
+            contentElement.append(image);
         }
+        // append to container
+        containerElement.append(contentElement);
 
-        // const containerElement = document.createElement('div');
-        // containerElement.className = '.lightbox__container';
-        const html = `
-        <div class=".lightbox__container">
-            <div class="lightbox__content" style="max-width: ${width}; max-height: ${height};">
-                <div class="lightbox__content--panel" data-pos="${pos}" data-caption="${caption}">${newImage.outerHTML}</div>
-            </div>
-            <div class="lightbox__footer">
-                <button class="lightbox__nav prev" title="previous"></button>
-                <div class="lightbox__caption">${caption}</div>
-                <button class="lightbox__nav next" title="next"></button>
-            </div>
-        </div>
-        `;
+        // build footer
+        const footerElement = document.createElement('div');
+        const footerPrev = document.createElement('button');
+        const footerNext = document.createElement('button');
+        const footerCaption = document.createElement('div');
+        const caption = [...lighboxArray].filter((elem) => { return elem.dataset.status === 'active' });
+        footerElement.className = 'lightbox__footer';
+        footerPrev.className = 'lightbox__nav prev';
+        footerNext.className = 'lightbox__nav next';
+        footerCaption.className = 'lightbox__caption';
+        footerCaption.innerHTML = caption[0].dataset.caption;
 
-        // containerElement.innerHTML = html;
-        // const modal = document.querySelector('.modal__container');
+        footerElement.append(footerCaption);
+        if (results.length > 1) {
+            footerElement.insertAdjacentElement('afterbegin', footerPrev);
+            footerElement.insertAdjacentElement('beforeend', footerNext);
+        }
+        containerElement.append(footerElement);
 
         // const image = () => Promise.resolve(sourceUrl);
         // async function imageLoaded(){
@@ -111,6 +142,6 @@ export function lightbox() {
 
         // imageLoaded();
 
-        return html;
+        return containerElement.outerHTML;
     }
 }
