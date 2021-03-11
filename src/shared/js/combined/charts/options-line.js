@@ -40,7 +40,12 @@ export class ChartOptionsLine extends ChartOptions {
             plotBands: getPlotBand,
             title: {
                 text: this.xAxisText,
-                align: 'high'
+                align: 'high',
+                style: {
+                    fontFamily: this.fontFamily,
+                    fontSize: '0.7rem',
+                    fontWeight: 'regular',
+                }
             },
             labels: {
                 overflow: 'justify',
