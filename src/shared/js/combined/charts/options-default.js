@@ -46,7 +46,12 @@ export class ChartOptionsDefault extends ChartOptions {
             bar: {
                 dataLabels: {
                     enabled: true,
-                    formatter: getValue
+                    formatter: getValue,
+                    style: {
+                        fontFamily: this.fontFamily,
+                        fontSize: '0.8rem',
+                        fontWeight: 'bold'
+                    }
                 }
             },
             dataLabels: {

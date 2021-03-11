@@ -40,6 +40,12 @@ export class ChartOptionsDonut extends ChartOptions {
 
         let chart = {
             type: 'pie',
+            style: {
+                color: '#000',
+                fontFamily: this.fontFamily,
+                fontSize: '0.9rem',
+                fontWeight: 'bold'
+            }
         };
 
         let pieOptions = {
@@ -79,7 +85,10 @@ export class ChartOptionsDonut extends ChartOptions {
                     formatter: getDataLabel,
                     connectorColor: '#ccc',
                     style: {
-                        width: '150px'
+                        width: '150px',
+                        fontFamily: this.fontFamily,
+                        fontSize: '0.75rem',
+                        fontWeight: 'bold'
                     }
                 },
             },

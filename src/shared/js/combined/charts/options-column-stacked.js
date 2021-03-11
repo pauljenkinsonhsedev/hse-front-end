@@ -21,7 +21,12 @@ export class ChartOptionsColumnStacked extends ChartOptions {
         const getTooltip = dataTooltip(this.type, this.units, this.decimals, total);
 
         const chart = {
-            type: 'column'
+            type: 'column',
+            style: {
+                fontFamily: this.fontFamily,
+                fontSize: '0.8rem',
+                fontWeight: 'regular'
+            }
         };
 
         const plotOptions = {

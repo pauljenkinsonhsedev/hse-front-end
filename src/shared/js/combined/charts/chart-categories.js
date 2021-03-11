@@ -16,7 +16,7 @@ export function chartCategories(container) {
         }
 
         if (category.classList.contains('highlighted')) {
-            text = `<span style="color: #000000; font-weight: 700;">${category.textContent}</span>`;
+            text = `<span style="color: #000000; font-size: 0.7rem; font-weight: 700;">${category.textContent}</span>`;
         }
 
         categories.push(text);

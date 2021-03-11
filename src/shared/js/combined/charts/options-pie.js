@@ -51,20 +51,15 @@ export class ChartOptionsPie extends ChartOptions {
                     enabled: true,
                     alignTo: this.alignTo,
                     connectorColor: '#ccc',
-                    formatter: getDataLabel
+                    formatter: getDataLabel,
+                    style: {
+                        fontFamily: this.fontFamily,
+                        fontSize: '0.75rem',
+                        fontWeight: 'bold'
+                    }
                 }
             }
         };
-
-        let xAxis = [{
-            categories: getCategories,
-            title: {
-                text: this.xAxisText
-            },
-            accessibility: {
-                description: this.description
-            }
-        }];
 
         let accessibility = {
             point: {
