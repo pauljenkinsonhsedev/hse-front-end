@@ -122,7 +122,6 @@ display: none;
 <ul>
     <li class="first"><a href="index.htm">Components</a></li>
 	<li><a href="boxes.htm">Boxes</a></li>
-	<li><a href="buttons.htm">Buttons</a></li>
 	<li><a href="charts.htm">Charts (JS)</a></li>
 	<li><a href="dialog.htm">Dialog box</a></li>
 	<li><a href="drop-down.htm">Drop-down list (Input)</a></li>
@@ -137,6 +136,7 @@ display: none;
 			<li><a href="forms/radios.htm">Radios</a></li>
 			<li><a href="forms/switch.htm">Switch</a></li>
 			<li><a href="forms/textarea.htm">Text area</a></li>
+		    <li><a href="forms/buttons.htm">Buttons</a></li>
 		</ul>
 	</li>
 	<li><a href="images.htm">Images</a></li>
@@ -166,15 +166,10 @@ display: none;
  
 	
 <!-- InstanceBeginEditable name="content" -->
-  <h1>Tables</h1>
-	
-  
-  <h2>Default table</h2>
-  
-  <table>
-	  
-  <caption>Table caption</caption>
-  
+ <h1>Tables</h1>
+			
+<table>
+	    
   <thead>
   <tr>
   <th>Column Heading 1</th>
@@ -218,9 +213,228 @@ display: none;
   
   
   </table>
+			
+   <h2>When to use</h2>
   
+    <p>Use the table component to make information easier to compare and scan for users.</p>
+
+<h2>When not to use</h2>
+	
+<p>Never use the table component to layout content on a page.</p>
+	
+  
+			  
+  
+			
+<h2>No cell background colour</h2>
+			
+  <p>The default table uses border styles on cell background to make it easier to distinguish rows.</p>
+			
+  <p>Apply a class of <strong>.no-background</strong> to table element</p>
+  
+  <table class="no-background">
+	    
+  <thead>
+  <tr>
+  <th>Column Heading 1</th>
+  <th>Column Heading 2</th>
+  <th>Column Heading 3</th>
+  </tr>
+  </thead>
+  
+  <tbody>
+  
+  <tr>
+  <td>Row 1 - Cell A</td>
+  <td>Row 1 - Cell B</td>
+  <td>Row 1 - Cell C</td>
+  </tr>
+  
+   <tr>
+  <td>Row 2 - Cell A</td>
+  <td>Row 2 - Cell B</td>
+  <td>Row 2 - Cell C</td>
+  </tr>
+  
+   <tr>
+  <td>Row 3 - Cell A</td>
+  <td>Row 3 - Cell B</td>
+  <td>Row 3 - Cell C</td>
+  </tr>
+  
+  </tbody>
+  
+  <tfoot>
+  
+  <tr>
+  <td>Footer Cell A</td>
+  <td>Footer Cell B</td>
+  <td>Footer Cell C</td>
+  </tr>
+    
+  </tfoot>
+	  
+
+  
+  
+  
+  </table>
+	
+<h3>Code example</h3>
+	
+<iframe width="100%" height="300" src="//jsfiddle.net/pjenkinsonhse/j0u2h9ox/3/embedded/html/dark/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
+			
+<h2>Table captions</h2>
+			
+<p>Use the <strong>&lt;caption&gt;</strong> element to describe a table in the same way you would use a heading. A caption helps users find, navigate and understand tables.</p>
+			
+<table>
+	
+  <caption>Caption for table below</caption>
+	    
+  <thead>
+  <tr>
+  <th>Column Heading 1</th>
+  <th>Column Heading 2</th>
+  <th>Column Heading 3</th>
+  </tr>
+  </thead>
+  
+  <tbody>
+  
+  <tr>
+  <td>Row 1 - Cell A</td>
+  <td>Row 1 - Cell B</td>
+  <td>Row 1 - Cell C</td>
+  </tr>
+  
+   <tr>
+  <td>Row 2 - Cell A</td>
+  <td>Row 2 - Cell B</td>
+  <td>Row 2 - Cell C</td>
+  </tr>
+  
+   <tr>
+  <td>Row 3 - Cell A</td>
+  <td>Row 3 - Cell B</td>
+  <td>Row 3 - Cell C</td>
+  </tr>
+  
+  </tbody>
+  
+  <tfoot>
+  
+  <tr>
+  <td>Footer Cell A</td>
+  <td>Footer Cell B</td>
+  <td>Footer Cell C</td>
+  </tr>
+    
+  </tfoot>
+  
+  
+  
+  </table>
+
+<h3>Code example</h3>
+	
+<iframe width="100%" height="300" src="//jsfiddle.net/pjenkinsonhse/fzw98L32/embedded/html/dark/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
+
+<h2 id="borderless">Borderless table</h2>
+			
+  <p>The default table uses border styling on cells.</p>
+
+						  
+<table class="no-border no-background">
+	  
+  <caption>Table caption</caption>
+  
+  <thead>
+  <tr>
+  <th>Column Heading 1</th>
+  <th>Column Heading 2</th>
+  <th>Column Heading 3</th>
+  </tr>
+  </thead>
+  
+  <tbody>
+  
+  <tr>
+  <td>Row 1 - Cell A</td>
+  <td>Row 1 - Cell B</td>
+  <td>Row 1 - Cell C</td>
+  </tr>
+  
+   <tr>
+  <td>Row 2 - Cell A</td>
+  <td>Row 2 - Cell B</td>
+  <td>Row 2 - Cell C</td>
+  </tr>
+  
+   <tr>
+  <td>Row 3 - Cell A</td>
+  <td>Row 3 - Cell B</td>
+  <td>Row 3 - Cell C</td>
+  </tr>
+  
+  </tbody>
+  
+  
+  </table>
+	
+ <h3>Code example</h3>
+			
+ <iframe width="100%" height="300" src="//jsfiddle.net/pjenkinsonhse/unehzkd0/embedded/html/dark/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
+			
+			
+  <h2>Table headers</h2>
+			
+  <p>Use table headers to tell users what the rows and columns represent. Use the <strong>scope</strong> attribute to help users of assistive technology distinguish between row and column headers.</p>
+			
+			
+  <table class="no-border no-background">
+	  
+  <caption>Table caption</caption>
+  
+  <thead>
+  <tr>
+  <th scope="col">Column Heading 1</th>
+  <th scope="col">Column Heading 2</th>
+  <th scope="col">Column Heading 3</th>
+  </tr>
+  </thead>
+  
+  <tbody>
+  
+  <tr>
+  <th scope="row">Row 1 - Cell A</th>
+  <td>Row 1 - Cell B</td>
+  <td>Row 1 - Cell C</td>
+  </tr>
+  
+   <tr>
+  <th scope="row">Row 2 - Cell A</th>
+  <td>Row 2 - Cell B</td>
+  <td>Row 2 - Cell C</td>
+  </tr>
+  
+   <tr>
+  <th scope="row">Row 3 - Cell A</th>
+  <td>Row 3 - Cell B</td>
+  <td>Row 3 - Cell C</td>
+  </tr>
+  
+  </tbody>
+ 
+  
+  </table>
+	
+  <iframe width="100%" height="300" src="//jsfiddle.net/pjenkinsonhse/gqxz6349/embedded/html/dark/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
+			
   
   <h2>Sortable table (JS)</h2>
+			
+  <p>Allows a table to be sorted by the column headers, in ascending or descending order.</p>
   
    <table class="sortable">
   <thead>
@@ -293,21 +507,8 @@ display: none;
     </tr>
     </tbody>
 </table>
-	
-
-	
-	
-   <h2>Table captions</h2>
-   <p>Use the <strong>&lt;caption&gt;</strong> element to describe a table in the same way you would use a heading. A caption helps users find, navigate and understand tables.</p>
-
- <h2>When to use</h2>
-  
-    <p>Use the table component to make information easier to compare and scan for users.</p>
-
-<h2>When not to use</h2>
-	
-<p>Never use the table component to layout content on a page.</p>
-
+</table>
+</table>
         
   <!-- InstanceEndEditable -->
 	
@@ -335,7 +536,7 @@ display: none;
   </footer>
 </nav>
 <section id="lastUpdated" aria-label="Last updated">
-<!-- InstanceBeginEditable name="updated" -->Updated:<!-- #BeginDate format:IS1 -->2020-11-16<!-- #EndDate -->-->
+<!-- InstanceBeginEditable name="updated" -->Updated:<!-- #BeginDate format:IS1 -->2021-03-17<!-- #EndDate -->-->
   <!-- InstanceEndEditable -->
 </section>
 <script src="../assets/v5-js/v5-main.min.js"></script>
