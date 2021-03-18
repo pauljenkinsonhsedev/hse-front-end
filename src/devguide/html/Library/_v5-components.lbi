@@ -4,7 +4,6 @@
 	<li><a href="../components/boxes.htm">Boxes</a></li>
 	<li><a href="../components/charts.htm">Charts (JS)</a></li>
 	<li><a href="../components/dialog.htm">Dialog box</a></li>
-	<li><a href="../components/drop-down.htm">Drop-down list (Input)</a></li>
 	<li><a href="#">Forms</a>
 		<ul>
 			<li><a href="../components/forms/index.htm">Overview</a></li>
@@ -17,11 +16,12 @@
 			<li><a href="../components/forms/switch.htm">Switch</a></li>
 			<li><a href="../components/forms/textarea.htm">Text area</a></li>
 		    <li><a href="../components/forms/buttons.htm">Buttons</a></li>
+			<li><a href="../components/forms/drop-down.htm">Drop-down list (Input)</a></li>
+			<li><a href="../components/forms/subscribe.htm">Subscribe (Input)</a></li>
 		</ul>
 	</li>
 	<li><a href="../components/images.htm">Images</a></li>
 	<li><a href="../components/lightbox.htm">Lightbox (JS)</a></li>
-	<li><a href="../components/subscribe.htm">Subscribe (Input)</a></li>
     <li><a href="../components/tables.htm">Table</a></li>
 	<li><a href="../components/tabs.htm">Tabs (JS)</a></li>
 	<li><a href="../components/video.htm">Video (Embed)</a></li>
