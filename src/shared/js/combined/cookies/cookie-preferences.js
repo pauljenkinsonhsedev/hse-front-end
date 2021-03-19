@@ -168,7 +168,7 @@ export function cookiePreferences() {
             event.preventDefault();
             setFields();
             submitForm();
-            formFeedback();
+            // formFeedback();
         });
 
         const choices = document.querySelectorAll('.input-switch');
@@ -219,7 +219,6 @@ export function cookiePreferences() {
         // set cookies
         setCookiePreferences({'cookie-essential': true, 'cookie-usage-analytics': false});
         controlAnalytics();
-        setFields();
 
         // set message
         Cookies.set('cookies_status', 'rejected', setCookieSettings);
@@ -235,7 +234,6 @@ export function cookiePreferences() {
         event.preventDefault();
         setCookiePreferences({'cookie-essential': true, 'cookie-usage-analytics': true});
         controlAnalytics();
-        setFields();
         formFeedback();
 
         Cookies.set('cookies_status', 'accepted', setCookieSettings);
