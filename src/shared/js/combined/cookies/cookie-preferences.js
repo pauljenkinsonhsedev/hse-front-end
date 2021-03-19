@@ -237,5 +237,11 @@ export function cookiePreferences() {
         controlAnalytics();
         setFields();
         formFeedback();
+
+        Cookies.set('cookies_status', 'accepted', setCookieSettings);
+        messageContainer.innerHTML = cookieMessageHTML();
+
+        // reload to capture tracking
+        window.location.reload();
     });
 }
