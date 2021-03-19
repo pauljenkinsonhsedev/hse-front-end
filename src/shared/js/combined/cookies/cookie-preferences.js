@@ -2,6 +2,7 @@ import Cookies from 'js-cookie';
 import { customEventListener } from '../utils/add-custom-event-listener';
 import { cookieMessageHTML } from './cookie-banner-html.js';
 import { dialogModalAjax } from '../dialogs.js';
+import { smoothScroll } from '../utils/smooth-scroll';
 
 // const setCookieSettings = { path: '/', domain: 'hse.gov.uk', secure: true, sameSite: 'strict', expires: 365 };
 // const setCookieSettings = { path: '/', domain: 'beta.hse.gov.uk', secure: true, sameSite: 'strict', expires: 365 };
@@ -80,7 +81,13 @@ function formFeedback() {
         <button class="btn btn-cautionary close-action">Close</button>
     </div>`;
     dialog.innerHTML = content;
-    dialogModalAjax(dialog);
+
+    const options = {
+        size: 'small',
+        transition: true,
+        overlay: true
+    };
+    dialogModalAjax(dialog, options);
 }
 
 export function cookiePreferences() {
@@ -142,7 +149,7 @@ export function cookiePreferences() {
             // reload to capture tracking on page this form lives
 
 
-            window.location.reload();
+
 
         }
         settingsForm.addEventListener('submit', function(event){
@@ -164,6 +171,11 @@ export function cookiePreferences() {
                         Cookies.set('cookies_status', 'rejected', setCookieSettings);
                     }
                 }
+                smoothScroll('body', 1000);
+                this.timeout = setTimeout(()=> {
+                    window.location.reload();
+                    this.timeout = false;
+                }, 1001)
 
                 submitForm();
             });
