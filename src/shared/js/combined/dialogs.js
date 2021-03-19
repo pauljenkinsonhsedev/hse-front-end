@@ -20,12 +20,18 @@ export function dialogModal(container) {
 }
 
 
-export function dialogModalAjax(content) {
-    const modalOptions = {
-        size: 'small',
-        transition: true,
-        // overlay: true
-    };
+export function dialogModalAjax(content, options) {
+
+    let modalOptions;
+    if (options === null) {
+        modalOptions = {
+            size: 'small',
+            transition: true,
+            // overlay: true
+        };
+    } else {
+        modalOptions = options;
+    }
 
     // console.log('modalOptions', modalOptions);
     new Modal(content, modalOptions);
