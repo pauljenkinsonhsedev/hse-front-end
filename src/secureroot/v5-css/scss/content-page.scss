@@ -275,13 +275,14 @@ float: left;
 }
 
 .v5-figure.full-width, .v5-figure.full-width img {
-width: 100%;
+min-width: 100%;
 height: auto;
 }
 
 .v5-figure figcaption {
 float: left;
 width: 100%;
+max-width: 100%;
 padding: 10px;
 background-color: $hseblack;
 color: white;
