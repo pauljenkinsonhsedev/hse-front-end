@@ -3,9 +3,9 @@ import { customEventListener } from '../utils/add-custom-event-listener';
 import { cookieMessageHTML } from './cookie-banner-html.js';
 import { dialogModalAjax } from '../dialogs.js';
 
-const setCookieSettings = { path: '/', domain: 'hse.gov.uk', secure: true, sameSite: 'strict', expires: 365 };
+// const setCookieSettings = { path: '/', domain: 'hse.gov.uk', secure: true, sameSite: 'strict', expires: 365 };
 // const setCookieSettings = { path: '/', domain: 'beta.hse.gov.uk', secure: true, sameSite: 'strict', expires: 365 };
-//    const setCookieSettings = { path: '/', domain: 'localhost', secure: false, sameSite: 'strict', expires: 365 };
+const setCookieSettings = { path: '/', domain: 'localhost', secure: false, sameSite: 'strict', expires: 365 };
 
 // So we can access Cookies inline for Analytics in the HTML
 window.Cookies = Cookies;
@@ -90,10 +90,11 @@ export function cookiePreferences() {
     const header = document.getElementById('headerContainer');
     const settingsForm = document.getElementById('cookies-settings');
     const cookiesSet = Cookies.get('cookies_policy');
+    const cookieStatus = Cookies.get('cookies_status');
     const messageContainer = document.createElement('section');
 
-    messageContainer.setAttribute("id", "cookie-message");
-    messageContainer.setAttribute("aria-label", "Cookie message");
+    messageContainer.setAttribute('id', 'cookie-message');
+    messageContainer.setAttribute('aria-label', 'Cookie message');
 
     let message;
     /*
@@ -101,12 +102,17 @@ export function cookiePreferences() {
         set banner or field values
     ------------------------------------
     */
+    const hideBanner = Cookies.get('hide_banner');
 
-    if (!cookiesSet) {
-        // set cookie banner when cookies are not set
+    if (!hideBanner || hideBanner === false) {
         message = cookieMessageHTML();
         messageContainer.innerHTML = message;
         body.insertBefore(messageContainer, header);
+    }
+
+    if (!cookiesSet) {
+        // set cookie banner when cookies are not set
+
 
     } else {
         // set analytics
@@ -133,6 +139,11 @@ export function cookiePreferences() {
             }
             setCookiePreferences(outputData);
             controlAnalytics();
+            // reload to capture tracking on page this form lives
+
+
+            window.location.reload();
+
         }
         settingsForm.addEventListener('submit', function(event){
             event.preventDefault();
@@ -145,6 +156,15 @@ export function cookiePreferences() {
         choices.forEach(elem => {
             elem.addEventListener('change', function(event){
                 event.preventDefault();
+
+                if (elem.id === 'cookie-usage-analytics') {
+                    if (event.target.checked === true) {
+                        Cookies.set('cookies_status', 'accepted', setCookieSettings);
+                    } else {
+                        Cookies.set('cookies_status', 'rejected', setCookieSettings);
+                    }
+                }
+
                 submitForm();
             });
         });
@@ -154,17 +174,24 @@ export function cookiePreferences() {
     customEventListener('#cookieNotifyClose', 'click', (event) => {
         event.preventDefault();
         // destroy banner
+        Cookies.set('hide_banner', true, setCookieSettings);
         messageContainer.remove();
     });
 
     // accept all
     customEventListener('#acceptAllCookies', 'click' , (event) => {
         event.preventDefault();
+
         // set cookies
         setCookiePreferences({'cookie-essential': true, 'cookie-usage-analytics': true});
         controlAnalytics();
         // set message
-        messageContainer.innerHTML = cookieMessageHTML('accepted');
+
+        Cookies.set('cookies_status', 'accepted', setCookieSettings);
+        messageContainer.innerHTML = cookieMessageHTML();
+
+        // reload to capture tracking
+        window.location.reload();
     });
 
     // reject all
@@ -176,7 +203,12 @@ export function cookiePreferences() {
         setFields();
 
         // set message
-        messageContainer.innerHTML = cookieMessageHTML('rejected');
+        Cookies.set('cookies_status', 'rejected', setCookieSettings);
+        messageContainer.innerHTML = cookieMessageHTML();
+
+        // reload to capture tracking
+        window.location.reload();
+
     });
 
     // form action select all cookies
