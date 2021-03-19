@@ -147,11 +147,23 @@ export function cookiePreferences() {
             setCookiePreferences(outputData);
             controlAnalytics();
             // reload to capture tracking on page this form lives
+            const hideBanner = Cookies.get('hide_banner');
 
+            console.log(outputData['cookie-usage-analytics']);
 
+            if (hideBanner === undefined) {
+                console.log('should scroll');
+                smoothScroll('body', 1000);
+                setTimeout(()=> {
+                    window.location.reload();
+                }, 1001);
+            } else {
+                setTimeout(()=> {
+                    window.location.reload();
+                }, 10);
+            }
+        };
 
-
-        }
         settingsForm.addEventListener('submit', function(event){
             event.preventDefault();
             setFields();
@@ -171,11 +183,6 @@ export function cookiePreferences() {
                         Cookies.set('cookies_status', 'rejected', setCookieSettings);
                     }
                 }
-                smoothScroll('body', 1000);
-                this.timeout = setTimeout(()=> {
-                    window.location.reload();
-                    this.timeout = false;
-                }, 1001)
 
                 submitForm();
             });
