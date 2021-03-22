@@ -2,10 +2,11 @@ import Cookies from 'js-cookie';
 import { customEventListener } from '../utils/add-custom-event-listener';
 import { cookieMessageHTML } from './cookie-banner-html.js';
 import { dialogModalAjax } from '../dialogs.js';
+import { smoothScroll } from '../utils/smooth-scroll';
 
-const setCookieSettings = { path: '/', domain: 'hse.gov.uk', secure: true, sameSite: 'strict', expires: 365 };
+// const setCookieSettings = { path: '/', domain: 'hse.gov.uk', secure: true, sameSite: 'strict', expires: 365 };
 // const setCookieSettings = { path: '/', domain: 'beta.hse.gov.uk', secure: true, sameSite: 'strict', expires: 365 };
-//    const setCookieSettings = { path: '/', domain: 'localhost', secure: false, sameSite: 'strict', expires: 365 };
+const setCookieSettings = { path: '/', domain: 'localhost', secure: false, sameSite: 'strict', expires: 365 };
 
 // So we can access Cookies inline for Analytics in the HTML
 window.Cookies = Cookies;
@@ -80,7 +81,13 @@ function formFeedback() {
         <button class="btn btn-cautionary close-action">Close</button>
     </div>`;
     dialog.innerHTML = content;
-    dialogModalAjax(dialog);
+
+    const options = {
+        size: 'small',
+        transition: true,
+        overlay: true
+    };
+    dialogModalAjax(dialog, options);
 }
 
 export function cookiePreferences() {
@@ -90,10 +97,11 @@ export function cookiePreferences() {
     const header = document.getElementById('headerContainer');
     const settingsForm = document.getElementById('cookies-settings');
     const cookiesSet = Cookies.get('cookies_policy');
+    const cookieStatus = Cookies.get('cookies_status');
     const messageContainer = document.createElement('section');
 
-    messageContainer.setAttribute("id", "cookie-message");
-    messageContainer.setAttribute("aria-label", "Cookie message");
+    messageContainer.setAttribute('id', 'cookie-message');
+    messageContainer.setAttribute('aria-label', 'Cookie message');
 
     let message;
     /*
@@ -101,12 +109,17 @@ export function cookiePreferences() {
         set banner or field values
     ------------------------------------
     */
+    const hideBanner = Cookies.get('hide_banner');
 
-    if (!cookiesSet) {
-        // set cookie banner when cookies are not set
+    if (!hideBanner || hideBanner === false) {
         message = cookieMessageHTML();
         messageContainer.innerHTML = message;
         body.insertBefore(messageContainer, header);
+    }
+
+    if (!cookiesSet) {
+        // set cookie banner when cookies are not set
+
 
     } else {
         // set analytics
@@ -133,18 +146,44 @@ export function cookiePreferences() {
             }
             setCookiePreferences(outputData);
             controlAnalytics();
-        }
+            // reload to capture tracking on page this form lives
+            const hideBanner = Cookies.get('hide_banner');
+
+            console.log(outputData['cookie-usage-analytics']);
+
+            if (hideBanner === undefined) {
+                console.log('should scroll');
+                smoothScroll('body', 1000);
+                setTimeout(()=> {
+                    window.location.reload();
+                }, 1001);
+            } else {
+                setTimeout(()=> {
+                    window.location.reload();
+                }, 10);
+            }
+        };
+
         settingsForm.addEventListener('submit', function(event){
             event.preventDefault();
             setFields();
             submitForm();
-            formFeedback();
+            // formFeedback();
         });
 
         const choices = document.querySelectorAll('.input-switch');
         choices.forEach(elem => {
             elem.addEventListener('change', function(event){
                 event.preventDefault();
+
+                if (elem.id === 'cookie-usage-analytics') {
+                    if (event.target.checked === true) {
+                        Cookies.set('cookies_status', 'accepted', setCookieSettings);
+                    } else {
+                        Cookies.set('cookies_status', 'rejected', setCookieSettings);
+                    }
+                }
+
                 submitForm();
             });
         });
@@ -154,17 +193,24 @@ export function cookiePreferences() {
     customEventListener('#cookieNotifyClose', 'click', (event) => {
         event.preventDefault();
         // destroy banner
+        Cookies.set('hide_banner', true, setCookieSettings);
         messageContainer.remove();
     });
 
     // accept all
     customEventListener('#acceptAllCookies', 'click' , (event) => {
         event.preventDefault();
+
         // set cookies
         setCookiePreferences({'cookie-essential': true, 'cookie-usage-analytics': true});
         controlAnalytics();
         // set message
-        messageContainer.innerHTML = cookieMessageHTML('accepted');
+
+        Cookies.set('cookies_status', 'accepted', setCookieSettings);
+        messageContainer.innerHTML = cookieMessageHTML();
+
+        // reload to capture tracking
+        window.location.reload();
     });
 
     // reject all
@@ -173,10 +219,14 @@ export function cookiePreferences() {
         // set cookies
         setCookiePreferences({'cookie-essential': true, 'cookie-usage-analytics': false});
         controlAnalytics();
-        setFields();
 
         // set message
-        messageContainer.innerHTML = cookieMessageHTML('rejected');
+        Cookies.set('cookies_status', 'rejected', setCookieSettings);
+        messageContainer.innerHTML = cookieMessageHTML();
+
+        // reload to capture tracking
+        window.location.reload();
+
     });
 
     // form action select all cookies
@@ -184,8 +234,13 @@ export function cookiePreferences() {
         event.preventDefault();
         setCookiePreferences({'cookie-essential': true, 'cookie-usage-analytics': true});
         controlAnalytics();
-        setFields();
         formFeedback();
+
+        Cookies.set('cookies_status', 'accepted', setCookieSettings);
+        messageContainer.innerHTML = cookieMessageHTML();
+
+        // reload to capture tracking
+        window.location.reload();
     });
 
 
