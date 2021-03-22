@@ -85,7 +85,6 @@ display: none;
       <nav id="main-menu"  class="menu js-menu">
         <ul>
           <li class="home"><a href="../index.htm">Design system</a></li>
-          <li class="brand"><a href="../brand/index.htm">Brand</a></li>
           <li class="style"><a href="../style/index.htm">Styles</a></li>
           <li class="components"><a href="index.htm">Components</a></li>
           <li class="patterns"><a href="../patterns/index.htm">Patterns</a></li>
@@ -122,10 +121,8 @@ display: none;
 <ul>
     <li class="first"><a href="index.htm">Components</a></li>
 	<li><a href="boxes.htm">Boxes</a></li>
-	<li><a href="buttons.htm">Buttons</a></li>
 	<li><a href="charts.htm">Charts (JS)</a></li>
 	<li><a href="dialog.htm">Dialog box</a></li>
-	<li><a href="drop-down.htm">Drop-down list (Input)</a></li>
 	<li><a href="#">Forms</a>
 		<ul>
 			<li><a href="forms/index.htm">Overview</a></li>
@@ -137,11 +134,13 @@ display: none;
 			<li><a href="forms/radios.htm">Radios</a></li>
 			<li><a href="forms/switch.htm">Switch</a></li>
 			<li><a href="forms/textarea.htm">Text area</a></li>
+		    <li><a href="forms/buttons.htm">Buttons</a></li>
+			<li><a href="forms/drop-down.htm">Drop-down list (Input)</a></li>
+			<li><a href="forms/subscribe.htm">Subscribe (Input)</a></li>
 		</ul>
 	</li>
 	<li><a href="images.htm">Images</a></li>
 	<li><a href="lightbox.htm">Lightbox (JS)</a></li>
-	<li><a href="subscribe.htm">Subscribe (Input)</a></li>
     <li><a href="tables.htm">Table</a></li>
 	<li><a href="tabs.htm">Tabs (JS)</a></li>
 	<li><a href="video.htm">Video (Embed)</a></li>
@@ -182,7 +181,10 @@ display: none;
 <img alt="Inspector Calls" height="394" width="700" src="assets/images/hse-inspector.jpg"> 
 </figure>
 	
- <iframe width="100%" height="300" src="//jsfiddle.net/pjenkinsonhse/xhb4Lc1f/1/embedded/html/dark/" allowfullscreen="allowfullscreen" allowpaymentrequest></iframe> 
+<h3>Code example</h3>
+
+	
+ <!-- <iframe width="100%" height="300" src="//jsfiddle.net/pjenkinsonhse/xhb4Lc1f/1/embedded/html/dark/" allowfullscreen="allowfullscreen" allowpaymentrequest></iframe> -->
 
 <h2>Full width responsive image with caption</h2>
 	
@@ -196,8 +198,10 @@ display: none;
       <figcaption>This is a caption for an image</figcaption>
     </figure>
 	
+<h3>Code example</h3>
 
-<iframe width="100%" height="auto" src="//jsfiddle.net/pjenkinsonhse/pherow94/2/embedded/html/dark/" allowfullscreen="allowfullscreen" allowpaymentrequest ></iframe>
+
+<!-- <iframe width="100%" height="auto" src="//jsfiddle.net/pjenkinsonhse/pherow94/2/embedded/html/dark/" allowfullscreen="allowfullscreen" allowpaymentrequest ></iframe> -->
 	
 <h3>When to use</h3>
 	
@@ -221,14 +225,16 @@ display: none;
 <img alt="" height="auto" width="450" src="assets/images/hse-inspector.jpg"> 
 </figure>
 	
-<iframe width="100%" height="300" src="//jsfiddle.net/pjenkinsonhse/9qges84y/embedded/html/dark/" allowfullscreen="allowfullscreen" allowpaymentrequest ></iframe>
+<h3>Code example</h3>
+	
+<!-- <iframe width="100%" height="300" src="//jsfiddle.net/pjenkinsonhse/9qges84y/embedded/html/dark/" allowfullscreen="allowfullscreen" allowpaymentrequest ></iframe> -->
 	
 	
 <h3>Fixed image with caption</h3>
 
-<figure class="v5-figure">
+<figure id="caption" class="v5-figure">
 <img alt="" height="auto" width="450" src="assets/images/hse-inspector.jpg"> 
-<figcaption>This image has a caption</figcaption>
+<figcaption>This image has a caption, This image has a caption, This image has a caption, This image has a caption</figcaption>
 </figure>
 	
 <p class="utilclearfloats">Fixed images can also have captions but make sure the first element below the figure element has a class of <strong>.utilclearfloats</strong>.</p>	
@@ -290,7 +296,7 @@ display: none;
   </footer>
 </nav>
 <section id="lastUpdated" aria-label="Last updated">
-<!-- InstanceBeginEditable name="updated" -->Updated:<!-- #BeginDate format:IS1 -->2020-11-19<!-- #EndDate -->
+<!-- InstanceBeginEditable name="updated" -->Updated:<!-- #BeginDate format:IS1 -->2021-03-18<!-- #EndDate -->
   <!-- InstanceEndEditable -->
 </section>
 <script src="../assets/v5-js/v5-main.min.js"></script>
@@ -306,6 +312,42 @@ display: none;
 
 
 <div id="gutter"><!-- InstanceBeginEditable name="gutter" --> 
+
+<script>
+
+/*
+document.addEventListener("DOMContentLoaded", function(){
+	
+	
+var figureElements = document.querySelectorAll('.v5-figure');
+	
+figureElements.forEach(function(figureElement) {
+	
+console.log('figureElement: ', figureElement);
+		
+var figurecaption = figureElement.querySelector('figcaption');
+var figureimg = figureElement.querySelector('img');
+var figureimgwidth = figureimg.clientWidth + 'px';
+
+
+if (figurecaption)
+{
+	
+  console.log(figureimgwidth);
+  figurecaption.style.maxWidth = figureimgwidth;
+}	
+
+	
+})
+	
+});
+
+*/	
+
+	
+	
+</script>
+	
 <!-- InstanceEndEditable --></div>
 
 <!-- SiteImprove JS --> 

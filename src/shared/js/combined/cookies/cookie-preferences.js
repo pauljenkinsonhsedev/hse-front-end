@@ -242,4 +242,10 @@ export function cookiePreferences() {
         // reload to capture tracking
         window.location.reload();
     });
+
+
+
+
+
+    
 }
