@@ -167,11 +167,40 @@ display: none;
 <!-- InstanceBeginEditable name="content" -->
   <h1>Images</h1>
 	
-<p>Avoid unnecessary decoration. Only use images if there’s a real user need.</p>
+<div class="box">
 	
-
+<h2>In this section</h2>
+	
+<ul>
+ <li><a href="#full-width">Full width responsive image</a></li>	
+ <li><a href="#caption">Caption</a></li>
+ <li><a href="#fixed-width">Fixed width image</a></li>
+ <li><a href="#alt-text">Alternative text</a></li>
+</ul>
+	
+	
+	
+</div>
+	
+	
+<h2>Image attributes</h2>
+	
+<p><strong>Important:</strong> All images should be contained inside a <strong>&lt;figure&gt;</strong> element with the class <strong>.v5-figure</strong>.</p>
+	
+<h3>Height</h3>
+	
+<p>The height of an image is calculated with CSS auto height. This CSS attribute will overide the HTML height attribute and ensure that the image height is correct.</p>
+	
+<h3>Width</h3>
+	
+<p>The width of an image will be set by the width attribute in the image element HTML.</p>
+	
+	
+<h3>Aspect ratio</h3>
+	
+<p>The reccomended aspect ratio for images is 16:9.</p>
   
-<h2>Full width responsive image</h2>
+<h2 id="full-width">Full width responsive image</h2>
 	
 <p>Wrap the image element inside a <strong>&lt;figure&gt;</strong> element with a class of <strong>.v5-figure</strong> and <strong>.full-width</strong>.</p>
 
@@ -186,7 +215,7 @@ display: none;
 	
  <!-- <iframe width="100%" height="300" src="//jsfiddle.net/pjenkinsonhse/xhb4Lc1f/1/embedded/html/dark/" allowfullscreen="allowfullscreen" allowpaymentrequest></iframe> -->
 
-<h2>Full width responsive image with caption</h2>
+<h2 id="caption">Caption</h2>
 	
 	<p>The <strong>HTML &lt;figcaption&gt;</strong> represents a caption or legend describing the rest of the contents of its parent <strong>&lt;figure&gt;</strong> element.</p>
 	
@@ -203,9 +232,9 @@ display: none;
 
 <!-- <iframe width="100%" height="auto" src="//jsfiddle.net/pjenkinsonhse/pherow94/2/embedded/html/dark/" allowfullscreen="allowfullscreen" allowpaymentrequest ></iframe> -->
 	
-<h3>When to use</h3>
+<h3 id="when-to-use">When to use</h3>
 	
-<p>When there is a need to provide context to the image.</p>
+<p>When there is a need to provide context to the image, avoid unnecessary decoration. Only use images if there’s a real user need.</p>
 
 	
 <div class="box">
@@ -218,7 +247,7 @@ display: none;
 	
 
 
-<h2>Fixed width image</h2>
+<h2 id="fixed-width">Fixed width image</h2>
 
 
 <figure class="v5-figure">
@@ -232,15 +261,47 @@ display: none;
 	
 <h3>Fixed image with caption</h3>
 
-<figure id="caption" class="v5-figure">
+<figure id="fixed-caption" class="v5-figure">
 <img alt="" height="auto" width="450" src="assets/images/hse-inspector.jpg"> 
-<figcaption>This image has a caption, This image has a caption, This image has a caption, This image has a caption</figcaption>
+<figcaption class="fix">This image has a caption, This image has a caption, This image has a caption, This image has a caption</figcaption>
 </figure>
 	
 <p class="utilclearfloats">Fixed images can also have captions but make sure the first element below the figure element has a class of <strong>.utilclearfloats</strong>.</p>	
 	
+<h2 id="caption-width">Caption width</h2>
 	
- <h2>Alternative text</h2>
+<p>Below demonstrates an issue with fixed image width and captions, if the caption width is larger than the image width it will not be automatically constrained to the image width.</p>
+	
+<p>To fix this issue add a class of <strong>.fix</strong> to the <strong>&lt;figcaption&gt;</strong> element.</p>
+	
+<h3>Small caption</h3>
+	
+<p>Caption text is small in this example and does not push the <strong>&lt;figcaption&gt;</strong> element beyond the width of the image.</p>
+	
+<figure class="v5-figure">
+<img alt="" height="auto" width="450" src="assets/images/hse-inspector.jpg"> 
+<figcaption>Small caption</figcaption>
+</figure>
+
+<h3>Large caption</h3>
+	
+<p>In this example the large caption text stretches the <strong>&lt;figcaption&gt;</strong> element beyond the width of the image.</p>
+	
+<figure class="v5-figure">
+<img alt="" height="auto" width="450" src="assets/images/hse-inspector.jpg"> 
+<figcaption>Large caption that spans beyond the width of fixed image and needs to be constrained</figcaption>
+</figure>
+	
+<h3>Large caption with constraints applied</h3>
+	
+<figure class="v5-figure">
+<img alt="" height="auto" width="450" src="assets/images/hse-inspector.jpg"> 
+<figcaption class="fix">Large caption that is constrained to width of image using the class <strong>.fix</strong> on the <strong>&lt;figcaption&gt;</strong> element</figcaption>
+</figure>
+
+	
+	
+ <h2 id="alt-text">Alternative text</h2>
 	
   <p>The <strong>alt</strong> attribute should be included in all <strong>img</strong> elements.</p>
   
@@ -262,10 +323,7 @@ display: none;
 <h3>Links</h3>
 	
 <p>If the img element is inside <strong>&lt;a&gt;</strong> element, either, write it inside the same <strong>&lt;a&gt;</strong> element, or inside the image's alt attribute.</p>
-	
-<h2>Aspect ratio</h2>
-	
-<p>The reccomended aspect ratio for images is 16:9.</p>
+
 	
     
   <!-- /#secondTab -->
@@ -296,7 +354,7 @@ display: none;
   </footer>
 </nav>
 <section id="lastUpdated" aria-label="Last updated">
-<!-- InstanceBeginEditable name="updated" -->Updated:<!-- #BeginDate format:IS1 -->2021-03-18<!-- #EndDate -->
+<!-- InstanceBeginEditable name="updated" -->Updated:<!-- #BeginDate format:IS1 -->2021-03-26<!-- #EndDate -->
   <!-- InstanceEndEditable -->
 </section>
 <script src="../assets/v5-js/v5-main.min.js"></script>
