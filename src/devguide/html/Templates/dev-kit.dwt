@@ -91,7 +91,6 @@ display: none;
       <nav id="main-menu"  class="menu js-menu">
         <ul>
           <li class="home"><a href="../index.htm">Design system</a></li>
-          <li class="brand"><a href="../brand/index.htm">Brand</a></li>
           <li class="style"><a href="../style/index.htm">Styles</a></li>
           <li class="components"><a href="../components/index.htm">Components</a></li>
           <li class="patterns"><a href="../patterns/index.htm">Patterns</a></li>
@@ -235,7 +234,7 @@ display: none;
   </footer>
 </nav>
 <section id="lastUpdated" aria-label="Last updated">
-<!-- TemplateBeginEditable name="updated" -->Updated:<!-- #BeginDate format:IS1 -->2021-02-05<!-- #EndDate --><!-- TemplateEndEditable -->
+<!-- TemplateBeginEditable name="updated" -->Updated:<!-- #BeginDate format:IS1 -->2021-03-17<!-- #EndDate --><!-- TemplateEndEditable -->
 </section>
 <script src="../assets/v5-js/v5-main.min.js"></script>
 <script src="../assets/v5-js/jquery.min.js"></script> 

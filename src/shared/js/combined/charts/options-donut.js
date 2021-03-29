@@ -31,15 +31,21 @@ export class ChartOptionsDonut extends ChartOptions {
         if (mediaquery === 'small') {
             this.alignTo = 'plotEdges';
             this.pieSize = '160px';
-            this.fontSize = '12px';
+            this.fontSize = '0.9rem';
         } else {
             this.alignTo = false;
             this.pieSize = '220px';
-            this.fontSize = '16px';
+            this.fontSize = '0.9rem';
         }
 
         let chart = {
             type: 'pie',
+            style: {
+                color: '#000',
+                fontFamily: this.fontFamily,
+                fontSize: '0.9rem',
+                fontWeight: 'bold'
+            }
         };
 
         let pieOptions = {
@@ -66,7 +72,6 @@ export class ChartOptionsDonut extends ChartOptions {
                 fontWeight: 'bold'
             }
         };
-
         let plotOptions = {
             pie: {
                 slicedOffset: 0,
@@ -80,9 +85,12 @@ export class ChartOptionsDonut extends ChartOptions {
                     formatter: getDataLabel,
                     connectorColor: '#ccc',
                     style: {
-                        width: '150px'
+                        width: '150px',
+                        fontFamily: this.fontFamily,
+                        fontSize: '0.75rem',
+                        fontWeight: 'bold'
                     }
-                }
+                },
             },
             series: {
                 states:{
@@ -97,6 +105,7 @@ export class ChartOptionsDonut extends ChartOptions {
 
         const collection = this.collection;
         this.collection = {...collection, chart, title, pieOptions, plotOptions};
+
         return this.collection;
     }
 }

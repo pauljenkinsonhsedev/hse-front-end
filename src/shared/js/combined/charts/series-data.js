@@ -107,7 +107,7 @@ export function seriesData(data) {
                 }
             };
 
-            if (errorArray.length > 0) {
+            if (document.querySelector('.error-low')) {
                 seriesData.push(unitdata, errorBar);
             } else {
                 seriesData.push(unitdata);
@@ -118,6 +118,5 @@ export function seriesData(data) {
     }
 
     const seriesDataOutput = getData();
-
     return seriesDataOutput;
 }

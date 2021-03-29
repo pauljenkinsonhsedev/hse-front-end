@@ -19,7 +19,7 @@ export class ChartOptionsPie extends ChartOptions {
         this.dataTable = container.querySelector('.tabledata');
         this.units = container.dataset.chartUnits;
         this.decimals = container.dataset.decimalPoint;
-        this.xAxisText = container.dataset.xaxisText;
+        // this.xAxisText = container.dataset.xaxisText;
 
         let units = container.querySelectorAll('.unit');
         let total = 0;
@@ -51,20 +51,15 @@ export class ChartOptionsPie extends ChartOptions {
                     enabled: true,
                     alignTo: this.alignTo,
                     connectorColor: '#ccc',
-                    formatter: getDataLabel
+                    formatter: getDataLabel,
+                    style: {
+                        fontFamily: this.fontFamily,
+                        fontSize: '0.75rem',
+                        fontWeight: 'bold'
+                    }
                 }
             }
         };
-
-        let xAxis = [{
-            categories: getCategories,
-            title: {
-                text: this.xAxisText
-            },
-            accessibility: {
-                description: this.description
-            }
-        }];
 
         let accessibility = {
             point: {
@@ -74,7 +69,7 @@ export class ChartOptionsPie extends ChartOptions {
         };
 
         const collection = this.collection;
-        this.collection = {...collection, plotOptions, xAxis, accessibility};
+        this.collection = {...collection, plotOptions, accessibility};
 
         return this.collection;
     }

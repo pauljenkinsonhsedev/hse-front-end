@@ -41,7 +41,7 @@ export function tableSortable(container){
     };
 
     // Table header event
-    body.addEventListener('click', event => {
+    container.addEventListener('click', event => {
         tableHeaders.forEach(function callback(item) {
             if (event.target !== item) {
                 item.classList.remove('sorted-asc');
