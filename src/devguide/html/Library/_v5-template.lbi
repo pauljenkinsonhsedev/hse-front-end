@@ -110,7 +110,7 @@ display: none;
 </nav>
  
 <div id="pageContainer" class="v5" xmlns:argot="http://purl.oclc.org/argot/" xmlns:dc="http://purl.org/dc/terms/" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:v="http://www.w3.org/2006/vcard/ns#" xmlns:dbp="http://dbpedia.org/resource/">
-<!-- InstanceBeginEditable name="beta-survey" --> 
+<!-- InstanceBeginEditable name="beta-survey" -->
 
 
 <!-- InstanceEndEditable -->   
@@ -122,16 +122,27 @@ display: none;
 <ul>
     <li class="first"><a href="../components/index.htm">Components</a></li>
 	<li><a href="../components/boxes.htm">Boxes</a></li>
-<<<<<<< Updated upstream
-	<li><a href="../components/charts.htm">Charts (JS)</a></li>
-=======
+
 	<li><a href="../components/buttons.htm">Buttons</a></li>
 	<li><a href="#">Charts (JS)</a>
-	<ul>
-		<li><a href="../components/charts/index.htm">Overview</a></li>
-		<li><a href="../components/charts/dual-chart.htm">Overview</a></li>
+		<ul>
+			<li><a href="../components/charts/index.htm">Overview</a></li>
+			<li><a href="../components/charts/data-attributes.htm">Data attributes</a></li>
+			<li><a href="../components/charts/pie-chart.htm">Pie chart</a></li>
+			<li><a href="../components/charts/donut-chart.htm">Donut chart</a></li>
+			<li><a href="../components/charts/line-chart.htm">Line chart</a></li>
+			<li><a href="../components/charts/bar-chart.htm">Bar chart</a></li>
+			<li><a href="../components/charts/bar-stacked-chart.htm">Bar (stacked) chart</a></li>
+			<li><a href="../components/charts/column-chart.htm">Column chart</a></li>
+			<li><a href="../components/charts/column-stacked-chart.htm">Column (stacked) chart</a></li>
+			<li><a href="../components/charts/arearange-chart.htm">Area range chart</a></li>
+			<li><a href="../components/charts/dual-chart.htm">Dual charts</a></li>
+			<li><a href="../components/charts/missing-data.htm">Missing data</a></li>
+			<li><a href="../components/charts/confidence-intervals.htm">Confidence Intervals</a></li>
+			<li><a href="../components/charts/plot-bands.htm">Plot bands</a></li>
+		</ul>
 	</li>
->>>>>>> Stashed changes
+
 	<li><a href="../components/dialog.htm">Dialog box</a></li>
 	<li><a href="#">Forms</a>
 		<ul>
@@ -176,13 +187,13 @@ display: none;
 	
 <!-- InstanceBeginEditable name="content" -->
   <h1>Subscribe (Input)</h1>
-  
+
   <form class="v5form" action="https://public.govdelivery.com/accounts/UKHSE/subscriber/new?topic_id=UKHSE_279&email=&commit=Subscribe">
 	<label for="email"><strong>Email address</strong></label>
-	<input id="email" name="email" type="text">	
+	<input id="email" name="email" type="text">
 	<input class="eBulletinButton mt10" name="commit" type="submit" value="Subscribe">
 	</form>
-	
+
   <!-- InstanceEndEditable -->
 	
  
@@ -209,7 +220,7 @@ display: none;
   </footer>
 </nav>
 <section id="lastUpdated" aria-label="Last updated">
-<!-- InstanceBeginEditable name="updated" -->Updated:<!-- #BeginDate format:IS1 -->2020-09-09<!-- #EndDate -->-->
+<!-- InstanceBeginEditable name="updated" -->Updated:<!-- #BeginDate format:IS1 -->2021-03-29<!-- #EndDate -->-->
   <!-- InstanceEndEditable -->
 </section>
 <script src="../assets/v5-js/v5-main.min.js"></script>
@@ -224,7 +235,7 @@ display: none;
 
 
 
-<div id="gutter"><!-- InstanceBeginEditable name="gutter" --> 
+<div id="gutter"><!-- InstanceBeginEditable name="gutter" -->
 <script>
  $(".accordion").accordion({header: "h3", collapsible: true, active: false, autoHeight: false, navigation: true, active: false});
  $('.accordion h3').attr('tabindex','0');
