@@ -2,7 +2,27 @@
 <ul>
     <li class="first"><a href="../components/index.htm">Components</a></li>
 	<li><a href="../components/boxes.htm">Boxes</a></li>
-	<li><a href="../components/charts.htm">Charts (JS)</a></li>
+
+	<li><a href="../components/buttons.htm">Buttons</a></li>
+	<li><a href="#">Charts (JS)</a>
+		<ul>
+			<li><a href="../components/charts/index.htm">Overview</a></li>
+			<li><a href="../components/charts/data-attributes.htm">Data attributes</a></li>
+			<li><a href="../components/charts/pie-chart.htm">Pie chart</a></li>
+			<li><a href="../components/charts/donut-chart.htm">Donut chart</a></li>
+			<li><a href="../components/charts/line-chart.htm">Line chart</a></li>
+			<li><a href="../components/charts/bar-chart.htm">Bar chart</a></li>
+			<li><a href="../components/charts/bar-stacked-chart.htm">Bar (stacked) chart</a></li>
+			<li><a href="../components/charts/column-chart.htm">Column chart</a></li>
+			<li><a href="../components/charts/column-stacked-chart.htm">Column (stacked) chart</a></li>
+			<li><a href="../components/charts/arearange-chart.htm">Area range chart</a></li>
+			<li><a href="../components/charts/dual-chart.htm">Dual charts</a></li>
+			<li><a href="../components/charts/missing-data.htm">Missing data</a></li>
+			<li><a href="../components/charts/confidence-intervals.htm">Confidence Intervals</a></li>
+			<li><a href="../components/charts/plot-bands.htm">Plot bands</a></li>
+		</ul>
+	</li>
+
 	<li><a href="../components/dialog.htm">Dialog box</a></li>
 	<li><a href="#">Forms</a>
 		<ul>
