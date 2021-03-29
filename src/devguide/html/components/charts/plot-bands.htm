@@ -41,8 +41,8 @@ display: none;
 <!-- Page title and meta -->
 	
 <!-- InstanceBeginEditable name="doctitle" -->
-<title>A-Z - HSE.GOV.UK Design System</title>
-<!-- InstanceEndEditable -->
+    <title>Charts - HSE.GOV.UK Design System</title>
+    <!-- InstanceEndEditable -->
 <meta name="HSE.contentType" content="default" />
 <link rel="shortcut icon" href="../../favicon.ico" />
 <link rel="apple-touch-icon" href="../../assets/v4-images/shared/apple-touch-icon.png" />
@@ -96,22 +96,28 @@ display: none;
    
 <nav id="breadCrumb" aria-label="Previous pages:">
   <div class="breadCrumbContainer"> <!-- InstanceBeginEditable name="Breadcrumbs" -->
-		<ol>
-			<li class="home"><a href="../../index.htm">Design System</a></li>
-			<li><a href="../index.htm">Components</a></li>
-			<li>Navigation</li>
-		</ol>
-		<!-- InstanceEndEditable --> </div>
+        <ol>
+          <li class="home">
+            <a href="../index.htm">Design System</a>
+          </li>
+          <li>
+            <a href="../index.htm">Components</a>
+          </li>
+          <li>
+            <a href="index.htm">Charts</a>
+          </li>
+          <li>Plot bands</li>
+        </ol>
+        <!-- InstanceEndEditable --> </div>
   <div id="backTo">
     <p class="backto"><a id="backnav" href="index.htm">Back to</a></p>
   </div>
 </nav>
  
 <div id="pageContainer" class="v5" xmlns:argot="http://purl.oclc.org/argot/" xmlns:dc="http://purl.org/dc/terms/" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:v="http://www.w3.org/2006/vcard/ns#" xmlns:dbp="http://dbpedia.org/resource/">
-<!-- InstanceBeginEditable name="beta-survey" --> 
+<!-- InstanceBeginEditable name="beta-survey" -->
 
-
-<!-- InstanceEndEditable -->   
+      <!-- InstanceEndEditable -->   
 
 <!-- Beta content page --> 
 
@@ -120,16 +126,27 @@ display: none;
 <ul>
     <li class="first"><a href="../index.htm">Components</a></li>
 	<li><a href="../boxes.htm">Boxes</a></li>
-<<<<<<< Updated upstream
-	<li><a href="../charts.htm">Charts (JS)</a></li>
-=======
+
 	<li><a href="../buttons.htm">Buttons</a></li>
 	<li><a href="#">Charts (JS)</a>
-	<ul>
-		<li><a href="../charts/index.htm">Overview</a></li>
-		<li><a href="../charts/dual-chart.htm">Overview</a></li>
+		<ul>
+			<li><a href="index.htm">Overview</a></li>
+			<li><a href="data-attributes.htm">Data attributes</a></li>
+			<li><a href="pie-chart.htm">Pie chart</a></li>
+			<li><a href="donut-chart.htm">Donut chart</a></li>
+			<li><a href="line-chart.htm">Line chart</a></li>
+			<li><a href="bar-chart.htm">Bar chart</a></li>
+			<li><a href="bar-stacked-chart.htm">Bar (stacked) chart</a></li>
+			<li><a href="column-chart.htm">Column chart</a></li>
+			<li><a href="column-stacked-chart.htm">Column (stacked) chart</a></li>
+			<li><a href="arearange-chart.htm">Area range chart</a></li>
+			<li><a href="dual-chart.htm">Dual charts</a></li>
+			<li><a href="missing-data.htm">Missing data</a></li>
+			<li><a href="confidence-intervals.htm">Confidence Intervals</a></li>
+			<li><a href="plot-bands.htm">Plot bands</a></li>
+		</ul>
 	</li>
->>>>>>> Stashed changes
+
 	<li><a href="../dialog.htm">Dialog box</a></li>
 	<li><a href="#">Forms</a>
 		<ul>
@@ -160,9 +177,9 @@ display: none;
 	</li>
 	<li><a href="#">Navigation</a>
 	 <ul>
-	  <li><a href="index.htm">Overview</a></li>
-	  <li><a href="a-z.htm">A-Z</a></li>
-	  <li><a href="pagination.htm">Pagination</a></li>
+	  <li><a href="../navigation/index.htm">Overview</a></li>
+	  <li><a href="../navigation/a-z.htm">A-Z</a></li>
+	  <li><a href="../navigation/pagination.htm">Pagination</a></li>
 	 </ul>
 	</li>
  </ul>
@@ -173,26 +190,130 @@ display: none;
  
 	
 <!-- InstanceBeginEditable name="content" -->
-  <h1>Navigation</h1>
-	
-  <p>Navigation components for hse.gov.uk</p>	
-	
-  
-  <div class="box">
-	  
-  <h2>Contents</h2>
-	  
-  <ul class="linkList">
-   <li><a href="a-z.htm">A-Z</a></li>
-   <li><a href="pagination.htm">Pagination</a></li>
-  </ul>
-	
-  </div>
-  
-  
-  <!-- /#secondTab -->
+	<h1>Plot bands</h1>
         
-  <!-- InstanceEndEditable -->
+ 	<p>Some data along the plot may require further explanation or supporting text. For example if data between a certain range of years was not recorded, it can be shown that this data was only estimated.</p>
+
+	<h2>Chart example</h2>
+	<div class="chart" data-chart-type="column" data-chart-units="unit" data-chart-title="Monthly Average Rainfall" data-chart-subtitle="Source: WorldClimate.com" data-yaxis-text="Rainfall (mm)" data-gridline=""a>
+          <div class="displayChart"></div>
+          <figure class="datacontent">
+            <h2 class="datacontent__title">Monthly Average Rainfall</h2>
+            <table class="tabledata" summary="Table representation of chart.">
+              <caption>Monthly Average Rainfall</caption>
+
+              <thead class="table__head">
+                <tr class="table__row">
+                  <th class="heading table__cell" scope="col">Category</th>
+                  <th class="heading table__cell" scope="col">Tokyo</th>
+                  <th class="heading table__cell" scope="col">New York</th>
+                  <th class="heading table__cell" scope="col">London</th>
+                  <th class="heading table__cell" scope="col">Berlin</th>
+                </tr>
+                <tr class="table__row plot-area">
+                  <th colspan="3" class="table__cell plot-title">Estimated data</th>
+                  <th class="table__cell plot-band">0</th>
+                  <th class="table__cell plot-band">5</th>
+                </tr>
+                <tr class="table__row plot-area">
+                  <th colspan="3" class="table__cell plot-title">95% confident data</th>
+                  <th class="table__cell plot-band">5</th>
+                  <th class="table__cell plot-band">8</th>
+                </tr>
+              </thead>
+              <tbody class="table__body">
+                <tr class="table__row">
+                  <th class="table__cell category" scope="row">Jan</th>
+                  <td class="table__cell unit">49.9</td>
+                  <td class="table__cell unit">83.6</td>
+                  <td class="table__cell unit">48.9</td>
+                  <td class="table__cell unit">42.4</td>
+                </tr>
+                <tr class="table__row">
+                  <th class="table__cell category" scope="row">Feb</th>
+                  <td class="table__cell unit">71.5</td>
+                  <td class="table__cell unit">78.8</td>
+                  <td class="table__cell unit">38.8</td>
+                  <td class="table__cell unit">33.2</td>
+                </tr>
+                <tr class="table__row">
+                  <th class="table__cell category" scope="row">Mar</th>
+                  <td class="table__cell unit">106.4</td>
+                  <td class="table__cell unit">98.5</td>
+                  <td class="table__cell unit">39.3</td>
+                  <td class="table__cell unit">34.5</td>
+                </tr>
+                <tr class="table__row">
+                  <th class="table__cell category" scope="row">Apr</th>
+                  <td class="table__cell unit">129.2</td>
+                  <td class="table__cell unit">93.4</td>
+                  <td class="table__cell unit">41.4</td>
+                  <td class="table__cell unit">39.7</td>
+                </tr>
+                <tr class="table__row">
+                  <th class="table__cell category" scope="row">May</th>
+                  <td class="table__cell unit">144</td>
+                  <td class="table__cell unit">106</td>
+                  <td class="table__cell unit">47</td>
+                  <td class="table__cell unit">52.6</td>
+                </tr>
+                <tr class="table__row">
+                  <th class="table__cell category" scope="row">Jun</th>
+                  <td class="table__cell unit">176</td>
+                  <td class="table__cell unit">84.5</td>
+                  <td class="table__cell unit">48.3</td>
+                  <td class="table__cell unit">75.5</td>
+                </tr>
+                <tr class="table__row">
+                  <th class="table__cell category" scope="row">Jul</th>
+                  <td class="table__cell unit">135.6</td>
+                  <td class="table__cell unit">105</td>
+                  <td class="table__cell unit">59</td>
+                  <td class="table__cell unit">57.4</td>
+                </tr>
+                <tr class="table__row">
+                  <th class="table__cell category" scope="row">Aug</th>
+                  <td class="table__cell unit">148.5</td>
+                  <td class="table__cell unit">104.3</td>
+                  <td class="table__cell unit">59.6</td>
+                  <td class="table__cell unit">60.4</td>
+                </tr>
+                <tr class="table__row">
+                  <th class="table__cell category" scope="row">Sep</th>
+                  <td class="table__cell unit">216.4</td>
+                  <td class="table__cell unit">91.2</td>
+                  <td class="table__cell unit">52.4</td>
+                  <td class="table__cell unit">47.6</td>
+                </tr>
+                <tr class="table__row">
+                  <th class="table__cell category" scope="row">Oct</th>
+                  <td class="table__cell unit">194.1</td>
+                  <td class="table__cell unit">83.5</td>
+                  <td class="table__cell unit">65.2</td>
+                  <td class="table__cell unit">39.1</td>
+                </tr>
+                <tr class="table__row">
+                  <th class="table__cell category" scope="row">Nov</th>
+                  <td class="table__cell unit">95.6</td>
+                  <td class="table__cell unit">106.6</td>
+                  <td class="table__cell unit">59.3</td>
+                  <td class="table__cell unit">46.8</td>
+                </tr>
+                <tr class="table__row">
+                  <th class="table__cell category" scope="row">Dec</th>
+                  <td class="table__cell unit">54.4</td>
+                  <td class="table__cell unit">92.3</td>
+                  <td class="table__cell unit">51.2</td>
+                  <td class="table__cell unit">51.1</td>
+                </tr>
+              </tbody>
+            </table>
+          </figure>
+        </div>
+
+        <!-- /#secondTab -->
+
+        <!-- InstanceEndEditable -->
 	
  
 
@@ -218,8 +339,7 @@ display: none;
   </footer>
 </nav>
 <section id="lastUpdated" aria-label="Last updated">
-<!-- InstanceBeginEditable name="updated" -->Updated:<!-- #BeginDate format:IS1 -->2021-02-02<!-- #EndDate -->
-  <!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="updated" -->Updated:<!-- #BeginDate format:IS1 -->2021-03-26<!-- #EndDate --><!-- InstanceEndEditable -->
 </section>
 <script src="../../assets/v5-js/v5-main.min.js"></script>
 <script src="../../assets/v5-js/jquery.min.js"></script> 
@@ -233,11 +353,8 @@ display: none;
 
 
 
-<div id="gutter"><!-- InstanceBeginEditable name="gutter" --> 
-<script>
- $(".accordion").accordion({header: "h3", collapsible: true, active: false, autoHeight: false, navigation: true, active: false});
- $('.accordion h3').attr('tabindex','0');
- </script> <!-- InstanceEndEditable --></div>
+<div id="gutter"><!-- InstanceBeginEditable name="gutter" -->
+      <!-- InstanceEndEditable --></div>
 
 <!-- SiteImprove JS --> 
 <script type="text/javascript">
