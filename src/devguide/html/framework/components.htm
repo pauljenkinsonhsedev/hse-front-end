@@ -45,6 +45,8 @@ display: none;
 <meta name="Description" content="HSE's job is to protect people against risks to health or safety arising out of work activities. Provides advice, guidance, regulations and inspections." />
 <meta name="Keywords" content="HSE, health and safety executive,  occupational ill-health, occupational health and safety, accident, safety, employee safety, health and safety at work act, law" />
 <!-- Custom CSS -->
+
+
 <!-- InstanceEndEditable -->
 <meta name="HSE.contentType" content="default" />
 <link rel="shortcut icon" href="../favicon.ico" />
@@ -102,7 +104,7 @@ display: none;
 		<ol>
 			<li class="home"><a href="../index.htm">Design System</a></li>
 			<li><a href="index.htm">Framework</a></li>
-			<li>Template</li>
+			<li>Feedback</li>
 		</ol>
 		<!-- InstanceEndEditable --> </div>
   <div id="backTo">
@@ -137,50 +139,87 @@ display: none;
 	
 <!-- InstanceBeginEditable name="content" -->
   
-  <h1>Template</h1>
+  <h1>Components</h1>
 	
-  <h2>Apply template to page</h2>
+ <p>Template componenets that use <a href="regions.htm">editable regions</a> and <a href="param.htm">parameters</a>.</p>
 	
-  <p>This method is best when you are creating a single page from scratch.</p>
+ <div class="box">
 	
-  <ol>
-	 <li>Open page in Dreamweaver</li>
-	 <li>From the main menu go to <strong>Tools &gt; Templates &gt; Apply template to page...</strong></li>
-	  <li>Select template you want to apply to page</li>
-	  <li>Save page</li>
-  </ol>
-	
-  <figure class="v5-figure">
-  <img alt="" src="images/applytemplate.jpg" class="responsiveImg">
-  </figure>
-	
- <h2>Change template</h2>
-	
- <p>This method is used when applying a different template to pages or the entire local site.</p>
-	
- <ol>
-  <li>Close all pages open in Dreamweaver</li>
-  <li>Select files you want to apply template to in the file window or select entire local site</li>
-  <li>From the main menu go to <strong>Find &gt; Find and Replace in Files</strong></li>
-  <li>In the find box, enter the existing template name e.g v5-hse-1.2.0.dwt</li>
-  <li>In the replace box, enter the name of the template you want to apply e.g v5-hse-1.2.1.dwt</li>
-  <li>Select <strong>replace all</strong></li>
-	
- </ol>
+ <h2>Contents</h2>
+	 
+ <ul>
+  <li><a href="#notification-banner">Notification banner</a></li>
+  <li><a href="#feedback">User satisfaction</a></li>
+  <li></li>
+ </ul>
+	 
+	 
+ </div>
 	
 	
-  <figure class="v5-figure">
-   <img alt="" src="images/changetemplate.jpg" class="responsiveImg">
-  </figure>
+<h2 id="notification-banner">Notification banner</h2>
 	
-  <div class="box">
-  <p>The template you want to apply needs to be in the templates folder of your local site</p>
-  </div>
+<p>The notification banner displays on all pages below the main menu.</p>
+	
+	
+<h3>When to use</h3>	
+	
+<p>Use a notification banner to tell the user about something they need to know about, but that’s not directly related to the page content.</p>
+	
+	
+<h3>How to use</h3>
+	
+<p>To use the notification banner you will need to have access and permission to upload to HSE.GOV.UK, this is needed to upload a JSON file that contains the notification message information.</p>
   
+<p>The JSON file is named <strong>global-message.json</strong> and can be found in the website root assets folder <strong>secureroot/assets/ajax/global-message.json</strong></p>
 
+<p>To display the banner, set the JSON property of <strong>'active'</strong> to true and enter a HTML paragraph as a JSON string in the <strong>'message'</strong> property. </p>
+	
+<p><a href="global-message.json">JSON file example</a></p>	
+	
+<div class="box">
+<h4>JSON</h4>
 
+<p>A JSON string must be double-quoted, according to the specs, so you don't need to escape '.
+If you have to use special character in your JSON string, you can escape it using \ character.</p>
+
+<p>See this list of special character used in JSON :</p>
+
+<p>
+\b  Backspace (ascii code 08)<br>
+\f  Form feed (ascii code 0C)<br>
+\n  New line<br>
+\r  Carriage return<br>
+\t  Tab<br>
+\"  Double quote<br>
+\\  Backslash character<br>
+</p>	
+
+</div>
+
+<h2 id="feedback">User satisfaction</h2>
+	
+<p>Each webpage on HSE.GOV.UK has the option to add user feedback at the top of the webpage footer, this is optional and can be displayed using template parameters.</p>
+	
+<h3>When to use</h3>
+	
+<p>User feedback is currently applied to all pages and is an important part of measuring user satisfaction on HSE.GOV.UK.</p>
+	
+<h3>How to use</h3>
+	
+<p>Set the feedback param value to true and run a template update on the page.</p>
+	
+<p>If you are applying the user feedback component to multiple pages, you can run a find and replace, followed by a template update.</p>
+	
+<iframe width="100%" height="300" src="//jsfiddle.net/pjenkinsonhse/ctfe2nd3/embedded/html/dark/"  allowpaymentrequest></iframe>
   
-  
+<h3>Survey</h3> 
+	
+<p>The survey section is an option that can be used in conjunction with the default user feedback survey. When the survey is enabled, if a user selects yes or no they will then be prompted to complete a survey.</p>
+	
+<h3>How to add survey</h3>
+	
+<p>To include a survey you will need to add a value to the feedbackClass parameter, as this suvery is experimental there is currently only one value which is <strong>'feedback-beta'</strong>.</p>
 				
 <!-- InstanceEndEditable -->
 	
@@ -209,7 +248,7 @@ display: none;
 </nav>
 <section id="lastUpdated" aria-label="Last updated">
 <!-- InstanceBeginEditable name="updated" --> Updated:
-	<!-- #BeginDate format:IS1 -->2020-10-16<!-- #EndDate -->
+	<!-- #BeginDate format:IS1 -->2021-03-31<!-- #EndDate -->
 	<!-- InstanceEndEditable -->
 </section>
 <script src="../assets/v5-js/v5-main.min.js"></script>
