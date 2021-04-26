@@ -32,7 +32,7 @@ background: $focus;
   max-width: 85%; // Stops text overlapping icon
 }
 
-.slinky-menu li.first a, a.back {
+.slinky-menu li.first a, a.back, a.active-page {
 max-width: 100%;
 }
 
