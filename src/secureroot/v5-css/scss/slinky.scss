@@ -32,12 +32,16 @@ background: $focus;
   max-width: 85%; // Stops text overlapping icon
 }
 
-.slinky-menu li.first a, a.back, a.active-page {
+.slinky-menu li.first a, a.back {
 max-width: 100%;
 }
 
 .slinky-menu li:focus-within {
 background: $focus; // fills gap in focus background caused by max-width of 85%;
+}
+
+.slinky-menu li.active-page-parent {
+background: $darkgray;
 }
 
 .slinky-menu a span {
