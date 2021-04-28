@@ -29,19 +29,7 @@ background: $focus;
   align-items: center;
   display: flex;
   overflow: visible;
-  max-width: 80%; // Stops text overlapping icon
-}
-
-.slinky-menu li.first a, a.back {
-max-width: 100%;
-}
-
-.slinky-menu li:focus-within {
-background: $focus; // fills gap in focus background caused by max-width of 85%;
-}
-
-.slinky-menu li.active-page-parent {
-background: $darkgray;
+  background-color: $gray;
 }
 
 .slinky-menu a span {
@@ -71,7 +59,7 @@ background: $darkgray;
 }
 
 .slinky-theme-default {
-  background-color: $gray;
+  //background-color: $gray;
 }
 .slinky-theme-default .title {
   color: #333;
@@ -115,9 +103,8 @@ background: $darkgray;
   display: inline-block;
   width: 16px;
   height: 16px;
-  right: 10px;
   margin: 0;
-  position: absolute !important;
+  margin-left: auto;
 }
 
 .slinky-theme-default a.next:hover::after, .slinky-theme-default a.next:focus::after {
@@ -127,8 +114,8 @@ background: $darkgray;
   display: inline-block;
   width: 16px;
   height: 16px;
-  right: 10px;
   margin: 0;
+  margin-left: auto;
   z-index: 9999;
 }
 
@@ -145,7 +132,7 @@ background: $darkgray;
   padding: 0;
 }
 
-.slinky-menu li.first {
+.slinky-menu li.first a {
   font-weight: bold;
   background-color: $red;
 }
@@ -219,4 +206,8 @@ li.first a.active-page {
 .slinky-theme-default a.back:focus::before {
   content: " ";
   background-image: url('../../assets/v5-images/icons/svg/solid/arrow-left-black.svg') !important;
+}
+
+.slinky-menu .text-width {
+max-width: 90%;
 }
