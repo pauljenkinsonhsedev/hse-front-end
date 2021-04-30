@@ -138,18 +138,6 @@ margin: 0;
 border-right: 10px solid transparent;
 }
 
-#contentContainer .backgroundRed .more a::before,
-.backgroundRed .moreAboveSplit a::before  {
-content: " ";
-float: left;
-position: relative;
-background-image: url('../../assets/v5-images/icons/svg/solid/caret-right-white.svg');
-background-repeat: no-repeat;
-height: 11px;
-width: 11px;
-top: 5px;
-}
-
 #contentContainer p.linkList a {
 text-decoration: underline;
 }
