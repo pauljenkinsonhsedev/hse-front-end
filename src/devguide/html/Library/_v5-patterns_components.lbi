@@ -1,0 +1,9 @@
+<div id="menu" class="slinky-menu slinky-theme-default">
+<ul>
+  <li class="first"><a href="../patterns/index.htm">Component patterns</a></li>
+	<li><a href="../patterns/components/complementary.htm">Complementary content</a></li>
+	<li><a href="../patterns/components/contents-box.htm">Contents box</a></li>
+	<li><a href="../patterns/components/subscribe.htm">Subscribe</a></li>
+ </ul>
+</div>
+

@@ -121,9 +121,8 @@ display: none;
 <nav id="navSecondary" aria-label="Secondary"> <!-- InstanceBeginEditable name="Subnav" --><!-- #BeginLibraryItem "/Library/_v5-components.lbi" --><div id="menu" class="slinky-menu slinky-theme-default">
 <ul>
     <li class="first"><a href="../components/index.htm">Components</a></li>
-	<li><a href="../components/boxes.htm">Boxes</a></li>
-
-	<li><a href="../components/buttons.htm">Buttons</a></li>
+	<li><a href="../components/accordion.htm">Accordion</a></li>
+	<li><a href="../components/boxes.htm">Box</a></li>
 	<li><a href="#">Charts (JS)</a>
 		<ul>
 			<li><a href="../components/charts/index.htm">Overview</a></li>
@@ -142,11 +141,11 @@ display: none;
 			<li><a href="../components/charts/plot-bands.htm">Plot bands</a></li>
 		</ul>
 	</li>
-
 	<li><a href="../components/dialog.htm">Dialog box</a></li>
 	<li><a href="#">Forms</a>
 		<ul>
 			<li><a href="../components/forms/index.htm">Overview</a></li>
+		    <li><a href="../components/forms/buttons.htm">Buttons</a></li>
 			<li><a href="../components/forms/inputs.htm">inputs</a></li>
 			<li><a href="../components/forms/input-sizes.htm">Input sizes</a></li>
 			<li><a href="../components/forms/form-validation.htm">Form validation</a></li>
@@ -179,8 +178,7 @@ display: none;
 	 </ul>
 	</li>
  </ul>
-</div>
-<!-- #EndLibraryItem --><!-- InstanceEndEditable --> </nav>
+</div><!-- #EndLibraryItem --><!-- InstanceEndEditable --> </nav>
 
 <main id="contentContainer" class="columnbetacontentpage column2">
  
