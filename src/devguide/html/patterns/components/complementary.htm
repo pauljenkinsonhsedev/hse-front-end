@@ -101,8 +101,7 @@ display: none;
 		<ol>
 			<li class="home"><a href="../../index.htm">Design System</a></li>
 			<li><a href="../index.htm">Patterns</a></li>
-			<li><a href="index.htm">Pages</a></li>
-			<li>One column page</li>
+			<li>Content page</li>
 		</ol>
 		<!-- InstanceEndEditable --> </div>
   <div id="backTo">
@@ -119,53 +118,110 @@ display: none;
 <!-- Beta content page --> 
 
   
-<nav id="navSecondary" aria-label="Secondary"> <!-- InstanceBeginEditable name="Subnav" --><!-- #BeginLibraryItem "/Library/_v5-patterns_pages.lbi" --><div id="menu" class="slinky-menu slinky-theme-default">
+<nav id="navSecondary" aria-label="Secondary"> <!-- InstanceBeginEditable name="Subnav" --><!-- #BeginLibraryItem "/Library/_v5-patterns_components.lbi" --><div id="menu" class="slinky-menu slinky-theme-default">
 <ul>
-  <li class="first"><a href="../index.htm">Pages</a></li>
-	<li><a href="top-task.htm">Top task</a></li>
-	<li><a href="1-col.htm">One column page</a></li>
-	<li><a href="2-col.htm">Two column page</a></li>
-	<li><a href="homepage-legacy.htm">Microsite homepage (box layout)</a></li>
+  <li class="first"><a href="../index.htm">Component patterns</a></li>
+	<li><a href="complementary.htm">Complementary content</a></li>
+	<li><a href="contents-box.htm">Contents box</a></li>
+	<li><a href="subscribe.htm">Subscribe</a></li>
  </ul>
 </div>
 
-<!-- #EndLibraryItem --><!-- InstanceEndEditable --> </nav>
+<!-- #EndLibraryItem --><!-- #EndLibraryItem --><!-- InstanceEndEditable --> </nav>
 
 <main id="contentContainer" class="columnbetacontentpage column2">
  
 	
 <!-- InstanceBeginEditable name="content" -->
-  <h1>One Column page</h1>
+  <h1>Complementary content</h1>
 	
-  <p>A one column page uses the full width of the content container and does not include the secondary navigation menu.</p>
+<p>Complementary content is used to designate a supporting section that relates to the main content, yet can stand alone when separated.</p>
 	
-  <p class="linkList"><a href="1-col-demo.htm">One column demo page</a></p>
+<h2>When to use</h2>
 	
-  <h2>When to use</h2>
+<p>Complementary content should be specified by the content author, it should relate to the content of the page and not be the same on every page in a microsite just because it shares the same industry or topic.</p>
+		
+<h2>Related content</h2>
 	
-  <p>You can use the one column page when there is no need for the page content to be linked to another by secondary navigation.</p>
+<p>Related content is a list of links to content on hse.gov.uk that is related to page content.</p>
+	  
+  <h3>How to use</h3>
 	
-  <h2>How to use</h2>
-   
-  <p>To use the one column layout, set the layout parameter to <strong>'betacontentpage'</strong> and the columnLayout parameteer to <strong>'one'</strong></p>
+  <p>Related content is made up a box component and an unordered list with markers. It should always contain a <strong>&lt;h2&gt;</strong> element with the text <strong>'Related content'</strong>.</p>
 	
+  <p><a href="../pages/index.htm">Pages...</a></p>
 	
-  <h2>Layout</h2>
-	
-  <p>No <a href="../../style/layout/index.htm">layouts</a> can be used with the one column page and it is strictly for use with content and <a href="../../components/index.htm">content components</a></p>
-	
-  <h2>Components</h2>
-	
-  <p>All content <a href="../../components/index.htm">componenets</a> can be used in the two column page and the following component patters:</p>
-	
+  <div class="box">
+	  
+  <h2>Related content</h2>	
+	  
   <ul class="linkList">
-   <li><a href="../components/complementary.htm">Complementary content</a>
-	  <p>Complementary content should always be included at the bottom of the two column page layout, no further content should be placed below it.</p></li>
-   <li><a href="../components/subscribe.htm">Subscribe</a>
-	 <p>A subscribe box can be included anywhere after the page &lt;h1&gt; title</p></li>
-   <li><a href="../components/contents-box.htm">Page contents box</a><p>Page contents box has to be included before all page content and after the page &lt;h1&gt; title</p></li>
+	  
+   <li><a href="#">Related content link 1</a></li>
+   <li><a href="#">Related content link 2</a></li>
+	  
   </ul>
-  
+	
+	
+  </div>
+	
+  <h2>See also</h2>
+	
+<p>See also content is similar to 'Related Content' but should only include external links to other websites or non-HSE.GOV.UK content</p>
+	  
+  <h3>How to use</h3>
+	
+  <p>Related content is made up a box component and an unordered list with markers. It should always contain a <strong>&lt;h2&gt;</strong> element with the text <strong>'See also'</strong>.</p>
+	
+	
+  <div class="box">
+	  
+  <h2>See also</h2>	
+	  
+  <ul class="linkList">
+	  
+   <li><a href="#">See also link 1</a></li>
+   <li><a href="#">See also link 2</a></li>
+	  
+  </ul>
+	
+	
+  </div>
+	
+	
+  <h2>Resources</h2>
+	
+  <p>Resources are primarily digital assets that are not webpages but will be of use to the user or relvant to the content page.</p>
+	
+  <p>The most common type of resource on HSE.GOV.UK is a <a href="https://books.hse.gov.uk/">HSE books</a> publication.</p>
+	
+  <h3>How to use</h3>
+	
+  <p>Resource boxes are created the same way as related content and see also but they can include <a href="../../style/thumbnails.htm">thumbnails</a> of the resource.</p>
+	
+  <p>To use the resources list style you will need to use a class of <strong>.itemThumbBook</strong> with a <strong>&lt;ul&gt;</strong> element.</p>
+	
+  <p>Each list item must contain a thumbnail image and a <strong>&lt;span&gt;</strong> element which contains the title of the resource.</p>
+		
+  <div class="box">
+	  
+  <h2>Resources</h2>	
+	  
+  <ul class="itemThumbBook">
+	  
+   <li><a href="https://www.hse.gov.uk/pubns/books/hsg210.htm"> <img src="https://www.hse.gov.uk/assets/images/publications/hsg210.jpg" alt="Image of publication - Asbestos essentials" width="48" height="68"> <span>Asbestos essentials</span></a></li>
+	  
+   <li><a href="https://www.hse.gov.uk/pubns/books/hsg247.htm"> <img src="https://www.hse.gov.uk/assets/images/publications/hsg247.jpg" alt="Asbestos: The licensed contractors' guide" width="48" height="68"> <span>Asbestos: The licensed contractors' guide</span></a></li>
+	  	  
+  </ul>
+	
+	
+  </div>
+	
+  <h3>Code example</h3>
+	
+ <iframe width="100%" height="300" src="//jsfiddle.net/pjenkinsonhse/8dcngqz1/5/embedded/html/dark/" allowfullscreen="allowfullscreen"></iframe>
+
   <!-- /#secondTab -->
         
   <!-- InstanceEndEditable -->
@@ -194,7 +250,7 @@ display: none;
   </footer>
 </nav>
 <section id="lastUpdated" aria-label="Last updated">
-<!-- InstanceBeginEditable name="updated" -->Updated:<!-- #BeginDate format:IS1 -->2021-05-06<!-- #EndDate -->
+<!-- InstanceBeginEditable name="updated" -->Updated:<!-- #BeginDate format:IS1 -->2021-05-05<!-- #EndDate -->
   <!-- InstanceEndEditable -->
 </section>
 <script src="../../assets/v5-js/v5-main.min.js"></script>

@@ -125,7 +125,7 @@ display: none;
 	<li><a href="top-task.htm">Top task</a></li>
 	<li><a href="1-col.htm">One column page</a></li>
 	<li><a href="2-col.htm">Two column page</a></li>
-	<li><a href="homepage-legacy.htm">Microsite homepage (legacy)</a></li>
+	<li><a href="homepage-legacy.htm">Microsite homepage (box layout)</a></li>
  </ul>
 </div>
 
@@ -135,15 +135,21 @@ display: none;
  
 	
 <!-- InstanceBeginEditable name="content" -->
-  <h1>Microsite homepage (legacy)</h1>
+  <h1>Microsite homepage (box layout)</h1>
 	
-  <p>Microsite homepages are built using the <a href="../../style/layout/box.htm">box layout</a>, they feature secondary navigation and are used when building a microsite that is made up of <a href="2-col.htm">2 column pages</a>.</p>
+  <p>Microsite homepages are built using the <a href="../../style/layout/box.htm">box layout</a> and feature secondary navigation.</p>
+	
+	
+  <div class="box">
+	
+  <p>The box layout homepage has been replace by the new v5 homepage.</p>
+	  
+  </div>
 	
 	
   <h2>When to use</h2>
 	
-  
-	
+  <p>Microsite homepages are to be used to provide a homepage for a topic or industry microsite. They should be included as part of the content design process when creating a new microsite that is made up of <a href="2-col.htm">2 column pages</a>.</p>	
 		
 	
   <h2>How to use</h2>
@@ -161,8 +167,15 @@ display: none;
    <li>Use <a href="../../style/layout/box.htm#box-more">boxes with more link</a> rather than linking from paragraph text</li>
    <li>Boxes can be used to group related links e.g. Frequently Asked Questions</li>
    <li>Prioritise content by order of rows, first row should have the most important content.</li>
-   <li>A microsite homepage should only be used once per microsite.</li>
+   <li>A microsite homepage should only be used once per microsite.</li>
+   <li>Do not include content above or below the homepage box layout</li>
   </ul>
+	
+<h2>Componenets</h2>
+	
+	
+<p class="linkList"><a href="../components/subscribe.htm">Subscribe</a></p>	
+
 	
 <hr>	
 	
@@ -175,20 +188,13 @@ display: none;
 		
 	<h2>Getting started</h2>
 		
+	<p>Text descriptor for content box</p>
+		
 	<p class="more"><a href="#">More</a></p>
 		
 	</div>
 		
-	<div class="box box1col equalHeights1">
-		
-	<h2>Content 1</h2>
-		
-		<p class="more"><a href="#">More</a></p>
-
-		
-	</div>
-		
-	<div class="box box1col equalHeights1 last backgroundRed">
+	<div class="box box2col equalHeights1 last backgroundRed">
 				
 	<h2>Health and safety made simple</h2>
 		
@@ -214,7 +220,9 @@ display: none;
 		
 	 <div class="box box1col equalHeights2">
 		
-	 <h2>Content</h2>
+	 <h2>The law</h2>
+		 
+	 <p>Text descriptor for content box</p>
 		 
 	 <p class="more"><a href="#">More</a></p>
 
@@ -225,6 +233,16 @@ display: none;
 		 
 	 <h2>Resources</h2>
 		 
+<ul class="itemThumbBook">
+<li>
+<a href="../pubns/books/hsg129.htm">
+<img src="../assets/images/publications/hsg129.jpg" alt="" width="48" height="68">
+<span>Health and Safety in Engineering Workshops (HSG 129)</span>
+</a>
+</li>
+<li> <a href="../pubns/books/hsg246.htm"> <img src="../assets/images/icons/resources/guidance.gif" alt="" width="50" height="50"> <span>Safety in the storage and handling of steel and other metal stock </span> </a> </li>
+</ul>
+		 
 		 
 	 <p class="more"><a href="#">More</a></p>
 		
@@ -233,14 +251,34 @@ display: none;
 		
 	 <div class="box box1col equalHeights3">
 		 
-		 <h2>Content</h2>
+	 <h2>Guidance</h2>
+		 
+	 <p>Text descriptor for content box</p>
+ 		 
      <p class="more"><a href="#">More</a></p>
 		
 	 </div>
 		
 	 <div class="box box2col equalHeights3 last">
-		 
-	 <h2>Subscribe</h2>
+		 		 
+	 <form id="email" action="https://public.govdelivery.com/accounts/UKHSE/subscriber/new?topic_id=UKHSE_125">
+  <fieldset class="fieldset" aria-describedby="changed-name-hint">
+  
+    <legend class="fieldset__legend">
+      <h2>
+        Subscribe
+      </h2>
+    </legend>
+    
+    <div class="form-group">
+      <label class="label">Subscribe for free news and updates on health and safety topics and industries.</label>
+      <input class="input input-text input-width-m" type="email" id="subscribe" name="email" placeholder="Your email address" required="" title="Please enter your email address">
+      <input id="topic_id" name="topic_id" type="hidden" value="UKHSE_125"> <!-- Include hidden input and unique e-bulletin value -->
+      <input class="eBulletinButton" name="commit" type="submit" value="Subscribe">
+    </div>
+
+  </fieldset>
+</form>
 		
 		
 	 </div>
@@ -279,7 +317,7 @@ display: none;
   </footer>
 </nav>
 <section id="lastUpdated" aria-label="Last updated">
-<!-- InstanceBeginEditable name="updated" -->Updated:<!-- #BeginDate format:IS1 -->2021-04-30<!-- #EndDate -->
+<!-- InstanceBeginEditable name="updated" -->Updated:<!-- #BeginDate format:IS1 -->2021-05-06<!-- #EndDate -->
   <!-- InstanceEndEditable -->
 </section>
 <script src="../../assets/v5-js/v5-main.min.js"></script>

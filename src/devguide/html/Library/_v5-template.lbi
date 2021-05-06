@@ -122,7 +122,7 @@ display: none;
 <ul>
     <li class="first"><a href="../components/index.htm">Components</a></li>
 	<li><a href="../components/accordion.htm">Accordion</a></li>
-	<li><a href="../components/boxes.htm">Boxes</a></li>
+	<li><a href="../components/boxes.htm">Box</a></li>
 	<li><a href="#">Charts (JS)</a>
 		<ul>
 			<li><a href="../components/charts/index.htm">Overview</a></li>
