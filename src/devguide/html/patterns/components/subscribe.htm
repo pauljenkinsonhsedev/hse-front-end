@@ -41,7 +41,7 @@ display: none;
 <!-- Page title and meta -->
 	
 <!-- InstanceBeginEditable name="doctitle" -->
-<title></title>
+<title>Subscribe box - HSE.GOV.UK Design System</title>
 <meta name="keywords" content=" " />
 <meta name="description" content=" " />
 <!-- InstanceEndEditable -->
@@ -121,10 +121,11 @@ display: none;
   
 <nav id="navSecondary" aria-label="Secondary"> <!-- InstanceBeginEditable name="Subnav" --><!-- #BeginLibraryItem "/Library/_v5-patterns_components.lbi" --><div id="menu" class="slinky-menu slinky-theme-default">
 <ul>
-  <li class="first"><a href="../index.htm">Component patterns</a></li>
+  <li class="first"><a href="index.htm">Component patterns</a></li>
 	<li><a href="complementary.htm">Complementary content</a></li>
 	<li><a href="contents-box.htm">Contents box</a></li>
 	<li><a href="subscribe.htm">Subscribe</a></li>
+	<li><a href="publication.htm">Publication</a></li>
  </ul>
 </div>
 
@@ -134,16 +135,34 @@ display: none;
  
 	
 <!-- InstanceBeginEditable name="content" -->
-  <h1>Subscribe</h1>
+  <h1>Subscribe box</h1>
 	
   <p>Subscribe forms are displayed on the website to give users the option to enter their email address and sign up for HSE e-bulletins.</p>
 	
+  <div class="box">
+	
+  <form id="email" action="https://public.govdelivery.com/accounts/UKHSE/subscriber/new?topic_id=UKHSE_125">
+          <fieldset class="fieldset">
+            <legend class="fieldset__legend">
+              <h3 class="fieldset__heading">
+                  Subscribe
+                </h3>
+            </legend>
+            <div class="form-group">
+              <label class="label">Subscribe for free news and updates on health and safety topics and industries.</label>
+              <input class="input input-text input-width-l" type="email" id="subscribe" name="email" placeholder="Your email address" required title="Please enter your email address">
+			  <input id="topic_id" name="topic_id" type="hidden" value="UKHSE_125"> <!-- Include hidden input and unique e-bulletin value -->
+			  <input class="eBulletinButton" name="commit" type="submit" value="Subscribe">
+            </div>
+
+          </fieldset>
+        </form>
+	
+</div>
 	
   <h2>When to use</h2>
 		
   <p>The inclusion of a subscribe box should be decided by the content author and digital performance analyist. The e-bulletin the user subscribes to should relate to the page content.</p>
-	
-	
 	
   <h2>How to use</h2>
 	
@@ -156,9 +175,22 @@ display: none;
 	<p>followed by your selected GovDelivery e-bulletin code, giving you a complete string as follows: </p>
 	
   <p><strong>"https://public.govdelivery.com/accounts/UKHSE/subscriber/new?topic_id=UKHSE_125"</strong></p>
+  
+  <h3>Styling form elements</h3>
+	
+	
+  <p>Depending on what <a href="../pages/index.htm">page</a> and <a href="../../style/layout/index.htm">layout</a> you're using, the subscribe form will need to be adjusted to fit. To adjust the width of the input element you should refer to the form components <a href="../../components/forms/input-sizes.htm">input sizes</a>.</p>
+	
+  <p>Regardless of page or layout, the subscribe form should always be contained inside a box component.</p>
 
+		
+  <h3>Code example</h3>
+	
+  <iframe width="100%" height="300" src="//jsfiddle.net/pjenkinsonhse/2kbdyj9z/4/embedded/html/dark/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
 	
   <h3>e-bulletin codes</h3>
+	
+
 	
   <table>
 <thead>
@@ -698,30 +730,8 @@ display: none;
 </tbody></table>
 	
 	
-<div class="box">
-	
-  <form id="email" action="https://public.govdelivery.com/accounts/UKHSE/subscriber/new?topic_id=UKHSE_125">
-          <fieldset class="fieldset">
-            <legend class="fieldset__legend">
-              <h3 class="fieldset__heading">
-                  Subscribe
-                </h3>
-            </legend>
-            <div class="form-group">
-              <label class="label">Subscribe for free news and updates on health and safety topics and industries.</label>
-              <input class="input input-text" type="email" id="subscribe" name="email" placeholder="Your email address" required title="Please enter your email address">
-			  <input id="topic_id" name="topic_id" type="hidden" value="UKHSE_125"> <!-- Include hidden input and unique e-bulletin value -->
-			  <input class="eBulletinButton" name="commit" type="submit" value="Subscribe">
-            </div>
 
-          </fieldset>
-        </form>
 	
-</div>
-	
-<h3>Code example</h3>
-	
-<iframe width="100%" height="300" src="//jsfiddle.net/pjenkinsonhse/2kbdyj9z/embedded/html/dark/" allowfullscreen="allowfullscreen" allowpaymentrequest></iframe>
 	
 <h2>Legacy subscribe box</h2>	
 	
@@ -766,7 +776,7 @@ display: none;
   </footer>
 </nav>
 <section id="lastUpdated" aria-label="Last updated">
-<!-- InstanceBeginEditable name="updated" -->Updated:<!-- #BeginDate format:IS1 -->2021-05-06<!-- #EndDate -->
+<!-- InstanceBeginEditable name="updated" -->Updated:<!-- #BeginDate format:IS1 -->2021-05-10<!-- #EndDate -->
   <!-- InstanceEndEditable -->
 </section>
 <script src="../../assets/v5-js/v5-main.min.js"></script>
