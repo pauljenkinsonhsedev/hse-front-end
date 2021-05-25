@@ -154,7 +154,6 @@ display: none;
 			<li><a href="../components/forms/radios.htm">Radios</a></li>
 			<li><a href="../components/forms/switch.htm">Switch</a></li>
 			<li><a href="../components/forms/textarea.htm">Text area</a></li>
-		    <li><a href="../components/forms/buttons.htm">Buttons</a></li>
 			<li><a href="../components/forms/drop-down.htm">Drop-down list (Input)</a></li>
 			<li><a href="../components/forms/subscribe.htm">Subscribe (Input)</a></li>
 		</ul>
