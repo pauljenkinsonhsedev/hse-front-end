@@ -50,18 +50,8 @@ h4 {
 	color:#111;
 }
 
-a,
-a:visited {
-	color:#981e32;/*changed from #b82533 by Sarah 27/2/19*/
-}
-
 h1 {
-	color:#981e32;/*changed from #a50532 by Sarah 27/2/19*/
-}
-
-h2 a:link,
-h2 a:visited {
-	color:#111;
+	color: $red;
 }
 
 h2 a:hover,
