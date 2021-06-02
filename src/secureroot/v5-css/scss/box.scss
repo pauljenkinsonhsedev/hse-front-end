@@ -37,6 +37,11 @@ width:220px;
 width:460px;
 }
 
+// document box
+.box.document {
+border: 2px solid $red;   
+}
+
 // box promo image
 
 .boxPromoImage img{
@@ -414,4 +419,57 @@ margin-top: auto !important;
 }
 
 
+}
+
+
+
+
+// Cards (Box list) 
+
+.boxList, .boxList-2col {
+    margin-bottom: 5px !important;
+    @media only screen and (min-width : $desktop) {
+        column-count: 2;
+    }
+}
+
+.boxList-3col {
+    margin-bottom: 5px !important;
+    @media only screen and (min-width : $desktop) {
+        column-count: 3;
+    }
+}
+
+#contentContainer .boxList ul {
+    margin: 0 0 10px 0 !important;
+}
+.boxList ul li {
+    float: left;
+    clear: both;
+    width: 100%;
+    background: none;
+    background-color: $gray;
+    margin: 5px 0;
+    padding: 0;
+    background-image: none !important;
+}
+.boxList ul li:last-of-type {
+    @media only screen and (max-width : $desktop) {
+        margin-bottom: 0;
+    }
+}
+.boxList ul li a {
+    width: 100%;
+    float: left;
+    padding: 10px;
+}
+.boxList ul li:hover {
+    background-color: $darkergray;
+}
+.boxList ul li h3 {
+    color: $red !important;
+}
+.boxList ul li h3 {
+    margin: 0;
+    display: inline;
 }
