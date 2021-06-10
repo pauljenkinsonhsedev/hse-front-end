@@ -99,6 +99,10 @@ a {
             background-color: rgba($focus, .5);
             color: #666;
         }
+        &:focus {
+        background: $red;
+        color: white;
+        }
     }
 }
 
