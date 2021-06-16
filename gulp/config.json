@@ -87,6 +87,10 @@
             "all": "./src/devguide/html/**/*.+(htm|html)",
             "output": "./devguide/"
         },
+        "imageAssets": {
+            "all": "./src/devguide/images/**/*.+(png|jpeg|gif|svg)",
+            "output": "./devguide/images/"
+        },
         "images": {
             "v4": {
                 "all": "./src/secureroot/v4-images/**/*.+(png|jpg|jpeg|gif|svg|ico)",

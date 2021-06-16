@@ -59,6 +59,28 @@ ul.listhorizontal {
     margin: 1em 0 2em 0;
 }
 
+#contentContainer ul.list-plain {
+    margin: 0;
+    padding: 0;
+    li {
+        margin: 0;
+        padding: 0;
+        background-image: none;
+        list-style-type: none;
+    }
+}
+#contentContainer ul.list-inline {
+    margin: 0;
+    padding: 0;
+    li {
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+        background-image: none;
+        list-style-type: none;
+    }
+}
+
 .splitList2 ul {
     column-count: 2;
     column-gap: 20px;
