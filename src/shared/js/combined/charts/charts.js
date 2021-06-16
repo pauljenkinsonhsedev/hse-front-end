@@ -2,6 +2,7 @@ import {
     ChartOptions,
     ChartOptionsDefault,
     ChartOptionsLine,
+    ChartOptionsDual,
     ChartOptionsArearange,
     ChartOptionsPie,
     ChartOptionsDonut,
@@ -67,8 +68,15 @@ class ChartsDefault {
 
             // initialise charts
             chartArray.forEach((container) => {
-                const type = container.dataset.chartType;
+                let type = container.dataset.chartType;
+                if (type.includes('with')) {
+                    type = 'with';
+                }
                 switch(type) {
+                    case 'with':
+                        this.collection = new ChartOptionsDual(container);
+                    break;
+
                     case 'pie':
                         this.collection = new ChartOptionsPie(container);
                     break;

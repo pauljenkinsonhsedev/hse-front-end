@@ -5,6 +5,19 @@
 	<li><a href="../framework/regions.htm">Editable regions</a></li>
     <li><a href="../framework/param.htm">Parameters</a></li>
 	<li><a href="../framework/accessibility.htm">Accessibility</a></li>
+	<li><a href="#">Components</a>
+		<ul>
+		   <li><a href="../framework/components/index.htm">Overview</a></li>
+          <li><a href="../framework/components/notification-banner.htm">Notification banner</a></li>
+		   <li><a href="../framework/components/user-satisfaction.htm">User satisfaction</a></li>
+		   <li><a href="../framework/components/document-title-meta.htm">Document title and meta elements</a></li>
+		   <li><a href="../framework/components/page-notification.htm">Page notification</a></li>
+		   <li><a href="../framework/components/breadcrumbs.htm">Breadcrumbs</a></li>
+		   <li><a href="../framework/components/beta-banner.htm">Beta survey</a></li>
+		   <li><a href="../framework/components/secondary-nav.htm">Secondary navigation</a></li>
+		   <li><a href="../framework/components/cookies.htm">Cookie banner</a></li>
+		</ul>
+	</li>
 	
  </ul>
 </div>

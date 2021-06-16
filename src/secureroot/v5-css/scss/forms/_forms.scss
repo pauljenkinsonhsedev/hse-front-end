@@ -177,3 +177,13 @@ input {
     margin-right: 0;
   }
 }
+
+// V4 Box layout style
+
+.box .form-group .label {
+font-size: 0.9rem !important;
+}
+
+.box .fieldset__legend {
+margin-bottom: 0 !important;
+}

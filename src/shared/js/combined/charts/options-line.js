@@ -3,6 +3,7 @@ import { chartCategories } from './chart-categories';
 import { ChartOptions } from './dependencies';
 import { missingData } from './missing-data.js';
 import { plotBand } from './plot-band';
+import {red} from 'ansi-colors';
 /*
     Class @ChartOptionsLine
 
@@ -39,19 +40,44 @@ export class ChartOptionsLine extends ChartOptions {
             plotBands: getPlotBand,
             title: {
                 text: this.xAxisText,
-                align: 'high'
-            }
-        };
-
-        const yAxis = {
-            title: {
-                text: this.yAxisText,
+                align: 'high',
                 style: {
-                    fontWeight: 'bold',
+                    fontFamily: this.fontFamily,
+                    fontSize: '0.7rem',
+                    fontWeight: 'regular',
                 }
             },
             labels: {
-                format: '{value:,.0f}'
+                overflow: 'justify',
+                style: {
+                    fontFamily: this.fontFamily,
+                    fontSize: '0.7rem',
+                    fontWeight: 'regular',
+                }
+            },
+        };
+
+        const yAxis = {
+            labels: {
+                style: {
+                    fontFamily: this.fontFamily,
+                    fontSize: '0.9rem',
+                    fontWeight: 'regular'
+                }
+            },
+            title: {
+                text: this.yAxisText,
+                style: {
+                    fontWeight: 'bold'
+                }
+            },
+            labels: {
+                format: '{value:,.0f}',
+                style: {
+                    fontFamily: this.fontFamily,
+                    fontSize: '0.7rem',
+                    fontWeight: 'regular',
+                }
             },
             max: null,
             min: 0,

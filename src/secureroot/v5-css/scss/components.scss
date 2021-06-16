@@ -164,10 +164,6 @@ background-color: $red;
 color: white;
 }
 
-.box .ddmStyling select, .homepageDropdown .ddmStyling select {
-margin-bottom: 10px !important;
-}
-
 .box .ddmStyling {
 margin: 0 10px 0 0;
 }
@@ -231,14 +227,6 @@ padding: 10px;
 width: 100%;
 border: 2px solid $red;
 margin-bottom: 20px;
-}
-
-// Tables
-
-table caption {
-background-color: $hseblack;
-padding: 10px;
-color: white;
 }
 
 // Accordion

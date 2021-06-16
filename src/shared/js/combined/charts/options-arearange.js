@@ -63,7 +63,14 @@ export class ChartOptionsArearange extends ChartOptions {
         subtitle.text = this.subtitle;
 
         let exporting = this.collection.exporting;
-        let credits = this.collection.credit;
+        let credits = this.collection.credits;
+
+        const style = {
+            fontFamily: this.fontFamily,
+            fontSize: '0.8rem',
+            fontWeight: 'regular'
+        };
+        this.collection.style = style;
 
         let series = [];
         const seriesAverage = {
@@ -78,6 +85,7 @@ export class ChartOptionsArearange extends ChartOptions {
                 lineColor: this.colours[0]
             }
         };
+
         const seriesRange = {
             name: areaRangeTitle,
             data: rangesData[0],
@@ -105,11 +113,12 @@ export class ChartOptionsArearange extends ChartOptions {
         if (checkForNull === true) {
             series.push(missingAverage[0]);
             series.push(missingAverage[1]);
+            missingAverage[0].name = `${rangeHeading}`;
+
         } else {
             series.push(seriesAverage);
         }
 
-        missingAverage[0].name = `${rangeHeading}`;
         series.push(seriesRange);
 
         const { 0: first, length, [length -1]: last } = rangesData[0]; //getting first and last el from array
@@ -142,16 +151,17 @@ export class ChartOptionsArearange extends ChartOptions {
             },
             accessibility: {
                 rangeDescription: `Range: ${dateRange.first[0]} to ${dateRange.last[0]}.`
-            },
-            title: {
-                text: this.xAxisText,
-                align: 'high'
             }
         };
 
         let yAxis = {
             labels: {
-                format: '{value:,.0f}'
+                format: '{value:,.0f}',
+                style: {
+                    fontFamily: this.fontFamily,
+                    fontSize: '0.7rem',
+                    fontWeight: 'regular',
+                }
             },
             title: {
                 text: null
@@ -223,7 +233,7 @@ export class ChartOptionsArearange extends ChartOptions {
 
         let caption = {
             useHTML: true,
-            text: this.caption
+            text: this.caption,
         };
 
         let plotOptions = {
@@ -233,12 +243,35 @@ export class ChartOptionsArearange extends ChartOptions {
                     legendItemClick: function() {
                         return false;
                     }
+                },
+                dataLabels: {
+                    style: {
+                        fontFamily: this.fontFamily,
+                        fontSize: '0.7rem',
+                        fontWeight: 'bold'
+                    },
                 }
+            },
+        };
+
+        let legend = {
+            enabled: true,
+            itemStyle: {
+                font: this.fontFamily,
+                fontSize: '0.75rem',
+                color: '#000'
+            }
+        };
+        const chart = {
+            style: {
+                fontFamily: this.fontFamily,
+                fontSize: '0.8rem',
+                fontWeight: 'regular'
             }
         };
 
-        this.collection = {title, subtitle, xAxis, yAxis, plotOptions, tooltip, series, caption, exporting, credits};
-
+        const collection = this.collection;
+        this.collection = {...collection, chart, title, subtitle, xAxis, yAxis, plotOptions, legend, tooltip, series, caption, exporting, credits};
         return this.collection;
     }
 }

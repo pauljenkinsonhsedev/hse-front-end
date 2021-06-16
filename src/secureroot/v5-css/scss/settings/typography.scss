@@ -1,7 +1,7 @@
 $type-settings: (
   -1: (
     font-size: 0.75rem,
-    line-height: 1.5
+    line-height: 21px
   ),
   0: (
     font-size: 0.9rem,
@@ -9,15 +9,15 @@ $type-settings: (
   ),
   1: (
     font-size: 2.45em,
-    line-height: 1.5
+    line-height: 1
   ),
   2: (
     font-size: 1.625rem,
-    line-height: 1.5
+    line-height: 1.2
   ),
   3: (
     font-size: 1.1rem,
-    line-height: 1.5
+    line-height: 1.4
   )
 );
 
@@ -43,7 +43,7 @@ body {
 .heading-xl,
 h1 {
     @include type-setting(1);
-    font-weight: 700;
+    font-weight: bold;
     margin-bottom: $dp*3;
     color: $red;
 }
@@ -51,7 +51,7 @@ h1 {
 .heading-l,
 h2 {
     @include type-setting(2);
-    font-weight: 700;
+    font-weight: bold;
     color: $black;
     margin: 0 0 15px;
 }
@@ -59,23 +59,23 @@ h2 {
 .heading-m,
 h3 {
     @include type-setting(3);
-    font-weight: 700;
+    font-weight: bold;
     color: $black;
     margin: 0 0 15px;
 }
 
 .heading-s,
 h4 {
-    @include type-setting(3);
-    font-weight: 700;
+    @include type-setting(0);
+    font-weight: bold;
     color: $black;
     margin: 0 0 15px;
 }
 
 .heading-xs,
 h5 {
-    @include type-setting(3);
-    font-weight: 700;
+    @include type-setting(0);
+    font-weight: bold;
     color: $black;
     margin: 0 0 15px;
 }

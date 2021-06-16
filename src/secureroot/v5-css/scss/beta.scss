@@ -8,6 +8,7 @@ text-decoration: underline;
 }
 #beta-user-testing p a:hover {
 text-decoration: none;
+color: $hseblack;
 }
 
 /* Beta */
@@ -54,8 +55,8 @@ text-decoration: none;
     line-height: 1.25;
     }
     
-    #beta-user-testing a:link, #beta-user-testing a:visited, #beta-user-testing a:hover, #beta-user-testing a:focus {
-    color: $beta !important;	
+    #beta-user-testing a:link, #beta-user-testing a:visited, #beta-user-testing a:focus {
+    color: $beta;	
     }
     
     #beta-user-testing p {

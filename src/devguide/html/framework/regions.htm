@@ -87,7 +87,6 @@ display: none;
       <nav id="main-menu"  class="menu js-menu">
         <ul>
           <li class="home"><a href="../index.htm">Design system</a></li>
-          <li class="brand"><a href="../brand/index.htm">Brand</a></li>
           <li class="style"><a href="../style/index.htm">Styles</a></li>
           <li class="components"><a href="../components/index.htm">Components</a></li>
           <li class="patterns"><a href="../patterns/index.htm">Patterns</a></li>
@@ -124,6 +123,19 @@ display: none;
 	<li><a href="regions.htm">Editable regions</a></li>
     <li><a href="param.htm">Parameters</a></li>
 	<li><a href="accessibility.htm">Accessibility</a></li>
+	<li><a href="#">Components</a>
+		<ul>
+		   <li><a href="components/index.htm">Overview</a></li>
+          <li><a href="components/notification-banner.htm">Notification banner</a></li>
+		   <li><a href="components/user-satisfaction.htm">User satisfaction</a></li>
+		   <li><a href="components/document-title-meta.htm">Document title and meta elements</a></li>
+		   <li><a href="components/page-notification.htm">Page notification</a></li>
+		   <li><a href="components/breadcrumbs.htm">Breadcrumbs</a></li>
+		   <li><a href="components/beta-banner.htm">Beta survey</a></li>
+		   <li><a href="components/secondary-nav.htm">Secondary navigation</a></li>
+		   <li><a href="components/cookies.htm">Cookie banner</a></li>
+		</ul>
+	</li>
 	
  </ul>
 </div>
@@ -252,95 +264,6 @@ display: none;
       </tbody>
     </table>
 	
-	<h2>Document title and meta elements</h2>
-	
-	<h3>Document title</h3>
-	
-	<p>The HTML Title element defines the document's title that is shown in a browser's title bar or a page's tab, it only contains text.</p>
-	
-	<ul>
-	 <li>Every page should have a document title</li>
-	 <li>The document title should have similar text to the document H1 tag</li>
-	</ul>
-	
-	<h3>Meta description</h3>
-	
-	<p>The meta description is an HTML attribute that provides a brief summary of a web page. Search engines such as Google often display the meta description in search results.</p>
-	
-	<iframe width="100%" height="100" src="//jsfiddle.net/pjenkinsonhse/xt32w8yc/4/embedded/html/dark/" allowfullscreen="allowfullscreen" allowpaymentrequest ></iframe>
-	
-	<h2>Notification bar</h2>
-	
-	<p>The notification bar is designed to contain a short message and a link to further information. It displays below the main menu and above the page breadcrumbs.</p>
-	
-	<p>It can be hidden by the user when the click the link text 'hide message'.</p>
-	
-	<p>The nofication message can be applied using <a href="param.htm">template parameters</a>.</p>
-	
-	
-	
-	<h2>Breadcrumbs</h2>
-	
-	<p>Breadcrumbs on HSE.GOV.UK display a hierarchy of the current page in relation to the the site's structure, from homepage (top level) to current page.</p>
-	
-	<ul>
-	
-	<li>The first list item in the breadcrumbs should always be HSE.GOV.UK homepage</li>
-	<li>The first list item should also have the class <strong>home</strong> assigned to it</li>
-	<li>The last list item should be the current page</li>
-	<li>The current page (last list item) has no link</li>
-	</ul>
-	
-	
-	<iframe width="100%" height="auto" src="//jsfiddle.net/pjenkinsonhse/yn63x21d/1/embedded/html/dark/" allowfullscreen="allowfullscreen" allowpaymentrequest ></iframe>
-	
-	<div class="box">
-	
-	<h3>Accessibility</h3>
-		
-	<p>The aria state: <strong>aria-current="page"</strong> is applied with JS to the last list item of the breadcrumbs to indicate the current page in the breadcrumbs.</p>
-	
-	</div>
-	
-	<h2>Beta survey</h2>
-	
-	<p>Content region for description and link to beta survey.</p>
-	
-	<p>Currently this is applied with a library item and is the same on all pages.</p>
-	
-	<iframe width="100%" height="auto" src="//jsfiddle.net/pjenkinsonhse/c259joeh/embedded/html/dark/" allowfullscreen="allowfullscreen" allowpaymentrequest ></iframe>
-	
-	
-	<h2>Secondary navigation</h2>
-	
-	<p>The secondary navigation region is available when the page <a href="param.htm">parameter</a> column layout value is set to 2.</p>
-	
-    <p>The secondary navigation is a menu which is an unordered list that can contain nested lists</p>
-	
-	<ul>
-	 
-	 <li>Always apply a class of <strong>'first'</strong> to the first list item in the menu</li>
-	 <li>Keep list item text to one line</li>
-	 <li>Do not wrap list item text</li>
-	 <li>The menu structure should reflect the site architecture (folder structure)</li>
-	 <li>The parent li item of any nested list should contain a <strong>#</strong> as it's href value</li>
-	 <li>The first li item of a nested list should only have the text <strong>'Overview'</strong></li>
-	
-	</ul>
-	
-	<iframe width="100%" height="300" src="//jsfiddle.net/pjenkinsonhse/L2xypa6n/11/embedded/html/dark/" allowfullscreen="allowfullscreen" allowpaymentrequest ></iframe>
-	
-	
-	
-	<div class="box">
-		
-	<h3>Accessiblity</h3>
-		
-	<p>As the text 'Overview' can be used multiple times in the menu and link to different destinations, JS is used to automatically append the parent list item text to it which is visually hidden from screen.</p>
-	
-	
-	</div>
-	
 	<h2>Content</h2>
 	
 	<p>The content area consists of content that is directly related to or expands upon the central topic of the page.</p>
@@ -376,7 +299,7 @@ display: none;
 </nav>
 <section id="lastUpdated" aria-label="Last updated">
 <!-- InstanceBeginEditable name="updated" --> Updated: 
-  <!-- #BeginDate format:IS1 -->2020-11-25<!-- #EndDate --> 
+  <!-- #BeginDate format:IS1 -->2021-04-29<!-- #EndDate --> 
   <!-- InstanceEndEditable -->
 </section>
 <script src="../assets/v5-js/v5-main.min.js"></script>

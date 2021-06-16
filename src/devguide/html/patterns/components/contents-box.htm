@@ -41,7 +41,7 @@ display: none;
 <!-- Page title and meta -->
 	
 <!-- InstanceBeginEditable name="doctitle" -->
-<title></title>
+<title>Contents box - HSE.GOV.UK Design System</title>
 <meta name="keywords" content=" " />
 <meta name="description" content=" " />
 <!-- InstanceEndEditable -->
@@ -86,7 +86,6 @@ display: none;
       <nav id="main-menu"  class="menu js-menu">
         <ul>
           <li class="home"><a href="../../index.htm">Design system</a></li>
-          <li class="brand"><a href="../../brand/index.htm">Brand</a></li>
           <li class="style"><a href="../../style/index.htm">Styles</a></li>
           <li class="components"><a href="../../components/index.htm">Components</a></li>
           <li class="patterns"><a href="../index.htm">Patterns</a></li>
@@ -102,6 +101,7 @@ display: none;
 		<ol>
 			<li class="home"><a href="../../index.htm">Design System</a></li>
 			<li><a href="../index.htm">Patterns</a></li>
+			<li><a href="index.htm">Components</a></li>
 			<li>Content page</li>
 		</ol>
 		<!-- InstanceEndEditable --> </div>
@@ -119,16 +119,19 @@ display: none;
 <!-- Beta content page --> 
 
   
-<nav id="navSecondary" aria-label="Secondary"> <!-- InstanceBeginEditable name="Subnav" -->
-	
-<div id="menu" class="slinky-menu slinky-theme-default">
+<nav id="navSecondary" aria-label="Secondary"> <!-- InstanceBeginEditable name="Subnav" --><!-- #BeginLibraryItem "/Library/_v5-patterns_components.lbi" --><div id="menu" class="slinky-menu slinky-theme-default">
 <ul>
   <li class="first"><a href="index.htm">Component patterns</a></li>
-	<li><a href="contents-box.htm">Page contents</a></li>
+	<li><a href="complementary.htm">Complementary content</a></li>
+	<li><a href="contents-box.htm">Contents box</a></li>
+	<li><a href="subscribe.htm">Subscribe</a></li>
+	<li><a href="publication.htm">Publication</a></li>
+	<li><a href="cards.htm">Cards</a></li>
+	<li><a href="box-list.htm">Cards (box style)</a></li>
  </ul>
 </div>
 
-<!-- #EndLibraryItem --><!-- InstanceEndEditable --> </nav>
+<!-- #EndLibraryItem --><!-- #EndLibraryItem --><!-- InstanceEndEditable --> </nav>
 
 <main id="contentContainer" class="columnbetacontentpage column2">
  
@@ -136,24 +139,25 @@ display: none;
 <!-- InstanceBeginEditable name="content" -->
   <h1>Page contents</h1>
 	
-  <p>Page contents is in-page navigation that uses anchor links to link to content that you would otherwise have to scroll to view.</p>
-	
-  
-	
   <div class="box">
   <h2>Contents</h2>
 	  
   <ul>
-   <li><a href="#how-to-use">How to use</a></li>	   
    <li><a href="#when-to-use">When to use</a></li>
+   <li><a href="#how-to-use">How to use</a></li>	   
   </ul>
 	  
 	  
   </div>
 	
-  <iframe width="100%" height="300" src="//jsfiddle.net/pjenkinsonhse/p3u6fwnk/1/embedded/html/dark/" allowfullscreen="allowfullscreen" allowpaymentrequest></iframe>
+  <p>Page contents is in-page navigation that uses anchor links to link to content that you would otherwise have to scroll to view.</p>
 	
-  <h2 id="how-to-use">How to use</h2>
+	 <h2 id="when-to-use">When to use</h2>
+	
+  <p>A page contents pattern should only be used on pages that require considerable scrolling to view all of the page contents.</p>
+	
+	
+   <h2 id="how-to-use">How to use</h2>
 	
   <p>A page contents pattern uses the <a href="../../components/boxes.htm">box</a> component and an <a href="../../style/typography/lists.htm">unordered list</a>.</p>
 	
@@ -163,9 +167,12 @@ display: none;
 	
   <p>Finally you add your list items to the list in your page contents box, each list item will be a link to an in-page heading. To make the in-page links work, you need to have a <strong>#</strong> before the heading ID.</p>
 	
-  <h2 id="when-to-use">When to use</h2>
+ 
+  <h2>Code example</h2>
 	
-  <p>A page contents pattern should only be used on pages that require considerable scrolling to view all of the page contents.</p>
+  <iframe width="100%" height="300" src="//jsfiddle.net/pjenkinsonhse/p3u6fwnk/1/embedded/html/dark/" allowfullscreen="allowfullscreen" allowpaymentrequest></iframe>
+	
+ 
   
 
    
@@ -198,7 +205,7 @@ display: none;
   </footer>
 </nav>
 <section id="lastUpdated" aria-label="Last updated">
-<!-- InstanceBeginEditable name="updated" -->Updated:<!-- #BeginDate format:IS1 -->2020-11-20<!-- #EndDate -->
+<!-- InstanceBeginEditable name="updated" -->Updated:<!-- #BeginDate format:IS1 -->2021-05-10<!-- #EndDate -->
   <!-- InstanceEndEditable -->
 </section>
 <script src="../../assets/v5-js/v5-main.min.js"></script>

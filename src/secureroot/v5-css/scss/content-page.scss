@@ -239,12 +239,6 @@ margin: 0;
 margin: 0;
 }
 
-
-
-
-
-
-
 // Pubns
 
 .catalogue {
@@ -275,7 +269,7 @@ float: left;
 }
 
 .v5-figure.full-width, .v5-figure.full-width img {
-width: 100%;
+min-width: 100%;
 height: auto;
 }
 
@@ -287,8 +281,18 @@ background-color: $hseblack;
 color: white;
 clear: both;
 text-align: center;
+line-height: 1.5;
 }
 
+// Caption width adjustment 
+
+.v5-figure figcaption.fill {
+min-width: fit-content;
+}
+
+.v5-figure figcaption.fix {
+max-width: fit-content;
+}
 
 .v5-youtube-embed {
 float: left;

@@ -21,7 +21,12 @@ export class ChartOptionsBarStacked extends ChartOptions {
         const getTooltip = dataTooltip(this.type, this.units, this.decimals, total);
 
         const chart = {
-            type: 'bar'
+            type: 'bar',
+            style: {
+                fontFamily: this.fontFamily,
+                fontSize: '0.8rem',
+                fontWeight: 'regular'
+            }
         };
 
         const legend = {
@@ -30,6 +35,13 @@ export class ChartOptionsBarStacked extends ChartOptions {
 
         const yAxis = {
             min: 0,
+            labels: {
+                style: {
+                    fontFamily: this.fontFamily,
+                    fontSize: '0.9rem',
+                    fontWeight: 'regular',
+                }
+            },
             stackLabels: {
                 enabled: true,
             }

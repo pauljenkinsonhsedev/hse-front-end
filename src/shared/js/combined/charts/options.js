@@ -150,7 +150,12 @@ export class ChartOptions {
                 type: this.type,
                 renderTo: this.chartRender,
                 marginTop: 100,
-                height: this.height
+                height: this.height,
+                style: {
+                    fontFamily: this.fontFamily,
+                    fontSize: '0.8rem',
+                    fontWeight: 'regular'
+                },
             },
             title: {
                 useHTML: true,
@@ -173,17 +178,33 @@ export class ChartOptions {
                 }
             },
             caption: {
-                text: this.captionText
+                text: this.captionText,
+                style: {
+                    color: '#000',
+                    fontFamily: this.fontFamily,
+                    fontSize: '0.9rem',
+                    fontWeight: 'regular',
+                }
             },
             xAxis: {
                 categories: categoryData,
                 title: {
                     text: this.xAxisText,
-                    align: 'high'
+                    align: 'high',
+                    style: {
+                        fontFamily: this.fontFamily,
+                        fontSize: '0.7rem',
+                        fontWeight: 'regular',
+                    }
                 },
                 labels: {
                     overflow: 'justify',
-                    useHTML: true,
+                    // useHTML: true,
+                    style: {
+                        fontFamily: this.fontFamily,
+                        fontSize: '0.9rem',
+                        fontWeight: 'regular',
+                    }
                 },
                 accessibility: {
                     description: this.description
@@ -192,7 +213,12 @@ export class ChartOptions {
             },
             yAxis: {
                 labels: {
-                    format: '{value:,.0f}'
+                    format: '{value:,.0f}',
+                    style: {
+                        fontFamily: this.fontFamily,
+                        fontSize: '0.7rem',
+                        fontWeight: 'regular',
+                    }
                 },
                 title: {
                     text: this.yAxisText,
@@ -218,19 +244,27 @@ export class ChartOptions {
                 enabled: true,
                 itemStyle: {
                     font: this.fontFamily,
+                    fontSize: '0.75rem',
                     color: '#000'
                 }
             },
             plotOptions: {
-            series: {
-                borderWidth: 0,
-                showInLegend: true,
-                events: {
-                    legendItemClick: function() {
-                        return false;
+                series: {
+                    borderWidth: 0,
+                    showInLegend: true,
+                    events: {
+                        legendItemClick: function() {
+                            return false;
+                        }
+                    },
+                    dataLabels: {
+                        style: {
+                            fontFamily: this.fontFamily,
+                            fontSize: '0.7rem',
+                            fontWeight: 'bold'
+                        },
                     }
                 }
-            }
         },
             accessibility: {
                 description: this.description,
