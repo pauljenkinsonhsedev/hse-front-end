@@ -23,11 +23,11 @@ export class ChartOptionsDual extends ChartOptions {
 
         const table1 = table[0];
         const xAxisTitle1 = table1.dataset.yaxisText;
-        const valueSuffix1 = table1.dataset.valueSuffix;
+        const valueSuffix1 = table1.dataset.valueSuffix ? table1.dataset.valueSuffix : '';
 
         const table2 = table[1];
-        const xAxisTitle2 = table2.dataset.yaxisText;
-        const valueSuffix2 = table2.dataset.valueSuffix;
+        const xAxisTitle2 = table2.dataset.yaxisText ? table2.dataset.yaxisText : '';
+        const valueSuffix2 = table2.dataset.valueSuffix ? table2.dataset.valueSuffix : '';
 
         const getSeriesData1 = seriesData(table1);
         const getSeriesData2 = seriesData(table2);
