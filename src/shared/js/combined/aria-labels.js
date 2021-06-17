@@ -3,11 +3,15 @@ export function ariaLabels() {
     headerContainer.setAttribute('role', 'banner');
 
     const navigationContainer = document.getElementById('navigationContainer');
-    navigationContainer.setAttribute('role', 'navigation');
-    navigationContainer.setAttribute('aria-label', 'Main menu');
+    if (navigationContainer) {
+      navigationContainer.setAttribute('role', 'navigation');
+      navigationContainer.setAttribute('aria-label', 'Main menu');
+    }
 
     const navSecondary = document.getElementById('navSecondary');
-    navSecondary.setAttribute('aria-label', 'Secondary');
+    if (navSecondary) {
+      navSecondary.setAttribute('aria-label', 'Secondary');
+    }
 
     const printBanner = document.getElementById('printBanner');
     printBanner.setAttribute('aria-label', 'Print banner');
