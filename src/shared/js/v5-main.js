@@ -11,6 +11,7 @@ import { dialogModal } from './combined/dialogs.js';
 import { tabs } from './combined/tabs.js';
 import { backLinks } from './combined/back-link.js';
 import { ariaLabels } from './combined/aria-labels.js';
+import { googleSearch } from './combined/google-search.js';
 
 // Window load
 window.addEventListener('DOMContentLoaded',() => {
@@ -22,6 +23,11 @@ window.addEventListener('DOMContentLoaded',() => {
   }
 
   ariaLabels();
+
+  const googleSearchContainer = document.getElementById('globalSearch');
+  if (googleSearchContainer) {
+    googleSearch();
+  }
 
   // Back links
   const backLink = document.querySelector('#backTo');
