@@ -10,6 +10,7 @@ import { feedbackSurvey } from './combined/feedback-survey.js';
 import { dialogModal } from './combined/dialogs.js';
 import { tabs } from './combined/tabs.js';
 import { backLinks } from './combined/back-link.js';
+import { ariaLabels } from './combined/aria-labels.js';
 
 // Window load
 window.addEventListener('DOMContentLoaded',() => {
@@ -20,21 +21,12 @@ window.addEventListener('DOMContentLoaded',() => {
     loadPicturefillFn();
   }
 
+  ariaLabels();
+
   // Back links
   const backLink = document.querySelector('#backTo');
   if (backLink) {
     backLinks();
-  }
-
-  // Aria
-  const cookieContainer = document.querySelector('#cookieContainer');
-  const breadcrumb = document.querySelector('#breadCrumb');
-  if (breadcrumb) {
-    const lastItem = breadcrumb.querySelector('li:last-of-type');
-    lastItem.setAttribute('aria-current','page');
-  }
-  if (cookieContainer) {
-    cookieContainer.setAttribute('aria-label','Cookie banner');
   }
 
   // small device menu
