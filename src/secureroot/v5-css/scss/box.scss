@@ -433,6 +433,13 @@ margin-top: auto !important;
     }
 }
 
+.boxList-1col {
+    margin-bottom: 5px !important;
+    @media only screen and (min-width : $desktop) {
+        column-count: 1;
+    }
+}
+
 .boxList-3col {
     margin-bottom: 5px !important;
     @media only screen and (min-width : $desktop) {
