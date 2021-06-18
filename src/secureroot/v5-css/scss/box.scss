@@ -444,25 +444,15 @@ margin-top: auto !important;
     }
 }
 
-.boxList-1col {
-    margin-bottom: 5px !important;
-    @media only screen and (min-width : $desktop) {
-        column-count: 1;
-    }
-}
-
 #contentContainer .boxList ul {
     margin: 0 0 10px 0 !important;
 }
 .boxList ul li {
-    float: left;
-    clear: both;
-    width: 100%;
-    background: none;
-    background-color: $gray;
-    margin: 5px 0;
-    padding: 0;
-    background-image: none !important;
+display: inline-block;
+background-image: none !important;
+padding: 0;
+margin: 2px 0;
+width: 100%;
 }
 .boxList ul li:last-of-type {
     @media only screen and (max-width : $desktop) {
@@ -473,8 +463,15 @@ margin-top: auto !important;
     width: 100%;
     float: left;
     padding: 10px;
+    float: left;
+    clear: both;
+    width: 100%;
+    background: none;
+    background-color: $gray;
+    background-image: none !important;
+    text-decoration: none;
 }
-.boxList ul li:hover {
+.boxList ul a:hover {
     background-color: $darkergray;
 }
 .boxList ul li h3 {
