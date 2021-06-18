@@ -421,9 +421,6 @@ margin-top: auto !important;
 
 }
 
-
-
-
 // Cards (Box list) 
 
 .boxList, .boxList-2col {
@@ -437,6 +434,13 @@ margin-top: auto !important;
     margin-bottom: 5px !important;
     @media only screen and (min-width : $desktop) {
         column-count: 3;
+    }
+}
+
+.boxList-1col {
+    margin-bottom: 5px !important;
+    @media only screen and (min-width : $desktop) {
+        column-count: 1;
     }
 }
 
