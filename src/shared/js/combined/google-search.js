@@ -14,7 +14,7 @@ export function googleSearch() {
 
             searchLabel.innerHTML = 'Search hse.gov.uk';
             searchLabel.classList.add('hide');
-            searchLabel.setAttribute('for', 'search');
+            searchLabel.setAttribute('for', 'gsc-i-id1');
 
             searchInput.insertAdjacentElement('beforebegin', searchLabel);
             searchInput.setAttribute('placeholder', 'Search hse.gov.uk');
