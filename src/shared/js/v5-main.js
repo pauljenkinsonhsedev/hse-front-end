@@ -27,13 +27,13 @@ window.addEventListener('DOMContentLoaded',() => {
   // aria labels
   ariaLabels();
 
-  // footnotes
+  // footnotes (for printed pages)
   footnoteLinks();
   footnoteAbbr();
 
   const googleSearchContainer = document.getElementById('globalSearch');
   if (googleSearchContainer) {
-    // googleSearch();
+    googleSearch();
   }
 
   // Back links
