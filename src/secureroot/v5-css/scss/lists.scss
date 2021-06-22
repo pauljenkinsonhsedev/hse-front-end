@@ -114,3 +114,22 @@ ul.listhorizontal {
 #contentContainer .safetyAlerts li {
     list-style-type: none;
 }
+
+// description lists
+
+dl.inline dt{
+float: left;
+font-size: 0.9rem;
+line-height: 1.5;
+padding-right: 5px;
+}
+
+dl.document, dl.document dd {
+margin: 0 !important;
+}
+
+dl.document dt{
+font-size: 0.9rem;
+line-height: 1.5;
+padding-right: 5px;
+}
