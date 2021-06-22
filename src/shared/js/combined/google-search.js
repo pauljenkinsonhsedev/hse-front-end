@@ -2,25 +2,29 @@ import load from './utils/asset-loader';
 
 export function googleSearch() {
 
-    return Promise.all([
-      load.jsAsync(
-        'https://cse.google.com/cse.js?cx=015848178315289032903:hqkynptgd1o'
-      ),
-    ])
+    let script = 'https://cse.google.com/cse.js?cx=015848178315289032903:hqkynptgd1o';
+
+    let promises = [];
+    promises.push(load.jsAsync(script));
+
+    Promise.all(promises)
     .then(() => {
-        setTimeout(function() {
-            const searchInput = document.querySelector('input.gsc-input');
-            const searchLabel = document.createElement('label');
+        setTimeout(function () {
+        const searchInput = document.querySelector('input.gsc-input');
 
-            searchLabel.innerHTML = 'Search hse.gov.uk';
-            searchLabel.classList.add('hide');
-            searchLabel.setAttribute('for', 'gsc-i-id1');
+        if (searchInput) {
+          const searchLabel = document.createElement('label');
 
-            searchInput.insertAdjacentElement('beforebegin', searchLabel);
-            searchInput.setAttribute('placeholder', 'Search hse.gov.uk');
-        }, 10);
-      })
-      .catch((err) => {
-        console.error(`Error creating custom google search: ${err}`);
-      });
-}
+          searchLabel.innerHTML = 'Search hse.gov.uk';
+          searchLabel.classList.add('hide');
+          searchLabel.setAttribute('for', 'gsc-i-id1');
+
+          searchInput.insertAdjacentElement('beforebegin', searchLabel);
+          searchInput.setAttribute('placeholder', 'Search hse.gov.uk');
+        }
+        }, 0);
+    })
+    .catch((err) => {
+        console.error(err);
+    });
+    }
