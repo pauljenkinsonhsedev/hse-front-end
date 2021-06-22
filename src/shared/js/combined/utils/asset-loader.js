@@ -15,15 +15,8 @@ const load = (function() {
         let parent = 'body';
         let attr = 'src';
 
-        element.onload = function() {
-          resolve(url);
-        };
-        element.onerror = function() {
-          reject(url);
-        };
-
         // Set different attributes depending on tag type
-        switch(tag) {
+        switch (tag) {
           case 'script':
             element.async = false;
             break;
@@ -44,6 +37,13 @@ const load = (function() {
         // Inject into document for loading
         element[attr] = url;
         document[parent].appendChild(element);
+
+        element.onload = function() {
+          resolve(url);
+        };
+        element.onerror = function() {
+          reject(url);
+        };
       });
     };
   }
