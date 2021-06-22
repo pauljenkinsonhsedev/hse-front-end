@@ -12,6 +12,8 @@ import { tabs } from './combined/tabs.js';
 import { backLinks } from './combined/back-link.js';
 import { ariaLabels } from './combined/aria-labels.js';
 import { googleSearch } from './combined/google-search.js';
+import { footnoteLinks } from './combined/footnote-links.js';
+import { footnoteAbbr } from './combined/footnote-abbr.js';
 
 // Window load
 window.addEventListener('DOMContentLoaded',() => {
@@ -22,7 +24,12 @@ window.addEventListener('DOMContentLoaded',() => {
     loadPicturefillFn();
   }
 
+  // aria labels
   ariaLabels();
+
+  // footnotes (for printed pages)
+  footnoteLinks();
+  footnoteAbbr();
 
   const googleSearchContainer = document.getElementById('globalSearch');
   if (googleSearchContainer) {
