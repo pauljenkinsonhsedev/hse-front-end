@@ -124,11 +124,11 @@ line-height: 1.5;
 padding-right: 5px;
 }
 
-dl.document, dl.document dd {
+.document dl, .document dd {
 margin: 0 !important;
 }
 
-dl.document dt{
+.document dl dt{
 font-size: 0.9rem;
 line-height: 1.5;
 padding-right: 5px;
