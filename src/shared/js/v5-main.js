@@ -14,6 +14,7 @@ import { ariaLabels } from './combined/aria-labels.js';
 import { googleSearch } from './combined/google-search.js';
 import { footnoteLinks } from './combined/footnote-links.js';
 import { footnoteAbbr } from './combined/footnote-abbr.js';
+import { topTasks } from './combined/top-tasks.js';
 
 // Window load
 window.addEventListener('DOMContentLoaded',() => {
@@ -27,9 +28,13 @@ window.addEventListener('DOMContentLoaded',() => {
   // aria labels
   ariaLabels();
 
+  // Top tasks
+  topTasks();
+
   // footnotes (for printed pages)
   footnoteLinks();
   footnoteAbbr();
+
 
   const googleSearchContainer = document.getElementById('globalSearch');
   if (googleSearchContainer) {
