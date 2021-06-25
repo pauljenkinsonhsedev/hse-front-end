@@ -54,10 +54,9 @@ export function equalHeights() {
 
   list.forEach((item) => {
     const classname = `.${item}`;
-    window.addEventListener('load', function () {
-      equalise(classname);
-    });
+    equalise(classname);
 
+    // watch for changes
     window.addEventListener('resize', function () {
       setTimeout(function () {
         equalheight(classname);
