@@ -42,7 +42,7 @@ export function equalHeights() {
   const blocks = document.querySelectorAll("[class*='equalHeight']");
   let list = [];
 
-  // build array of classnames with equalheight
+  // build 'list' array of classnames with equalheights
   blocks.forEach((item) => {
     const classes = item.classList;
     classes.forEach((item) => {
@@ -52,11 +52,14 @@ export function equalHeights() {
     });
   });
 
+  // Apply equal heights to selectors in the 'list' array
   list.forEach((item) => {
     const classname = `.${item}`;
+
+    // Initiate equal heights
     equalise(classname);
 
-    // watch for changes
+    // Watch for changes
     window.addEventListener('resize', function () {
       setTimeout(function () {
         equalheight(classname);
