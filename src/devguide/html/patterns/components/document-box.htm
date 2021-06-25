@@ -24,11 +24,9 @@ display: none;
 <!-- Page title and meta -->
 	
 <!-- InstanceBeginEditable name="doctitle" -->
-<title>Design System</title>
-<meta name="Description" content="HSE's job is to protect people against risks to health or safety arising out of work activities. Provides advice, guidance, regulations and inspections." />
-<meta name="Keywords" content="HSE, health and safety executive,  occupational ill-health, occupational health and safety, accident, safety, employee safety, health and safety at work act, law" />
-
-
+<title>Start (call-to-action) button - HSE.GOV.UK Design System</title>
+<meta name="keywords" content=" " />
+<meta name="description" content=" " />
 <!-- InstanceEndEditable -->
 <meta name="HSE.contentType" content="default" />
 <link rel="shortcut icon" href="../../favicon.ico" />
@@ -41,7 +39,7 @@ display: none;
 
 
 </head>
-<body class="template normalFont">
+<body class="patterns normalFont">
 
 <section id="top" aria-label="Skip to content">  <a href="#contentContainer" class="skip">Skip to content</a>  </section>
  
@@ -68,8 +66,8 @@ display: none;
           <li class="home"><a href="../../index.htm">Design system</a></li>
           <li class="style"><a href="../../style/index.htm">Styles</a></li>
           <li class="components"><a href="../../components/index.htm">Components</a></li>
-          <li class="patterns"><a href="../../patterns/index.htm">Patterns</a></li>
-          <li class="template"><a href="../index.htm">Framework</a></li>
+          <li class="patterns"><a href="../index.htm">Patterns</a></li>
+          <li class="template"><a href="../../framework/index.htm">Framework</a></li>
         </ul>
       </nav>
     </div>
@@ -80,8 +78,9 @@ display: none;
   <div class="breadCrumbContainer"> <!-- InstanceBeginEditable name="Breadcrumbs" -->
 		<ol>
 			<li class="home"><a href="../../index.htm">Design System</a></li>
-			<li><a href="../index.htm">Framework</a></li>
-			<li>Components</li>
+			<li><a href="../index.htm">Patterns</a></li>
+			<li><a href="index.htm">Components</a></li>
+			<li>Document box</li>
 		</ol>
 		<!-- InstanceEndEditable --> </div>
   <div id="backTo">
@@ -98,73 +97,52 @@ display: none;
 <!-- Beta content page --> 
 
   
-<nav id="navSecondary" aria-label="Secondary"> <!-- InstanceBeginEditable name="Subnav" --><!-- #BeginLibraryItem "/Library/_v5-framework.lbi" --><div id="menu" class="slinky-menu slinky-theme-default">
+<nav id="navSecondary" aria-label="Secondary"> <!-- InstanceBeginEditable name="Subnav" --><!-- #BeginLibraryItem "/Library/_v5-patterns_components.lbi" --><div id="menu" class="slinky-menu slinky-theme-default">
 <ul>
-    <li class="first"><a href="../index.htm">Template</a></li>
-	<li><a href="../template.htm">Applying template</a></li>
-	<li><a href="../regions.htm">Editable regions</a></li>
-    <li><a href="../param.htm">Parameters</a></li>
-	<li><a href="../accessibility.htm">Accessibility</a></li>
-	<li><a href="#">Components</a>
-		<ul>
-		   <li><a href="index.htm">Overview</a></li>
-          <li><a href="notification-banner.htm">Notification banner</a></li>
-		   <li><a href="user-satisfaction.htm">User satisfaction</a></li>
-		   <li><a href="document-title-meta.htm">Document title and meta elements</a></li>
-		   <li><a href="page-notification.htm">Page notification</a></li>
-		   <li><a href="breadcrumbs.htm">Breadcrumbs</a></li>
-		   <li><a href="beta-banner.htm">Beta survey</a></li>
-		   <li><a href="secondary-nav.htm">Secondary navigation</a></li>
-		   <li><a href="cookies.htm">Cookie banner</a></li>
-		</ul>
-	</li>
-	
+  <li class="first"><a href="index.htm">Component patterns</a></li>
+	<li><a href="complementary.htm">Complementary content</a></li>
+	<li><a href="contents-box.htm">Contents box</a></li>
+	<li><a href="subscribe.htm">Subscribe</a></li>
+	<li><a href="publication.htm">Publication</a></li>
+	<li><a href="cards.htm">Cards</a></li>
+	<li><a href="box-list.htm">Cards (box style)</a></li>
+	<li><a href="start.htm">Start button</a></li>
  </ul>
 </div>
-<!-- #EndLibraryItem --><!-- InstanceEndEditable --> </nav>
+
+<!-- #EndLibraryItem --><!-- #EndLibraryItem --><!-- InstanceEndEditable --> </nav>
 
 <main id="contentContainer" class="columnbetacontentpage column2">
  
 	
 <!-- InstanceBeginEditable name="content" -->
+  <h1>Document box</h1>
+	
+    <div class="box backgroundRed"><p>Experimental: This component is currently experimental because more research is needed to validate it.</p></div>
 
-<h1>User satisfaction</h1>
 	
-<p>Each webpage on HSE.GOV.UK has the option to add user feedback at the top of the webpage footer, this is optional and can be displayed using template parameters.</p>
+  <h2>When to use</h2>
 	
-<h3>When to use</h3>
 	
-<p>User feedback is currently applied to all pages and is an important part of measuring user satisfaction on HSE.GOV.UK.</p>
+  <h2>How to use</h2>
 	
-<h3>How to use</h3>
+  <p>To use the start button you need an <strong>&lt;a&gt;</strong> element with the following <a href="../../components/forms/buttons.htm">form button</a> classes applied to it: <strong>.btn .btn-primary .btn-start</strong> </p>
+		
+  <div class="box backgroundRed">
+  <h3>Accessibility</h3>
 	
-<p>Set the feedback param value to true and run a template update on the page.</p>
+  <p>A <strong>&lt;button&gt;</strong> element is not used for the start button because you are not triggering an action, e.g. submitting a form or opening a dialog box.</p>
+	  
+  </div>
 	
-<p>If you are applying the user feedback component to multiple pages, you can run a find and replace, followed by a template update.</p>
+  <h2>Code example</h2>
 	
-<iframe width="100%" height="300" src="//jsfiddle.net/pjenkinsonhse/ctfe2nd3/embedded/html/dark/"  allowpaymentrequest></iframe>
+  <iframe title="Start button" width="100%" height="300" src="//jsfiddle.net/pjenkinsonhse/mL2ocnyx/embedded/html/dark/" allowfullscreen="allowfullscreen"></iframe>
+	
   
-<h3>Survey</h3> 
-	
-<p>The survey section is an option that can be used in conjunction with the default user feedback survey. When the survey is enabled, if a user selects yes or no they will then be prompted to complete a survey.</p>
-	
-<h3>How to add survey</h3>
-	
-<p>To include a survey you will need to add a value to the feedbackClass parameter, as this suvery is experimental there is currently only one value which is <strong>'feedback-beta'</strong>.</p>
-	
-<h3>Survey libray item</h3>
-	
-<p>The survey should be contained in a libray item and applied to all pages in site or specific pages you want the survey to display. You must include the survey in the editable region named <strong>'survey'</strong>, the library item does not require a specific name.</p>
-	
-<iframe width="100%" height="300" src="//jsfiddle.net/pjenkinsonhse/m0noL4cg/2/embedded/html/dark/" allowpaymentrequest></iframe>	
-	
-<p>The survey library item contains HTML content which requires a specicic structure and style classes, you can use the <a href="../feedback-survey.htm">survey library item example</a> to build your own.</p>
 	
 
-	
-
-	
-<!-- InstanceEndEditable -->
+  <!-- InstanceEndEditable -->
 	
  
 
@@ -190,9 +168,8 @@ display: none;
   </footer>
 </nav>
 <section id="lastUpdated" aria-label="Last updated">
-<!-- InstanceBeginEditable name="updated" --> Updated:
-	<!-- #BeginDate format:IS1 -->2021-05-27<!-- #EndDate -->
-	<!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="updated" -->Updated:<!-- #BeginDate format:IS1 -->2021-06-23<!-- #EndDate -->
+  <!-- InstanceEndEditable -->
 </section>
 <script src="../../assets/v5-js/v5-main.min.js"></script>
 <script src="../../assets/v5-js/jquery.min.js"></script> 
@@ -206,7 +183,8 @@ display: none;
 
 
 
-<div id="gutter"><!-- InstanceBeginEditable name="gutter" --> <!-- InstanceEndEditable --></div>
+<div id="gutter"><!-- InstanceBeginEditable name="gutter" --> 
+ <!-- InstanceEndEditable --></div>
 
 <!-- SiteImprove JS --> 
 <script type="text/javascript">
@@ -231,13 +209,13 @@ searchInput.removeAttribute('cellspacing');
 };	
 </script> 
 	
-<!-- InstanceParam name="bodyClass" type="text" value="template" --> 
+<!-- InstanceParam name="bodyClass" type="text" value="patterns" --> 
 <!-- InstanceParam name="layout" type="text" value="betacontentpage" --> 
 <!-- InstanceParam name="columnLayout" type="number" value="2" --> 
 <!-- InstanceParam name="platform" type="text" value="v5" --> 
 <!-- InstanceParam name="rdfa" type="boolean" value="false" --> 
 <!-- InstanceParam name="welsh" type="boolean" value="false" --> 
-<!-- InstanceParam name="homepage" type="boolean" value="false" --> 
+<!-- InstanceParam name="homepage" type="boolean" value="true" --> 
 <!-- InstanceParam name="weblite" type="boolean" value="false" --> 
 <!-- InstanceParam name="feedback" type="boolean" value="true" --> 
 <!-- InstanceParam name="contentType" type="text" value="default" --> 
