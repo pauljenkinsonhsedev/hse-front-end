@@ -15,10 +15,9 @@ import { googleSearch } from './combined/google-search.js';
 import { footnoteLinks } from './combined/footnote-links.js';
 import { footnoteAbbr } from './combined/footnote-abbr.js';
 import { topTasks } from './combined/top-tasks.js';
-
+import { equalHeights } from './combined/equal-heights.js';
 // Window load
 window.addEventListener('DOMContentLoaded',() => {
-
   // picturefill.min.js
   const pictureElemSelector = document.getElementsByTagName('picture')[0];
   if (pictureElemSelector && getInternetExplorerVersion() <= 11) {
@@ -31,10 +30,12 @@ window.addEventListener('DOMContentLoaded',() => {
   // Top tasks
   topTasks();
 
+  // Equal heights
+  equalHeights();
+
   // footnotes (for printed pages)
   footnoteLinks();
   footnoteAbbr();
-
 
   const googleSearchContainer = document.getElementById('globalSearch');
   if (googleSearchContainer) {
