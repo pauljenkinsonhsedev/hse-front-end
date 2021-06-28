@@ -18,6 +18,11 @@ import { topTasks } from './combined/top-tasks.js';
 import { equalHeights } from './combined/equal-heights.js';
 // Window load
 window.addEventListener('DOMContentLoaded',() => {
+
+  // Selector to reference prgressive enhancements in css
+  const body = document.querySelector('body');
+  body.classList.add('hasScript');
+
   // picturefill.min.js
   const pictureElemSelector = document.getElementsByTagName('picture')[0];
   if (pictureElemSelector && getInternetExplorerVersion() <= 11) {
