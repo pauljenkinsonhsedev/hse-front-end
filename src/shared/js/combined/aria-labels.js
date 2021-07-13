@@ -40,10 +40,6 @@ export function ariaLabels() {
     if (feedback) {
         feedback.setAttribute('aria-label', 'Is this page useful');
         const feedbackMessage = document.querySelector('p.feedback-message');
-        feedbackMessage.setAttribute(
-        'aria-described',
-        'Yes, link, is this page useful?'
-        );
     }
 
     const pagination = document.getElementById('pagination');
