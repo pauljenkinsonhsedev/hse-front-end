@@ -16,6 +16,9 @@ import { footnoteLinks } from './combined/footnote-links.js';
 import { footnoteAbbr } from './combined/footnote-abbr.js';
 import { topTasks } from './combined/top-tasks.js';
 import { equalHeights } from './combined/equal-heights.js';
+import { drawMenu } from './combined/draw-menu.js';
+import { banner } from './combined/banner.js';
+
 // Window load
 window.addEventListener('DOMContentLoaded',() => {
 
@@ -28,6 +31,14 @@ window.addEventListener('DOMContentLoaded',() => {
   if (pictureElemSelector && getInternetExplorerVersion() <= 11) {
     loadPicturefillFn();
   }
+
+  // Globa banner
+  banner();
+
+  // Draw menus
+  const secondaryMenu = document.getElementById('menu');
+
+  drawMenu(secondaryMenu);
 
   // aria labels
   ariaLabels();
