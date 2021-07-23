@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en-GB">
 <head>
-	
-<script src="../assets/v5-js/v5-cookies.js"></script> 
+
+<script src="../assets/v5-js/v5-cookies.js"></script>
 <!-- Anti-flicker snippet (recommended) If installing optimise with GTM, specifcy GTM container ID  -->
 <style>
 .async-hide {
     opacity: 0 !important
 }
 </style>
-	
+
 <script>
     if (Cookies.get('optInGoogleTracking') === 'true') {
   (function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
@@ -17,8 +17,8 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 (a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
 })(window,document.documentElement,'async-hide','dataLayer',4000,
 {'GTM-PJPWMNL':true});
-    }</script> 
-<!-- Google Tag Manager --> 
+    }</script>
+<!-- Google Tag Manager -->
 <script>
 
       if (Cookies.get('optInGoogleTracking') === 'true') {
@@ -48,7 +48,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
         /*]]>*/
 
       }
-    </script> 
+    </script>
 <!-- End Google Tag Manager -->
 
 <meta charset="utf-8">
@@ -76,7 +76,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <link rel="home" href="../index.htm" />
 <!-- TemplateBeginMultipleIf -->
 <!-- TemplateBeginIfClause cond="columnLayout == 2" -->
-<!-- ie 11 fix for left-hand navigation --> 
+<!-- ie 11 fix for left-hand navigation -->
 <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
 <!-- TemplateEndIfClause -->
 <!-- TemplateEndMultipleIf -->
@@ -86,58 +86,58 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <!-- GTM -->
 
 <noscript aria-hidden="true" aria-label="GTM-PJPWMNL">
-	
+
 <iframe title="GTM-PJPWMNL"
         src="https://www.googletagmanager.com/ns.html?id=GTM-PJPWMNL" height="0"
         width="0" style="display:none;visibility:hidden" aria-hidden="true"></iframe>
 </noscript>
-	
-<section id="top" aria-label="Skip to content"> 
-	
+
+<section id="top" aria-label="Skip to content">
+
 <!-- TemplateBeginMultipleIf -->
-<!-- TemplateBeginIfClause cond="weblite == false" --> 
-	<a href="#contentContainer" class="skip">Skip to content</a> 
+<!-- TemplateBeginIfClause cond="weblite == false" -->
+	<a href="#contentContainer" class="skip">Skip to content</a>
 <!-- TemplateEndIfClause -->
-<!-- TemplateEndMultipleIf --> 
-	
+<!-- TemplateEndMultipleIf -->
+
 </section>
-	
-<!-- TemplateBeginMultipleIf --> 
+
+<!-- TemplateBeginMultipleIf -->
 <!-- TemplateBeginIfClause cond="platform == 'v5'" -->
-	
+
 <section id="printBanner" aria-label="Print banner"> <img
         src="../assets/v4-images/website/print/print-logo.jpg" width="193"
-        height="65" alt="Health and Safety Executive" id="printLogo" /> 
+        height="65" alt="Health and Safety Executive" id="printLogo" />
 </section>
-	
+
 <header id="headerContainer">
   <div id="header">
-    <div class="headerTop header js-header"> 
-		
-	  <!-- TemplateBeginMultipleIf --> 
+    <div class="headerTop header js-header">
+
+	  <!-- TemplateBeginMultipleIf -->
 	  <!-- TemplateBeginIfClause cond="bodyClass != 'home'" -->
       <div id="headerLogo" class="headerLogo"><a href="../index.htm">Health
         and Safety<br>
         Executive</a></div>
       <!-- TemplateEndIfClause -->
-      <!-- TemplateEndMultipleIf --> 
-		
-      <!-- TemplateBeginMultipleIf --> 
+      <!-- TemplateEndMultipleIf -->
+
+      <!-- TemplateBeginMultipleIf -->
       <!-- TemplateBeginIfClause cond="bodyClass == 'home'" -->
       <h1 id="headerLogo" class="headerLogo"><a href="../index.htm">Health
         and Safety<br>
         Executive</a></h1>
       <!-- TemplateEndIfClause -->
       <!-- TemplateEndMultipleIf -->
-		
+
       <div id="globalSearch" class="desktop-gcs-search">
         <gcse:searchbox-only></gcse:searchbox-only>
       </div>
-		
+
     </div>
-    
+
     <!-- JS Main Navigation -->
-    
+
     <div class="menuContainer">
       <nav id="main-menu" class="menu js-menu">
         <ul>
@@ -153,32 +153,32 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
       </nav>
     </div>
   </div>
-	
+
   <!-- TemplateBeginMultipleIf -->
   <!-- TemplateBeginIfClause cond="notificationBar == true" -->
-	
+
   <div id="notificationBanner" class="notification-banner">
-    <div class="notification-container fixed-container"> 
-		
-  <!-- TemplateBeginEditable name="notification-message" --> 
+    <div class="notification-container fixed-container">
+
+  <!-- TemplateBeginEditable name="notification-message" -->
   <!-- TemplateEndEditable -->
-		
+
       <button class="notification-hide">Hide&nbsp;message</button>
     </div>
   </div>
   <!-- TemplateEndIfClause -->
-  <!-- TemplateEndMultipleIf --> 
+  <!-- TemplateEndMultipleIf -->
 </header>
-	
-  <!-- TemplateEndIfClause --> 
-  <!-- TemplateEndMultipleIf --> 
-	
-<!-- TemplateBeginMultipleIf --> 
+
+  <!-- TemplateEndIfClause -->
+  <!-- TemplateEndMultipleIf -->
+
+<!-- TemplateBeginMultipleIf -->
 <!-- TemplateBeginIfClause cond="bodyClass != 'home'" -->
-	
+
 <nav id="breadCrumb" aria-label="Previous pages:">
-  <div class="breadCrumbContainer"> 
-	  
+  <div class="breadCrumbContainer">
+
 <!-- TemplateBeginEditable name="Breadcrumbs" -->
     <ol>
       <li class="home"><a href="../index.htm">HSE</a></li>
@@ -186,36 +186,41 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
       <li>#2</li>
       <li>#3</li>
     </ol>
-<!-- TemplateEndEditable --> 
+<!-- TemplateEndEditable -->
   </div>
   <div id="backTo">
     <p class="backto"><a id="backnav" href="index.htm">Back to</a></p>
   </div>
 </nav>
 <!-- TemplateEndIfClause -->
-<!-- TemplateEndMultipleIf --> 
-	
+<!-- TemplateEndMultipleIf -->
+
 <!-- TemplateBeginMultipleIf -->
 <!-- TemplateBeginIfClause cond="welsh == false" -->
 <div id="pageContainer" class="@@(_document['platform'])@@">
-<!-- TemplateBeginEditable name="beta-survey" --> 
-<!-- TemplateEndEditable --> 
-<!-- TemplateEndIfClause --> 
-	
-<!-- TemplateBeginIfClause cond="welsh == true" --> 
-<!-- TemplateBeginEditable name="beta-survey-welsh" --> 
+<!-- TemplateEndIfClause -->
+
+<!-- TemplateBeginIfClause cond="welsh == true" -->
+<!-- TemplateBeginEditable name="beta-survey-welsh" -->
 <!-- TemplateEndEditable -->
 <div id="pageContainer" class="@@(_document['platform'])@@" lang="cy">
 <!-- TemplateEndIfClause -->
-<!-- TemplateEndMultipleIf --> 
-
-<!-- Beta content page --> 
+<!-- TemplateEndMultipleIf -->
 
 <!-- TemplateBeginMultipleIf -->
-<!-- TemplateBeginIfClause cond="layout == 'betacontentpage'" --> 
-<!-- TemplateBeginMultipleIf --> 
+<!-- TemplateBeginIfClause cond="infoBanner == true" -->
+  <section id="information-banner" class="information-banner" aria-label="Information" data-content="@@(_document['infoBannerContent'])@@">
+    <div class="information-banner__inner"></div>
+  </section>
+<!-- TemplateEndIfClause -->
+<!-- TemplateEndMultipleIf -->
+<!-- Beta content page -->
+
+<!-- TemplateBeginMultipleIf -->
+<!-- TemplateBeginIfClause cond="layout == 'betacontentpage'" -->
+<!-- TemplateBeginMultipleIf -->
 <!-- TemplateBeginIfClause cond="columnLayout == 2" -->
-<nav id="navSecondary" aria-label="Secondary"> 
+<nav id="navSecondary" aria-label="Secondary">
 <!-- TemplateBeginEditable name="Subnav" -->
   <div id="menu" class="slinky-menu slinky-theme-default">
     <ul>
@@ -223,10 +228,10 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
     </ul>
   </div>
   <!-- TemplateEndEditable --> </nav>
-	
+
 <!-- TemplateEndIfClause -->
 <!-- TemplateEndMultipleIf -->
-	
+
 <main id="contentContainer" class="column@@(_document['layout'])@@
           column@@(_document['columnLayout'])@@">
 <!-- TemplateBeginMultipleIf -->
@@ -237,34 +242,34 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
               rel="dc:source" resource=""></span> <span property="dc:language"
               content="en"></span>
 <!-- TemplateEndIfClause -->
-<!-- TemplateEndMultipleIf --> 
-	
-<!-- TemplateBeginEditable name="content" --> 
-<!-- TemplateEndEditable --> 
-	
+<!-- TemplateEndMultipleIf -->
+
+<!-- TemplateBeginEditable name="content" -->
+<!-- TemplateEndEditable -->
+
 <!-- TemplateEndIfClause -->
-<!-- TemplateEndMultipleIf --> 
+<!-- TemplateEndMultipleIf -->
 
-<!-- Beta two column (top task) --> 
+<!-- Beta two column (top task) -->
 
-<!-- TemplateBeginMultipleIf --> 
+<!-- TemplateBeginMultipleIf -->
 <!-- TemplateBeginIfClause cond="layout == 'betatwocol'" -->
 <main id="contentContainer" class="column@@(_document['layout'])@@
-              column@@(_document['columnLayout'])@@"> 
+              column@@(_document['columnLayout'])@@">
 <!-- TemplateBeginMultipleIf -->
 <!-- TemplateBeginIfClause cond="rdfa == true" -->
   <div class="rdfa" about="#this" typeof="foaf:Document">
   <span rel="dc:publisher" resource="http://www.hse.gov.uk/"
                   content="Health and Safety Executive"></span> <span
                   rel="dc:source" resource=""></span> <span
-                  property="dc:language" content="en"></span> 
+                  property="dc:language" content="en"></span>
 	  <!-- TemplateEndIfClause --><!-- TemplateEndMultipleIf -->
   <div class="columnFull noBoxPadding">
-    <div class="column twoThird noBoxPadding"> 
+    <div class="column twoThird noBoxPadding">
 	  <!-- TemplateBeginEditable name="heading1" -->
       <h1>Title</h1>
       <!-- TemplateEndEditable -->
-      <nav id="multistepNav" aria-label="Secondary"> 
+      <nav id="multistepNav" aria-label="Secondary">
 	  <!-- TemplateBeginEditable name="multistepNav" -->
         <ol class="multistep">
           <li><a href="index.htm">Overview</a></li>
@@ -304,22 +309,22 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
           <li><a href="#">List item</a></li>
         </ul>
       </div>
-      <!-- TemplateEndEditable --> 
+      <!-- TemplateEndEditable -->
 	  </aside>
   </div>
-<!-- TemplateEndIfClause --><!-- TemplateEndMultipleIf --> 
-	  
+<!-- TemplateEndIfClause --><!-- TemplateEndMultipleIf -->
+
 <!-- TemplateBeginMultipleIf -->
 <!-- TemplateBeginIfClause cond="rdfa == true" -->
   </div>
 <!-- TemplateEndIfClause -->
 <!-- TemplateEndMultipleIf --> </main>
-	
-<!-- TemplateBeginMultipleIf --> 
+
+<!-- TemplateBeginMultipleIf -->
 <!-- TemplateBeginIfClause cond="columnLayout == 3" -->
-	
-<div id="sideBar"> 
-	
+
+<div id="sideBar">
+
 <!-- TemplateBeginEditable name="Sidebar" -->
   <div class="box">
     <h2>Resources</h2>
@@ -334,14 +339,14 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
       <li><a href="#">Item</a></li>
     </ul>
   </div>
-<!-- TemplateEndEditable --> 
+<!-- TemplateEndEditable -->
 </div>
-	
-<!-- TemplateEndIfClause --> 
+
+<!-- TemplateEndIfClause -->
 <!-- TemplateEndMultipleIf -->
 </div>
-	
-<!-- TemplateBeginMultipleIf --> 
+
+<!-- TemplateBeginMultipleIf -->
 <!-- TemplateBeginIfClause cond="feedback == true" -->
 
 <section id="feedback" class="feedback
@@ -361,10 +366,10 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
     </div>
   </div>
   <button type="button" class="btn js-hide" id="close-report-a-problem">Close</button>
-  <div class="report-a-problem-form"> 
-    
+  <div class="report-a-problem-form">
+
     <!-- Report a problem form -->
-    
+
     <form action="https://resources.hse.gov.uk/responseform.asp" method="post" autocomplete="on">
       <fieldset class="fieldset" id="form-settings">
         <input type="hidden" name="mailto" value="hse.online@hse.gov.uk"/>
@@ -390,21 +395,21 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
       </fieldset>
     </form>
   </div>
-	
-<!-- TemplateBeginMultipleIf --> 
+
+<!-- TemplateBeginMultipleIf -->
 <!-- TemplateBeginIfClause cond="survey == true" -->
-	
+
   <div class="feedback-survey">
-    <div class="feedback-survey__inner"> 
-	<!-- TemplateBeginEditable name="survey" --> 
-		
+    <div class="feedback-survey__inner">
+	<!-- TemplateBeginEditable name="survey" -->
+
 	<!-- TemplateEndEditable --> </div>
   </div>
-<!-- TemplateEndIfClause --> 
+<!-- TemplateEndIfClause -->
 <!-- TemplateEndMultipleIf --> </section>
-<!-- TemplateEndIfClause --> 
+<!-- TemplateEndIfClause -->
 <!-- TemplateEndMultipleIf -->
-	
+
 <nav id="footer-nav" aria-label="Footer menu">
   <footer id="footerContainer">
     <div id="footer">
@@ -437,39 +442,41 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
     </div>
   </footer>
 </nav>
-	
-<section id="lastUpdated" aria-label="Last updated"> 
-<!-- TemplateBeginEditable name="updated" -->Updated:<!-- #BeginDate -->2021-03-01<!-- #EndDate --><!-- TemplateEndEditable --> 
+
+<section id="lastUpdated" aria-label="Last updated">
+<!-- TemplateBeginEditable name="updated" -->Updated:<!-- #BeginDate -->2021-03-01<!-- #EndDate --><!-- TemplateEndEditable -->
 </section>
-	
-<script src="../assets/v5-js/v5-main.min.js"></script> 
-<script src="../assets/v5-js/jquery.min.js"></script> 
-<script src="../assets/v5-js/v5-footer.min.js"></script> 
-	
-<!-- TemplateBeginMultipleIf --> 
-<!-- TemplateBeginIfClause cond="columnLayout == 2" --> 
-<script src="../assets/v5-js/v5-footer-slinky-js.min.js"></script> 
-<!-- TemplateEndIfClause --> 
+
+<script src="../assets/v5-js/v5-main.min.js"></script>
+<script src="../assets/v5-js/jquery.min.js"></script>
+<script src="../assets/v5-js/v5-footer.min.js"></script>
+
+<!-- TemplateBeginMultipleIf -->
+<!-- TemplateBeginIfClause cond="columnLayout == 2" -->
+<script src="../assets/v5-js/v5-footer-slinky-js.min.js"></script>
+<!-- TemplateEndIfClause -->
 <!-- TemplateEndMultipleIf -->
-	
+
 <div id="gutter">
-<!-- TemplateBeginEditable name="gutter" --> 
-	
+<!-- TemplateBeginEditable name="gutter" -->
+
 <!-- TemplateEndEditable -->
 </div>
-	
-<!-- TemplateParam name="bodyClass" type="text" value="guidance" --> 
-<!-- TemplateParam name="layout" type="text" value="betacontentpage" --> 
-<!-- TemplateParam name="columnLayout" type="number" value="2" --> 
-<!-- TemplateParam name="platform" type="text" value="v5" --> 
-<!-- TemplateParam name="rdfa" type="boolean" value="false" --> 
-<!-- TemplateParam name="welsh" type="boolean" value="false" --> 
-<!-- TemplateParam name="homepage" type="boolean" value="true" --> 
-<!-- TemplateParam name="weblite" type="boolean" value="false" --> 
-<!-- TemplateParam name="feedback" type="boolean" value="true" --> 
-<!-- TemplateParam name="feedbackClass" type="text" value="" --> 
-<!-- TemplateParam name="survey" type="boolean" value="false" --> 
-<!-- TemplateParam name="contentType" type="text" value="default" --> 
+
+<!-- TemplateParam name="bodyClass" type="text" value="guidance" -->
+<!-- TemplateParam name="layout" type="text" value="betacontentpage" -->
+<!-- TemplateParam name="columnLayout" type="number" value="2" -->
+<!-- TemplateParam name="platform" type="text" value="v5" -->
+<!-- TemplateParam name="rdfa" type="boolean" value="false" -->
+<!-- TemplateParam name="welsh" type="boolean" value="false" -->
+<!-- TemplateParam name="homepage" type="boolean" value="true" -->
+<!-- TemplateParam name="weblite" type="boolean" value="false" -->
+<!-- TemplateParam name="feedback" type="boolean" value="true" -->
+<!-- TemplateParam name="feedbackClass" type="text" value="" -->
+<!-- TemplateParam name="survey" type="boolean" value="false" -->
+<!-- TemplateParam name="contentType" type="text" value="default" -->
 <!-- TemplateParam name="notificationBar" type="boolean" value="false" -->
+<!-- TemplateParam name="infoBanner" type="boolean" value="false" -->
+<!-- TemplateParam name="infoBannerContent" type="text" value="" -->
 </body>
 </html>
