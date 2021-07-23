@@ -1,12 +1,12 @@
 
 export function informationBanner() {
     const container = document.getElementById('information-banner');
-    const inner = container.querySelector('.information-banner__inner');
 
     if (!container) {
       return;
     }
 
+    const inner = container.querySelector('.information-banner__inner');
     const content = container.dataset.content;
 
     if (content) {
