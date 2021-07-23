@@ -77,6 +77,27 @@ a {
         }
     }
 
+    &.btn-secondary {
+        background-color: $red;
+        border: 1px solid white;
+        color: $white;
+        margin-bottom: 20px;
+
+        &:hover {
+            background-color: lighten($darkred, 20%);
+        }
+
+        &:disabled {
+            background-color: rgba($yes, .5);
+            color: $white;
+        }
+        &:focus {
+           background-color: $focus;
+           color: $black;
+           border: none;
+        }
+    }
+
     &.btn-cautionary {
         background-color: $red;
         color: $white;
