@@ -16,7 +16,6 @@ export function informationBanner() {
             const active = data.active;
             const message = data.message;
             inner.innerHTML = message;
-            console.log(message);
           })
           .catch(() => {
               console.error(`No such file: ${content}`);
