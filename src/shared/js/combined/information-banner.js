@@ -13,8 +13,7 @@ export function informationBanner() {
         fetch(`/assets/ajax/${content}`)
           .then((response) => response.json())
           .then((data) => {
-            const message = data.message;
-            inner.innerHTML = message;
+            inner.innerHTML = data.message;
             container.setAttribute('aria-label', data.ariaLabel);
           })
           .catch(() => {
