@@ -10,15 +10,15 @@ export function informationBanner() {
     const content = container.dataset.content;
 
     if (content) {
-        fetch(`/ajax/${content}`)
+        fetch(`/assets/ajax/${content}`)
           .then((response) => response.json())
           .then((data) => {
-            const active = data.active;
             const message = data.message;
             inner.innerHTML = message;
+            container.setAttribute('aria-label', data.ariaLabel);
           })
           .catch(() => {
-              console.error(`No such file: ${content}`);
+            console.error(`No such file: ${content}`);
           });
     } else {
       return;
