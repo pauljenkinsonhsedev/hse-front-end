@@ -12,7 +12,7 @@
 
 
 
-<link rel="stylesheet" href="../assets/v5-css/v5.min.css" type="text/css" media="screen,print" />
+<link rel="stylesheet" href="../../assets/v5-css/v5.min.css" type="text/css" media="screen,print" />
 <style>
 #globalSearch {
 display: none;
@@ -31,9 +31,12 @@ display: none;
 <!-- InstanceEndEditable -->
 <meta name="HSE.contentType" content="default" />
 <link rel="shortcut icon" href="../favicon.ico" />
-<link rel="apple-touch-icon" href="../assets/v4-images/shared/apple-touch-icon.png" />
+<link rel="apple-touch-icon" href="../../assets/v4-images/shared/apple-touch-icon.png" />
 <link rel="home" href="../index.htm" />
 
+
+<!-- ie 11 fix for left-hand navigation -->
+<script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
 
 
 </head>
@@ -41,7 +44,7 @@ display: none;
 
 <section id="top" aria-label="Skip to content">  <a href="#contentContainer" class="skip">Skip to content</a>  </section>
 
-<section id="printBanner" aria-label="Print banner"> <img src="../assets/v4-images/website/print/print-logo.jpg" width="193" height="65" alt="Health and Safety Executive" id="printLogo"/> </section>
+<section id="printBanner" aria-label="Print banner"> <img src="../../assets/v4-images/website/print/print-logo.jpg" width="193" height="65" alt="Health and Safety Executive" id="printLogo"/> </section>
 <header id="headerContainer">
   <div id="header">
     <div class="headerTop header js-header">
@@ -76,7 +79,8 @@ display: none;
   <div class="breadCrumbContainer"> <!-- InstanceBeginEditable name="Breadcrumbs" -->
 		<ol>
 			<li class="home"><a href="../index.htm">Design System</a></li>
-			<li>Framework</li>
+			<li><a href="index.htm">Framework</a></li>
+			<li>An overview of HSE's JavaScript</li>
 		</ol>
 		<!-- InstanceEndEditable --> </div>
   <div id="backTo">
@@ -93,94 +97,58 @@ display: none;
 <!-- Beta content page -->
 
 
-<main id="contentContainer" class="columnbetacontentpage column1">
+<nav id="navSecondary" aria-label="Secondary"> <!-- InstanceBeginEditable name="Subnav" --><!-- #BeginLibraryItem "/Library/_v5-framework.lbi" --><div id="menu" class="slinky-menu slinky-theme-default">
+<ul>
+    <li class="first"><a href="index.htm">Template</a></li>
+	<li><a href="template.htm">Applying template</a></li>
+	<li><a href="regions.htm">Editable regions</a></li>
+    <li><a href="param.htm">Parameters</a></li>
+	<li><a href="accessibility.htm">Accessibility</a></li>
+	<li><a href="#">Components</a>
+		<ul>
+		   <li><a href="components/index.htm">Overview</a></li>
+          <li><a href="components/notification-banner.htm">Notification banner</a></li>
+		   <li><a href="components/user-satisfaction.htm">User satisfaction</a></li>
+		   <li><a href="components/document-title-meta.htm">Document title and meta elements</a></li>
+		   <li><a href="components/page-notification.htm">Page notification</a></li>
+		   <li><a href="components/breadcrumbs.htm">Breadcrumbs</a></li>
+		   <li><a href="components/beta-banner.htm">Beta survey</a></li>
+		   <li><a href="components/secondary-nav.htm">Secondary navigation</a></li>
+		   <li><a href="components/cookies.htm">Cookie banner</a></li>
+		</ul>
+	</li>
+
+ </ul>
+</div>
+<!-- #EndLibraryItem --><!-- InstanceEndEditable --> </nav>
+
+<main id="contentContainer" class="columnbetacontentpage column2">
 
 
 <!-- InstanceBeginEditable name="content" -->
 
-  <h1>Framework</h1>
+  <h1>An overview of HSE's JavaScript</h1>
+<h2>Overview</h2>
+<p>This framework runs on Node.js and uses gulp to compile it's assets. Javascript is written in ES6 format and transpiled using webpack. </p>
+<p>ES6 complies with the ECMAScript Language Specification and is used to standardise how we write Javascript.</p>
+<p>You can work locally on your machine for development purposes and then the compiled code is always pushed up to the repository where assets are taken to be published on the live HSE website.</p>
 
-  <p>HSE.GOV.UK uses one Dreamweaver template to manage multiple design patterns.</p>
-
-  <div class="box">
-	<p>Latest template version: V5 1.4.0</p>
-  </div>
-
-
-<h2>Template</h2>
-
-<p>Information required to manage HSE.GOV.UK webpages with Dreamweaver:</p>
-
-
-<div class="columnFull noBoxPadding">
-
-<div class="column multiCol col3">
-
-<ul class="columnsList">
-<li>
-	 <h3><a href="template.htm">Apply and update a template</a></h3>
-	 <p>How to apply and update a page template</p>
- </li>
- <li>
-	 <h3><a href="regions.htm">Editable regions</a></h3>
-	 <p>Editable regions</p>
- </li>
- <li>
-	 <h3><a href="param.htm">Parameters</a></h3>
-	 <p>Template parameters can modify page layout</p>
- </li>
-<li>
-	 <h3><a href="accessibility.htm">Accessibility</a></h3>
-	 <p>Framework accessibility</p>
- </li>
-<li>
-	 <h3><a href="components/index.htm">Template components</a></h3>
-	 <p>Templates components</p>
- </li>
-<li>
-	 <h3><a href="library-items.htm">Library items</a></h3>
-	 <p>Dreamweaver library items and how they are used on HSE.GOV.UK</p>
- </li>
+<h2>Environment</h2>
+<ul>
+<li>Install Node (<a href="https://nodejs.org/en/download/">https://nodejs.org/en/download/</a>)</li>
+<li>Open your terminal and make sure you are in the root of the project.</li>
+<li>Run the following command in your terminal: <strong>'yarn install'</strong></li>
 </ul>
-
-</div>
-
-	</div>
-
-<h2>Javascript</h2>
-
-<p>Information required to write javascript features and components:</p>
-
-
-<div class="columnFull noBoxPadding">
-
-<div class="column multiCol col3">
-
-<ul class="columnsList">
-<li>
-	 <h3><a href="javascript/index.htm">Javascript overview</a></h3>
-	 <p>Everything you need to know about the structure and compiling HSE's javascript</p>
- </li>
- <li>
-	 <h3><a href="javascript/create-a-basic-component.htm">Creating a basic component</a></h3>
-	 <p>How to write a basic component</p>
- </li>
- </div>
- </div>
-
-<div class="columnFull noBoxPadding">
-
-<div class="box">
-<h2>See also</h2>
-
-<ul class="linkList">
- <li><a href="https://helpx.adobe.com/uk/dreamweaver/user-guide.html/uk/dreamweaver/using/welcome.ug.html">Dreamweaver user guide</a></li>
+<h2>Compiling</h2>
+<ul>
+<li>Open your terminal and make sure you are in the root of the project.</li>
+<li>For local development run the following command in your terminal: <strong>'gulp hse'</strong></li>
+<li>For production run the following command in your terminal: <strong>'gulp prod'</strong></li>
 </ul>
-
-</div>
-
-</div>
-
+<h2>Creating components</h2>
+<p>The main javascript file is where we load our functions: <strong>'src/shared/js/v5-main.js'</strong>.</p>
+<p>Each module can be created in the <strong>'src/shared/js/combined'</strong> folder.</p>
+<p>For more information on how to write components see <a href="create-a-basic-component.htm">Creating a basic component in Javascript.</a></p>
 
 
 <!-- InstanceEndEditable -->
@@ -210,14 +178,16 @@ display: none;
 </nav>
 <section id="lastUpdated" aria-label="Last updated">
 <!-- InstanceBeginEditable name="updated" --> Updated:
-	<!-- #BeginDate format:IS1 -->2021-05-06<!-- #EndDate -->
+	<!-- #BeginDate format:IS1 -->2021-04-16<!-- #EndDate -->
 	<!-- InstanceEndEditable -->
 </section>
-<script src="../assets/v5-js/v5-main.min.js"></script>
-<script src="../assets/v5-js/jquery.min.js"></script>
-<script src="../assets/v5-js/v5-footer.min.js"></script>
+<script src="../../assets/v5-js/v5-main.min.js"></script>
+<script src="../../assets/v5-js/jquery.min.js"></script>
+<script src="../../assets/v5-js/v5-footer.min.js"></script>
 
 
+
+<script src="../../assets/v5-js/v5-footer-slinky-js.min.js"></script>
 
 
 
@@ -250,7 +220,7 @@ searchInput.removeAttribute('cellspacing');
 
 <!-- InstanceParam name="bodyClass" type="text" value="template" -->
 <!-- InstanceParam name="layout" type="text" value="betacontentpage" -->
-<!-- InstanceParam name="columnLayout" type="number" value="1" -->
+<!-- InstanceParam name="columnLayout" type="number" value="2" -->
 <!-- InstanceParam name="platform" type="text" value="v5" -->
 <!-- InstanceParam name="rdfa" type="boolean" value="false" -->
 <!-- InstanceParam name="welsh" type="boolean" value="false" -->
