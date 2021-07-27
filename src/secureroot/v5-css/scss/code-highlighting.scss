@@ -1,0 +1,36 @@
+@import './node_modules/prismjs/themes/prism';
+@import './node_modules/prismjs/themes/prism-okaidia';
+
+pre {
+  margin: 0 0 2rem 0 !important;
+}
+
+$radius: 5px;
+$background: #272822;
+
+pre[class*='language-'] {
+  position: relative;
+  overflow: visible;
+  border-radius: $radius;
+  .copy {
+    font-family: $body-font;
+    content: 'copy';
+    padding: 2px 10px 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(-10px, -90%);
+    border-top-left-radius: $radius;
+    border-top-right-radius: $radius;
+    color: white;
+    background: $background;
+    cursor: pointer;
+    transition: all 200ms ease;
+    &:hover .copy {
+      transform: translate(-10px, -100%);
+    }
+    &:hover {
+      color: gray;
+    }
+  }
+}
