@@ -23,12 +23,13 @@ export function codeHighlighter() {
     // create clipboard for every copy element
     const clipboard = new ClipboardJS('.copy', {
         target: (trigger) => {
-        return trigger.nextElementSibling;
+            return trigger.nextElementSibling;
         },
     });
 
     clipboard.on('success', (event) => {
-        event.trigger.textContent = 'copied!';
+        event.trigger.textContent = 'copied';
+
         setTimeout(() => {
             event.clearSelection();
             event.trigger.textContent = 'copy';

@@ -18,6 +18,7 @@ import { topTasks } from './combined/top-tasks.js';
 import { equalHeights } from './combined/equal-heights.js';
 import { informationBanner } from './combined/information-banner.js';
 import { codeHighlighter } from './combined/code-highlighter.js';
+
 // Window load
 window.addEventListener('DOMContentLoaded',() => {
 

@@ -129,48 +129,59 @@ display: none;
 
   <h1>Creating a basic component in Javascript</h1>
 
-  <p>Components typically live in the <strong>'combined'</strong> folder: <strong>'src/shared/js/combined'</strong></p>
+  <p>Components typically live in the <strong>'combined'</strong> folder: <strong>'src/shared/js/combined'</strong> and imported in the master file <strong>'src/shared/js/v5-main.js'</strong>. The tutorial below steps you through how to create a new component from start to finish.</p>
 
   <h2>Tutorial</h2>
-  <p>In this example we are going to begin with some simple html that we can start to manipulate with javascript.
+  <p>For this exercise we are going to create a simple form field, watch for key presses and then display the typed text. Let's begin with some simple html that we can start to manipulate with javascript.
   <h3>Step 1 - Markup</h3>
   <p>Paste this html into a page so we can get started.</p>
-  <pre><code class="language-markup">&lt;div class="example-container"&gt;
+  <pre><code class="language-markup">&lt;div class="component-container"&gt;
   &lt;div class="form-group"&gt;
     &lt;label for="input" class="label"&gt;Enter a value&lt;/label&gt;
-    &lt;input type="text" id="input" name="input" class="example-input" /&gt;
-    &lt;button class="example-action"&gt;Submit&lt;/button&gt;
+    &lt;input type="text" id="input" name="input" class="input-text input-width-l component-input" /&gt;
   &lt;/div&gt;
-  &lt;div class="example-results"&gt;&lt;/div&gt;
+  &lt;div class="component-results"&gt;&lt;/div&gt;
 &lt;/div&gt;</code></pre>
 
-  <h3>Step 2 - Create a Javascript</h3>
+  <h3>Step 2 - Create a Javascript module</h3>
   <p>Create a file called <strong>'example.js'</strong> in the <strong>'combined'</strong> folder like so: <strong>'src/shared/js/combined/example.js'</strong></p>
   <h3>Step 3 - Export a function</h3>
-  <p>In this file we are going to create an export function called <strong>'myExample'</strong>. This function will check for an element on the page to begin with and then run some script if a component exists on the page.</p>
-  <pre><code class="language-js">export function myExample() {
+  <p>In our new file we are going to export a function called <strong>'myComponent'</strong>.  This function will check for an element on the page to begin with and then run the rest of the script if a component exists on the page.</p>
+  <pre><code class="language-js">export function myComponent() {
   // ... our code will go here
 }</code></pre>
 <h3>Step 4 - Call the exported function</h3>
-<p>Now we must include this function in the 'v5-main.js' file. At the top we must first import our example.js file like so...</p>
-<pre><code class="language-js">import { myExample } from './combined/example.js';</code></pre>
+<p>Now we must include this function in the <strong>'src/shared/js/v5-main.js'</strong> file. At the top we must first import our function from our component file.</p>
+<pre><code class="language-js">import { myComponent } from './combined/example.js';</code></pre>
 <p>Next we need to use this imported function on document load</p>
 <pre><code class="language-js">window.addEventListener('DOMContentLoaded',() => {
   // ...
-  myExample();
+  myComponent();
 });</code></pre>
 <h3>Step 5 - Check the component exists on the page</h3>
-<p>First we are going to check that there is a class on the page of <strong>'example-container'</strong>. In most cases there won't always be a component on every page so we first want to check it exists before proceeding any further.</p>
-<p>Let's declare a variable for the container and check if it exists.</p>
-<pre><code class="language-js">export function myExample() {
-  const container = document.querySelector('.example-container');
+<p>First we are going to check that there is a class on the page of <strong>'component-container'</strong>. In most cases there won't always be a component on every page so we first want to check it exists before proceeding any further.</p>
+<p>Let's declare a variable for the container and check if it exists with an if statement.</p>
+<pre><code class="language-js">export function myComponent() {
+  const container = document.querySelector('.component-container');
   if (!container) {
     return;
   }
   alert('We have a container!!!');
-  // ... rest of our code will start here if 'container' exists
+  // ... rest of our code will start here if 'component-container' exists
 }</code></pre>
 <p>Now check your page in a browser and if all has been successful we should get an alert box with <strong>'We have a container!!!'</strong>. You can now discard this line as you know the function is being called correctly. Now we will proceed with some functionality.</p>
+<h3>Step 6 - Creating the functionality for the component</h3>
+<p>Now we have successfully imported our function lets begin to add some functionality. Remove the alert function we have just written and add the following:</p>
+<pre><code class="language-js">export function myComponent() {
+  const input = document.querySelector('.component-input');
+  const results = document.querySelector('.component-results');
+  input.addEventListener('keyup', (e) => {
+      const result = e.target.value;
+      results.innerHTML = result;
+    }
+  );
+}</code></pre>
+
 <!-- InstanceEndEditable -->
 
 
