@@ -3,7 +3,7 @@
 <head>
 
 <meta charset="utf-8">
-	
+
 
 
 
@@ -16,13 +16,13 @@
 <style>
 #globalSearch {
 display: none;
-}	
+}
 </style>
 
 
 
 <!-- Page title and meta -->
-	
+
 <!-- InstanceBeginEditable name="doctitle" -->
     <title>Charts - HSE.GOV.UK Design System</title>
     <!-- InstanceEndEditable -->
@@ -32,7 +32,7 @@ display: none;
 <link rel="home" href="../../index.htm" />
 
 
-<!-- ie 11 fix for left-hand navigation --> 
+<!-- ie 11 fix for left-hand navigation -->
 <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
 
 
@@ -40,24 +40,24 @@ display: none;
 <body class="components normalFont">
 
 <section id="top" aria-label="Skip to content">  <a href="#contentContainer" class="skip">Skip to content</a>  </section>
- 
+
 <section id="printBanner" aria-label="Print banner"> <img src="../../assets/v4-images/website/print/print-logo.jpg" width="193" height="65" alt="Health and Safety Executive" id="printLogo"/> </section>
 <header id="headerContainer">
   <div id="header">
     <div class="headerTop header js-header">
-		 
+
 		<div id="headerLogo" class="headerLogo"><a href="../../index.htm">Health and Safety<br />
         Executive</a></div>
-		
-		 
-		
+
+
+
       <div id="globalSearch" class="desktop-gcs-search">
         <gcse:searchbox-only></gcse:searchbox-only>
       </div>
     </div>
-    
+
     <!-- JS Main Navigation -->
-    
+
     <div class="menuContainer">
       <nav id="main-menu"  class="menu js-menu">
         <ul>
@@ -71,7 +71,7 @@ display: none;
     </div>
   </div>
    </header>
-   
+
 <nav id="breadCrumb" aria-label="Previous pages:">
   <div class="breadCrumbContainer"> <!-- InstanceBeginEditable name="Breadcrumbs" -->
           <ol>
@@ -91,15 +91,15 @@ display: none;
     <p class="backto"><a id="backnav" href="index.htm">Back to</a></p>
   </div>
 </nav>
- 
+
 <div id="pageContainer" class="v5" xmlns:argot="http://purl.oclc.org/argot/" xmlns:dc="http://purl.org/dc/terms/" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:v="http://www.w3.org/2006/vcard/ns#" xmlns:dbp="http://dbpedia.org/resource/">
 <!-- InstanceBeginEditable name="beta-survey" -->
 
-        <!-- InstanceEndEditable -->   
+        <!-- InstanceEndEditable -->
 
-<!-- Beta content page --> 
+<!-- Beta content page -->
 
-  
+
 <nav id="navSecondary" aria-label="Secondary"> <!-- InstanceBeginEditable name="Subnav" --><!-- #BeginLibraryItem "/Library/_v5-components.lbi" --><div id="menu" class="slinky-menu slinky-theme-default">
 <ul>
     <li class="first"><a href="../index.htm">Components</a></li>
@@ -162,8 +162,8 @@ display: none;
 </div><!-- #EndLibraryItem --><!-- InstanceEndEditable --> </nav>
 
 <main id="contentContainer" class="columnbetacontentpage column2">
- 
-	
+
+
 <!-- InstanceBeginEditable name="content" -->
           <h1>Area-range chart</h1>
 
@@ -365,14 +365,186 @@ display: none;
               </table>
             </figure>
           </div>
-
+<pre class="language-markup"><code>&lt;div class=&quot;chart&quot;
+  data-chart-type=&quot;arearange&quot; data-chart-units=&quot;unit&quot;
+  data-chart-title=&quot;Rate of self-reported workplace non-fatal injury&quot;
+  data-chart-subtitle=&quot;(LFS: Estimated rate per 100,000 workers)&quot;
+  data-chart-description=&quot;The
+  rate of self-reported non-fatal injury to workers showed a generally
+  downward trend but has been broadly flat in recent years&quot;
+  data-area-range-title=&quot;95% Confidence interval&quot;
+  data-chart-caption=&quot;Shaded area represents 95% confidence interval&quot;&gt;
+  &lt;div class=&quot;displayChart&quot;&gt;&lt;/div&gt;
+  &lt;figure class=&quot;datacontent&quot;&gt;
+    &lt;h2 class=&quot;datacontent__title&quot;&gt;Rate of self-reported workplace
+      non-fatal injury&lt;/h2&gt;
+    &lt;h3 class=&quot;datacontent__subtitle&quot;&gt;(LFS: Estimated rate per 100,000
+      workers) &lt;/h3&gt;
+    &lt;p class=&quot;datacontent__description&quot;&gt;The rate of self-reported
+      non-fatal injury to workers showed a generally
+      downward trend but has been broadly flat in recent years&lt;/p&gt;
+    &lt;table class=&quot;table tabledata&quot; id=&quot;previewTable&quot;&gt;
+      &lt;thead class=&quot;table__head&quot;&gt;
+        &lt;tr class=&quot;table__row&quot;&gt;
+          &lt;th class=&quot;heading table__cell&quot;&gt;Year&lt;/th&gt;
+          &lt;th class=&quot;heading table__cell&quot;&gt;Self-reported workplace
+            non-fatal injury&lt;/th&gt;
+          &lt;th class=&quot;heading table__cell&quot;&gt;Lower Bound&lt;/th&gt;
+          &lt;th class=&quot;heading table__cell&quot;&gt;Upper Bound
+          &lt;/th&gt;
+        &lt;/tr&gt;
+      &lt;/thead&gt;
+      &lt;tbody class=&quot;table__body&quot;&gt;
+        &lt;tr class=&quot;table__row&quot;&gt;
+          &lt;td class=&quot;table__cell category series-range-axis&quot;&gt;2000/01&lt;/td&gt;
+          &lt;td class=&quot;table__cell unit series-range-average&quot;&gt;3980&lt;/td&gt;
+          &lt;td class=&quot;table__cell unit series-range-low&quot;&gt;3810&lt;/td&gt;
+          &lt;td class=&quot;table__cell unit series-range-high&quot;&gt;4150
+          &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr class=&quot;table__row&quot;&gt;
+          &lt;td class=&quot;table__cell category series-range-axis&quot;&gt;2001/02&lt;/td&gt;
+          &lt;td class=&quot;table__cell unit series-range-average&quot;&gt;3780&lt;/td&gt;
+          &lt;td class=&quot;table__cell unit series-range-low&quot;&gt;3620&lt;/td&gt;
+          &lt;td class=&quot;table__cell unit series-range-high&quot;&gt;3940
+          &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr class=&quot;table__row&quot;&gt;
+          &lt;td class=&quot;table__cell category series-range-axis&quot;&gt;2002/03&lt;/td&gt;
+          &lt;td class=&quot;table__cell unit series-range-average&quot;&gt;3800&lt;/td&gt;
+          &lt;td class=&quot;table__cell unit series-range-low&quot;&gt;3630&lt;/td&gt;
+          &lt;td class=&quot;table__cell unit series-range-high&quot;&gt;3960
+          &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr class=&quot;table__row&quot;&gt;
+          &lt;td class=&quot;table__cell category series-range-axis&quot;&gt;2003/04&lt;/td&gt;
+          &lt;td class=&quot;table__cell unit series-range-average&quot;&gt;3480&lt;/td&gt;
+          &lt;td class=&quot;table__cell unit series-range-low&quot;&gt;3320&lt;/td&gt;
+          &lt;td class=&quot;table__cell unit series-range-high&quot;&gt;3650
+          &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr class=&quot;table__row&quot;&gt;
+          &lt;td class=&quot;table__cell category series-range-axis&quot;&gt;2004/05&lt;/td&gt;
+          &lt;td class=&quot;table__cell unit series-range-average&quot;&gt;3210&lt;/td&gt;
+          &lt;td class=&quot;table__cell unit series-range-low&quot;&gt;3050&lt;/td&gt;
+          &lt;td class=&quot;table__cell unit series-range-high&quot;&gt;3370
+          &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr class=&quot;table__row&quot;&gt;
+          &lt;td class=&quot;table__cell category series-range-axis&quot;&gt;2005/06&lt;/td&gt;
+          &lt;td class=&quot;table__cell unit series-range-average&quot;&gt;3030&lt;/td&gt;
+          &lt;td class=&quot;table__cell unit series-range-low&quot;&gt;2870&lt;/td&gt;
+          &lt;td class=&quot;table__cell unit series-range-high&quot;&gt;3190
+          &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr class=&quot;table__row&quot;&gt;
+          &lt;td class=&quot;table__cell category series-range-axis&quot;&gt;2006/07&lt;/td&gt;
+          &lt;td class=&quot;table__cell unit series-range-average&quot;&gt;3100&lt;/td&gt;
+          &lt;td class=&quot;table__cell unit series-range-low&quot;&gt;2940&lt;/td&gt;
+          &lt;td class=&quot;table__cell unit series-range-high&quot;&gt;3260
+          &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr class=&quot;table__row&quot;&gt;
+          &lt;td class=&quot;table__cell category series-range-axis&quot;&gt;2007/08&lt;/td&gt;
+          &lt;td class=&quot;table__cell unit series-range-average&quot;&gt;2850&lt;/td&gt;
+          &lt;td class=&quot;table__cell unit series-range-low&quot;&gt;2700&lt;/td&gt;
+          &lt;td class=&quot;table__cell unit series-range-high&quot;&gt;3000
+          &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr class=&quot;table__row&quot;&gt;
+          &lt;td class=&quot;table__cell category series-range-axis&quot;&gt;2008/09&lt;/td&gt;
+          &lt;td class=&quot;table__cell unit series-range-average&quot;&gt;2570&lt;/td&gt;
+          &lt;td class=&quot;table__cell unit series-range-low&quot;&gt;2410&lt;/td&gt;
+          &lt;td class=&quot;table__cell unit series-range-high&quot;&gt;2720
+          &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr class=&quot;table__row&quot;&gt;
+          &lt;td class=&quot;table__cell category series-range-axis&quot;&gt;2009/10&lt;/td&gt;
+          &lt;td class=&quot;table__cell unit series-range-average&quot;&gt;2580&lt;/td&gt;
+          &lt;td class=&quot;table__cell unit series-range-low&quot;&gt;2430&lt;/td&gt;
+          &lt;td class=&quot;table__cell unit series-range-high&quot;&gt;2740
+          &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr class=&quot;table__row&quot;&gt;
+          &lt;td class=&quot;table__cell category series-range-axis&quot;&gt;2010/11&lt;/td&gt;
+          &lt;td class=&quot;table__cell unit series-range-average&quot;&gt;2130&lt;/td&gt;
+          &lt;td class=&quot;table__cell unit series-range-low&quot;&gt;1970&lt;/td&gt;
+          &lt;td class=&quot;table__cell unit series-range-high&quot;&gt;2280
+          &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr class=&quot;table__row&quot;&gt;
+          &lt;td class=&quot;table__cell category series-range-axis&quot;&gt;2011/12&lt;/td&gt;
+          &lt;td class=&quot;table__cell unit series-range-average&quot;&gt;2090&lt;/td&gt;
+          &lt;td class=&quot;table__cell unit series-range-low&quot;&gt;1940&lt;/td&gt;
+          &lt;td class=&quot;table__cell unit series-range-high&quot;&gt;2240
+          &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr class=&quot;table__row&quot;&gt;
+          &lt;td class=&quot;table__cell category series-range-axis&quot;&gt;2012/13&lt;/td&gt;
+          &lt;td class=&quot;table__cell unit series-range-average&quot;&gt;2240&lt;/td&gt;
+          &lt;td class=&quot;table__cell unit series-range-low&quot;&gt;2090&lt;/td&gt;
+          &lt;td class=&quot;table__cell unit series-range-high&quot;&gt;2400
+          &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr class=&quot;table__row&quot;&gt;
+          &lt;td class=&quot;table__cell category series-range-axis&quot;&gt;2013/14&lt;/td&gt;
+          &lt;td class=&quot;table__cell unit series-range-average&quot;&gt;2130&lt;/td&gt;
+          &lt;td class=&quot;table__cell unit series-range-low&quot;&gt;1980&lt;/td&gt;
+          &lt;td class=&quot;table__cell unit series-range-high&quot;&gt;2290
+          &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr class=&quot;table__row&quot;&gt;
+          &lt;td class=&quot;table__cell category series-range-axis&quot;&gt;2014/15&lt;/td&gt;
+          &lt;td class=&quot;table__cell unit series-range-average&quot;&gt;2030&lt;/td&gt;
+          &lt;td class=&quot;table__cell unit series-range-low&quot;&gt;1880&lt;/td&gt;
+          &lt;td class=&quot;table__cell unit series-range-high&quot;&gt;2180
+          &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr class=&quot;table__row&quot;&gt;
+          &lt;td class=&quot;table__cell category series-range-axis&quot;&gt;2015/16&lt;/td&gt;
+          &lt;td class=&quot;table__cell unit series-range-average&quot;&gt;2030&lt;/td&gt;
+          &lt;td class=&quot;table__cell unit series-range-low&quot;&gt;1870&lt;/td&gt;
+          &lt;td class=&quot;table__cell unit series-range-high&quot;&gt;2190
+          &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr class=&quot;table__row&quot;&gt;
+          &lt;td class=&quot;table__cell category series-range-axis&quot;&gt;2016/17&lt;/td&gt;
+          &lt;td class=&quot;table__cell unit series-range-average&quot;&gt;1970&lt;/td&gt;
+          &lt;td class=&quot;table__cell unit series-range-low&quot;&gt;1810&lt;/td&gt;
+          &lt;td class=&quot;table__cell unit series-range-high&quot;&gt;2130
+          &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr class=&quot;table__row&quot;&gt;
+          &lt;td class=&quot;table__cell category series-range-axis&quot;&gt;2017/18&lt;/td&gt;
+          &lt;td class=&quot;table__cell unit series-range-average&quot;&gt;1770&lt;/td&gt;
+          &lt;td class=&quot;table__cell unit series-range-low&quot;&gt;1620&lt;/td&gt;
+          &lt;td class=&quot;table__cell unit series-range-high&quot;&gt;1920
+          &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr class=&quot;table__row&quot;&gt;
+          &lt;td class=&quot;table__cell category series-range-axis&quot;&gt;2018/19&lt;/td&gt;
+          &lt;td class=&quot;table__cell unit series-range-average&quot;&gt;1830&lt;/td&gt;
+          &lt;td class=&quot;table__cell unit series-range-low&quot;&gt;1680&lt;/td&gt;
+          &lt;td class=&quot;table__cell unit series-range-high&quot;&gt;1990
+          &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr class=&quot;table__row&quot;&gt;
+          &lt;td class=&quot;table__cell category series-range-axis&quot;&gt;2019/20&lt;/td&gt;
+          &lt;td class=&quot;table__cell unit series-range-average&quot;&gt;2160&lt;/td&gt;
+          &lt;td class=&quot;table__cell unit series-range-low&quot;&gt;1970&lt;/td&gt;
+          &lt;td class=&quot;table__cell unit series-range-high&quot;&gt;2340&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;</code></pre>
           <!-- /#secondTab -->
 
           <!-- InstanceEndEditable -->
-	
- 
 
-<!-- Beta two column (top task) --> 
+
+
+<!-- Beta two column (top task) -->
 
    </main>
 
@@ -383,7 +555,7 @@ display: none;
     <div id="footer">
       <h2 class="visually-hidden">Footer links</h2>
       <div class="footer-links-container">
-       
+
       </div>
     </div>
     <div id="baseStrip">
@@ -397,12 +569,12 @@ display: none;
 <!-- InstanceBeginEditable name="updated" -->Updated:<!-- #BeginDate format:IS1 -->2021-03-29<!-- #EndDate --><!-- InstanceEndEditable -->
 </section>
 <script src="../../assets/v5-js/v5-main.min.js"></script>
-<script src="../../assets/v5-js/jquery.min.js"></script> 
-<script src="../../assets/v5-js/v5-footer.min.js"></script> 
+<script src="../../assets/v5-js/jquery.min.js"></script>
+<script src="../../assets/v5-js/v5-footer.min.js"></script>
 
-	
- 
-<script src="../../assets/v5-js/v5-footer-slinky-js.min.js"></script> 
+
+
+<script src="../../assets/v5-js/v5-footer-slinky-js.min.js"></script>
 
 
 
@@ -411,9 +583,9 @@ display: none;
 <div id="gutter"><!-- InstanceBeginEditable name="gutter" -->
         <!-- InstanceEndEditable --></div>
 
-<!-- SiteImprove JS --> 
+<!-- SiteImprove JS -->
 <script type="text/javascript">
-	
+
 // removes cellspacing & cellpadding attributes from GCS (Assesibility fix)
 window.onload = function(){
 
@@ -431,20 +603,20 @@ searchTable.removeAttribute('cellspacing');
 searchTable2.removeAttribute('cellspacing');
 searchTable3.removeAttribute('cellspacing');
 searchInput.removeAttribute('cellspacing');
-};	
-</script> 
-	
-<!-- InstanceParam name="bodyClass" type="text" value="components" --> 
-<!-- InstanceParam name="layout" type="text" value="betacontentpage" --> 
-<!-- InstanceParam name="columnLayout" type="number" value="2" --> 
-<!-- InstanceParam name="platform" type="text" value="v5" --> 
-<!-- InstanceParam name="rdfa" type="boolean" value="false" --> 
-<!-- InstanceParam name="welsh" type="boolean" value="false" --> 
-<!-- InstanceParam name="homepage" type="boolean" value="true" --> 
-<!-- InstanceParam name="weblite" type="boolean" value="false" --> 
-<!-- InstanceParam name="feedback" type="boolean" value="true" --> 
-<!-- InstanceParam name="contentType" type="text" value="default" --> 
-<!-- InstanceParam name="notificationBar" type="boolean" value="false" --> 
+};
+</script>
+
+<!-- InstanceParam name="bodyClass" type="text" value="components" -->
+<!-- InstanceParam name="layout" type="text" value="betacontentpage" -->
+<!-- InstanceParam name="columnLayout" type="number" value="2" -->
+<!-- InstanceParam name="platform" type="text" value="v5" -->
+<!-- InstanceParam name="rdfa" type="boolean" value="false" -->
+<!-- InstanceParam name="welsh" type="boolean" value="false" -->
+<!-- InstanceParam name="homepage" type="boolean" value="true" -->
+<!-- InstanceParam name="weblite" type="boolean" value="false" -->
+<!-- InstanceParam name="feedback" type="boolean" value="true" -->
+<!-- InstanceParam name="contentType" type="text" value="default" -->
+<!-- InstanceParam name="notificationBar" type="boolean" value="false" -->
 <!-- InstanceParam name="printGuide" type="boolean" value="false" -->
 </body>
 <!-- InstanceEnd --></html>
