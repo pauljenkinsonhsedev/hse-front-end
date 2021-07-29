@@ -77,6 +77,27 @@ a {
         }
     }
 
+    &.btn-secondary {
+        background-color: $red;
+        border: 1px solid white;
+        color: $white;
+        margin-bottom: 20px;
+
+        &:hover {
+            background-color: lighten($darkred, 20%);
+        }
+
+        &:disabled {
+            background-color: rgba($yes, .5);
+            color: $white;
+        }
+        &:focus {
+           background-color: $focus;
+           color: $black;
+           border: none;
+        }
+    }
+
     &.btn-cautionary {
         background-color: $red;
         color: $white;
@@ -99,5 +120,29 @@ a {
             background-color: rgba($focus, .5);
             color: #666;
         }
+        &:focus {
+        background: $red;
+        color: white;
+        }
     }
+}
+
+.btn.btn-start {
+border-bottom: 2px solid #333;
+@include type-setting(3);
+line-height: 1.5;
+}
+
+.btn-start::after {
+content: " ";
+position: relative;
+background-image: url(../../assets/v5-images/icons/svg/solid/chevron-right-white.svg);
+ background-repeat: no-repeat;
+background-position: bottom;
+display: inline-block;
+width: 15px;
+height: 20px;
+margin: 0;
+bottom: -4px;
+border-left: 10px solid transparent;
 }

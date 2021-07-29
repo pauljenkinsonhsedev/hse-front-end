@@ -42,11 +42,9 @@
         },
         "scripts": {
             "all": [
-                "./src/secureroot/v5-scripts/google-custom-search.js",
                 "./src/secureroot/v5-scripts/base64-poly.js",
                 "./src/secureroot/v5-scripts/v5-hse-primary.min.js",
                 "./src/secureroot/v5-scripts/slinky-ie11-fix.js",
-                "./src/secureroot/v5-scripts/top-tasks.js",
                 "./src/secureroot/v5-scripts/left-nav.js",
                 "./src/secureroot/v5-scripts/aria.accordion.min.js"
             ],
@@ -86,6 +84,10 @@
         "markup": {
             "all": "./src/devguide/html/**/*.+(htm|html)",
             "output": "./devguide/"
+        },
+        "imageAssets": {
+            "all": "./src/devguide/images/**/*.+(png|jpeg|gif|svg)",
+            "output": "./devguide/images/"
         },
         "images": {
             "v4": {

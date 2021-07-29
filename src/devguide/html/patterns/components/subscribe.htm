@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en-GB"><!-- InstanceBegin template="/Templates/dev-kit.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+
+<meta charset="utf-8">
+	
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- v5.1.1 -->
+
+
+
+<link rel="stylesheet" href="../../assets/v5-css/v5.min.css" type="text/css" media="screen,print" />
+<style>
+#globalSearch {
+display: none;
+}	
+</style>
+
+
+
+<!-- Page title and meta -->
+	
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Subscribe box - HSE.GOV.UK Design System</title>
+<meta name="keywords" content=" " />
+<meta name="description" content=" " />
+<!-- InstanceEndEditable -->
+<meta name="HSE.contentType" content="default" />
+<link rel="shortcut icon" href="../../favicon.ico" />
+<link rel="apple-touch-icon" href="../../assets/v4-images/shared/apple-touch-icon.png" />
+<link rel="home" href="../../index.htm" />
+
+
+<!-- ie 11 fix for left-hand navigation --> 
+<script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
+
+
+</head>
+<body class="patterns normalFont">
+
+<section id="top" aria-label="Skip to content">  <a href="#contentContainer" class="skip">Skip to content</a>  </section>
+ 
+<section id="printBanner" aria-label="Print banner"> <img src="../../assets/v4-images/website/print/print-logo.jpg" width="193" height="65" alt="Health and Safety Executive" id="printLogo"/> </section>
+<header id="headerContainer">
+  <div id="header">
+    <div class="headerTop header js-header">
+		 
+		<div id="headerLogo" class="headerLogo"><a href="../../index.htm">Health and Safety<br />
+        Executive</a></div>
+		
+		 
+		
+      <div id="globalSearch" class="desktop-gcs-search">
+        <gcse:searchbox-only></gcse:searchbox-only>
+      </div>
+    </div>
+    
+    <!-- JS Main Navigation -->
+    
+    <div class="menuContainer">
+      <nav id="main-menu"  class="menu js-menu">
+        <ul>
+          <li class="home"><a href="../../index.htm">Design system</a></li>
+          <li class="style"><a href="../../style/index.htm">Styles</a></li>
+          <li class="components"><a href="../../components/index.htm">Components</a></li>
+          <li class="patterns"><a href="../index.htm">Patterns</a></li>
+          <li class="template"><a href="../../framework/index.htm">Framework</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+   </header>
+   
+<nav id="breadCrumb" aria-label="Previous pages:">
+  <div class="breadCrumbContainer"> <!-- InstanceBeginEditable name="Breadcrumbs" -->
+		<ol>
+			<li class="home"><a href="../../index.htm">Design System</a></li>
+			<li><a href="../index.htm">Patterns</a></li>
+			<li><a href="index.htm">Components</a></li>
+			<li>Subscribe</li>
+		</ol>
+		<!-- InstanceEndEditable --> </div>
+  <div id="backTo">
+    <p class="backto"><a id="backnav" href="index.htm">Back to</a></p>
+  </div>
+</nav>
+ 
+<div id="pageContainer" class="v5" xmlns:argot="http://purl.oclc.org/argot/" xmlns:dc="http://purl.org/dc/terms/" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:v="http://www.w3.org/2006/vcard/ns#" xmlns:dbp="http://dbpedia.org/resource/">
+<!-- InstanceBeginEditable name="beta-survey" --> 
+
+
+<!-- InstanceEndEditable -->   
+
+<!-- Beta content page --> 
+
+  
+<nav id="navSecondary" aria-label="Secondary"> <!-- InstanceBeginEditable name="Subnav" --><!-- #BeginLibraryItem "/Library/_v5-patterns_components.lbi" --><div id="menu" class="slinky-menu slinky-theme-default">
+<ul>
+  <li class="first"><a href="index.htm">Component patterns</a></li>
+	<li><a href="complementary.htm">Complementary content</a></li>
+	<li><a href="contents-box.htm">Contents box</a></li>
+	<li><a href="subscribe.htm">Subscribe</a></li>
+	<li><a href="publication.htm">Publication</a></li>
+	<li><a href="cards.htm">Cards</a></li>
+	<li><a href="box-list.htm">Cards (box style)</a></li>
+	<li><a href="start.htm">Start button</a></li>
+ </ul>
+</div>
+
+<!-- #EndLibraryItem --><!-- #EndLibraryItem --><!-- InstanceEndEditable --> </nav>
+
+<main id="contentContainer" class="columnbetacontentpage column2">
+ 
+	
+<!-- InstanceBeginEditable name="content" -->
+  <h1>Subscribe box</h1>
+	
+  <p>Subscribe forms are displayed on the website to give users the option to enter their email address and sign up for HSE e-bulletins.</p>
+	
+  <div class="box">
+	
+  <form id="email" action="https://public.govdelivery.com/accounts/UKHSE/subscriber/new?topic_id=UKHSE_125">
+          <fieldset class="fieldset">
+            <legend class="fieldset__legend">
+              <h3 class="fieldset__heading">
+                  Subscribe
+                </h3>
+            </legend>
+            <div class="form-group">
+              <label class="label">Subscribe for free news and updates on health and safety topics and industries.</label>
+              <input class="input input-text input-width-l" type="email" id="subscribe" name="email" placeholder="Your email address" required title="Please enter your email address">
+			  <input id="topic_id" name="topic_id" type="hidden" value="UKHSE_125"> <!-- Include hidden input and unique e-bulletin value -->
+			  <input class="eBulletinButton" name="commit" type="submit" value="Subscribe">
+            </div>
+
+          </fieldset>
+        </form>
+	
+</div>
+	
+  <h2>When to use</h2>
+		
+  <p>The inclusion of a subscribe box should be decided by the content author and digital performance analyist. The e-bulletin the user subscribes to should relate to the page content.</p>
+	
+  <h2>How to use</h2>
+	
+  <p>A subscribe box is made up of <a href="../../components/forms/index.htm">form components</a> and the <a href="../../components/boxes.htm">box component</a>. The form contains an input field for the user to enter their email address, once submitted they will be taken to <a href="https://public.govdelivery.com">GovDelivery</a> and prompted to enter their email address again to subscribe to the e-bulletin service.</p>
+		
+  <p>To create a subscribe form you will first need to create a <strong>&lt;form&gt;</strong> element and give it an <strong>id</strong> and an <strong>action</strong> attribute, the value of the action attribute will be the following string:</p>
+	
+	<p><strong>"https://public.govdelivery.com/accounts/UKHSE/subscriber/new?topic_id="</strong></p> 
+	
+	<p>followed by your selected GovDelivery e-bulletin code, giving you a complete string as follows: </p>
+	
+  <p><strong>"https://public.govdelivery.com/accounts/UKHSE/subscriber/new?topic_id=UKHSE_125"</strong></p>
+  
+  <h3>Styling form elements</h3>
+	
+	
+  <p>Depending on what <a href="../pages/index.htm">page</a> and <a href="../../style/layout/index.htm">layout</a> you're using, the subscribe form will need to be adjusted to fit. To adjust the width of the input element you should refer to the form components <a href="../../components/forms/input-sizes.htm">input sizes</a>.</p>
+	
+  <p>Regardless of page or layout, the subscribe form should always be contained inside a box component.</p>
+
+		
+  <h3>Code example</h3>
+	
+  <iframe width="100%" height="300" src="//jsfiddle.net/pjenkinsonhse/2kbdyj9z/4/embedded/html/dark/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
+	
+  <h3>e-bulletin codes</h3>
+	
+
+	
+  <table>
+<thead>
+<tr>
+ <th>Name</th>
+ <th>Code</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Agriculture</td>
+<td>UKHSE_3</td>
+</tr>
+<tr>
+<td>Air transport</td>
+<td>UKHSE_5</td>
+</tr>
+<tr>
+<td>Appointed Doctor</td>
+<td>UKHSE_191</td>
+</tr>
+<tr>
+<td>Apprentices and young workers</td>
+<td>UKHSE_255</td>
+</tr>
+<tr>
+<td>Approved Medical Examiner of Divers (AMED)</td>
+<td>UKHSE_190</td>
+</tr>
+<tr>
+<td>Armed forces</td>
+<td>UKHSE_6</td>
+</tr>
+<tr>
+<td>Asbestos</td>
+<td>UKHSE_7</td>
+</tr>
+<tr>
+<td>Asthma</td>
+<td>UKHSE_8</td>
+</tr>
+<tr>
+<td>Audio</td>
+<td>UKHSE_156</td>
+</tr>
+<tr>
+<td>Bespoke Research and Consultancy: Complete Worker Health (SD)</td>
+<td>UKHSE_281</td>
+</tr>
+<tr>
+<td>Bespoke Research and Consultancy: Data-driven Insights (SD)</td>
+<td>UKHSE_282</td>
+</tr>
+<tr>
+<td>Bespoke Research and Consultancy: Safe Net Zero (SD)</td>
+<td>UKHSE_280</td>
+</tr>
+<tr>
+<td>Biocides</td>
+<td>UKHSE_11</td>
+</tr>
+<tr>
+<td>Biological agents</td>
+<td>UKHSE_239</td>
+</tr>
+<tr>
+<td>Blood-borne viruses</td>
+<td>UKHSE_228</td>
+</tr>
+<tr>
+<td>BSR</td>
+<td>UKHSE_294</td>
+</tr>
+<tr>
+<td>Carbon Capture and Storage (CCS)</td>
+<td>UKHSE_237</td>
+</tr>
+<tr>
+<td>Carriage of dangerous goods</td>
+<td>UKHSE_19</td>
+</tr>
+<tr>
+<td>Case studies</td>
+<td>UKHSE_20</td>
+</tr>
+<tr>
+<td>Catering and Hospitality</td>
+<td>UKHSE_21</td>
+</tr>
+<tr>
+<td>Classification, Labelling and Packaging (CLP) Regulation</td>
+<td>UKHSE_286</td>
+</tr>
+<tr>
+<td>Cleaning</td>
+<td>UKHSE_28</td>
+</tr>
+<tr>
+<td>COMAH</td>
+<td>UKHSE_129</td>
+</tr>
+<tr>
+<td>COMAH Sites</td>
+<td>UKHSE_272</td>
+</tr>
+<tr>
+<td>COMAH Strategic Forum</td>
+<td>UKHSE_260</td>
+</tr>
+<tr>
+<td>Concrete</td>
+<td>UKHSE_248</td>
+</tr>
+<tr>
+<td>Construction</td>
+<td>UKHSE_32</td>
+</tr>
+<tr>
+<td>Control of substances hazardous to health (COSHH)</td>
+<td>UKHSE_34</td>
+</tr>
+<tr>
+<td>Diving</td>
+<td>UKHSE_234</td>
+</tr>
+<tr>
+<td>Domestic gas</td>
+<td>UKHSE_63</td>
+</tr>
+<tr>
+<td>Drugs and alcohol</td>
+<td>UKHSE_227</td>
+</tr>
+<tr>
+<td>Education</td>
+<td>UKHSE_44</td>
+</tr>
+<tr>
+<td>ELCI - Employers&#39; Liability Compulsory Insurance</td>
+<td>UKHSE_223</td>
+</tr>
+<tr>
+<td>Electrical safety</td>
+<td>UKHSE_45</td>
+</tr>
+<tr>
+<td>Engineering</td>
+<td>UKHSE_47</td>
+</tr>
+<tr>
+<td>Entertainment and leisure</td>
+<td>UKHSE_211</td>
+</tr>
+<tr>
+<td>Equipment at work</td>
+<td>UKHSE_49</td>
+</tr>
+<tr>
+<td>EU Exit</td>
+<td>UKHSE_301</td>
+</tr>
+<tr>
+<td>EU Exit: Podcasts</td>
+<td>UKHSE_304</td>
+</tr>
+<tr>
+<td>Europe and worldwide</td>
+<td>UKHSE_50</td>
+</tr>
+<tr>
+<td>Event Safety</td>
+<td>UKHSE_206</td>
+</tr>
+<tr>
+<td>Explosives</td>
+<td>UKHSE_52</td>
+</tr>
+<tr>
+<td>Export and import of dangerous chemicals (PIC)</td>
+<td>UKHSE_26</td>
+</tr>
+<tr>
+<td>Fairgrounds</td>
+<td>UKHSE_208</td>
+</tr>
+<tr>
+<td>Film, Theatre and Broadcasting</td>
+<td>UKHSE_205</td>
+</tr>
+<tr>
+<td>Fire and explosion</td>
+<td>UKHSE_56</td>
+</tr>
+<tr>
+<td>Fire and rescue services</td>
+<td>UKHSE_55</td>
+</tr>
+<tr>
+<td>First aid at work</td>
+<td>UKHSE_57</td>
+</tr>
+<tr>
+<td>FOD Briefing</td>
+<td>UKHSE_229</td>
+</tr>
+<tr>
+<td>Food and Drink Manufacture</td>
+<td>UKHSE_60</td>
+</tr>
+<tr>
+<td>Footwear and Leather</td>
+<td>UKHSE_61</td>
+</tr>
+<tr>
+<td>Frequently asked questions (FAQs)</td>
+<td>UKHSE_54</td>
+</tr>
+<tr>
+<td>Go Home Healthy</td>
+<td>UKHSE_273</td>
+</tr>
+<tr>
+<td>Health and safety myths</td>
+<td>UKHSE_225</td>
+</tr>
+<tr>
+<td>Health and social care services</td>
+<td>UKHSE_70</td>
+</tr>
+<tr>
+<td>Health surveillance</td>
+<td>UKHSE_224</td>
+</tr>
+<tr>
+<td>HELex</td>
+<td>UKHSE_290</td>
+</tr>
+<tr>
+<td>HID Lines</td>
+<td>UKHSE_247</td>
+</tr>
+<tr>
+<td>HSE Connect 2019: Delegates</td>
+<td>UKHSE_289</td>
+</tr>
+<tr>
+<td>Images</td>
+<td>UKHSE_163</td>
+</tr>
+<tr>
+<td>Jobs</td>
+<td>UKHSE_18</td>
+</tr>
+<tr>
+<td>Land use planning</td>
+<td>UKHSE_80</td>
+</tr>
+<tr>
+<td>Laundries and Dry Cleaning</td>
+<td>UKHSE_82</td>
+</tr>
+<tr>
+<td>Leadership</td>
+<td>UKHSE_83</td>
+</tr>
+<tr>
+<td>Legalade</td>
+<td>UKHSE_241</td>
+</tr>
+<tr>
+<td>Legionnaires&#39; Disease</td>
+<td>UKHSE_84</td>
+</tr>
+<tr>
+<td>Legislation</td>
+<td>UKHSE_85</td>
+</tr>
+<tr>
+<td>Leisure Activities</td>
+<td>UKHSE_207</td>
+</tr>
+<tr>
+<td>Local exhaust ventilation (LEV)</td>
+<td>UKHSE_86</td>
+</tr>
+<tr>
+<td>Local government</td>
+<td>UKHSE_88</td>
+</tr>
+<tr>
+<td>Local Government Health &amp; Safety Representatives</td>
+<td>UKHSE_213</td>
+</tr>
+<tr>
+<td>Lone Working</td>
+<td>UKHSE_293</td>
+</tr>
+<tr>
+<td>Lung disease</td>
+<td>UKHSE_212</td>
+</tr>
+<tr>
+<td>Metalworking fluids</td>
+<td>UKHSE_92</td>
+</tr>
+<tr>
+<td>Molten metals</td>
+<td>UKHSE_95</td>
+</tr>
+<tr>
+<td>Motor vehicle repair</td>
+<td>UKHSE_97</td>
+</tr>
+<tr>
+<td>Musculoskeletal Disorders</td>
+<td>UKHSE_99</td>
+</tr>
+<tr>
+<td>Noise</td>
+<td>UKHSE_102</td>
+</tr>
+<tr>
+<td>Occupational cancer</td>
+<td>UKHSE_210</td>
+</tr>
+<tr>
+<td>Occupational disease</td>
+<td>UKHSE_245</td>
+</tr>
+<tr>
+<td>Offices</td>
+<td>UKHSE_104</td>
+</tr>
+<tr>
+<td>Offshore oil and gas</td>
+<td>UKHSE_105</td>
+</tr>
+<tr>
+<td>Paper, Board and Printing</td>
+<td>UKHSE_106</td>
+</tr>
+<tr>
+<td>Pesticides</td>
+<td>UKHSE_107</td>
+</tr>
+<tr>
+<td>Plastics and Rubber</td>
+<td>UKHSE_109</td>
+</tr>
+<tr>
+<td>Police</td>
+<td>UKHSE_110</td>
+</tr>
+<tr>
+<td>Ports and logistics</td>
+<td>UKHSE_69</td>
+</tr>
+<tr>
+<td>Pregnant workers</td>
+<td>UKHSE_96</td>
+</tr>
+<tr>
+<td>Press Releases</td>
+<td>UKHSE_233</td>
+</tr>
+<tr>
+<td>Pressure systems</td>
+<td>UKHSE_189</td>
+</tr>
+<tr>
+<td>Public consultations</td>
+<td>UKHSE_152</td>
+</tr>
+<tr>
+<td>Public services</td>
+<td>UKHSE_116</td>
+</tr>
+<tr>
+<td>Publications and Products</td>
+<td>UKHSE_162</td>
+</tr>
+<tr>
+<td>Quarries</td>
+<td>UKHSE_118</td>
+</tr>
+<tr>
+<td>Radiation</td>
+<td>UKHSE_119</td>
+</tr>
+<tr>
+<td>Radiation IRR6 list</td>
+<td>UKHSE_269</td>
+</tr>
+<tr>
+<td>Registration, Evaluation, Authorisation &amp; restriction of Chemicals (REACH)</td>
+<td>UKHSE_121</td>
+</tr>
+<tr>
+<td>Research and Consultancy: Enhancing Resilient Infrastructure</td>
+<td>UKHSE_306</td>
+</tr>
+<tr>
+<td>Respiratory protective equipment</td>
+<td>UKHSE_199</td>
+</tr>
+<tr>
+<td>Retail</td>
+<td>UKHSE_123</td>
+</tr>
+<tr>
+<td>Risk management</td>
+<td>UKHSE_125</td>
+</tr>
+<tr>
+<td>Safety Alerts</td>
+<td>UKHSE_300</td>
+</tr>
+<tr>
+<td>Schools</td>
+<td>UKHSE_264</td>
+</tr>
+<tr>
+<td>Science and research</td>
+<td>UKHSE_209</td>
+</tr>
+<tr>
+<td>Scotland</td>
+<td>UKHSE_128</td>
+</tr>
+<tr>
+<td>Slips, Trips and Falls</td>
+<td>UKHSE_132</td>
+</tr>
+<tr>
+<td>Small and medium businesses</td>
+<td>UKHSE_279</td>
+</tr>
+<tr>
+<td>Statistics</td>
+<td>UKHSE_134</td>
+</tr>
+<tr>
+<td>Stoneworker</td>
+<td>UKHSE_135</td>
+</tr>
+<tr>
+<td>Stress</td>
+<td>UKHSE_136</td>
+</tr>
+<tr>
+<td>Surface engineering</td>
+<td>UKHSE_137</td>
+</tr>
+<tr>
+<td>Temperature</td>
+<td>UKHSE_138</td>
+</tr>
+<tr>
+<td>Testing and Monitoring: Occupational Health and Hygiene (SD)</td>
+<td>UKHSE_283</td>
+</tr>
+<tr>
+<td>Testing and Monitoring: Products and Processes (SD)</td>
+<td>UKHSE_285</td>
+</tr>
+<tr>
+<td>Testing and Monitoring: Proficiency Testing (SD)</td>
+<td>UKHSE_284</td>
+</tr>
+<tr>
+<td>Textiles</td>
+<td>UKHSE_140</td>
+</tr>
+<tr>
+<td>Training and Events</td>
+<td>UKHSE_51</td>
+</tr>
+<tr>
+<td>Tree work</td>
+<td>UKHSE_4</td>
+</tr>
+<tr>
+<td>Vibration</td>
+<td>UKHSE_141</td>
+</tr>
+<tr>
+<td>Videos</td>
+<td>UKHSE_142</td>
+</tr>
+<tr>
+<td>Wales</td>
+<td>UKHSE_143</td>
+</tr>
+<tr>
+<td>Waste and recycling</td>
+<td>UKHSE_145</td>
+</tr>
+<tr>
+<td>Website Improvement Group</td>
+<td>UKHSE_291</td>
+</tr>
+<tr>
+<td>Weekly Digest Newsletter</td>
+<td>UKHSE_153</td>
+</tr>
+<tr>
+<td>Welding</td>
+<td>UKHSE_146</td>
+</tr>
+<tr>
+<td>welding campaign contacts</td>
+<td>UKHSE_307</td>
+</tr>
+<tr>
+<td>Woodworking</td>
+<td>UKHSE_147</td>
+</tr>
+<tr>
+<td>Work Right (Campaigns)</td>
+<td>UKHSE_275</td>
+</tr>
+<tr>
+<td>Worker involvement</td>
+<td>UKHSE_79</td>
+</tr>
+<tr>
+<td>Workers&#39; rights</td>
+<td>UKHSE_195</td>
+</tr>
+<tr>
+<td>Workplace transport</td>
+<td>UKHSE_149</td>
+</tr>
+<tr>
+<td>Young workers</td>
+<td>UKHSE_151</td>
+</tr>
+</tbody></table>
+	
+	
+
+	
+	
+<h2>Legacy subscribe box</h2>	
+	
+<div class="box">
+          <h3>Subscribe</h3>
+          <p>Subscribe for free news and updates on health and safety topics and industries.</p>
+          <form class="v5form" action="https://public.govdelivery.com/accounts/UKHSE/subscriber/new?topic_id=UKHSE_125">
+            <label for="email"><strong>Email address</strong></label>
+            <input id="email" name="email" type="text">
+           <input id="topic_id" name="topic_id" type="hidden" value="UKHSE_125">
+              <input class="eBulletinButton mt10" name="commit" type="submit" value="Subscribe">
+          </form>
+    </div>
+	
+
+
+  <!-- /#secondTab -->
+        
+  <!-- InstanceEndEditable -->
+	
+ 
+
+<!-- Beta two column (top task) --> 
+
+   </main>
+
+</div>
+
+<nav id="footer-nav" aria-label="Footer menu">
+  <footer id="footerContainer">
+    <div id="footer">
+      <h2 class="visually-hidden">Footer links</h2>
+      <div class="footer-links-container">
+       
+      </div>
+    </div>
+    <div id="baseStrip">
+      <div id="baseStripInner">
+        <p>HSE aims to reduce work-related death, injury and ill health.</p>
+      </div>
+    </div>
+  </footer>
+</nav>
+<section id="lastUpdated" aria-label="Last updated">
+<!-- InstanceBeginEditable name="updated" -->Updated:<!-- #BeginDate format:IS1 -->2021-05-13<!-- #EndDate -->
+  <!-- InstanceEndEditable -->
+</section>
+<script src="../../assets/v5-js/v5-main.min.js"></script>
+<script src="../../assets/v5-js/jquery.min.js"></script> 
+<script src="../../assets/v5-js/v5-footer.min.js"></script> 
+
+	
+ 
+<script src="../../assets/v5-js/v5-footer-slinky-js.min.js"></script> 
+
+
+
+
+
+<div id="gutter"><!-- InstanceBeginEditable name="gutter" --> 
+ <!-- InstanceEndEditable --></div>
+
+<!-- SiteImprove JS --> 
+<script type="text/javascript">
+	
+// removes cellspacing & cellpadding attributes from GCS (Assesibility fix)
+window.onload = function(){
+
+var searchTable = document.querySelector('table.gsc-search-box');
+var searchTable2 = document.querySelector('table.gsc-input');
+var searchTable3 = document.querySelector('table.gssb_c');
+var searchInput = document.querySelector('input.gsc-input');
+
+searchTable.removeAttribute('cellpadding');
+searchTable2.removeAttribute('cellpadding');
+searchTable3.removeAttribute('cellpadding');
+searchInput.removeAttribute('cellpadding');
+
+searchTable.removeAttribute('cellspacing');
+searchTable2.removeAttribute('cellspacing');
+searchTable3.removeAttribute('cellspacing');
+searchInput.removeAttribute('cellspacing');
+};	
+</script> 
+	
+<!-- InstanceParam name="bodyClass" type="text" value="patterns" --> 
+<!-- InstanceParam name="layout" type="text" value="betacontentpage" --> 
+<!-- InstanceParam name="columnLayout" type="number" value="2" --> 
+<!-- InstanceParam name="platform" type="text" value="v5" --> 
+<!-- InstanceParam name="rdfa" type="boolean" value="false" --> 
+<!-- InstanceParam name="welsh" type="boolean" value="false" --> 
+<!-- InstanceParam name="homepage" type="boolean" value="true" --> 
+<!-- InstanceParam name="weblite" type="boolean" value="false" --> 
+<!-- InstanceParam name="feedback" type="boolean" value="true" --> 
+<!-- InstanceParam name="contentType" type="text" value="default" --> 
+<!-- InstanceParam name="notificationBar" type="boolean" value="false" --> 
+<!-- InstanceParam name="printGuide" type="boolean" value="false" -->
+</body>
+<!-- InstanceEnd --></html>

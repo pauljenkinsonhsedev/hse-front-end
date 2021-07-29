@@ -1,8 +1,12 @@
 <div id="menu" class="slinky-menu slinky-theme-default">
 <ul>
-  <li class="first"><a href="../patterns/index.htm">Pages</a></li>
+  <li class="first"><a href="../patterns/pages/index.htm">Pages</a></li>
 	<li><a href="../patterns/pages/top-task.htm">Top task</a></li>
-	<li><a href="../patterns/pages/content.htm">Content</a></li>
+	<li><a href="../patterns/pages/1-col.htm">One column page</a></li>
+	<li><a href="../patterns/pages/2-col.htm">Two column page</a></li>
+	<li><a href="../patterns/pages/homepage-legacy.htm">Microsite homepage (box layout)</a></li>
+	<li><a href="../patterns/pages/microsite-homepage.htm">Microsite homepage (v5 layout)</a></li>
+	<li><a href="../patterns/pages/document.htm">Document page</a></li>
  </ul>
 </div>
 

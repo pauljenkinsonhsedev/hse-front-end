@@ -2,23 +2,6 @@
 <html lang="en-GB"><!-- InstanceBegin template="/Templates/dev-kit.dwt" codeOutsideHTMLIsLocked="false" -->
 <head>
 
-<!-- Anti-flicker snippet (recommended) If installing optimise with GTM, specifcy GTM container ID  --> 
-
-<script id="anti-flicker">(function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
-h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
-(a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
-})(window,document.documentElement,'async-hide','dataLayer',4000,
-{'GTM-PJPWMNL':true});
-</script> 
-
-<!-- GTM --> 
-	
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-PJPWMNL');</script>
-
 <meta charset="utf-8">
 	
 
@@ -58,11 +41,6 @@ display: none;
 </head>
 <body class="style normalFont">
 
-<!-- GTM -->
-
-<noscript aria-hidden="true" aria-label="GTM-PJPWMNL">
-<iframe title="GTM-PJPWMNL" src="https://www.googletagmanager.com/ns.html?id=GTM-PJPWMNL" height="0" width="0" style="display:none;visibility:hidden" aria-hidden="true"></iframe>
-</noscript>
 <section id="top" aria-label="Skip to content">  <a href="#contentContainer" class="skip">Skip to content</a>  </section>
  
 <section id="printBanner" aria-label="Print banner"> <img src="../../assets/v4-images/website/print/print-logo.jpg" width="193" height="65" alt="Health and Safety Executive" id="printLogo"/> </section>
@@ -258,6 +236,9 @@ display: none;
         <li>Do</li>
         <li>Do</li>
       </ul>
+	
+		<h3>Code example</h3>
+
 
       <iframe title="Do list" width="100%" height="300" src="//jsfiddle.net/pjenkinsonhse/9bafrswh/embedded/html/dark/" allowfullscreen="allowfullscreen" allowpaymentrequest></iframe>
 
@@ -279,6 +260,9 @@ display: none;
         <li>Do not</li>
         <li>Do not</li>
       </ul>
+	
+		<h3>Code example</h3>
+
 
       <iframe title="Do not list" width="100%" height="300" src="//jsfiddle.net/pjenkinsonhse/8vgy9b3o/1/embedded/html/dark" allowfullscreen="allowfullscreen" allowpaymentrequest></iframe>
 
@@ -307,6 +291,9 @@ display: none;
           <a href="#">Link to external webpage</a>
         </li>
       </ul>
+	
+		<h3>Code example</h3>
+
 
       <iframe title="List of bullet links" width="100%" height="300" src="//jsfiddle.net/pjenkinsonhse/qb8nypf4/5/embedded/html/dark/" allowfullscreen="allowfullscreen" allowpaymentrequest></iframe>
 
@@ -334,6 +321,9 @@ display: none;
           <a href="#">Link to external webpage</a>
         </li>
       </ul>
+	
+		<h3>Code example</h3>
+
 
       <iframe title="List of links" width="100%" height="300" src="//jsfiddle.net/pjenkinsonhse/t9uphyxs/7/embedded/html/dark/" allowfullscreen="allowfullscreen" allowpaymentrequest></iframe>
 
@@ -387,8 +377,28 @@ display: none;
         </ul>
 
       </div>
+	
+		<h3>Code example</h3>
+
 
       <iframe width="100%" height="300" src="//jsfiddle.net/pjenkinsonhse/szy0b9g7/2/embedded/html/dark/" allowfullscreen="allowfullscreen" allowpaymentrequest></iframe>
+	
+   <h2>Description list</h2>
+	
+	<p>The HTML &lt;dl&gt; element represents a description list. The element encloses a list of groups of terms (specified using the &lt;dt&gt; element) and descriptions (provided by &lt;dd&gt; elements).</p>
+	
+      <dl>
+        <dt>Date of publication:</dt>
+        <dd>February 2021</dd>
+        <dt>ISBN:</dt>
+        <dd>9780717667420</dd>
+        <dt>Series code:</dt>
+        <dd>N/A</dd>
+      </dl>
+	
+	<h3>Code example</h3>
+	
+<iframe width="100%" height="300" src="//jsfiddle.net/pjenkinsonhse/wyqja8x7/2/embedded/html/dark/" allowfullscreen="allowfullscreen"></iframe>
 
       <!-- InstanceEndEditable -->
 	
@@ -416,7 +426,7 @@ display: none;
   </footer>
 </nav>
 <section id="lastUpdated" aria-label="Last updated">
-<!-- InstanceBeginEditable name="updated" -->Updated:<!-- #BeginDate format:IS1 -->2020-12-07<!-- #EndDate --><!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="updated" -->Updated:<!-- #BeginDate format:IS1 -->2021-05-11<!-- #EndDate --><!-- InstanceEndEditable -->
 </section>
 <script src="../../assets/v5-js/v5-main.min.js"></script>
 <script src="../../assets/v5-js/jquery.min.js"></script> 
@@ -435,13 +445,6 @@ display: none;
 
 <!-- SiteImprove JS --> 
 <script type="text/javascript">
-/*<![CDATA[*/
-(function() {
-var sz = document.createElement('script'); sz.type = 'text/javascript'; sz.async = true;
-sz.src = '//siteimproveanalytics.com/js/siteanalyze_6798.js';
-var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(sz, s);
-})();
-/*]]>*/
 	
 // removes cellspacing & cellpadding attributes from GCS (Assesibility fix)
 window.onload = function(){

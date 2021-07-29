@@ -23,11 +23,11 @@ export class ChartOptionsDual extends ChartOptions {
 
         const table1 = table[0];
         const xAxisTitle1 = table1.dataset.yaxisText;
-        const valueSuffix1 = table1.dataset.valueSuffix;
+        const valueSuffix1 = table1.dataset.valueSuffix ? table1.dataset.valueSuffix : '';
 
         const table2 = table[1];
-        const xAxisTitle2 = table2.dataset.yaxisText;
-        const valueSuffix2 = table2.dataset.valueSuffix;
+        const xAxisTitle2 = table2.dataset.yaxisText ? table2.dataset.yaxisText : '';
+        const valueSuffix2 = table2.dataset.valueSuffix ? table2.dataset.valueSuffix : '';
 
         const getSeriesData1 = seriesData(table1);
         const getSeriesData2 = seriesData(table2);
@@ -76,42 +76,45 @@ export class ChartOptionsDual extends ChartOptions {
             },
         };
 
-        const yAxis = [{
+        const yAxis = [
+          {
             title: {
-                text: xAxisTitle1,
-                style: {
-                    fontFamily: this.fontFamily,
-                    fontSize: '0.7rem',
-                    fontWeight: 'regular',
-                }
+              text: xAxisTitle1,
+              style: {
+                fontFamily: this.fontFamily,
+                fontSize: '0.7rem',
+                fontWeight: 'regular',
+              },
             },
             labels: {
-                format: '{value} °C',
-                style: {
-                    fontFamily: this.fontFamily,
-                    fontSize: '0.7rem',
-                    fontWeight: 'regular',
-                }
+              format: '{value}',
+              style: {
+                fontFamily: this.fontFamily,
+                fontSize: '0.7rem',
+                fontWeight: 'regular',
+              },
             },
-        }, {
+          },
+          {
             title: {
-                text: xAxisTitle2,
-                style: {
-                    fontFamily: this.fontFamily,
-                    fontSize: '0.7rem',
-                    fontWeight: 'regular',
-                }
+              text: xAxisTitle2,
+              style: {
+                fontFamily: this.fontFamily,
+                fontSize: '0.7rem',
+                fontWeight: 'regular',
+              },
             },
             labels: {
-                format: '{value} mm',
-                style: {
-                    fontFamily: this.fontFamily,
-                    fontSize: '0.7rem',
-                    fontWeight: 'regular',
-                }
+              format: '{value} mm',
+              style: {
+                fontFamily: this.fontFamily,
+                fontSize: '0.7rem',
+                fontWeight: 'regular',
+              },
             },
-            opposite: true
-        }];
+            opposite: true,
+          },
+        ];
 
         const collection = this.collection;
         this.collection = {...collection, xAxis, yAxis, tooltip, series};

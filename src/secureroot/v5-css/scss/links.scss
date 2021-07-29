@@ -1,14 +1,13 @@
 
 a {
     text-decoration: underline;
-    background-color: transparent;
-
-    &:link,
+    &:link {
+        color: $red; 
+    }
     &:visited {
-        color: $red;
+        color: $darkred;
         text-decoration: underline;
     }
-
     &:hover,
     &:active,
     &:focus,

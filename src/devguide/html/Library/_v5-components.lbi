@@ -1,9 +1,8 @@
 <div id="menu" class="slinky-menu slinky-theme-default">
 <ul>
     <li class="first"><a href="../components/index.htm">Components</a></li>
-	<li><a href="../components/boxes.htm">Boxes</a></li>
-
-	<li><a href="../components/buttons.htm">Buttons</a></li>
+	<li><a href="../components/accordion.htm">Accordion</a></li>
+	<li><a href="../components/boxes.htm">Box</a></li>
 	<li><a href="#">Charts (JS)</a>
 		<ul>
 			<li><a href="../components/charts/index.htm">Overview</a></li>
@@ -22,11 +21,11 @@
 			<li><a href="../components/charts/plot-bands.htm">Plot bands</a></li>
 		</ul>
 	</li>
-
 	<li><a href="../components/dialog.htm">Dialog box</a></li>
 	<li><a href="#">Forms</a>
 		<ul>
 			<li><a href="../components/forms/index.htm">Overview</a></li>
+		    <li><a href="../components/forms/buttons.htm">Buttons</a></li>
 			<li><a href="../components/forms/inputs.htm">inputs</a></li>
 			<li><a href="../components/forms/input-sizes.htm">Input sizes</a></li>
 			<li><a href="../components/forms/form-validation.htm">Form validation</a></li>
@@ -35,7 +34,6 @@
 			<li><a href="../components/forms/radios.htm">Radios</a></li>
 			<li><a href="../components/forms/switch.htm">Switch</a></li>
 			<li><a href="../components/forms/textarea.htm">Text area</a></li>
-		    <li><a href="../components/forms/buttons.htm">Buttons</a></li>
 			<li><a href="../components/forms/drop-down.htm">Drop-down list (Input)</a></li>
 			<li><a href="../components/forms/subscribe.htm">Subscribe (Input)</a></li>
 		</ul>

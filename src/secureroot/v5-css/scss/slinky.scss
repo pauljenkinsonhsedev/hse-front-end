@@ -12,6 +12,12 @@
   list-style: none;
   margin: 0;
 }
+.slinky-menu li:hover {
+background: $darkgray;
+}
+.slinky-menu a:focus {
+background: $focus;
+}
 .slinky-menu ul {
   width: 100%;
 }
@@ -23,7 +29,9 @@
   align-items: center;
   display: flex;
   overflow: visible;
+  background-color: $gray;
 }
+
 .slinky-menu a span {
   flex: 1;
   overflow: visible;
@@ -51,7 +59,7 @@
 }
 
 .slinky-theme-default {
-  background-color: $gray;
+  //background-color: $gray;
 }
 .slinky-theme-default .title {
   color: #333;
@@ -95,9 +103,8 @@
   display: inline-block;
   width: 16px;
   height: 16px;
-  right: 10px;
   margin: 0;
-  position: absolute !important;
+  margin-left: auto;
 }
 
 .slinky-theme-default a.next:hover::after, .slinky-theme-default a.next:focus::after {
@@ -107,8 +114,8 @@
   display: inline-block;
   width: 16px;
   height: 16px;
-  right: 10px;
   margin: 0;
+  margin-left: auto;
   z-index: 9999;
 }
 
@@ -125,7 +132,7 @@
   padding: 0;
 }
 
-.slinky-menu li.first {
+.slinky-menu li.first a {
   font-weight: bold;
   background-color: $red;
 }
@@ -199,4 +206,8 @@ li.first a.active-page {
 .slinky-theme-default a.back:focus::before {
   content: " ";
   background-image: url('../../assets/v5-images/icons/svg/solid/arrow-left-black.svg') !important;
+}
+
+.slinky-menu .text-width {
+max-width: 90%;
 }
