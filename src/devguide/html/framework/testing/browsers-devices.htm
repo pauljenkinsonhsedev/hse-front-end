@@ -24,11 +24,9 @@ display: none;
 <!-- Page title and meta -->
 	
 <!-- InstanceBeginEditable name="doctitle" -->
-<title>Design System</title>
-<meta name="Description" content="HSE's job is to protect people against risks to health or safety arising out of work activities. Provides advice, guidance, regulations and inspections." />
-<meta name="Keywords" content="HSE, health and safety executive,  occupational ill-health, occupational health and safety, accident, safety, employee safety, health and safety at work act, law" />
-
-
+<title></title>
+<meta name="keywords" content=" " />
+<meta name="description" content=" " />
 <!-- InstanceEndEditable -->
 <meta name="HSE.contentType" content="default" />
 <link rel="shortcut icon" href="../../favicon.ico" />
@@ -41,7 +39,7 @@ display: none;
 
 
 </head>
-<body class="template normalFont">
+<body class="guidance normalFont">
 
 <section id="top" aria-label="Skip to content">  <a href="#contentContainer" class="skip">Skip to content</a>  </section>
  
@@ -78,22 +76,20 @@ display: none;
    
 <nav id="breadCrumb" aria-label="Previous pages:">
   <div class="breadCrumbContainer"> <!-- InstanceBeginEditable name="Breadcrumbs" -->
-		<ol>
-			<li class="home"><a href="../../index.htm">Design System</a></li>
+	<ol>
+			<li class="home"><a href="../index.htm">Design System</a></li>
 			<li><a href="../index.htm">Framework</a></li>
-			<li>Components</li>
-		</ol>
-		<!-- InstanceEndEditable --> </div>
+			<li><a href="index.htm">Testing</a></li>
+		    <li>Browsers and devices</li>
+	</ol>
+    <!-- InstanceEndEditable --> </div>
   <div id="backTo">
     <p class="backto"><a id="backnav" href="index.htm">Back to</a></p>
   </div>
 </nav>
  
 <div id="pageContainer" class="v5" xmlns:argot="http://purl.oclc.org/argot/" xmlns:dc="http://purl.org/dc/terms/" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:v="http://www.w3.org/2006/vcard/ns#" xmlns:dbp="http://dbpedia.org/resource/">
-<!-- InstanceBeginEditable name="beta-survey" --> 
-
-
-<!-- InstanceEndEditable -->   
+<!-- InstanceBeginEditable name="beta-survey" --> <!-- InstanceEndEditable -->   
 
 <!-- Beta content page --> 
 
@@ -109,24 +105,24 @@ display: none;
         <li><a href="../template/accessibility.htm">Accessibility</a></li>
         <li><a href="#">Components</a>
           <ul>
-            <li><a href="index.htm">Overview</a></li>
-            <li><a href="notification-banner.htm">Notification banner</a></li>
-            <li><a href="user-satisfaction.htm">User satisfaction</a></li>
-            <li><a href="document-title-meta.htm">Document title and meta elements</a></li>
-            <li><a href="page-notification.htm">Page notification</a></li>
-            <li><a href="breadcrumbs.htm">Breadcrumbs</a></li>
-            <li><a href="beta-banner.htm">Beta survey</a></li>
-            <li><a href="secondary-nav.htm">Secondary navigation</a></li>
-            <li><a href="cookies.htm">Cookie banner</a></li>
+            <li><a href="../components/index.htm">Overview</a></li>
+            <li><a href="../components/notification-banner.htm">Notification banner</a></li>
+            <li><a href="../components/user-satisfaction.htm">User satisfaction</a></li>
+            <li><a href="../components/document-title-meta.htm">Document title and meta elements</a></li>
+            <li><a href="../components/page-notification.htm">Page notification</a></li>
+            <li><a href="../components/breadcrumbs.htm">Breadcrumbs</a></li>
+            <li><a href="../components/beta-banner.htm">Beta survey</a></li>
+            <li><a href="../components/secondary-nav.htm">Secondary navigation</a></li>
+            <li><a href="../components/cookies.htm">Cookie banner</a></li>
           </ul>
         </li>
       </ul>
     </li>
     <li><a href="#">Testing</a>
       <ul>
-		<li><a href="../testing/index.htm">Overview</a></li>
-        <li><a href="../testing/browsers-devices.htm">Browsers and devices</a></li>
-		<li><a href="../testing/test.htm">Test page</a></li>
+		<li><a href="index.htm">Overview</a></li>
+        <li><a href="browsers-devices.htm">Browsers and devices</a></li>
+		<li><a href="test.htm">Test page</a></li>
       </ul>
     </li>
 	<li><a href="#">Javascript</a>
@@ -143,29 +139,135 @@ display: none;
  
 	
 <!-- InstanceBeginEditable name="content" -->
-	<h1>Breadcrumbs</h1>
+
+<h1>Browsers and devices</h1>
 	
-	<p>Breadcrumbs on HSE.GOV.UK display a hierarchy of the current page in relation to the the site's structure, from homepage (top level) to current page.</p>
+<p>Before deploying a framework update, testing must be carried out on popular browsers and devices.</p>	
 	
-	<ul>
+<p>Services do not have to look perfect in every browser but users must be able to access and use all the information and features they need, regardless of which browser they use.</p>
+<h2>Browsers</h2>
+<p>This list in the table is based on usage statistics for HSE.GOV.UK and represents approximately 95% of the most popular browsers.</p>
 	
-	<li>The first list item in the breadcrumbs should always be HSE.GOV.UK homepage</li>
-	<li>The first list item should also have the class <strong>home</strong> assigned to it</li>
-	<li>The last list item should be the current page</li>
-	<li>The current page (last list item) has no link</li>
-	</ul>
+<table>
+	<caption>Browser testing</caption>
+  <thead>
+    <tr>
+      <th scope="col">Operating system</th>
+      <th scope="col">Browser</th>
+      <th scope="col">Support</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Windows</strong></td>
+      <td>Internet Explorer 11</td>
+      <td>compliant</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Edge (latest versions)</td>
+      <td>compliant</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Google Chrome (latest versions)</td>
+      <td>compliant</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Mozilla Firefox (latest versions)</td>
+      <td>compliant</td>
+    </tr>
+    <tr>
+      <td><strong>macOS</strong></td>
+      <td>Safari 12 and later</td>
+      <td>compliant</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Google Chrome (latest versions)</td>
+      <td>compliant</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Mozilla Firefox (latest versions)</td>
+      <td>compliant</td>
+    </tr>
+    <tr>
+      <td><strong>iOS</strong></td>
+      <td>Safari for iOS 12.1 and later</td>
+      <td>compliant</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Google Chrome (latest versions)</td>
+      <td>compliant</td>
+    </tr>
+    <tr>
+      <td><strong>Android</strong></td>
+      <td>Google Chrome (latest versions)</td>
+      <td>compliant</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Samsung Internet (latest versions)</td>
+      <td>compliant</td>
+    </tr>
+  </tbody>
+</table>
+<p>&lsquo;Compliant&rsquo; means your service must look as good as it does in other modern browsers.</p>
+<p>Users must be able to access the information they need or be able to complete their task without layout issues causing any problems (for example vital information or form fields becoming less visible, or inconsistencies causing them to lose confidence).</p>
+<p>&lsquo;Latest versions&rsquo; refers to the latest stable version.</p>
+	
+<h2>Mobile devices</h2>
+	
+<p>While the website responsive design can be tested using developer tools, basic tests on popular mobile devices should be carried out before deploying framework to live.</p>
+			
+<table>
+
+<caption>Device testing priority</caption>
+	
+<thead>
+	
+<tr>
+ <td>Device</td>	
+ <td>Priority</td>
+</tr>
+	
+<tr>
+ <td>Apple iPhone</td>
+ <td>1</td>
+</tr>
+	
+<tr>
+ <td>Samsung Galaxy Devices</td>
+ <td>2</td>
+</tr>
+	
+<tr>
+ <td>Apple iPad</td>
+ <td>3</td>
+</tr>
+	
+<tr>
+ <td>Microsoft Windows RT Tablet</td>
+ <td>4</td>
+</tr>
+	
+<tr>
+ <td>Other Android Devices</td>
+ <td>5</td>
+</tr>
 	
 	
-	<iframe width="100%" height="auto" src="//jsfiddle.net/pjenkinsonhse/yn63x21d/1/embedded/html/dark/" allowfullscreen="allowfullscreen" allowpaymentrequest ></iframe>
+</thead>
 	
-	<div class="box">
 	
-	<h3>Accessibility</h3>
-		
-	<p>The aria state: <strong>aria-current="page"</strong> is applied with JS to the last list item of the breadcrumbs to indicate the current page in the breadcrumbs.</p>
 	
-	</div>
-	<!-- InstanceEndEditable -->
+</table>
+	
+	
+<!-- InstanceEndEditable -->
 	
  
 
@@ -191,9 +293,7 @@ display: none;
   </footer>
 </nav>
 <section id="lastUpdated" aria-label="Last updated">
-<!-- InstanceBeginEditable name="updated" --> Updated:
-	<!-- #BeginDate format:IS1 -->2021-05-27<!-- #EndDate -->
-	<!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="updated" -->Updated:<!-- #BeginDate format:IS1 -->2021-07-30<!-- #EndDate --><!-- InstanceEndEditable -->
 </section>
 <script src="../../assets/v5-js/v5-main.min.js"></script>
 <script src="../../assets/v5-js/jquery.min.js"></script> 
@@ -232,13 +332,13 @@ searchInput.removeAttribute('cellspacing');
 };	
 </script> 
 	
-<!-- InstanceParam name="bodyClass" type="text" value="template" --> 
+<!-- InstanceParam name="bodyClass" type="text" value="guidance" --> 
 <!-- InstanceParam name="layout" type="text" value="betacontentpage" --> 
 <!-- InstanceParam name="columnLayout" type="number" value="2" --> 
 <!-- InstanceParam name="platform" type="text" value="v5" --> 
 <!-- InstanceParam name="rdfa" type="boolean" value="false" --> 
 <!-- InstanceParam name="welsh" type="boolean" value="false" --> 
-<!-- InstanceParam name="homepage" type="boolean" value="false" --> 
+<!-- InstanceParam name="homepage" type="boolean" value="true" --> 
 <!-- InstanceParam name="weblite" type="boolean" value="false" --> 
 <!-- InstanceParam name="feedback" type="boolean" value="true" --> 
 <!-- InstanceParam name="contentType" type="text" value="default" --> 
