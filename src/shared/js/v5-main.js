@@ -17,7 +17,6 @@ import { footnoteAbbr } from './combined/footnote-abbr.js';
 import { topTasks } from './combined/top-tasks.js';
 import { equalHeights } from './combined/equal-heights.js';
 import { drawMenu } from './combined/draw-menu.js';
-import { banner } from './combined/banner.js';
 import { informationBanner } from './combined/information-banner.js';
 import { codeHighlighter } from './combined/code-highlighter.js';
 
