@@ -1,23 +1,39 @@
 <div id="menu" class="slinky-menu slinky-theme-default">
-<ul>
-    <li class="first"><a href="../framework/index.htm">Template</a></li>
-	<li><a href="../framework/template.htm">Applying template</a></li>
-	<li><a href="../framework/regions.htm">Editable regions</a></li>
-    <li><a href="../framework/param.htm">Parameters</a></li>
-	<li><a href="../framework/accessibility.htm">Accessibility</a></li>
-	<li><a href="#">Components</a>
-		<ul>
-		   <li><a href="../framework/components/index.htm">Overview</a></li>
-          <li><a href="../framework/components/notification-banner.htm">Notification banner</a></li>
-		   <li><a href="../framework/components/user-satisfaction.htm">User satisfaction</a></li>
-		   <li><a href="../framework/components/document-title-meta.htm">Document title and meta elements</a></li>
-		   <li><a href="../framework/components/page-notification.htm">Page notification</a></li>
-		   <li><a href="../framework/components/breadcrumbs.htm">Breadcrumbs</a></li>
-		   <li><a href="../framework/components/beta-banner.htm">Beta survey</a></li>
-		   <li><a href="../framework/components/secondary-nav.htm">Secondary navigation</a></li>
-		   <li><a href="../framework/components/cookies.htm">Cookie banner</a></li>
-		</ul>
-	</li>
-	
- </ul>
+  <ul>
+    <li class="first"><a href="../framework/index.htm">Framework</a></li>
+    <li><a href="#">Template</a>
+      <ul>
+        <li><a href="../framework/template/template.htm">Applying template</a></li>
+        <li><a href="../framework/template/regions.htm">Editable regions</a></li>
+        <li><a href="../framework/template/param.htm">Parameters</a></li>
+        <li><a href="../framework/template/accessibility.htm">Accessibility</a></li>
+        <li><a href="#">Components</a>
+          <ul>
+            <li><a href="../framework/components/index.htm">Overview</a></li>
+            <li><a href="../framework/components/notification-banner.htm">Notification banner</a></li>
+            <li><a href="../framework/components/user-satisfaction.htm">User satisfaction</a></li>
+            <li><a href="../framework/components/document-title-meta.htm">Document title and meta elements</a></li>
+            <li><a href="../framework/components/page-notification.htm">Page notification</a></li>
+            <li><a href="../framework/components/breadcrumbs.htm">Breadcrumbs</a></li>
+            <li><a href="../framework/components/beta-banner.htm">Beta survey</a></li>
+            <li><a href="../framework/components/secondary-nav.htm">Secondary navigation</a></li>
+            <li><a href="../framework/components/cookies.htm">Cookie banner</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#">Testing</a>
+      <ul>
+		<li><a href="../framework/testing/index.htm">Overview</a></li>
+        <li><a href="../framework/testing/browsers-devices.htm">Browsers and devices</a></li>
+		<li><a href="../framework/testing/test.htm">Test page</a></li>
+      </ul>
+    </li>
+	<li><a href="#">Javascript</a>
+      <ul>
+		<li><a href="../framework/javascript/index.htm">Overview</a></li>
+        <li><a href="../framework/javascript/create-a-basic-component.htm">Create a component</a></li>
+      </ul>
+    </li>
+  </ul>
 </div>
