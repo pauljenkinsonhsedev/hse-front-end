@@ -1,0 +1,67 @@
+@import './node_modules/prismjs/themes/prism';
+@import './node_modules/prismjs/themes/prism-okaidia';
+
+$radius: 5px;
+$background: #272822;
+
+pre {
+  margin: 2rem 0 !important;
+}
+
+pre[class*='language-'] {
+  &:after {
+    display: block;
+    color: $white;
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    font-family: $body-font;
+    font-weight: bold;
+    font-size: 12px;
+  }
+}
+pre.language-js {
+  &:after {
+    content: 'JS';
+  }
+}
+pre.language-css {
+  &:after {
+    content: 'CSS';
+  }
+}
+pre.language-markup {
+  &:after {
+    content: 'HTML';
+  }
+}
+
+pre[class*='language-'] {
+  position: relative;
+  border-radius: 0;
+  overflow: visible;
+
+  code {
+    white-space: pre-wrap;
+  }
+
+  .copy {
+    font-family: $body-font;
+    content: 'copy';
+    padding: 2px 10px 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(-10px, -90%);
+    border-top-left-radius: $radius;
+    border-top-right-radius: $radius;
+    color: $white;
+    background: $background;
+    cursor: pointer;
+    transition: all 250ms ease;
+
+    &:hover {
+      color: darken($white, 25%);
+    }
+  }
+}

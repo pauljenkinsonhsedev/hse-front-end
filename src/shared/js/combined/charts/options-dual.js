@@ -76,42 +76,45 @@ export class ChartOptionsDual extends ChartOptions {
             },
         };
 
-        const yAxis = [{
+        const yAxis = [
+          {
             title: {
-                text: xAxisTitle1,
-                style: {
-                    fontFamily: this.fontFamily,
-                    fontSize: '0.7rem',
-                    fontWeight: 'regular',
-                }
+              text: xAxisTitle1,
+              style: {
+                fontFamily: this.fontFamily,
+                fontSize: '0.7rem',
+                fontWeight: 'regular',
+              },
             },
             labels: {
-                format: '{value} °C',
-                style: {
-                    fontFamily: this.fontFamily,
-                    fontSize: '0.7rem',
-                    fontWeight: 'regular',
-                }
+              format: '{value}',
+              style: {
+                fontFamily: this.fontFamily,
+                fontSize: '0.7rem',
+                fontWeight: 'regular',
+              },
             },
-        }, {
+          },
+          {
             title: {
-                text: xAxisTitle2,
-                style: {
-                    fontFamily: this.fontFamily,
-                    fontSize: '0.7rem',
-                    fontWeight: 'regular',
-                }
+              text: xAxisTitle2,
+              style: {
+                fontFamily: this.fontFamily,
+                fontSize: '0.7rem',
+                fontWeight: 'regular',
+              },
             },
             labels: {
-                format: '{value} mm',
-                style: {
-                    fontFamily: this.fontFamily,
-                    fontSize: '0.7rem',
-                    fontWeight: 'regular',
-                }
+              format: '{value} mm',
+              style: {
+                fontFamily: this.fontFamily,
+                fontSize: '0.7rem',
+                fontWeight: 'regular',
+              },
             },
-            opposite: true
-        }];
+            opposite: true,
+          },
+        ];
 
         const collection = this.collection;
         this.collection = {...collection, xAxis, yAxis, tooltip, series};

@@ -1,20 +1,21 @@
-/* P Jenkinson 06/12/2018 - yes/no user feedback (Responsive) */
 #feedback {
     clear: both;
+    position: relative;
 }
 
 .feedback {
     z-index: 1;
-
     display: block;
-    width: 100%;
+    width: 90%;
+    margin: 20px auto;
     background-color: #FFF;
     border-bottom: 10px solid #981e32;
-
+    @media only screen and (min-width : $desktop) {
+    width: 940px;
+    margin: 0 auto;
+    }
     &.feedback-beta {
-        position: sticky;
         bottom: 0;
-        background-color: $red;
         border: 0;
     }
 
@@ -25,11 +26,13 @@
 
 .feedback-container {
     width: 100%;
-    margin: auto;
-    text-align: center;
+    float: left;
     background-color: $red;
-    padding: 5px 0;
-    text-align: center;
+    padding: 10px;
+    box-sizing: border-box; 
+    button {
+    margin-bottom: 0 !important;
+    }
 
     p {
         color: white;
@@ -39,17 +42,12 @@
     }
 
     /* Large Devices, Wide Screens */
-    @media only screen and (min-width : 1170px) {
-        margin: 0 auto;
-
-        width: 460px;
-        border-top-left-radius: 10px;
-        border-top-right-radius: 10px;
-        padding: 10px 10px 0 10px;
-        border-bottom: 1px solid $red;
-
+    @media only screen and (min-width : $desktop) {
+        padding: 10px;
+        box-sizing: border-box;
+        float: left;
         .feedback-beta & {
-            padding: 5px 0;
+            padding: 10px;
             width: 100%;
             border: 0;
         }
@@ -62,7 +60,6 @@
 
 .feedback-links {
     display: inline-block;
-    text-align: center;
 }
 
 .feedback-links a {
@@ -91,19 +88,17 @@
     color: #014a82;
 }
 
-.feedback-survey {
+.feedback-survey, .report-a-problem-form {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
     position: relative;
-    background-color: #FFF;
+    background-color: $boxgray;
     overflow-y: hidden;
-
+    float: left;
     *{
         box-sizing: border-box;
     }
-
-    transform: translateY(100%);
-    transition: height 600ms ease-in-out, transform 600ms ease-in-out;
-    flex-wrap: wrap;
-    bottom: 0;
     display: none;
 
     &.survey-in {
@@ -118,7 +113,6 @@
 .feedback-survey__inner {
     width: 100%;
     height: 100%;
-    max-width: 460px;
     margin: 0 auto;
     bottom: 0;
     left: 50%;
@@ -128,9 +122,6 @@
     padding: 25px 10px;
     width: 100%;
     min-height: 200px;
-}
-
-.questionaire__title {
 }
 
 .question-caption,
@@ -200,3 +191,69 @@ p.question-hint {
         }
     }
 }
+
+.yes-no-container {
+    margin-bottom: 10px;
+    text-align: center;
+    @media only screen and (min-width : 661px) {
+    margin-bottom: 0;
+    float: left;
+    text-align: left;
+    }
+    @media only screen and (min-width : $desktop) {
+    width: 50%;
+    }
+}
+
+.yes-no-container .feedback-message {
+margin-top: 10px;
+}
+
+.report-a-problem-container {
+    text-align: center;
+    @media only screen and (min-width : 661px) {
+    float: right;
+    }
+    @media only screen and (min-width : $desktop) {
+    width: 50%;
+    }
+}
+
+.report-a-problem-form {
+width: 100%;
+margin: 0 auto;
+display: none;
+}
+
+.report-a-problem-container .btn {
+float: none;
+@media only screen and (min-width : 661px) {
+float: right;
+}
+}
+
+.report-a-problem-form form {
+clear: both;
+}
+
+
+.show {
+display: flex;
+}
+
+.js-hide {
+display: none !important;
+}
+
+#close-report-a-problem {
+
+    @media only screen and (min-width : 661px) {
+
+position: absolute;
+right: 0;
+top: 20px;
+z-index: 1;
+}
+}
+
+

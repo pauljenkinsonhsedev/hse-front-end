@@ -3,7 +3,7 @@
 <head>
 
 <meta charset="utf-8">
-	
+
 
 
 
@@ -16,13 +16,13 @@
 <style>
 #globalSearch {
 display: none;
-}	
+}
 </style>
 
 
 
 <!-- Page title and meta -->
-	
+
 <!-- InstanceBeginEditable name="doctitle" -->
     <title>Charts - HSE.GOV.UK Design System</title>
     <!-- InstanceEndEditable -->
@@ -32,7 +32,7 @@ display: none;
 <link rel="home" href="../../index.htm" />
 
 
-<!-- ie 11 fix for left-hand navigation --> 
+<!-- ie 11 fix for left-hand navigation -->
 <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
 
 
@@ -40,24 +40,24 @@ display: none;
 <body class="components normalFont">
 
 <section id="top" aria-label="Skip to content">  <a href="#contentContainer" class="skip">Skip to content</a>  </section>
- 
+
 <section id="printBanner" aria-label="Print banner"> <img src="../../assets/v4-images/website/print/print-logo.jpg" width="193" height="65" alt="Health and Safety Executive" id="printLogo"/> </section>
 <header id="headerContainer">
   <div id="header">
     <div class="headerTop header js-header">
-		 
+
 		<div id="headerLogo" class="headerLogo"><a href="../../index.htm">Health and Safety<br />
         Executive</a></div>
-		
-		 
-		
+
+
+
       <div id="globalSearch" class="desktop-gcs-search">
         <gcse:searchbox-only></gcse:searchbox-only>
       </div>
     </div>
-    
+
     <!-- JS Main Navigation -->
-    
+
     <div class="menuContainer">
       <nav id="main-menu"  class="menu js-menu">
         <ul>
@@ -71,7 +71,7 @@ display: none;
     </div>
   </div>
    </header>
-   
+
 <nav id="breadCrumb" aria-label="Previous pages:">
   <div class="breadCrumbContainer"> <!-- InstanceBeginEditable name="Breadcrumbs" -->
         <ol>
@@ -91,15 +91,15 @@ display: none;
     <p class="backto"><a id="backnav" href="index.htm">Back to</a></p>
   </div>
 </nav>
- 
+
 <div id="pageContainer" class="v5" xmlns:argot="http://purl.oclc.org/argot/" xmlns:dc="http://purl.org/dc/terms/" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:v="http://www.w3.org/2006/vcard/ns#" xmlns:dbp="http://dbpedia.org/resource/">
 <!-- InstanceBeginEditable name="beta-survey" -->
 
-      <!-- InstanceEndEditable -->   
+      <!-- InstanceEndEditable -->
 
-<!-- Beta content page --> 
+<!-- Beta content page -->
 
-  
+
 <nav id="navSecondary" aria-label="Secondary"> <!-- InstanceBeginEditable name="Subnav" --><!-- #BeginLibraryItem "/Library/_v5-components.lbi" --><div id="menu" class="slinky-menu slinky-theme-default">
 <ul>
     <li class="first"><a href="../index.htm">Components</a></li>
@@ -109,7 +109,7 @@ display: none;
 		<ul>
 			<li><a href="index.htm">Overview</a></li>
 			<li><a href="data-attributes.htm">Data attributes</a></li>
-			<li><a href="pie-chart.htm">Pie chart</a></li>
+		    <li><a href="pie-chart.htm">Pie chart</a></li>
 			<li><a href="donut-chart.htm">Donut chart</a></li>
 			<li><a href="line-chart.htm">Line chart</a></li>
 			<li><a href="bar-chart.htm">Bar chart</a></li>
@@ -162,8 +162,8 @@ display: none;
 </div><!-- #EndLibraryItem --><!-- InstanceEndEditable --> </nav>
 
 <main id="contentContainer" class="columnbetacontentpage column2">
- 
-	
+
+
 <!-- InstanceBeginEditable name="content" -->
         <h1>Column chart</h1>
 
@@ -234,13 +234,80 @@ display: none;
             </table>
           </figure>
         </div>
+<pre class="language-markup"><code>&lt;div class=&quot;chart&quot;
+  data-chart-type=&quot;column&quot; data-chart-units=&quot;unit&quot;
+  data-chart-title=&quot;Average Monthly Temperature and Rainfall in London (GREENWICH/MARITIME M)&quot;
+  data-chart-subtitle=&quot;Source: WorldClimate.com&quot;&gt;
+  &lt;div class=&quot;displayChart&quot;&gt;&lt;/div&gt;
+  &lt;figure class=&quot;datacontent&quot;&gt;
+    &lt;table class=&quot;tabledata&quot; summary=&quot;Table representation of chart.&quot; data-yaxis-text=&quot;Rainfall (mm)&quot; data-value-suffix=&quot;mm&quot;&gt;
+      &lt;caption&gt;Average Monthly Temperature and Rainfall in London (GREENWICH/MARITIME M)&lt;/caption&gt;
+      &lt;thead class=&quot;table__head&quot;&gt;
+        &lt;tr class=&quot;table__row&quot;&gt;
+          &lt;th class=&quot;heading table__cell&quot; scope=&quot;col&quot;&gt;Month&lt;/th&gt;
+          &lt;th class=&quot;heading table__cell&quot; scope=&quot;col&quot;&gt;Rainfall&lt;/th&gt;
+        &lt;/tr&gt;
+      &lt;/thead&gt;
+      &lt;tbody class=&quot;table__body&quot;&gt;
+        &lt;tr class=&quot;table__row&quot;&gt;
+          &lt;th class=&quot;table__cell category&quot; scope=&quot;row&quot;&gt;Jan&lt;/th&gt;
+          &lt;td class=&quot;table__cell unit&quot;&gt;48.9&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr class=&quot;table__row&quot;&gt;
+          &lt;th class=&quot;table__cell category&quot; scope=&quot;row&quot;&gt;Feb&lt;/th&gt;
+          &lt;td class=&quot;table__cell unit&quot;&gt;38.8&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr class=&quot;table__row&quot;&gt;
+          &lt;th class=&quot;table__cell category&quot; scope=&quot;row&quot;&gt;Mar&lt;/th&gt;
+          &lt;td class=&quot;table__cell unit&quot;&gt;39.3&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr class=&quot;table__row&quot;&gt;
+          &lt;th class=&quot;table__cell category&quot; scope=&quot;row&quot;&gt;Apr&lt;/th&gt;
+          &lt;td class=&quot;table__cell unit&quot;&gt;41.4&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr class=&quot;table__row&quot;&gt;
+          &lt;th class=&quot;table__cell category&quot; scope=&quot;row&quot;&gt;May&lt;/th&gt;
+          &lt;td class=&quot;table__cell unit&quot;&gt;47.0&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr class=&quot;table__row&quot;&gt;
+          &lt;th class=&quot;table__cell category&quot; scope=&quot;row&quot;&gt;Jun&lt;/th&gt;
+          &lt;td class=&quot;table__cell unit&quot;&gt;48.3&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr class=&quot;table__row&quot;&gt;
+          &lt;th class=&quot;table__cell category&quot; scope=&quot;row&quot;&gt;Jul&lt;/th&gt;
+          &lt;td class=&quot;table__cell unit&quot;&gt;59.0&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr class=&quot;table__row&quot;&gt;
+          &lt;th class=&quot;table__cell category&quot; scope=&quot;row&quot;&gt;Aug&lt;/th&gt;
+          &lt;td class=&quot;table__cell unit&quot;&gt;59.6&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr class=&quot;table__row&quot;&gt;
+          &lt;th class=&quot;table__cell category&quot; scope=&quot;row&quot;&gt;Sep&lt;/th&gt;
+          &lt;td class=&quot;table__cell unit&quot;&gt;52.4&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr class=&quot;table__row&quot;&gt;
+          &lt;th class=&quot;table__cell category&quot; scope=&quot;row&quot;&gt;Oct&lt;/th&gt;
+          &lt;td class=&quot;table__cell unit&quot;&gt;65.2&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr class=&quot;table__row&quot;&gt;
+          &lt;th class=&quot;table__cell category&quot; scope=&quot;row&quot;&gt;Nov&lt;/th&gt;
+          &lt;td class=&quot;table__cell unit&quot;&gt;59.3&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr class=&quot;table__row&quot;&gt;
+          &lt;th class=&quot;table__cell category&quot; scope=&quot;row&quot;&gt;Dec&lt;/th&gt;
+          &lt;td class=&quot;table__cell unit&quot;&gt;51.2&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;</code></pre>
         <!-- /#secondTab -->
 
         <!-- InstanceEndEditable -->
-	
- 
 
-<!-- Beta two column (top task) --> 
+
+
+<!-- Beta two column (top task) -->
 
    </main>
 
@@ -251,7 +318,7 @@ display: none;
     <div id="footer">
       <h2 class="visually-hidden">Footer links</h2>
       <div class="footer-links-container">
-       
+
       </div>
     </div>
     <div id="baseStrip">
@@ -265,12 +332,12 @@ display: none;
 <!-- InstanceBeginEditable name="updated" -->Updated:<!-- #BeginDate format:IS1 -->2021-03-25<!-- #EndDate --><!-- InstanceEndEditable -->
 </section>
 <script src="../../assets/v5-js/v5-main.min.js"></script>
-<script src="../../assets/v5-js/jquery.min.js"></script> 
-<script src="../../assets/v5-js/v5-footer.min.js"></script> 
+<script src="../../assets/v5-js/jquery.min.js"></script>
+<script src="../../assets/v5-js/v5-footer.min.js"></script>
 
-	
- 
-<script src="../../assets/v5-js/v5-footer-slinky-js.min.js"></script> 
+
+
+<script src="../../assets/v5-js/v5-footer-slinky-js.min.js"></script>
 
 
 
@@ -279,9 +346,9 @@ display: none;
 <div id="gutter"><!-- InstanceBeginEditable name="gutter" -->
       <!-- InstanceEndEditable --></div>
 
-<!-- SiteImprove JS --> 
+<!-- SiteImprove JS -->
 <script type="text/javascript">
-	
+
 // removes cellspacing & cellpadding attributes from GCS (Assesibility fix)
 window.onload = function(){
 
@@ -299,20 +366,20 @@ searchTable.removeAttribute('cellspacing');
 searchTable2.removeAttribute('cellspacing');
 searchTable3.removeAttribute('cellspacing');
 searchInput.removeAttribute('cellspacing');
-};	
-</script> 
-	
-<!-- InstanceParam name="bodyClass" type="text" value="components" --> 
-<!-- InstanceParam name="layout" type="text" value="betacontentpage" --> 
-<!-- InstanceParam name="columnLayout" type="number" value="2" --> 
-<!-- InstanceParam name="platform" type="text" value="v5" --> 
-<!-- InstanceParam name="rdfa" type="boolean" value="false" --> 
-<!-- InstanceParam name="welsh" type="boolean" value="false" --> 
-<!-- InstanceParam name="homepage" type="boolean" value="true" --> 
-<!-- InstanceParam name="weblite" type="boolean" value="false" --> 
-<!-- InstanceParam name="feedback" type="boolean" value="true" --> 
-<!-- InstanceParam name="contentType" type="text" value="default" --> 
-<!-- InstanceParam name="notificationBar" type="boolean" value="false" --> 
+};
+</script>
+
+<!-- InstanceParam name="bodyClass" type="text" value="components" -->
+<!-- InstanceParam name="layout" type="text" value="betacontentpage" -->
+<!-- InstanceParam name="columnLayout" type="number" value="2" -->
+<!-- InstanceParam name="platform" type="text" value="v5" -->
+<!-- InstanceParam name="rdfa" type="boolean" value="false" -->
+<!-- InstanceParam name="welsh" type="boolean" value="false" -->
+<!-- InstanceParam name="homepage" type="boolean" value="true" -->
+<!-- InstanceParam name="weblite" type="boolean" value="false" -->
+<!-- InstanceParam name="feedback" type="boolean" value="true" -->
+<!-- InstanceParam name="contentType" type="text" value="default" -->
+<!-- InstanceParam name="notificationBar" type="boolean" value="false" -->
 <!-- InstanceParam name="printGuide" type="boolean" value="false" -->
 </body>
 <!-- InstanceEnd --></html>

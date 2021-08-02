@@ -18,6 +18,8 @@ import { topTasks } from './combined/top-tasks.js';
 import { equalHeights } from './combined/equal-heights.js';
 import { drawMenu } from './combined/draw-menu.js';
 import { banner } from './combined/banner.js';
+import { informationBanner } from './combined/information-banner.js';
+import { codeHighlighter } from './combined/code-highlighter.js';
 
 // Window load
 window.addEventListener('DOMContentLoaded',() => {
@@ -39,6 +41,9 @@ window.addEventListener('DOMContentLoaded',() => {
   const secondaryMenu = document.getElementById('menu');
 
   drawMenu(secondaryMenu);
+  informationBanner();
+
+  codeHighlighter();
 
   // aria labels
   ariaLabels();
