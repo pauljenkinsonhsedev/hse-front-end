@@ -37,8 +37,6 @@ export function feedbackSurvey() {
     const surveyHandle = [userYes, userNo];
     const ReportProblemHandle = [userReportProblem];
 
-
-
     scrollPos();
 
     // open survey
@@ -66,7 +64,7 @@ export function feedbackSurvey() {
         userNo.remove();
         userReportProblem.remove();
         message.innerHTML = `Thank you for your feedback.`;
-        
+        message.classList.add('feedback-message-active');
     }
 
     
@@ -97,7 +95,7 @@ export function feedbackSurvey() {
             reportProblemClose.classList.add('js-hide');
             reportProblemButtonContainer.classList.remove('js-hide');
             yesNoContainer.classList.remove('js-hide');
-            const hiddenURL = document.querySelector('#organization-title');
+            const hiddenURL = document.querySelector('#url');
             const hiddenURLLabel = document.querySelector('#url-label');
 
             hiddenURL.remove();
