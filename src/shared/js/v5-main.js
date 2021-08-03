@@ -33,9 +33,6 @@ window.addEventListener('DOMContentLoaded',() => {
     loadPicturefillFn();
   }
 
-  // Globa banner
-  banner();
-
   // Draw menus
   const secondaryMenu = document.getElementById('menu');
   if (secondaryMenu) {
