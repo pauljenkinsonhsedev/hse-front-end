@@ -38,8 +38,10 @@ window.addEventListener('DOMContentLoaded',() => {
 
   // Draw menus
   const secondaryMenu = document.getElementById('menu');
+  if (secondaryMenu) {
+    drawMenu(secondaryMenu);
+  }
 
-  drawMenu(secondaryMenu);
   informationBanner();
 
   codeHighlighter();
