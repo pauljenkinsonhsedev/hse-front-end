@@ -21,16 +21,23 @@ export function drawMenu(container) {
   // create draws
   const nestedChildren = container.querySelectorAll('ul:not(:first-child)');
 
-  [...nestedChildren].forEach((item, index) => {
+  // [...nestedChildren].forEach((item, index) => {
+    // const draw = document.createElement('div');
+    // draw.classList.add('draw');
+    // draw.appendChild(header.cloneNode(true));
+    // draw.appendChild(item.cloneNode(true));
+    // item.replaceWith(draw);
+    // // item.insertAdjacentElement('beforeend', draw);
+
+    // const drawAction = draw.previousElementSibling;
+    // drawAction.classList.add('next');
+  // });
+  [...nestedChildren].reverse().map((item) => {
     const draw = document.createElement('div');
     draw.classList.add('draw');
     draw.appendChild(header.cloneNode(true));
     draw.appendChild(item.cloneNode(true));
-
-    if (index < nestedChildren.length) {
-      draw.setAttribute('data-depth', index);
-    }
-
+    console.log(draw);
     item.replaceWith(draw);
     // item.insertAdjacentElement('beforeend', draw);
 
@@ -38,28 +45,23 @@ export function drawMenu(container) {
     drawAction.classList.add('next');
   });
 
-  // for (let i = 0; i < nestedChildren.length; ++i) {
 
-  //   let item = nestedChildren[i];
 
-  //   const draw = document.createElement('div');
-  //   draw.classList.add('draw');
-  //   draw.appendChild(header.cloneNode(true));
-  //   draw.appendChild(item.cloneNode(true));
+  const getDepths = () => {
+    const el = document.querySelectorAll('body *');
+    const depths = new Map();
+    depths.set(document.body, -1);
 
-  //   if (i < nestedChildren.length) {
-  //     draw.setAttribute('data-depth', i);
-  //   }
+    el.forEach((e) => {
+      const p = e;
+      const d = depths.get(p);
+      console.log(p);
+      depths.set(e, d + 1);
+    });
+    return depths;
+  };
 
-  //   item.replaceWith(draw);
-
-  //   console.log('item', i);
-  //   console.log(item);
-  //   console.log(draw);
-
-  //   const drawAction = draw.previousElementSibling;
-  //   drawAction.classList.add('next');
-  // }
+  console.log(getDepths());
 
   // back navigation event
   document.querySelector('body').addEventListener('click', (e) => {
@@ -74,29 +76,24 @@ export function drawMenu(container) {
   // add click event
   const next = document.querySelectorAll('.next');
   next.forEach((item) => {
-    console.log(item);
     item.addEventListener('click', clickHandler);
   });
 
   function clickHandler(e) {
     e.preventDefault();
-    console.log(e);
-    const depth = e.target.nextElementSibling.getAttribute('data-depth');
-    console.log('depth', depth);
-    wrapper.style.left = '-100%';
+    const draw = e.target.parentNode.querySelector('.draw');
+    const depth = draw.getAttribute('data-depth');
+    wrapper.style.left = `-${depth}00%`;
     container.classList.add('open');
 
     const anchors = container.querySelectorAll('.draw-wrapper .next');
 
     for (let n = 0; n < anchors.length; ++n) {
       if (anchors[n] !== this) {
-        // console.log('ch anchors', anchors[n].textContent);
         anchors[n].nextElementSibling.style.display = 'none';
         anchors[n].classList.remove('active');
       }
     }
-
-    console.log('target', e.target.nextElementSibling);
 
     e.target.nextElementSibling.style.display = 'block';
     this.classList.add('active');
