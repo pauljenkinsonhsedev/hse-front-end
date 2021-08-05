@@ -21,47 +21,35 @@ export function drawMenu(container) {
   // create draws
   const nestedChildren = container.querySelectorAll('ul:not(:first-child)');
 
-  // [...nestedChildren].forEach((item, index) => {
-    // const draw = document.createElement('div');
-    // draw.classList.add('draw');
-    // draw.appendChild(header.cloneNode(true));
-    // draw.appendChild(item.cloneNode(true));
-    // item.replaceWith(draw);
-    // // item.insertAdjacentElement('beforeend', draw);
-
-    // const drawAction = draw.previousElementSibling;
-    // drawAction.classList.add('next');
-  // });
-  [...nestedChildren].reverse().map((item) => {
+  [...nestedChildren].reverse().forEach((item) => {
     const draw = document.createElement('div');
     draw.classList.add('draw');
     draw.appendChild(header.cloneNode(true));
     draw.appendChild(item.cloneNode(true));
-    console.log(draw);
     item.replaceWith(draw);
-    // item.insertAdjacentElement('beforeend', draw);
 
     const drawAction = draw.previousElementSibling;
     drawAction.classList.add('next');
   });
 
+  function element_list(list, depth) {
+    const contains = (parent, child) => {
+      return parent !== child && parent.contains(child);
+    };
+    const parent = container.querySelector('li');
+    Array.from(list).forEach((child) => {
+      console.log(`${parent.className} is parent of ${child.className}`);
 
-
-  const getDepths = () => {
-    const el = document.querySelectorAll('body *');
-    const depths = new Map();
-    depths.set(document.body, -1);
-
-    el.forEach((e) => {
-      const p = e;
-      const d = depths.get(p);
-      console.log(p);
-      depths.set(e, d + 1);
+      if (contains(parent, child)) {
+        console.log(`${parent} is a parent`);
+        // depth = depth + 1;
+        // child.setAttribute('data-depth', depth);
+      }
+      // console.log(item, depth);
     });
-    return depths;
-  };
-
-  console.log(getDepths());
+  }
+  const list = container.querySelectorAll('.draw');
+  element_list(list, 0);
 
   // back navigation event
   document.querySelector('body').addEventListener('click', (e) => {
