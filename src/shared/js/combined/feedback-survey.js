@@ -80,24 +80,25 @@ export function feedbackSurvey() {
         reportProblemButtonContainer.classList.add('js-hide');
         yesNoContainer.classList.add('js-hide');
 
-        reportProblemClose.addEventListener('click', (e) => {
-            e.stopPropagation();
-            e.preventDefault();
-            closeProblemForm();
-        }, false)
-
-        function closeProblemForm() {
-            reportProblemForm.classList.remove('survey-in');
-            reportProblemClose.classList.add('js-hide');
-            reportProblemButtonContainer.classList.remove('js-hide');
-            yesNoContainer.classList.remove('js-hide');
-            reportProblemForm.parentNode.removeChild(reportProblemForm);
-            feedback.innerHTML += '<div class="report-a-problem-form"></div>';
-
-        }
-        
+       
 
     }
+
+    reportProblemClose.addEventListener('click', (e) => {
+        e.stopPropagation();
+        e.preventDefault();
+        closeProblemForm();
+    }, false)
+
+    function closeProblemForm() {
+        reportProblemForm.classList.remove('survey-in');
+        reportProblemClose.classList.add('js-hide');
+        reportProblemButtonContainer.classList.remove('js-hide');
+        yesNoContainer.classList.remove('js-hide');
+        feedback.removeChild(reportProblemForm);
+
+    }
+    
     
 
     function closeSurvey() {
