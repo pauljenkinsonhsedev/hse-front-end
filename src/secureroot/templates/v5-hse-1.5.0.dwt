@@ -365,11 +365,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
       <button class="btn btn-secondary" id="report-problem-button">Report a problem with this page</button>
     </div>
   </div>
-  <button type="button" class="btn js-hide" id="close-report-a-problem">Close</button>
-  <div class="report-a-problem-form">
-
-  
-  </div>
+  <div class="report-a-problem-form"></div>
 
 <!-- TemplateBeginMultipleIf -->
 <!-- TemplateBeginIfClause cond="survey == true" -->
