@@ -27,8 +27,8 @@ export function feedbackSurvey() {
     const userReportProblem = document.querySelector('#report-problem-button');
     const reportProblemForm = document.querySelector('.report-a-problem-form');
     const reportProblemClose = document.querySelector('#close-report-a-problem');
-    const submitForm = document.querySelector('#user-url');
-    const formSettings = document.querySelector('#form-settings');
+    const feedback = document.querySelector('.feedback'); 
+
 
     // User yes/no
     const userYes = document.querySelector('#userYes');
@@ -70,19 +70,15 @@ export function feedbackSurvey() {
     
 
     function reportProblem() {
+
+        const newURL = window.location.protocol + "//" + window.location.host + window.location.pathname + window.location.search;
+
+        reportProblemForm.innerHTML += '<form id="report-problem-form-html" action="https://resources.hse.gov.uk/responseform.asp" method="post" autocomplete="on"><fieldset class="fieldset" id="form-settings"><input type="hidden" name="mailto" value="hse.online@hse.gov.uk"/><input type="hidden" name="mailfrom" value="hse.online@hsemail.me"/></fieldset><fieldset class="fieldset"><legend class="fieldset__legend"><h2 class="fieldset__heading">Help us improve HSE.GOV.UK</h2></legend><p>Don’t include personal or financial information like your National Insurance number or credit card details.</p><div class="form-group"><label class="label" for="what-were-you-doing?">What were you doing?</label><input required class="input input-text input-width-full" name="what-were-you-doing?" type="text" id="what-were-you-doing?"/></div><div class="form-group"><label class="label" for="what-went-wrong?">What went wrong?</label><input required class="input input-text input-width-full" id="what-went-wrong?" name="what-went-wrong?" type="text"></div></fieldset><div class="form-group js-hide" id="user-url"> </div><fieldset><label id="url-label" class="label" for="url">Hidden</label><input name="url" type="hidden" id="url" size="100" class="input input-text" value="' + newURL + '"><input type="hidden" name="mailredirect" value="' + newURL + '"><input type="hidden" name="mailsubject" value="Report a problem with this page: ' + newURL + '"><input type="submit" value="Submit" class="btn btn-primary"/></fieldset></form>';        
+        reportProblemClose.classList.remove('js-hide');
         reportProblemForm.classList.add('survey-in');
         reportProblemClose.classList.remove('js-hide');
         reportProblemButtonContainer.classList.add('js-hide');
         yesNoContainer.classList.add('js-hide');
-
-
-
-        const newURL = window.location.protocol + "//" + window.location.host + window.location.pathname + window.location.search;
-        submitForm.innerHTML += '<label id="url-label" class="label" for="url">Hidden</label><input name="url" type="hidden" id="url" size="100" class="input input-text" value="' + newURL + '">';
-        formSettings.innerHTML += '<input type="hidden" name="mailredirect" value="' + newURL + '">';
-        formSettings.innerHTML += '<input type="hidden" name="mailsubject" value="Report a problem with this page: ' + newURL + '">';
-
-        console.log(newURL);
 
         reportProblemClose.addEventListener('click', (e) => {
             e.stopPropagation();
@@ -95,13 +91,9 @@ export function feedbackSurvey() {
             reportProblemClose.classList.add('js-hide');
             reportProblemButtonContainer.classList.remove('js-hide');
             yesNoContainer.classList.remove('js-hide');
-            const hiddenURL = document.querySelector('#url');
-            const hiddenURLLabel = document.querySelector('#url-label');
+            reportProblemForm.parentNode.removeChild(reportProblemForm);
+            feedback.innerHTML += '<div class="report-a-problem-form"></div>';
 
-            hiddenURL.remove();
-            hiddenURLLabel.remove();
-
-            console.log('clicked');
         }
         
 
