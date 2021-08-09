@@ -378,15 +378,15 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
       <fieldset class="fieldset">
         <legend class="fieldset__legend">
         <h2 class="fieldset__heading">Help us improve HSE.GOV.UK</h2>
-        <p>Don’t include personal or financial information like your National Insurance number or credit card details.</p>
         </legend>
+		<p>Don’t include personal or financial information like your National Insurance number or credit card details.</p>
         <div class="form-group">
           <label class="label" for="what-were-you-doing?">What were you doing?</label>
-          <input class="input input-text input-width-full required" name="what-were-you-doing?" type="text" id="what-were-you-doing?"/>
+          <input required class="input input-text input-width-full" name="what-were-you-doing?" type="text" id="what-were-you-doing?"/>
         </div>
         <div class="form-group">
           <label class="label" for="what-went-wrong?">What went wrong?</label>
-          <input class="input input-text input-width-full required" id="what-went-wrong?" name="what-went-wrong?" type="text">
+          <input required class="input input-text input-width-full" id="what-went-wrong?" name="what-went-wrong?" type="text">
         </div>
       </fieldset>
       <div class="form-group js-hide" id="user-url"> </div>
