@@ -80,11 +80,12 @@ display: none;
 		<ol>
 			<li class="home"><a href="../../index.htm">Design System</a></li>
 			<li><a href="../index.htm">Framework</a></li>
-			<li>Accessibility</li>
+			<li><a href="workflow.htm">Workflow</a></li>
+			<li>Git-flow</li>
 		</ol>
 		<!-- InstanceEndEditable --> </div>
   <div id="backTo">
-    <p class="backto"><a id="backnav" href="../index.htm">Back to</a></p>
+    <p class="backto"><a id="backnav" href="../process/index.htm">Back to</a></p>
   </div>
 </nav>
 
@@ -100,12 +101,25 @@ display: none;
 <nav id="navSecondary" aria-label="Secondary"> <!-- InstanceBeginEditable name="Subnav" --><!-- #BeginLibraryItem "/Library/_v5-framework.lbi" --><div id="menu" class="slinky-menu slinky-theme-default">
   <ul>
     <li class="first"><a href="../index.htm">Framework</a></li>
+	  <li><a href="#">Workflow</a>
+		  <ul>
+			  <li><a href="workflow.htm">Workflow</a></li>
+			  <li><a href="gitflow.htm">Git-flow</a>
+			  <ul>
+				  <li><a href="gitflow-features.htm">Feature branches</a></li>
+				  <li><a href="gitflow-releases.htm">Release branches</a></li>
+				  <li><a href="gitflow-hotfixes.htm">Hotfixes</a></li>
+				</ul>
+			  </li>
+			  <li><a href="client-tools.htm">Git-client management tools</a></li>
+		  </ul>
+	  </li>
     <li><a href="#">Template</a>
       <ul>
-        <li><a href="template.htm">Applying template</a></li>
-        <li><a href="regions.htm">Editable regions</a></li>
-        <li><a href="param.htm">Parameters</a></li>
-        <li><a href="accessibility.htm">Accessibility</a></li>
+        <li><a href="../template/template.htm">Applying template</a></li>
+        <li><a href="../template/regions.htm">Editable regions</a></li>
+        <li><a href="../template/param.htm">Parameters</a></li>
+        <li><a href="../template/accessibility.htm">Accessibility</a></li>
         <li><a href="#">Components</a>
           <ul>
             <li><a href="../components/index.htm">Overview</a></li>
@@ -143,57 +157,14 @@ display: none;
 
 <!-- InstanceBeginEditable name="content" -->
 
-  <h1>Gitflow</h1>
-  <h2>Overview</h2>
-  <p>Gitflow is an extension of Git which acts as a way of simplifying development and release management.</p>
-  <p>There are only two branches <strong>'master'</strong> and <strong>'develop'</strong>. The <strong>master</strong> branch serves as our <strong>production</strong> branch and <strong>develop</strong> as our development branch.</p>
-  <p>The purpose of this process is to create features which will be integrated into the <strong>'develop'</strong> branch. Once the work is ready to be released into production a <strong>release branch</strong> is started which will then be integrated into the <strong>master branch</strong>.</p>
-  <p>For any bugs or issues that may arise post production <strong>hotfixes</strong> can be applied.</p>
-
-  <h3>The process in depth</h3>
-  <ul>
-    <li><a href="#feature-branches">Feature branches</a></li>
-    <li><a href="#releases">Releases</a></li>
-    <li><a href="#hotfixes">Hotfixes</a></li>
-  </ul>
-
-  <h2 id="feature-branches">Feature branches</h2>
-  <h3>Summary</h3>
-  <p><strong>Features</strong> derive from <strong>develop</strong> branch. A <strong>feature branch</strong> is a place to work on any new features of the site. For example if you were building an 'accordion' component. By default you should always base your <strong>feature branch</strong> on <strong>develop branch</strong>.</p>
-  <p></p>
-  <h3>Command line</h3>
-  <ul>
-    <li><code>git flow feature start NAMEOFFEATURE</code></li>
-    <li><code>git commit -a &quot;my changes&quot;</code> (commit changes as normal)</li>
-    <li><code>git flow feature publish NAMEOFFEATURE</code> <br>(only if you want your feature to exist in the repo so other developers can look at or contribute.)</li>
-    <li><code>git flow feature finish NAMEOFFEATURE</code></li>
-  </ul>
-  <h2 id="releases">Releases</h2>
-  <h3>Summary</h3>
-  <p>A <strong>release branch</strong> derives from the <strong>develop branch</strong>. Initiate a release once you are happy that <strong>develop branch</strong> is production ready.</p>
-  <p>Naming the release should follow the pattern of x.x.x and each release should be incremented. Tagging the release will ensure that merges can be quickly identified and rolled back in the unlikely event a release must be reverted.</p>
-  <p></p>
-  <h3>Command line</h3>
-  <ul>
-    <li><code>git flow release start 1.1.0</code></li>
-    <li><code>git flow release publish 1.1.0</code> <br>(only if you want your release to exist in the repo so other developers can look at or contribute.)</li>
-    <li><code>git flow release finish 1.1.0</code></li>
-  </ul>
-  <h2 id="hotfixes">Hotfixes</h2>
-  <h3>Summary</h3>
+  <h1>Git-flow hotfixes</h1>
+  <h2>Summary</h2>
   <p><strong>Hotfixes</strong> derive from the main branch and is used to fix a bug in the production branch that was identified after a release.</p>
   <h3>Command line</h3>
   <ul>
     <li><code>git flow hotfix start 1.1.1</code></li>
     <li><code>git flow hotfix finish 1.1.1</code></li>
   </ul>
-
-
-<div class="box">
-  <h2>Git client management tools</h2>
-  <p>Although recommended to understand how Gitflow works in the command line, you can use a Git Client which has Gitflow integrated.</p>
-  <p class="more"><a href="tools.htm">Gitflow tools</a></p>
-</div>
 <!-- InstanceEndEditable -->
 
 
@@ -221,7 +192,7 @@ display: none;
 </nav>
 <section id="lastUpdated" aria-label="Last updated">
 <!-- InstanceBeginEditable name="updated" --> Updated:
-	<!-- #BeginDate format:IS1 -->2021-05-12<!-- #EndDate -->
+	<!-- #BeginDate format:IS1 -->2021-08-09<!-- #EndDate -->
 	<!-- InstanceEndEditable -->
 </section>
 <script src="../../assets/v5-js/v5-main.min.js"></script>
