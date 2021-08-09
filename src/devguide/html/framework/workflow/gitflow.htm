@@ -167,42 +167,10 @@ display: none;
 
   <h3>The process in depth</h3>
   <ul>
-    <li><a href="#feature-branches">Feature branches</a></li>
-    <li><a href="#releases">Releases</a></li>
-    <li><a href="#hotfixes">Hotfixes</a></li>
+    <li><a href="gitflow-features.htm">Feature branches</a></li>
+    <li><a href="gitflow-releases.htm">Releases</a></li>
+    <li><a href="gitflow-hotfixes.htm">Hotfixes</a></li>
   </ul>
-
-  <h2 id="feature-branches">Feature branches</h2>
-  <h3>Summary</h3>
-  <p><strong>Features</strong> derive from <strong>develop</strong> branch. A <strong>feature branch</strong> is a place to work on any new features of the site. For example if you were building an 'accordion' component. By default you should always base your <strong>feature branch</strong> on <strong>develop branch</strong>.</p>
-  <p></p>
-  <h3>Command line</h3>
-  <ul>
-    <li><code>git flow feature start NAMEOFFEATURE</code></li>
-    <li><code>git commit -a &quot;my changes&quot;</code> (commit changes as normal)</li>
-    <li><code>git flow feature publish NAMEOFFEATURE</code> <br>(only if you want your feature to exist in the repo so other developers can look at or contribute.)</li>
-    <li><code>git flow feature finish NAMEOFFEATURE</code></li>
-  </ul>
-  <h2 id="releases">Releases</h2>
-  <h3>Summary</h3>
-  <p>A <strong>release branch</strong> derives from the <strong>develop branch</strong>. Initiate a release once you are happy that <strong>develop branch</strong> is production ready.</p>
-  <p>Naming the release should follow the pattern of x.x.x and each release should be incremented. Tagging the release will ensure that merges can be quickly identified and rolled back in the unlikely event a release must be reverted.</p>
-  <p></p>
-  <h3>Command line</h3>
-  <ul>
-    <li><code>git flow release start 1.1.0</code></li>
-    <li><code>git flow release publish 1.1.0</code> <br>(only if you want your release to exist in the repo so other developers can look at or contribute.)</li>
-    <li><code>git flow release finish 1.1.0</code></li>
-  </ul>
-  <h2 id="hotfixes">Hotfixes</h2>
-  <h3>Summary</h3>
-  <p><strong>Hotfixes</strong> derive from the main branch and is used to fix a bug in the production branch that was identified after a release.</p>
-  <h3>Command line</h3>
-  <ul>
-    <li><code>git flow hotfix start 1.1.1</code></li>
-    <li><code>git flow hotfix finish 1.1.1</code></li>
-  </ul>
-
 
 <div class="box">
   <h2>Git client management tools</h2>
