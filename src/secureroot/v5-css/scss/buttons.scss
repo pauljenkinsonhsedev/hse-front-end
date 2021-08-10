@@ -68,8 +68,14 @@ a {
         margin-bottom: 20px;
 
         &:hover {
-            background-color: lighten($yes, 10%);
-        }
+            background-color: $focus;
+            color: $black;        }
+
+        &:focus {
+            background-color: $focus;
+            color: $black;
+            outline: none;
+         }
 
         &:disabled {
             background-color: rgba($yes, .5);
@@ -84,7 +90,9 @@ a {
         margin-bottom: 20px;
 
         &:hover {
-            background-color: lighten($darkred, 20%);
+            background-color: $focus;
+            border: 1px solid $focus; 
+            color: $black;
         }
 
         &:disabled {
@@ -114,7 +122,8 @@ a {
         background-color: $focus;
         color: #333;
         &:hover {
-            background-color: lighten($focus, 10%);
+            background-color: $red;
+            color: white;
         }
         &:disabled {
             background-color: rgba($focus, .5);
