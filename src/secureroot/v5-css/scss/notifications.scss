@@ -133,8 +133,10 @@ color: $focus;
 text-decoration: underline;
 }
 
-.notification-banner.global p a:hover {
+.notification-banner.global p a:hover, .notification-banner.global p a:focus {
 text-decoration: none;
+background: $focus;
+color: $black;
 }
 
 .notification-banner button {

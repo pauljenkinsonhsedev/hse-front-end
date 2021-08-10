@@ -16,3 +16,19 @@ a {
         color: $redhover;
     }
 }
+
+
+p a, li a {
+
+    &:hover, &:focus {
+    text-decoration: none !important;
+    color: $black; 
+    background: $focus;   
+    }
+}
+
+.footer-links-container a, .guidance-languages a {
+color: white;
+}
+
+
