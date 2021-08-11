@@ -27,8 +27,7 @@ display: none;
 <title>Design System</title>
 <meta name="Description" content="HSE's job is to protect people against risks to health or safety arising out of work activities. Provides advice, guidance, regulations and inspections." />
 <meta name="Keywords" content="HSE, health and safety executive,  occupational ill-health, occupational health and safety, accident, safety, employee safety, health and safety at work act, law" />
-
-
+<!-- Custom CSS -->
 <!-- InstanceEndEditable -->
 <meta name="HSE.contentType" content="default" />
 <link rel="shortcut icon" href="../../favicon.ico" />
@@ -81,7 +80,8 @@ display: none;
 		<ol>
 			<li class="home"><a href="../../index.htm">Design System</a></li>
 			<li><a href="../index.htm">Framework</a></li>
-			<li>Components</li>
+			<li><a href="workflow.htm">Workflow</a></li>
+			<li>Git-flow releases</li>
 		</ol>
 		<!-- InstanceEndEditable --> </div>
   <div id="backTo">
@@ -90,7 +90,7 @@ display: none;
 </nav>
  
 <div id="pageContainer" class="v5" xmlns:argot="http://purl.oclc.org/argot/" xmlns:dc="http://purl.org/dc/terms/" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:v="http://www.w3.org/2006/vcard/ns#" xmlns:dbp="http://dbpedia.org/resource/">
-<!-- InstanceBeginEditable name="beta-survey" --> 
+<!-- InstanceBeginEditable name="beta-survey" -->
 
 
 <!-- InstanceEndEditable -->   
@@ -98,105 +98,78 @@ display: none;
 <!-- Beta content page --> 
 
   
-<nav id="navSecondary" aria-label="Secondary"> <!-- InstanceBeginEditable name="Subnav" --><!-- #BeginLibraryItem "/Library/_v5-framework.lbi" --><div id="menu" class="slinky-menu slinky-theme-default">
-  <ul>
-    <li class="first"><a href="../index.htm">Framework</a></li>
-	  <li><a href="#">Workflow</a>
-		  <ul>
-			  <li><a href="../workflow/workflow.htm">Workflow</a></li>
-			  <li><a href="#">Gitflow</a>
-			  <ul>
-				  <li><a href="../workflow/gitflow.htm">Gitflow</a>
-				  <li><a href="../workflow/gitflow-features.htm">Feature branches</a></li>
-				  <li><a href="../workflow/gitflow-releases.htm">Release branches</a></li>
-				  <li><a href="../workflow/gitflow-hotfixes.htm">Hotfixes</a></li>
-				</ul>
-			  </li>
-			  <li><a href="../workflow/client-tools.htm">Git-client management tools</a></li>
-		  </ul>
-	  </li>
-    <li><a href="#">Template</a>
-      <ul>
-        <li><a href="../template/template.htm">Applying template</a></li>
-        <li><a href="../template/regions.htm">Editable regions</a></li>
-        <li><a href="../template/param.htm">Parameters</a></li>
-        <li><a href="../template/accessibility.htm">Accessibility</a></li>
-        <li><a href="#">Components</a>
-          <ul>
-            <li><a href="index.htm">Overview</a></li>
-            <li><a href="notification-banner.htm">Notification banner</a></li>
-            <li><a href="user-satisfaction.htm">User satisfaction</a></li>
-            <li><a href="document-title-meta.htm">Document title and meta elements</a></li>
-            <li><a href="page-notification.htm">Page notification</a></li>
-            <li><a href="breadcrumbs.htm">Breadcrumbs</a></li>
-            <li><a href="beta-banner.htm">Beta survey</a></li>
-            <li><a href="secondary-nav.htm">Secondary navigation</a></li>
-            <li><a href="cookies.htm">Cookie banner</a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-    <li><a href="#">Testing</a>
-      <ul>
-		<li><a href="../testing/index.htm">Overview</a></li>
-        <li><a href="../testing/browsers-devices.htm">Browsers and devices</a></li>
-		<li><a href="../testing/test.htm">Test page</a></li>
-      </ul>
-    </li>
-	<li><a href="#">Javascript</a>
-      <ul>
-		<li><a href="../javascript/index.htm">Overview</a></li>
-        <li><a href="../javascript/create-a-basic-component.htm">Create a component</a></li>
-      </ul>
-    </li>
-  </ul>
-</div>
+<nav id="navSecondary" aria-label="Secondary"> <!-- InstanceBeginEditable name="Subnav" --><!-- #BeginLibraryItem "/Library/_v5-framework.lbi" -->
+  <div id="menu" class="slinky-menu slinky-theme-default">
+    <ul>
+      <li class="first"><a href="../index.htm">Framework</a></li>
+      <li><a href="#">Workflow</a>
+        <ul>
+          <li><a href="workflow.htm">Workflow</a></li>
+          <li><a href="#">Gitflow</a>
+            <ul>
+              <li><a href="gitflow.htm">Gitflow</a>
+              <li><a href="gitflow-features.htm">Feature branches</a></li>
+              <li><a href="gitflow-releases.htm">Release branches</a></li>
+              <li><a href="gitflow-hotfixes.htm">Hotfixes</a></li>
+            </ul>
+          </li>
+          <li><a href="client-tools.htm">Git-client management tools</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Template</a>
+        <ul>
+          <li><a href="../template/template.htm">Applying template</a></li>
+          <li><a href="../template/regions.htm">Editable regions</a></li>
+          <li><a href="../template/param.htm">Parameters</a></li>
+          <li><a href="../template/accessibility.htm">Accessibility</a></li>
+          <li><a href="#">Components</a>
+            <ul>
+              <li><a href="../components/index.htm">Overview</a></li>
+              <li><a href="../components/notification-banner.htm">Notification banner</a></li>
+              <li><a href="../components/user-satisfaction.htm">User satisfaction</a></li>
+              <li><a href="../components/document-title-meta.htm">Document title and meta elements</a></li>
+              <li><a href="../components/page-notification.htm">Page notification</a></li>
+              <li><a href="../components/breadcrumbs.htm">Breadcrumbs</a></li>
+              <li><a href="../components/beta-banner.htm">Beta survey</a></li>
+              <li><a href="../components/secondary-nav.htm">Secondary navigation</a></li>
+              <li><a href="../components/cookies.htm">Cookie banner</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><a href="#">Testing</a>
+        <ul>
+          <li><a href="../testing/index.htm">Overview</a></li>
+          <li><a href="../testing/browsers-devices.htm">Browsers and devices</a></li>
+          <li><a href="../testing/test.htm">Test page</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Javascript</a>
+        <ul>
+          <li><a href="../javascript/index.htm">Overview</a></li>
+          <li><a href="../javascript/create-a-basic-component.htm">Create a component</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
 <!-- #EndLibraryItem --><!-- InstanceEndEditable --> </nav>
 
 <main id="contentContainer" class="columnbetacontentpage column2">
  
 	
 <!-- InstanceBeginEditable name="content" -->
-	
-<h1>Notification banner</h1>
-	
-<p>The notification banner displays on all pages below the main menu.</p>
-	
-	
-<h3>When to use</h3>	
-	
-<p>Use a notification banner to tell the user about something they need to know about, but that’s not directly related to the page content.</p>
-	
-	
-<h3>How to use</h3>
-	
-<p>To use the notification banner you will need to have access and permission to upload to HSE.GOV.UK, this is needed to upload a JSON file that contains the notification message information.</p>
-  
-<p>The JSON file is named <strong>global-message.json</strong> and can be found in the website root assets folder <strong>secureroot/assets/ajax/global-message.json</strong></p>
 
-<p>To display the banner, set the JSON property of <strong>'active'</strong> to true and enter a HTML paragraph as a JSON string in the <strong>'message'</strong> property. </p>
-	
-<p><a href="../global-message.json">JSON file example</a></p>	
-	
-<div class="box">
-<h4>JSON</h4>
+  <h1>Git-flow releases</h1>
+  <p>A <strong>release branch</strong> derives from the <strong>develop branch</strong>. Initiate a release once you are happy that <strong>develop branch</strong> is production ready.</p>
+  <p>Naming the release should follow the pattern of x.x.x and each release should be incremented. Tagging the release will ensure that merges can be quickly identified and rolled back in the unlikely event a release must be reverted.</p>
+  <p></p>
+  <h2>Command line</h2>
+  <ul>
+    <li><code>git flow release start 1.1.0</code></li>
+    <li><code>git flow release publish 1.1.0</code> <br>(only if you want your release to exist in the repo so other developers can look at or contribute.)</li>
+    <li><code>git flow release finish 1.1.0</code></li>
+  </ul>
 
-<p>A JSON string must be double-quoted, according to the specs, so you don't need to escape '.
-If you have to use special character in your JSON string, you can escape it using \ character.</p>
-
-<p>See this list of special character used in JSON :</p>
-
-<p>
-\b  Backspace (ascii code 08)<br>
-\f  Form feed (ascii code 0C)<br>
-\n  New line<br>
-\r  Carriage return<br>
-\t  Tab<br>
-\"  Double quote<br>
-\\  Backslash character<br>
-</p>	
-
-</div>
 <!-- InstanceEndEditable -->
 	
  
@@ -224,7 +197,7 @@ If you have to use special character in your JSON string, you can escape it usin
 </nav>
 <section id="lastUpdated" aria-label="Last updated">
 <!-- InstanceBeginEditable name="updated" --> Updated:
-	<!-- #BeginDate format:IS1 -->2021-05-27<!-- #EndDate -->
+	<!-- #BeginDate format:IS1 -->2021-08-09<!-- #EndDate -->
 	<!-- InstanceEndEditable -->
 </section>
 <script src="../../assets/v5-js/v5-main.min.js"></script>
