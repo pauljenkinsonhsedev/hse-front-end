@@ -1,21 +1,7 @@
 <div id="menu" class="slinky-menu slinky-theme-default">
   <ul>
     <li class="first"><a href="../framework/index.htm">Framework</a></li>
-	  <li><a href="#">Workflow</a>
-		  <ul>
-			  <li><a href="../framework/workflow/workflow.htm">Workflow</a></li>
-			  <li><a href="#">Gitflow</a>
-			  <ul>
-				  <li><a href="../framework/workflow/gitflow.htm">Gitflow</a>
-				  <li><a href="../framework/workflow/gitflow-features.htm">Feature branches</a></li>
-				  <li><a href="../framework/workflow/gitflow-releases.htm">Release branches</a></li>
-				  <li><a href="../framework/workflow/gitflow-hotfixes.htm">Hotfixes</a></li>
-				</ul>
-			  </li>
-			  <li><a href="../framework/workflow/client-tools.htm">Git-client management tools</a></li>
-		  </ul>
-	  </li>
-    <li><a href="#">Template</a>
+	  <li><a href="#">Template</a>
       <ul>
         <li><a href="../framework/template/template.htm">Applying template</a></li>
         <li><a href="../framework/template/regions.htm">Editable regions</a></li>
@@ -36,6 +22,21 @@
         </li>
       </ul>
     </li>
+	  <li><a href="#">Workflow</a>
+		  <ul>
+			  <li><a href="../framework/workflow/index.htm">Workflow</a></li>
+			  <li><a href="#">Gitflow</a>
+			  <ul>
+				  <li><a href="../framework/workflow/gitflow.htm">Gitflow</a></li>
+				  <li><a href="../framework/workflow/gitflow-features.htm">Feature branches</a></li>
+				  <li><a href="../framework/workflow/gitflow-releases.htm">Release branches</a></li>
+				  <li><a href="../framework/workflow/gitflow-hotfixes.htm">Hotfixes</a></li>
+				</ul>
+			  </li>
+			  <li><a href="../framework/workflow/client-tools.htm">Git-client management tools</a></li>
+		  </ul>
+	  </li>
+    
     <li><a href="#">Testing</a>
       <ul>
 		<li><a href="../framework/testing/index.htm">Overview</a></li>
