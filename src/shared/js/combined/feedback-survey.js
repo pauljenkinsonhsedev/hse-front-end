@@ -118,7 +118,7 @@ export function feedbackSurvey() {
         <fieldset>
             <input name="url" type="hidden" id="url" size="100" class="input input-text" value="${newURL}">
             <input type="hidden" name="mailredirect" value="${newURL}">
-            <input type="hidden" name="mailsubject" value="Report a problem with this page: ' + newURL + '">
+            <input type="hidden" name="mailsubject" value="Report a problem with this page: ${newURL}">
             <input type="submit" value="Submit" class="btn btn-primary" />
         </fieldset>`;
 
