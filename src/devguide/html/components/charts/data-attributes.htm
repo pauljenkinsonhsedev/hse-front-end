@@ -3,7 +3,7 @@
 <head>
 
 <meta charset="utf-8">
-
+	
 
 
 
@@ -16,13 +16,13 @@
 <style>
 #globalSearch {
 display: none;
-}
+}	
 </style>
 
 
 
 <!-- Page title and meta -->
-
+	
 <!-- InstanceBeginEditable name="doctitle" -->
     <title>Charts - HSE.GOV.UK Design System</title>
     <!-- InstanceEndEditable -->
@@ -32,7 +32,7 @@ display: none;
 <link rel="home" href="../../index.htm" />
 
 
-<!-- ie 11 fix for left-hand navigation -->
+<!-- ie 11 fix for left-hand navigation --> 
 <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
 
 
@@ -40,24 +40,24 @@ display: none;
 <body class="components normalFont">
 
 <section id="top" aria-label="Skip to content">  <a href="#contentContainer" class="skip">Skip to content</a>  </section>
-
+ 
 <section id="printBanner" aria-label="Print banner"> <img src="../../assets/v4-images/website/print/print-logo.jpg" width="193" height="65" alt="Health and Safety Executive" id="printLogo"/> </section>
 <header id="headerContainer">
   <div id="header">
     <div class="headerTop header js-header">
-
+		 
 		<div id="headerLogo" class="headerLogo"><a href="../../index.htm">Health and Safety<br />
         Executive</a></div>
-
-
-
+		
+		 
+		
       <div id="globalSearch" class="desktop-gcs-search">
         <gcse:searchbox-only></gcse:searchbox-only>
       </div>
     </div>
-
+    
     <!-- JS Main Navigation -->
-
+    
     <div class="menuContainer">
       <nav id="main-menu"  class="menu js-menu">
         <ul>
@@ -71,7 +71,7 @@ display: none;
     </div>
   </div>
    </header>
-
+   
 <nav id="breadCrumb" aria-label="Previous pages:">
   <div class="breadCrumbContainer"> <!-- InstanceBeginEditable name="Breadcrumbs" -->
         <ol>
@@ -84,22 +84,22 @@ display: none;
           <li>
             <a href="index.htm">Charts</a>
           </li>
-          <li>Data attributes</li>
+          <li>Line chart</li>
         </ol>
         <!-- InstanceEndEditable --> </div>
   <div id="backTo">
     <p class="backto"><a id="backnav" href="index.htm">Back to</a></p>
   </div>
 </nav>
-
+ 
 <div id="pageContainer" class="v5" xmlns:argot="http://purl.oclc.org/argot/" xmlns:dc="http://purl.org/dc/terms/" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:v="http://www.w3.org/2006/vcard/ns#" xmlns:dbp="http://dbpedia.org/resource/">
 <!-- InstanceBeginEditable name="beta-survey" -->
 
-      <!-- InstanceEndEditable -->
+      <!-- InstanceEndEditable -->   
 
-<!-- Beta content page -->
+<!-- Beta content page --> 
 
-
+  
 <nav id="navSecondary" aria-label="Secondary"> <!-- InstanceBeginEditable name="Subnav" --><!-- #BeginLibraryItem "/Library/_v5-components.lbi" --><div id="menu" class="slinky-menu slinky-theme-default">
 <ul>
     <li class="first"><a href="../index.htm">Components</a></li>
@@ -109,7 +109,7 @@ display: none;
 		<ul>
 			<li><a href="index.htm">Overview</a></li>
 			<li><a href="data-attributes.htm">Data attributes</a></li>
-			<li><a href="pie-chart.htm">Pie chart</a></li>
+		    <li><a href="pie-chart.htm">Pie chart</a></li>
 			<li><a href="donut-chart.htm">Donut chart</a></li>
 			<li><a href="line-chart.htm">Line chart</a></li>
 			<li><a href="bar-chart.htm">Bar chart</a></li>
@@ -162,164 +162,161 @@ display: none;
 </div><!-- #EndLibraryItem --><!-- InstanceEndEditable --> </nav>
 
 <main id="contentContainer" class="columnbetacontentpage column2">
-
-
+ 
+	
 <!-- InstanceBeginEditable name="content" -->
-        <h1>Data attributes</h1>
+         <h1>Data attributes</h1>
 
-<h2>Markup</h2>
-<p>The charts use data attributes and html markup to define the data, making it accessible for those not using
-    Javascript in their browsers. Data attributes on the container provide additional information for determining the
-    data of the chart and cosmetic appearance. </p>
+        <h2>Markup</h2>
+        <p>The charts use data attributes and html markup to define the data, making it accessible for those not using Javascript in their browsers. Data attributes on the container provide additional information for determining the data of the chart and cosmetic appearance. </p>
 
-<table>
-    <caption>Chart data attributes</caption>
-    <thead>
-        <tr>
-            <th>Data attribute</th>
-            <th>Options</th>
-            <th>Required</th>
-            <th>Description</th>
-        </tr>
-    </thead>
+        <table>
+          <caption>Chart data attributes</caption>
+          <thead>
+            <tr>
+              <th>Data attribute</th>
+              <th>Options</th>
+              <th>Required</th>
+              <th>Description</th>
+            </tr>
+          </thead>
 
-    <tbody>
-        <tr>
-            <td>data-chart-type</td>
-            <td>
+          <tbody>
+            <tr>
+              <td>data-chart-type</td>
+              <td>
                 <ul>
-                    <li>pie</li>
-                    <li>donut</li>
-                    <li>line</li>
-                    <li>bar</li>
-                    <li>barstacked</li>
-                    <li>column</li>
-                    <li>columnstacked</li>
-                    <li>arearange</li>
+                  <li>pie</li>
+                  <li>donut</li>
+                  <li>line</li>
+                  <li>bar</li>
+                  <li>barstacked</li>
+                  <li>column</li>
+                  <li>columnstacked</li>
+                  <li>arearange</li>
                 </ul>
-            </td>
-            <td>Yes</td>
-            <td>Determines what type of chart to display.</td>
-        </tr>
+              </td>
+              <td>Yes</td>
+              <td>Determines what type of chart to display.</td>
+            </tr>
 
-        <tr>
-            <td>data-color-scheme</td>
-            <td>
+            <tr>
+              <td>data-color-scheme</td>
+              <td>
                 <ul>
-                    <li>red</li>
-                    <li>green</li>
-                    <li>blue</li>
-                    <li>purple</li>
-                    <li>brown</li>
-                    <li>pink</li>
+                  <li>red</li>
+                  <li>green</li>
+                  <li>blue</li>
+                  <li>purple</li>
+                  <li>brown</li>
+                  <li>pink</li>
                 </ul>
-            </td>
-            <td>No</td>
-            <td>
+              </td>
+              <td>No</td>
+              <td>
                 <p>Sets the colour scheme for the chart. Defaults to an array of colours for luminance and contrast.</p>
                 <p>To default to a colour contrast scheme leave null.</p>
                 <p>Single colour schemes will display in varying shades. To be used when only two sets of data.</p>
-            </td>
-        </tr>
+              </td>
+            </tr>
 
-        <tr>
-            <td>data-chart-units</td>
-            <td>
+            <tr>
+              <td>data-chart-units</td>
+              <td>
                 <ul>
-                    <li>units</li>
-                    <li>percentage</li>
-                    <li>percentage-calc</li>
-                    <li>hundreds</li>
-                    <li>thousands</li>
-                    <li>millions</li>
-                    <li>billions</li>
-                    <li>celsius</li>
-                    <li>fahrenheit</li>
-                    <li>pounds</li>
+                  <li>units</li>
+                  <li>percentage</li>
+                  <li>percentage-calc</li>
+                  <li>hundreds</li>
+                  <li>thousands</li>
+                  <li>millions</li>
+                  <li>billions</li>
+                  <li>celsius</li>
+                  <li>fahrenheit</li>
+                  <li>pounds</li>
                 </ul>
-            </td>
-            <td>No</td>
-            <td>Determines how values are displayed.</td>
-        </tr>
+              </td>
+              <td>No</td>
+              <td>Determines how values are displayed.</td>
+            </tr>
 
-        <tr>
-            <td>data-decimal-place</td>
-            <td>
+            <tr>
+              <td>data-decimal-place</td>
+              <td>
                 <ul>
-                    <li>0</li>
-                    <li>1</li>
-                    <li>2</li>
-                    <li>3</li>
-                    <li>4</li>
+                  <li>0</li>
+                  <li>1</li>
+                  <li>2</li>
+                  <li>3</li>
+                  <li>4</li>
                 </ul>
-            </td>
-            <td>No</td>
-            <td>Determines how many decimal places. Defaults to 0.</td>
-        </tr>
+              </td>
+              <td>No</td>
+              <td>Determines how many decimal places. Defaults to 0.</td>
+            </tr>
 
-        <tr>
-            <td>data-chart-title</td>
-            <td>text</td>
-            <td>No</td>
-            <td>Adds a title.</td>
-        </tr>
-        <tr>
-            <td>data-chart-subtitle</td>
-            <td>text</td>
-            <td>No</td>
-            <td>Adds a sub title.</td>
-        </tr>
+            <tr>
+              <td>data-chart-title</td>
+              <td>text</td>
+              <td>No</td>
+              <td>Adds a title.</td>
+            </tr>
+            <tr>
+              <td>data-chart-subtitle</td>
+              <td>text</td>
+              <td>No</td>
+              <td>Adds a sub title.</td>
+            </tr>
 
-        <tr>
-            <td>data-chart-description</td>
-            <td>text</td>
-            <td>No</td>
-            <td>Adds a description.</td>
-        </tr>
+            <tr>
+              <td>data-chart-description</td>
+              <td>text</td>
+              <td>No</td>
+              <td>Adds a description.</td>
+            </tr>
 
-        <tr>
-            <td>data-xaxis-text</td>
-            <td>text</td>
-            <td>No</td>
-            <td>Text for explaining x-axis.</td>
-        </tr>
+            <tr>
+              <td>data-xaxis-text</td>
+              <td>text</td>
+              <td>No</td>
+              <td>Text for explaining x-axis.</td>
+            </tr>
 
-        <tr>
-            <td>data-yaxis-text</td>
-            <td>text</td>
-            <td>No</td>
-            <td>Text for explaining y-axis.</td>
-        </tr>
+            <tr>
+              <td>data-yaxis-text</td>
+              <td>text</td>
+              <td>No</td>
+              <td>Text for explaining y-axis.</td>
+            </tr>
 
-        <tr>
-            <td>data-xaxis-firstlast</td>
-            <td>
+            <tr>
+              <td>data-xaxis-firstlast</td>
+              <td>
                 <ul>
-                    <li>true</li>
-                    <li>false</li>
+                  <li>true</li>
+                  <li>false</li>
                 </ul>
-            </td>
-            <td>No</td>
-            <td>Displays only the first and last value on the x-axis.</td>
-        </tr>
+              </td>
+              <td>No</td>
+              <td>Displays only the first and last value on the x-axis.</td>
+            </tr>
 
-        <tr>
-            <td>data-area-range-title</td>
-            <td>text</td>
-            <td>No</td>
-            <td>Generally used to declutter charts that have many data points, for example a range of years.</td>
-        </tr>
+            <tr>
+              <td>data-area-range-title</td>
+              <td>text</td>
+              <td>No</td>
+              <td>Generally used to declutter charts that have many data points, for example a range of years.</td>
+            </tr>
 
-    </tbody>
-</table>
-
+          </tbody>
+        </table>
         <!-- /#secondTab -->
 
         <!-- InstanceEndEditable -->
+	
+ 
 
-
-
-<!-- Beta two column (top task) -->
+<!-- Beta two column (top task) --> 
 
    </main>
 
@@ -330,7 +327,7 @@ display: none;
     <div id="footer">
       <h2 class="visually-hidden">Footer links</h2>
       <div class="footer-links-container">
-
+       
       </div>
     </div>
     <div id="baseStrip">
@@ -341,15 +338,15 @@ display: none;
   </footer>
 </nav>
 <section id="lastUpdated" aria-label="Last updated">
-<!-- InstanceBeginEditable name="updated" -->Updated:<!-- #BeginDate format:IS1 -->2021-03-25<!-- #EndDate --><!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="updated" -->Updated:<!-- #BeginDate format:IS1 -->2021-07-30<!-- #EndDate --><!-- InstanceEndEditable -->
 </section>
 <script src="../../assets/v5-js/v5-main.min.js"></script>
-<script src="../../assets/v5-js/jquery.min.js"></script>
-<script src="../../assets/v5-js/v5-footer.min.js"></script>
+<script src="../../assets/v5-js/jquery.min.js"></script> 
+<script src="../../assets/v5-js/v5-footer.min.js"></script> 
 
-
-
-<script src="../../assets/v5-js/v5-footer-slinky-js.min.js"></script>
+	
+ 
+<script src="../../assets/v5-js/v5-footer-slinky-js.min.js"></script> 
 
 
 
@@ -358,9 +355,9 @@ display: none;
 <div id="gutter"><!-- InstanceBeginEditable name="gutter" -->
       <!-- InstanceEndEditable --></div>
 
-<!-- SiteImprove JS -->
+<!-- SiteImprove JS --> 
 <script type="text/javascript">
-
+	
 // removes cellspacing & cellpadding attributes from GCS (Assesibility fix)
 window.onload = function(){
 
@@ -378,20 +375,20 @@ searchTable.removeAttribute('cellspacing');
 searchTable2.removeAttribute('cellspacing');
 searchTable3.removeAttribute('cellspacing');
 searchInput.removeAttribute('cellspacing');
-};
-</script>
-
-<!-- InstanceParam name="bodyClass" type="text" value="components" -->
-<!-- InstanceParam name="layout" type="text" value="betacontentpage" -->
-<!-- InstanceParam name="columnLayout" type="number" value="2" -->
-<!-- InstanceParam name="platform" type="text" value="v5" -->
-<!-- InstanceParam name="rdfa" type="boolean" value="false" -->
-<!-- InstanceParam name="welsh" type="boolean" value="false" -->
-<!-- InstanceParam name="homepage" type="boolean" value="true" -->
-<!-- InstanceParam name="weblite" type="boolean" value="false" -->
-<!-- InstanceParam name="feedback" type="boolean" value="true" -->
-<!-- InstanceParam name="contentType" type="text" value="default" -->
-<!-- InstanceParam name="notificationBar" type="boolean" value="false" -->
+};	
+</script> 
+	
+<!-- InstanceParam name="bodyClass" type="text" value="components" --> 
+<!-- InstanceParam name="layout" type="text" value="betacontentpage" --> 
+<!-- InstanceParam name="columnLayout" type="number" value="2" --> 
+<!-- InstanceParam name="platform" type="text" value="v5" --> 
+<!-- InstanceParam name="rdfa" type="boolean" value="false" --> 
+<!-- InstanceParam name="welsh" type="boolean" value="false" --> 
+<!-- InstanceParam name="homepage" type="boolean" value="true" --> 
+<!-- InstanceParam name="weblite" type="boolean" value="false" --> 
+<!-- InstanceParam name="feedback" type="boolean" value="true" --> 
+<!-- InstanceParam name="contentType" type="text" value="default" --> 
+<!-- InstanceParam name="notificationBar" type="boolean" value="false" --> 
 <!-- InstanceParam name="printGuide" type="boolean" value="false" -->
 </body>
 <!-- InstanceEnd --></html>

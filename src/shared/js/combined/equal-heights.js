@@ -62,7 +62,7 @@ export function equalHeights() {
     // Watch for changes
     window.addEventListener('resize', function () {
       setTimeout(function () {
-        equalheight(classname);
+        equalise(classname);
       });
     });
   });

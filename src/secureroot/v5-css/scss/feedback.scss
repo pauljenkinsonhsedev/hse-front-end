@@ -93,7 +93,6 @@
     padding: 10px;
     box-sizing: border-box;
     position: relative;
-    background-color: $boxgray;
     overflow-y: hidden;
     float: left;
     *{
@@ -206,7 +205,11 @@ p.question-hint {
 }
 
 .yes-no-container .feedback-message {
-margin-top: 10px;
+margin: 10px 10px 0 0;
+}
+
+.feedback-message-active {
+margin-top: 0 !important;
 }
 
 .report-a-problem-container {

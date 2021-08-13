@@ -7,7 +7,7 @@
 		<ul>
 			<li><a href="../components/charts/index.htm">Overview</a></li>
 			<li><a href="../components/charts/data-attributes.htm">Data attributes</a></li>
-			<li><a href="../components/charts/pie-chart.htm">Pie chart</a></li>
+		    <li><a href="../components/charts/pie-chart.htm">Pie chart</a></li>
 			<li><a href="../components/charts/donut-chart.htm">Donut chart</a></li>
 			<li><a href="../components/charts/line-chart.htm">Line chart</a></li>
 			<li><a href="../components/charts/bar-chart.htm">Bar chart</a></li>

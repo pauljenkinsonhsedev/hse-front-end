@@ -3,7 +3,7 @@
 <head>
 
 <meta charset="utf-8">
-	
+
 
 
 
@@ -16,13 +16,13 @@
 <style>
 #globalSearch {
 display: none;
-}	
+}
 </style>
 
 
 
 <!-- Page title and meta -->
-	
+
 <!-- InstanceBeginEditable name="doctitle" -->
 		<title>Tables - HSE.GOV.UK Design System</title>
 		<meta name="keywords" content=" " />
@@ -34,7 +34,7 @@ display: none;
 <link rel="home" href="../index.htm" />
 
 
-<!-- ie 11 fix for left-hand navigation --> 
+<!-- ie 11 fix for left-hand navigation -->
 <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
 
 
@@ -42,24 +42,24 @@ display: none;
 <body class="components normalFont">
 
 <section id="top" aria-label="Skip to content">  <a href="#contentContainer" class="skip">Skip to content</a>  </section>
- 
+
 <section id="printBanner" aria-label="Print banner"> <img src="../assets/v4-images/website/print/print-logo.jpg" width="193" height="65" alt="Health and Safety Executive" id="printLogo"/> </section>
 <header id="headerContainer">
   <div id="header">
     <div class="headerTop header js-header">
-		 
+
 		<div id="headerLogo" class="headerLogo"><a href="../index.htm">Health and Safety<br />
         Executive</a></div>
-		
-		 
-		
+
+
+
       <div id="globalSearch" class="desktop-gcs-search">
         <gcse:searchbox-only></gcse:searchbox-only>
       </div>
     </div>
-    
+
     <!-- JS Main Navigation -->
-    
+
     <div class="menuContainer">
       <nav id="main-menu"  class="menu js-menu">
         <ul>
@@ -73,7 +73,7 @@ display: none;
     </div>
   </div>
    </header>
-   
+
 <nav id="breadCrumb" aria-label="Previous pages:">
   <div class="breadCrumbContainer"> <!-- InstanceBeginEditable name="Breadcrumbs" -->
 			<ol>
@@ -90,15 +90,15 @@ display: none;
     <p class="backto"><a id="backnav" href="index.htm">Back to</a></p>
   </div>
 </nav>
- 
+
 <div id="pageContainer" class="v5" xmlns:argot="http://purl.oclc.org/argot/" xmlns:dc="http://purl.org/dc/terms/" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:v="http://www.w3.org/2006/vcard/ns#" xmlns:dbp="http://dbpedia.org/resource/">
 <!-- InstanceBeginEditable name="beta-survey" -->
 
-		<!-- InstanceEndEditable -->   
+		<!-- InstanceEndEditable -->
 
-<!-- Beta content page --> 
+<!-- Beta content page -->
 
-  
+
 <nav id="navSecondary" aria-label="Secondary"> <!-- InstanceBeginEditable name="Subnav" --><!-- #BeginLibraryItem "/Library/_v5-components.lbi" --><div id="menu" class="slinky-menu slinky-theme-default">
 <ul>
     <li class="first"><a href="index.htm">Components</a></li>
@@ -108,7 +108,7 @@ display: none;
 		<ul>
 			<li><a href="charts/index.htm">Overview</a></li>
 			<li><a href="charts/data-attributes.htm">Data attributes</a></li>
-			<li><a href="charts/pie-chart.htm">Pie chart</a></li>
+		    <li><a href="charts/pie-chart.htm">Pie chart</a></li>
 			<li><a href="charts/donut-chart.htm">Donut chart</a></li>
 			<li><a href="charts/line-chart.htm">Line chart</a></li>
 			<li><a href="charts/bar-chart.htm">Bar chart</a></li>
@@ -161,8 +161,8 @@ display: none;
 </div><!-- #EndLibraryItem --><!-- InstanceEndEditable --> </nav>
 
 <main id="contentContainer" class="columnbetacontentpage column2">
- 
-	
+
+
 <!-- InstanceBeginEditable name="content" -->
 	  <h1>Tables</h1>
 
@@ -270,8 +270,40 @@ display: none;
 
         <h3>Code example</h3>
 
-        <iframe width="100%" height="300" src="//jsfiddle.net/pjenkinsonhse/j0u2h9ox/3/embedded/html/dark/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
 
+        <pre class="language-markup"><code>&lt;table class=&quot;no-background&quot;&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Column Heading 1&lt;/th&gt;
+      &lt;th&gt;Column Heading 2&lt;/th&gt;
+      &lt;th&gt;Column Heading 3&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Row 1 - Cell A&lt;/td&gt;
+      &lt;td&gt;Row 1 - Cell B&lt;/td&gt;
+      &lt;td&gt;Row 1 - Cell C&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Row 2 - Cell A&lt;/td&gt;
+      &lt;td&gt;Row 2 - Cell B&lt;/td&gt;
+      &lt;td&gt;Row 2 - Cell C&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Row 3 - Cell A&lt;/td&gt;
+      &lt;td&gt;Row 3 - Cell B&lt;/td&gt;
+      &lt;td&gt;Row 3 - Cell C&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+  &lt;tfoot&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Footer Cell A&lt;/td&gt;
+      &lt;td&gt;Footer Cell B&lt;/td&gt;
+      &lt;td&gt;Footer Cell C&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tfoot&gt;
+&lt;/table&gt;</code></pre>
         <h2>Table captions</h2>
 
         <p>Use the <strong>&lt;caption&gt;</strong> element to describe a table in the same way you would use a heading. A caption helps users find, navigate and understand tables.</p>
@@ -324,7 +356,40 @@ display: none;
 
         <h3>Code example</h3>
 
-        <iframe width="100%" height="300" src="//jsfiddle.net/pjenkinsonhse/fzw98L32/embedded/html/dark/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
+        <pre class="language-markup"><code>&lt;table&gt;
+  &lt;caption&gt;Caption for table below&lt;/caption&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Column Heading 1&lt;/th&gt;
+      &lt;th&gt;Column Heading 2&lt;/th&gt;
+      &lt;th&gt;Column Heading 3&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Row 1 - Cell A&lt;/td&gt;
+      &lt;td&gt;Row 1 - Cell B&lt;/td&gt;
+      &lt;td&gt;Row 1 - Cell C&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Row 2 - Cell A&lt;/td&gt;
+      &lt;td&gt;Row 2 - Cell B&lt;/td&gt;
+      &lt;td&gt;Row 2 - Cell C&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Row 3 - Cell A&lt;/td&gt;
+      &lt;td&gt;Row 3 - Cell B&lt;/td&gt;
+      &lt;td&gt;Row 3 - Cell C&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+  &lt;tfoot&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Footer Cell A&lt;/td&gt;
+      &lt;td&gt;Footer Cell B&lt;/td&gt;
+      &lt;td&gt;Footer Cell C&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tfoot&gt;
+&lt;/table&gt;</code></pre>
 
         <h2 id="borderless">Borderless table</h2>
 
@@ -370,7 +435,33 @@ display: none;
 
         <h3>Code example</h3>
 
-        <iframe width="100%" height="300" src="//jsfiddle.net/pjenkinsonhse/unehzkd0/embedded/html/dark/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
+        <pre class="language-markup"><code>&lt;table class=&quot;no-border no-background&quot;&gt;
+  &lt;caption&gt;Table caption&lt;/caption&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Column Heading 1&lt;/th&gt;
+      &lt;th&gt;Column Heading 2&lt;/th&gt;
+      &lt;th&gt;Column Heading 3&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Row 1 - Cell A&lt;/td&gt;
+      &lt;td&gt;Row 1 - Cell B&lt;/td&gt;
+      &lt;td&gt;Row 1 - Cell C&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Row 2 - Cell A&lt;/td&gt;
+      &lt;td&gt;Row 2 - Cell B&lt;/td&gt;
+      &lt;td&gt;Row 2 - Cell C&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Row 3 - Cell A&lt;/td&gt;
+      &lt;td&gt;Row 3 - Cell B&lt;/td&gt;
+      &lt;td&gt;Row 3 - Cell C&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
 
         <h2>Table headers</h2>
 
@@ -412,8 +503,33 @@ display: none;
 
         </table>
 
-        <iframe width="100%" height="300" src="//jsfiddle.net/pjenkinsonhse/gqxz6349/embedded/html/dark/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
-
+<pre class="language-markup"><code>&lt;table class=&quot;no-border no-background&quot;&gt;
+  &lt;caption&gt;Table caption&lt;/caption&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th scope=&quot;col&quot;&gt;Column Heading 1&lt;/th&gt;
+      &lt;th scope=&quot;col&quot;&gt;Column Heading 2&lt;/th&gt;
+      &lt;th scope=&quot;col&quot;&gt;Column Heading 3&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th scope=&quot;row&quot;&gt;Row 1 - Cell A&lt;/th&gt;
+      &lt;td&gt;Row 1 - Cell B&lt;/td&gt;
+      &lt;td&gt;Row 1 - Cell C&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th scope=&quot;row&quot;&gt;Row 2 - Cell A&lt;/th&gt;
+      &lt;td&gt;Row 2 - Cell B&lt;/td&gt;
+      &lt;td&gt;Row 2 - Cell C&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th scope=&quot;row&quot;&gt;Row 3 - Cell A&lt;/th&gt;
+      &lt;td&gt;Row 3 - Cell B&lt;/td&gt;
+      &lt;td&gt;Row 3 - Cell C&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
         <h2>Sortable table (JS)</h2>
 
         <p>Allows a table to be sorted by the column headers, in ascending or descending order.</p>
@@ -433,39 +549,80 @@ display: none;
               <td>01/07/2011</td>
               <td>Mary Black</td>
               <td>86</td>
-              <td>The deceased    died following a gas explosion</td>
+              <td>The deceased died following a gas explosion</td>
               <td>Sunderland</td>
             </tr>
             <tr>
               <td>09/01/2012</td>
-              <td>Arthur    Day</td>
+              <td>Arthur Day</td>
               <td>94</td>
-              <td>The    deceased died from carbon monoxide poisoning</td>
+              <td>The deceased died from carbon monoxide poisoning</td>
               <td>Lewisham</td>
             </tr>
             <tr>
               <td>01/02/2012</td>
-              <td>Elaine    Coley</td>
+              <td>Elaine Coley</td>
               <td>52</td>
-              <td>The    deceased died from carbon monoxide poisoning</td>
+              <td>The deceased died from carbon monoxide poisoning</td>
               <td>Cleethorpes</td>
             </tr>
             <tr>
               <td>06/03/2012</td>
               <td>Ernest Rowland</td>
               <td>65</td>
-              <td>The deceased    died from suspected carbon monoxide poisoning</td>
+              <td>The deceased died from suspected carbon monoxide poisoning</td>
               <td>Swindon</td>
             </tr>
           </tbody>
         </table>
-	
- 
-			<!-- InstanceEndEditable -->
-	
- 
 
-<!-- Beta two column (top task) --> 
+<pre class="language-html"><code>&lt;table class=&quot;sortable&quot;&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Date of incident&lt;/th&gt;
+      &lt;th&gt;Name&lt;/th&gt;
+      &lt;th&gt;Age&lt;/th&gt;
+      &lt;th&gt;Description of incident&lt;/th&gt;
+      &lt;th&gt;Location of incident&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;01/07/2011&lt;/td&gt;
+      &lt;td&gt;Mary Black&lt;/td&gt;
+      &lt;td&gt;86&lt;/td&gt;
+      &lt;td&gt;The deceased died following a gas explosion&lt;/td&gt;
+      &lt;td&gt;Sunderland&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;09/01/2012&lt;/td&gt;
+      &lt;td&gt;Arthur Day&lt;/td&gt;
+      &lt;td&gt;94&lt;/td&gt;
+      &lt;td&gt;The deceased died from carbon monoxide poisoning&lt;/td&gt;
+      &lt;td&gt;Lewisham&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;01/02/2012&lt;/td&gt;
+      &lt;td&gt;Elaine Coley&lt;/td&gt;
+      &lt;td&gt;52&lt;/td&gt;
+      &lt;td&gt;The deceased died from carbon monoxide poisoning&lt;/td&gt;
+      &lt;td&gt;Cleethorpes&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;06/03/2012&lt;/td&gt;
+      &lt;td&gt;Ernest Rowland&lt;/td&gt;
+      &lt;td&gt;65&lt;/td&gt;
+      &lt;td&gt;The deceased died from suspected carbon monoxide poisoning&lt;/td&gt;
+      &lt;td&gt;Swindon&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+
+			<!-- InstanceEndEditable -->
+
+
+
+<!-- Beta two column (top task) -->
 
    </main>
 
@@ -476,7 +633,7 @@ display: none;
     <div id="footer">
       <h2 class="visually-hidden">Footer links</h2>
       <div class="footer-links-container">
-       
+
       </div>
     </div>
     <div id="baseStrip">
@@ -490,12 +647,12 @@ display: none;
 <!-- InstanceBeginEditable name="updated" -->Updated:<!-- #BeginDate format:IS1 -->2021-03-29<!-- #EndDate --><!-- InstanceEndEditable -->
 </section>
 <script src="../assets/v5-js/v5-main.min.js"></script>
-<script src="../assets/v5-js/jquery.min.js"></script> 
-<script src="../assets/v5-js/v5-footer.min.js"></script> 
+<script src="../assets/v5-js/jquery.min.js"></script>
+<script src="../assets/v5-js/v5-footer.min.js"></script>
 
-	
- 
-<script src="../assets/v5-js/v5-footer-slinky-js.min.js"></script> 
+
+
+<script src="../assets/v5-js/v5-footer-slinky-js.min.js"></script>
 
 
 
@@ -504,9 +661,9 @@ display: none;
 <div id="gutter"><!-- InstanceBeginEditable name="gutter" -->
 		<!-- InstanceEndEditable --></div>
 
-<!-- SiteImprove JS --> 
+<!-- SiteImprove JS -->
 <script type="text/javascript">
-	
+
 // removes cellspacing & cellpadding attributes from GCS (Assesibility fix)
 window.onload = function(){
 
@@ -524,20 +681,20 @@ searchTable.removeAttribute('cellspacing');
 searchTable2.removeAttribute('cellspacing');
 searchTable3.removeAttribute('cellspacing');
 searchInput.removeAttribute('cellspacing');
-};	
-</script> 
-	
-<!-- InstanceParam name="bodyClass" type="text" value="components" --> 
-<!-- InstanceParam name="layout" type="text" value="betacontentpage" --> 
-<!-- InstanceParam name="columnLayout" type="number" value="2" --> 
-<!-- InstanceParam name="platform" type="text" value="v5" --> 
-<!-- InstanceParam name="rdfa" type="boolean" value="false" --> 
-<!-- InstanceParam name="welsh" type="boolean" value="false" --> 
-<!-- InstanceParam name="homepage" type="boolean" value="true" --> 
-<!-- InstanceParam name="weblite" type="boolean" value="false" --> 
-<!-- InstanceParam name="feedback" type="boolean" value="true" --> 
-<!-- InstanceParam name="contentType" type="text" value="default" --> 
-<!-- InstanceParam name="notificationBar" type="boolean" value="false" --> 
+};
+</script>
+
+<!-- InstanceParam name="bodyClass" type="text" value="components" -->
+<!-- InstanceParam name="layout" type="text" value="betacontentpage" -->
+<!-- InstanceParam name="columnLayout" type="number" value="2" -->
+<!-- InstanceParam name="platform" type="text" value="v5" -->
+<!-- InstanceParam name="rdfa" type="boolean" value="false" -->
+<!-- InstanceParam name="welsh" type="boolean" value="false" -->
+<!-- InstanceParam name="homepage" type="boolean" value="true" -->
+<!-- InstanceParam name="weblite" type="boolean" value="false" -->
+<!-- InstanceParam name="feedback" type="boolean" value="true" -->
+<!-- InstanceParam name="contentType" type="text" value="default" -->
+<!-- InstanceParam name="notificationBar" type="boolean" value="false" -->
 <!-- InstanceParam name="printGuide" type="boolean" value="false" -->
 </body>
 <!-- InstanceEnd --></html>
