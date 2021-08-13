@@ -100,7 +100,7 @@ display: none;
 <nav id="navSecondary" aria-label="Secondary"> <!-- InstanceBeginEditable name="Subnav" --><!-- #BeginLibraryItem "/Library/_v5-framework.lbi" --><div id="menu" class="slinky-menu slinky-theme-default">
   <ul>
     <li class="first"><a href="../index.htm">Framework</a></li>
-    <li><a href="#">Template</a>
+	  <li><a href="#">Template</a>
       <ul>
         <li><a href="template.htm">Applying template</a></li>
         <li><a href="regions.htm">Editable regions</a></li>
@@ -121,6 +121,21 @@ display: none;
         </li>
       </ul>
     </li>
+	  <li><a href="#">Workflow</a>
+		  <ul>
+			  <li><a href="../workflow/index.htm">Workflow</a></li>
+			  <li><a href="#">Gitflow</a>
+			  <ul>
+				  <li><a href="../workflow/gitflow.htm">Gitflow</a></li>
+				  <li><a href="../workflow/gitflow-features.htm">Feature branches</a></li>
+				  <li><a href="../workflow/gitflow-releases.htm">Release branches</a></li>
+				  <li><a href="../workflow/gitflow-hotfixes.htm">Hotfixes</a></li>
+				</ul>
+			  </li>
+			  <li><a href="../workflow/client-tools.htm">Git-client management tools</a></li>
+		  </ul>
+	  </li>
+    
     <li><a href="#">Testing</a>
       <ul>
 		<li><a href="../testing/index.htm">Overview</a></li>
@@ -170,7 +185,8 @@ display: none;
   <li>From the main menu go to <strong>Find &gt; Find and Replace in Files</strong></li>
   <li>In the find box, enter the existing template name e.g v5-hse-1.2.0.dwt</li>
   <li>In the replace box, enter the name of the template you want to apply e.g v5-hse-1.2.1.dwt</li>
-  <li>Select <strong>replace all</strong></li>
+  <li>Select <strong>replace all</strong> (you could test this on one page before replacing all)</li>
+  <li>Update all pages that use the specific template version: <strong>Tools &gt; Templates &gt; Update Pages... &gt; Files that use...</strong></li>
 	
  </ol>
 	
@@ -180,7 +196,11 @@ display: none;
   </figure>
 	
   <div class="box">
-  <p>The template you want to apply needs to be in the templates folder of your local site</p>
+  <h2>Important</h2>
+  <ul>
+  <li>The template you want to apply needs to be in the templates folder in the root of your local site</li>
+  <li>Always update pages after changing the template version number, using <strong>Tools &gt; Templates &gt; Update Pages...</strong></li>  
+  </ul>
   </div>
   
 
@@ -215,7 +235,7 @@ display: none;
 </nav>
 <section id="lastUpdated" aria-label="Last updated">
 <!-- InstanceBeginEditable name="updated" --> Updated:
-	<!-- #BeginDate format:IS1 -->2020-10-16<!-- #EndDate -->
+	<!-- #BeginDate format:IS1 -->2021-08-12<!-- #EndDate -->
 	<!-- InstanceEndEditable -->
 </section>
 <script src="../../assets/v5-js/v5-main.min.js"></script>
