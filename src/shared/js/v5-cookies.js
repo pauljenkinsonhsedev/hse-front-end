@@ -1,5 +1,4 @@
-import 'core-js/stable';
-import 'regenerator-runtime/runtime';
+import './combined/polyfills.js';
 
 import { cookiePreferences } from './combined/cookies/cookie-preferences.js';
 import { notificationBanner } from './combined/cookies/notification-banner.js';
