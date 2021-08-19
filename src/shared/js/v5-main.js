@@ -1,3 +1,5 @@
+import './combined/polyfills.js';
+
 import CsvConvert from './combined/csv-convertor/csv-convertor';
 import ChartsDefault from './combined/charts/charts';
 import { mainMenu } from './combined/main-menu';
@@ -21,8 +23,7 @@ import { informationBanner } from './combined/information-banner.js';
 import { codeHighlighter } from './combined/code-highlighter.js';
 
 // Window load
-window.addEventListener('DOMContentLoaded',() => {
-
+window.addEventListener('DOMContentLoaded', () => {
   // Selector to reference prgressive enhancements in css
   const body = document.querySelector('body');
   body.classList.add('hasScript');

@@ -3,10 +3,11 @@ import { customEventListener } from '../utils/add-custom-event-listener';
 import { cookieMessageHTML } from './cookie-banner-html.js';
 import { dialogModalAjax } from '../dialogs.js';
 import { smoothScroll } from '../utils/smooth-scroll';
+import { getEntries } from "../utils/object-entries-polyfill.js";
 
-// const setCookieSettings = { path: '/', domain: 'hse.gov.uk', secure: true, sameSite: 'strict', expires: 365 };
+const setCookieSettings = { path: '/', domain: 'hse.gov.uk', secure: true, sameSite: 'strict', expires: 365 };
 // const setCookieSettings = { path: '/', domain: 'beta.hse.gov.uk', secure: true, sameSite: 'strict', expires: 365 };
-const setCookieSettings = { path: '/', domain: 'localhost', secure: false, sameSite: 'strict', expires: 365 };
+// const setCookieSettings = { path: '/', domain: 'localhost', secure: false, sameSite: 'strict', expires: 365 };
 
 // So we can access Cookies inline for Analytics in the HTML
 window.Cookies = Cookies;
@@ -138,21 +139,19 @@ export function cookiePreferences() {
     if (settingsForm) {
         const submitForm = () => {
             const outputData = {};
-            const formData = new FormData(settingsForm)
-            for (var pair of formData.entries()) {
+            const formData = new FormData(settingsForm);
+            for (let pair of getEntries(formData)) {
                 let key = pair[0];
                 let val = pair[1];
                 outputData[key] = val;
             }
             setCookiePreferences(outputData);
+
             controlAnalytics();
             // reload to capture tracking on page this form lives
             const hideBanner = Cookies.get('hide_banner');
 
-            console.log(outputData['cookie-usage-analytics']);
-
             if (hideBanner === undefined) {
-                console.log('should scroll');
                 smoothScroll('body', 1000);
                 setTimeout(()=> {
                     window.location.reload();
@@ -168,7 +167,6 @@ export function cookiePreferences() {
             event.preventDefault();
             setFields();
             submitForm();
-            // formFeedback();
         });
 
         const choices = document.querySelectorAll('.input-switch');
@@ -242,10 +240,4 @@ export function cookiePreferences() {
         // reload to capture tracking
         window.location.reload();
     });
-
-
-
-
-
-    
 }

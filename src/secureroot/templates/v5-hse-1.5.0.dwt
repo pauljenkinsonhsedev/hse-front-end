@@ -365,36 +365,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
       <button class="btn btn-secondary" id="report-problem-button">Report a problem with this page</button>
     </div>
   </div>
-  <button type="button" class="btn js-hide" id="close-report-a-problem">Close</button>
-  <div class="report-a-problem-form">
-
-    <!-- Report a problem form -->
-
-    <form action="https://resources.hse.gov.uk/responseform.asp" method="post" autocomplete="on">
-      <fieldset class="fieldset" id="form-settings">
-        <input type="hidden" name="mailto" value="hse.online@hse.gov.uk"/>
-        <input type="hidden" name="mailfrom" value="hse.online@hsemail.me"/>
-      </fieldset>
-      <fieldset class="fieldset">
-        <legend class="fieldset__legend">
-        <h2 class="fieldset__heading">Help us improve HSE.GOV.UK</h2>
-        <p>Don’t include personal or financial information like your National Insurance number or credit card details.</p>
-        </legend>
-        <div class="form-group">
-          <label class="label" for="what-were-you-doing?">What were you doing?</label>
-          <input class="input input-text input-width-full required" name="what-were-you-doing?" type="text" id="what-were-you-doing?"/>
-        </div>
-        <div class="form-group">
-          <label class="label" for="what-went-wrong?">What went wrong?</label>
-          <input class="input input-text input-width-full required" id="what-went-wrong?" name="what-went-wrong?" type="text">
-        </div>
-      </fieldset>
-      <div class="form-group js-hide" id="user-url"> </div>
-      <fieldset>
-        <input type="submit" value="Submit" class="btn btn-primary"/>
-      </fieldset>
-    </form>
-  </div>
+  <div class="report-a-problem-form"></div>
 
 <!-- TemplateBeginMultipleIf -->
 <!-- TemplateBeginIfClause cond="survey == true" -->

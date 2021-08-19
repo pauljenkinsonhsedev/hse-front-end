@@ -24,7 +24,7 @@ display: none;
 <!-- Page title and meta -->
 	
 <!-- InstanceBeginEditable name="doctitle" -->
-<title></title>
+<title>Framework testing - HSE.GOV.UK Design System</title>
 <meta name="keywords" content=" " />
 <meta name="description" content=" " />
 <!-- InstanceEndEditable -->
@@ -97,7 +97,7 @@ display: none;
 <nav id="navSecondary" aria-label="Secondary"> <!-- InstanceBeginEditable name="Subnav" --><!-- #BeginLibraryItem "/Library/_v5-framework.lbi" --><div id="menu" class="slinky-menu slinky-theme-default">
   <ul>
     <li class="first"><a href="../index.htm">Framework</a></li>
-    <li><a href="#">Template</a>
+	  <li><a href="#">Template</a>
       <ul>
         <li><a href="../template/template.htm">Applying template</a></li>
         <li><a href="../template/regions.htm">Editable regions</a></li>
@@ -118,6 +118,21 @@ display: none;
         </li>
       </ul>
     </li>
+	  <li><a href="#">Workflow</a>
+		  <ul>
+			  <li><a href="../workflow/index.htm">Workflow</a></li>
+			  <li><a href="#">Gitflow</a>
+			  <ul>
+				  <li><a href="../workflow/gitflow.htm">Gitflow</a></li>
+				  <li><a href="../workflow/gitflow-features.htm">Feature branches</a></li>
+				  <li><a href="../workflow/gitflow-releases.htm">Release branches</a></li>
+				  <li><a href="../workflow/gitflow-hotfixes.htm">Hotfixes</a></li>
+				</ul>
+			  </li>
+			  <li><a href="../workflow/client-tools.htm">Git-client management tools</a></li>
+		  </ul>
+	  </li>
+    
     <li><a href="#">Testing</a>
       <ul>
 		<li><a href="index.htm">Overview</a></li>
@@ -170,7 +185,7 @@ display: none;
 
 <ul>
  <li>Upload test pages and framework assets to external testbed: <a href="https://beta.hse.gov.uk/testbed/">https://beta.hse.gov.uk/testbed/</a></li>
- <li>Mobile device testing</li> 
+ <li><a href="browsers-devices.htm#mobile-devices">Mobile device testing</a></li> 
 </ul>
 
 
@@ -185,10 +200,13 @@ display: none;
    <li>Check reports against previous framework</li>
  </ul>
  </li>
-<li>Accessibility</li>
-<li>Run lighthouse accessibility report in chrome</li>
-<li>Use siteimprove accessibility checker (chrome extension) to check for new errors and issues</li>
-<li>Keyboard-only navigation test</li>
+<li>Accessibility
+<ul>
+ <li>Run lighthouse accessibility report in chrome</li>
+ <li>Use siteimprove accessibility checker (chrome extension) to check for new errors and issues</li>
+ <li>Keyboard-only navigation test</li>
+</ul>
+</li>
 </ul>
 	
 <h4>Reports</h4>	
@@ -196,7 +214,7 @@ display: none;
 	
 <h4>Accessibility</h4> 
 	
-<p>Reports should be compared to latest stable version of website framework, if framework release includes specific siteimprove fixes, they can be checked using the siteimprove accessibility checker. Siteimprove NextGen issues currently can only be checked on the live site.</p>
+<p>Accessibility Reports should be compared to latest stable version of website framework, if framework release includes specific siteimprove fixes, they can be checked using the <a href="https://chrome.google.com/webstore/detail/siteimprove-accessibility/djcglbmbegflehmbfleechkjhmedcopn">siteimprove accessibility checker</a>.</p>
 	
 <!-- InstanceEndEditable -->
 	
@@ -224,7 +242,7 @@ display: none;
   </footer>
 </nav>
 <section id="lastUpdated" aria-label="Last updated">
-<!-- InstanceBeginEditable name="updated" -->Updated:<!-- #BeginDate format:IS1 -->2021-07-30<!-- #EndDate --><!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="updated" -->Updated:<!-- #BeginDate format:IS1 -->2021-08-12<!-- #EndDate --><!-- InstanceEndEditable -->
 </section>
 <script src="../../assets/v5-js/v5-main.min.js"></script>
 <script src="../../assets/v5-js/jquery.min.js"></script> 

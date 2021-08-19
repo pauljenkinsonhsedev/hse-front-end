@@ -6,8 +6,8 @@ module.exports = {
   devtool: 'source-map',
   target: 'web',
   entry: {
-    'v5-main.min': ['./src/shared/js/v5-main.js'],
-    'v5-cookies': ['./src/shared/js/v5-cookies.js']
+    'v5-main.min': ['formdata-polyfill', 'whatwg-fetch', './src/shared/js/v5-main.js'],
+    'v5-cookies': ['formdata-polyfill', 'whatwg-fetch', './src/shared/js/v5-cookies.js'],
   },
   output: {
     filename: '[name].js',
@@ -17,7 +17,7 @@ module.exports = {
       {
         test: /\.js$/,
         use: {
-          loader: 'babel-loader'
+          loader: 'babel-loader',
         },
       },
     ],
@@ -31,7 +31,7 @@ module.exports = {
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify(process.env.NODE_ENV),
-      }
-    })
-  ]
+      },
+    }),
+  ],
 };

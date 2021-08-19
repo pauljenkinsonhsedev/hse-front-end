@@ -80,16 +80,17 @@ display: none;
 		<ol>
 			<li class="home"><a href="../../index.htm">Design System</a></li>
 			<li><a href="../index.htm">Framework</a></li>
-			<li>Parameters</li>
+			<li><a href="index.htm">Workflow</a></li>
+			<li>Git-flow features</li>
 		</ol>
 		<!-- InstanceEndEditable --> </div>
   <div id="backTo">
-    <p class="backto"><a id="backnav" href="../index.htm">Back to</a></p>
+    <p class="backto"><a id="backnav" href="index.htm">Back to</a></p>
   </div>
 </nav>
  
 <div id="pageContainer" class="v5" xmlns:argot="http://purl.oclc.org/argot/" xmlns:dc="http://purl.org/dc/terms/" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:v="http://www.w3.org/2006/vcard/ns#" xmlns:dbp="http://dbpedia.org/resource/">
-<!-- InstanceBeginEditable name="beta-survey" --> 
+<!-- InstanceBeginEditable name="beta-survey" -->
 
 
 <!-- InstanceEndEditable -->   
@@ -102,10 +103,10 @@ display: none;
     <li class="first"><a href="../index.htm">Framework</a></li>
 	  <li><a href="#">Template</a>
       <ul>
-        <li><a href="template.htm">Applying template</a></li>
-        <li><a href="regions.htm">Editable regions</a></li>
-        <li><a href="param.htm">Parameters</a></li>
-        <li><a href="accessibility.htm">Accessibility</a></li>
+        <li><a href="../template/template.htm">Applying template</a></li>
+        <li><a href="../template/regions.htm">Editable regions</a></li>
+        <li><a href="../template/param.htm">Parameters</a></li>
+        <li><a href="../template/accessibility.htm">Accessibility</a></li>
         <li><a href="#">Components</a>
           <ul>
             <li><a href="../components/index.htm">Overview</a></li>
@@ -123,16 +124,16 @@ display: none;
     </li>
 	  <li><a href="#">Workflow</a>
 		  <ul>
-			  <li><a href="../workflow/index.htm">Workflow</a></li>
+			  <li><a href="index.htm">Workflow</a></li>
 			  <li><a href="#">Gitflow</a>
 			  <ul>
-				  <li><a href="../workflow/gitflow.htm">Gitflow</a></li>
-				  <li><a href="../workflow/gitflow-features.htm">Feature branches</a></li>
-				  <li><a href="../workflow/gitflow-releases.htm">Release branches</a></li>
-				  <li><a href="../workflow/gitflow-hotfixes.htm">Hotfixes</a></li>
+				  <li><a href="gitflow.htm">Gitflow</a></li>
+				  <li><a href="gitflow-features.htm">Feature branches</a></li>
+				  <li><a href="gitflow-releases.htm">Release branches</a></li>
+				  <li><a href="gitflow-hotfixes.htm">Hotfixes</a></li>
 				</ul>
 			  </li>
-			  <li><a href="../workflow/client-tools.htm">Git-client management tools</a></li>
+			  <li><a href="client-tools.htm">Git-client management tools</a></li>
 		  </ul>
 	  </li>
     
@@ -157,220 +158,19 @@ display: none;
  
 	
 <!-- InstanceBeginEditable name="content" -->
-  
-  <h1>Parameters</h1>
-	
- <p>Template parameters indicate values for controlling content in pages based on a template.</p>
-	
- <h2>How to use</h2>
-	
- <p>Parameters can be found at the bottom of every page that has the hse.gov.uk template applied. To use the parameters you will need to change the value of the parameter and then update the page in Dreamweaver.</p>
-	
- <p>The following list of values can be used, see the components and regions pages for more information.</p>
-	
-<h2>When to use</h2>
-	
-<p>A change in value to a paremeter can be used for changes to layout, <a href="regions.htm">editable content regions</a>, style and using a <a href="../components/index.htm">template component</a>.</p>
-	
-  <table>
-	  
-   <caption>Parameters</caption>
-	  
-   <thead>
-	   
-	  
-	  <th>Name</th>
-	  <th>Type</th>
-	  <th>Values</th>
-	  <th>Status</th>
-	  
-	  
-   </thead>
-	  
-   <tbody>
-	   
-	   <tr>  
-	   <td>bodyClass</td>
-	   <td>text</td>
-	   <td>home, news, guidance, abouthse, freeUpdates, contact</td>
-	   <td>active</td>
-	  </tr>
-	   
-	  <tr>  
-	   <td>layout</td>
-	   <td>text</td>
-	   <td>betacontentpage, betatwocol</td>
-	   <td>active</td>
-	  </tr>
-	   
-	   <tr>  
-	   <td>columnLayout</td>
-	   <td>number</td>
-	   <td>1, 2</td>
-	   <td>active</td>
-	  </tr>
-	   
-	   <tr>  
-	   <td>platform</td>
-	   <td>text</td>
-	   <td>v5</td>
-	   <td>active</td>
-	  </tr>
-	   
-	   <tr>  
-	   <td>rdfa</td>
-	   <td>boolean</td>
-	   <td>true, false</td>
-	   <td>review</td>
-	  </tr>
-	   
-	   <tr>  
-	   <td>welsh</td>
-	   <td>boolean</td>
-	   <td>true, false</td>
-	   <td>active</td>
-	  </tr>
-	   
-	   <tr>  
-	   <td>homepage</td>
-	   <td>boolean</td>
-	   <td>true, false</td>
-	   <td>review</td>
-	  </tr>
-	   
-	   <tr>  
-	   <td>weblite</td>
-	   <td>boolean</td>
-	   <td>true, false</td>
-	   <td>review</td>
-	  </tr>
-	   
-	   <tr>  
-	   <td>feedback</td>
-	   <td>boolean</td>
-	   <td>true, false</td>
-	   <td>active</td>
-	  </tr>
-	   
-	   <tr>  
-	   <td>contentType</td>
-	   <td>text</td>
-	   <td>default</td>
-	   <td>review</td>
-	  </tr>
-	   
-	   <tr>  
-	   <td>notificationBar</td>
-	   <td>boolean</td>
-	   <td>true, false</td>
-	   <td>active</td>
-	  </tr>
-	   
-	   <tr>  
-	   <td>printGuide</td>
-	   <td>boolean</td>
-	   <td>true, false</td>
-	   <td>review</td>
-	  </tr>
-	  
-	  
-   </tbody>
-	
-	
-	
-  </table>
-	
-	<h2>Body class</h2>
-	
-	<p>Adds the value of the parameter as a css class to the HTML body tag</p>
-	
-	<p>This parameter is used to changed the active style of the main menu, a value of &ldquo;guidance&rdquo; would highlight the guidance item in the main menu.</p>
-	
-	<h2>Layout</h2>
-	
-	<p>Modifies page to display different content regions and change layout of page, <strong>betacontentpage</strong> is the default value for this parameter.</p>
-	
-	<h2>Column Layout</h2>
-	
-	<p>Modifies the layout of the page, there are 2 values to choose from:</p>
-	
-	<table>
-	
-	<thead>
-	 <th>Name</th>
-	 <th>Parameter value</th>
-	 <th>Description</th>
-	</thead>
-		
-	<tbody>
-		
-	<tr>
-	 <td>Full width layout</td>	
-	 <td>1</td>
-	 <td>Full width layout which can be used with V5 CSS layout</td>
-	</tr>
-		
-	<tr>
-	 <td>2 Column layout that includes content region for secondary navigation</td>
-	 <td>2</td>
-	 <td>Standard content page with secondary navigation, V4 css box layout ported to v5 and can be used on all 2 column pages.</td>
-	</tr>
-		
-	</tbody>
-	
-	
-	</table>
-	
-	<p>Column layout parameter is only applicable to the betacontentpage layout.</p>
-	
-	
-	
 
-	<h2>Platform</h2>
-	
-	<p>A conditional parameter for changing page header, Default value is <strong>v5</strong>.</p>
-	
-	<h2>RDFA</h2>
-	
-	<p>Adds RDFA attributes to page</p>
-	
-	<h2>Welsh</h2>
-	
-	<p>Adds Welsh language attribute to page content if value set to <strong>true</strong>.</p>
-	
-	<code>lang="cy"</code>
-	
-	<h2>Homepage</h2>
-	
-	<p>Only used on website homepage (under review)</p>
-	
-	<h2>Weblite</h2>
-	
-	<p>Under review</p>
-	
-	<h2>User feedback</h2>
-	
-	<p>Adds "Was this page useful" yes/no (user feedback) to the bottom of the page content if value set to <strong>true</strong>.</p>
-	
-	<h2>Content type</h2>
-	
-	<p>Under review.</p>
-	
-	<h2>Page notification</h2>
-	
-	<p>Adds a <a href="regions.htm">editable template region</a> to the page for displaying content in a notification bar below the main menu. </p>
-	
-
-	<h2>Print guidance</h2>
-	
-	<p>Under review</p>
-	
+  <h1>Git-flow features</h1>
+  <p><strong>Features</strong> derive from <strong>develop</strong> branch. A <strong>feature branch</strong> is a place to work on any new features of the site. For example if you were building an 'accordion' component. By default you should always base your <strong>feature branch</strong> on <strong>develop branch</strong>.</p>
+  <p></p>
+  <h2>Command line</h2>
+  <ul>
+    <li><code>git flow feature start NAMEOFFEATURE</code></li>
+    <li><code>git commit -a &quot;my changes&quot;</code> (commit changes as normal)</li>
+    <li><code>git flow feature publish NAMEOFFEATURE</code> <br>(only if you want your feature to exist in the repo so other developers can look at or contribute.)</li>
+    <li><code>git flow feature finish NAMEOFFEATURE</code></li>
+  </ul>
 
 
-
-  
-  
-				
 <!-- InstanceEndEditable -->
 	
  
@@ -398,7 +198,7 @@ display: none;
 </nav>
 <section id="lastUpdated" aria-label="Last updated">
 <!-- InstanceBeginEditable name="updated" --> Updated:
-	<!-- #BeginDate format:IS1 -->2021-04-16<!-- #EndDate -->
+	<!-- #BeginDate format:IS1 -->2021-08-09<!-- #EndDate -->
 	<!-- InstanceEndEditable -->
 </section>
 <script src="../../assets/v5-js/v5-main.min.js"></script>
