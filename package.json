@@ -14,13 +14,15 @@
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.10.2",
-    "@babel/polyfill": "^7.11.5",
+    "@babel/plugin-transform-arrow-functions": "^7.14.5",
     "@babel/preset-env": "^7.11.0",
     "@babel/register": "^7.10.5",
+    "@babel/runtime-corejs3": "^7.15.3",
     "autoprefixer": "^9.8.6",
     "babel-eslint": "^10.0.3",
     "babel-loader": "^8.1.0",
     "colors": "^1.4.0",
+    "core-js": "^3.16.1",
     "date-format": "^3.0.0",
     "del": "^5.1.0",
     "fs": "^0.0.1-security",
@@ -58,9 +60,8 @@
     "whatwg-fetch": "^3.6.2"
   },
   "dependencies": {
-    "@babel/runtime": "^7.11.2",
     "clipboard": "^2.0.8",
-    "core-js": "3",
+    "formdata-polyfill": "^4.0.6",
     "highcharts": "^8.2.0",
     "js-cookie": "^2.2.1",
     "moment": "2.27.0",

@@ -13,6 +13,38 @@ $switch-size: 26px;
   &:focus {
     outline: 0;
   }
+
+  &:before,
+  &:after {
+      display: block;
+      position: absolute;
+      width: 50%;
+      top: 50%;
+      transform: translateY(-50%);
+      color: $black;
+      cursor: pointer;
+      @include type-setting(0);
+
+      transition: color 300ms ease-in-out;
+  }
+  &:before {
+      left: -30px;
+      content: "No"
+  }
+  &:after {
+      right: -40px;
+      color: $mono-d;
+      content: "Yes"
+  }
+
+  &:checked {
+      &:before {
+          color: $mono-d;
+      }
+      &:after {
+          color: $black;
+      }
+  }
 }
 
 // Checkbox
@@ -21,37 +53,7 @@ $switch-size: 26px;
     height: 0;
     appearance: none;
 
-    &:before,
-    &:after {
-        display: block;
-        position: absolute;
-        width: 50%;
-        top: 50%;
-        transform: translateY(-50%);
-        color: $black;
-        cursor: pointer;
-        @include type-setting(0);
-
-        transition: color 300ms ease-in-out;
-    }
-    &:before {
-        left: -30px;
-        content: "No"
-    }
-    &:after {
-        right: -40px;
-        color: $mono-d;
-        content: "Yes"
-    }
-
-    &:checked {
-        &:before {
-            color: $mono-d;
-        }
-        &:after {
-            color: $black;
-        }
-    }
+  
 }
 
 // Slider
