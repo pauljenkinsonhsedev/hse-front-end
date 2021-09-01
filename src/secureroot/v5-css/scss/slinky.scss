@@ -1,103 +1,105 @@
-.slinky-menu {
+.draw-container {
   overflow: hidden;
   transform: translateZ(0);
 }
-.slinky-menu > ul {
+.draw-container > ul {
   left: 0;
   position: relative;
   transform: translateZ(0);
 }
-.slinky-menu ul,
-.slinky-menu li {
+.draw-container ul,
+.draw-container li {
   list-style: none;
   margin: 0;
 }
-.slinky-menu li:hover {
-background: $darkgray;
+.draw-container li:hover {
+  background: $darkgray;
 }
-.slinky-menu a:focus {
-background: $focus;
+.draw-container a:focus {
+  background: $focus;
 }
-.slinky-menu ul {
+.draw-container ul {
   width: 100%;
 }
-.slinky-menu li.first a:hover span {
+.draw-container li.first a:hover span {
   color: white;
   text-decoration: underline;
 }
-.slinky-menu a {
+.draw-container a {
   align-items: center;
   display: flex;
   overflow: visible;
   background-color: $gray;
 }
 
-.slinky-menu a span {
+.draw-container a span {
   flex: 1;
   overflow: visible;
   width: 100%;
   height: auto;
 }
-.slinky-menu li ul {
+.draw-container li ul {
   //display: none;
   left: 100%;
   // position: absolute; Applied only if browser has JS - accesibility
   top: 0;
 }
-.slinky-menu .header {
+.draw-container .header {
   display: flex;
 }
 
-.slinky-menu .first .header {
+.draw-container .first .header {
   display: flex;
 }
-.slinky-menu .header .title {
+.draw-container .header .title {
   flex: 1;
   line-height: 1.4;
   margin: 0;
   order: 1;
 }
 
-.slinky-theme-default {
+.draw-container {
   //background-color: $gray;
 }
-.slinky-theme-default .title {
+.draw-container .title {
   color: #333;
   padding: 1em;
 }
-.slinky-theme-default li {
+.draw-container li {
   line-height: 1.4;
 }
-.slinky-theme-default a:not(.back) {
+.draw-container a:not(.back) {
   color: #333;
   padding: 14px !important;
 }
-.slinky-theme-default a:not(.back):hover {
+.draw-container a:not(.back):hover {
   background-color: $darkgray;
   color: $black;
 }
-.slinky-theme-default a:not(.back):active {
+.draw-container a:not(.back):active {
   background-color: $darkgray;
   color: $black;
 }
 
-.slinky-theme-default .back::before {
-  content: " ";
+.draw-container .back::before {
+  content: ' ';
   background-image: url('../../assets/v5-images/icons/svg/solid/arrow-left-white.svg');
   background-repeat: no-repeat;
   display: inline-block;
   height: 16px;
   margin: 0;
-  transform: translateX(10px) !important; // Important to reverse slinky transform CSS
+  transform: translateX(
+    10px
+  ) !important; // Important to reverse slinky transform CSS
   border-right: 10px solid transparent;
 }
 
-.slinky-theme-default .back {
+.draw-container .back {
   text-decoration: none;
 }
 
-.slinky-theme-default a.next::after {
-  content: " ";
+.draw-container a.next::after {
+  content: ' ';
   background-image: url('../../assets/v5-images/icons/svg/solid/arrow-right.svg');
   background-repeat: no-repeat;
   display: inline-block;
@@ -107,8 +109,9 @@ background: $focus;
   margin-left: auto;
 }
 
-.slinky-theme-default a.next:hover::after, .slinky-theme-default a.next:focus::after {
-  content: " ";
+.draw-container a.next:hover::after,
+.draw-container a.next:focus::after {
+  content: ' ';
   background-image: url('../../assets/v5-images/icons/svg/solid/arrow-right-red.svg');
   background-repeat: no-repeat;
   display: inline-block;
@@ -119,29 +122,29 @@ background: $focus;
   z-index: 9999;
 }
 
-.slinky-theme-default .next::after {
+.draw-container .next::after {
   margin-left: 1em;
 }
-.slinky-theme-default .back::before {
+.draw-container .back::before {
   padding: 0 1em;
   transform: scaleX(-1);
 }
 
-.slinky-menu li {
-  background: none ;
+.draw-container li {
+  background: none;
   padding: 0;
 }
 
-.slinky-menu li.first a {
+.draw-container li.first a {
   font-weight: bold;
   background-color: $red;
 }
 
-.slinky-menu li.first a {
+.draw-container li.first a {
   color: white;
 }
 
-.slinky-menu li.first a:hover{
+.draw-container li.first a:hover {
   background-color: $red;
   color: white;
 }
@@ -163,51 +166,52 @@ li.first a.active-page {
   border-left: none !important;
 }
 
-
 // Back
 
-.slinky-menu li a.back {
+.draw-container li a.back {
   width: 100%;
   background-color: $red;
   color: white;
 }
 
-.slinky-menu li.first a {
+.draw-container li.first a {
   width: 100%;
 }
 
 // links
 
-.slinky-menu li.first a:hover span, .slinky-menu li.header a:hover {
+.draw-container li.first a:hover span,
+.draw-container li.header a:hover {
   text-decoration: underline !important;
 }
 
-.slinky-menu a, .slinky-menu a span {
+.draw-container a,
+.draw-container a span {
   text-decoration: none;
 }
 
-.slinky-menu .header .title {
+.draw-container .header .title {
   color: white;
 }
 
-.slinky-menu li a.back {
+.draw-container li a.back {
   padding: 1em 0;
 }
 
-.slinky-menu li.first a:focus {
+.draw-container li.first a:focus {
   color: $black !important;
 }
 
-.slinky-menu li a:focus-within {
+.draw-container li a:focus-within {
   background-color: $focus;
   color: $black !important;
 }
 
-.slinky-theme-default a.back:focus::before {
-  content: " ";
+.draw-container a.back:focus::before {
+  content: ' ';
   background-image: url('../../assets/v5-images/icons/svg/solid/arrow-left-black.svg') !important;
 }
 
-.slinky-menu .text-width {
-max-width: 90%;
+.draw-container .text-width {
+  max-width: 90%;
 }
