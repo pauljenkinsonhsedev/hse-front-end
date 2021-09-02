@@ -192,7 +192,7 @@ export function cookiePreferences() {
         event.preventDefault();
         // destroy banner
         Cookies.set('hide_banner', true, setCookieSettings);
-        messageContainer.remove();
+        messageContainer.parentNode.removeChild(messageContainer);
     });
 
     // accept all
