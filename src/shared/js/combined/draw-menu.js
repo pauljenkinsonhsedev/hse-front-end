@@ -49,28 +49,10 @@ export function drawMenu(container) {
     wrapper.style.left = `-${depth}00%`;
 
     const parent = e.target.closest('.draw');
-    const grandParent = parent.closest('.draw');
-
-    console.log('parent', parent);
-    console.log('grandParent', grandParent);
+    const grandParent = parent.closest('ul').closest('.draw');
     parent.classList.remove('active');
     grandParent.classList.add('active');
-    console.log(e.target.closest('.draw'));
   }
-  // Back navigation event
-  // document.querySelector('body').addEventListener('click', (e) => {
-  //   if (e.target.matches('.back')) {
-  //     e.preventDefault();
-  //     const draw = e.target.parentNode.parentNode;
-  //     draw.classList.remove('active');
-  //     draw.closest('.draw').classList.add('active');
-  //     console.log(draw.closest('.draw'));
-  //     depth = depth - 1;
-  //     wrapper.style.left = `-${depth}00%`;
-  //     // container.classList.remove('open');
-  //     // container.style.removeProperty('height');
-  //   }
-  // });
 
   // Add click event
   const next = document.querySelectorAll('.next');
