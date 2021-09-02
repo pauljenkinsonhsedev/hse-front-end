@@ -148,7 +148,7 @@ export function feedbackSurvey() {
         yesNoContainer.classList.remove('js-hide');
 
         reportProblemForm.innerHTML = '';
-        e.target.remove();
+        e.target.parentNode.removeChild(e.target);
     }
 
     function closeSurvey() {
