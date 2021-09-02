@@ -69,7 +69,7 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
   // small device menu
-  const menu = document.querySelector('.js-menu');
+  const menu = document.querySelector('.secondary-menu');
   if (menu) {
     mainMenu();
   }
