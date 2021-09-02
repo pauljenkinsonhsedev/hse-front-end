@@ -1,4 +1,4 @@
-import Modal from './modal';
+import Modal from './utils/modal';
 import { customEventListener } from './utils/add-custom-event-listener.js';
 
 export function lightbox() {
