@@ -162,6 +162,8 @@ display: none;
 <h1>User satisfaction</h1>
 
 <p>Each webpage on HSE.GOV.UK has the option to add user feedback at the top of the webpage footer, this is optional and can be displayed using template parameters.</p>
+	
+<h2>Is this page useful</h2>
 
 <h3>When to use</h3>
 
@@ -179,11 +181,11 @@ display: none;
 
 <p>The survey section is an option that can be used in conjunction with the default user feedback survey. When the survey is enabled, if a user selects yes or no they will then be prompted to complete a survey.</p>
 
-<h3>How to add survey</h3>
+<h4>How to add survey</h4>
 
 <p>To include a survey you will need to add a value to the feedbackClass parameter, as this suvery is experimental there is currently only one value which is <strong>'feedback-beta'</strong>.</p>
 
-<h3>Survey libray item</h3>
+<h4>Survey libray item</h4>
 
 <p>The survey should be contained in a libray item and applied to all pages in site or specific pages you want the survey to display. You must include the survey in the editable region named <strong>'survey'</strong>, the library item does not require a specific name.</p>
 
@@ -194,6 +196,48 @@ display: none;
 &lt;!-- InstanceEndEditable --&gt;</code></pre>
 
 <p>The survey library item contains HTML content which requires a specicic structure and style classes, you can use the <a href="../feedback-survey.htm">survey library item example</a> to build your own.</p>
+	
+	
+<h2>Report a problem with this page</h2>
+	
+<p>The 'report a problem with this page' section is intended for users to report problematic pages on hse.gov.uk, this information is used by the web and design team to investigate potential issues on hse.gov.uk website.</p>
+	
+<p>When a user selects the 'Report a problem with this page' button, a HTML form is inserted with JS to provide the user input fields to report a problem.</p>
+	
+<p>The two input fields are:</p>
+	
+<table>
+	
+<tr>
+	
+<th>Field name</th>
+<th>Description</th>
+<th>Input type</th>
+	
+</tr>
+	
+<tr>
+	
+<td>What were you doing?</td>
+<td>User describes what they were doing at the time a problem occured on the page, e.g 'I clicked on a link to a PDF'</td>
+<td>Text</td>
+
+</tr>
+	
+<tr>
+	
+<td>What went wrong?</td>
+<td>User describes the problem, e.g. 'The PDF file did not open'</td>
+<td>Text</td>
+
+</tr>
+	
+
+	
+	
+</table>
+	
+<p>When the user submits the form it sends an email to <strong>hse.online@hse.gov.uk</strong>, the email includes the user input fields and a hidden field that contains the URL of the page the user was on when they completed the form.</p>
 
 
 
@@ -226,7 +270,7 @@ display: none;
 </nav>
 <section id="lastUpdated" aria-label="Last updated">
 <!-- InstanceBeginEditable name="updated" --> Updated:
-	<!-- #BeginDate format:IS1 -->2021-05-27<!-- #EndDate -->
+	<!-- #BeginDate format:IS1 -->2021-08-26<!-- #EndDate -->
 	<!-- InstanceEndEditable -->
 </section>
 <script src="../../assets/v5-js/v5-main.min.js"></script>
