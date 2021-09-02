@@ -31,7 +31,7 @@ export function notificationBanner() {
             customEventListener('.notification-hide', 'click', (event) => {
                 event.preventDefault();
                 Cookies.set('global_banner', 'true' , setCookiesSettings);
-                globalNotification.remove();
+                globalNotification.parentNode.removeChild(globalNotification);
             });
         }
     });
