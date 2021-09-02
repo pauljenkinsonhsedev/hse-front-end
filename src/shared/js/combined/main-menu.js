@@ -44,7 +44,7 @@ export function mainMenu(){
     if (menu.classList.contains('active')) {
       // Hide
       menu.classList.remove('active');
-      $('#globalSearch').removeClass('desktop-hide');
+      document.querySelector('#globalSearch').classList.remove('desktop-hide');
       menu.setAttribute('aria-hidden', 'true');
       menuButton.setAttribute('aria-expanded', 'false');
       menuButton.classList.add('main-menu');
@@ -54,7 +54,7 @@ export function mainMenu(){
     } else {
       // Show
       menu.classList.add('active');
-      $('#globalSearch').addClass('desktop-hide');
+      document.querySelector('#globalSearch').classList.add('desktop-hide');
       menu.setAttribute('aria-hidden', 'false');
       menuButton.setAttribute('aria-expanded', 'true');
       menuButton.classList.add('main-menu-expanded');
