@@ -27,9 +27,14 @@
   left: 100%;
   top: 0;
   width: 100%;
-  display: none;
+  // display: none;
+  visibility: hidden;
 
   &.active {
-    display: block;
+    visibility: visible;
   }
+
+  // &.active > .active {
+  //   display: block;
+  // }
 }

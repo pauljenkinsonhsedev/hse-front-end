@@ -7,9 +7,7 @@ export function drawMenu(container) {
   // container.style.height = `${height}px`;
 
   // create back navigation
-
   function createBackLinks(elem) {
-    console.log('elem', elem.previousElementSibling);
     const firstItem = elem.previousElementSibling;
     const header = document.createElement('li');
     const headerAction = document.createElement('a');
@@ -37,38 +35,64 @@ export function drawMenu(container) {
     drawAction.classList.add('next');
   });
 
-  // Back navigation event
-  document.querySelector('body').addEventListener('click', (e) => {
-    if (e.target.matches('.back')) {
-      e.preventDefault();
-      depth = depth -1;
-      wrapper.style.left = `-${depth}00%`;
-      container.classList.remove('open');
-      container.style.removeProperty('height');
-    }
+  // Add click event
+  const back = document.querySelectorAll('.back');
+  back.forEach((item) => {
+    console.log(item);
+    item.addEventListener('click', backHandler);
   });
+
+  function backHandler(e) {
+    e.preventDefault();
+    depth--;
+
+    wrapper.style.left = `-${depth}00%`;
+
+    const parent = e.target.closest('.draw');
+    const grandParent = parent.closest('.draw');
+
+    console.log('parent', parent);
+    console.log('grandParent', grandParent);
+    parent.classList.remove('active');
+    grandParent.classList.add('active');
+    console.log(e.target.closest('.draw'));
+  }
+  // Back navigation event
+  // document.querySelector('body').addEventListener('click', (e) => {
+  //   if (e.target.matches('.back')) {
+  //     e.preventDefault();
+  //     const draw = e.target.parentNode.parentNode;
+  //     draw.classList.remove('active');
+  //     draw.closest('.draw').classList.add('active');
+  //     console.log(draw.closest('.draw'));
+  //     depth = depth - 1;
+  //     wrapper.style.left = `-${depth}00%`;
+  //     // container.classList.remove('open');
+  //     // container.style.removeProperty('height');
+  //   }
+  // });
 
   // Add click event
   const next = document.querySelectorAll('.next');
   next.forEach((item) => {
-    item.addEventListener('click', clickHandler);
+    item.addEventListener('click', nextHandler);
   });
 
-  function clickHandler(e) {
+  function nextHandler(e) {
     e.preventDefault();
     depth++;
 
     wrapper.style.left = `-${depth}00%`;
     container.classList.add('open');
 
-    const anchors = container.querySelectorAll('.draw-wrapper li:first-of-type .next');
-
+    const anchors = container.querySelectorAll('.draw-wrapper .next');
     for (let n = 0; n < anchors.length; ++n) {
-      if (anchors[n] !== e.target) {
+      if (anchors[n] !== this) {
         anchors[n].nextElementSibling.classList.remove('active');
+        // anchors[n].nextElementSibling.style.visibility = 'hidden';
       }
     }
-
+    // e.target.nextElementSibling.style.visibility = 'visible';
     e.target.nextElementSibling.classList.add('active');
 
     // const drawHeight = e.target.nextElementSibling.offsetHeight;
