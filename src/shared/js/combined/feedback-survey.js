@@ -57,9 +57,9 @@ export function feedbackSurvey() {
     }
 
     function websiteFeedback() {
-        userYes.remove();
-        userNo.remove();
-        userReportProblem.remove();
+        userYes.parentNode.removeChild(userYes);
+        userNo.parentNode.removeChild(userNo);
+        userReportProblem.parentNode.removeChild(userReportProblem);
         message.innerHTML = `Thank you for your feedback.`;
         message.classList.add('feedback-message-active');
     }
@@ -148,7 +148,7 @@ export function feedbackSurvey() {
         yesNoContainer.classList.remove('js-hide');
 
         reportProblemForm.innerHTML = '';
-        e.target.remove();
+        e.target.parentNode.removeChild(e.target);
     }
 
     function closeSurvey() {
