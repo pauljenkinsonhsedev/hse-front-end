@@ -16,12 +16,26 @@ a {
         color: $redhover;
     }
 }
+.backgroundRed a:link {
+color: white;
+}
+
+
+.backgroundRed a {
+    &:hover,
+    &:active,
+    &:focus,
+    a span.subText {
+        text-decoration: none;
+        color: $black;
+    }    
+}
 
 
 p a, li a {
 
     &:hover, &:focus {
-    text-decoration: none !important;
+    text-decoration: none;
     color: $black; 
     background: $focus;   
     }
