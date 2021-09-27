@@ -3,18 +3,18 @@ export function drawMenu(container) {
   let depth = 0;
   const wrapper = container.querySelector('ul:first-of-type');
   wrapper.classList.add('draw-wrapper');
-  const height = wrapper.offsetHeight;
-  // container.style.height = `${height}px`;
 
   // create back navigation
   function createBackLinks(elem) {
-    const firstItem = elem.previousElementSibling;
+    const returnTo = elem.parentElement.parentElement.firstElementChild.textContent;
+    const regex = /Overview -/gi;
+    const headerText = returnTo.replaceAll(regex, '');
     const header = document.createElement('li');
     const headerAction = document.createElement('a');
     headerAction.href = '#';
     headerAction.classList.add('back');
-    headerAction.innerHTML = firstItem.textContent;
-    headerAction.title = `Back to ${firstItem.textContent}`;
+    headerAction.innerHTML = headerText;
+    headerAction.title = `Back to ${headerText}`;
     header.classList.add('header');
     header.appendChild(headerAction.cloneNode(true));
 
@@ -31,14 +31,15 @@ export function drawMenu(container) {
     draw.appendChild(item.cloneNode(true));
     item.replaceWith(draw);
 
+    draw.querySelector('li').classList.add('header');
+
     const drawAction = draw.previousElementSibling;
     drawAction.classList.add('next');
   });
 
-  // Add click event
+  // Add click event for back
   const back = document.querySelectorAll('.back');
   back.forEach((item) => {
-    console.log(item);
     item.addEventListener('click', backHandler);
   });
 
@@ -47,14 +48,19 @@ export function drawMenu(container) {
     depth--;
 
     wrapper.style.left = `-${depth}00%`;
-
+    let drawHeight;
     const parent = e.target.closest('.draw');
     const grandParent = parent.closest('ul').closest('.draw');
     parent.classList.remove('active');
-    grandParent.classList.add('active');
+    if (grandParent) {
+      grandParent.classList.add('active');
+      container.style.height = `${drawHeight}px`;
+    } else {
+      container.style.height = `auto`;
+    }
   }
 
-  // Add click event
+  // Add click event for next
   const next = document.querySelectorAll('.next');
   next.forEach((item) => {
     item.addEventListener('click', nextHandler);
@@ -71,14 +77,11 @@ export function drawMenu(container) {
     for (let n = 0; n < anchors.length; ++n) {
       if (anchors[n] !== this) {
         anchors[n].nextElementSibling.classList.remove('active');
-        // anchors[n].nextElementSibling.style.visibility = 'hidden';
       }
     }
-    // e.target.nextElementSibling.style.visibility = 'visible';
     e.target.nextElementSibling.classList.add('active');
 
-    // const drawHeight = e.target.nextElementSibling.offsetHeight;
-    // console.log('drawHeight', drawHeight);
-    // container.style.height = `${drawHeight}px`;
+    const drawHeight = e.target.nextElementSibling.offsetHeight;
+    container.style.height = `${drawHeight}px`;
   }
 }
