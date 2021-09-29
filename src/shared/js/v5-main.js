@@ -18,7 +18,7 @@ import { footnoteLinks } from './combined/footnote-links.js';
 import { footnoteAbbr } from './combined/footnote-abbr.js';
 import { topTasks } from './combined/top-tasks.js';
 import { equalHeights } from './combined/equal-heights.js';
-import { drawMenu } from './combined/draw-menu.js';
+import { subnavMenu } from './combined/subnav-menu.js';
 import { informationBanner } from './combined/information-banner.js';
 import { codeHighlighter } from './combined/code-highlighter.js';
 
@@ -37,7 +37,7 @@ window.addEventListener('DOMContentLoaded', () => {
   // Draw menus
   const secondaryMenu = document.getElementById('menu');
   if (secondaryMenu) {
-    drawMenu(secondaryMenu);
+    subnavMenu(secondaryMenu);
   }
 
   informationBanner();

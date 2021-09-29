@@ -1,8 +1,8 @@
-.draw-container {
+.subnav-container {
   background-color: transparent;
   transition: all 450ms ease-in-out;
 }
-.draw-wrapper {
+.subnav-wrapper {
   position: relative;
   display: block;
   left: 0;
@@ -27,88 +27,88 @@
   }
 }
 
-.draw-container {
+.subnav-container {
   overflow: hidden;
   transform: translateZ(0);
 }
-.draw-container > ul {
+.subnav-container > ul {
   left: 0;
   position: relative;
   transform: translateZ(0);
 }
-.draw-container ul,
-.draw-container li {
+.subnav-container ul,
+.subnav-container li {
   list-style: none;
   margin: 0;
 }
-.draw-container li:hover {
+.subnav-container li:hover {
   background: $darkgray;
 }
-.draw-container a:focus {
+.subnav-container a:focus {
   background: $focus;
 }
-.draw-container ul {
+.subnav-container ul {
   width: 100%;
 }
-.draw-container li.first a:hover span {
+.subnav-container li.first a:hover span {
   color: white;
   text-decoration: underline;
 }
-.draw-container a {
+.subnav-container a {
   align-items: center;
   display: flex;
   overflow: visible;
   background-color: $gray;
 }
 
-.draw-container a span {
+.subnav-container a span {
   flex: 1;
   overflow: visible;
   width: 100%;
   height: auto;
 }
-.draw-container li ul {
+.subnav-container li ul {
   left: 100%;
   top: 0;
 }
-.draw-container .header {
+.subnav-container .header {
   display: flex;
   a {
     width: 100%;
   }
 }
 
-.draw-container .first .header {
+.subnav-container .first .header {
   display: flex;
 }
-.draw-container .header .title {
+.subnav-container .header .title {
   flex: 1;
   line-height: 1.4;
   margin: 0;
   order: 1;
 }
 
-.draw-container .title {
+.subnav-container .title {
   color: #333;
   padding: 1em;
 }
-.draw-container li {
+.subnav-container li {
   line-height: 1.4;
 }
-.draw-container a:not(.back) {
+.subnav-container a:not(.back) {
   color: #333;
   padding: 14px !important;
 }
-.draw-container a:not(.back):hover {
+.subnav-container a:not(.back):hover {
   background-color: $darkgray;
   color: $black;
 }
-.draw-container a:not(.back):active {
+.subnav-container a:not(.back):active {
   background-color: $darkgray;
   color: $black;
 }
 
-.draw-container .back::before {
+.subnav-container .back::before {
   content: ' ';
   background-image: url('../../assets/v5-images/icons/svg/solid/arrow-left-white.svg');
   background-repeat: no-repeat;
@@ -121,11 +121,11 @@
   border-right: 10px solid transparent;
 }
 
-.draw-container .back {
+.subnav-container .back {
   text-decoration: none;
 }
 
-.draw-container a.next::after {
+.subnav-container a.next::after {
   content: ' ';
   background-image: url('../../assets/v5-images/icons/svg/solid/arrow-right.svg');
   background-repeat: no-repeat;
@@ -136,8 +136,8 @@
   margin-left: auto;
 }
 
-.draw-container a.next:hover::after,
-.draw-container a.next:focus::after {
+.subnav-container a.next:hover::after,
+.subnav-container a.next:focus::after {
   content: ' ';
   background-image: url('../../assets/v5-images/icons/svg/solid/arrow-right-red.svg');
   background-repeat: no-repeat;
@@ -149,29 +149,29 @@
   z-index: 9999;
 }
 
-.draw-container .next::after {
+.subnav-container .next::after {
   margin-left: 1em;
 }
-.draw-container .back::before {
+.subnav-container .back::before {
   padding: 0 1em;
   transform: scaleX(-1);
 }
 
-.draw-container li {
+.subnav-container li {
   background: none;
   padding: 0;
 }
 
-.draw-container li.first a {
+.subnav-container li.first a {
   font-weight: bold;
   background-color: $red;
 }
 
-.draw-container li.first a {
+.subnav-container li.first a {
   color: white;
 }
 
-.draw-container li.first a:hover {
+.subnav-container li.first a:hover {
   background-color: $red;
   color: white;
 }
@@ -195,50 +195,50 @@ li.first a.active-page {
 
 // Back
 
-.draw-container li a.back {
+.subnav-container li a.back {
   width: 100%;
   background-color: $red;
   color: white;
 }
 
-.draw-container li.first a {
+.subnav-container li.first a {
   width: 100%;
 }
 
 // links
 
-.draw-container li.first a:hover span,
-.draw-container li.header a:hover {
+.subnav-container li.first a:hover span,
+.subnav-container li.header a:hover {
   text-decoration: underline !important;
 }
 
-.draw-container a,
-.draw-container a span {
+.subnav-container a,
+.subnav-container a span {
   text-decoration: none;
 }
 
-.draw-container .header .title {
+.subnav-container .header .title {
   color: white;
 }
 
-.draw-container li a.back {
+.subnav-container li a.back {
   padding: 1em 0;
 }
 
-.draw-container li.first a:focus {
+.subnav-container li.first a:focus {
   color: $black !important;
 }
 
-.draw-container li a:focus-within {
+.subnav-container li a:focus-within {
   background-color: $focus;
   color: $black !important;
 }
 
-.draw-container a.back:focus::before {
+.subnav-container a.back:focus::before {
   content: ' ';
   background-image: url('../../assets/v5-images/icons/svg/solid/arrow-left-black.svg') !important;
 }
 
-.draw-container .text-width {
+.subnav-container .text-width {
   max-width: 90%;
 }

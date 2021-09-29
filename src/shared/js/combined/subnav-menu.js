@@ -1,7 +1,7 @@
 export function drawMenu(container) {
-  container.classList.add('draw-container');
+  container.classList.add('subnav-container');
   const wrapper = container.querySelector('ul:first-of-type');
-  wrapper.classList.add('draw-wrapper');
+  wrapper.classList.add('subnav-wrapper');
 
   // Create draws
   const nestedChildren = container.querySelectorAll('ul:not(:first-child)');
@@ -144,7 +144,7 @@ export function drawMenu(container) {
     e.preventDefault();
     const parent = e.target.nextElementSibling;
     const position = parseInt(parent.dataset.depth);
-    const anchors = container.querySelectorAll('.draw-wrapper .next');
+    const anchors = container.querySelectorAll('.subnav-wrapper .next');
     for (let n = 0; n < anchors.length; ++n) {
       if (anchors[n] !== this) {
         anchors[n].nextElementSibling.classList.remove('active');
