@@ -1,4 +1,4 @@
-export function drawMenu(container) {
+export function subnavMenu(container) {
   container.classList.add('subnav-container');
   const wrapper = container.querySelector('ul:first-of-type');
   wrapper.classList.add('subnav-wrapper');
@@ -104,7 +104,6 @@ export function drawMenu(container) {
         item.tabIndex = -1;
         console.log('not it');
       }
-
     });
   }
 

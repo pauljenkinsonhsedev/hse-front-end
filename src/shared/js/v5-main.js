@@ -35,9 +35,9 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
   // Draw menus
-  const secondaryMenu = document.getElementById('menu');
-  if (secondaryMenu) {
-    subnavMenu(secondaryMenu);
+  const secondaryMenuSelector = document.getElementById('menu');
+  if (secondaryMenuSelector) {
+    subnavMenu(secondaryMenuSelector);
   }
 
   informationBanner();
