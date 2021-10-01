@@ -163,13 +163,7 @@ export class ChartOptions {
               beforeChartFormat:
                 '<div>{chartTitle}</div>' +
                 '<div>{typeDescription}</div>'+
-                '<div>{chartSubtitle}</div>'+
-                '<div>{chartLongdesc}</div>'+
-                '<div>{playAsSoundButton}</div>'+
-                '<div>{viewTableButton}</div>'+
-                '<div>{xAxisDescription}</div>'+
-                '<div>{yAxisDescription}</div>'+
-                '<div>{annotationsTitle}{annotationsList}</div>'
+                '<div>{chartSubtitle}</div>'
             },
           },
           title: {
