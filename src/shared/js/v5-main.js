@@ -18,6 +18,7 @@ import { footnoteLinks } from './combined/footnote-links.js';
 import { footnoteAbbr } from './combined/footnote-abbr.js';
 import { topTasks } from './combined/top-tasks.js';
 import { equalHeights } from './combined/equal-heights.js';
+import { subnavMenu } from './combined/subnav-menu.js';
 import { informationBanner } from './combined/information-banner.js';
 import { codeHighlighter } from './combined/code-highlighter.js';
 import { htmlFormsAntiSpam } from './combined/html-forms-anti-spam.js';
@@ -33,6 +34,12 @@ window.addEventListener('DOMContentLoaded', () => {
   const pictureElemSelector = document.getElementsByTagName('picture')[0];
   if (pictureElemSelector && getInternetExplorerVersion() <= 11) {
     loadPicturefillFn();
+  }
+
+  // Draw menus
+  const secondaryMenuSelector = document.getElementById('menu');
+  if (secondaryMenuSelector) {
+    subnavMenu(secondaryMenuSelector);
   }
 
   informationBanner();
@@ -64,7 +71,7 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
   // small device menu
-  const menu = document.querySelector('.js-menu');
+  const menu = document.querySelector('.secondary-menu');
   if (menu) {
     mainMenu();
   }

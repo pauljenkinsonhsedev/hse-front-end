@@ -1,103 +1,130 @@
-.slinky-menu {
+.subnav-container {
+  background-color: transparent;
+  transition: all 450ms ease-in-out;
+}
+.subnav-wrapper {
+  position: relative;
+  display: block;
+  left: 0;
+  list-style: none;
+  margin: 0;
+  width: 100%;
+  transform: translateZ(0);
+  transition: all 300ms ease-in-out;
+}
+
+.draw {
+  position: absolute;
+  left: 100%;
+  top: 0;
+  width: 100%;
+  z-index: -1;
+
+  &.active {
+    z-index: 1;
+  }
+}
+
+.subnav-container {
   overflow: hidden;
   transform: translateZ(0);
 }
-.slinky-menu > ul {
+.subnav-container > ul {
   left: 0;
   position: relative;
   transform: translateZ(0);
 }
-.slinky-menu ul,
-.slinky-menu li {
+.subnav-container ul,
+.subnav-container li {
   list-style: none;
   margin: 0;
 }
-.slinky-menu li:hover {
-background: $darkgray;
+.subnav-container li:hover {
+  background: $darkgray;
 }
-.slinky-menu a:focus {
-background: $focus;
+.subnav-container a:focus {
+  background: $focus;
 }
-.slinky-menu ul {
+.subnav-container ul {
   width: 100%;
 }
-.slinky-menu li.first a:hover span {
+.subnav-container li.first a:hover span {
   color: white;
   text-decoration: underline;
 }
-.slinky-menu a {
+.subnav-container a {
   align-items: center;
   display: flex;
   overflow: visible;
   background-color: $gray;
 }
 
-.slinky-menu a span {
+.subnav-container a span {
   flex: 1;
   overflow: visible;
   width: 100%;
   height: auto;
 }
-.slinky-menu li ul {
-  //display: none;
+.subnav-container li ul {
   left: 100%;
-  // position: absolute; Applied only if browser has JS - accesibility
   top: 0;
 }
-.slinky-menu .header {
+.subnav-container .header {
   display: flex;
+  a {
+    width: 100%;
+  }
 }
 
-.slinky-menu .first .header {
+.subnav-container .first .header {
   display: flex;
 }
-.slinky-menu .header .title {
+.subnav-container .header .title {
   flex: 1;
   line-height: 1.4;
   margin: 0;
   order: 1;
 }
 
-.slinky-theme-default {
-  //background-color: $gray;
-}
-.slinky-theme-default .title {
+.subnav-container .title {
   color: #333;
   padding: 1em;
 }
-.slinky-theme-default li {
+.subnav-container li {
   line-height: 1.4;
 }
-.slinky-theme-default a:not(.back) {
+.subnav-container a:not(.back) {
   color: #333;
   padding: 14px !important;
 }
-.slinky-theme-default a:not(.back):hover {
+.subnav-container a:not(.back):hover {
   background-color: $darkgray;
   color: $black;
 }
-.slinky-theme-default a:not(.back):active {
+.subnav-container a:not(.back):active {
   background-color: $darkgray;
   color: $black;
 }
 
-.slinky-theme-default .back::before {
-  content: " ";
+.subnav-container .back::before {
+  content: ' ';
   background-image: url('../../assets/v5-images/icons/svg/solid/arrow-left-white.svg');
   background-repeat: no-repeat;
   display: inline-block;
   height: 16px;
   margin: 0;
-  transform: translateX(10px) !important; // Important to reverse slinky transform CSS
+  transform: translateX(
+    10px
+  ) !important; // Important to reverse slinky transform CSS
   border-right: 10px solid transparent;
 }
 
-.slinky-theme-default .back {
+.subnav-container .back {
   text-decoration: none;
 }
 
-.slinky-theme-default a.next::after {
-  content: " ";
+.subnav-container a.next::after {
+  content: ' ';
   background-image: url('../../assets/v5-images/icons/svg/solid/arrow-right.svg');
   background-repeat: no-repeat;
   display: inline-block;
@@ -107,8 +134,9 @@ background: $focus;
   margin-left: auto;
 }
 
-.slinky-theme-default a.next:hover::after, .slinky-theme-default a.next:focus::after {
-  content: " ";
+.subnav-container a.next:hover::after,
+.subnav-container a.next:focus::after {
+  content: ' ';
   background-image: url('../../assets/v5-images/icons/svg/solid/arrow-right-red.svg');
   background-repeat: no-repeat;
   display: inline-block;
@@ -119,29 +147,29 @@ background: $focus;
   z-index: 9999;
 }
 
-.slinky-theme-default .next::after {
+.subnav-container .next::after {
   margin-left: 1em;
 }
-.slinky-theme-default .back::before {
+.subnav-container .back::before {
   padding: 0 1em;
   transform: scaleX(-1);
 }
 
-.slinky-menu li {
-  background: none ;
+.subnav-container li {
+  background: none;
   padding: 0;
 }
 
-.slinky-menu li.first a {
+.subnav-container li.first a {
   font-weight: bold;
   background-color: $red;
 }
 
-.slinky-menu li.first a {
+.subnav-container li.first a {
   color: white;
 }
 
-.slinky-menu li.first a:hover{
+.subnav-container li.first a:hover {
   background-color: $red;
   color: white;
 }
@@ -163,51 +191,52 @@ li.first a.active-page {
   border-left: none !important;
 }
 
-
 // Back
 
-.slinky-menu li a.back {
+.subnav-container li a.back {
   width: 100%;
   background-color: $red;
   color: white;
 }
 
-.slinky-menu li.first a {
+.subnav-container li.first a {
   width: 100%;
 }
 
 // links
 
-.slinky-menu li.first a:hover span, .slinky-menu li.header a:hover {
+.subnav-container li.first a:hover span,
+.subnav-container li.header a:hover {
   text-decoration: underline !important;
 }
 
-.slinky-menu a, .slinky-menu a span {
+.subnav-container a,
+.subnav-container a span {
   text-decoration: none;
 }
 
-.slinky-menu .header .title {
+.subnav-container .header .title {
   color: white;
 }
 
-.slinky-menu li a.back {
+.subnav-container li a.back {
   padding: 1em 0;
 }
 
-.slinky-menu li.first a:focus {
+.subnav-container li.first a:focus {
   color: $black !important;
 }
 
-.slinky-menu li a:focus-within {
+.subnav-container li a:focus-within {
   background-color: $focus;
   color: $black !important;
 }
 
-.slinky-theme-default a.back:focus::before {
-  content: " ";
+.subnav-container a.back:focus::before {
+  content: ' ';
   background-image: url('../../assets/v5-images/icons/svg/solid/arrow-left-black.svg') !important;
 }
 
-.slinky-menu .text-width {
-max-width: 90%;
+.subnav-container .text-width {
+  max-width: 90%;
 }
