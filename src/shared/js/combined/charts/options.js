@@ -146,149 +146,143 @@ export class ChartOptions {
         }, 0);
 
         this.collection = {
-            chart: {
-                type: this.type,
-                renderTo: this.chartRender,
-                marginTop: 100,
-                height: this.height,
-                style: {
-                    fontFamily: this.fontFamily,
-                    fontSize: '0.8rem',
-                    fontWeight: 'regular'
-                },
+          chart: {
+            type: this.type,
+            renderTo: this.chartRender,
+            marginTop: 100,
+            height: this.height,
+            style: {
+              fontFamily: this.fontFamily,
+              fontSize: '0.8rem',
+              fontWeight: 'regular',
+            },
+          },
+          accessibility: {
+            description: this.description,
+            screenReaderSection: {
+              beforeChartFormat:
+                '<div>{chartTitle}</div>' +
+                '<div>{typeDescription}</div>'+
+                '<div>{chartSubtitle}</div>'
+            },
+          },
+          title: {
+            useHTML: true,
+            text: '<div style="text-align: center;">' + this.title + '</div>',
+            style: {
+              color: '#000',
+              fontFamily: this.fontFamily,
+              fontSize: '1.1rem',
+              fontWeight: 'bold',
+            },
+          },
+          subtitle: {
+            useHTML: true,
+            text: subTitle,
+            style: {
+              color: '#000',
+              fontFamily: this.fontFamily,
+              fontSize: '0.9rem',
+              fontWeight: 'regular',
+            },
+          },
+          caption: {
+            text: this.captionText,
+            style: {
+              color: '#000',
+              fontFamily: this.fontFamily,
+              fontSize: '0.9rem',
+              fontWeight: 'regular',
+            },
+          },
+          xAxis: {
+            categories: categoryData,
+            title: {
+              text: this.xAxisText,
+              align: 'high',
+              style: {
+                fontFamily: this.fontFamily,
+                fontSize: '0.7rem',
+                fontWeight: 'regular',
+              },
+            },
+            labels: {
+              overflow: 'justify',
+              // useHTML: true,
+              style: {
+                fontFamily: this.fontFamily,
+                fontSize: '0.9rem',
+                fontWeight: 'regular',
+              },
+            },
+            // accessibility: {
+            //   description: this.description,
+            // },
+            plotBands: getPlotBand,
+          },
+          yAxis: {
+            labels: {
+              format: '{value:,.0f}',
+              style: {
+                fontFamily: this.fontFamily,
+                fontSize: '0.7rem',
+                fontWeight: 'regular',
+              },
             },
             title: {
-                useHTML: true,
-                text: '<div style="text-align: center;">' + this.title + '</div>',
-                style:{
-                    color: '#000',
-                    fontFamily: this.fontFamily,
-                    fontSize: '1.1rem',
-                    fontWeight: 'bold'
-                }
+              text: this.yAxisText,
+              style: {
+                fontWeight: 'bold',
+              },
             },
-            subtitle: {
-                useHTML: true,
-                text: subTitle,
+            gridLineWidth: this.gridLineWidth,
+            minorGridLineWidth: this.gridLineWidth,
+          },
+          tooltip: {
+            useHTML: true,
+            formatter: getTooltip,
+            backgroundColor: 'rgba(255, 255, 255, 1)',
+            borderWidth: 1,
+            fontSize: '0.9rem',
+            padding: 1,
+            style: {
+              opacity: 1,
+            },
+          },
+          legend: {
+            enabled: true,
+            itemStyle: {
+              font: this.fontFamily,
+              fontSize: '0.75rem',
+              color: '#000',
+            },
+          },
+          plotOptions: {
+            series: {
+              borderWidth: 0,
+              showInLegend: true,
+              events: {
+                legendItemClick: function () {
+                  return false;
+                },
+              },
+              dataLabels: {
                 style: {
-                    color: '#000',
-                    fontFamily: this.fontFamily,
-                    fontSize: '0.9rem',
-                    fontWeight: 'regular',
-                }
-            },
-            caption: {
-                text: this.captionText,
-                style: {
-                    color: '#000',
-                    fontFamily: this.fontFamily,
-                    fontSize: '0.9rem',
-                    fontWeight: 'regular',
-                }
-            },
-            xAxis: {
-                categories: categoryData,
-                title: {
-                    text: this.xAxisText,
-                    align: 'high',
-                    style: {
-                        fontFamily: this.fontFamily,
-                        fontSize: '0.7rem',
-                        fontWeight: 'regular',
-                    }
+                  fontFamily: this.fontFamily,
+                  fontSize: '0.7rem',
+                  fontWeight: 'bold',
                 },
-                labels: {
-                    overflow: 'justify',
-                    // useHTML: true,
-                    style: {
-                        fontFamily: this.fontFamily,
-                        fontSize: '0.9rem',
-                        fontWeight: 'regular',
-                    }
-                },
-                accessibility: {
-                    description: this.description
-                },
-                plotBands: getPlotBand
+              },
             },
-            yAxis: {
-                labels: {
-                    format: '{value:,.0f}',
-                    style: {
-                        fontFamily: this.fontFamily,
-                        fontSize: '0.7rem',
-                        fontWeight: 'regular',
-                    }
-                },
-                title: {
-                    text: this.yAxisText,
-                    style: {
-                        fontWeight: 'bold',
-                    }
-                },
-                gridLineWidth: this.gridLineWidth,
-                minorGridLineWidth: this.gridLineWidth
-            },
-            tooltip: {
-                useHTML: true,
-                formatter: getTooltip,
-                backgroundColor: 'rgba(255, 255, 255, 1)',
-                borderWidth: 1,
-                fontSize: '0.9rem',
-                padding: 1,
-                style: {
-                    opacity: 1
-                }
-            },
-            legend: {
-                enabled: true,
-                itemStyle: {
-                    font: this.fontFamily,
-                    fontSize: '0.75rem',
-                    color: '#000'
-                }
-            },
-            plotOptions: {
-                series: {
-                    borderWidth: 0,
-                    showInLegend: true,
-                    events: {
-                        legendItemClick: function() {
-                            return false;
-                        }
-                    },
-                    dataLabels: {
-                        style: {
-                            fontFamily: this.fontFamily,
-                            fontSize: '0.7rem',
-                            fontWeight: 'bold'
-                        },
-                    }
-                }
-        },
-            accessibility: {
-                description: this.description,
-                screenReaderSection: {
-                    beforeChartFormat: '<h4>{chartTitle}</h4>' +
-                        '<div>{typeDescription}</div>' +
-                        '<div>{chartSubtitle}</div>' +
-                        '<div>{chartLongdesc}</div>' +
-                        '<div>{playAsSoundButton}</div>' +
-                        '<div>{viewTableButton}</div>' +
-                        '<div>{xAxisDescription}</div>' +
-                        '<div>{yAxisDescription}</div>' +
-                        '<div>{annotationsTitle}</div>' +
-                        '<div>{annotationsList}</div>'
-                }
-            },
-            credits: {
-                enabled: false
-            },
-            exporting: {
-                enabled: false
-            },
-            colors: this.colours,
-            series: getSeriesData
+          },
+          credits: {
+            enabled: false,
+          },
+          exporting: {
+            enabled: false,
+          },
+          colors: this.colours,
+          series: getSeriesData,
         };
     }
 }

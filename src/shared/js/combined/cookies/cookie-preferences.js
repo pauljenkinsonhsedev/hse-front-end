@@ -5,7 +5,7 @@ import { dialogModalAjax } from '../dialogs.js';
 import { smoothScroll } from '../utils/smooth-scroll';
 import { getEntries } from "../utils/object-entries-polyfill.js";
 
-const setCookieSettings = { path: '/', domain: 'hse.gov.uk', secure: true, sameSite: 'strict', expires: 365 };
+   const setCookieSettings = { path: '/', domain: 'hse.gov.uk', secure: true, sameSite: 'strict', expires: 365 };
 // const setCookieSettings = { path: '/', domain: 'beta.hse.gov.uk', secure: true, sameSite: 'strict', expires: 365 };
 // const setCookieSettings = { path: '/', domain: 'localhost', secure: false, sameSite: 'strict', expires: 365 };
 
@@ -192,7 +192,7 @@ export function cookiePreferences() {
         event.preventDefault();
         // destroy banner
         Cookies.set('hide_banner', true, setCookieSettings);
-        messageContainer.remove();
+        messageContainer.parentNode.removeChild(messageContainer);
     });
 
     // accept all

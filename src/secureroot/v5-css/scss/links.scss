@@ -17,11 +17,29 @@ a {
     }
 }
 
+.backgroundRed a:link {
+color: white;
+}
+.backgroundRed .more a:link {
+color: $red;
+}
+
+
+.backgroundRed a, .backgroundRed .more a {
+    &:hover,
+    &:active,
+    &:focus,
+    a span.subText {
+        text-decoration: none;
+        color: $black;
+    }    
+}
+
 
 p a, li a {
 
     &:hover, &:focus {
-    text-decoration: none !important;
+    text-decoration: none;
     color: $black; 
     background: $focus;   
     }

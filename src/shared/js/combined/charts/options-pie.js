@@ -69,7 +69,7 @@ export class ChartOptionsPie extends ChartOptions {
         };
 
         const collection = this.collection;
-        this.collection = {...collection, plotOptions, accessibility};
+        this.collection = {...collection, plotOptions, ...accessibility};
 
         return this.collection;
     }
