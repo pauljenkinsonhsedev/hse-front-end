@@ -89,23 +89,46 @@ export function subnavMenu(container) {
   });
 
   // set tab indexes
-  function setTabIndexes() {
-    const anchors = container.querySelectorAll('a');
-    [...anchors].forEach((item) => {
-      const parent = item.closest('.draw');
+  function setTabIndexes(clickedElem, direction) {
+    let active;
+    const activePage = container.querySelector('.active-page').parentElement.parentElement;
 
-      console.log(parent);
-      item.tabIndex = 0;
+    if (clickedElem && direction === 'next') {
+      active = clickedElem.parentElement.closest('ul');
+    } else if (clickedElem && direction === 'back') {
+      active = clickedElem.parentElement.closest('ul').parentElement.closest('ul');
+    } else {
+      active = activePage;
+    }
 
-      if (parent && parent.classList.contains('active')) {
-        item.tabIndex = 0;
-        console.log('has it');
-      } else if (parent) {
-        item.tabIndex = -1;
-        console.log('not it');
-      }
+    const lists = container.querySelectorAll('ul');
+    let position = anchorPosition(active, [...lists]);
+
+    function anchorPosition(elementToFind, array) {
+      return array
+        .map(function (el) {
+          return el;
+        })
+        .indexOf(elementToFind);
+    }
+
+    [...lists].forEach((item, index) => {
+      const descendants = Array.from(item.querySelectorAll('*'));
+      const directDescendants = descendants.filter(
+        (ele) => ele.parentElement === item
+      );
+
+      directDescendants.forEach((item) => {
+        if (position === index) {
+          item.querySelector('a').tabIndex = 0;
+        } else {
+          item.querySelector('a').tabIndex = -1;
+        }
+      });
     });
   }
+
+  setTabIndexes();
 
   // Add click event for back
   const back = document.querySelectorAll('.back');
@@ -130,7 +153,7 @@ export function subnavMenu(container) {
       container.style.height = `auto`;
     }
     wrapper.style.left = `-${position}00%`;
-    setTabIndexes();
+    setTabIndexes(e.target, 'back');
   }
 
   // Add click event for next
@@ -154,6 +177,6 @@ export function subnavMenu(container) {
     const drawHeight = e.target.nextElementSibling.offsetHeight;
     container.style.height = `${drawHeight}px`;
     wrapper.style.left = `-${position}00%`;
-    setTabIndexes();
+    setTabIndexes(e.target, 'next');
   }
 }
