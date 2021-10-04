@@ -16,12 +16,16 @@ a {
         color: $redhover;
     }
 }
+
 .backgroundRed a:link {
 color: white;
 }
+.backgroundRed .more a:link {
+color: $red;
+}
 
 
-.backgroundRed a {
+.backgroundRed a, .backgroundRed .more a {
     &:hover,
     &:active,
     &:focus,
