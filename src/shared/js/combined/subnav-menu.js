@@ -138,9 +138,9 @@ export function subnavMenu(container) {
 
   function backHandler(e) {
     e.preventDefault();
-    let drawHeight;
     const parent = e.target.closest('.draw');
     const grandParent = parent.closest('ul').closest('.draw');
+    let drawHeight;
     const position = parent.dataset.depth
       ? parseInt(parent.dataset.depth) - 1
       : 0;
@@ -148,6 +148,7 @@ export function subnavMenu(container) {
     parent.classList.remove('active');
     if (grandParent) {
       grandParent.classList.add('active');
+      drawHeight = grandParent.offsetHeight;
       container.style.height = `${drawHeight}px`;
     } else {
       container.style.height = `auto`;
