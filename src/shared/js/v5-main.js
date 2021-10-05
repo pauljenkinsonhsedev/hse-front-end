@@ -21,7 +21,7 @@ import { equalHeights } from './combined/equal-heights.js';
 import { informationBanner } from './combined/information-banner.js';
 import { codeHighlighter } from './combined/code-highlighter.js';
 import { htmlFormsAntiSpam } from './combined/html-forms-anti-spam.js';
-
+import { subnavMenu } from './combined/subnav-menu.js';
 
 // Window load
 window.addEventListener('DOMContentLoaded', () => {
@@ -111,6 +111,13 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
   lightbox();
+
+
+   const secondaryMenuSelector = document.getElementById('menu');
+
+   if (secondaryMenuSelector) {
+     subnavMenu(secondaryMenuSelector);
+   }
 
   feedbackSurvey();
   htmlFormsAntiSpam();

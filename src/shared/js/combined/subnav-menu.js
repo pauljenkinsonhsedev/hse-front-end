@@ -3,7 +3,6 @@ export function subnavMenu(container) {
   const wrapper = container.querySelector('ul:first-of-type');
   wrapper.classList.add('subnav-wrapper');
 
-
   // Create draws
   const nestedChildren = container.querySelectorAll('ul:not(:first-child)');
   [...nestedChildren].reverse().forEach((item) => {
