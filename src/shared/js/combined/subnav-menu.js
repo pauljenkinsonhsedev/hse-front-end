@@ -138,6 +138,8 @@ export function subnavMenu(container) {
 
   function backHandler(e) {
     e.preventDefault();
+    e.stopPropagation();
+
     const parent = e.target.closest('.draw');
     const grandParent = parent.closest('ul').closest('.draw');
     let drawHeight;
@@ -165,6 +167,8 @@ export function subnavMenu(container) {
 
   function nextHandler(e) {
     e.preventDefault();
+    e.stopPropagation();
+
     const parent = e.target.nextElementSibling;
     const position = parseInt(parent.dataset.depth);
     const anchors = container.querySelectorAll('.subnav-wrapper .next');
