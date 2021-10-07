@@ -344,10 +344,11 @@ margin-bottom: 20px;
 
 .column.multiCol {
 margin-bottom: 0;
+padding-bottom: 0;
 }
 
 ul.columnsList {
-margin: 0 0 10px 0 !important;
+margin: 0 !important;
 @media only screen and (min-width : $desktop) {
 flex-wrap: wrap;
 display: flex;
@@ -355,7 +356,7 @@ display: flex;
 }
 
 .columnsList li p {
-padding-bottom: 10px;
+padding-bottom: 20px;
 margin: 0;    
 }
 .column.multiCol.col2 {
