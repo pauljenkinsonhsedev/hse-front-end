@@ -75,4 +75,14 @@ export function ariaLabels() {
     if (gscSearch) {
         gscSearch.setAttribute('role', 'search');
     }
+
+    const article = document.querySelector('#article');
+    if (article) {
+        article.setAttribute('role', 'article');
+    }
+
+    const asideBottom = document.querySelector('#asideBottom');
+    if (asideBottom) {
+        asideBottom.setAttribute('role', 'complementary');
+    }
 }
