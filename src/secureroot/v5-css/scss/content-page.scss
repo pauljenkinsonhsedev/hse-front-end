@@ -13,10 +13,6 @@ font-size: 1.1em;
 background-color: $hseblack;
 }
 
-#backTo a {
-color: white;
-}
-
 .backto {
 box-sizing: border-box;
 padding-top: 10px;
@@ -29,8 +25,12 @@ display: none;
 }
 
 p.backto  {
-font-size: 1.2em;
+font-size: 0.9rem;
 padding: 0;
+}
+
+p.backto a {
+color: white;
 }
 
 @media only screen and (min-width : $desktop) {
