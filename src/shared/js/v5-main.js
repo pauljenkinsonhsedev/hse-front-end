@@ -22,6 +22,7 @@ import { informationBanner } from './combined/information-banner.js';
 import { codeHighlighter } from './combined/code-highlighter.js';
 import { htmlFormsAntiSpam } from './combined/html-forms-anti-spam.js';
 import { subNavPosition } from './combined/subnav-position.js';
+import { accordion } from './combined/accordion.js';
 
 
 // Window load
@@ -35,6 +36,8 @@ window.addEventListener('DOMContentLoaded', () => {
   if (pictureElemSelector && getInternetExplorerVersion() <= 11) {
     loadPicturefillFn();
   }
+
+  accordion();
 
   informationBanner();
 
