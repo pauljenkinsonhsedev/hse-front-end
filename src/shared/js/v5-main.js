@@ -21,6 +21,7 @@ import { equalHeights } from './combined/equal-heights.js';
 import { informationBanner } from './combined/information-banner.js';
 import { codeHighlighter } from './combined/code-highlighter.js';
 import { htmlFormsAntiSpam } from './combined/html-forms-anti-spam.js';
+import { subNavPosition } from './combined/subnav-position.js';
 
 
 // Window load
@@ -111,6 +112,8 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
   lightbox();
+
+  subNavPosition();
 
   feedbackSurvey();
   htmlFormsAntiSpam();
