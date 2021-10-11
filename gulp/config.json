@@ -42,8 +42,6 @@
         },
         "scripts": {
             "all": [
-                "./src/secureroot/v5-scripts/base64-poly.js",
-                "./src/secureroot/v5-scripts/v5-hse-primary.min.js",
                 "./src/secureroot/v5-scripts/slinky-ie11-fix.js"
             ],
             "entry": "./src/secureroot/v5-js/v5-footer.js",
