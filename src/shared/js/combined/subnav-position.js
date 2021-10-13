@@ -22,7 +22,7 @@ export function subNavPosition() {
         }
         console.log('mq', mediaquery);
     }
-
+    posSwitch();
     // watch for window resize
     resizer(posSwitch);
 };
