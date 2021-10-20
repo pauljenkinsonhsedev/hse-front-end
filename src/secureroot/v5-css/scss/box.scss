@@ -229,10 +229,6 @@ form fieldset.visibleFieldset {
   position: relative;
 }
 
-// form fieldset.visibleFieldset legend{
-// padding:0 4px!important;
-// margin:1em 0 1em 0;
-// }
 form fieldset.radioButton input {
   display: inline;
   width: auto;
@@ -263,24 +259,7 @@ form input.checkbox {
 form fieldset input.checkbox {
   width: auto;
 }
-// form button,form input.button,form input.submit{
-// margin:0 1em 1em 0;
-// width:auto;
-// float:left;
-// }
-// form label span.validationHint,form legend span.validationHint{
-// padding:.4em;
-// color: $red;
-// font-weight:400;
-// }
-// form label span.error{
-// background-color:#d81541;
-// color:#fff;
-// margin-left:10px;
-// }
-// form input.error,form textarea.error{
-// border:1px solid #d81541;
-// }
+
 .boxSubscribeSingle {
   margin: 0.5em 0;
   overflow: hidden;
@@ -328,14 +307,6 @@ form fieldset input.checkbox {
 .box .more {
   width: 100%;
   position: relative;
-}
-
-.hasMore {
-  //   padding-bottom: 0 !important;
-}
-
-.hasMore .more {
-  //   bottom: 0;
 }
 
 .box1col .more {
@@ -443,38 +414,67 @@ form fieldset input.checkbox {
 
 // Cards (Box list)
 
-.boxList,
-.boxList-2col {
-  margin-bottom: 5px !important;
-  @media only screen and (min-width: $desktop) {
-    column-count: 2;
-  }
-}
-
-.boxList-1col {
-  margin-bottom: 5px !important;
-  @media only screen and (min-width: $desktop) {
-    column-count: 1;
-  }
-}
-
-.boxList-3col {
-  margin-bottom: 5px !important;
-  @media only screen and (min-width: $desktop) {
-    column-count: 3;
-  }
-}
-
-#contentContainer .boxList ul {
-  margin: 0 0 10px 0 !important;
-}
-.boxList ul li {
+.boxList {
   display: inline-block;
+  margin-bottom: 10px !important;
   background-image: none !important;
-  padding: 0;
-  margin: 2px 0;
-  width: 100%;
+  @media only screen and (min-width: $desktop) {
+    display: flex;
+    justify-content: flex-start;
+  }
 }
+
+.boxList ul {
+margin: 0 0 10px 0 !important;
+}
+
+.boxList ul li {
+float: left;
+padding: 0;
+margin: 5px 0;
+}
+
+.boxList ul a:hover {
+  background-color: $darkergray;
+}
+.boxList ul li h3 {
+  color: $red !important;
+}
+.boxList ul li h3 {
+  margin: 0;
+  display: inline;
+  width: 95%;
+  float: left;
+}
+
+
+
+.boxList.boxList-2col ul li, .boxList ul li {
+  flex: 1 0 100%;
+  width: 100%;
+  @media only screen and (min-width: $desktop) {
+  flex: 1 0 465px;
+  max-width: 465px;
+  width: 465px;
+  margin-right: 10px;
+  }
+}
+
+.boxList.boxList-1col ul li {
+  flex: 1 0 100%;
+  width: 100%;
+  max-width: 100%;
+  margin-right: 10px;
+}
+
+.boxList.boxList-2col ul li:nth-child(2n+2), .boxList ul li:nth-child(2n+2) {
+  margin-right: 0;    
+}
+
+.boxList.boxList-1col ul li:nth-child(2n+2) {
+  margin-right: 0;    
+}
+
 .boxList ul li:last-of-type {
   @media only screen and (max-width: $desktop) {
     margin-bottom: 0;
@@ -492,13 +492,4 @@ form fieldset input.checkbox {
   background-image: none !important;
   text-decoration: none;
 }
-.boxList ul a:hover {
-  background-color: $darkergray;
-}
-.boxList ul li h3 {
-  color: $red !important;
-}
-.boxList ul li h3 {
-  margin: 0;
-  display: inline;
-}
+
