@@ -435,8 +435,12 @@ margin: 5px 0;
 }
 
 .boxList ul a:hover {
-  background-color: $darkergray;
+background-color: $darkergray;
 }
+#contentContainer .boxList ul li a:focus {
+border-bottom: 0 !important;
+}
+
 .boxList ul li h3 {
   color: $red !important;
 }
