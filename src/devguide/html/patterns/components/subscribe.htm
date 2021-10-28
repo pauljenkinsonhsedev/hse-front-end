@@ -116,35 +116,37 @@ display: none;
  
 	
 <!-- InstanceBeginEditable name="content" -->
-  <h1>Subscribe box</h1>
+ <h1>Subscribe box</h1>
 
   <p>Subscribe forms are displayed on the website to give users the option to enter their email address and sign up for HSE e-bulletins.</p>
 
-  <div class="box">
+<div class="box">
 
-  <form id="subscribe" action="https://public.govdelivery.com/accounts/UKHSE/subscriber/new?topic_id=UKHSE_125">
+  <form id="subscribe" action="https://public.govdelivery.com/accounts/UKHSE/subscriber/qualify">
           <fieldset class="fieldset">
             <legend class="fieldset__legend">
-              <h3 class="fieldset__heading">
-                  Subscribe
-                </h3>
+              <h3 class="fieldset__heading">Subscribe</h3>
             </legend>
-            <div class="form-group">
-              <label class="label">Subscribe for free news and updates on health and safety topics and industries.</label>
-              <input class="input input-text input-width-l" type="text" inputmode="email" id="email" name="email" placeholder="Your email address" required title="Please enter your email address">
-			  <input id="topic_id" name="topic_id" type="hidden" value="UKHSE_125"> <!-- Include hidden input and unique e-bulletin value -->
-			  <input class="eBulletinButton" name="commit" type="submit" value="Subscribe">
-            </div>
-          </fieldset>
-        </form>
+			  
+			<!-- Include hidden input and unique e-bulletin value -->
+			<input id="topic_id" name="topic_id" type="hidden" value="UKHSE_125"> 
 
-</div>
+            <div class="form-group">
+              <label class="label" for="email">Subscribe for free news and updates on health and safety topics and industries</label>
+              <input class="input input-text input-width-l" type="email" id="email" name="email" placeholder="Your email address" required title="Please enter your email address">
+			  <button class="btn btn-secondary" name="commit" type="submit">Subscribe</button>
+            </div>
+			  
+          </fieldset>
+</form>
+	
+	
+	</div>
+
 
   <h2>When to use</h2>
 
   <p>The inclusion of a subscribe box should be decided by the content author and digital performance analyist. The e-bulletin the user subscribes to should relate to the page content.</p>
-	
-  <p>You should only include one subcribe box on a page.</p>
 
   <h2>How to use</h2>
 
@@ -152,11 +154,9 @@ display: none;
 
   <p>To create a subscribe form you will first need to create a <strong>&lt;form&gt;</strong> element and give it an <strong>id</strong> and an <strong>action</strong> attribute, the value of the action attribute will be the following string:</p>
 
-	<p><strong>"https://public.govdelivery.com/accounts/UKHSE/subscriber/new?topic_id="</strong></p>
+	<p><strong>"https://public.govdelivery.com/accounts/UKHSE/subscriber/qualify</strong></p>
 
-	<p>followed by your selected GovDelivery e-bulletin code, giving you a complete string as follows: </p>
-
-  <p><strong>"https://public.govdelivery.com/accounts/UKHSE/subscriber/new?topic_id=UKHSE_125"</strong></p>
+	<p>A hidden input form is required to enter the topic ID of the e-bulletin:</p>
 
   <h3>Styling form elements</h3>
 
@@ -168,34 +168,23 @@ display: none;
 
   <h3>Code example</h3>
 
-  <pre class="language-markup"><code>&lt;div class=&quot;box&quot;&gt;
-  &lt;form id=&quot;subscribe&quot; action=&quot;https://public.govdelivery.com/accounts/UKHSE/subscriber/new?topic_id=UKHSE_125&quot;&gt;
-    &lt;fieldset class=&quot;fieldset&quot;&gt;
-      &lt;legend class=&quot;fieldset__legend&quot;&gt;
-        &lt;h3 class=&quot;fieldset__heading&quot;&gt;
-          Subscribe
-        &lt;/h3&gt;
-      &lt;/legend&gt;
-      &lt;div class=&quot;form-group&quot;&gt;
-        &lt;label class=&quot;label&quot;&gt;Subscribe for free news and updates on health and safety topics and industries.&lt;/label&gt;
-        &lt;input class=&quot;input input-text input-width-l&quot;
-          type=&quot;text&quot;
-		  inputmode=&quot;email&quot;
-          id=&quot;email&quot;
-          name=&quot;email&quot;
-          placeholder=&quot;Your email address&quot;
-          required title=&quot;Please enter your email address&quot;&gt;
-        &lt;input id=&quot;topic_id&quot;
-          name=&quot;topic_id&quot;
-          type=&quot;hidden&quot;
-          value=&quot;UKHSE_125&quot;&gt; &lt;!-- Include hidden input and unique e-bulletin value --&gt;
-        &lt;input class=&quot;eBulletinButton&quot;
-          name=&quot;commit&quot;
-          type=&quot;submit&quot;
-          value=&quot;Subscribe&quot;&gt;
-      &lt;/div&gt;
-    &lt;/fieldset&gt;
-  &lt;/form&gt;
+  <pre class="language-markup"><code>&lt;div class="box"&gt;
+
+ &lt;form id="subscribe" action="https://public.govdelivery.com/accounts/UKHSE/subscriber/new?topic_id=UKHSE_125"&gt;
+ &lt;fieldset class="fieldset"&gt;
+ &lt;legend class="fieldset__legend"&gt;
+ &lt;h3 class="fieldset__heading"&gt;Subscribe&lt;/h3&gt;
+ &lt;/legend&gt;
+ &lt;div class="form-group"&gt;
+ &lt;label class="label" for="email"&gt;Subscribe for free news and updates on health and safety topics and industries.&lt;/label&gt;
+ &lt;input class="input input-text input-width-l" type="email" id="email" name="email" placeholder="Your email address" required title="Please enter your email address"&gt;
+ &lt;!-- Include hidden input and unique e-bulletin value --&gt;
+ &lt;input id="topic_id" name="topic_id" type="hidden" value="UKHSE_125"&gt; 
+ &lt;input class="eBulletinButton" name="commit" type="submit" value="Subscribe"&gt;
+ &lt;/div&gt;
+ &lt;/fieldset&gt;
+&lt;/form&gt;
+
 &lt;/div&gt;</code></pre>
   <h3>e-bulletin codes</h3>
 
@@ -785,7 +774,7 @@ display: none;
   </footer>
 </nav>
 <section id="lastUpdated" aria-label="Last updated">
-<!-- InstanceBeginEditable name="updated" -->Updated:<!-- #BeginDate format:IS1 -->2021-10-21<!-- #EndDate -->
+<!-- InstanceBeginEditable name="updated" -->Updated:<!-- #BeginDate format:IS1 -->2021-10-28<!-- #EndDate -->
   <!-- InstanceEndEditable -->
 </section>
 <script src="../../assets/v5-js/v5-main.min.js"></script>
