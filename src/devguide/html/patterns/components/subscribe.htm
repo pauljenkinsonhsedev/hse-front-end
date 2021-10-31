@@ -157,8 +157,16 @@ display: none;
   <p>To create a subscribe form you will first need to create a <strong>&lt;form&gt;</strong> element and give it an <strong>id</strong> and an <strong>action</strong> attribute, the value of the action attribute will be the following string:</p>
 
 	<p><strong>"https://public.govdelivery.com/accounts/UKHSE/subscriber/qualify</strong></p>
+	
+<h3>E-bulletin topic</h3>
 
-	<p>A hidden input form is required to enter the topic ID of the e-bulletin:</p>
+	<p>A hidden input form is required to enter the topic ID of the e-bulletin. Create an input field with the following attributes:</p>
+	
+<pre class="language-markup">
+ <code>&lt;input id="topic_id" name="topic_id" type="hidden" value="UKHSE_***"&gt;</code>
+</pre>
+	
+ <p>Get the relevant topic id from the table of <a href="#e-bulletin-codes">e-bulletin codes</a> and include the code in the value attribute.</p>
 
   <h3>Styling form elements</h3>
 
@@ -168,11 +176,11 @@ display: none;
   <p>Regardless of page or layout, the subscribe form should always be contained inside a box component.</p>
 
 
-  <h3>Code example</h3>
+  <h2>Code example</h2>
 
   <pre class="language-markup"><code>&lt;div class="box"&gt;
 
-&lt;form id="subscribe" action="https://public.govdelivery.com/accounts/UKHSE/subscriber/qualify"&gt;
+&lt;form class="subscribe" action="https://public.govdelivery.com/accounts/UKHSE/subscriber/qualify"&gt;
 	
  &lt;fieldset class="fieldset"&gt;
 	 
@@ -185,7 +193,7 @@ display: none;
 
   &lt;div class="form-group"&gt;
    &lt;label class="label" for="email"&gt;Subscribe for free news and updates on health and safety topics and industries&lt;/label&gt;
-   &lt;input class="input input-text input-width-l" type="email" id="email" name="email" placeholder="Your email address" required title="Please enter your email address"&gt;
+   &lt;input class="input input-email input-width-l" type="email" id="email" name="email" placeholder="Your email address" required title="Please enter your email address"&gt;
    &lt;button class="btn btn-cautionary" name="commit" type="submit"&gt;Subscribe&lt;/button&gt;
   &lt;/div&gt;
 
@@ -194,7 +202,7 @@ display: none;
 &lt;/form&gt;
 
 &lt;/div&gt;</code></pre>
-  <h2>e-bulletin codes</h2>
+  <h2 id="e-bulletin-codes">e-bulletin codes</h2>
 
 <table>
 <thead><tr><th>Name</th><th>Code</th></tr></thead><tbody>
