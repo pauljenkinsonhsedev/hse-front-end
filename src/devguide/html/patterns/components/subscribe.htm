@@ -122,26 +122,28 @@ display: none;
 
 <div class="box">
 
-  <form id="subscribe" action="https://public.govdelivery.com/accounts/UKHSE/subscriber/qualify">
-          <fieldset class="fieldset">
-            <legend class="fieldset__legend">
-              <h3 class="fieldset__heading">Subscribe</h3>
-            </legend>
-			  
-			<!-- Include hidden input and unique e-bulletin value -->
-			<input id="topic_id" name="topic_id" type="hidden" value="UKHSE_125"> 
+<form id="subscribe" action="https://public.govdelivery.com/accounts/UKHSE/subscriber/qualify">
+	
+ <fieldset class="fieldset">
+	 
+  <legend class="fieldset__legend">
+  <h3 class="fieldset__heading">Subscribe</h3>
+  </legend>
 
-            <div class="form-group">
-              <label class="label" for="email">Subscribe for free news and updates on health and safety topics and industries</label>
-              <input class="input input-text input-width-l" type="email" id="email" name="email" placeholder="Your email address" required title="Please enter your email address">
-			  <button class="btn btn-secondary" name="commit" type="submit">Subscribe</button>
-            </div>
-			  
-          </fieldset>
+<!-- Include hidden input and unique e-bulletin value -->
+  <input id="topic_id" name="topic_id" type="hidden" value="UKHSE_125"> 
+
+  <div class="form-group">
+   <label class="label" for="email">Subscribe for free news and updates on health and safety topics and industries</label>
+   <input class="input input-email input-width-l" type="email" id="email" name="email" placeholder="Your email address" required title="Please enter your email address">
+   <button class="btn btn-cautionary" name="commit" type="submit">Subscribe</button>
+  </div>
+
+ </fieldset>
+	
 </form>
-	
-	
-	</div>
+
+</div>
 
 
   <h2>When to use</h2>
@@ -170,19 +172,25 @@ display: none;
 
   <pre class="language-markup"><code>&lt;div class="box"&gt;
 
- &lt;form id="subscribe" action="https://public.govdelivery.com/accounts/UKHSE/subscriber/new?topic_id=UKHSE_125"&gt;
+&lt;form id="subscribe" action="https://public.govdelivery.com/accounts/UKHSE/subscriber/qualify"&gt;
+	
  &lt;fieldset class="fieldset"&gt;
- &lt;legend class="fieldset__legend"&gt;
- &lt;h3 class="fieldset__heading"&gt;Subscribe&lt;/h3&gt;
- &lt;/legend&gt;
- &lt;div class="form-group"&gt;
- &lt;label class="label" for="email"&gt;Subscribe for free news and updates on health and safety topics and industries.&lt;/label&gt;
- &lt;input class="input input-text input-width-l" type="email" id="email" name="email" placeholder="Your email address" required title="Please enter your email address"&gt;
- &lt;!-- Include hidden input and unique e-bulletin value --&gt;
- &lt;input id="topic_id" name="topic_id" type="hidden" value="UKHSE_125"&gt; 
- &lt;input class="eBulletinButton" name="commit" type="submit" value="Subscribe"&gt;
- &lt;/div&gt;
+	 
+  &lt;legend class="fieldset__legend"&gt;
+  &lt;h3 class="fieldset__heading"&gt;Subscribe&lt;/h3&gt;
+  &lt;/legend&gt;
+
+&lt;!-- Include hidden input and unique e-bulletin value --&gt;
+  &lt;input id="topic_id" name="topic_id" type="hidden" value="UKHSE_125"&gt; 
+
+  &lt;div class="form-group"&gt;
+   &lt;label class="label" for="email"&gt;Subscribe for free news and updates on health and safety topics and industries&lt;/label&gt;
+   &lt;input class="input input-text input-width-l" type="email" id="email" name="email" placeholder="Your email address" required title="Please enter your email address"&gt;
+   &lt;button class="btn btn-cautionary" name="commit" type="submit"&gt;Subscribe&lt;/button&gt;
+  &lt;/div&gt;
+
  &lt;/fieldset&gt;
+	
 &lt;/form&gt;
 
 &lt;/div&gt;</code></pre>
@@ -731,18 +739,7 @@ display: none;
 
 
 
-<h2>Legacy subscribe box</h2>
 
-<div class="box">
-          <h3>Subscribe</h3>
-          <p>Subscribe for free news and updates on health and safety topics and industries.</p>
-          <form class="v5form" action="https://public.govdelivery.com/accounts/UKHSE/subscriber/new?topic_id=UKHSE_125">
-            <label for="email"><strong>Email address</strong></label>
-            <input id="email" name="email" type="text">
-           <input id="topic_id" name="topic_id" type="hidden" value="UKHSE_125">
-              <input class="eBulletinButton mt10" name="commit" type="submit" value="Subscribe">
-          </form>
-    </div>
 
 
 
@@ -774,7 +771,7 @@ display: none;
   </footer>
 </nav>
 <section id="lastUpdated" aria-label="Last updated">
-<!-- InstanceBeginEditable name="updated" -->Updated:<!-- #BeginDate format:IS1 -->2021-10-28<!-- #EndDate -->
+<!-- InstanceBeginEditable name="updated" -->Updated:<!-- #BeginDate format:IS1 -->2021-10-31<!-- #EndDate -->
   <!-- InstanceEndEditable -->
 </section>
 <script src="../../assets/v5-js/v5-main.min.js"></script>
