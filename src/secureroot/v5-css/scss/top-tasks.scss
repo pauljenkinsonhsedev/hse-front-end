@@ -89,6 +89,12 @@ padding: 10px;
 float: left;
 }
 
+#pagination ul li:first-of-type a {
+@media only screen and (min-width : $desktop) {
+padding-left: 0;
+}
+}
+
 #pagination ul, #pagination ul li {
 width: 100%;
 }
