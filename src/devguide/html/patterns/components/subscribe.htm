@@ -116,30 +116,35 @@ display: none;
  
 	
 <!-- InstanceBeginEditable name="content" -->
-  <h1>Subscribe box</h1>
+ <h1>Subscribe box</h1>
 
   <p>Subscribe forms are displayed on the website to give users the option to enter their email address and sign up for HSE e-bulletins.</p>
 
-  <div class="box">
+<div class="box">
 
-  <form id="subscribe" class="subscribe" action="https://public.govdelivery.com/accounts/UKHSE/subscriber/new?topic_id=UKHSE_125">
-          <fieldset class="fieldset">
-            <legend class="fieldset__legend">
-              <h3 class="fieldset__heading">
-                  Subscribe
-                </h3>
-            </legend>
-            <div class="form-group">
-              <label class="label">Subscribe for free news and updates on health and safety topics and industries.</label>
-              <input class="input input-text input-width-l" type="email" id="subscribe" name="email" placeholder="Your email address" required title="Please enter your email address">
-			  <input id="topic_id" name="topic_id" type="hidden" value="UKHSE_125"> <!-- Include hidden input and unique e-bulletin value -->
-				<button class="btn btn-cautionary" name="commit" type="submit" value="Subscribe">Subscribe</button>
-            </div>
+<form class="subscribe" action="https://public.govdelivery.com/accounts/UKHSE/subscriber/qualify">
+	
+ <fieldset class="fieldset">
+	 
+  <legend class="fieldset__legend">
+  <h3 class="fieldset__heading">Subscribe</h3>
+  </legend>
 
-          </fieldset>
-        </form>
+<!-- Include hidden input and unique e-bulletin value -->
+  <input id="topic_id" name="topic_id" type="hidden" value="UKHSE_125"> 
+
+  <div class="form-group">
+   <label class="label" for="email">Subscribe for free news and updates on health and safety topics and industries</label>
+   <input class="input input-email input-width-l" type="email" id="email" name="email" placeholder="Your email address" required title="Please enter your email address">
+   <button class="btn btn-cautionary" name="commit" type="submit">Subscribe</button>
+  </div>
+
+ </fieldset>
+	
+</form>
 
 </div>
+
 
   <h2>When to use</h2>
 
@@ -151,11 +156,17 @@ display: none;
 
   <p>To create a subscribe form you will first need to create a <strong>&lt;form&gt;</strong> element and give it an <strong>id</strong> and an <strong>action</strong> attribute, the value of the action attribute will be the following string:</p>
 
-	<p><strong>"https://public.govdelivery.com/accounts/UKHSE/subscriber/new?topic_id="</strong></p>
+	<p><strong>"https://public.govdelivery.com/accounts/UKHSE/subscriber/qualify</strong></p>
+	
+<h3>E-bulletin topic</h3>
 
-	<p>followed by your selected GovDelivery e-bulletin code, giving you a complete string as follows: </p>
-
-  <p><strong>"https://public.govdelivery.com/accounts/UKHSE/subscriber/new?topic_id=UKHSE_125"</strong></p>
+	<p>A hidden input form is required to enter the topic ID of the e-bulletin. Create an input field with the following attributes:</p>
+	
+<pre class="language-markup">
+ <code>&lt;input id="topic_id" name="topic_id" type="hidden" value="UKHSE_***"&gt;</code>
+</pre>
+	
+ <p>Get the relevant topic id from the table of <a href="#e-bulletin-codes">e-bulletin codes</a> and include the code in the value attribute.</p>
 
   <h3>Styling form elements</h3>
 
@@ -165,593 +176,165 @@ display: none;
   <p>Regardless of page or layout, the subscribe form should always be contained inside a box component.</p>
 
 
-  <h3>Code example</h3>
+  <h2>Code example</h2>
 
-  <pre class="language-markup"><code>&lt;div class=&quot;box&quot;&gt;
-  &lt;form id=&quot;email&quot; action=&quot;https://public.govdelivery.com/accounts/UKHSE/subscriber/new?topic_id=UKHSE_125&quot;&gt;
-    &lt;fieldset class=&quot;fieldset&quot;&gt;
-      &lt;legend class=&quot;fieldset__legend&quot;&gt;
-        &lt;h3 class=&quot;fieldset__heading&quot;&gt;
-          Subscribe
-        &lt;/h3&gt;
-      &lt;/legend&gt;
-      &lt;div class=&quot;form-group&quot;&gt;
-        &lt;label class=&quot;label&quot;&gt;Subscribe for free news and updates on health and safety topics and industries.&lt;/label&gt;
-        &lt;input class=&quot;input input-text input-width-l&quot;
-          type=&quot;email&quot;
-          id=&quot;subscribe&quot;
-          name=&quot;email&quot;
-          placeholder=&quot;Your email address&quot;
-          required title=&quot;Please enter your email address&quot;&gt;
-        &lt;input id=&quot;topic_id&quot;
-          name=&quot;topic_id&quot;
-          type=&quot;hidden&quot;
-          value=&quot;UKHSE_125&quot;&gt; &lt;!-- Include hidden input and unique e-bulletin value --&gt;
-        &lt;input class=&quot;eBulletinButton&quot;
-          name=&quot;commit&quot;
-          type=&quot;submit&quot;
-          value=&quot;Subscribe&quot;&gt;
-      &lt;/div&gt;
-    &lt;/fieldset&gt;
-  &lt;/form&gt;
+  <pre class="language-markup"><code>&lt;div class="box"&gt;
+
+&lt;form class="subscribe" action="https://public.govdelivery.com/accounts/UKHSE/subscriber/qualify"&gt;
+	
+ &lt;fieldset class="fieldset"&gt;
+	 
+  &lt;legend class="fieldset__legend"&gt;
+  &lt;h3 class="fieldset__heading"&gt;Subscribe&lt;/h3&gt;
+  &lt;/legend&gt;
+
+&lt;!-- Include hidden input and unique e-bulletin value --&gt;
+  &lt;input id="topic_id" name="topic_id" type="hidden" value="UKHSE_125"&gt; 
+
+  &lt;div class="form-group"&gt;
+   &lt;label class="label" for="email"&gt;Subscribe for free news and updates on health and safety topics and industries&lt;/label&gt;
+   &lt;input class="input input-email input-width-l" type="email" id="email" name="email" placeholder="Your email address" required title="Please enter your email address"&gt;
+   &lt;button class="btn btn-cautionary" name="commit" type="submit"&gt;Subscribe&lt;/button&gt;
+  &lt;/div&gt;
+
+ &lt;/fieldset&gt;
+	
+&lt;/form&gt;
+
 &lt;/div&gt;</code></pre>
-  <h3>e-bulletin codes</h3>
+  <h2 id="e-bulletin-codes">e-bulletin codes</h2>
 
-
-
-  <table>
-<thead>
-<tr>
- <th>Name</th>
- <th>Code</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Agriculture</td>
-<td>UKHSE_3</td>
-</tr>
-<tr>
-<td>Air transport</td>
-<td>UKHSE_5</td>
-</tr>
-<tr>
-<td>Appointed Doctor</td>
-<td>UKHSE_191</td>
-</tr>
-<tr>
-<td>Apprentices and young workers</td>
-<td>UKHSE_255</td>
-</tr>
-<tr>
-<td>Approved Medical Examiner of Divers (AMED)</td>
-<td>UKHSE_190</td>
-</tr>
-<tr>
-<td>Armed forces</td>
-<td>UKHSE_6</td>
-</tr>
-<tr>
-<td>Asbestos</td>
-<td>UKHSE_7</td>
-</tr>
-<tr>
-<td>Asthma</td>
-<td>UKHSE_8</td>
-</tr>
-<tr>
-<td>Audio</td>
-<td>UKHSE_156</td>
-</tr>
-<tr>
-<td>Bespoke Research and Consultancy: Complete Worker Health (SD)</td>
-<td>UKHSE_281</td>
-</tr>
-<tr>
-<td>Bespoke Research and Consultancy: Data-driven Insights (SD)</td>
-<td>UKHSE_282</td>
-</tr>
-<tr>
-<td>Bespoke Research and Consultancy: Safe Net Zero (SD)</td>
-<td>UKHSE_280</td>
-</tr>
-<tr>
-<td>Biocides</td>
-<td>UKHSE_11</td>
-</tr>
-<tr>
-<td>Biological agents</td>
-<td>UKHSE_239</td>
-</tr>
-<tr>
-<td>Blood-borne viruses</td>
-<td>UKHSE_228</td>
-</tr>
-<tr>
-<td>BSR</td>
-<td>UKHSE_294</td>
-</tr>
-<tr>
-<td>Carbon Capture and Storage (CCS)</td>
-<td>UKHSE_237</td>
-</tr>
-<tr>
-<td>Carriage of dangerous goods</td>
-<td>UKHSE_19</td>
-</tr>
-<tr>
-<td>Case studies</td>
-<td>UKHSE_20</td>
-</tr>
-<tr>
-<td>Catering and Hospitality</td>
-<td>UKHSE_21</td>
-</tr>
-<tr>
-<td>Classification, Labelling and Packaging (CLP) Regulation</td>
-<td>UKHSE_286</td>
-</tr>
-<tr>
-<td>Cleaning</td>
-<td>UKHSE_28</td>
-</tr>
-<tr>
-<td>COMAH</td>
-<td>UKHSE_129</td>
-</tr>
-<tr>
-<td>COMAH Sites</td>
-<td>UKHSE_272</td>
-</tr>
-<tr>
-<td>COMAH Strategic Forum</td>
-<td>UKHSE_260</td>
-</tr>
-<tr>
-<td>Concrete</td>
-<td>UKHSE_248</td>
-</tr>
-<tr>
-<td>Construction</td>
-<td>UKHSE_32</td>
-</tr>
-<tr>
-<td>Control of substances hazardous to health (COSHH)</td>
-<td>UKHSE_34</td>
-</tr>
-<tr>
-<td>Diving</td>
-<td>UKHSE_234</td>
-</tr>
-<tr>
-<td>Domestic gas</td>
-<td>UKHSE_63</td>
-</tr>
-<tr>
-<td>Drugs and alcohol</td>
-<td>UKHSE_227</td>
-</tr>
-<tr>
-<td>Education</td>
-<td>UKHSE_44</td>
-</tr>
-<tr>
-<td>ELCI - Employers&#39; Liability Compulsory Insurance</td>
-<td>UKHSE_223</td>
-</tr>
-<tr>
-<td>Electrical safety</td>
-<td>UKHSE_45</td>
-</tr>
-<tr>
-<td>Engineering</td>
-<td>UKHSE_47</td>
-</tr>
-<tr>
-<td>Entertainment and leisure</td>
-<td>UKHSE_211</td>
-</tr>
-<tr>
-<td>Equipment at work</td>
-<td>UKHSE_49</td>
-</tr>
-<tr>
-<td>EU Exit</td>
-<td>UKHSE_301</td>
-</tr>
-<tr>
-<td>EU Exit: Podcasts</td>
-<td>UKHSE_304</td>
-</tr>
-<tr>
-<td>Europe and worldwide</td>
-<td>UKHSE_50</td>
-</tr>
-<tr>
-<td>Event Safety</td>
-<td>UKHSE_206</td>
-</tr>
-<tr>
-<td>Explosives</td>
-<td>UKHSE_52</td>
-</tr>
-<tr>
-<td>Export and import of dangerous chemicals (PIC)</td>
-<td>UKHSE_26</td>
-</tr>
-<tr>
-<td>Fairgrounds</td>
-<td>UKHSE_208</td>
-</tr>
-<tr>
-<td>Film, Theatre and Broadcasting</td>
-<td>UKHSE_205</td>
-</tr>
-<tr>
-<td>Fire and explosion</td>
-<td>UKHSE_56</td>
-</tr>
-<tr>
-<td>Fire and rescue services</td>
-<td>UKHSE_55</td>
-</tr>
-<tr>
-<td>First aid at work</td>
-<td>UKHSE_57</td>
-</tr>
-<tr>
-<td>FOD Briefing</td>
-<td>UKHSE_229</td>
-</tr>
-<tr>
-<td>Food and Drink Manufacture</td>
-<td>UKHSE_60</td>
-</tr>
-<tr>
-<td>Footwear and Leather</td>
-<td>UKHSE_61</td>
-</tr>
-<tr>
-<td>Frequently asked questions (FAQs)</td>
-<td>UKHSE_54</td>
-</tr>
-<tr>
-<td>Go Home Healthy</td>
-<td>UKHSE_273</td>
-</tr>
-<tr>
-<td>Health and safety myths</td>
-<td>UKHSE_225</td>
-</tr>
-<tr>
-<td>Health and social care services</td>
-<td>UKHSE_70</td>
-</tr>
-<tr>
-<td>Health surveillance</td>
-<td>UKHSE_224</td>
-</tr>
-<tr>
-<td>HELex</td>
-<td>UKHSE_290</td>
-</tr>
-<tr>
-<td>HID Lines</td>
-<td>UKHSE_247</td>
-</tr>
-<tr>
-<td>HSE Connect 2019: Delegates</td>
-<td>UKHSE_289</td>
-</tr>
-<tr>
-<td>Images</td>
-<td>UKHSE_163</td>
-</tr>
-<tr>
-<td>Jobs</td>
-<td>UKHSE_18</td>
-</tr>
-<tr>
-<td>Land use planning</td>
-<td>UKHSE_80</td>
-</tr>
-<tr>
-<td>Laundries and Dry Cleaning</td>
-<td>UKHSE_82</td>
-</tr>
-<tr>
-<td>Leadership</td>
-<td>UKHSE_83</td>
-</tr>
-<tr>
-<td>Legalade</td>
-<td>UKHSE_241</td>
-</tr>
-<tr>
-<td>Legionnaires&#39; Disease</td>
-<td>UKHSE_84</td>
-</tr>
-<tr>
-<td>Legislation</td>
-<td>UKHSE_85</td>
-</tr>
-<tr>
-<td>Leisure Activities</td>
-<td>UKHSE_207</td>
-</tr>
-<tr>
-<td>Local exhaust ventilation (LEV)</td>
-<td>UKHSE_86</td>
-</tr>
-<tr>
-<td>Local government</td>
-<td>UKHSE_88</td>
-</tr>
-<tr>
-<td>Local Government Health &amp; Safety Representatives</td>
-<td>UKHSE_213</td>
-</tr>
-<tr>
-<td>Lone Working</td>
-<td>UKHSE_293</td>
-</tr>
-<tr>
-<td>Lung disease</td>
-<td>UKHSE_212</td>
-</tr>
-<tr>
-<td>Metalworking fluids</td>
-<td>UKHSE_92</td>
-</tr>
-<tr>
-<td>Molten metals</td>
-<td>UKHSE_95</td>
-</tr>
-<tr>
-<td>Motor vehicle repair</td>
-<td>UKHSE_97</td>
-</tr>
-<tr>
-<td>Musculoskeletal Disorders</td>
-<td>UKHSE_99</td>
-</tr>
-<tr>
-<td>Noise</td>
-<td>UKHSE_102</td>
-</tr>
-<tr>
-<td>Occupational cancer</td>
-<td>UKHSE_210</td>
-</tr>
-<tr>
-<td>Occupational disease</td>
-<td>UKHSE_245</td>
-</tr>
-<tr>
-<td>Offices</td>
-<td>UKHSE_104</td>
-</tr>
-<tr>
-<td>Offshore oil and gas</td>
-<td>UKHSE_105</td>
-</tr>
-<tr>
-<td>Paper, Board and Printing</td>
-<td>UKHSE_106</td>
-</tr>
-<tr>
-<td>Pesticides</td>
-<td>UKHSE_107</td>
-</tr>
-<tr>
-<td>Plastics and Rubber</td>
-<td>UKHSE_109</td>
-</tr>
-<tr>
-<td>Police</td>
-<td>UKHSE_110</td>
-</tr>
-<tr>
-<td>Ports and logistics</td>
-<td>UKHSE_69</td>
-</tr>
-<tr>
-<td>Pregnant workers</td>
-<td>UKHSE_96</td>
-</tr>
-<tr>
-<td>Press Releases</td>
-<td>UKHSE_233</td>
-</tr>
-<tr>
-<td>Pressure systems</td>
-<td>UKHSE_189</td>
-</tr>
-<tr>
-<td>Public consultations</td>
-<td>UKHSE_152</td>
-</tr>
-<tr>
-<td>Public services</td>
-<td>UKHSE_116</td>
-</tr>
-<tr>
-<td>Publications and Products</td>
-<td>UKHSE_162</td>
-</tr>
-<tr>
-<td>Quarries</td>
-<td>UKHSE_118</td>
-</tr>
-<tr>
-<td>Radiation</td>
-<td>UKHSE_119</td>
-</tr>
-<tr>
-<td>Radiation IRR6 list</td>
-<td>UKHSE_269</td>
-</tr>
-<tr>
-<td>Registration, Evaluation, Authorisation &amp; restriction of Chemicals (REACH)</td>
-<td>UKHSE_121</td>
-</tr>
-<tr>
-<td>Research and Consultancy: Enhancing Resilient Infrastructure</td>
-<td>UKHSE_306</td>
-</tr>
-<tr>
-<td>Respiratory protective equipment</td>
-<td>UKHSE_199</td>
-</tr>
-<tr>
-<td>Retail</td>
-<td>UKHSE_123</td>
-</tr>
-<tr>
-<td>Risk management</td>
-<td>UKHSE_125</td>
-</tr>
-<tr>
-<td>Safety Alerts</td>
-<td>UKHSE_300</td>
-</tr>
-<tr>
-<td>Schools</td>
-<td>UKHSE_264</td>
-</tr>
-<tr>
-<td>Science and research</td>
-<td>UKHSE_209</td>
-</tr>
-<tr>
-<td>Scotland</td>
-<td>UKHSE_128</td>
-</tr>
-<tr>
-<td>Slips, Trips and Falls</td>
-<td>UKHSE_132</td>
-</tr>
-<tr>
-<td>Small and medium businesses</td>
-<td>UKHSE_279</td>
-</tr>
-<tr>
-<td>Statistics</td>
-<td>UKHSE_134</td>
-</tr>
-<tr>
-<td>Stoneworker</td>
-<td>UKHSE_135</td>
-</tr>
-<tr>
-<td>Stress</td>
-<td>UKHSE_136</td>
-</tr>
-<tr>
-<td>Surface engineering</td>
-<td>UKHSE_137</td>
-</tr>
-<tr>
-<td>Temperature</td>
-<td>UKHSE_138</td>
-</tr>
-<tr>
-<td>Testing and Monitoring: Occupational Health and Hygiene (SD)</td>
-<td>UKHSE_283</td>
-</tr>
-<tr>
-<td>Testing and Monitoring: Products and Processes (SD)</td>
-<td>UKHSE_285</td>
-</tr>
-<tr>
-<td>Testing and Monitoring: Proficiency Testing (SD)</td>
-<td>UKHSE_284</td>
-</tr>
-<tr>
-<td>Textiles</td>
-<td>UKHSE_140</td>
-</tr>
-<tr>
-<td>Training and Events</td>
-<td>UKHSE_51</td>
-</tr>
-<tr>
-<td>Tree work</td>
-<td>UKHSE_4</td>
-</tr>
-<tr>
-<td>Vibration</td>
-<td>UKHSE_141</td>
-</tr>
-<tr>
-<td>Videos</td>
-<td>UKHSE_142</td>
-</tr>
-<tr>
-<td>Wales</td>
-<td>UKHSE_143</td>
-</tr>
-<tr>
-<td>Waste and recycling</td>
-<td>UKHSE_145</td>
-</tr>
-<tr>
-<td>Website Improvement Group</td>
-<td>UKHSE_291</td>
-</tr>
-<tr>
-<td>Weekly Digest Newsletter</td>
-<td>UKHSE_153</td>
-</tr>
-<tr>
-<td>Welding</td>
-<td>UKHSE_146</td>
-</tr>
-<tr>
-<td>welding campaign contacts</td>
-<td>UKHSE_307</td>
-</tr>
-<tr>
-<td>Woodworking</td>
-<td>UKHSE_147</td>
-</tr>
-<tr>
-<td>Work Right (Campaigns)</td>
-<td>UKHSE_275</td>
-</tr>
-<tr>
-<td>Worker involvement</td>
-<td>UKHSE_79</td>
-</tr>
-<tr>
-<td>Workers&#39; rights</td>
-<td>UKHSE_195</td>
-</tr>
-<tr>
-<td>Workplace transport</td>
-<td>UKHSE_149</td>
-</tr>
-<tr>
-<td>Young workers</td>
-<td>UKHSE_151</td>
-</tr>
+<table>
+<thead><tr><th>Name</th><th>Code</th></tr></thead><tbody>
+ <tr><td>Agriculture</td><td>UKHSE_3</td></tr>
+ <tr><td>Air transport</td><td>UKHSE_5</td></tr>
+ <tr><td>Armed forces</td><td>UKHSE_6</td></tr>
+ <tr><td>Asbestos</td><td>UKHSE_7</td></tr>
+ <tr><td>Asthma</td><td>UKHSE_8</td></tr>
+ <tr><td>Audio</td><td>UKHSE_156</td></tr>
+ <tr><td>Bespoke Research and Consultancy: Complete Worker Health</td><td>UKHSE_281</td></tr>
+ <tr><td>Bespoke Research and Consultancy: Data-driven Insights</td><td>UKHSE_282</td></tr>
+ <tr><td>Bespoke Research and Consultancy: Safe Net Zero</td><td>UKHSE_280</td></tr>
+ <tr><td>Biocides</td><td>UKHSE_11</td></tr>
+ <tr><td>Biological agents</td><td>UKHSE_239</td></tr>
+ <tr><td>Blood-borne viruses</td><td>UKHSE_228</td></tr>
+ <tr><td>BSR</td><td>UKHSE_294</td></tr>
+ <tr><td>Carbon Capture and Storage (CCS)</td><td>UKHSE_237</td></tr>
+ <tr><td>Carriage of dangerous goods</td><td>UKHSE_19</td></tr>
+ <tr><td>Case studies</td><td>UKHSE_20</td></tr>
+ <tr><td>Catering and Hospitality</td><td>UKHSE_21</td></tr>
+ <tr><td>Classification, Labelling and Packaging (CLP) Regulation</td><td>UKHSE_286</td></tr>
+ <tr><td>Cleaning</td><td>UKHSE_28</td></tr>
+ <tr><td>COMAH</td><td>UKHSE_129</td></tr>
+ <tr><td>Concrete</td><td>UKHSE_248</td></tr>
+ <tr><td>Construction</td><td>UKHSE_32</td></tr>
+ <tr><td>Control of substances hazardous to health (COSHH)</td><td>UKHSE_34</td></tr>
+ <tr><td>Diving</td><td>UKHSE_234</td></tr>
+ <tr><td>Domestic gas</td><td>UKHSE_63</td></tr>
+ <tr><td>Drugs and alcohol</td><td>UKHSE_227</td></tr>
+ <tr><td>Education</td><td>UKHSE_44</td></tr>
+ <tr><td>ELCI - Employers' Liability Compulsory Insurance</td><td>UKHSE_223</td></tr>
+ <tr><td>Electrical safety</td><td>UKHSE_45</td></tr>
+ <tr><td>Engineering</td><td>UKHSE_47</td></tr>
+ <tr><td>Entertainment and leisure</td><td>UKHSE_211</td></tr>
+ <tr><td>Equipment at work</td><td>UKHSE_49</td></tr>
+ <tr><td>Europe and worldwide</td><td>UKHSE_50</td></tr>
+ <tr><td>Event Safety</td><td>UKHSE_206</td></tr>
+ <tr><td>Explosives</td><td>UKHSE_52</td></tr>
+ <tr><td>Export and import of dangerous chemicals (PIC)</td><td>UKHSE_26</td></tr>
+ <tr><td>Fairgrounds</td><td>UKHSE_208</td></tr>
+ <tr><td>Film, Theatre and Broadcasting</td><td>UKHSE_205</td></tr>
+ <tr><td>Fire and explosion</td><td>UKHSE_56</td></tr>
+ <tr><td>Fire and rescue services</td><td>UKHSE_55</td></tr>
+ <tr><td>First aid at work</td><td>UKHSE_57</td></tr>
+ <tr><td>Food and Drink Manufacture</td><td>UKHSE_60</td></tr>
+ <tr><td>Footwear and Leather</td><td>UKHSE_61</td></tr>
+ <tr><td>Frequently asked questions (FAQs)</td><td>UKHSE_54</td></tr>
+ <tr><td>Go Home Healthy</td><td>UKHSE_273</td></tr>
+ <tr><td>Health and safety myths</td><td>UKHSE_225</td></tr>
+ <tr><td>Health and social care services</td><td>UKHSE_70</td></tr>
+ <tr><td>Health surveillance</td><td>UKHSE_224</td></tr>
+ <tr><td>HELex</td><td>UKHSE_290</td></tr>
+ <tr><td>HSE Connect 2019: Delegates</td><td>UKHSE_289</td></tr>
+ <tr><td>Images</td><td>UKHSE_163</td></tr>
+ <tr><td>Jobs</td><td>UKHSE_18</td></tr>
+ <tr><td>Land use planning</td><td>UKHSE_80</td></tr>
+ <tr><td>Laundries and Dry Cleaning</td><td>UKHSE_82</td></tr>
+ <tr><td>Leadership</td><td>UKHSE_83</td></tr>
+ <tr><td>Legionnaires' Disease</td><td>UKHSE_84</td></tr>
+ <tr><td>Legislation</td><td>UKHSE_85</td></tr>
+ <tr><td>Leisure Activities</td><td>UKHSE_207</td></tr>
+ <tr><td>Local exhaust ventilation (LEV)</td><td>UKHSE_86</td></tr>
+ <tr><td>Local government</td><td>UKHSE_88</td></tr>
+ <tr><td>Local Government Health &amp; Safety Representatives</td><td>UKHSE_213</td></tr>
+ <tr><td>Lone Working</td><td>UKHSE_293</td></tr>
+ <tr><td>Lung disease</td><td>UKHSE_212</td></tr>
+ <tr><td>Metalworking fluids</td><td>UKHSE_92</td></tr>
+ <tr><td>Molten metals</td><td>UKHSE_95</td></tr>
+ <tr><td>Motor vehicle repair</td><td>UKHSE_97</td></tr>
+ <tr><td>Musculoskeletal Disorders</td><td>UKHSE_99</td></tr>
+ <tr><td>Noise</td><td>UKHSE_102</td></tr>
+ <tr><td>Occupational cancer</td><td>UKHSE_210</td></tr>
+ <tr><td>Occupational disease</td><td>UKHSE_245</td></tr>
+ <tr><td>Offices</td><td>UKHSE_104</td></tr>
+ <tr><td>Offshore oil and gas</td><td>UKHSE_105</td></tr>
+ <tr><td>Paper, Board and Printing</td><td>UKHSE_106</td></tr>
+ <tr><td>Pesticides</td><td>UKHSE_107</td></tr>
+ <tr><td>Plastics and Rubber</td><td>UKHSE_109</td></tr>
+ <tr><td>Police</td><td>UKHSE_110</td></tr>
+ <tr><td>Ports and logistics</td><td>UKHSE_69</td></tr>
+ <tr><td>Pregnant workers</td><td>UKHSE_96</td></tr>
+ <tr><td>Press Releases</td><td>UKHSE_233</td></tr>
+ <tr><td>Pressure systems</td><td>UKHSE_189</td></tr>
+ <tr><td>Public consultations</td><td>UKHSE_152</td></tr>
+ <tr><td>Public services</td><td>UKHSE_116</td></tr>
+ <tr><td>Publications and Products</td><td>UKHSE_162</td></tr>
+ <tr><td>Quarries</td><td>UKHSE_118</td></tr>
+ <tr><td>Radiation</td><td>UKHSE_119</td></tr>
+ <tr><td>Registration, Evaluation, Authorisation &amp; restriction of Chemicals (REACH)</td><td>UKHSE_121</td></tr>
+ <tr><td>Research and Consultancy: Enhancing Resilient Infrastructure</td><td>UKHSE_306</td></tr>
+ <tr><td>Respiratory protective equipment</td><td>UKHSE_199</td></tr>
+ <tr><td>Retail</td><td>UKHSE_123</td></tr>
+ <tr><td>Risk management</td><td>UKHSE_125</td></tr>
+ <tr><td>Safety Alerts and notices</td><td>UKHSE_300</td></tr>
+ <tr><td>Schools</td><td>UKHSE_264</td></tr>
+ <tr><td>Science and research</td><td>UKHSE_209</td></tr>
+ <tr><td>Scotland</td><td>UKHSE_128</td></tr>
+ <tr><td>Slips, Trips and Falls</td><td>UKHSE_132</td></tr>
+ <tr><td>Small and medium businesses</td><td>UKHSE_279</td></tr>
+ <tr><td>Statistics</td><td>UKHSE_134</td></tr>
+ <tr><td>Stoneworker</td><td>UKHSE_135</td></tr>
+ <tr><td>Stress</td><td>UKHSE_136</td></tr>
+ <tr><td>Surface engineering</td><td>UKHSE_137</td></tr>
+ <tr><td>Temperature</td><td>UKHSE_138</td></tr>
+ <tr><td>Testing and Monitoring: Occupational Health and Hygiene</td><td>UKHSE_283</td></tr>
+ <tr><td>Testing and Monitoring: Products and Processes</td><td>UKHSE_285</td></tr>
+ <tr><td>Testing and Monitoring: Proficiency Testing</td><td>UKHSE_284</td></tr>
+ <tr><td>Textiles</td><td>UKHSE_140</td></tr>
+ <tr><td>Training and Events</td><td>UKHSE_51</td></tr>
+ <tr><td>Tree work</td><td>UKHSE_4</td></tr>
+ <tr><td>Vibration</td><td>UKHSE_141</td></tr>
+ <tr><td>Videos</td><td>UKHSE_142</td></tr>
+ <tr><td>Wales</td><td>UKHSE_143</td></tr>
+ <tr><td>Waste and recycling</td><td>UKHSE_145</td></tr>
+ <tr><td>Website Improvement Group</td><td>UKHSE_291</td></tr>
+ <tr><td>Weekly Digest Newsletter</td><td>UKHSE_153</td></tr>
+ <tr><td>Welding</td><td>UKHSE_146</td></tr>
+ <tr><td>welding campaign contacts</td><td>UKHSE_307</td></tr>
+ <tr><td>Woodworking</td><td>UKHSE_147</td></tr>
+ <tr><td>Work Right: Chemicals</td><td>UKHSE_303</td></tr>
+ <tr><td>Worker involvement</td><td>UKHSE_79</td></tr>
+ <tr><td>Workers' rights</td><td>UKHSE_195</td></tr>
+ <tr><td>Working Minds</td><td>UKHSE_308</td></tr>
+ <tr><td>Workplace transport</td><td>UKHSE_149</td></tr>
+ <tr><td>Young workers</td><td>UKHSE_151</td></tr>
 </tbody></table>
 
 
 
 
 
-<h2>Legacy subscribe box</h2>
 
-<div class="box">
-          <h3>Subscribe</h3>
-          <p>Subscribe for free news and updates on health and safety topics and industries.</p>
-          <form class="v5form" action="https://public.govdelivery.com/accounts/UKHSE/subscriber/new?topic_id=UKHSE_125">
-            <label for="email"><strong>Email address</strong></label>
-            <input id="email" name="email" type="text">
-           <input id="topic_id" name="topic_id" type="hidden" value="UKHSE_125">
-              <input class="eBulletinButton mt10" name="commit" type="submit" value="Subscribe">
-          </form>
-    </div>
 
 
 
