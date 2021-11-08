@@ -1,5 +1,5 @@
 
-a {
+a, .backgroundRed .more a {
     text-decoration: underline;
     &:link {
         color: $red; 
@@ -17,7 +17,7 @@ a {
     }
 }
 
-.backgroundRed a, .backgroundRed .more a, .backto a {
+.backgroundRed a, .backto a {
     &:link {
         color: white; 
     }
