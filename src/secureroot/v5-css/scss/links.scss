@@ -17,18 +17,23 @@ a {
     }
 }
 
-.backgroundRed a:link {
-color: white;
-}
-.backgroundRed .more a:link {
-color: $red;
-}
-
-
 .backgroundRed a, .backgroundRed .more a, .backto a {
-    &:hover,
+    &:link {
+        color: white; 
+    }
+    &:hover {
+    color: $black;
+    }
     &:active,
-    &:focus,
+    &:focus {
+    color: $black;
+    }
+    &:visited {
+    color: white;
+    }
+    &:visited:hover {
+    color: $black;
+    }
     a span.subText {
         text-decoration: none;
         color: $black;
