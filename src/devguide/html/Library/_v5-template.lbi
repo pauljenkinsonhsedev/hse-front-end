@@ -147,13 +147,6 @@ display: none;
 	  <li><a href="../components/homepage/banner.htm">Banner</a></li>
 	 </ul>
 	</li>
-	<li><a href="#">Navigation</a>
-	 <ul>
-	  <li><a href="../components/navigation/index.htm">Overview</a></li>
-	  <li><a href="../components/navigation/a-z.htm">A-Z</a></li>
-	  <li><a href="../components/navigation/pagination.htm">Pagination</a></li>
-	 </ul>
-	</li>
  </ul>
 </div><!-- #EndLibraryItem --><!-- InstanceEndEditable --> </nav>
 

@@ -10,6 +10,7 @@
         <li><a href="../patterns/pages/homepage-legacy.htm">Microsite homepage (box layout)</a></li>
         <li><a href="../patterns/pages/microsite-homepage.htm">Microsite homepage (v5 layout)</a></li>
         <li><a href="../patterns/pages/document.htm">Document page</a></li>
+		<li><a href="../patterns/pages/a-z.htm">A-Z</a></li>
       </ul>
     </li>
     <li><a href="#">Component patterns</a>
@@ -22,6 +23,7 @@
         <li><a href="../patterns/components/cards.htm">Cards</a></li>
         <li><a href="../patterns/components/box-list.htm">Cards (box style)</a></li>
         <li><a href="../patterns/components/start.htm">Start button</a></li>
+		<li><a href="../patterns/components/pagination.htm">Pagination (previous,next)</a></li>
       </ul>
     </li>
   </ul>
