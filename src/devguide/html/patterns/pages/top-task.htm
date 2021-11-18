@@ -68,6 +68,7 @@ display: none;
           <li class="components"><a href="../../components/index.htm">Components</a></li>
           <li class="patterns"><a href="../index.htm">Patterns</a></li>
           <li class="template"><a href="../../framework/index.htm">Framework</a></li>
+		  <li class="development"><a href="../../development/index.htm">Development</a></li>
         </ul>
       </nav>
     </div>
@@ -135,6 +136,9 @@ display: none;
 <!-- InstanceBeginEditable name="content" -->
   <h1>Top task</h1>
 	
+<img class="responsiveImg" style="margin-bottom:20px;" alt="Top task page" src="images/top-task.jpg" />
+
+	
 	
 <h2>When to use</h2>
 	
@@ -143,37 +147,50 @@ display: none;
 	
 <h2>How to use</h2>
 	
+<p>To use the top task page design you will need to set the values of the <strong>layout</strong> and <strong>columnLayout</strong> template parameters to the following:</p>
 	
-<img class="responsiveImg" style="margin-bottom:20px;" alt="Top task page" src="images/top-task.jpg" />
+<pre class="language-markup">
+<code>
+&lt;!-- InstanceParam name="layout" type="text" value="betatwocol" --&gt;
+&lt;!-- InstanceParam name="columnLayout" type="number" value="2" --&gt;
+</code>
+</pre>
 
 	
-<p>The top task page is made up of the following elements:</p>
-	
-	<ol>
-	
-	<li>Pagination (ordered page list)</li>
-	<li>Article</li>
-	<li>Pagination (previous, next)</li>
-	<li>Complementary content</li>
-		
-	</ol>
-	
-	
-<h3>Pagination (ordered page list)</h3>
-	
-<p>Top task pages include navigation in the form of an ordered list at the top of each page, immediately below the &lt;h1&gt; title in an editable region named 'multistepNav'. The list should contain the core pages of the top task.</p>
+<h3>Top task elements</h3>
 
-<h3>Article</h3>	
+	
+<h4>1. Pagination (ordered page list)</h4>
+	
+<p>Top task pages include navigation in the form of an ordered list at the top of each page, immediately below the <strong>&lt;h1&gt;</strong> title in an editable region named <strong>multistepNav</strong>. The list should contain the core pages of the top task.</p>
+	
+<p>The pagination page list is a ol element with the class of .multistep, the list items contain every page of the top task and includes an in-page link to jump to the article section of the the top task page.<p>
+	
+<p>It needs to be included in every page of the top task, it's easier to manage this using a <a href="../../framework/template/library-items.htm">library item</a>.</p>
+
+<pre class="language-markup">
+<code>
+&lt;ol class="multistep"&gt;
+&lt;li&gt;&lt;a id="step1" href="index.htm#article"&gt;Overview&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a id="step2" href="how-to-write-your-policy.htm#article"&gt;How to write your policy&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a id="step3" href="the-law.htm#article"&gt;The law&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</code>
+</pre>
+
+<h4>2. Article</h4>	
 	
 <p>The article region contains the main content of the page, all <a href="../../components/index.htm">content components</a> can be used in this region.</p>
 
-<h3>Pagination (previous, next)</h3>
+<h4>3. Pagination (previous, next)</h4>
 	
-<p>Pagination is included on each top task page and is always placed inside the article region as the last component with no content or components below it.</p>
+<p><a href="../components/pagination.htm">Previous and next</a> links are included on each top task page, the componenet pattern is included inside the article region as the last element with no content or components below it.</p>
 	
-<h4>Complementary content</h4>
+<p>The first page of the top task will only need the next link and the last page will only need the previous link.</p>
 	
-<p>The <a href="../components/complementary.htm">complementary content </a>is always included in the asideBottom editable content region and should relate to the page content.</p>
+<h4>4. Complementary content</h4>
+	
+<p>The <a href="../components/complementary.htm">complementary content </a>is always included in the <strong>asideBottom</strong> editable content region and should relate to the page content.</p>
 	
 <p>The resources box should always come before the related content box on a top task page.</p>
 	
@@ -209,7 +226,7 @@ display: none;
   </footer>
 </nav>
 <section id="lastUpdated" aria-label="Last updated">
-<!-- InstanceBeginEditable name="updated" -->Updated:<!-- #BeginDate format:IS1 -->2021-11-16<!-- #EndDate -->
+<!-- InstanceBeginEditable name="updated" -->Updated:<!-- #BeginDate format:IS1 -->2021-11-18<!-- #EndDate -->
   <!-- InstanceEndEditable -->
 </section>
 <script src="../../assets/v5-js/v5-main.min.js"></script>
