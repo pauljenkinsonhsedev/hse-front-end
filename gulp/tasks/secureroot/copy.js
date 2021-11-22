@@ -5,7 +5,6 @@ import * as config from '../../config.json';
 
 const picturefillAssets = ['./node_modules/picturefill/dist/picturefill.min.js'];
 
-
 const highchartsAssets = [
   "./node_modules/highcharts/highcharts.js",
   "./node_modules/highcharts/highcharts.src.js",
@@ -41,6 +40,12 @@ function moment() {
   .pipe(dest(`${config.secureroot.assetPath}/v5-js/vendor/moment`));
 }
 
+function ariaAccordion() {
+  return src(['./node_modules/a11y_accordions/index.js']).pipe(
+    dest(`${config.secureroot.assetPath}/v5-js/vendor/a11y_accordions`)
+  );
+}
+
 function html() {
   return src(config.secureroot.html.all)
   .pipe(dest(config.secureroot.html.output));
@@ -66,5 +71,5 @@ function templates() {
   .pipe(dest(config.secureroot.copy.templates.output));
 }
 
-const toReturn = series(misc, html, vendorCSS, vendorJS, templates, moment, highCharts, picturefill);
+const toReturn = series(misc, html, vendorCSS, vendorJS, templates, moment, highCharts, picturefill, ariaAccordion);
 task('hseCopy', toReturn)

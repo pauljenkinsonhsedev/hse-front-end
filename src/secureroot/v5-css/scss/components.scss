@@ -344,35 +344,31 @@ margin-bottom: 20px;
 
 .column.multiCol {
 margin-bottom: 0;
-}
-
-.column.multiCol.col3 {
--webkit-column-count: 1; /* Chrome, Safari, Opera */
--moz-column-count: 1; /* Firefox */
-column-count: 1;
-@media only screen and (min-width : $desktop) {
--webkit-column-count: 3; /* Chrome, Safari, Opera */
--moz-column-count: 3; /* Firefox */
-column-count: 3;
-}
-}
-
-.column.multiCol.col2 {
--webkit-column-count: 1; /* Chrome, Safari, Opera */
--moz-column-count: 1; /* Firefox */
-column-count: 1;
-@media only screen and (min-width : $desktop) {
--webkit-column-count: 2; /* Chrome, Safari, Opera */
--moz-column-count: 2; /* Firefox */
-column-count: 2;
-}
+padding-bottom: 0;
 }
 
 ul.columnsList {
-margin: 0 0 10px 0 !important;
+margin: 0 !important;
+@media only screen and (min-width : $desktop) {
+flex-wrap: wrap;
+display: flex;
+}
 }
 
-
+.columnsList li p {
+padding-bottom: 20px;
+margin: 0;    
+}
+.column.multiCol.col2 {
+.columnsList li {
+    flex: 1 0 465px;
+    max-width: 465px;  
+    margin-right: 10px;
+} 
+.columnsList li:nth-child(2n+2) {
+margin-right: 0;    
+}   
+}
 .columnsList li {
 padding: 0 !important;
 background: none;
@@ -381,8 +377,14 @@ background-image: none !important;
 -webkit-column-break-inside: avoid; /* Chrome, Safari, Opera */
 page-break-inside: avoid; /* Firefox */
 break-inside: avoid; /* IE 10+ */
-min-height: 82.2px;
+flex: 1 0 306.666666666666667px;
+max-width: 306.666666666666667px;
+margin-right: 10px;
 }
+}
+
+.columnsList li:nth-child(3n+3) {
+margin-right: 0;    
 }
 
 .addToBasket a {

@@ -1,6 +1,6 @@
 import './combined/polyfills.js';
 
-import CsvConvert from './combined/csv-convertor/csv-convertor';
+// import CsvConvert from './combined/csv-convertor/csv-convertor';
 import ChartsDefault from './combined/charts/charts';
 import { mainMenu } from './combined/main-menu';
 import { loadPicturefillFn } from './combined/utils/picture-elem.js';
@@ -22,6 +22,9 @@ import { informationBanner } from './combined/information-banner.js';
 import { codeHighlighter } from './combined/code-highlighter.js';
 import { htmlFormsAntiSpam } from './combined/html-forms-anti-spam.js';
 import { subnavMenu } from './combined/subnav-menu.js';
+import { subNavPosition } from './combined/subnav-position.js';
+import { accordion } from './combined/accordion.js';
+
 
 // Window load
 window.addEventListener('DOMContentLoaded', () => {
@@ -34,6 +37,8 @@ window.addEventListener('DOMContentLoaded', () => {
   if (pictureElemSelector && getInternetExplorerVersion() <= 11) {
     loadPicturefillFn();
   }
+
+  accordion();
 
   informationBanner();
 
@@ -113,11 +118,12 @@ window.addEventListener('DOMContentLoaded', () => {
   lightbox();
 
 
-   const secondaryMenuSelector = document.getElementById('menu');
+  const secondaryMenuSelector = document.getElementById('menu');
 
-   if (secondaryMenuSelector) {
-     subnavMenu(secondaryMenuSelector);
-   }
+  if (secondaryMenuSelector) {
+    subnavMenu(secondaryMenuSelector);
+  }
+  subNavPosition();
 
   feedbackSurvey();
   htmlFormsAntiSpam();

@@ -65,6 +65,10 @@ export function feedbackSurvey() {
     }
 
     function reportProblem() {
+
+
+
+
       const newURL =
         window.location.protocol +
         '//' +
@@ -82,6 +86,7 @@ export function feedbackSurvey() {
           e.stopPropagation();
           e.preventDefault();
           closeProblemForm(e);
+
         },
         false
       );
@@ -140,6 +145,8 @@ export function feedbackSurvey() {
       reportProblemForm.classList.add('survey-in');
       reportProblemButtonContainer.classList.add('js-hide');
       yesNoContainer.classList.add('js-hide');
+      reportProblemForm.scrollIntoView({behavior: "auto", block: "start"});
+
     }
 
     function closeProblemForm(e) {
@@ -184,5 +191,8 @@ export function feedbackSurvey() {
 
         // open survey panel
         survey.classList.add('survey-in');
+
+        questionaire.scrollIntoView({behavior: "auto", block: "start"});
+
     }
 }

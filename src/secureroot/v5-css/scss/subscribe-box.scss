@@ -12,3 +12,13 @@ cursor: pointer;
 background: $hseblack;
 }
 
+.subscribe .form-group, .subscribe .btn, .subscribe fieldset {
+margin-bottom: 0;
+margin: 0 !important;
+}
+
+.subscribe .fieldset__heading {
+color: $black;
+}
+
+

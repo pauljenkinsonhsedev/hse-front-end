@@ -33,6 +33,10 @@ function copyDevguideAssets() {
   const tidy = src(['./node_modules/tidy-html5/tidy.js'])
   .pipe(dest('./devguide/assets/v5-js/vendor/tidy'));
 
+  const ariaAccordion = src(['./node_modules/a11y_accordions/index.js']).pipe(
+    dest('./devguide/assets/v5-js/vendor/a11y_accordions')
+  );
+
   const moment = src(['./node_modules/moment/moment.js'])
   .pipe(dest('./devguide/assets/v5-js/vendor/moment'));
 
@@ -48,7 +52,7 @@ function copyDevguideAssets() {
   .pipe(dest(config.devguide.copyjs.output));
 
 
-  return merge(html, imageAssets, tidy, moment, misc);
+  return merge(html, imageAssets, tidy, moment, misc, ariaAccordion);
 };
 
 task('devguideHighChats', copyHighchartsjs);
