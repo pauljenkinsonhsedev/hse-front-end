@@ -70,6 +70,7 @@ display: none;
           <li class="components"><a href="../../components/index.htm">Components</a></li>
           <li class="patterns"><a href="../../patterns/index.htm">Patterns</a></li>
           <li class="template"><a href="../index.htm">Framework</a></li>
+		  <li class="development"><a href="../../development/index.htm">Development</a></li>
         </ul>
       </nav>
     </div>
@@ -108,6 +109,7 @@ display: none;
         <li><a href="../template/regions.htm">Editable regions</a></li>
         <li><a href="../template/param.htm">Parameters</a></li>
         <li><a href="../template/accessibility.htm">Accessibility</a></li>
+		<li><a href="../template/library-items.htm">Library items</a></li>
         <li><a href="#">Components</a>
           <ul>
             <li><a href="index.htm">Overview</a></li>
@@ -125,30 +127,30 @@ display: none;
     </li>
 	  <li><a href="#">Workflow</a>
 		  <ul>
-			  <li><a href="../workflow/index.htm">Workflow</a></li>
+			  <li><a href="../../development/workflow/index.htm">Workflow</a></li>
 			  <li><a href="#">Gitflow</a>
 			  <ul>
-				  <li><a href="../workflow/gitflow.htm">Gitflow</a></li>
-				  <li><a href="../workflow/gitflow-features.htm">Feature branches</a></li>
-				  <li><a href="../workflow/gitflow-releases.htm">Release branches</a></li>
-				  <li><a href="../workflow/gitflow-hotfixes.htm">Hotfixes</a></li>
+				  <li><a href="../../development/workflow/gitflow.htm">Gitflow</a></li>
+				  <li><a href="../../development/workflow/gitflow-features.htm">Feature branches</a></li>
+				  <li><a href="../../development/workflow/gitflow-releases.htm">Release branches</a></li>
+				  <li><a href="../../development/workflow/gitflow-hotfixes.htm">Hotfixes</a></li>
 				</ul>
 			  </li>
-			  <li><a href="../workflow/client-tools.htm">Git-client management tools</a></li>
+			  <li><a href="../../development/workflow/client-tools.htm">Git-client management tools</a></li>
 		  </ul>
 	  </li>
     
     <li><a href="#">Testing</a>
       <ul>
-		<li><a href="../testing/index.htm">Overview</a></li>
-        <li><a href="../testing/browsers-devices.htm">Browsers and devices</a></li>
-		<li><a href="../testing/test.htm">Test page</a></li>
+		<li><a href="../../development/testing/index.htm">Overview</a></li>
+        <li><a href="../../development/testing/browsers-devices.htm">Browsers and devices</a></li>
+		<li><a href="../../development/testing/test.htm">Test page</a></li>
       </ul>
     </li>
 	<li><a href="#">Javascript</a>
       <ul>
-		<li><a href="../javascript/index.htm">Overview</a></li>
-        <li><a href="../javascript/create-a-basic-component.htm">Create a component</a></li>
+		<li><a href="../../development/javascript/index.htm">Overview</a></li>
+        <li><a href="../../development/javascript/create-a-basic-component.htm">Create a component</a></li>
       </ul>
     </li>
   </ul>
@@ -163,13 +165,7 @@ display: none;
 
 	<p>Breadcrumbs on HSE.GOV.UK display a hierarchy of the current page in relation to the the site's structure, from homepage (top level) to current page.</p>
 
-	<ul>
-
-	<li>The first list item in the breadcrumbs should always be HSE.GOV.UK homepage</li>
-	<li>The first list item should also have the class <strong>home</strong> assigned to it</li>
-	<li>The last list item should be the current page</li>
-	<li>The current page (last list item) has no link</li>
-	</ul>
+	
 
 
 <pre class="language-markup"><code>&lt;ol&gt;
@@ -179,6 +175,24 @@ display: none;
  &lt;li&gt;&lt;a href=&quot;../index.htm&quot;&gt;Health and safety made simple&lt;/a&gt;&lt;/li&gt;
  &lt;li&gt;Risk assessment&lt;/li&gt;
 &lt;/ol&gt;</code></pre>
+	
+	<h2>When to use</h2>
+	
+	<p>Use breadcrumbs to give users context and let them move back or up a level if they can't find what they want on the page.</p>
+	
+	<p>Breadcrumbs need to be included on every page.</p>
+	
+	<h2>How to use</h2>
+	
+	<p>Include an <strong>&lt;ol&gt;</strong> element in the <strong>Breadcrumbs</strong> <a href="../template/regions.htm">editable region</a> of the page and list the hierarchy of pages from the homepage to current page.</p>
+	
+	<ul>
+
+	<li>The first list item in the breadcrumbs should always be the HSE.GOV.UK homepage</li>
+	<li>The first list item should also have a class of <strong>.home</strong></li>
+	<li>The last list item should be the current page</li>
+	<li>The current page (last list item) has no link</li>
+	</ul>
 
 	<div class="box">
 
@@ -214,7 +228,7 @@ display: none;
 </nav>
 <section id="lastUpdated" aria-label="Last updated">
 <!-- InstanceBeginEditable name="updated" --> Updated:
-	<!-- #BeginDate format:IS1 -->2021-09-03<!-- #EndDate -->
+	<!-- #BeginDate format:IS1 -->2021-11-18<!-- #EndDate -->
 	<!-- InstanceEndEditable -->
 </section>
 <script src="../../assets/v5-js/v5-main.min.js"></script>

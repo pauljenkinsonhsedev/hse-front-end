@@ -24,6 +24,7 @@
         <li><a href="../patterns/components/box-list.htm">Cards (box style)</a></li>
         <li><a href="../patterns/components/start.htm">Start button</a></li>
 		<li><a href="../patterns/components/pagination.htm">Pagination (previous,next)</a></li>
+		<li><a href="../patterns/components/banner.htm">Homepage banner</a></li>
       </ul>
     </li>
   </ul>
