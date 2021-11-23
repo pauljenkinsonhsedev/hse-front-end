@@ -4,7 +4,8 @@ export function subnavMenu(container) {
   wrapper.classList.add('subnav-wrapper');
 
   // Create draws
-  const nestedChildren = container.querySelectorAll('ul:not(:first-child)');
+  const nestedChildren = container.querySelectorAll('li > ul');
+
   [...nestedChildren].reverse().forEach((item) => {
     // insert header
     const header = createBackLinks(item);
@@ -19,7 +20,7 @@ export function subnavMenu(container) {
     // replace item with draw
     item.replaceWith(draw);
 
-    draw.firstChild.querySelector('li').classList.add('header');
+    // draw.firstChild.querySelector('li').classList.add('header');
 
     const drawAction = draw.previousElementSibling;
     drawAction.classList.add('next');
@@ -27,7 +28,7 @@ export function subnavMenu(container) {
 
   // create back navigation
   function createBackLinks(elem) {
-    const text = elem.parentElement.firstElementChild.textContent;
+    const text = elem.parentElement.parentElement.firstElementChild.textContent;
     const regex = /Overview -/gi;
     const headerText = text.replaceAll(regex, '');
     const headerItem = document.createElement('li');
@@ -118,8 +119,11 @@ export function subnavMenu(container) {
         (ele) => ele.parentElement === item
       );
 
+
       directDescendants.forEach((item) => {
-        if (position === index) {
+        console.log('item', item.parentElement.parentElement.classList.contains('active'));
+        if (item.parentElement.parentElement.classList.contains('active')) {
+          console.log(item.querySelector('a'))
           item.querySelector('a').tabIndex = 0;
         } else {
           item.querySelector('a').tabIndex = -1;
@@ -142,7 +146,7 @@ export function subnavMenu(container) {
 
     const parent = e.target.closest('.draw');
     const grandParent = parent.closest('ul').closest('.draw');
-    let drawHeight;
+    // let drawHeight;
     const position = parent.dataset.depth
       ? parseInt(parent.dataset.depth) - 1
       : 0;
@@ -150,11 +154,12 @@ export function subnavMenu(container) {
     parent.classList.remove('active');
     if (grandParent) {
       grandParent.classList.add('active');
-      drawHeight = grandParent.offsetHeight;
-      container.style.height = `${drawHeight}px`;
+      // drawHeight = grandParent.offsetHeight;
+      // container.style.height = `${drawHeight}px`;
     } else {
-      container.style.height = `auto`;
+      // container.style.height = `auto`;
     }
+
     wrapper.style.left = `-${position}00%`;
     setTabIndexes(e.target, 'back');
   }
@@ -179,8 +184,8 @@ export function subnavMenu(container) {
     }
     e.target.nextElementSibling.classList.add('active');
 
-    const drawHeight = e.target.nextElementSibling.offsetHeight;
-    container.style.height = `${drawHeight}px`;
+    // const drawHeight = e.target.nextElementSibling.offsetHeight;
+    // container.style.height = `${drawHeight}px`;
     wrapper.style.left = `-${position}00%`;
     setTabIndexes(e.target, 'next');
   }
