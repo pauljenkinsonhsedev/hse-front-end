@@ -1,5 +1,6 @@
 export function subnavMenu(container) {
   container.classList.add('subnav-container');
+  const first = container.querySelectorAll('ul:first-of-type li');
   const wrapper = container.querySelector('ul:first-of-type');
   wrapper.classList.add('subnav-wrapper');
 
@@ -29,8 +30,10 @@ export function subnavMenu(container) {
   // create back navigation
   function createBackLinks(elem) {
     const text = elem.parentElement.parentElement.firstElementChild.textContent;
-    const regex = /Overview -/gi;
-    const headerText = text.replaceAll(regex, '');
+    const regex1 = /Overview/gi;
+    const regex2 = /Overview -/gi;
+    const regex3 = /- Overview/gi;
+    const headerText = text.replaceAll(regex1, '').replaceAll(regex2, '').replaceAll(regex3, '');
     const headerItem = document.createElement('li');
     const headerAction = document.createElement('a');
     headerAction.href = '#';
@@ -113,15 +116,12 @@ export function subnavMenu(container) {
         .indexOf(elementToFind);
     }
 
-    [...lists].forEach((item, index) => {
+    [...lists].forEach((item) => {
       const descendants = Array.from(item.querySelectorAll('*'));
       const directDescendants = descendants.filter(
         (ele) => ele.parentElement === item
       );
-
-
       directDescendants.forEach((item) => {
-        console.log('item', item.parentElement.parentElement.classList.contains('active'));
         if (item.parentElement.parentElement.classList.contains('active')) {
           console.log(item.querySelector('a'))
           item.querySelector('a').tabIndex = 0;
@@ -162,6 +162,14 @@ export function subnavMenu(container) {
 
     wrapper.style.left = `-${position}00%`;
     setTabIndexes(e.target, 'back');
+  
+    [...first].forEach((item) => {
+      if (grandParent === null) {
+        item.querySelector('a').tabIndex = 0;
+      } else {
+        item.querySelector('a').tabIndex = -1;
+      }  
+    })
   }
 
   // Add click event for next
