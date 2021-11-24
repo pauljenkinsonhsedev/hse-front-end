@@ -146,7 +146,7 @@ export function subnavMenu(container) {
 
     const parent = e.target.closest('.draw');
     const grandParent = parent.closest('ul').closest('.draw');
-    // let drawHeight;
+    let drawHeight;
     const position = parent.dataset.depth
       ? parseInt(parent.dataset.depth) - 1
       : 0;
