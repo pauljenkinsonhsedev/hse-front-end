@@ -154,10 +154,10 @@ export function subnavMenu(container) {
     parent.classList.remove('active');
     if (grandParent) {
       grandParent.classList.add('active');
-      // drawHeight = grandParent.offsetHeight;
-      // container.style.height = `${drawHeight}px`;
+      drawHeight = grandParent.offsetHeight;
+      container.style.height = `${drawHeight}px`;
     } else {
-      // container.style.height = `auto`;
+      container.style.height = `auto`;
     }
 
     wrapper.style.left = `-${position}00%`;
@@ -192,8 +192,8 @@ export function subnavMenu(container) {
     }
     e.target.nextElementSibling.classList.add('active');
 
-    // const drawHeight = e.target.nextElementSibling.offsetHeight;
-    // container.style.height = `${drawHeight}px`;
+    const drawHeight = e.target.nextElementSibling.offsetHeight;
+    container.style.height = `${drawHeight}px`;
     wrapper.style.left = `-${position}00%`;
     setTabIndexes(e.target, 'next');
   }
