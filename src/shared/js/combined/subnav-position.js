@@ -15,12 +15,9 @@ export function subNavPosition() {
         const mediaquery = mediaQuery();
         if (mediaquery !== 'small') {
             page.insertBefore(subNav, content);
-            console.log('not small');
         } else {
             page.insertBefore(subNav, content.nextSibling);
-            console.log('is small');
         }
-        console.log('mq', mediaquery);
     }
     posSwitch();
     // watch for window resize
