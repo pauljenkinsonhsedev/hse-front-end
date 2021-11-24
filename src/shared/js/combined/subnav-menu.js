@@ -132,7 +132,7 @@ export function subnavMenu(container) {
     });
   }
 
-  setTabIndexes();
+  // setTabIndexes();
 
   // Add click event for back
   const back = document.querySelectorAll('.back');
