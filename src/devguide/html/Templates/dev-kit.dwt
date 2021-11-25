@@ -3,7 +3,6 @@
 <head>
 
 <meta charset="utf-8">
-	
 <!-- TemplateBeginMultipleIf -->
 <!-- TemplateBeginIfClause cond="printGuide == true" -->
 <meta name="robots" content="noindex, nofollow">
@@ -109,7 +108,7 @@ display: none;
 
 <!-- TemplateBeginMultipleIf --><!-- TemplateBeginIfClause cond="layout == 'betacontentpage'" --> <!-- TemplateBeginMultipleIf --> <!-- TemplateBeginIfClause cond="columnLayout == 2" -->
 <nav id="navSecondary" aria-label="Secondary"> <!-- TemplateBeginEditable name="Subnav" -->
-  <div id="menu" class="slinky-menu slinky-theme-default">
+  <div id="menu">
     <ul>
       <li class="first"><a href="#">Microsite homepage</a></li>
     </ul>
@@ -216,23 +215,7 @@ display: none;
 <!-- TemplateBeginEditable name="updated" -->Updated:<!-- #BeginDate -->2021-09-06<!-- #EndDate --><!-- TemplateEndEditable -->
 </section>
 <script src="../assets/v5-js/v5-main.min.js"></script>
-<script src="../assets/v5-js/jquery.min.js"></script> 
-<script src="../assets/v5-js/v5-footer.min.js"></script> 
-<!-- TemplateBeginMultipleIf -->
-	
-<!-- TemplateBeginIfClause cond="columnLayout == 2" --> 
-<script src="../assets/v5-js/v5-footer-slinky-js.min.js"></script> 
-<!-- TemplateEndIfClause -->
-<!-- TemplateEndMultipleIf -->
 
-<!-- TemplateBeginMultipleIf -->
-<!-- TemplateBeginIfClause cond="printGuide == true" --> 
-<script>
-$( document ).ready(function() {
-window.print();
-});	
-</script> 
-<!-- TemplateEndIfClause --><!-- TemplateEndMultipleIf -->
 <div id="gutter"><!-- TemplateBeginEditable name="gutter" --> <!-- TemplateEndEditable --></div>
 
 	
