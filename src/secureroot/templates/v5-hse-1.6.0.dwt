@@ -82,7 +82,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <!-- GTM -->
 
-<noscript aria-hidden="true" aria-label="GTM-PJPWMNL">
+<noscript>
 
 <iframe title="GTM-PJPWMNL"
         src="https://www.googletagmanager.com/ns.html?id=GTM-PJPWMNL" height="0"
