@@ -197,4 +197,16 @@ export function subnavMenu(container) {
     wrapper.style.left = `-${position}00%`;
     setTabIndexes(e.target, 'next');
   }
+
+  // height fix 
+  const newDrawHeight = container.querySelector('.draw');
+  const newHeight = newDrawHeight.clientHeight;
+  container.style.height = `${newHeight}px`;
+
+
+  console.log(newDrawHeight);
+  console.log(newHeight);
 }
+
+
+
