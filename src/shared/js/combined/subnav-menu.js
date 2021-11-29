@@ -199,9 +199,16 @@ export function subnavMenu(container) {
   }
 
   // height fix 
-  const newDraw = container.querySelector('.draw');
+  const newDraw = container.querySelector('.draw.active');
+  const subnavContainerHeight = container.clientHeight;
   const newDrawHeight = newDraw.clientHeight;
+
+  if(newDrawHeight > subnavContainerHeight) {
   container.style.height = `${newDrawHeight}px`;
+  } else {
+  container.style.height = `${subnavContainerHeight}px`;  
+  }
+
 }
 
 
