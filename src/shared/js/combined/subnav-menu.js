@@ -200,6 +200,8 @@ export function subnavMenu(container) {
 
   // height fix 
   const newDraw = container.querySelector('.draw.active');
+
+  if (newDraw) {
   const subnavContainerHeight = container.clientHeight;
   const newDrawHeight = newDraw.clientHeight;
 
@@ -208,6 +210,7 @@ export function subnavMenu(container) {
   } else {
   container.style.height = `${subnavContainerHeight}px`;  
   }
+}
 
 }
 
