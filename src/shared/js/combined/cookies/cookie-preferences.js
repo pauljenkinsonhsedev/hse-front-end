@@ -3,7 +3,6 @@ import { customEventListener } from '../utils/add-custom-event-listener';
 import { cookieMessageHTML } from './cookie-banner-html.js';
 import { dialogModalAjax } from '../dialogs.js';
 import { smoothScroll } from '../utils/smooth-scroll';
-import { getEntries } from "../utils/object-entries-polyfill.js";
 
    const setCookieSettings = { path: '/', domain: 'hse.gov.uk', secure: true, sameSite: 'strict', expires: 365 };
 // const setCookieSettings = { path: '/', domain: 'beta.hse.gov.uk', secure: true, sameSite: 'strict', expires: 365 };
@@ -140,7 +139,8 @@ export function cookiePreferences() {
         const submitForm = () => {
             const outputData = {};
             const formData = new FormData(settingsForm);
-            for (let pair of getEntries(formData)) {
+        
+            for (let pair of formData.entries()) {
                 let key = pair[0];
                 let val = pair[1];
                 outputData[key] = val;
