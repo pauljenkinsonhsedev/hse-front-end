@@ -1,5 +1,11 @@
-// const entriesPolyFill = (obj) => Object.keys(obj).map(key => [key, obj[key]]);
-
-export function getEntries(obj) {
-  return Object.entries ? Object.entries(obj) : Object.keys(obj).map(key => [key, obj[key]]);
+if (!Object.entries) {
+  Object.entries = function( obj ){
+      var ownProps = Object.keys( obj ),
+          i = ownProps.length,
+          resArray = new Array(i); // preallocate the Array
+      while (i--)
+      resArray[i] = [ownProps[i], obj[ownProps[i]]];
+  
+      return resArray;
+  };
 }
