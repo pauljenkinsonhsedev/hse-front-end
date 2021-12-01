@@ -123,7 +123,7 @@ export function subnavMenu(container) {
       );
       directDescendants.forEach((item) => {
         if (item.parentElement.parentElement.classList.contains('active')) {
-          console.log(item.querySelector('a'))
+          // console.log(item.querySelector('a'))
           item.querySelector('a').tabIndex = 0;
         } else {
           item.querySelector('a').tabIndex = -1;
@@ -199,18 +199,12 @@ export function subnavMenu(container) {
   }
 
   // height fix 
-  const newDraw = container.querySelector('.draw.active');
+  const activepage = document.querySelector('.active-page').closest('.draw.active');
 
-  if (newDraw) {
-  const subnavContainerHeight = container.clientHeight;
-  const newDrawHeight = newDraw.clientHeight;
-
-  if(newDrawHeight > subnavContainerHeight) {
-  container.style.height = `${newDrawHeight}px`;
-  } else {
-  container.style.height = `${subnavContainerHeight}px`;  
+  if (activepage) {
+  const activepagedrawheight = activepage.clientHeight;
+  container.style.height = `${activepagedrawheight}px`;  
   }
-}
 
 }
 
