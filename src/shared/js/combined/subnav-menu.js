@@ -199,12 +199,20 @@ export function subnavMenu(container) {
   }
 
   // height fix 
-  const activepage = document.querySelector('.active-page').closest('.draw.active');
 
-  if (activepage) {
-  const activepagedrawheight = activepage.clientHeight;
-  container.style.height = `${activepagedrawheight}px`;  
-  }
+    const activePage = document.querySelector('.active-page');
+
+    if (activePage) {
+
+    const activeDraw = activePage.closest('.draw.active');
+
+    if (activedraw) {
+    const activePageDrawHeight = activeDraw.clientHeight;
+    container.style.height = `${activePageDrawHeight}px`;  
+    }
+
+    }  
+
 
 }
 
