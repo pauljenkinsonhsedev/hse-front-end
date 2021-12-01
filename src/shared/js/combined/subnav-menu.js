@@ -206,7 +206,7 @@ export function subnavMenu(container) {
 
     const activeDraw = activePage.closest('.draw.active');
 
-    if (activedraw) {
+    if (activeDraw) {
     const activePageDrawHeight = activeDraw.clientHeight;
     container.style.height = `${activePageDrawHeight}px`;  
     }
