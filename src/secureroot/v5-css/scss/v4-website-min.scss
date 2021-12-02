@@ -66,8 +66,17 @@ h2 a:focus {
 // resets ul li
 
 
-#contentContainer .box ul, ul.linkListNoBullet {
+#contentContainer ul.linkListNoBullet {
 margin: 0 0 10px 0 !important;
+}
+
+#contentContainer ul.linkListNoBullet li {
+list-style-image: none !important;
+}
+
+#contentContainer .box ul {
+margin: 0 0 10px 0 !important;
+padding-left: 15px;
 }
 
  ul.columnsList li::before, #pagination ul li::before, ul.itemThumbBook li, ul.hsl-links li, ul.social li, ul.articleList, ul.linkListNoBullet li {
@@ -79,29 +88,22 @@ ul.tabs li, ul.social li {
 background-image: none !important;
 }
 
-#contentContainer  ul li {
-background-image: url('../../assets/v5-images/icons/svg/solid/square-full-solid-red.svg');
-background-position: 0 10px;
-background-size: 4px 4px;
-background-repeat: no-repeat;
-}
-
-#contentContainer .backgroundRed ul li {
-background-image: url('../../assets/v5-images/icons/svg/solid/square-full-solid-white.svg');
-}
 
 #contentContainer ul.linkList li {
-background-image: url('../../assets/v5-images/icons/svg/solid/caret-right-red.svg');
-background-position: 0 7px;
-background-size: 10px 10px;
-background-repeat: no-repeat;
+list-style-image: url('../../assets/v5-images/icons/svg/solid/caret-right-red.svg');
+padding: 0;
+}
+
+#contentContainer ul.linkList li::marker {
+font-size: 20px;
 }
 
 #contentContainer .backgroundRed .linkList li {
-background-image: url('../../assets/v5-images/icons/svg/solid/caret-right-white.svg');
-background-position: 0 7px;
-background-size: 10px 10px;
-background-repeat: no-repeat;
+list-style-image: url('../../assets/v5-images/icons/svg/solid/caret-right-white.svg');
+}
+
+#contentContainer .backgroundRed .linkList li::marker {
+font-size: 18px;
 }
 
 

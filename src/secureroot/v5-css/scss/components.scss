@@ -372,7 +372,7 @@ margin-right: 0;
 .columnsList li {
 padding: 0 !important;
 background: none;
-background-image: none !important;
+list-style-image: none !important;
 @media only screen and (min-width : $desktop) {
 -webkit-column-break-inside: avoid; /* Chrome, Safari, Opera */
 page-break-inside: avoid; /* Firefox */

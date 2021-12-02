@@ -35,12 +35,16 @@ button:hover {
     text-decoration: none;
 }
 
-#contentContainer ul.linkList li {
-    background: none;
+#contentContainer ul li {
+list-style-image: url("../../assets/v5-images/icons/svg/solid/square-full-solid-red.svg");
+}
+#contentContainer ul li::marker {
+font-size: 9px;    
 }
 
 #contentContainer ul.linkList, .aside ul, ul.social  {
     margin: 0 0 10px 0px !important;
+    padding-left: 10px;
 }
 
 #contentContainer .mostPopular ul.linkList {

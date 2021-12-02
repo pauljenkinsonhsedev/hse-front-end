@@ -103,6 +103,7 @@ margin: 0;
 
 .hsl-links li {
 background: none;
+list-style-image: none !important;
 width: 100%;
 @media only screen and (min-width : $desktop) {
 width: 232px;
