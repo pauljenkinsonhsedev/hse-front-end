@@ -263,6 +263,7 @@ export class ChartOptionsArearange extends ChartOptions {
             }
         };
         const chart = {
+            marginTop: 100,
             style: {
                 fontFamily: this.fontFamily,
                 fontSize: '0.8rem',
