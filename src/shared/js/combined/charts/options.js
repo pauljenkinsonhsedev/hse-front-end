@@ -49,7 +49,7 @@ export class ChartOptions {
         this.decimals = container.dataset.decimalPoint;
         this.colWidth = 75;
         this.collection = new Array;
-
+        this.firstLast = container.dataset.xaxisFirstlast;
 
         // define height of chart
         const captionLength = (this.caption != undefined) ? this.caption.length: 0;
@@ -208,6 +208,17 @@ export class ChartOptions {
             },
             labels: {
               overflow: 'justify',
+              formatter: function () {
+                if (this.firstLast === 'true') {
+                    if(this.isFirst || this.isLast) {
+                        return this.value
+                    } else {
+                        return ''
+                    }
+                } else {
+                    return this.value
+                }
+              },
               // useHTML: true,
               style: {
                 fontFamily: this.fontFamily,
@@ -259,6 +270,7 @@ export class ChartOptions {
           },
           plotOptions: {
             series: {
+              pointWidth: 50,
               borderWidth: 0,
               showInLegend: true,
               events: {
