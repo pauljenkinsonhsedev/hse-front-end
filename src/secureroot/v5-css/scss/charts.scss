@@ -24,3 +24,12 @@
     font-size: '0.7rem';
     font-weight: 'regular';
 }
+
+.highcharts-caption {
+    *{
+        font-family: inherit;
+        font-size: inherit;
+        color: inherit;
+        white-space: inherit;
+    }
+}

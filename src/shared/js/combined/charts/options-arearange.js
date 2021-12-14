@@ -40,7 +40,9 @@ export class ChartOptionsArearange extends ChartOptions {
         const firstLast = container.dataset.xaxisFirstlast;
         const thead = this.dataTable.querySelector('.table__head');
         let rangeHeading = thead.rows[0].querySelectorAll('.heading')[1].textContent;
-
+        console.log(container.dataset)
+        const zoneText = container.dataset.zones ? container.dataset.zones : false;
+        const zone = JSON.parse(zoneText);
         const missingAverage = missingDataAverage(averagesData[0], colours);
 
         function noTooltip(dataArray) {
@@ -55,7 +57,7 @@ export class ChartOptionsArearange extends ChartOptions {
             });
         };
         const tooltipCheck = noTooltip(averagesData[0]);
-
+    
         let title = this.collection.title;
         title.text = this.title;
 
@@ -83,7 +85,9 @@ export class ChartOptionsArearange extends ChartOptions {
                 fillColor: 'white',
                 lineWidth: 2,
                 lineColor: this.colours[0]
-            }
+            },
+            zoneAxis: 'x',
+            zones: zone
         };
 
         const seriesRange = {
@@ -225,15 +229,22 @@ export class ChartOptionsArearange extends ChartOptions {
         };
 
         // set caption
-        if (this.caption) {
-            this.captionText = this.caption;
-        } else {
-            this.captionText = null;
+        const forcastedString = `<p>The broken lines represent forcasted data.</p>`;
+        this.captionText = this.caption ? `<p>${this.caption}</p>` : '';
+
+        if (zone != false) {
+            this.captionText += forcastedString;
         }
 
         let caption = {
             useHTML: true,
-            text: this.caption,
+            text: this.captionText,
+            style: {
+                color: '#666',
+                fontFamily: this.fontFamily,
+                fontSize: '0.8rem',
+                fontWeight: 'regular',
+            }
         };
 
         let plotOptions = {
