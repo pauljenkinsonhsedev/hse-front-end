@@ -24,6 +24,8 @@ export function seriesData(data) {
     const thead = data.querySelector('.table__head');
     const dateRegEx = /^\d{4}[./-]\d{2}[./-]\d{2}$/;
 
+    const zoneText = data.dataset.zones ? data.dataset.zones : false;
+    const zone = JSON.parse(zoneText);
 
     // build data sets
     const errorArray = [].reduce.call(tbody.rows, function (errorArray, row) {
@@ -92,7 +94,9 @@ export function seriesData(data) {
             const unitdata = {
                 name: headingsArray[u],
                 yAxis: 0,
-                data: unitArray
+                data: unitArray,
+                zoneAxis: 'x',
+                zones: zone
             };
 
             const errorBar = {
@@ -113,6 +117,7 @@ export function seriesData(data) {
                 seriesData.push(unitdata);
             }
         }
+        console.log('seriesData', seriesData);
 
         return seriesData;
     }

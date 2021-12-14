@@ -188,10 +188,11 @@ export class ChartOptions {
           },
           caption: {
             text: this.captionText,
+            useHTML: true,
             style: {
-              color: '#000',
+              color: '#666',
               fontFamily: this.fontFamily,
-              fontSize: '0.9rem',
+              fontSize: '0.8rem',
               fontWeight: 'regular',
             },
           },
