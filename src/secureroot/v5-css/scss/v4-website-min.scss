@@ -74,11 +74,6 @@ margin: 0 0 10px 0 !important;
 list-style-image: none !important;
 }
 
-#contentContainer .box ul {
-margin: 0 0 10px 0 !important;
-padding-left: 15px;
-}
-
  ul.columnsList li::before, #pagination ul li::before, ul.itemThumbBook li, ul.hsl-links li, ul.social li, ul.articleList, ul.linkListNoBullet li {
 padding-left: 0 !important;
 background: none !important;
@@ -89,21 +84,16 @@ background-image: none !important;
 }
 
 
-#contentContainer ul.linkList li {
-list-style-image: url('../../assets/v5-images/icons/svg/solid/caret-right-red.svg');
-padding: 0;
-}
-
-#contentContainer ul.linkList li::marker {
-font-size: 20px;
-}
-
-#contentContainer .backgroundRed .linkList li {
-list-style-image: url('../../assets/v5-images/icons/svg/solid/caret-right-white.svg');
-}
-
-#contentContainer .backgroundRed .linkList li::marker {
-font-size: 18px;
+#contentContainer ul.linkList li::before {
+content: '';
+display: inline-block;
+width: 0;
+height: 0;
+border-style: solid;
+border-width: 5.5px 0 5.5px 6.5px;
+border-color: transparent transparent transparent $red;
+margin-left: -16px;
+padding-right: 10px;
 }
 
 
@@ -151,13 +141,21 @@ position: relative;
 	left: 0;
 }
 
-#contentContainer .backgroundRed p.linkList::before {
-	background-image: url('../../assets/v5-images/icons/svg/solid/caret-right-white.svg');
+#contentContainer .backgroundRed ul li::before, #contentContainer .backgroundRed p.linkBullet::before, #contentContainer .backgroundRed p.linkList::before {
+    content: '';
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 5.5px 0 5.5px 6.5px;
+    border-color: transparent transparent transparent white;
+    margin-left: -18px;
+    padding-right: 10px;
+
 }
 
-#contentContainer .backgroundRed ul li::before, #contentContainer .backgroundRed p.linkBullet::before {
-	background-image: url('../../assets/v5-images/icons/svg/solid/square-full-solid-white.svg');
-
+#contentContainer .backgroundRed p.linkList::before {
+margin-left: 0;
 }
 
 ul.listtick li,

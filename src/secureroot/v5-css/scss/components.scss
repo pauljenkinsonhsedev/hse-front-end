@@ -342,6 +342,10 @@ margin-bottom: 20px;
 
 // Column lists
 
+ul.columnsList li:before, ul.social li:before {
+content: none !important;
+}
+
 .column.multiCol {
 margin-bottom: 0;
 padding-bottom: 0;

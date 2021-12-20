@@ -35,25 +35,42 @@ button:hover {
     text-decoration: none;
 }
 
-#contentContainer ul li {
-list-style-image: url("../../assets/v5-images/icons/svg/solid/square-full-solid-red.svg");
+#contentContainer ul.linkList li {
+background: none !important;
+padding-left: 0;
 }
+
+  #contentContainer ul li:before {
+    color: $red;
+    content:"\25AA";
+    padding-right: 10px;
+    position:relative;
+    margin-left: -18px;
+    padding-right: 10px;
+  }
+
+
+
 #contentContainer ul li::marker {
 font-size: 9px;    
 }
 
-#contentContainer ul.linkList, .aside ul, ul.social  {
-    margin: 0 0 10px 0px !important;
-    padding-left: 10px;
+#contentContainer ul.linkList, .aside ul  {
+margin: 0 0 10px 18px !important;
+padding-left: 0;    
+}
+
+ul.social {
+margin: 0 0 10px 0 !important;
 }
 
 #contentContainer .mostPopular ul.linkList {
-    margin-bottom: 0 !important;
+margin-bottom: 0 !important;
 }
 
 #contentContainer .backgroundRed .linkList li a::before {
-    background-image: none;
-    padding-right: 0;
+background-image: none;
+padding-right: 0;
 }
 
 

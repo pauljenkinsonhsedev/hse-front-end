@@ -136,11 +136,16 @@ p {
 }
 #contentContainer ul,
 #sideBar ul {
-  margin: 0 0 10px 10px;
+  margin: 0 0 10px 16px;
 }
 #contentContainer ul {
   clear: both;
 }
+
+#contentContainer ul li {
+padding-left: 18px;
+}
+
 .itemThumbBook {
   margin-left: 0 !important;
   margin-right: 0 !important;
