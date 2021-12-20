@@ -158,16 +158,18 @@ position: relative;
 
 }
 
-ul.listtick li,
-ul.tick li {
-	background: url(../../assets/v4-images/website/sprites/bullets.png) no-repeat -3000px 0.6em !important;
+ul.listtick li ,
+ul.tick li  {
+	background: url('../../assets/v5-images/icons/svg/solid/check-solid-green.svg') no-repeat 2px !important;
+	background-size: 10px 10px !important;
+
 }
 
 ul.listcross li,
 ul.cross li {
-	background: url(../../assets/v4-images/website/sprites/bullets.png) no-repeat -4000px 0.6em !important;
+	background: url('../../assets/v5-images/icons/svg/solid/cross-solid.svg') no-repeat 2px !important;
+	background-size: 10px 10px !important;
 }
-
 ul.listexclaim li {
 	background: url(../../assets/v4-images/website/sprites/bullets.png) no-repeat -5000px 0.4em !important;
 }
