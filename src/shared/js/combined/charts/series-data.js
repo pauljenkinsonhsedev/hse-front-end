@@ -107,7 +107,7 @@ export function seriesData(data) {
                 data: errorArray,
                 showInLegend: false,
                 tooltip: {
-                    pointFormat: `(Interval range: <strong>{point.low}-{point.high}</strong><br />`
+                    pointFormat: '(error range: {point.low}-{point.high})<br/>'
                 }
             };
 
@@ -117,7 +117,6 @@ export function seriesData(data) {
                 seriesData.push(unitdata);
             }
         }
-        console.log('seriesData', seriesData);
 
         return seriesData;
     }
