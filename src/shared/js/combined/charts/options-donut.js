@@ -55,7 +55,7 @@ export class ChartOptionsDonut extends ChartOptions {
                 enabled: true,
                 connectorColor: 'silver'
             }
-        }
+        };
 
         let title = {
             text: this.title,
@@ -74,7 +74,9 @@ export class ChartOptionsDonut extends ChartOptions {
         };
 
         let xAxis = {
-            labels: false
+            labels: {
+                enabled: false
+            },
         };
 
         let plotOptions = {
@@ -96,7 +98,6 @@ export class ChartOptionsDonut extends ChartOptions {
                         fontWeight: 'bold'
                     }
                 },
-                showInLegend: false
             },
             series: {
                 states:{
