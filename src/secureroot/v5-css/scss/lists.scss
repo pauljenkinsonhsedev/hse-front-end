@@ -131,6 +131,6 @@ line-height: 1.5;
 padding-right: 5px;
 }
 
-#contentContainer ul.itemThumbBook li::before, #contentContainer ul.hsl-links li::before {
-content: '' !important;
+#contentContainer ul.itemThumbBook li::before, #contentContainer ul.hsl-links li::before, #contentContainer ul.cross li::before, #contentContainer ul.tick li::before  {
+content: none !important;
 }
