@@ -55,7 +55,7 @@ export class ChartOptionsDonut extends ChartOptions {
                 enabled: true,
                 connectorColor: 'silver'
             }
-        }
+        };
 
         let title = {
             text: this.title,
@@ -72,6 +72,13 @@ export class ChartOptionsDonut extends ChartOptions {
                 fontWeight: 'bold'
             }
         };
+
+        let xAxis = {
+            labels: {
+                enabled: false
+            },
+        };
+
         let plotOptions = {
             pie: {
                 slicedOffset: 0,
@@ -104,7 +111,7 @@ export class ChartOptionsDonut extends ChartOptions {
         };
 
         const collection = this.collection;
-        this.collection = {...collection, chart, title, pieOptions, plotOptions};
+        this.collection = {...collection, chart, xAxis, title, pieOptions, plotOptions};
 
         return this.collection;
     }
