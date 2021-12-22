@@ -41,9 +41,9 @@ padding-left: 0;
 }
 
   #contentContainer ul li:before {
+    float: left;
     color: $red;
     content:"\25AA";
-    padding-right: 10px;
     position:relative;
     margin-left: -18px;
     padding-right: 10px;
@@ -55,7 +55,7 @@ padding-left: 0;
 font-size: 9px;    
 }
 
-#contentContainer ul.linkList, .aside ul  {
+#contentContainer ul.linkList {
 margin: 0 0 10px 18px !important;
 padding-left: 0;    
 }

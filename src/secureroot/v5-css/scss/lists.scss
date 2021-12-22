@@ -131,6 +131,10 @@ line-height: 1.5;
 padding-right: 5px;
 }
 
-#contentContainer ul.itemThumbBook li::before, #contentContainer ul.hsl-links li::before  {
+#contentContainer ul.itemThumbBook li::before, #contentContainer ul.hsl-links li::before, #contentContainer .boxList ul li:before  {
 content: none !important;
+}
+
+#contentContainer .box ul {
+margin: 0 0 10px 0px;    
 }
