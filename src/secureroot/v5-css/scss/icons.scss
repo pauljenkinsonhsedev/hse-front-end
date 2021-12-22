@@ -46,6 +46,12 @@ width: 16px;
 height: 16px;
 }
 
+// Social
+
+#contentContainer ul.social li {
+list-style-image: none;
+}
+
 #contentContainer .columnFull ul.social li.facebook a::before {
 content: " ";
 background-image: url('../../assets/v5-images/icons/svg/brands/facebook-square-red.svg');
@@ -103,6 +109,7 @@ margin: 0;
 
 .hsl-links li {
 background: none;
+list-style-image: none !important;
 width: 100%;
 @media only screen and (min-width : $desktop) {
 width: 232px;
@@ -144,6 +151,10 @@ text-decoration: underline;
 
 
 // Pagination icons
+
+#contentContainer #pagination ul li::before {
+content: '' !important;
+}
 
 #contentContainer #pagination .next-page .pagination-icon::after {	
 content: " ";

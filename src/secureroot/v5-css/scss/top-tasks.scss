@@ -13,6 +13,7 @@ margin-top: 10px;
 }
 
 #contentContainer #pagination ul li {
+list-style-image: none;
 width: 100%;
 @media only screen and (min-width : $desktop) {
 width: 50%;

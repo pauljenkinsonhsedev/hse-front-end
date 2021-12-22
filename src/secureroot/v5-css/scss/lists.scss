@@ -1,7 +1,6 @@
 li,
 ol ul li {
     padding:.1em 0;
-    padding-left:18px;
 }
 
 ol li {
@@ -15,15 +14,13 @@ dd {
 }
 
 ul.listtick li,ul.tick li {
-    padding-left: 18px;
+padding-left: 18px;
+list-style-image: none !important;
 }
 
 ul.cross li,ul.listcross li {
-    padding-left: 18px;
-}
-
-ul.listexclaim li {
-    padding-left: 18px;
+padding-left: 18px;
+list-style-image: none !important;
 }
 
 ol {
@@ -132,4 +129,12 @@ margin: 0 !important;
 font-size: 0.9rem;
 line-height: 1.5;
 padding-right: 5px;
+}
+
+#contentContainer ul.itemThumbBook li::before, #contentContainer ul.hsl-links li::before, #contentContainer .boxList ul li:before  {
+content: none !important;
+}
+
+#contentContainer .box ul {
+margin: 0 0 10px 0px;    
 }
