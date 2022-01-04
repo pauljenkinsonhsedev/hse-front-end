@@ -25,7 +25,6 @@
     "core-js": "^3.16.1",
     "date-format": "^3.0.0",
     "del": "^5.1.0",
-    "fs": "^0.0.1-security",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^7.0.1",
     "gulp-concat": "^2.6.1",
@@ -67,6 +66,7 @@
     "js-cookie": "^2.2.1",
     "moment": "2.27.0",
     "os": "^0.1.1",
+    "papaparse": "^5.3.1",
     "picturefill": "^3.0.3",
     "prismjs": "^1.24.1",
     "tidy-html5": "^0.1.1"
