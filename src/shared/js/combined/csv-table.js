@@ -58,6 +58,7 @@ function buildTable(csvData, classes) {
       rowData.forEach(function(cellData) {
         if (rowCount === 0) {
           cell = document.createElement('th');
+          cell.scope = 'col'
           cell.classList.add('heading');
         } else {
           cell = document.createElement('td');
