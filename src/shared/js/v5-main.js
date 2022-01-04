@@ -24,7 +24,7 @@ import { htmlFormsAntiSpam } from './combined/html-forms-anti-spam.js';
 import { subnavMenu } from './combined/subnav-menu.js';
 import { subNavPosition } from './combined/subnav-position.js';
 import { accordion } from './combined/accordion.js';
-
+import { CSVTable } from './combined/csv-table.js';
 
 // Window load
 window.addEventListener('DOMContentLoaded', () => {
@@ -127,5 +127,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   feedbackSurvey();
   htmlFormsAntiSpam();
+
+  CSVTable();
 
 }); // end window load
