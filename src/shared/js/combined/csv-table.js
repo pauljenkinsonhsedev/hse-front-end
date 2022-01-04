@@ -23,10 +23,11 @@ export function CSVTable() {
         tableContainer.forEach((item) => {
             const file = `/csv/${item.dataset.csv}`;
             const classes = item.dataset.classes;
+            const captionText = item.dataset.caption;
             const json = Papa.parse(file, {
                 download: true,
                 complete: function(results) {
-                    const table = buildTable(results.data, classes);
+                    const table = buildTable(results.data, classes, captionText);
                     item.appendChild(table);
 
                     if (classes.includes('sortable')) {
@@ -38,8 +39,9 @@ export function CSVTable() {
     });
 }
 
-function buildTable(csvData, classes) {
+function buildTable(csvData, classes, captionText) {
     const table = document.createElement('table');
+    const caption = document.createElement('caption');
     const tableBody = document.createElement('tbody');
     const tableHead = document.createElement('thead');
 
@@ -49,6 +51,11 @@ function buildTable(csvData, classes) {
     }
     tableBody.classList.add('table__body');
     tableHead.classList.add('table__head');
+
+    if (captionText) {
+        caption.textContent = captionText;
+        table.appendChild(caption);
+    }
 
     csvData.forEach(function(rowData, i) {
       let rowCount = i;
