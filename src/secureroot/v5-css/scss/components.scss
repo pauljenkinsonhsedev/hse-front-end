@@ -156,69 +156,6 @@ bottom: 10px !important;
 left: auto !important;
 }
 
-// Dropdown
-
-.ddmswitch input.button {
-position: relative;
-background-color: $red;
-color: white;
-}
-
-.box .ddmStyling {
-margin: 0 10px 0 0;
-}
-
-.ddmStyling {
-float: left;
-}
-
-.ddmStyling select {
-float: left;
-display: block;
-@media only screen and (min-width : $desktop) {
-width: 100% !important;
-}
-max-width: 100%;
-box-sizing: border-box;
-margin: 0;
-border-radius: 0;
-height: 31px !important;
-background-position: right;
-content: " ";
-}
-
-.ddmStyling select::-ms-expand {
-display: none;
-}
-.ddmStyling select:hover {
-border-color: #888;
-}
-.ddmStyling selectfocus {
-border-color: #aaa;
-box-shadow: 0 0 1px 3px rgba(59, 153, 252, .7);
-box-shadow: 0 0 0 3px -moz-mac-focusring;
-color: #222;
-outline: none;
-}
-.ddmStyling select option {
-font-weight:normal;
-}
-
-.ddmStyling input.button, .box .ddmStyling input.button {
-width: 34px !important;
-height: 31px !important;
-}
-
-.ddmStyling input.button:hover {
-cursor: pointer;
-}
-
-.ddmStyling select {
-width: 160px !important;
-}
-
-
-
 // Alert box
 
 .v5-notice-box {

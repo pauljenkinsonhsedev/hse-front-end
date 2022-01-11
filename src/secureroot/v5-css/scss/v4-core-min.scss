@@ -559,10 +559,6 @@ ul.navSupp li a {
   margin: 0;
   color: #fff;
 }
-#baseStrip ul.ddmswitch li a {
-  background: 0 0;
-  padding: 0;
-}
 
 
 ul.no-style {
@@ -960,97 +956,7 @@ div.diaryMonth li.even {
 .cdResponse address {
   font-style: normal;
 }
-ul.ddmswitch {
-  height: 7em;
-  overflow: auto;
-  background-color: #fff;
-}
-ul.ddmswitch li {
-  margin-left: 10px;
-  line-height: 1;
-}
-ul.ddmswitch a.default {
-  font-weight: 700;
-}
-.ddmswitchContainerWithImages ul.ddmswitch {
-  height: 2em;
-  overflow: hidden;
-  width: 180px;
-  position: absolute;
-  left: 100px;
-  bottom: -9px;
-  z-index: 10;
-  border: 1px solid #aaa;
-}
-.ddmswitchContainerWithImages ul.ddmswitch.open {
-  overflow: auto;
-}
-.ddmswitchContainerWithImages {
-  padding: 5px 0 0 0 !important;
-  position: relative;
-}
-.ddmswitchContainerWithImages img {
-  margin-top: 0;
-  margin-right: 5px;
-  float: left;
-}
-.ddmswitchContainerWithImages .trigger {
-  background: url(../v4-images/shared/page-furniture.png) 0 -220px no-repeat;
-  height: 16px;
-  width: 15px;
-  position: absolute;
-  top: 12px;
-  right: 1px;
-  z-index: 11;
-}
-.ddmswitchContainerWithImages a,
-.ddmswitchContainerWithImages a:active,
-.ddmswitchContainerWithImages a:link,
-.ddmswitchContainerWithImages a:visited {
-  color: #000 !important;
-  background-color: #fff;
-  text-decoration: none;
-  cursor: pointer;
-  display: block;
-  line-height: 1.6;
-}
-.ddmswitchContainerWithImages a:hover {
-  background-color: #eee;
-  display: block;
-}
-#baseStrip ul.ddmswitch {
-  margin: 3px 0;
-}
-#baseStrip ul.ddmswitch li {
-  background: 0 0;
-  margin-left: 0;
-  padding: 0 0 0 4px;
-}
-#baseStrip ul.ddmswitch a {
-  line-height: 1.6;
-  display: block;
-  color: #000;
-}
-#baseStrip .ddmswitchContainerWithImages {
-  float: right;
-  width: 282px;
-}
-#baseStrip .ddmswitchContainerWithImages .ddmlabel {
-  color: #fff;
-  float: left;
-  margin: 6px 0 0 0;
-}
-#baseStrip .ddmswitchContainerWithImages :focus {
-  outline: 0;
-  background-color: #eee;
-}
-ul.ddmswitch span.nonLatin {
-  width: 47px;
-  height: 20px;
-  background: url(../v4-images/shared/page-furniture.png) no-repeat;
-  display: inline-block;
-  vertical-align: bottom;
-}
+
 #lArabic {
   background-position: 0 -140px;
   width: 37px;
