@@ -590,6 +590,14 @@ ul.no-style li {
   border-right: #dbdbdb 1px solid;
   border-bottom: #dbdbdb 1px solid;
 }
+.itemThumbBook img.fileIcon {
+  border: none;
+  clear: none;
+  float: none;
+  position: absolute;
+  padding: 2px;
+  background: url(../v4-images/shared/white-semitransparant.png) repeat;
+}
 .box1col .itemThumbBook li {
   background: 0 0;
   clear: both;
@@ -752,7 +760,9 @@ div.icaplr span.download {
   margin: 0 0 0.625em 0 !important;
   clear: both;
 }
-
+.tabs .ui-tabs-nav {
+  margin: 0 !important;
+}
 .feedLoad {
   margin: 0 auto;
   padding: 5px 0;
@@ -1201,6 +1211,9 @@ body.hasScript #contentContainer ul.lightbox li.lastOnLine {
   }
   .more {
     display: none !important;
+  }
+  .ui-accordion .ui-accordion-content {
+    display: block !important;
   }
   .bl,
   .br,
