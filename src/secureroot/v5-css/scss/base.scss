@@ -40,7 +40,7 @@ background: none !important;
 padding-left: 0;
 }
 
-  #contentContainer ul li:before {
+  #contentContainer ul li::before {
     float: left;
     color: $red;
     content:"\25AA";
