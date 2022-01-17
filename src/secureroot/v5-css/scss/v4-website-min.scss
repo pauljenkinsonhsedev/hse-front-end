@@ -155,22 +155,34 @@ padding-left: 20px;
 margin-left: 0;
 }
 
+ul.listtick, ul.tick, ul.listcross, ul.cross {
+margin: 0 0 10px 20px !important;
+}
+
 ul.listtick li::before,
 ul.tick li::before {
 content: '' !important;
-float: none !important;
+float: left;
+position: relative;
 background: url(../../assets/v5-images/icons/svg/solid/check-solid-green.svg) no-repeat 0 !important;
-background-size: 10px 10px !important;
-padding-left: 10px;
+width: auto;
+height: 10px;
+top: 5px;
+margin-left: -18px;
+padding-left: 12px;
 }
 
 ul.listcross li::before,
 ul.cross li::before {
 content: '' !important;
-float: none !important;
+float: left;
+position: relative;
 background: url(../../assets/v5-images/icons/svg/solid/cross-solid.svg) no-repeat 0 !important;
-background-size: 10px 10px !important;
-padding-left: 10px;
+width: auto;
+height: 10px;
+top: 5px;
+margin-left: -18px;
+padding-left: 12px;
 }
 
 /* Subscribe */
