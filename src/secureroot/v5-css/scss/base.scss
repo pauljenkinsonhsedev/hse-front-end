@@ -37,24 +37,14 @@ button:hover {
 
 #contentContainer ul.linkList li {
 background: none !important;
-padding-left: 0;
 }
 
-  #contentContainer ul li::before {
-    float: left;
-    color: $red;
-    content:"\25AA";
-    position:relative;
-    margin-left: -18px;
-    padding-right: 10px;
-    font-size: 1.1em;
-    font-family: Arial,Helvetica,sans-serif;
-  }
-
-
+#contentContainer ul li {
+list-style-type: square;
+}
 
 #contentContainer ul li::marker {
-font-size: 9px;    
+color: $red;
 }
 
 #contentContainer ul.linkList {
@@ -138,16 +128,6 @@ padding-right: 0;
     }
 }
 
-#contentContainer ul.listLinks li {
-    background: none;
-    padding-left: 0;
-    list-style-type: none;
-    margin: 0;
-    clear: both;
-    float: left;
-    font-size: 1.1em;
-}
-
 #contentContainer ul.mostPopular li {
     font-weight: 700;
 }
@@ -198,7 +178,6 @@ padding-right: 0;
 
 #contentContainer ul.list li {
     background: none;
-    list-style-type: none;
     padding: 0;
 }
 

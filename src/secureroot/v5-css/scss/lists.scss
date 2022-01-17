@@ -121,10 +121,10 @@ line-height: 1.5;
 padding-right: 5px;
 }
 
-#contentContainer ul.itemThumbBook li::before, #contentContainer ul.hsl-links li::before, #contentContainer .boxList ul li:before, #contentContainer ul.linkListNoBullet li:before, ul.alphabetList li:before  {
-content: none !important;
+.social li, .tick li, .cross li, li.next-page, li.previous-page, .columnsList li, #contentContainer ul.linkList li, #contentContainer ul.itemThumbBook li, #contentContainer ul.hsl-links li, #contentContainer .boxList ul li, #contentContainer ul.linkListNoBullet li, #contentContainer ul.alphabetList li  {
+list-style-type: none !important;
 }
 
 #contentContainer .box ul {
-margin: 0 0 10px 0px;    
+margin: 0 0 10px 15px;    
 }
