@@ -158,6 +158,7 @@ margin-left: 0;
 ul.listtick li::before,
 ul.tick li::before {
 content: '' !important;
+float: none !important;
 background: url(../../assets/v5-images/icons/svg/solid/check-solid-green.svg) no-repeat 0 !important;
 background-size: 10px 10px !important;
 padding-left: 10px;
@@ -166,6 +167,7 @@ padding-left: 10px;
 ul.listcross li::before,
 ul.cross li::before {
 content: '' !important;
+float: none !important;
 background: url(../../assets/v5-images/icons/svg/solid/cross-solid.svg) no-repeat 0 !important;
 background-size: 10px 10px !important;
 padding-left: 10px;
