@@ -64,11 +64,35 @@ export function feedbackSurvey() {
         message.classList.add('feedback-message-active');
     }
 
+    // Request page status
+
+    getStatus('http://localhost:8080/guidance/index.htm');
+    var notFound = {}; // Global object to store page status 
+
+    function getStatus(url) {
+        let request = new XMLHttpRequest();
+    request.onreadystatechange = function() {
+        if (request.readyState === 4){
+            request.status; // status code
+            status404(request.status);
+        }
+    };
+        request.open("GET", url, true);
+        request.send(); 
+    } 
+
+    // if 404, pass variable to reportProblem()
+    
+    function status404 (status) {
+
+        if (status == 404) {
+            notFound.status = '404!';
+        }
+    }
+
     function reportProblem() {
 
-
-
-
+      const notFoundTrue = (notFound.status); // status 404       
       const newURL =
         window.location.protocol +
         '//' +
@@ -91,7 +115,7 @@ export function feedbackSurvey() {
         false
       );
 
-
+    
 
 
       // <form id="report-problem-form-html" action="https://resources.hse.gov.uk/responseform.asp" method="post" autocomplete="on">
@@ -123,7 +147,7 @@ export function feedbackSurvey() {
         <fieldset>
             <input name="url" type="hidden" id="url" size="100" class="input input-text" value="${newURL}">
             <input type="hidden" name="mailredirect" value="${newURL}">
-            <input type="hidden" name="mailsubject" value="Report a problem with this page: ${newURL}">
+            <input type="hidden" name="mailsubject" value="${notFoundTrue}: Report a problem with this page: ${newURL}">
             <input type="submit" value="Submit" class="btn btn-primary" />
         </fieldset>`;
 
