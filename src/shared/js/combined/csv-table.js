@@ -21,7 +21,7 @@ export function CSVTable() {
     // load dependencies
     loadPapaparseFn().then(() => {
         tableContainer.forEach((item) => {
-            const file = `/csv/${item.dataset.csv}`;
+            const file = `./csv/${item.dataset.csv}`;
             const classes = item.dataset.classes;
             const captionText = item.dataset.caption;
             const json = Papa.parse(file, {
@@ -30,7 +30,7 @@ export function CSVTable() {
                     const table = buildTable(results.data, classes, captionText);
                     item.appendChild(table);
 
-                    if (classes.includes('sortable')) {
+                    if (classes && classes.includes('sortable')) {
                         tableSortable(item);
                     }
                 }
