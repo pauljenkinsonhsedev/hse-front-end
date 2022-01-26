@@ -128,3 +128,25 @@ list-style-type: none !important;
 #contentContainer .box ul {
 margin: 0 0 10px 15px;    
 }
+
+dl.document {
+display: flex;
+flex-wrap: wrap;
+align-items: center;
+padding-bottom: 10px;
+border-bottom: 1px solid $red;
+}
+
+dl.document dt  {
+padding: 0 10px 0 0;
+}
+
+dl.document dd {
+padding-right: 10px;
+}
+
+.box.document dl.document {
+border: 0;
+padding: 0;
+}
+
