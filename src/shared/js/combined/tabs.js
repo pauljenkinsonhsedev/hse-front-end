@@ -17,7 +17,7 @@ export function tabs(container) {
         tabTitle[i].addEventListener('click', showHideTabs.bind(null, i));
     }
 
-    function showHideTabs(i) {
+    function showHideTabs(i, event) {
         // disable click for small devices
         if (mediaquery !== 'small') {
             event.preventDefault();

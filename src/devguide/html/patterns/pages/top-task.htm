@@ -3,7 +3,6 @@
 <head>
 
 <meta charset="utf-8">
-	
 
 
 
@@ -68,6 +67,7 @@ display: none;
           <li class="components"><a href="../../components/index.htm">Components</a></li>
           <li class="patterns"><a href="../index.htm">Patterns</a></li>
           <li class="template"><a href="../../framework/index.htm">Framework</a></li>
+		  <li class="development"><a href="../../development/index.htm">Development</a></li>
         </ul>
       </nav>
     </div>
@@ -97,18 +97,37 @@ display: none;
 <!-- Beta content page --> 
 
   
-<nav id="navSecondary" aria-label="Secondary"> <!-- InstanceBeginEditable name="Subnav" --><!-- #BeginLibraryItem "/Library/_v5-patterns_pages.lbi" --><div id="menu" class="slinky-menu slinky-theme-default">
-<ul>
-  <li class="first"><a href="index.htm">Pages</a></li>
-	<li><a href="top-task.htm">Top task</a></li>
-	<li><a href="1-col.htm">One column page</a></li>
-	<li><a href="2-col.htm">Two column page</a></li>
-	<li><a href="homepage-legacy.htm">Microsite homepage (box layout)</a></li>
-	<li><a href="microsite-homepage.htm">Microsite homepage (v5 layout)</a></li>
-	<li><a href="document.htm">Document page</a></li>
- </ul>
+<nav id="navSecondary" aria-label="Secondary"> <!-- InstanceBeginEditable name="Subnav" --><!-- #BeginLibraryItem "/Library/_v5-patterns.lbi" --><div id="menu" class="slinky-menu slinky-theme-default">
+  <ul>
+    <li class="first"><a href="../index.htm">Patterns</a></li>
+    <li><a href="#">Pages</a>
+      <ul>
+        <li><a href="index.htm">Overview</a></li>
+        <li><a href="top-task.htm">Top task</a></li>
+        <li><a href="1-col.htm">One column page</a></li>
+        <li><a href="2-col.htm">Two column page</a></li>
+        <li><a href="homepage-legacy.htm">Microsite homepage (box layout)</a></li>
+        <li><a href="microsite-homepage.htm">Microsite homepage (v5 layout)</a></li>
+        <li><a href="document.htm">Document page</a></li>
+		<li><a href="a-z.htm">A-Z</a></li>
+      </ul>
+    </li>
+    <li><a href="#">Component patterns</a>
+      <ul>
+        <li><a href="../components/index.htm">Overview</a></li>
+        <li><a href="../components/complementary.htm">Complementary content</a></li>
+        <li><a href="../components/contents-box.htm">Contents box</a></li>
+        <li><a href="../components/subscribe.htm">Subscribe</a></li>
+        <li><a href="../components/publication.htm">Publication</a></li>
+        <li><a href="../components/cards.htm">Cards</a></li>
+        <li><a href="../components/box-list.htm">Cards (box style)</a></li>
+        <li><a href="../components/start.htm">Start button</a></li>
+		<li><a href="../components/pagination.htm">Pagination (previous,next)</a></li>
+		<li><a href="../components/banner.htm">Homepage banner</a></li>
+      </ul>
+    </li>
+  </ul>
 </div>
-
 <!-- #EndLibraryItem --><!-- InstanceEndEditable --> </nav>
 
 <main id="contentContainer" class="columnbetacontentpage column2">
@@ -116,6 +135,9 @@ display: none;
 	
 <!-- InstanceBeginEditable name="content" -->
   <h1>Top task</h1>
+	
+<img class="responsiveImg" style="margin-bottom:20px;" alt="Top task page" src="images/top-task.jpg" />
+
 	
 	
 <h2>When to use</h2>
@@ -125,37 +147,50 @@ display: none;
 	
 <h2>How to use</h2>
 	
+<p>To use the top task page design you will need to set the values of the <strong>layout</strong> and <strong>columnLayout</strong> template parameters to the following:</p>
 	
-<img class="responsiveImg" style="margin-bottom:20px;" alt="Top task page" src="images/top-task.jpg" />
+<pre class="language-markup">
+<code>
+&lt;!-- InstanceParam name="layout" type="text" value="betatwocol" --&gt;
+&lt;!-- InstanceParam name="columnLayout" type="number" value="2" --&gt;
+</code>
+</pre>
 
 	
-<p>The top task page is made up of the following elements:</p>
-	
-	<ol>
-	
-	<li>Navigation</li>
-	<li>Article</li>
-	<li>Pagination</li>
-	<li>Complementary content</li>
-		
-	</ol>
-	
-	
-<h3>Navigation</h3>
-	
-<p>Top task pages include navigation in the form of an ordered list at the top of each page, immediately below the &lt;h1&gt; title. The list should contain the core pages of the top task.</p>
+<h3>Top task elements</h3>
 
-<h3>Article</h3>	
+	
+<h4>1. Pagination (ordered page list)</h4>
+	
+<p>Top task pages include navigation in the form of an ordered list at the top of each page, immediately below the <strong>&lt;h1&gt;</strong> title in an editable region named <strong>multistepNav</strong>. The list should contain the core pages of the top task.</p>
+	
+<p>The pagination page list is a ol element with the class of .multistep, the list items contain every page of the top task and includes an in-page link to jump to the article section of the the top task page.<p>
+	
+<p>It needs to be included in every page of the top task, it's easier to manage this using a <a href="../../framework/template/library-items.htm">library item</a>.</p>
+
+<pre class="language-markup">
+<code>
+&lt;ol class="multistep"&gt;
+&lt;li&gt;&lt;a id="step1" href="index.htm#article"&gt;Overview&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a id="step2" href="how-to-write-your-policy.htm#article"&gt;How to write your policy&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a id="step3" href="the-law.htm#article"&gt;The law&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</code>
+</pre>
+
+<h4>2. Article</h4>	
 	
 <p>The article region contains the main content of the page, all <a href="../../components/index.htm">content components</a> can be used in this region.</p>
 
-<h3>Pagination</h3>
+<h4>3. Pagination (previous, next)</h4>
 	
-<p>Pagination is included on each top task page and is always placed inside the article region as the last component with no content or components below it.</p>
+<p><a href="../components/pagination.htm">Previous and next</a> links are included on each top task page, the componenet pattern is included inside the article region as the last element with no content or components below it.</p>
 	
-<h4>Complementary content</h4>
+<p>The first page of the top task will only need the next link and the last page will only need the previous link.</p>
 	
-<p>The <a href="../components/complementary.htm">complementary content </a>is always included in the asideBottom editable content region and should relate to the page content.</p>
+<h4>4. Complementary content</h4>
+	
+<p>The <a href="../components/complementary.htm">complementary content </a>is always included in the <strong>asideBottom</strong> editable content region and should relate to the page content.</p>
 	
 <p>The resources box should always come before the related content box on a top task page.</p>
 	
@@ -191,46 +226,14 @@ display: none;
   </footer>
 </nav>
 <section id="lastUpdated" aria-label="Last updated">
-<!-- InstanceBeginEditable name="updated" -->Updated:<!-- #BeginDate format:IS1 -->2021-05-12<!-- #EndDate -->
+<!-- InstanceBeginEditable name="updated" -->Updated:<!-- #BeginDate format:IS1 -->2021-11-19<!-- #EndDate -->
   <!-- InstanceEndEditable -->
 </section>
 <script src="../../assets/v5-js/v5-main.min.js"></script>
-<script src="../../assets/v5-js/jquery.min.js"></script> 
-<script src="../../assets/v5-js/v5-footer.min.js"></script> 
-
-	
- 
-<script src="../../assets/v5-js/v5-footer-slinky-js.min.js"></script> 
-
-
-
-
 
 <div id="gutter"><!-- InstanceBeginEditable name="gutter" --> 
  <!-- InstanceEndEditable --></div>
 
-<!-- SiteImprove JS --> 
-<script type="text/javascript">
-	
-// removes cellspacing & cellpadding attributes from GCS (Assesibility fix)
-window.onload = function(){
-
-var searchTable = document.querySelector('table.gsc-search-box');
-var searchTable2 = document.querySelector('table.gsc-input');
-var searchTable3 = document.querySelector('table.gssb_c');
-var searchInput = document.querySelector('input.gsc-input');
-
-searchTable.removeAttribute('cellpadding');
-searchTable2.removeAttribute('cellpadding');
-searchTable3.removeAttribute('cellpadding');
-searchInput.removeAttribute('cellpadding');
-
-searchTable.removeAttribute('cellspacing');
-searchTable2.removeAttribute('cellspacing');
-searchTable3.removeAttribute('cellspacing');
-searchInput.removeAttribute('cellspacing');
-};	
-</script> 
 	
 <!-- InstanceParam name="bodyClass" type="text" value="patterns" --> 
 <!-- InstanceParam name="layout" type="text" value="betacontentpage" --> 

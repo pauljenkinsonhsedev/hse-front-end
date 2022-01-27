@@ -79,6 +79,7 @@ input:required:valid {
 }
 
 /* Fieldsets */
+
 .fieldset {
   padding: 0;
   margin: 0 0 $dp*2 0;
@@ -178,12 +179,22 @@ input {
   }
 }
 
-// V4 Box layout style
+// style fixes to forms in subscribe boxes
 
-.box .form-group .label {
+.box .subscribe .form-group .label, .column .subscribe .form-group .label {
 font-size: 0.9rem !important;
 }
 
-.box .fieldset__legend {
+.box .subscribe .fieldset__legend, .column .subscribe .fieldset__legend {
 margin-bottom: 0 !important;
+}
+
+.column .subscribe .fieldset__heading {
+margin-bottom: 10px;
+}
+
+.twoThirdHalf .subscribe {
+@media only screen and (min-width : $desktop) {
+margin-top: 44px;
+}
 }

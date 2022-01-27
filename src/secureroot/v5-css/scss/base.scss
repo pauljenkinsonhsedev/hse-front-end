@@ -23,8 +23,8 @@
     background-color: $gray !important;
 }
 
-.backgroundRed a, .backgroundRed h2, .backgroundRed h3, .backgroundRed p {
-    color: white !important;
+ .backgroundRed h2, .backgroundRed h3, .backgroundRed p {
+    color: white;
 }
 
 button {
@@ -36,20 +36,33 @@ button:hover {
 }
 
 #contentContainer ul.linkList li {
-    background: none;
+background: none !important;
 }
 
-#contentContainer ul.linkList, .aside ul, ul.social  {
-    margin: 0 0 10px 0px !important;
+#contentContainer ul li {
+list-style-type: square;
+}
+
+#contentContainer ul li::marker {
+color: $red;
+}
+
+#contentContainer ul.linkList {
+margin: 0 0 10px 18px !important;
+padding-left: 0;    
+}
+
+ul.social {
+margin: 0 0 10px 0 !important;
 }
 
 #contentContainer .mostPopular ul.linkList {
-    margin-bottom: 0 !important;
+margin-bottom: 0 !important;
 }
 
 #contentContainer .backgroundRed .linkList li a::before {
-    background-image: none;
-    padding-right: 0;
+background-image: none;
+padding-right: 0;
 }
 
 
@@ -115,16 +128,6 @@ button:hover {
     }
 }
 
-#contentContainer ul.listLinks li {
-    background: none;
-    padding-left: 0;
-    list-style-type: none;
-    margin: 0;
-    clear: both;
-    float: left;
-    font-size: 1.1em;
-}
-
 #contentContainer ul.mostPopular li {
     font-weight: 700;
 }
@@ -175,7 +178,6 @@ button:hover {
 
 #contentContainer ul.list li {
     background: none;
-    list-style-type: none;
     padding: 0;
 }
 
@@ -246,15 +248,6 @@ img.responsiveImg {
 //transform: translateZ(0);
 }
 
-// Input focus fix
-
-input.gsc-input:focus, #baseStrip ul.ddmswitch li a:focus {
-    outline: -webkit-focus-ring-color auto 5px !important;
-    outline-color: -webkit-focus-ring-color !important;
-    outline-style: auto !important;
-    outline-width: 5px !important;
-}
-
 /* V5 global styles */
 
 .v5-inline {
@@ -264,3 +257,8 @@ display: inline-block;
 .no-wrap {
 white-space: nowrap;
 }
+
+.noFileType .fileType {
+display: none;
+}
+

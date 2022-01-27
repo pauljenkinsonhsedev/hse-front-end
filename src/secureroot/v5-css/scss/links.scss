@@ -1,5 +1,5 @@
 
-a {
+a, .backgroundRed .more a {
     text-decoration: underline;
     &:link {
         color: $red; 
@@ -17,11 +17,34 @@ a {
     }
 }
 
+.backgroundRed a, .backto a {
+    &:link {
+        color: white; 
+    }
+    &:hover {
+    color: $black;
+    }
+    &:active,
+    &:focus {
+    color: $black;
+    }
+    &:visited {
+    color: white;
+    }
+    &:visited:hover {
+    color: $black;
+    }
+    a span.subText {
+        text-decoration: none;
+        color: $black;
+    }    
+}
+
 
 p a, li a {
 
     &:hover, &:focus {
-    text-decoration: none !important;
+    text-decoration: none;
     color: $black; 
     background: $focus;   
     }

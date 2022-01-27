@@ -4,3 +4,9 @@
 	display: none;	
 	}
 }
+
+#contentContainer ul li:before {
+@media print {
+display: none;
+}
+}

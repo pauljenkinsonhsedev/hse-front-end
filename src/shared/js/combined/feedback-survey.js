@@ -57,20 +57,18 @@ export function feedbackSurvey() {
     }
 
     function websiteFeedback() {
-        userYes.remove();
-        userNo.remove();
-        userReportProblem.remove();
+        userYes.parentNode.removeChild(userYes);
+        userNo.parentNode.removeChild(userNo);
+        userReportProblem.parentNode.removeChild(userReportProblem);
         message.innerHTML = `Thank you for your feedback.`;
         message.classList.add('feedback-message-active');
     }
 
+  
+
     function reportProblem() {
-      const newURL =
-        window.location.protocol +
-        '//' +
-        window.location.host +
-        window.location.pathname +
-        window.location.search;
+      
+      const newURL = window.location.protocol + '//' + window.location.host + window.location.pathname + window.location.search;           
       const action = document.createElement('button');
       action.id = 'close-report-a-problem';
       action.classList.add('btn');
@@ -82,15 +80,23 @@ export function feedbackSurvey() {
           e.stopPropagation();
           e.preventDefault();
           closeProblemForm(e);
+
         },
         false
       );
 
-
+    
 
 
       // <form id="report-problem-form-html" action="https://resources.hse.gov.uk/responseform.asp" method="post" autocomplete="on">
       const form = document.createElement('form');
+
+      const notFoundHeading = document.querySelector("h1").innerText;
+      const notFound = '404';
+
+      if (notFoundHeading.includes(notFound)) {
+          var notFoundTrue = '404! ' } else { var notFoundTrue = '';}
+
       form.id = 'report-problem-form-html';
       form.action = 'https://resources.hse.gov.uk/responseform.asp';
       form.method = 'POST';
@@ -118,21 +124,21 @@ export function feedbackSurvey() {
         <fieldset>
             <input name="url" type="hidden" id="url" size="100" class="input input-text" value="${newURL}">
             <input type="hidden" name="mailredirect" value="${newURL}">
-            <input type="hidden" name="mailsubject" value="Report a problem with this page: ${newURL}">
+            <input type="hidden" name="mailsubject" value="${notFoundTrue}Report a problem with this page: ${newURL}">
             <input type="submit" value="Submit" class="btn btn-primary" />
         </fieldset>`;
 
-        const formFeedbackHTML = `<div class="report-problem-form-feeback"><h2>Thank you</h2><p>Your feedback is appreciated.</p></div>`;
+        // const formFeedbackHTML = `<div class="report-problem-form-feeback"><h2>Thank you</h2><p>Your feedback is appreciated.</p></div>`;
 
         form.innerHTML = formFields;
-        form.addEventListener('submit', (e) => {
-            e.stopPropagation();
-            e.preventDefault();
+        // form.addEventListener('submit', (e) => {
+        //     e.stopPropagation();
+        //     e.preventDefault();
 
-            reportProblemForm.innerHTML = formFeedbackHTML;
+        //     reportProblemForm.innerHTML = formFeedbackHTML;
 
-            form.submit();
-        }, false);
+        //     form.submit();
+        // }, false);
 
       reportProblemForm.insertAdjacentElement('afterbegin', form);
       reportProblemForm.insertAdjacentElement('beforebegin', action);
@@ -140,6 +146,8 @@ export function feedbackSurvey() {
       reportProblemForm.classList.add('survey-in');
       reportProblemButtonContainer.classList.add('js-hide');
       yesNoContainer.classList.add('js-hide');
+      reportProblemForm.scrollIntoView({behavior: "auto", block: "start"});
+
     }
 
     function closeProblemForm(e) {
@@ -148,7 +156,7 @@ export function feedbackSurvey() {
         yesNoContainer.classList.remove('js-hide');
 
         reportProblemForm.innerHTML = '';
-        e.target.remove();
+        e.target.parentNode.removeChild(e.target);
     }
 
     function closeSurvey() {
@@ -184,5 +192,8 @@ export function feedbackSurvey() {
 
         // open survey panel
         survey.classList.add('survey-in');
+
+        questionaire.scrollIntoView({behavior: "auto", block: "start"});
+
     }
 }

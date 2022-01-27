@@ -6,7 +6,6 @@
 
 
 
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- v5.1.1 -->
 
@@ -16,13 +15,13 @@
 <style>
 #globalSearch {
 display: none;
-}
+}	
 </style>
 
 
 
 <!-- Page title and meta -->
-
+	
 <!-- InstanceBeginEditable name="doctitle" -->
 <title>Framework - HSE.GOV.UK Design System</title>
 <meta name="Description" content="HSE's job is to protect people against risks to health or safety arising out of work activities. Provides advice, guidance, regulations and inspections." />
@@ -40,24 +39,24 @@ display: none;
 <body class="template normalFont">
 
 <section id="top" aria-label="Skip to content">  <a href="#contentContainer" class="skip">Skip to content</a>  </section>
-
+ 
 <section id="printBanner" aria-label="Print banner"> <img src="../assets/v4-images/website/print/print-logo.jpg" width="193" height="65" alt="Health and Safety Executive" id="printLogo"/> </section>
 <header id="headerContainer">
   <div id="header">
     <div class="headerTop header js-header">
-
+		 
 		<div id="headerLogo" class="headerLogo"><a href="../index.htm">Health and Safety<br />
         Executive</a></div>
-
-
-
+		
+		 
+		
       <div id="globalSearch" class="desktop-gcs-search">
         <gcse:searchbox-only></gcse:searchbox-only>
       </div>
     </div>
-
+    
     <!-- JS Main Navigation -->
-
+    
     <div class="menuContainer">
       <nav id="main-menu"  class="menu js-menu">
         <ul>
@@ -66,12 +65,13 @@ display: none;
           <li class="components"><a href="../components/index.htm">Components</a></li>
           <li class="patterns"><a href="../patterns/index.htm">Patterns</a></li>
           <li class="template"><a href="index.htm">Framework</a></li>
+		  <li class="development"><a href="../development/index.htm">Development</a></li>
         </ul>
       </nav>
     </div>
   </div>
    </header>
-
+   
 <nav id="breadCrumb" aria-label="Previous pages:">
   <div class="breadCrumbContainer"> <!-- InstanceBeginEditable name="Breadcrumbs" -->
 		<ol>
@@ -83,19 +83,19 @@ display: none;
     <p class="backto"><a id="backnav" href="index.htm">Back to</a></p>
   </div>
 </nav>
-
+ 
 <div id="pageContainer" class="v5" xmlns:argot="http://purl.oclc.org/argot/" xmlns:dc="http://purl.org/dc/terms/" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:v="http://www.w3.org/2006/vcard/ns#" xmlns:dbp="http://dbpedia.org/resource/">
 <!-- InstanceBeginEditable name="beta-survey" -->
 
 
-<!-- InstanceEndEditable -->
+<!-- InstanceEndEditable -->   
 
-<!-- Beta content page -->
+<!-- Beta content page --> 
 
-
+  
 <main id="contentContainer" class="columnbetacontentpage column1">
-
-
+ 
+	
 <!-- InstanceBeginEditable name="content" -->
 
   <h1>Framework</h1>
@@ -103,7 +103,8 @@ display: none;
   <p>HSE.GOV.UK uses one Dreamweaver template to manage multiple design patterns.</p>
 
   <div class="box">
-	<p>Latest template version: V5 1.5.0</p>
+	<p>Latest template version: <a href="v5-hse-1.6.0.dwt">V5 1.6.0</a></p>
+	<p>Latest <a href="secureroot.zip">framework assets</a></p>
   </div>
 
 
@@ -148,75 +149,53 @@ display: none;
 
 	</div>
 	
-
-<h2>Workflow</h2>
-<p>Information on workflows.</p>
+	
+<h2>Template components</h2>
+	
 <div class="columnFull noBoxPadding border">
-  <div class="column multiCol col3">
-    <ul class="columnsList">
-      <li>
-        <h3><a href="workflow/index.htm">Overview</a></h3>
-        <p>Information about our workflow structure</p>
-      </li>
-       <li>
-        <h3><a href="workflow/gitflow.htm">Git-flow</a></h3>
-        <p>How we use Git-flow in our proccess</p>
-      </li>
-       <li>
-        <h3><a href="workflow/client-tools.htm">Git-client management tools</a></h3>
-        <p>Tools to help manage the workflow process</p>
-      </li>
-    </ul>
-  </div>
+
+<div class="column multiCol col3">
+
+<ul class="columnsList">
+<li>
+	 <h3><a href="components/notification-banner.htm">Notification banner</a></h3>
+	 <p>Site-wide notification banner</p>
+ </li>
+ <li>
+	 <h3><a href="components/user-satisfaction.htm">User satisfaction</a></h3>
+	 <p>Yes/No user satisfaction feedback and survey</p>
+ </li>
+ <li>
+	 <h3><a href="components/document-title-meta.htm">Document title and meta data</a></h3>
+	 <p>Defines the document's title and page meta</p>
+ </li>
+<li>
+	 <h3><a href="components/page-notification.htm">Page notification</a></h3>
+	 <p>Page notification banner</p>
+ </li>
+<li>
+	 <h3><a href="components/breadcrumbs.htm">Breadcrumbs</a></h3>
+	 <p>Hierarchy of the current page in relation to the the site's structure</p>
+ </li>
+<li>
+	 <h3><a href="components/beta-banner.htm">Beta banner</a></h3>
+	 <p>Beta banner survey for pages in the beta design phase</p>
+ </li>
+<li>
+	 <h3><a href="components/secondary-nav.htm">Secondary navigation</a></h3>
+	 <p>Secondary navigation used with 2 column layout and microsite homepage (box layout)</p>
+ </li>
+<li>
+	 <h3><a href="components/cookies.htm">Cookie banner</a></h3>
+	 <p>Cookie banner for users to control cookie preferences</p>
+ </li>
+</ul>
+
 </div>
 
-<h2>Javascript</h2>
-
-<p>Information required to write javascript features and components:</p>
+	</div>
 
 
-<div class="columnFull noBoxPadding border">
-
-<div class="column multiCol col3">
-
-<ul class="columnsList">
-<li>
-	 <h3><a href="javascript/index.htm">Javascript overview</a></h3>
-	 <p>Everything you need to know about the structure and compiling HSE's javascript</p>
- </li>
- <li>
-	 <h3><a href="javascript/create-a-basic-component.htm">Creating a basic component</a></h3>
-	 <p>How to write a basic component</p>
- </li>
-	</ul>
- </div>
- </div>
-
-
-<h2>Testing</h2>
-
-<p>Information required to perform testing on website framework releases.</p>
-
-<div class="columnFull noBoxPadding">
-
-<div class="column multiCol col3">
-
-<ul class="columnsList">
- <li>
-	 <h3><a href="testing/index.htm">Overview</a></h3>
-	 <p>Testing process from local development to live site</p>
- </li>
-<li>
-	 <h3><a href="testing/browsers-devices.htm">Browsers and devices</a></h3>
-	 <p>Testing on popular browsers and devices</p>
- </li>
-<li>
-	 <h3><a href="testing/test.htm">Test page</a></h3>
-	 <p>Test page for all components</p>
- </li>
-	</ul>
- </div>
- </div>
 
 <div class="columnFull noBoxPadding">
 
@@ -234,10 +213,10 @@ display: none;
 
 
 <!-- InstanceEndEditable -->
+	
+ 
 
-
-
-<!-- Beta two column (top task) -->
+<!-- Beta two column (top task) --> 
 
    </main>
 
@@ -248,7 +227,7 @@ display: none;
     <div id="footer">
       <h2 class="visually-hidden">Footer links</h2>
       <div class="footer-links-container">
-
+       
       </div>
     </div>
     <div id="baseStrip">
@@ -260,55 +239,25 @@ display: none;
 </nav>
 <section id="lastUpdated" aria-label="Last updated">
 <!-- InstanceBeginEditable name="updated" --> Updated:
-	<!-- #BeginDate format:IS1 -->2021-08-12<!-- #EndDate -->
+	<!-- #BeginDate format:IS1 -->2021-11-25<!-- #EndDate -->
 	<!-- InstanceEndEditable -->
 </section>
 <script src="../assets/v5-js/v5-main.min.js"></script>
-<script src="../assets/v5-js/jquery.min.js"></script>
-<script src="../assets/v5-js/v5-footer.min.js"></script>
-
-
-
-
-
-
 
 <div id="gutter"><!-- InstanceBeginEditable name="gutter" --> <!-- InstanceEndEditable --></div>
 
-<!-- SiteImprove JS -->
-<script type="text/javascript">
-
-// removes cellspacing & cellpadding attributes from GCS (Assesibility fix)
-window.onload = function(){
-
-var searchTable = document.querySelector('table.gsc-search-box');
-var searchTable2 = document.querySelector('table.gsc-input');
-var searchTable3 = document.querySelector('table.gssb_c');
-var searchInput = document.querySelector('input.gsc-input');
-
-searchTable.removeAttribute('cellpadding');
-searchTable2.removeAttribute('cellpadding');
-searchTable3.removeAttribute('cellpadding');
-searchInput.removeAttribute('cellpadding');
-
-searchTable.removeAttribute('cellspacing');
-searchTable2.removeAttribute('cellspacing');
-searchTable3.removeAttribute('cellspacing');
-searchInput.removeAttribute('cellspacing');
-};
-</script>
-
-<!-- InstanceParam name="bodyClass" type="text" value="template" -->
-<!-- InstanceParam name="layout" type="text" value="betacontentpage" -->
-<!-- InstanceParam name="columnLayout" type="number" value="1" -->
-<!-- InstanceParam name="platform" type="text" value="v5" -->
-<!-- InstanceParam name="rdfa" type="boolean" value="false" -->
-<!-- InstanceParam name="welsh" type="boolean" value="false" -->
-<!-- InstanceParam name="homepage" type="boolean" value="false" -->
-<!-- InstanceParam name="weblite" type="boolean" value="false" -->
-<!-- InstanceParam name="feedback" type="boolean" value="true" -->
-<!-- InstanceParam name="contentType" type="text" value="default" -->
-<!-- InstanceParam name="notificationBar" type="boolean" value="false" -->
+	
+<!-- InstanceParam name="bodyClass" type="text" value="template" --> 
+<!-- InstanceParam name="layout" type="text" value="betacontentpage" --> 
+<!-- InstanceParam name="columnLayout" type="number" value="1" --> 
+<!-- InstanceParam name="platform" type="text" value="v5" --> 
+<!-- InstanceParam name="rdfa" type="boolean" value="false" --> 
+<!-- InstanceParam name="welsh" type="boolean" value="false" --> 
+<!-- InstanceParam name="homepage" type="boolean" value="false" --> 
+<!-- InstanceParam name="weblite" type="boolean" value="false" --> 
+<!-- InstanceParam name="feedback" type="boolean" value="true" --> 
+<!-- InstanceParam name="contentType" type="text" value="default" --> 
+<!-- InstanceParam name="notificationBar" type="boolean" value="false" --> 
 <!-- InstanceParam name="printGuide" type="boolean" value="false" -->
 </body>
 <!-- InstanceEnd --></html>

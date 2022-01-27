@@ -1,4 +1,6 @@
-import CsvConvert from './combined/csv-convertor/csv-convertor';
+import './combined/polyfills.js';
+
+// import CsvConvert from './combined/csv-convertor/csv-convertor';
 import ChartsDefault from './combined/charts/charts';
 import { mainMenu } from './combined/main-menu';
 import { loadPicturefillFn } from './combined/utils/picture-elem.js';
@@ -18,10 +20,14 @@ import { topTasks } from './combined/top-tasks.js';
 import { equalHeights } from './combined/equal-heights.js';
 import { informationBanner } from './combined/information-banner.js';
 import { codeHighlighter } from './combined/code-highlighter.js';
+import { htmlFormsAntiSpam } from './combined/html-forms-anti-spam.js';
+import { subnavMenu } from './combined/subnav-menu.js';
+import { subNavPosition } from './combined/subnav-position.js';
+import { accordion } from './combined/accordion.js';
+
 
 // Window load
-window.addEventListener('DOMContentLoaded',() => {
-
+window.addEventListener('DOMContentLoaded', () => {
   // Selector to reference prgressive enhancements in css
   const body = document.querySelector('body');
   body.classList.add('hasScript');
@@ -31,6 +37,8 @@ window.addEventListener('DOMContentLoaded',() => {
   if (pictureElemSelector && getInternetExplorerVersion() <= 11) {
     loadPicturefillFn();
   }
+
+  accordion();
 
   informationBanner();
 
@@ -109,5 +117,15 @@ window.addEventListener('DOMContentLoaded',() => {
 
   lightbox();
 
+
+  const secondaryMenuSelector = document.getElementById('menu');
+
+  if (secondaryMenuSelector) {
+    subnavMenu(secondaryMenuSelector);
+  }
+  subNavPosition();
+
   feedbackSurvey();
+  htmlFormsAntiSpam();
+
 }); // end window load

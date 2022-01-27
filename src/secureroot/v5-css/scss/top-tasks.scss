@@ -12,6 +12,14 @@ float: left;
 margin-top: 10px;
 }
 
+#contentContainer #pagination ul li {
+list-style-image: none;
+width: 100%;
+@media only screen and (min-width : $desktop) {
+width: 50%;
+}
+}
+
 #contentContainer #pagination ul, #contentContainer #pagination ul li {
 float: left;
 background: none;
@@ -21,18 +29,14 @@ padding: 0;
 
 #contentContainer #pagination ul span {
 float: left;
-display: inline-block;
 clear: both;
 }
 
 // Top task pagination
 
 #pagination .next-page, #pagination .previous-page {
-width: 50%;
-float: left;
-@media only screen and (max-width : 991px) {
 width: 100%;
-}
+float: left;
 }
 
 
@@ -51,7 +55,6 @@ font-size: 2.167em;
 
 .pagination-text {
 font-size: 1.167em;
-padding-top: 10px;
 text-decoration: underline;
 }
 
@@ -72,11 +75,25 @@ text-decoration: none !important;
 color: $hseblack !important;
 }
 
-#pagination .next-page a, #pagination .previous-page a {
+#pagination .previous-page a {
 width: 100%;
 padding: 10px;
-box-sizing: border-box;
+@media only screen and (min-width : $desktop) {
+padding-left: 0;
+}
+float: left;   
+}
+
+#pagination .next-page a {
+width: 100%;
+padding: 10px;
 float: left;
+}
+
+#pagination ul li:first-of-type a {
+@media only screen and (min-width : $desktop) {
+padding-left: 0;
+}
 }
 
 #pagination ul, #pagination ul li {

@@ -156,69 +156,6 @@ bottom: 10px !important;
 left: auto !important;
 }
 
-// Dropdown
-
-.ddmswitch input.button {
-position: relative;
-background-color: $red;
-color: white;
-}
-
-.box .ddmStyling {
-margin: 0 10px 0 0;
-}
-
-.ddmStyling {
-float: left;
-}
-
-.ddmStyling select {
-float: left;
-display: block;
-@media only screen and (min-width : $desktop) {
-width: 100% !important;
-}
-max-width: 100%;
-box-sizing: border-box;
-margin: 0;
-border-radius: 0;
-height: 31px !important;
-background-position: right;
-content: " ";
-}
-
-.ddmStyling select::-ms-expand {
-display: none;
-}
-.ddmStyling select:hover {
-border-color: #888;
-}
-.ddmStyling selectfocus {
-border-color: #aaa;
-box-shadow: 0 0 1px 3px rgba(59, 153, 252, .7);
-box-shadow: 0 0 0 3px -moz-mac-focusring;
-color: #222;
-outline: none;
-}
-.ddmStyling select option {
-font-weight:normal;
-}
-
-.ddmStyling input.button, .box .ddmStyling input.button {
-width: 34px !important;
-height: 31px !important;
-}
-
-.ddmStyling input.button:hover {
-cursor: pointer;
-}
-
-.ddmStyling select {
-width: 160px !important;
-}
-
-
-
 // Alert box
 
 .v5-notice-box {
@@ -342,47 +279,53 @@ margin-bottom: 20px;
 
 // Column lists
 
+ul.columnsList li:before, ul.social li:before {
+content: none !important;
+}
+
 .column.multiCol {
 margin-bottom: 0;
-}
-
-.column.multiCol.col3 {
--webkit-column-count: 1; /* Chrome, Safari, Opera */
--moz-column-count: 1; /* Firefox */
-column-count: 1;
-@media only screen and (min-width : $desktop) {
--webkit-column-count: 3; /* Chrome, Safari, Opera */
--moz-column-count: 3; /* Firefox */
-column-count: 3;
-}
-}
-
-.column.multiCol.col2 {
--webkit-column-count: 1; /* Chrome, Safari, Opera */
--moz-column-count: 1; /* Firefox */
-column-count: 1;
-@media only screen and (min-width : $desktop) {
--webkit-column-count: 2; /* Chrome, Safari, Opera */
--moz-column-count: 2; /* Firefox */
-column-count: 2;
-}
+padding-bottom: 0;
 }
 
 ul.columnsList {
-margin: 0 0 10px 0 !important;
+margin: 0 !important;
+@media only screen and (min-width : $desktop) {
+flex-wrap: wrap;
+display: flex;
+}
 }
 
-
+.columnsList li p {
+padding-bottom: 20px;
+margin: 0;    
+}
+.column.multiCol.col2 {
+.columnsList li {
+    flex: 1 0 465px;
+    max-width: 465px;  
+    margin-right: 10px;
+} 
+.columnsList li:nth-child(2n+2) {
+margin-right: 0;    
+}   
+}
 .columnsList li {
 padding: 0 !important;
 background: none;
-background-image: none !important;
+list-style-image: none !important;
 @media only screen and (min-width : $desktop) {
 -webkit-column-break-inside: avoid; /* Chrome, Safari, Opera */
 page-break-inside: avoid; /* Firefox */
 break-inside: avoid; /* IE 10+ */
-min-height: 82.2px;
+flex: 1 0 306.666666666666667px;
+max-width: 306.666666666666667px;
+margin-right: 10px;
 }
+}
+
+.columnsList li:nth-child(3n+3) {
+margin-right: 0;    
 }
 
 .addToBasket a {

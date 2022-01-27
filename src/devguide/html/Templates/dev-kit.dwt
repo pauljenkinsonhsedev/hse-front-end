@@ -3,7 +3,6 @@
 <head>
 
 <meta charset="utf-8">
-	
 <!-- TemplateBeginMultipleIf -->
 <!-- TemplateBeginIfClause cond="printGuide == true" -->
 <meta name="robots" content="noindex, nofollow">
@@ -73,6 +72,7 @@ display: none;
           <li class="components"><a href="../components/index.htm">Components</a></li>
           <li class="patterns"><a href="../patterns/index.htm">Patterns</a></li>
           <li class="template"><a href="../framework/index.htm">Framework</a></li>
+		  <li class="development"><a href="../development/index.htm">Development</a></li>
         </ul>
       </nav>
     </div>
@@ -108,7 +108,7 @@ display: none;
 
 <!-- TemplateBeginMultipleIf --><!-- TemplateBeginIfClause cond="layout == 'betacontentpage'" --> <!-- TemplateBeginMultipleIf --> <!-- TemplateBeginIfClause cond="columnLayout == 2" -->
 <nav id="navSecondary" aria-label="Secondary"> <!-- TemplateBeginEditable name="Subnav" -->
-  <div id="menu" class="slinky-menu slinky-theme-default">
+  <div id="menu">
     <ul>
       <li class="first"><a href="#">Microsite homepage</a></li>
     </ul>
@@ -212,50 +212,12 @@ display: none;
   </footer>
 </nav>
 <section id="lastUpdated" aria-label="Last updated">
-<!-- TemplateBeginEditable name="updated" -->Updated:<!-- #BeginDate format:IS1 -->2021-06-25<!-- #EndDate --><!-- TemplateEndEditable -->
+<!-- TemplateBeginEditable name="updated" -->Updated:<!-- #BeginDate -->2021-09-06<!-- #EndDate --><!-- TemplateEndEditable -->
 </section>
 <script src="../assets/v5-js/v5-main.min.js"></script>
-<script src="../assets/v5-js/jquery.min.js"></script> 
-<script src="../assets/v5-js/v5-footer.min.js"></script> 
-<!-- TemplateBeginMultipleIf -->
-	
-<!-- TemplateBeginIfClause cond="columnLayout == 2" --> 
-<script src="../assets/v5-js/v5-footer-slinky-js.min.js"></script> 
-<!-- TemplateEndIfClause -->
-<!-- TemplateEndMultipleIf -->
 
-<!-- TemplateBeginMultipleIf -->
-<!-- TemplateBeginIfClause cond="printGuide == true" --> 
-<script>
-$( document ).ready(function() {
-window.print();
-});	
-</script> 
-<!-- TemplateEndIfClause --><!-- TemplateEndMultipleIf -->
 <div id="gutter"><!-- TemplateBeginEditable name="gutter" --> <!-- TemplateEndEditable --></div>
 
-<!-- SiteImprove JS --> 
-<script type="text/javascript">
-	
-// removes cellspacing & cellpadding attributes from GCS (Assesibility fix)
-window.onload = function(){
-
-var searchTable = document.querySelector('table.gsc-search-box');
-var searchTable2 = document.querySelector('table.gsc-input');
-var searchTable3 = document.querySelector('table.gssb_c');
-var searchInput = document.querySelector('input.gsc-input');
-
-searchTable.removeAttribute('cellpadding');
-searchTable2.removeAttribute('cellpadding');
-searchTable3.removeAttribute('cellpadding');
-searchInput.removeAttribute('cellpadding');
-
-searchTable.removeAttribute('cellspacing');
-searchTable2.removeAttribute('cellspacing');
-searchTable3.removeAttribute('cellspacing');
-searchInput.removeAttribute('cellspacing');
-};	
-</script> 
 	
 <!-- TemplateParam name="bodyClass" type="text" value="guidance" --> 
 <!-- TemplateParam name="layout" type="text" value="betacontentpage" --> 

@@ -56,6 +56,7 @@ export class ChartOptionsBarStacked extends ChartOptions {
             },
             series: {
                 borderWidth: 0,
+                pointWidth: 50,
                 stacking: 'normal',
                 events: {
                     legendItemClick: function() {

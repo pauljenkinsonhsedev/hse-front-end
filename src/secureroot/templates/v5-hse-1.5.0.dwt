@@ -5,9 +5,7 @@
 <script src="../assets/v5-js/v5-cookies.js"></script>
 <!-- Anti-flicker snippet (recommended) If installing optimise with GTM, specifcy GTM container ID  -->
 <style>
-.async-hide {
-    opacity: 0 !important
-}
+.async-hide { opacity: 0 !important }
 </style>
 
 <script>
@@ -105,9 +103,8 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <!-- TemplateBeginMultipleIf -->
 <!-- TemplateBeginIfClause cond="platform == 'v5'" -->
 
-<section id="printBanner" aria-label="Print banner"> <img
-        src="../assets/v4-images/website/print/print-logo.jpg" width="193"
-        height="65" alt="Health and Safety Executive" id="printLogo" />
+<section id="printBanner" aria-label="Print banner"> 
+<img src="../assets/v4-images/website/print/print-logo.jpg" width="193" height="65" alt="Health and Safety Executive" id="printLogo" />
 </section>
 
 <header id="headerContainer">
@@ -116,17 +113,13 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 	  <!-- TemplateBeginMultipleIf -->
 	  <!-- TemplateBeginIfClause cond="bodyClass != 'home'" -->
-      <div id="headerLogo" class="headerLogo"><a href="../index.htm">Health
-        and Safety<br>
-        Executive</a></div>
+      <div id="headerLogo" class="headerLogo"><a href="../index.htm">Health and Safety<br>Executive</a></div>
       <!-- TemplateEndIfClause -->
       <!-- TemplateEndMultipleIf -->
 
       <!-- TemplateBeginMultipleIf -->
       <!-- TemplateBeginIfClause cond="bodyClass == 'home'" -->
-      <h1 id="headerLogo" class="headerLogo"><a href="../index.htm">Health
-        and Safety<br>
-        Executive</a></h1>
+      <h1 id="headerLogo" class="headerLogo"><a href="../index.htm">Health and Safety<br>Executive</a></h1>
       <!-- TemplateEndIfClause -->
       <!-- TemplateEndMultipleIf -->
 
@@ -232,8 +225,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <!-- TemplateEndIfClause -->
 <!-- TemplateEndMultipleIf -->
 
-<main id="contentContainer" class="column@@(_document['layout'])@@
-          column@@(_document['columnLayout'])@@">
+<main id="contentContainer" class="column@@(_document['layout'])@@ column@@(_document['columnLayout'])@@">
 <!-- TemplateBeginMultipleIf -->
 <!-- TemplateBeginIfClause cond="rdfa == true" -->
 <div class="rdfa" about="#this" typeof="foaf:Document">
@@ -254,15 +246,13 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <!-- TemplateBeginMultipleIf -->
 <!-- TemplateBeginIfClause cond="layout == 'betatwocol'" -->
-<main id="contentContainer" class="column@@(_document['layout'])@@
-              column@@(_document['columnLayout'])@@">
+<main id="contentContainer" class="column@@(_document['layout'])@@ column@@(_document['columnLayout'])@@">
 <!-- TemplateBeginMultipleIf -->
 <!-- TemplateBeginIfClause cond="rdfa == true" -->
   <div class="rdfa" about="#this" typeof="foaf:Document">
-  <span rel="dc:publisher" resource="http://www.hse.gov.uk/"
-                  content="Health and Safety Executive"></span> <span
-                  rel="dc:source" resource=""></span> <span
-                  property="dc:language" content="en"></span>
+  <span rel="dc:publisher" resource="http://www.hse.gov.uk/" content="Health and Safety Executive"></span> 
+  <span rel="dc:source" resource=""></span> 
+  <span property="dc:language" content="en"></span>
 	  <!-- TemplateEndIfClause --><!-- TemplateEndMultipleIf -->
   <div class="columnFull noBoxPadding">
     <div class="column twoThird noBoxPadding">
@@ -283,12 +273,10 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
         </ol>
        <!-- TemplateEndEditable --> </nav>
     </div>
-    <div id="asideTop" class="column oneThird boxLast
-                    noBoxPadding"> <!-- TemplateBeginEditable name="asideTop" --> <!-- TemplateEndEditable --> </div>
+    <div id="asideTop" class="column oneThird boxLast noBoxPadding"> <!-- TemplateBeginEditable name="asideTop" --> <!-- TemplateEndEditable --> </div>
   </div>
   <div class="columnFull noBoxPadding">
-    <article id="article" class="column twoThird border-top
-                    noBoxPadding"> <!-- TemplateBeginEditable name="article" -->
+    <article id="article" class="column twoThird border-top noBoxPadding"> <!-- TemplateBeginEditable name="article" -->
       <h2>1. Overview</h2>
       <h3>Subheading H3</h3>
       <ul>
@@ -298,8 +286,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
         <li>list item</li>
       </ul>
       <!-- TemplateEndEditable --> </article>
-    <aside id="asideBottom" class="column oneThird border-top-red
-                    aside noBoxPadding boxLast"> <!-- TemplateBeginEditable name="asideBottom" -->
+    <aside id="asideBottom" class="column oneThird border-top-red aside noBoxPadding boxLast"> <!-- TemplateBeginEditable name="asideBottom" -->
       <div class="backgroundRed exploreTopic">
         <ul class="linkList">
           <li><a href="#">List item</a></li>
@@ -349,10 +336,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <!-- TemplateBeginMultipleIf -->
 <!-- TemplateBeginIfClause cond="feedback == true" -->
 
-<section id="feedback" class="feedback
-            @@(_document['feedbackClass'])@@"
-            aria-describedby="feedback-message" aria-label="Is this page
-            useful">
+<section id="feedback" class="feedback @@(_document['feedbackClass'])@@" aria-describedby="feedback-message" aria-label="Is this page useful">
   <div class="feedback-container">
     <div class="yes-no-container">
       <div class="feedback-links">
@@ -396,18 +380,15 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
           <li><a href="../privacy.htm">Privacy</a></li>
           <li><a href="../accessibility.htm">Accessibility</a></li>
           <li><a href="../foi/index.htm">Disclosure of information</a></li>
-          <li><a href="../report-vulnerability.htm">Vulnerability
-            disclosure</a></li>
+          <li><a href="../report-vulnerability.htm">Vulnerability disclosure</a></li>
         </ul>
       </div>
     </div>
     <div id="baseStrip">
       <div id="baseStripInner">
-        <p>HSE aims to reduce work-related death, injury and ill
-          health.</p>
+        <p>HSE aims to reduce work-related death, injury and ill health.</p>
         <div class="guidance-languages">
-          <p><a href="../languages/index.htm">Information in other
-            languages</a></p>
+          <p><a href="../languages/index.htm">Information in other languages</a></p>
         </div>
       </div>
     </div>

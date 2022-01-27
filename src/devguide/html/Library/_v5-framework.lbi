@@ -7,6 +7,7 @@
         <li><a href="../framework/template/regions.htm">Editable regions</a></li>
         <li><a href="../framework/template/param.htm">Parameters</a></li>
         <li><a href="../framework/template/accessibility.htm">Accessibility</a></li>
+		<li><a href="../framework/template/library-items.htm">Library items</a></li>
         <li><a href="#">Components</a>
           <ul>
             <li><a href="../framework/components/index.htm">Overview</a></li>
@@ -24,30 +25,30 @@
     </li>
 	  <li><a href="#">Workflow</a>
 		  <ul>
-			  <li><a href="../framework/workflow/index.htm">Workflow</a></li>
+			  <li><a href="../development/workflow/index.htm">Workflow</a></li>
 			  <li><a href="#">Gitflow</a>
 			  <ul>
-				  <li><a href="../framework/workflow/gitflow.htm">Gitflow</a></li>
-				  <li><a href="../framework/workflow/gitflow-features.htm">Feature branches</a></li>
-				  <li><a href="../framework/workflow/gitflow-releases.htm">Release branches</a></li>
-				  <li><a href="../framework/workflow/gitflow-hotfixes.htm">Hotfixes</a></li>
+				  <li><a href="../development/workflow/gitflow.htm">Gitflow</a></li>
+				  <li><a href="../development/workflow/gitflow-features.htm">Feature branches</a></li>
+				  <li><a href="../development/workflow/gitflow-releases.htm">Release branches</a></li>
+				  <li><a href="../development/workflow/gitflow-hotfixes.htm">Hotfixes</a></li>
 				</ul>
 			  </li>
-			  <li><a href="../framework/workflow/client-tools.htm">Git-client management tools</a></li>
+			  <li><a href="../development/workflow/client-tools.htm">Git-client management tools</a></li>
 		  </ul>
 	  </li>
     
     <li><a href="#">Testing</a>
       <ul>
-		<li><a href="../framework/testing/index.htm">Overview</a></li>
-        <li><a href="../framework/testing/browsers-devices.htm">Browsers and devices</a></li>
-		<li><a href="../framework/testing/test.htm">Test page</a></li>
+		<li><a href="../development/testing/index.htm">Overview</a></li>
+        <li><a href="../development/testing/browsers-devices.htm">Browsers and devices</a></li>
+		<li><a href="../development/testing/test.htm">Test page</a></li>
       </ul>
     </li>
 	<li><a href="#">Javascript</a>
       <ul>
-		<li><a href="../framework/javascript/index.htm">Overview</a></li>
-        <li><a href="../framework/javascript/create-a-basic-component.htm">Create a component</a></li>
+		<li><a href="../development/javascript/index.htm">Overview</a></li>
+        <li><a href="../development/javascript/create-a-basic-component.htm">Create a component</a></li>
       </ul>
     </li>
   </ul>

@@ -46,6 +46,12 @@ width: 16px;
 height: 16px;
 }
 
+// Social
+
+#contentContainer ul.social li {
+list-style-image: none;
+}
+
 #contentContainer .columnFull ul.social li.facebook a::before {
 content: " ";
 background-image: url('../../assets/v5-images/icons/svg/brands/facebook-square-red.svg');
@@ -103,6 +109,7 @@ margin: 0;
 
 .hsl-links li {
 background: none;
+list-style-image: none !important;
 width: 100%;
 @media only screen and (min-width : $desktop) {
 width: 232px;
@@ -145,6 +152,10 @@ text-decoration: underline;
 
 // Pagination icons
 
+#contentContainer #pagination ul li::before {
+content: '' !important;
+}
+
 #contentContainer #pagination .next-page .pagination-icon::after {	
 content: " ";
 background-size: 28px;
@@ -175,10 +186,11 @@ margin: 0;
 content: " ";
 background-image: url('../../assets/v5-images/icons/svg/solid/arrow-right-white.svg');
 background-repeat: no-repeat;
-display: inline-block;
-position: relative;
-top: 5px;
 float: right;
+top: 20px;
+-webkit-transform: translateY(-100%);
+-ms-transform: translateY(-100%);
+transform: translateY(-100%);
 width: 16px;
 height: 16px;
 margin: 0;
@@ -192,10 +204,12 @@ color: white !important;
 content: " ";
 background-image: url('../../assets/v5-images/icons/svg/solid/arrow-right-red.svg');
 background-repeat: no-repeat;
-display: inline-block;
 position: relative;
-top: 5px;
 float: right;
+top: 20px;
+-webkit-transform: translateY(-100%);
+-ms-transform: translateY(-100%);
+transform: translateY(-100%);
 width: 16px;
 height: 16px;
 margin: 0;

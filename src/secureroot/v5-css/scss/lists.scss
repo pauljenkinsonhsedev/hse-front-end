@@ -1,7 +1,6 @@
 li,
 ol ul li {
     padding:.1em 0;
-    padding-left:18px;
 }
 
 ol li {
@@ -11,19 +10,7 @@ ol li {
 }
 
 dd {
-    margin: 10px 0;
-}
-
-ul.listtick li,ul.tick li {
-    padding-left: 18px;
-}
-
-ul.cross li,ul.listcross li {
-    padding-left: 18px;
-}
-
-ul.listexclaim li {
-    padding-left: 18px;
+    margin: 0;
 }
 
 ol {
@@ -133,3 +120,28 @@ font-size: 0.9rem;
 line-height: 1.5;
 padding-right: 5px;
 }
+
+.social li, .tick li, .cross li, li.next-page, li.previous-page, .columnsList li, #contentContainer ul.linkList li, #contentContainer ul.itemThumbBook li, #contentContainer ul.hsl-links li, #contentContainer .boxList ul li, #contentContainer ul.linkListNoBullet li, #contentContainer ul.alphabetList li  {
+list-style-type: none !important;
+}
+
+#contentContainer .box ul {
+margin: 0 0 10px 15px;    
+}
+
+dl.document {
+align-items: center;
+float: left;
+}
+
+dl.document dt  {
+float: left;
+clear: left;
+padding-right: 10px;
+}
+
+dl.document dd {
+float: left;
+margin-bottom: 5px;
+}
+

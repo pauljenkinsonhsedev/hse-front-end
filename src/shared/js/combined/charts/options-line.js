@@ -15,6 +15,7 @@ import {red} from 'ansi-colors';
 export class ChartOptionsLine extends ChartOptions {
     constructor(container){
         super(container);
+        const firstLast = container.dataset.xaxisFirstlast;
         const categoryData = chartCategories(this.container);
         const getSeriesData = seriesData(this.dataTable);
         let flag = false;
@@ -49,6 +50,17 @@ export class ChartOptionsLine extends ChartOptions {
             },
             labels: {
                 overflow: 'justify',
+                formatter: function () {
+                    if (firstLast === 'true') {
+                        if(this.isFirst || this.isLast) {
+                            return this.value
+                        } else {
+                            return ''
+                        }
+                    } else {
+                        return this.value
+                    }
+                },
                 style: {
                     fontFamily: this.fontFamily,
                     fontSize: '0.7rem',
