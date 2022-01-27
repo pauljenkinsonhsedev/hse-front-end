@@ -45,6 +45,10 @@
   border: 2px solid $red;
 }
 
+.box.document .fileType {
+display: none;
+}
+
 // box promo image
 
 .boxPromoImage img {
