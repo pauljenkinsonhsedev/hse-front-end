@@ -10,7 +10,7 @@ ol li {
 }
 
 dd {
-    margin: 10px 0;
+    margin: 0;
 }
 
 ol {
@@ -130,23 +130,18 @@ margin: 0 0 10px 15px;
 }
 
 dl.document {
-display: flex;
-flex-wrap: wrap;
 align-items: center;
-padding-bottom: 10px;
-border-bottom: 1px solid $red;
+float: left;
 }
 
 dl.document dt  {
-padding: 0 10px 0 0;
-}
-
-dl.document dd {
+float: left;
+clear: left;
 padding-right: 10px;
 }
 
-.box.document dl.document {
-border: 0;
-padding: 0;
+dl.document dd {
+float: left;
+margin-bottom: 5px;
 }
 
