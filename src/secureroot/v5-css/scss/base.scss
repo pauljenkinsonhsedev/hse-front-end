@@ -248,7 +248,6 @@ img.responsiveImg {
 //transform: translateZ(0);
 }
 
-
 /* V5 global styles */
 
 .v5-inline {
@@ -258,3 +257,8 @@ display: inline-block;
 .no-wrap {
 white-space: nowrap;
 }
+
+.noFileType .fileType {
+display: none;
+}
+
