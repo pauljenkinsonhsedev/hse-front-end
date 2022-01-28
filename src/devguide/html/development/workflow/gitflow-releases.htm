@@ -110,6 +110,7 @@ display: none;
 				  <li><a href="gitflow-features.htm">Feature branches</a></li>
 				  <li><a href="gitflow-releases.htm">Release branches</a></li>
 				  <li><a href="gitflow-hotfixes.htm">Hotfixes</a></li>
+				  <li><a href="gitflow-tags.htm">Tags</a></li>
 				</ul>
 			  </li>
 			  <li><a href="client-tools.htm">Git-client management tools</a></li>
@@ -140,14 +141,14 @@ display: none;
 
   <h1>Git-flow releases</h1>
   <p>A <strong>release branch</strong> derives from the <strong>develop branch</strong>. Initiate a release once you are happy that <strong>develop branch</strong> is production ready.</p>
-  <p>Naming the release should follow the pattern of x.x.x and each release should be incremented. Tagging the release will ensure that merges can be quickly identified and rolled back in the unlikely event a release must be reverted.</p>
+  <h2>Naming convension for releases</h2>
+  <p>A version number should be used when naming the release and should follow the pattern of x.x.x and each release should be incremented. Tagging the release will ensure that merges can be quickly identified and rolled back in the unlikely event a release must be reverted.</p>
   <p></p>
   <h2>Command line</h2>
-  <ul>
-    <li><code>git flow release start 1.1.0</code></li>
-    <li><code>git flow release publish 1.1.0</code> <br>(only if you want your release to exist in the repo so other developers can look at or contribute.)</li>
-    <li><code>git flow release finish 1.1.0</code></li>
-  </ul>
+  <p>Start a release:</p>
+  <pre class="language-git"><code>git flow release start 1.1.0</code></pre>
+  <p>Finish a release:</p>
+  <pre class="language-git"><code>git flow release finish 1.1.0</code></pre>
 
 <!-- InstanceEndEditable -->
 	
