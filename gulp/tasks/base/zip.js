@@ -7,14 +7,14 @@ import * as config from '../../config.json';
 import * as proj from'../../../package.json';
 
 function zipSecureroot() {
-    return src([config.secureroot.output])
+    return src([`${config.secureroot.copy.output}/*`])
     .pipe(zip('secureroot.zip'))
     .pipe(dest('./'))
     .pipe(notify({message: `${proj.name} production zipped`, onLast: true}))
 }
 
 function zipdevguide() {
-    return src([config.devguide.output])
+    return src([`${config.devguide.output}/*`])
     .pipe(zip('devguide.zip'))
     .pipe(dest('./'))
     .pipe(notify({message: `${proj.name} production zipped`, onLast: true}))
