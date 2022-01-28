@@ -14,8 +14,6 @@ src/secureroot/html/**/*
 src/secureroot/**/*.lbi
 /secureroot
 /devguide
-/secureroot.zip
-/devguide.zip
 /gulp/tasks/shared/devguide/js/report.html
 /report.html
 /yarn-error.log
