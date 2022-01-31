@@ -20,6 +20,12 @@ pre[class*='language-'] {
     font-size: 12px;
   }
 }
+pre.language-git {
+  &:after {
+    content: 'GIT';
+  }
+}
+
 pre.language-js {
   &:after {
     content: 'JS';

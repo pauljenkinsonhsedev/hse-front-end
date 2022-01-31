@@ -110,6 +110,7 @@ display: none;
 				  <li><a href="gitflow-features.htm">Feature branches</a></li>
 				  <li><a href="gitflow-releases.htm">Release branches</a></li>
 				  <li><a href="gitflow-hotfixes.htm">Hotfixes</a></li>
+				  <li><a href="gitflow-tags.htm">Tags</a></li>
 				</ul>
 			  </li>
 			  <li><a href="client-tools.htm">Git-client management tools</a></li>
@@ -140,11 +141,14 @@ display: none;
 
   <h1>Git-flow hotfixes</h1>
   <p><strong>Hotfixes</strong> derive from the main branch and is used to fix a bug in the production branch that was identified after a release.</p>
+  <h2>Naming convension for hotfixes</h2>
+  <p>The naming convension should follow on from how we named our <a href="gitflow-releases.htm">release</a>. Update the number by incrementing for each fix.</p>
+  <p>This will ensure we have tagged the changes correctly in accordance with GitHubs tagging system.</p>
   <h2>Command line</h2>
-  <ul>
-    <li><code>git flow hotfix start 1.1.1</code></li>
-    <li><code>git flow hotfix finish 1.1.1</code></li>
-  </ul>
+  <p>Start a hotfix:</p>
+  <pre class="language-git"><code>git flow hotfix start 1.1.1</code></pre>
+  <p>Finish a hotfix:</p>
+  <pre class="language-git"><code>git flow hotfix finish 1.1.1</code></pre>
 <!-- InstanceEndEditable -->
 	
  
