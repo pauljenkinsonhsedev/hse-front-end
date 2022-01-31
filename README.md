@@ -1,5 +1,9 @@
 # HSE.GOV.UK Front-end
 
+## Release notes
+
+First release using Gitflow - v5.1.0.0
+
 ## Requirements and getting started
 ### Pre-requisites
 You must install globally
