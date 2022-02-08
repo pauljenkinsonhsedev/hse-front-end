@@ -531,9 +531,8 @@ ul.navSupp li a {
   width: 11%;
   background: 0 0;
   padding: 0;
-  // font-size:.917em;
-  @include type-setting(-1);
-  margin: 0;
+  margin: 5px 0;
+  @include type-setting(0);
   text-align: center;
 }
 #baseStrip {
