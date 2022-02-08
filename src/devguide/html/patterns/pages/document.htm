@@ -134,113 +134,172 @@ display: none;
  
 	
 <!-- InstanceBeginEditable name="content" -->
-  <h1>Document Landing Page</h1>
-	
-     <div class="box backgroundRed"><p>Experimental: This component is currently experimental because more research is needed to validate it.</p></div>
+<h1>Document Landing Page</h1>
 
-	<p class="linkList"><a href="demo-document-page.htm">Demo document landing page</a></p>	
+<div class="box backgroundRed"><p>Experimental: This component is currently experimental because more research is needed to validate it.</p></div>
+
+<p class="linkList"><a href="demo-document-page.htm">Demo document landing page</a></p>	
+
+
+
+
+<h2>When to use</h2>
 	
+<p>Content published in a document such as a PDF, Word document or Excel spreadsheet should have an associated web page (document page). The document page will give information about the document and will link to it.</p>
+
+<p>Use a document landing page to help the user find the document that matches their needs as quickly as possible.</p>
+
+<p>Users need to know whether they should open the document and if the information within meets their needs.</p>
+
+
+
+
+<h2>How to use</h2>
+
+<div class="box document">
+
+<h3><a href="https://hsegov.sharepoint.com/:w:/s/WebDesignStandards/EfJMig9NfYpKqO4P1t2HkMkBFjNnMRB32IrPV1oDijySaQ?e=wGXuvO">Document page template</a></h3>
+<p>Work from a document page template, provided by the content design team. </p><p><strong>This template is to be completed by the content design team</strong>.</p>
+</div>
+
+<h3 id="title">Title</h3>
+
+<p>The document title is a <strong>&lt;h1&gt;</strong> tag, it should be included at the start of the content region.</p>
+
+<ul>
+<li>Title does not have to reflect the official document title</li>
+<li>Keep it short, under 65 characters if possible, user friendly and optimised for search</li>
+<li>Frontload the title – get the most important words at the front</li>
+<li>You can mention the document title etc in the summary below or details section if you think users will search for that term</li>
+</ul>
+<h3 id="summary">Summary</h3>
+
+<p>The summary is a sentence using a <strong>&lt;p&gt;</strong> tag, it should be included directly below the <strong>&lt;h1&gt; title</strong>.</p>
+
+<ul>
+<li>No heading</li>
+<li>Explain the main purpose of the document</li>
+<li>Up to 160 characters and end with a full stop</li> 
+</ul>
+
+
+<h3 id="version">Version</h3>
+
+<p>Document version details are to be included directly below the summary. Use the class of <strong>.document</strong> with a <strong>&lt;dl&gt;</strong> list. The details to include should be provided in the document page template.</p>
+
+<table>
+
+<tr>
+<th>Title</th>
+<th>Detail</th>
+<th>Mandatory or optional</th>
+</tr>
+
+<tr>
+<td>Applies to</td>
+<td> 
+If the document applies to Great Britain (GB) (England, Scotland and Wales) leave this section blank. 
+
+If it does not apply to GB specify which nation(s) it applies to.
+</td>
+<td>Mandatory</td>
+
+</tr>
+
+<tr>
+<td>Published, Last updated</td>
+
+<td>
+<ul>
+<li>Content designer – request entries if the user needs to know the date(s).</li>
+
+<li>Publisher – if required, enter date(s) document originally published/last updated.</li>
+</ul>
+</td>
+<td>Optional</td>
+</tr>
+
+
+</table>
+
+
+<h3 id="documents">Document</h3>
+
+<p>The document section should be given a <strong>&lt;h2&gt;</strong> heading of 'document' and is included directly below the version details.</p>
+
+<p>A <a href="../../components/boxes.htm">box component</a> with the additional class of <strong>.document</strong>, is used to emphasise a document on a page.</p>
+
+<ul>
+ <li>Use the official title</li> 
+ <li>This is the link to the document</li>
+ <li>Insert live link or link text and address/URL separately</li>
+</ul>
+	
+<p>A <strong>&lt;dl&gt;</strong> tag with the class of <strong>.document</strong> is used to include: </p>
+	
+<ul>
+
+<li>Reference (optional): Use if document has a reference</li>
+<li>File type (mandatory): PDF, Microsoft Word, Microsoft Excel etc, file size in MB or KB</li>
+	
+</ul>
+	
+<h3>Code example</h3>
+	
+<pre class="language-markup">
+<code>&lt;div class=&quot;box document&quot;&gt;
+ &lt;h3&gt;&lt;a href=&quot;#&quot;&gt;Document title&lt;/a&gt;&lt;/h3&gt; 
+ &lt;dl class=&quot;document&quot;&gt;
+  &lt;dt&gt;Reference:&lt;/dt&gt;
+  &lt;dd&gt;Version 1&lt;/dd&gt;
+  &lt;dt&gt;Document type:&lt;/dt&gt;
+  &lt;dd&gt;PDF, 600KB&lt;/dd&gt; 
+ &lt;/dl&gt; 
+&lt;/div&gt;</code>
+</pre>
+	
+	
+<div class="box document">
+
+<h3><a href="#">Document title</a></h3>
+
+<dl class="document">
+<dt>Reference:</dt>
+<dd>Version 1</dd>
+<dt>Document type:</dt>
+<dd>PDF, 600KB</dd>
+
+</dl>
+
+</div>
+
+
+<h3 id="details">Details</h3>
+
+<p>The details section should have a heading of 'Details' and always be the last section of content, it is mandatory to include.</p>
+
+<ul>
+<li>Provide a description of the publication in plain, neutral language, to reassure the user that it is (or is not) what they’re looking for</li> 
+<li>Include what the publication is about, who it’s for and its purpose</li>
+<li>Do not repeat the summary text</li>
+</ul>
+	
+<h4>Related content</h4>
+
+<ul>
+ <li>Links to supporting content or content a user may need next</li> 
+ <li>No more than 4 ideally. Include essential links in the details section</li> 
+ <li>Insert live link or link text and address/URL separately</li>
+</ul>
 
 	
-	   
-    <h2>When to use</h2>
+<h4>Explore this topic</h4>
 	
-	<p>Documents such as PDFs, Microsoft Word docs and Excel spreadsheets published on the HSE website should have a webpage.</p> 
-<p>There may be exceptions where it is not practical.</p>
+<ul>
+ <li>Single link to topic area - for example, for a document on ladders the link would go to the topic area ‘Work at height’</li>
+ <li>Insert live link or link text and address/URL separately</li>
+</ul>
 
-	   	   
-    <p>Use a document landing page to help the user find the document that matches their needs as quickly as possible.</p>
-	   
-     <p>Users need to know whether they should open the document and if the information within meets their needs.</p>
-	
-	
-
-	
-     <h2>How to use</h2>
-	
-	<div class="box">
-		
-    <h3>Document page template</h3>
-	<p>Work from a document page template, provided by the content design team. This template is to be completed by the content owner or content design team.</p>
-	</div>
-			
-    <h3 id="title">Title</h3>
-	
-	<p>The document title is a <strong>&lt;h1&gt;</strong> tag, it should be included at the start of the content region.</p>
-	
-     <p>The title does not have to reflect the official document title. Keep it short and search-friendly.</p>
-	
-     <p>Frontload the title – get all the most important words at the front of the sentence.</p>
-
-     <p>You can mention the document title etc in the summary or page copy if you think users will search
-       for that term.</p>
-	
-     <h3 id="summary">Summary</h3>
-	
-	 <p>The summary is a sentence using a <strong>&lt;p&gt;</strong> tag, it should be included directly below the <strong>&lt;h1&gt; title</strong>.</p>
-     <p>Give a short summary (up to 160 characters) and end with a full stop.</p>
-
-     <h3 id="version">Version</h3>
-	
-	 <p>Document version details are to be included directly below the summary. Use the class of <strong>.document</strong> with a <strong>&lt;dl&gt;</strong> list. The details to include should be provided in the document page template.</p>
-	
-	
-    <h3 id="documents">Document</h3>
-	
-	<p>The document section should be given a <strong>&lt;h2&gt;</strong> heading of document or documents and is included directly below the version details.</p>
-	
-	<p>A <a href="../../components/boxes.htm">box component</a> with the additional class of <strong>.document</strong>, is used to emphasise a document on a page.</p>
-	
-	<ul>
-	
-    <li>Each document should have a heading using a <strong>&lt;h3&gt;</strong> element as a link to the file</li>
-	
-	<li>Document details should be included using a <strong>&lt;dl&gt;</strong> <a href="../../style/typography/lists.htm">list</a> with the class <strong>.document</strong></li>
-	
-     <li>Use the official heading of the document and include the file type and memory size</li>
-		
-	<li>Multiple formats of the document can be listed in this section, use a box componenet for each individual format of the document</li>
-		
-	</ul>
-	
-		  <div class="box document">
-	
-  <h3><a href="#">Document title</a></h3>
-
-  <dl class="document">
-  <dt>Reference:</dt>
-  <dd>Version 1</dd>
-  <dt>Document type:</dt>
-  <dd>PDF, 600KB</dd>
-	  
-  </dl>
-	  
-  </div>
-	
-	<div class="box document">
-	
-  <h3><a href="#">Document title (large print version)</a></h3>
-
-  <dl class="document">
-  <dt>Reference:</dt>
-  <dd>Version 1</dd>
-  <dt>Document type:</dt>
-  <dd>PDF, 900KB</dd>
-
-	  
-  </dl>
-	  
-  </div>
-     <h3 id="details">Details</h3>
-	
-	 <p>The details section should always be the last section of content.</p>
-	
-	
-     <p>The body of the page provides a description of the publication in plain, neutral language, to reassure
-       the user that it is (or is not) what they’re looking for. Include what the publication is about and its
-       purpose.</p>
-     <p>Include any further information that will help them complete their task where it’s not covered in the
-       document; for example, related links.</p>
 	
 	
    
@@ -270,7 +329,7 @@ display: none;
   </footer>
 </nav>
 <section id="lastUpdated" aria-label="Last updated">
-<!-- InstanceBeginEditable name="updated" -->Updated:<!-- #BeginDate format:IS1 -->2022-02-03<!-- #EndDate -->
+<!-- InstanceBeginEditable name="updated" -->Updated:<!-- #BeginDate format:IS1 -->2022-02-08<!-- #EndDate -->
   <!-- InstanceEndEditable -->
 </section>
 <script src="../../assets/v5-js/v5-main.min.js"></script>
