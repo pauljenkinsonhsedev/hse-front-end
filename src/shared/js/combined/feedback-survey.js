@@ -6,8 +6,14 @@
 
 */
 import { scrollPos } from './utils/feedback-position';
+import { bowser } from './bowser.js';
+
+
+
 
 export function feedbackSurvey() {
+
+
     const container = document.querySelector('.feedback-container');
 
     if (!container) {
@@ -67,7 +73,15 @@ export function feedbackSurvey() {
   
 
     function reportProblem() {
-      
+
+      bowser();
+
+      const Bowser = require("bowser"); // CommonJS
+      const browser = Bowser.getParser(window.navigator.userAgent);
+
+      console.log(Bowser.parse(window.navigator.userAgent));
+      // The current browser name is "Internet Explorer"
+
       const newURL = window.location.protocol + '//' + window.location.host + window.location.pathname + window.location.search;           
       const action = document.createElement('button');
       action.id = 'close-report-a-problem';
