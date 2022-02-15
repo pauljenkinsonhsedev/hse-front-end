@@ -5,6 +5,8 @@ import * as config from '../../config.json';
 
 const picturefillAssets = ['./node_modules/picturefill/dist/picturefill.min.js'];
 
+const bowserAssets = ['./node_modules/bowser/es5.js'];
+
 const highchartsAssets = [
   "./node_modules/highcharts/highcharts.js",
   "./node_modules/highcharts/highcharts.src.js",
@@ -25,6 +27,11 @@ const highchartsAssets = [
   "./node_modules/highcharts/highcharts-more.src.js",
   "./node_modules/highcharts/highcharts-more.js.map"
 ];
+
+function bowser() {
+  return src(bowserAssets)
+    .pipe(dest(`${config.secureroot.assetPath}/v5-js/vendor/bowser`))
+}
 
 function picturefill() {
   return src(picturefillAssets)
@@ -71,5 +78,5 @@ function templates() {
   .pipe(dest(config.secureroot.copy.templates.output));
 }
 
-const toReturn = series(misc, html, vendorCSS, vendorJS, templates, moment, highCharts, picturefill, ariaAccordion);
+const toReturn = series(misc, html, vendorCSS, vendorJS, templates, moment, highCharts, picturefill, ariaAccordion, bowser);
 task('hseCopy', toReturn)
