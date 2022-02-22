@@ -5,6 +5,17 @@
     width:100%;
 }
 
+.breadCrumbContainer {
+    width: 90%;
+    padding: 0 5%;
+    padding-top: 10px;
+    }
+
+    #backTo {
+        width: 90%;
+        padding: 10px 5%;
+    }
+
 #breadCrumb ol li::before {
     content: " ";
     background-image: url('../../assets/v5-images/icons/svg/solid/chevron-right-gray.svg');
@@ -41,6 +52,7 @@
     display: inline-block;
     font-size: 0.9em;
     margin: 0;
+    margin-bottom: 10px;
     padding: 0;
 }
 
