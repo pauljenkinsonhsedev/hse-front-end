@@ -94,25 +94,6 @@ padding-right: 0;
     color: white !important;
 }
 
-#contentContainer ol.multistep li {
-    margin-left: 15px;
-    padding: 0;
-    clear: both;
-}
-
-#contentContainer ul.multistep li {
-    padding-left: 0;
-    margin-left: 15px;
-    background: none;
-}
-
-#contentContainer ul.multistep li::before {
-    content: "— ";
-    color: $hseblack;
-}
-#contentContainer ul.linkArrow li {
-    padding-left: 0;
-}
 
 #contentContainer .linkArrow li {
     display: block;
@@ -190,10 +171,6 @@ padding-right: 0;
 
 
 // Main content
-
-#contentContainer ol {
-    margin-bottom: 0;
-}
 
 
 // Forms
