@@ -1,7 +1,30 @@
-// Beta
+// Multi step pagination
+
+#multistepNav {
+float: left;
+}
+
+ul.multistep {
+margin: 0 !important;
+}
+
+ul.multistep li {
+padding-top: 7.5px;
+}
 
 .multistep {
+@media only screen and (min-width : $desktop) {
+width: 310px;
+float: left;
+}
 width: 100%;
+margin: 0;
+}
+
+ol.multistep li {
+margin-left: 15px;
+padding-top: 7.5px;
+clear: both;
 }
 
 // Pagination 
@@ -113,4 +136,8 @@ margin-bottom: 15px;
 
 #asideBottom h2 {
 font-size: 1.1rem !important;
+}
+
+#asideTop {
+padding: 0;
 }
