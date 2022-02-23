@@ -20,6 +20,19 @@ export function collate(data, action) {
       return htmlObject;
     }
 
+    const convertLinks = async (data) => {
+      const links = data.querySelectorAll('a');
+      [...links].map((link) => {
+        const urlObj = new URL(link);
+        const firstChar = link.getAttribute('href').substr(0, 1);
+        if (urlObj.hostname === window.location.hostname && firstChar != '#') {
+          link.href = `http://www.hse.gov.uk${link.pathname}`
+        }
+      });
+
+      return data;
+    }
+
     const convertImages = async (data) => {
       const images = data.querySelectorAll('img');
 
@@ -94,6 +107,9 @@ export function collate(data, action) {
         })
         .then((data) => {
           return insertPageBreaks(data);
+        })
+        .then((data) => {
+          return convertLinks(data);
         })
         .then((data) => {
           return convertImages(data);
