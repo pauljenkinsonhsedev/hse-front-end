@@ -1,7 +1,16 @@
+// V5 layout
+
 #contentContainer * {
--webkit-box-sizing: border-box;
--moz-box-sizing: border-box;
 box-sizing: border-box;
+}    
+
+
+#contentContainer {
+width: 100%;
+margin: 0 !important;
+.oneThird, .twoThird, .half, .twoThirdHalf, .mostPopular, .homepageBanner {
+width: 100%;
+}
 }
 
 #pageContainer {
@@ -25,27 +34,9 @@ width: 940px;
 }
 }
 
+// Columns
 
-
-// Column gutter
-
-.column {
-margin: 0 1.5% 20px 0;
-}
-
-.column.noBoxPadding {
-margin: 0 1.5% 0 0;
-}
-
-/* Spacing & Borders */
-
-#contentContainer .border {
-margin-bottom: 20px;
-border-bottom: 2px solid $red;
-}
-
-
-#contentContainer .columnFull {
+.columnFull {
 width: 100%;
 float: left;
 height: auto;
@@ -53,37 +44,46 @@ clear: both;
 padding: 0;
 }
 
-#contentContainer .columnFull:first-of-type {
-padding-top: 0;
-}
-
-#contentContainer {
-width: 100%;
-.oneThird, .twoThird, .half, .twoThirdHalf, .mostPopular, .homepageBanner {
-width: 100%;
-}
-}
-
-.noBoxPadding .column {
-padding-left: 0 !important;
-padding-right: 0 !important;
-}
-
-.noBoxPadding.column {
-padding-left: 0;
-padding-right: 0;
-}
-
 .column {
 float: left;
 width: 100%;
 position: relative;
 padding: 10px;
+margin: 0 1.5% 20px 0;
+}
+
+.column.noBoxPadding {
+margin: 0 1.5% 0 0;
+padding: 0;
+}
+.noBoxPadding .column {
+padding-left: 0 !important;
+padding-right: 0 !important;
 }
 
 .column.backgroundRed {
 padding: 20px;
 }
-#beta-user-testing, #pageTitle {
-width: 100%;
+
+/* Spacing & Borders */
+
+.noPadding {
+padding: 0 !important;
 }
+
+.border:last-of-type {
+border-bottom: none;
+margin-bottom: 0;
+}
+
+.border {
+margin-bottom: 20px;
+border-bottom: 2px solid $red;
+}
+
+.columnFull:first-of-type {
+padding-top: 0;
+}
+
+
+
