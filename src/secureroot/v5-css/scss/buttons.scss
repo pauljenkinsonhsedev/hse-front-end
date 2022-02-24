@@ -37,7 +37,7 @@
     }
 }
 
-.btn + .btn {
+.btn:not(.visually-hidden) + .btn {
     @media (min-width: $tablet) {
         margin-left: $dp*2;
     }
