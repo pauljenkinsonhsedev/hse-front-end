@@ -70,19 +70,7 @@ padding-right: 0;
     padding: 10px !important;
 }
 
-#contentContainer {
-    .noPadding {
-        padding: 0 !important;
-    }
-
-    .border:last-of-type {
-        border-bottom: none;
-    }
-}
-
 // Lists
-
-
 
 .backgroundRed ul.listCaret li:before {
     color: white;
@@ -91,7 +79,6 @@ padding-right: 0;
 #contentContainer .backgroundRed p, #contentContainer .backgroundRed ul li  {
     color: white !important;
 }
-
 
 #contentContainer .linkArrow li {
     display: block;
@@ -164,10 +151,6 @@ padding-right: 0;
     margin-bottom: 0;
 }
 
-
-
-
-
 // Main content
 
 
@@ -212,15 +195,6 @@ img.responsiveImg {
 #pageContainer {
     margin: 20px auto;
     clear: both;
-}
-
-
-#contentContainer {
-    margin: 0 !important;
-// Important fix for Edge
-// 81.0.416.62
-//-webkit-transform: translateZ(0);
-//transform: translateZ(0);
 }
 
 /* V5 global styles */
