@@ -7,8 +7,7 @@ export function printGuide() {
   const CTAPrintGuide = document.querySelector('.print-guide');
   const CTADownloadGuide = document.querySelector('.download-guide');
 
-  console.log(`browser name: ${browser.getBrowserName()}`)
-  if (browser.getBrowserName() === 'Chrome') {
+  if (browser.getBrowserName() === 'Microsoft Edge') {
     CTAPrintGuide.classList.add('visually-hidden')
     CTAPrintGuide.disabled = true;
   }
