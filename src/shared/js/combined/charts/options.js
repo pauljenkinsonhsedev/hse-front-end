@@ -271,7 +271,7 @@ export class ChartOptions {
           },
           plotOptions: {
             series: {
-              pointWidth: 50,
+              pointWidth: 15,
               borderWidth: 0,
               showInLegend: true,
               events: {
