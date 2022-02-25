@@ -24,6 +24,7 @@ import { htmlFormsAntiSpam } from './combined/html-forms-anti-spam.js';
 import { subnavMenu } from './combined/subnav-menu.js';
 import { subNavPosition } from './combined/subnav-position.js';
 import { accordion } from './combined/accordion.js';
+import { printGuide } from './combined/print-guide/print-guide.js';
 
 
 // Window load
@@ -127,5 +128,8 @@ window.addEventListener('DOMContentLoaded', () => {
 
   feedbackSurvey();
   htmlFormsAntiSpam();
+
+  printGuide();
+
 
 }); // end window load

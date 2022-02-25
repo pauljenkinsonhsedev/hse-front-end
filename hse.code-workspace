@@ -6,7 +6,7 @@
 		}
 	],
 	"settings": {
-		"window.zoomLevel": 2,
+		"window.zoomLevel": 1,
 		"workbench.colorCustomizations": {
 			"titleBar.activeBackground": "#b2182b",
 			"titleBar.inactiveBackground": "#b2182b"
