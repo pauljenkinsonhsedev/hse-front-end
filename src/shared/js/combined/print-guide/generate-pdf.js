@@ -1,16 +1,18 @@
-import moment from 'moment';
+
+import pdfMake from 'pdfmake';
+import pdfFonts from 'pdfmake/build/vfs_fonts';
+import htmlToPdfMake from 'html-to-pdfmake';
+
 import { styles, defaultStyles } from './pdf-styles';
 import { logo } from './logo';
 import { palette } from '../utils/palette';
 
-const pdfMake = require('pdfmake');
-const pdfFonts = require('pdfmake/build/vfs_fonts');
-const htmlToPdfMake = require('html-to-pdfmake');
 pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
 export function generatePDF(data, metadata, action) {
   const today = new Date();
   const footerDate = moment(today).format('DD MMM YYYY').toString();
+
 
   // create file name
   const fileNameTitle = metadata.title.toLowerCase().replace(' ', '-');
@@ -98,4 +100,5 @@ export function generatePDF(data, metadata, action) {
     default:
       pdfMake.createPdf(docDefinition).download(fileName);
   }
+
 }
