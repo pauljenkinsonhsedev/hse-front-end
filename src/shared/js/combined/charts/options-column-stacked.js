@@ -32,6 +32,7 @@ export class ChartOptionsColumnStacked extends ChartOptions {
         const plotOptions = {
             series: {
                 borderWidth: 0,
+                pointWidth: 15,
                 events: {
                     legendItemClick: function() {
                         return false;
