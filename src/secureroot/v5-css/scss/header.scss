@@ -56,33 +56,7 @@
 #headerLogo {
   background: url('../../assets/v5-images/hse-logo-white.svg') no-repeat 0 0;
 }
-
-a.headerLogo {
-  // display: flex;
-  // padding: 0;
-  // font-size: 0;
-
-  // &:link, &:hover, &:active, &:visited {
-  //     color: #fff;
-  //     text-decoration: none;
-  // }
-
-  // span {
-  //     display: block;
-  //     margin-left: 18px;
-  //     font-size: 14px;
-  //     line-height: 1.3;
-  //     font-weight: 700;
-  //     white-space: nowrap;
-  // }
-}
-
-h1.offCanvasHeaderLogo {
-  font-size: 14px !important;
-}
-
-#headerLogo,
-#offCanvasHeaderLogo a {
+#headerLogo {
   float: left;
   text-decoration: none;
 }
