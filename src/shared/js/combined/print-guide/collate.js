@@ -7,15 +7,18 @@ export function collate(data, action) {
         return;
     }
 
-    const insertPageBreaks = async (data) => {
+    const setDOM = async (data) => {
+      // This function returns a html object in order to manipulate DOM.
       const htmlObject = document.createElement('div');
       htmlObject.innerHTML = data;
-      const headings = htmlObject.querySelectorAll('h1');
-      [...headings].forEach((heading, index) => {
-        if (index != 0) {
-          heading.classList.add('pdf-pagebreak-before');
-        }
-      });
+
+      // Uncomment below if pagebreaks ever required.
+      // const headings = htmlObject.querySelectorAll('h1');
+      // [...headings].forEach((heading, index) => {
+      //   if (index != 0) {
+      //     heading.classList.add('pdf-pagebreak-before');
+      //   }
+      // });
 
       return htmlObject;
     }
@@ -29,6 +32,37 @@ export function collate(data, action) {
           link.href = `http://www.hse.gov.uk${link.pathname}`
         }
       });
+
+      return data;
+    }
+
+    const linkList = async (data) => {
+      const links = data.querySelectorAll('a');
+      const list = document.createElement('div');
+      const unorderedList = document.createElement('ol');  
+      const listHeading = document.createElement('h2');
+      const hr = document.createElement('hr');
+      listHeading.textContent = 'Link URLs in this page';
+
+      [...links].map((link, i) => {
+        // start at 1
+        i = i + 1;
+        
+        // add numbering to links
+        const number = document.createElement('span');
+        number.innerHTML = `<sup>[${i}]</sup>`;
+        link.insertAdjacentElement('afterend',number);
+        
+        // create link list
+        const listItem = document.createElement('li');
+        listItem.innerHTML = link.href;
+        unorderedList.insertAdjacentElement('beforeend',listItem);
+      });
+
+      list.insertAdjacentElement('beforeend',hr);
+      list.insertAdjacentElement('beforeend',listHeading);
+      list.insertAdjacentElement('beforeend',unorderedList);
+      data.insertAdjacentElement('beforeend',list);
 
       return data;
     }
@@ -106,10 +140,14 @@ export function collate(data, action) {
             }).join('');
         })
         .then((data) => {
-          return insertPageBreaks(data);
+          return setDOM(data);
         })
         .then((data) => {
           return convertLinks(data);
+        })
+        .then((data) => {
+          console.log('links', data);
+          return linkList(data);
         })
         .then((data) => {
           return convertImages(data);
