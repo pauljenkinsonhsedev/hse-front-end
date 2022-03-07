@@ -36,7 +36,7 @@ export function collate(data, action) {
     const linkList = async (data) => {
       const links = data.querySelectorAll('a');
       const list = document.createElement('div');
-      const unorderedList = document.createElement('ul');  
+      const unorderedList = document.createElement('ol');  
       const listHeading = document.createElement('h2');
       const hr = document.createElement('hr');
       listHeading.textContent = 'Link URLs in this page';
@@ -52,7 +52,7 @@ export function collate(data, action) {
         
         // create link list
         const listItem = document.createElement('li');
-        listItem.innerHTML = `[${i}] ${link.href}`;
+        listItem.innerHTML = link.href;
         unorderedList.insertAdjacentElement('beforeend',listItem);
       });
 
