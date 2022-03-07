@@ -7,15 +7,18 @@ export function collate(data, action) {
         return;
     }
 
-    const insertPageBreaks = async (data) => {
+    const setDOM = async (data) => {
+      // This function returns a html object in order to manipulate DOM.
       const htmlObject = document.createElement('div');
       htmlObject.innerHTML = data;
-      const headings = htmlObject.querySelectorAll('h1');
-      [...headings].forEach((heading, index) => {
-        if (index != 0) {
-          heading.classList.add('pdf-pagebreak-before');
-        }
-      });
+
+      // Uncomment below if pagebreaks ever required.
+      // const headings = htmlObject.querySelectorAll('h1');
+      // [...headings].forEach((heading, index) => {
+      //   if (index != 0) {
+      //     heading.classList.add('pdf-pagebreak-before');
+      //   }
+      // });
 
       return htmlObject;
     }
@@ -137,7 +140,7 @@ export function collate(data, action) {
             }).join('');
         })
         .then((data) => {
-          return insertPageBreaks(data);
+          return setDOM(data);
         })
         .then((data) => {
           return convertLinks(data);
