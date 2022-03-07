@@ -33,6 +33,37 @@ export function collate(data, action) {
       return data;
     }
 
+    const linkList = async (data) => {
+      const links = data.querySelectorAll('a');
+      const list = document.createElement('div');
+      const unorderedList = document.createElement('ul');  
+      const listHeading = document.createElement('h2');
+      const hr = document.createElement('hr');
+      listHeading.textContent = 'Link URLs in this page';
+
+      [...links].map((link, i) => {
+        // start at 1
+        i = i + 1;
+        
+        // add numbering to links
+        const number = document.createElement('span');
+        number.innerHTML = `<sup>[${i}]</sup>`;
+        link.insertAdjacentElement('afterend',number);
+        
+        // create link list
+        const listItem = document.createElement('li');
+        listItem.innerHTML = `[${i}] ${link.href}`;
+        unorderedList.insertAdjacentElement('beforeend',listItem);
+      });
+
+      list.insertAdjacentElement('beforeend',hr);
+      list.insertAdjacentElement('beforeend',listHeading);
+      list.insertAdjacentElement('beforeend',unorderedList);
+      data.insertAdjacentElement('beforeend',list);
+
+      return data;
+    }
+
     const convertImages = async (data) => {
       const images = data.querySelectorAll('img');
 
@@ -110,6 +141,10 @@ export function collate(data, action) {
         })
         .then((data) => {
           return convertLinks(data);
+        })
+        .then((data) => {
+          console.log('links', data);
+          return linkList(data);
         })
         .then((data) => {
           return convertImages(data);
