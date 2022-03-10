@@ -50,24 +50,6 @@
 	color: $hseblack;
 }
 
-// Responsive carousel
-
-#homepageCarousel {
-	width: 100% !important;
-}
-
-.touchcarousel-item img {
-	border-radius: 0 !important;
-}
-
-ul.touchcarousel-container {
-	width: 1200px!important;
-}
-
-.homepageRecommended {
-	margin-bottom: 20px;
-}
-
 .homepageBannerInner {
 	display: flex;
 	flex-direction: column;
