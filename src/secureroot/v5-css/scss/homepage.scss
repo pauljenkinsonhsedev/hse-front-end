@@ -224,3 +224,24 @@ margin-left: 0 !important;
 padding-top: 10px;
 float: left;
 }
+
+// News list
+
+ul.newsList li img {
+float: left;
+margin: 0 10px 10px 0;
+}
+ul.newsList li a {
+float: left;
+width: 100%;
+}
+
+
+ul.newsList li {
+float: left;
+margin-bottom: 10px;
+}
+
+ul.newsList li h3 {
+float: left;
+}
