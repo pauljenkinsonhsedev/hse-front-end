@@ -46,27 +46,7 @@
 }
 
 
-.subText {
-	color: $hseblack;
-}
 
-// Responsive carousel
-
-#homepageCarousel {
-	width: 100% !important;
-}
-
-.touchcarousel-item img {
-	border-radius: 0 !important;
-}
-
-ul.touchcarousel-container {
-	width: 1200px!important;
-}
-
-.homepageRecommended {
-	margin-bottom: 20px;
-}
 
 .homepageBannerInner {
 	display: flex;
@@ -217,8 +197,6 @@ max-width: 100px;
 }
 }
 
-
-
 ul.itemThumbBook.publications li:nth-child(2n+1) {
 @media only screen and (min-width : 350px) and (max-width : 499px) {
 margin-left: 0 !important;
@@ -237,8 +215,31 @@ margin-left: 0 !important;
 }
 }
 
-
 .resourceTitle {
 padding-top: 10px;
 float: left;
+}
+
+// News list
+
+ul.newsList li img {
+float: left;
+margin: 0 10px 10px 0;
+}
+ul.newsList li a {
+float: left;
+width: 100%;
+}
+
+ul.newsList li {
+float: left;
+margin-bottom: 10px;
+}
+
+ul.newsList li h3 {
+float: left;
+}
+
+.subText {
+color: #111;
 }
