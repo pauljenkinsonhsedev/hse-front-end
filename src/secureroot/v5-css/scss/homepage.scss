@@ -46,9 +46,7 @@
 }
 
 
-.subText {
-	color: $hseblack;
-}
+
 
 .homepageBannerInner {
 	display: flex;
@@ -199,8 +197,6 @@ max-width: 100px;
 }
 }
 
-
-
 ul.itemThumbBook.publications li:nth-child(2n+1) {
 @media only screen and (min-width : 350px) and (max-width : 499px) {
 margin-left: 0 !important;
@@ -219,7 +215,6 @@ margin-left: 0 !important;
 }
 }
 
-
 .resourceTitle {
 padding-top: 10px;
 float: left;
@@ -236,7 +231,6 @@ float: left;
 width: 100%;
 }
 
-
 ul.newsList li {
 float: left;
 margin-bottom: 10px;
@@ -244,4 +238,8 @@ margin-bottom: 10px;
 
 ul.newsList li h3 {
 float: left;
+}
+
+.subText {
+color: #111;
 }
