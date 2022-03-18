@@ -30,7 +30,7 @@ export function generatePDF(data, metadata, action) {
     styles: styles,
     pageSize: 'A4',
     pageOrientation: 'portrait',
-    pageMargins: [25, 90, 25, 50],
+    pageMargins: [25, 90, 25, 70],
     header: {
       margin: 0,
       columns: [
@@ -69,14 +69,14 @@ export function generatePDF(data, metadata, action) {
           {
             table: {
               headerRows: 1,
-              widths: ['80%', '20%'],
+              widths: ['85%', '15%'],
               body: [
                 [
                   {
-                    text: `This page was printed on ${footerDate} and is subject to future changes`,
+                    text: `This page was printed on ${footerDate} and is subject to future review.\n Please see legal information at the end of this doument.`,
                   },
                   {
-                    text: `${currentPage.toString()} of ${pageCount}`,
+                    text: `\n${currentPage.toString()} of ${pageCount}`,
                     alignment: 'right',
                   },
                 ],

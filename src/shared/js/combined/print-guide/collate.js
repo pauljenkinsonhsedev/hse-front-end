@@ -23,6 +23,27 @@ export function collate(data, action) {
       return htmlObject;
     }
 
+    const legalInformation = async (data) => {
+      const response = await fetch(`/print-guides/legal-information.json`);
+      const json = await response.json();
+      const heading = json.heading;
+      const content = json.content;
+      const legalContainerElem =  document.createElement('div');
+      const headingElem =  document.createElement('h1');
+      headingElem.classList.add('pdf-pagebreak-before');
+      headingElem.textContent = heading;
+      legalContainerElem.insertAdjacentElement('beforeend',headingElem);
+
+      content.map((para) => {
+        const paraElem = document.createElement('p');
+        paraElem.textContent = para;
+        legalContainerElem.insertAdjacentElement('beforeend',paraElem);
+      });
+      data.insertAdjacentElement('beforeend',legalContainerElem);
+
+      return data;
+    }
+
     const convertLinks = async (data) => {
       const links = data.querySelectorAll('a');
       [...links].map((link) => {
@@ -41,7 +62,7 @@ export function collate(data, action) {
       const list = document.createElement('div');
       const unorderedList = document.createElement('ol');  
       const listHeading = document.createElement('h2');
-      const hr = document.createElement('hr');
+      listHeading.classList.add('pdf-pagebreak-before');
       listHeading.textContent = 'Link URLs in this page';
 
       [...links].map((link, i) => {
@@ -59,7 +80,6 @@ export function collate(data, action) {
         unorderedList.insertAdjacentElement('beforeend',listItem);
       });
 
-      list.insertAdjacentElement('beforeend',hr);
       list.insertAdjacentElement('beforeend',listHeading);
       list.insertAdjacentElement('beforeend',unorderedList);
       data.insertAdjacentElement('beforeend',list);
@@ -146,8 +166,10 @@ export function collate(data, action) {
           return convertLinks(data);
         })
         .then((data) => {
-          console.log('links', data);
           return linkList(data);
+        })
+        .then((data) => {
+          return legalInformation(data);
         })
         .then((data) => {
           return convertImages(data);
