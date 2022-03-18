@@ -66,15 +66,10 @@ margin: 0 0 10px 0 !important;
 list-style-image: none !important;
 }
 
- ul.columnsList li::before, #pagination ul li::before, ul.itemThumbBook li, ul.hsl-links li, ul.social li, ul.articleList, ul.linkListNoBullet li {
+ ul.columnsList li::before, #pagination ul li::before, ul.hsl-links li, ul.social li, ul.articleList, ul.linkListNoBullet li {
 padding-left: 0 !important;
 background: none !important;
 }
-
-ul.tabs li, ul.social li {
-background-image: none !important;
-}
-
 
 #contentContainer ul.linkList li::before {
 content: "";

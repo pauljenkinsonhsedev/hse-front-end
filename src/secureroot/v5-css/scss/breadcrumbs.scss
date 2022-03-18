@@ -1,52 +1,68 @@
 // Breadcrumbs
 
 #breadCrumb{
-    clear:both;
-    width:100%;
+clear:both;
+width:100%;
+}
+
+.breadCrumbContainer {
+width: 90%;
+padding: 0 5%;
+padding-top: 10px;
+}
+
+.breadCrumbContainer ol {
+margin: 0;
+}
+
+#backTo {
+width: 90%;
+padding: 10px 5%;
 }
 
 #breadCrumb ol li::before {
-    content: " ";
-    background-image: url('../../assets/v5-images/icons/svg/solid/chevron-right-gray.svg');
-    background-repeat: no-repeat;
-    background-position: bottom;
-    float: left;
-    top: 2px;
-    position: relative;
-    width: 17px;
-    height: 17px;
+content: " ";
+background-image: url('../../assets/v5-images/icons/svg/solid/chevron-right-gray.svg');
+background-repeat: no-repeat;
+background-position: bottom;
+float: left;
+top: 2px;
+position: relative;
+width: 17px;
+height: 17px;
 }
 
 #breadCrumb ol li.home {
-    background:0 0;
-    padding:0;
+background:0 0;
+padding:0;
 }
 
 #breadCrumb ol li.home::before {
-    display: none;
+display: none;
 }
 
 #breadCrumb {
-    margin-bottom: 20px !important;
-    background-color: $gray;
-    margin: 0;
-    float: left;
+margin-bottom: 20px !important;
+background-color: $gray;
+margin: 0;
+float: left;
 }
 
 #breadCrumb ol {
-    list-style: none;
+list-style: none;
 }
 
 #breadCrumb ol li {
-    display: inline-block;
-    font-size: 0.9em;
-    margin: 0;
-    padding: 0;
+display: inline-block;
+font-size: 0.9em;
+margin: 0;
+margin-bottom: 10px;
+padding: 0;
 }
 
 #breadCrumb ol li a {
-    color: $hseblack;
-    text-decoration: underline;
+color: $hseblack;
+text-decoration: underline;
 }
 
 #breadCrumb ol li a:hover {

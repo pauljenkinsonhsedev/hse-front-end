@@ -146,7 +146,7 @@ p {
   margin-left: 0 !important;
   margin-right: 0 !important;
 }
-#contentContainer ol {
+ol {
   margin: 0 0 10px 0.1px;
 }
 #contentContainer dl {
@@ -531,9 +531,8 @@ ul.navSupp li a {
   width: 11%;
   background: 0 0;
   padding: 0;
-  // font-size:.917em;
-  @include type-setting(-1);
-  margin: 0;
+  margin: 5px 0;
+  @include type-setting(0);
   text-align: center;
 }
 #baseStrip {
@@ -581,7 +580,7 @@ ul.no-style li {
 .itemThumbBook img {
   float: left;
   clear: left;
-  margin: 0 6px 6px 0;
+  margin: 0;
   border-right: #dbdbdb 1px solid;
   border-bottom: #dbdbdb 1px solid;
 }
@@ -1132,13 +1131,6 @@ body.hasScript #contentContainer ul.lightbox li.lastOnLine {
   #sideBar,
   #siteAlert,
   #top,
-  .socialMedia {
-    display: none !important;
-    float: none;
-    padding: 0 !important;
-    margin: 0 !important;
-    box-shadow: none !important;
-  }
   #printBanner {
     display: block;
     position: relative;

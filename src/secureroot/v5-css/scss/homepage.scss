@@ -125,3 +125,120 @@ ul.touchcarousel-container {
 	margin-top: auto;
 	align-items: flex-end;
 }
+
+
+// Bestsellers (publications)
+
+ul.itemThumbBook .header, ul.itemThumbBook .resourceTitle {
+color: $red;
+}
+
+ul.itemThumbBook .header:hover , ul.itemThumbBook .resourceTitle:hover, ul.itemThumbBook a:focus .header, ul.itemThumbBook a:focus .resourceTitle {
+color: $black !important;
+}
+
+ul.itemThumbBook .subText {
+width: 100% !important;
+}
+
+ul.itemThumbBook {
+margin: 0 !important;
+}
+
+ul.itemThumbBook a {
+float: left !important;
+width: 100%;
+}
+
+ul.itemThumbBook a span {
+text-decoration: underline;
+}
+
+ul.itemThumbBook a:hover span {
+text-decoration: none;
+}
+
+
+ul.itemThumbBook a:hover .resourcePrice {
+text-decoration: none;
+color: $hseblack;
+}
+
+ul.itemThumbBook li {
+float: left;
+width: 100%;
+}
+
+ul.itemThumbBook li p {
+margin: 0 !important;
+}
+
+ul.itemThumbBook span {
+padding-right: 0;
+}
+
+.v5-float-right {
+float: right !important
+}
+
+.hsl-links {
+margin: 0 !important;
+}
+
+ul.itemThumbBook.publications {
+flex-wrap: wrap;
+display: flex;
+justify-content: left;
+width: 100%;
+}
+
+ul.itemThumbBook.publications img {
+width: 100%;
+}
+
+ul.itemThumbBook.publications li {
+margin-left: 0;
+width: 100%;
+flex: 0 1 auto;
+flex-direction: row;
+@media only screen and (min-width: 350px) and (max-width : $small) {
+width: calc(50% - 10px);
+margin-left: 20px; 
+}
+@media only screen and (min-width : $small) {
+width: calc(25% - 15px);
+margin-left: 20px;
+}
+@media only screen and (min-width : $desktop) {
+width: 10.6382978723404%;
+margin-left: 02.1276595744681%; // 20px
+min-width: 100px;
+max-width: 100px;
+}
+}
+
+
+
+ul.itemThumbBook.publications li:nth-child(2n+1) {
+@media only screen and (min-width : 350px) and (max-width : 499px) {
+margin-left: 0 !important;
+}
+}
+
+ul.itemThumbBook.publications li:nth-child(4n+1) {
+@media only screen and (min-width : $small) and (max-width : 979px) { 
+margin-left: 0 !important;
+}
+}
+
+ul.itemThumbBook.publications li:nth-child(8n+1) {
+@media only screen and (min-width : $desktop) {
+margin-left: 0 !important; 
+}
+}
+
+
+.resourceTitle {
+padding-top: 10px;
+float: left;
+}
