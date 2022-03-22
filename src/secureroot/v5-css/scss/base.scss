@@ -35,33 +35,7 @@ button:hover {
     text-decoration: none;
 }
 
-#contentContainer ul.linkList li {
-background: none !important;
-}
 
-#contentContainer ul li {
-list-style-type: square;
-}
-
-#contentContainer ul li::marker {
-color: $red;
-}
-
-#contentContainer ul.linkList {
-margin: 0 0 10px 18px !important;
-padding-left: 0;    
-}
-
-
-
-#contentContainer .mostPopular ul.linkList {
-margin-bottom: 0 !important;
-}
-
-#contentContainer .backgroundRed .linkList li a::before {
-background-image: none;
-padding-right: 0;
-}
 
 
 // Margins - Padding - Borders
