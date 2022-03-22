@@ -4,14 +4,13 @@
 box-sizing: border-box;
 }    
 
-
-
 #contentContainer {
 width: 100%;
 margin: 0 !important;
+}
+
 .oneThird, .twoThird, .half, .twoThirdHalf, .mostPopular, .homepageBanner {
 width: 100%;
-}
 }
 
 #pageContainer {
@@ -88,6 +87,10 @@ border-bottom: 2px solid $red;
 
 .columnFull:first-of-type {
 padding-top: 0;
+}
+
+#headerContainer, #baseStrip, div.diaryMonth h2, .boxSubscribe {
+background-color: $red;
 }
 
 

@@ -35,7 +35,7 @@ float: left;
 margin-top: 10px;
 }
 
-#contentContainer #pagination ul li {
+#pagination ul li {
 list-style-image: none;
 width: 100%;
 @media only screen and (min-width : $desktop) {
@@ -43,14 +43,14 @@ width: 50%;
 }
 }
 
-#contentContainer #pagination ul, #contentContainer #pagination ul li {
+#pagination ul, #pagination ul li {
 float: left;
 background: none;
 margin: 0 !important;
 padding: 0;
 }
 
-#contentContainer #pagination ul span {
+#pagination ul span {
 float: left;
 clear: both;
 }
@@ -60,6 +60,9 @@ clear: both;
 #pagination .next-page, #pagination .previous-page {
 width: 100%;
 float: left;
+@media only screen and (min-width : $desktop) {
+width: 50%;
+}
 }
 
 

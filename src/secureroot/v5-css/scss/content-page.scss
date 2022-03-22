@@ -197,47 +197,6 @@ body.lwet #feature-home {
 margin-bottom: 20px;
 }
 
-// Gallery
-@media only screen and (min-width : 639px) {
-
-#contentContainer .oneThird.gallery {
-width: 32.26%;
-}
-
-}
-
-
-.gallery {
-background-color: $gray;
-padding-top: 0;
-margin-bottom: 20px !important;
-}
-
-.gallery:hover {
-background-color: $darkergray;
-}
-
-.gallery:hover h3, .gallery:hover p  {
-color: white;
-}
-
-.gallery h3 {
-text-align: center;
-color: $red;
-padding: 20px 10px 10px 10px;
-margin: 0;
-min-height: 66px;
-}
-
-.gallery p {
-clear: both;
-padding: 0 10px 10px 10px;
-margin: 0;
-}
-
-.gallery img {
-margin: 0;
-}
 
 // Pubns
 
