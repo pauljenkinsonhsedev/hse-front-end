@@ -35,21 +35,18 @@ width: 940px;
 }
 	
 
-#contentContainer.columnbetacontentpage.column1 {
+.columnbetacontentpage.column1 {
 width: 940px !important;
 }
 	
-#contentContainer.columnbetacontentpage.column2 {
+.columnbetacontentpage, .columnbetacontentpage.column2 {
 width: 700px !important;		
 }	
-#contentContainer.columnbetacontentpage.column3 {
+.columnbetacontentpage.column3 {
 width: 680px !important;
 margin-right: 20px !important;
 }
-	
-#contentContainer.columnbetacontentpage {
-width: 700px;
-}
+
 	
 #sideBar {
 float: left;
@@ -73,7 +70,7 @@ margin-right: 0 !important;
 	
 /* 3 Col */
 
-#contentContainer .oneThird {
+.oneThird {
 width: 300px;
 }
 	
@@ -81,31 +78,31 @@ width: 300px;
 width: 460px;
 }
 
-#contentContainer .twoThird {
+.twoThird {
 width: 620px;
 }
 	
 
 	
 
-#contentContainer .mostPopular {
+.mostPopular {
 width: 300px;
 }
 
-#contentContainer .homepageBanner {
+.homepageBanner {
 width: 620px;
 }
 
-#contentContainer .noPadding.twoThird {
+.noPadding.twoThird {
 width: 620px;	
 }
 
-#contentContainer .twoThirdHalf {
+.twoThirdHalf {
 width: 290px;
 margin-right: 20px;
 }
 
-#contentContainer .twoThirdHalf.subColumn {
+.twoThirdHalf.subColumn {
 width: 290px;
 padding: 0;
 }
@@ -123,23 +120,23 @@ margin: 0 20px 0 0;
 	
 /* 3 col (No box paddding) */
 
-#contentContainer .oneThird.noBoxPadding {
+.oneThird.noBoxPadding {
 width: 300px;
 margin-right: 20px;
 }
 
-#contentContainer .twoThird.noBoxPadding  {
+.twoThird.noBoxPadding  {
 width: 620px;
 margin-right: 20px;
 }
 
 
 	
-#contentContainer .noBoxPadding .twoThirdHalf.subColumn {
+.noBoxPadding .twoThirdHalf.subColumn {
 width: 300px;
 }
 
-#contentContainer .noBoxPadding.twoThirdHalf {
+.noBoxPadding.twoThirdHalf {
 width: 300px;
 }
 	
