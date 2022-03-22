@@ -1,26 +1,5 @@
 /* Components */
 
-
-
-
-.publications-products a {
-background-color: #2846A5;
-}
-
-.training a {
-background-color: #4F2170;
-}
-
-.testing a {
-background-color: #CE421B;
-}
-
-.research a {
-background-color: #287826;
-}
-
-
-
 // Lightbox
 
 .lightbox {
@@ -130,3 +109,84 @@ margin-right: 0;
 background: $red;
 }
 
+div.diaryMonth {
+	margin-bottom: 30px;
+}
+
+div.diaryMonth h2 {
+	color:#4E4E4E;
+}
+
+div.diaryMonth h2 {
+	color: #ffffff;
+}
+div.diaryMonth li h3 {
+	color:#981e32;
+}
+
+div#contentContainer div.diaryMonth li.odd {
+	background-color:#f2f2f2;
+	border: 0px;
+}
+
+div#contentContainer div.diaryMonth li.even {
+	background-color:#e4e4e4;
+	border: 0px;
+
+}
+
+
+div.diaryMonth {
+	margin-bottom: 30px;
+  }
+  div.diaryMonth h2 {
+	text-align: center;
+	font-weight: 700;
+  }
+  div.diaryMonth h2 {
+	color: #fff;
+	padding: 8px;
+	font-weight: 400;
+	clear: none;
+  }
+  div.diaryMonth li h3 {
+	font-size: 1em;
+	color: #981e32;
+	margin: 0;
+  }
+  div.diaryMonth ul {
+	margin: 0;
+  }
+  div.diaryMonth li p {
+	margin: 0;
+  }
+  div.diaryMonth li {
+	border-bottom: 1px solid #c2c2c2;
+	padding: 5px 10px;
+	background: 0 0;
+	margin: 0;
+  }
+  div.diaryMonth li.odd {
+	background-color: #f2f2f2;
+	border: 0;
+  }
+  div.diaryMonth li.even {
+	background-color: #e4e4e4;
+	border: 0;
+  }
+  #diaryContainer {
+	position: relative;
+	overflow: hidden;
+  }
+
+.buy-button{
+	background-color: #981e32;
+	color: #fff !important;
+	padding: 5px;
+}
+
+.buy-button a:hover, .buy-button a:visited {
+	background-color: #981e32;
+	text-decoration: underline;
+	padding: 5px;
+}

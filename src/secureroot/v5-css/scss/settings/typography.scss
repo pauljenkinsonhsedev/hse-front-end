@@ -131,3 +131,23 @@ abbr[title] {
     text-decoration: underline dotted;
 }
 
+#navSub li.active {
+	border-left:#B30030 solid 3px;
+}
+
+p,
+li,
+h4 {
+	color:#111;
+}
+
+h1 {
+	color: $red;
+}
+
+h2 a:hover,
+h2 a:active,
+h2 a:focus {
+	color:#555;
+}
+

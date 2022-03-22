@@ -243,3 +243,27 @@ float: left;
 .subText {
 color: #111;
 }
+
+.itemThumbBook li a:hover span.subText {
+color: $hseblack !important;
+}
+
+.itemThumbBook li a:hover span {
+color:#981e32;
+}
+
+.publications-products a {
+background-color: #2846A5;
+}
+
+.training a {
+background-color: #4F2170;
+}
+
+.testing a {
+background-color: #CE421B;
+}
+
+.research a {
+background-color: #287826;
+}
