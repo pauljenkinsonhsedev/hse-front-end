@@ -82,7 +82,7 @@
             "output": "./devguide/"
         },
         "imageAssets": {
-            "all": "./src/devguide/images/**/*.+(png|jpeg|gif|svg)",
+            "all": "./src/devguide/images/**/*.+(png|jpg|jpeg|gif|svg)",
             "output": "./devguide/images/"
         },
         "images": {
