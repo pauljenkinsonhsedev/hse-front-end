@@ -159,29 +159,19 @@ display: none;
         <p>Simply add this html to your page and create a <strong>.json</strong> file in the root folder <strong>'hse.gov.uk/print-guides/YOUR_JSON_FILE.json'</sttong>.</p>
         <h3>Example HTML</h3>
 
-<pre class="language-markup"><code>&lt;div class=&quot;box&quot; id=&quot;printActions&quot;&gt;
-  &lt;h2 class=&quot;heading-m&quot;&gt;Print entire guide&lt;/h2&gt;
-  &lt;p&gt;You can download the entire guide as PDF or print out.&lt;/p&gt;
-  &lt;button class=&quot;btn btn-print btn-primary print-guide&quot; data-print-guide=&quot;simple-health-safety-risk.json&quot;&gt;Print this guide&lt;/button&gt;
-  &lt;button class=&quot;btn btn-download btn-primary download-guide&quot; data-print-guide=&quot;simple-health-safety-risk.json&quot;&gt;Download this guide&lt;/button&gt;
-&lt;/div&gt;</code></pre>
+<pre class="language-markup"><code>&lt;button class=&quot;btn btn-print btn-primary print-guide&quot; data-print-guide=&quot;simple-health-safety-risk.json&quot;&gt;Print this guide&lt;/button&gt;
+&lt;button class=&quot;btn btn-download btn-primary download-guide&quot; data-print-guide=&quot;simple-health-safety-risk.json&quot;&gt;Download this guide&lt;/button&gt;
+</code></pre>
         
         <h3>Example JSON</h3>
         <p><code>https://www.hse.gov.uk/print-guides/simple-health-safety-risk.json</code></p>
 
           <pre class="language-js"><code>{
-  "pages": [
-    "https://www.hse.gov.uk/simple-health-safety/risk/index.htm",
-    "https://www.hse.gov.uk/simple-health-safety/risk/steps-needed-to-manage-risk.htm",
-    "https://www.hse.gov.uk/simple-health-safety/risk/risk-assessment-template-and-examples.htm",
-    "https://www.hse.gov.uk/simple-health-safety/risk/more-detail-on-managing-risk.htm"
-  ],
-  "metadata": {
-    "title": "Managing risks and risk assessment at work",
-    "keywords": "risk, assessment, simple, record, potential, harm, measures, details, companies, employer, employee, health, safety",
-    "description": "As an employer, you must make a 'suitable and sufficient assessment' of risks to your employees' health and safety, and risks to others because of your work."
-  }
-}</code></pre>
+            "heading": "Legal information",
+            "content": [
+                "This guidance is issued by the Health and Safety Executive. Following the guidance is not compulsory, unless specifically stated, and you are free to take other action. But if you do follow the guidance you will normally be doing enough to comply with the law. Health and safety inspectors seek to secure compliance with the law and may refer to this guidance."
+            ]
+        }</code></pre>
        
         <!-- /#secondTab -->
 
