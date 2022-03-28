@@ -2,7 +2,7 @@
 
 ## Release notes
 
-5.6.1
+5.6.4
 - Change releases to semantic versioning and synchronise with DW template version
 - Document landing page standards updated in design system
 - Gitflow documentation added to design system 
@@ -15,10 +15,12 @@ You must install globally
 - [NodeJs](https://nodejs.org/en/) JavaScript framework
 - [Yarn](https://yarnpkg.com/getting-started/install) package manager
 
+### Node version
+Last run with NodeJs v14.18.1 and yarn v1.22.17
 
 ### Installation
 - Install NodeJs and Yarn as above
-- Run `yarn install`
+- Run `yarn install` if using yarn or `npm install`
 
 ## Running tasks
 There are only three tasks you need to know:
@@ -33,10 +35,12 @@ There are two main areas for source files:
 ```
 src/
 └──secureroot/
-└──workspace/
+└──devguide/
 ```
 ### Secure Root
 For all the HSE website assets and page testing.
+
+For the task to run we must first add some pages to the html folder. Make sure this includes a top level index page. 
 
 Page tests can be hosted in the html dir:
 ```
@@ -44,8 +48,12 @@ src/
 └──secureroot/
     └──html/
 ```
-### Digital Workspace
-The HSE Digital Workspace is a resource for unit testing, web based tools and to showcase components.
+### Devguide
+The HSE development guide is a resource for unit testing, web based tools and to showcase components.
+```
+src/
+└──devguide/
+```
 
 Additionally there is a 'shared' directory which currently is being used for phasing in new javascript.
 ```
@@ -63,22 +71,8 @@ src/
     └──v5.css
 ```
 
-### HSE Digital workspace
-Follows the atomic design pattern
-```
-src/
-workspace/
-    └──styles/
-    └───────atoms/
-    └───────foundations/
-    └───────molecules/
-    └───────organisms/
-    └───────settings/
-    └──app.css
-```
-
 ## Javascript es6
-All new javascript should be written in the `src/shared/js/combined` directory and is written as es6 standard.
+Javascript is written as standard in es6 and lives in the `src/shared/js/combined` directory.
 
 ```
 src/
@@ -91,7 +85,9 @@ src/
     └──v5-main.js
 
 ```
-### Loader utility
+## Javascript utilities
+It is good practice to reuse code as much as possible. For some of the more common features we can place them in the utilities folder for example loading assets such as third party scripts.
+### Asset loader
 Injects script and link tags into the head or body of the DOM.
 
 ```
@@ -101,9 +97,15 @@ src/
     └───────utils/
     └───────────────asset-loader.js
 ```
-#### Usage
+#### Example of how to use this in your component
 
 ```
+import load from '../utils/asset-loader';
+
+...
+
+export default YOURCOMPONENT() {
+
     Promise.all([
         load.js('./js/vendor/your-fave-library.js'),
         load.css('./css/vendor/your-fave-library.css')
@@ -114,4 +116,6 @@ src/
     .catch((err) => {
         console.error(`something went wrong ${err}`)
     });
+
+    ...
 ```
