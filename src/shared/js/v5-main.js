@@ -25,7 +25,7 @@ import { subnavMenu } from './combined/subnav-menu.js';
 import { subNavPosition } from './combined/subnav-position.js';
 import { accordion } from './combined/accordion.js';
 import { printGuide } from './combined/print-guide/print-guide.js';
-
+import { CSVTable } from './combined/csv-table.js';
 
 // Window load
 window.addEventListener('DOMContentLoaded', () => {
@@ -131,5 +131,6 @@ window.addEventListener('DOMContentLoaded', () => {
 
   printGuide();
 
+  CSVTable();
 
 }); // end window load

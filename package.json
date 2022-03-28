@@ -69,6 +69,7 @@
     "js-cookie": "^2.2.1",
     "moment": "2.27.0",
     "os": "^0.1.1",
+    "papaparse": "^5.3.2",
     "pdfmake": "^0.2.4",
     "picturefill": "^3.0.3",
     "prismjs": "^1.24.1",
