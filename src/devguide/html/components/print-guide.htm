@@ -101,7 +101,7 @@ display: none;
 <ul>
     <li class="first"><a href="index.htm">Components</a></li>
 	<li><a href="accordion.htm">Accordion</a></li>
-	<li><a href="boxes.htm">Box</a></li>
+	<li><a href="Print guide.htm">Box</a></li>
 	<li><a href="#">Charts (JS)</a>
 		<ul>
 			<li><a href="charts/index.htm">Overview</a></li>
@@ -128,7 +128,7 @@ display: none;
 			<li><a href="forms/inputs.htm">inputs</a></li>
 			<li><a href="forms/input-sizes.htm">Input sizes</a></li>
 			<li><a href="forms/form-validation.htm">Form validation</a></li>
-			<li><a href="forms/checkboxes.htm">Checkboxes</a></li>
+			<li><a href="forms/checkPrint guide.htm">CheckPrint guide</a></li>
 			<li><a href="forms/dates.htm">Dates</a></li>
 			<li><a href="forms/radios.htm">Radios</a></li>
 			<li><a href="forms/switch.htm">Switch</a></li>
@@ -139,7 +139,6 @@ display: none;
 	</li>
 	<li><a href="images.htm">Images</a></li>
 	<li><a href="lightbox.htm">Lightbox (JS)</a></li>
-	<li><a href="print-guide.htm">Print guide</a></li>
     <li><a href="tables.htm">Table</a></li>
 	<li><a href="tabs.htm">Tabs (JS)</a></li>
 	<li><a href="video.htm">Video (Embed)</a></li>
@@ -160,13 +159,31 @@ display: none;
         <p>Simply add this html to your page and create a <strong>.json</strong> file in the root folder <strong>'hse.gov.uk/print-guides/YOUR_JSON_FILE.json'</strong>.</p>
         <h3>Example HTML</h3>
 
+
+<button class="btn btn-print btn-primary print-guide" data-print-guide="simple-health-safety-risk.json">Print this guide</button>
+  <button class="btn btn-download btn-primary download-guide" data-print-guide="simple-health-safety-risk.json">Download this guide</button>
 <pre class="language-markup"><code>&lt;button class=&quot;btn btn-print btn-primary print-guide&quot; data-print-guide=&quot;simple-health-safety-risk.json&quot;&gt;Print this guide&lt;/button&gt;
 &lt;button class=&quot;btn btn-download btn-primary download-guide&quot; data-print-guide=&quot;simple-health-safety-risk.json&quot;&gt;Download this guide&lt;/button&gt;
 </code></pre>
-
         
         <h3>Example JSON</h3>
         <p><code>https://www.hse.gov.uk/print-guides/simple-health-safety-risk.json</code></p>
+        <pre class="language-js"><code>{
+          "pages": [
+            "./index.htm",
+            "./steps-needed-to-manage-risk.htm",
+            "./risk-assessment-template-and-examples.htm",
+            "./more-detail-on-managing-risk.htm"
+          ],
+          "metadata": {
+            "title": "Managing risks and risk assessment at work",
+            "keywords": "risk, assessment, simple, record, potential, harm, measures, details, companies, employer, employee, health, safety",
+            "description": "As an employer, you must make a 'suitable and sufficient assessment' of risks to your employees' health and safety, and risks to others because of your work."
+          }
+      }</code></pre>
+        <h2>Legal information</h2>
+        <p>HSE&apos;s Legal information is automatically appended to the end of the document produced. Legal information can be updating using the <strong>legal-information.json</strong> file. </p>
+        <p><code>https://www.hse.gov.uk/print-guides/legal-information.json</code></p>
 
           <pre class="language-js"><code>{
             "heading": "Legal information",
@@ -203,7 +220,7 @@ display: none;
   </footer>
 </nav>
 <section id="lastUpdated" aria-label="Last updated">
-<!-- InstanceBeginEditable name="updated" -->Updated:<!-- #BeginDate format:IS1 -->2022-03-25<!-- #EndDate --><!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="updated" -->Updated:<!-- #BeginDate format:IS1 -->2021-11-19<!-- #EndDate --><!-- InstanceEndEditable -->
 </section>
 <script src="../assets/v5-js/v5-main.min.js"></script>
 
