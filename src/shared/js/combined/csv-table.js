@@ -14,7 +14,7 @@ function loadPapaparseFn() {
 export function CSVTable() {
     const tableContainer = document.querySelectorAll('.csv-table');
 
-    if (!tableContainer) {
+    if (!tableContainer.length > 0) {
         return;
     }
 
