@@ -2,7 +2,7 @@
 
 ## Release notes
 
-5.6.8
+5.6.9
 - Change releases to semantic versioning and synchronise with DW template version
 - Document landing page standards updated in design system
 - Gitflow documentation added to design system 
