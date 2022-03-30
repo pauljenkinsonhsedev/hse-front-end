@@ -52,11 +52,14 @@ function copyDevguideAssets() {
   .pipe(connect.reload())
   .pipe(dest(config.devguide.imageAssets.output));
 
-  const misc = src([config.devguide.copyjs.all])
+  const js = src([config.devguide.copyjs.all])
   .pipe(dest(config.devguide.copyjs.output));
 
+  const misc = src([config.devguide.copyAll.all])
+  .pipe(dest(config.devguide.copyAll.output));
 
-  return merge(html, imageAssets, tidy, moment, misc, ariaAccordion, papaparse);
+
+  return merge(html, imageAssets, tidy, moment, js, misc, ariaAccordion, papaparse);
 };
 
 task('devguideHighChats', copyHighchartsjs);

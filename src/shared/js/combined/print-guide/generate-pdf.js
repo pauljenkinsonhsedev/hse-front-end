@@ -1,13 +1,20 @@
 
 import pdfMake from 'pdfmake';
-import pdfFonts from 'pdfmake/build/vfs_fonts';
 import htmlToPdfMake from 'html-to-pdfmake';
 
 import { styles, defaultStyles } from './pdf-styles';
 import { logo } from './logo';
 import { palette } from '../utils/palette';
 
-pdfMake.vfs = pdfFonts.pdfMake.vfs;
+
+pdfMake.fonts = {
+  Arimo: {
+    normal: 'http://localhost:8080/assets/fonts/Arimo/Arimo-Regular.ttf',
+    bold: 'http://localhost:8080/assets/fonts/Arimo/Arimo-Bold.ttf',
+    italics: 'http://localhost:8080/assets/fonts/Arimo/Arimo-Italic.ttf',
+    bolditalics: 'http://localhost:8080/assets/fonts/Arimo/Arimo-MediumItalic.ttf'
+  }
+};
 
 export function generatePDF(data, metadata, action) {
   const today = new Date();
@@ -55,6 +62,9 @@ export function generatePDF(data, metadata, action) {
       ],
     },
     content: [html],
+    defaultStyle: {
+      font: 'Arimo'
+    },
     pageBreakBefore: function (currentNode) {
       return (
         currentNode.style &&

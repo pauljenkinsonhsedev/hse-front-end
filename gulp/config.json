@@ -108,6 +108,10 @@
         "copyjs": {
             "all": "./src/secureroot/copy/assets/v5-js/**/*",
             "output": "./devguide/assets/v5-js"
+        },
+        "copyAll": {
+            "all": "./src/secureroot/copy/assets/**/*",
+            "output": "./devguide/assets"
         }
     }
 }
