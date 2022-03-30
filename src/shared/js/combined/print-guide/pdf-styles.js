@@ -1,16 +1,6 @@
 import { palette } from '../utils/palette.js';
 
-var fonts = {
-  Helvetica: {
-    normal: 'Helvetica',
-    bold: 'Helvetica-Bold',
-    italics: 'Helvetica-Oblique',
-    bolditalics: 'Helvetica-BoldOblique',
-  }
-};
-
 export const defaultStyles = {
-  font: 'Helvetica',
   a: {
     color: palette.red,
     fontSize: 12,

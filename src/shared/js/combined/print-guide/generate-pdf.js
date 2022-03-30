@@ -9,10 +9,10 @@ import { palette } from '../utils/palette';
 
 pdfMake.fonts = {
   Arimo: {
-    normal: 'http://localhost:8080/assets/fonts/Arimo/Arimo-Regular.ttf',
-    bold: 'http://localhost:8080/assets/fonts/Arimo/Arimo-Bold.ttf',
-    italics: 'http://localhost:8080/assets/fonts/Arimo/Arimo-Italic.ttf',
-    bolditalics: 'http://localhost:8080/assets/fonts/Arimo/Arimo-MediumItalic.ttf'
+    normal: 'https://www.hse.gov.uk/assets/fonts/Arimo/Arimo-Regular.ttf',
+    bold: 'https://www.hse.gov.uk/assets/fonts/Arimo/Arimo-Bold.ttf',
+    italics: 'https://www.hse.gov.uk/assets/fonts/Arimo/Arimo-Italic.ttf',
+    bolditalics: 'https://www.hse.gov.uk/assets/fonts/Arimo/Arimo-MediumItalic.ttf'
   }
 };
 
