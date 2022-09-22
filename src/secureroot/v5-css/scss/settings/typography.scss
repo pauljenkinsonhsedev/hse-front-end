@@ -8,7 +8,7 @@ $type-settings: (
     line-height: 1.5
   ),
   1: (
-    font-size: 2.45em,
+    font-size: 2.45rem,
     line-height: 1
   ),
   2: (
@@ -43,6 +43,9 @@ body {
 .heading-xl,
 h1 {
     @include type-setting(1);
+    @media only screen and (max-width : $desktop) {
+    font-size: 2rem;
+    }
     font-weight: bold;
     margin-bottom: $dp*3;
     color: $red;

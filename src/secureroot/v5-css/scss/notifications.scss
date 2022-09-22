@@ -45,6 +45,9 @@ cursor: pointer;
 .cookies-message__heading {
     color: $red;
     @include type-setting(1);
+    @media only screen and (max-width : $desktop) {
+    font-size: 2rem;
+    }
     line-height: 1.5;
     margin-bottom: 0;
 }
