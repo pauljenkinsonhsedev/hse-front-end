@@ -6,22 +6,19 @@
     display: inline-block;
     background-color: #eee;
     background-color: #ccc;
-        color: $black;
-
+    color: $black;
     #pageContainer & {
         margin-bottom: $dp*2;
     }
-
+    @media only screen and (min-width : $desktop) {
+    white-space: nowrap;
+    }
     text-align: center;
-
     text-decoration: none;
     font-weight: 700;
-    white-space: nowrap;
     vertical-align: top;
-
     user-select: none;
     padding: ($dp) ($dp * 3);
-
     border-width: $border-width;
     border-style: solid;
     border-color: transparent;
