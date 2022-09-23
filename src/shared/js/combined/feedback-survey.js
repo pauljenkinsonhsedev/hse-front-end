@@ -102,11 +102,7 @@ export function feedbackSurvey() {
       form.method = 'POST';
       form.autocomplete = 'on';
 
-      const formFields = `<fieldset class="fieldset" id="form-settings">
-            <input type="hidden" name="mailto" value="hse.online@hse.gov.uk"/>
-            <input type="hidden" name="mailfrom" value="hse.online@hsemail.me"/>
-        </fieldset>
-        <fieldset class="fieldset">
+      const formFields = `<fieldset class="fieldset">
             <legend class="fieldset__legend">
                 <h2 class="fieldset__heading">Help us improve HSE.GOV.UK</h2>
             </legend>
