@@ -194,14 +194,20 @@ margin: 0;
 content: " ";
 background-image: url('../../assets/v5-images/icons/svg/solid/arrow-right-white.svg');
 background-repeat: no-repeat;
-float: right;
-top: 20px;
--webkit-transform: translateY(-100%);
+/* position: relative; */
+/* float: right; */
+/* top: 20px; */
+/* -webkit-transform: translateY(-100%); */
 -ms-transform: translateY(-100%);
-transform: translateY(-100%);
+/* transform: translateY(-100%); */
 width: 16px;
 height: 16px;
 margin: 0;
+position: absolute;
+top: 50%;
+right: -2px;
+/* left: 50%; */
+transform: translate(-50%,-50%);
 }
 
 .boxList ul li:hover h3 {
@@ -209,18 +215,23 @@ color: white !important;
 }
 
 .boxList ul li a::after {
-content: " ";
-background-image: url('../../assets/v5-images/icons/svg/solid/arrow-right-red.svg');
-background-repeat: no-repeat;
-position: relative;
-float: right;
-top: 20px;
--webkit-transform: translateY(-100%);
--ms-transform: translateY(-100%);
-transform: translateY(-100%);
-width: 16px;
-height: 16px;
-margin: 0;
+    content: " ";
+    background-image: url(../../assets/v5-images/icons/svg/solid/arrow-right-red.svg);
+    background-repeat: no-repeat;
+    /* position: relative; */
+    /* float: right; */
+    /* top: 20px; */
+    /* -webkit-transform: translateY(-100%); */
+    -ms-transform: translateY(-100%);
+    /* transform: translateY(-100%); */
+    width: 16px;
+    height: 16px;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    right: -2px;
+    /* left: 50%; */
+    transform: translate(-50%,-50%);
 }
 
 #backnav::before{
