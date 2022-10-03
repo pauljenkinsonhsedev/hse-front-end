@@ -30,10 +30,9 @@ export function subnavMenu(container) {
   // create back navigation
   function createBackLinks(elem) {
     const text = elem.parentElement.parentElement.firstElementChild.textContent;
-    const regex1 = /Overview/gi;
-    const regex2 = /Overview -/gi;
-    const regex3 = /- Overview/gi;
-    const headerText = text.replaceAll(regex1, '').replaceAll(regex2, '').replaceAll(regex3, '');
+    const regex1 = /Overview -/gi;
+    const regex2 = /- Overview/gi;
+    const headerText = text.replaceAll(regex1, '').replaceAll(regex2, '');
     const headerItem = document.createElement('li');
     const headerAction = document.createElement('a');
     headerAction.href = '#';
