@@ -246,3 +246,46 @@ li.first a.active-page {
 .subnav-container .text-width {
   max-width: 90%;
 }
+
+
+.btn-mobile {
+@media only screen and (min-width : $desktop) {
+display: none !important;
+}
+}
+
+@media only screen and (max-width : $desktop) {
+
+#navSecondary {
+margin-bottom: 0;
+}
+
+// Expandable
+.collapse {
+  display: block;
+  max-height: 0px;
+  overflow: hidden;
+  transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
+}
+
+.collapse.show {
+  max-height: 99em;
+  transition: max-height 0.5s ease-in-out;
+}
+
+.btn-mobile {
+width: 100%;
+text-align: left !important;
+margin-bottom: 0 !important;
+background: $black !important; 
+color: white !important;
+}
+
+.btn-mobile svg {
+float: right;
+outline: none;
+cursor: pointer;
+pointer-events: none;
+}
+
+}
