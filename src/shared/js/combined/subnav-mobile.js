@@ -65,18 +65,28 @@ if (mobileButtonState === 'false') {
 function toggleIsOpen() {
 	const currentState = mobileButton.getAttribute('aria-pressed');
 	const buttonText = document.querySelector('.menu-mobile-text');
-	mobileButton.setAttribute('aria-pressed', currentState === 'false')
+	mobileButton.setAttribute('aria-pressed', currentState === 'false');
+	const svgPath = document.querySelector('#menu-mobile-path');
 
 	if (currentState === 'false') {
 		buttonText.innerHTML = 'Close menu';
 		mobileButton.setAttribute('aria-expanded', true);
+		// SVG attributes
+		svgPath.setAttribute('d', 'M18 7L7 18M7 7L18 18'); 
+		svgPath.setAttribute('stroke', 'white'); 
+        svgPath.setAttribute('stroke-width', '1.2'); 
 		listItem.forEach((item) => {
 			item.querySelector('a').tabIndex = 0;
+			
 		});
 
 	} else {
 		buttonText.innerHTML = 'Open menu';
 		mobileButton.setAttribute('aria-expanded', false);
+		// SVG attributes
+		svgPath.setAttribute('d', 'M6 8.1H19V6.9H6V8.1ZM6 18.1H19V16.9H6V18.1ZM6 13.1H19V11.9H6V13.1Z');
+		svgPath.removeAttribute('stroke', 'white'); 
+        svgPath.removeAttribute('stroke-width', '1.2'); 
         listItem.forEach((item) => {
 			item.querySelector('a').tabIndex = -1;
 		});

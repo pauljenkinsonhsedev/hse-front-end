@@ -101,7 +101,10 @@
 }
 .subnav-container a:not(.back) {
   color: #333;
-  padding: 14px !important;
+  padding: 14px;
+  @media only screen and (min-width : $desktop) {
+  padding: 10px;
+  }
 }
 .subnav-container a:not(.back):hover {
   background-color: $darkgray;
@@ -226,7 +229,10 @@ li.first a.active-page {
 }
 
 .subnav-container li a.back {
-  padding: 1em 0;
+  padding: 10px 0;
+  @media only screen and (max-width : $desktop) {
+  padding: 14px 0;  
+  }
 }
 
 .subnav-container li.first a:focus {
