@@ -47,8 +47,12 @@
   background: $darkgray;
 }
 .subnav-container a:focus {
-  background: $focus;
+  background: $focus !important;
 }
+.subnav-container a:focus-visible {
+outline: none;
+}
+
 .subnav-container ul {
   width: 100%;
 }
@@ -283,8 +287,46 @@ margin-bottom: 0;
 width: 100%;
 text-align: left !important;
 margin-bottom: 0 !important;
-background: $black !important; 
+background: $red !important; 
 color: white !important;
+}
+
+.btn-mobile:focus {
+background: $hseblack !important;
+}
+
+li.first a.active-page, .subnav-container li a.back {
+background: $gray;
+color: $hseblack;
+}
+
+.subnav-container .back::before {
+  content: ' ';
+  background: url('../../assets/v5-images/icons/svg/solid/arrow-left-red.svg');
+  background-repeat: no-repeat;
+  display: inline-block;
+  height: 16px;
+  margin: 0;
+  transform: translateX(
+    10px
+  ) !important; // Important to reverse slinky transform CSS
+  border-right: 10px solid transparent;
+}
+
+
+li.first a.active-page:hover {
+background: $darkgray;
+color: $hseblack;
+}
+
+.subnav-container li.first a {
+background: $gray;
+color: $hseblack;
+}
+
+.subnav-container li.first a:hover {
+background: #c2c2c2;
+color: $hseblack;
 }
 
 .btn-mobile svg {
