@@ -125,9 +125,9 @@ window.addEventListener('DOMContentLoaded', () => {
 
   if (secondaryMenuSelector) {
     subnavMenu(secondaryMenuSelector);
+    subNavMobile();
+    subNavPosition();
   }
-  subNavPosition();
-  subNavMobile();
 
 
   feedbackSurvey();
