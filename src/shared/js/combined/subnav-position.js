@@ -16,7 +16,7 @@ export function subNavPosition() {
         if (mediaquery !== 'small') {
             page.insertBefore(subNav, content);
         } else {
-            page.insertBefore(subNav, content.nextSibling);
+           // page.insertBefore(subNav, content.nextSibling);
         }
     }
     posSwitch();

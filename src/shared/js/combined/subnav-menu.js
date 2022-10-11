@@ -30,10 +30,9 @@ export function subnavMenu(container) {
   // create back navigation
   function createBackLinks(elem) {
     const text = elem.parentElement.parentElement.firstElementChild.textContent;
-    const regex1 = /Overview/gi;
-    const regex2 = /Overview -/gi;
-    const regex3 = /- Overview/gi;
-    const headerText = text.replaceAll(regex1, '').replaceAll(regex2, '').replaceAll(regex3, '');
+    const regex1 = /Overview -/gi;
+    const regex2 = /- Overview/gi;
+    const headerText = text.replaceAll(regex1, '').replaceAll(regex2, '');
     const headerItem = document.createElement('li');
     const headerAction = document.createElement('a');
     headerAction.href = '#';
@@ -92,6 +91,11 @@ export function subnavMenu(container) {
     }
   });
 
+
+
+
+
+
   // set tab indexes
   function setTabIndexes(clickedElem, direction) {
     let active;
@@ -132,7 +136,7 @@ export function subnavMenu(container) {
     });
   }
 
-  // setTabIndexes();
+  setTabIndexes();
 
   // Add click event for back
   const back = document.querySelectorAll('.back');
@@ -171,6 +175,31 @@ export function subnavMenu(container) {
       }  
     })
   }
+
+    // Fix for top level ( if draw active data depth to target only top)
+
+
+    const topul = container.querySelector('.subnav-wrapper');
+    const activePageNew = container.querySelector('.active-page');
+    const parentHasClass = activePageNew.parentElement.parentElement.classList.contains('subnav-wrapper');
+    
+    console.log(activePageNew);
+    console.log(parentHasClass);
+    console.log(topul);
+
+    if (parentHasClass === true) {
+  
+    const listItemsActive = topul.querySelectorAll('li');
+  
+    console.log(listItemsActive);
+  
+    listItemsActive.forEach((item) => {
+      item.querySelector('a').tabIndex = 0;
+    });
+
+  }
+
+    /// End fix
 
   // Add click event for next
   const next = document.querySelectorAll('.next');

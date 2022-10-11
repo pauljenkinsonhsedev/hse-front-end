@@ -47,8 +47,12 @@
   background: $darkgray;
 }
 .subnav-container a:focus {
-  background: $focus;
+  background: $focus !important;
 }
+.subnav-container a:focus-visible {
+outline: none;
+}
+
 .subnav-container ul {
   width: 100%;
 }
@@ -101,7 +105,10 @@
 }
 .subnav-container a:not(.back) {
   color: #333;
-  padding: 14px !important;
+  padding: 14px;
+  @media only screen and (min-width : $desktop) {
+  padding: 10px;
+  }
 }
 .subnav-container a:not(.back):hover {
   background-color: $darkgray;
@@ -226,7 +233,10 @@ li.first a.active-page {
 }
 
 .subnav-container li a.back {
-  padding: 1em 0;
+  padding: 10px 0;
+  @media only screen and (max-width : $desktop) {
+  padding: 14px 0;  
+  }
 }
 
 .subnav-container li.first a:focus {
@@ -245,4 +255,85 @@ li.first a.active-page {
 
 .subnav-container .text-width {
   max-width: 90%;
+}
+
+
+.btn-mobile {
+@media only screen and (min-width : $desktop) {
+display: none !important;
+}
+}
+
+@media only screen and (max-width : $desktop) {
+
+#navSecondary {
+margin-bottom: 0;
+}
+
+// Expandable
+.collapse {
+  display: block;
+  max-height: 0px;
+  overflow: hidden;
+  transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
+}
+
+.collapse.show {
+  max-height: 99em;
+  transition: max-height 0.5s ease-in-out;
+}
+
+.btn-mobile {
+width: 100%;
+text-align: left !important;
+margin-bottom: 0 !important;
+background: $red !important; 
+color: white !important;
+}
+
+.btn-mobile:focus {
+background: $hseblack !important;
+}
+
+li.first a.active-page, .subnav-container li a.back {
+background: $gray;
+color: $hseblack;
+}
+
+.subnav-container .back::before {
+  content: ' ';
+  background: url('../../assets/v5-images/icons/svg/solid/arrow-left-red.svg');
+  background-repeat: no-repeat;
+  display: inline-block;
+  height: 16px;
+  margin: 0;
+  transform: translateX(
+    10px
+  ) !important; // Important to reverse slinky transform CSS
+  border-right: 10px solid transparent;
+}
+
+
+li.first a.active-page:hover {
+background: $darkgray;
+color: $hseblack;
+}
+
+.subnav-container li.first a {
+background: $gray;
+color: $hseblack;
+}
+
+.subnav-container li.first a:hover {
+background: #c2c2c2;
+color: $hseblack;
+}
+
+.btn-mobile svg {
+float: right;
+outline: none;
+cursor: pointer;
+pointer-events: none;
+}
+
 }
