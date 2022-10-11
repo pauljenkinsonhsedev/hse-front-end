@@ -7,6 +7,8 @@ const papaparseAssets = ['./node_modules/papaparse/papaparse.min.js'];
 
 const picturefillAssets = ['./node_modules/picturefill/dist/picturefill.min.js'];
 
+const bowserAssets = ['./node_modules/bowser/es5.js'];
+
 const highchartsAssets = [
   "./node_modules/highcharts/highcharts.js",
   "./node_modules/highcharts/highcharts.src.js",
@@ -27,6 +29,11 @@ const highchartsAssets = [
   "./node_modules/highcharts/highcharts-more.src.js",
   "./node_modules/highcharts/highcharts-more.js.map"
 ];
+
+function bowser() {
+  return src(bowserAssets)
+    .pipe(dest(`${config.secureroot.assetPath}/v5-js/vendor/bowser`))
+}
 
 function picturefill() {
   return src(picturefillAssets)
