@@ -140,10 +140,6 @@ export function feedbackSurvey() {
                 <label class="label" for="what-went-wrong?">What went wrong?</label>
                 <input required class="input input-text input-width-full" id="what-went-wrong?" name="what-went-wrong?" type="text">
             </div>
-            <div class="form-group">
-                <label class="label" for="what-went-wrong?">What went wrong?</label>
-                <input required class="input input-text input-width-full" id="what-went-wrong?" name="what-went-wrong?" type="text">
-            </div>
         </fieldset>
         <div class="form-group js-hide" id="user-url"></div>
         <fieldset>

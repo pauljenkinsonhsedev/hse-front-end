@@ -85,5 +85,5 @@ function templates() {
   .pipe(dest(config.secureroot.copy.templates.output));
 }
 
-const toReturn = series(misc, html, vendorCSS, vendorJS, templates, moment, highCharts, picturefill, ariaAccordion, papaparse);
+const toReturn = series(misc, html, vendorCSS, vendorJS, templates, moment, highCharts, picturefill, ariaAccordion, papaparse, bowser);
 task('hseCopy', toReturn)
