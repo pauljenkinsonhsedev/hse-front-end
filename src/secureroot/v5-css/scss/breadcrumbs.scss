@@ -8,6 +8,9 @@ width:100%;
 .breadCrumbContainer {
 width: 90%;
 padding: 0 5%;
+@media only screen and (min-width: $desktop) {
+    padding: 10px 0 0 0;
+}
 padding-top: 10px;
 }
 
@@ -26,7 +29,9 @@ background-image: url('../../assets/v5-images/icons/svg/solid/chevron-right-gray
 background-repeat: no-repeat;
 background-position: bottom;
 float: left;
-top: 2px;
+top: 4px;
+// padding: 0 4px;
+padding-right: 4px;
 position: relative;
 width: 17px;
 height: 17px;
