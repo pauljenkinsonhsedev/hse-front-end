@@ -119,14 +119,18 @@ window.addEventListener('DOMContentLoaded', () => {
 
   lightbox();
 
-  
 
   const secondaryMenuSelector = document.getElementById('menu');
 
   if (secondaryMenuSelector) {
     subnavMenu(secondaryMenuSelector);
-    subNavMobile();
     subNavPosition();
+  }
+
+  const navSecondaryButton = document.querySelector('#navSecondary-button');
+
+  if (navSecondaryButton) {
+    subNavMobile();
   }
 
 
