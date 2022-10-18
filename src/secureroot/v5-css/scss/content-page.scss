@@ -33,6 +33,11 @@ p.backto a {
 color: white;
 }
 
+p.backto a:focus {
+color: $black;
+outline: none;
+}
+
 @media only screen and (min-width : $desktop) {
 
 #navSecondary {
