@@ -99,13 +99,22 @@ export function subnavMenu(container) {
   // set tab indexes
   function setTabIndexes(clickedElem, direction) {
     let active;
+    const activePageExists = container.querySelector('.active-page');
+
+    if (activePageExists) {
     const activePage = container.querySelector('.active-page').parentElement.parentElement;
+    } 
+    console.log(activePage);
+
+    const reset = container.querySelector('.subnav-wrapper');
 
     if (clickedElem && direction === 'next') {
       active = clickedElem.parentElement.closest('ul');
     } else if (clickedElem && direction === 'back') {
       active = clickedElem.parentElement.closest('ul').parentElement.closest('ul');
-    } else {
+    } else if (activePageExists) {
+      active = reset;
+    } else  {
       active = activePage;
     }
 
@@ -178,14 +187,23 @@ export function subnavMenu(container) {
 
     // Fix for top level ( if draw active data depth to target only top)
 
-
     const topul = container.querySelector('.subnav-wrapper');
-    const activePageNew = container.querySelector('.active-page');
-    const parentHasClass = activePageNew.parentElement.parentElement.classList.contains('subnav-wrapper');
-    
+    console.log('This is top ul:' + topul);
+    let activePageNew = container.querySelector('.active-page');
     console.log(activePageNew);
-    console.log(parentHasClass);
-    console.log(topul);
+
+    let parentHasClass;
+
+    // Set 
+    if (activePageNew === null)  {
+      let resetActive = container.querySelector('.first a');
+      parentHasClass = resetActive.parentElement.parentElement.classList.contains('subnav-wrapper');
+      console.log('I have reset');
+    } else {
+      parentHasClass = activePageNew.parentElement.parentElement.classList.contains('subnav-wrapper');
+    }
+
+    // 
 
     if (parentHasClass === true) {
   
@@ -198,7 +216,6 @@ export function subnavMenu(container) {
     });
 
   }
-
     /// End fix
 
   // Add click event for next
