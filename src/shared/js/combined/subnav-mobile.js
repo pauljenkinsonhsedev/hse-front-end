@@ -1,6 +1,4 @@
 import { mediaQuery } from './utils/media-query.js';
-import resizer from './utils/resizer.js';
-
 
 export function subNavMobile() {
 
@@ -10,32 +8,15 @@ const secondaryMenu = document.querySelector('#menu');
 const listItem = document.querySelector('.subnav-wrapper');
 const listItems = listItem.querySelectorAll('li');
 
-// Watch for resizing and toggle aria-expanded
-function posSwitch(){
-	const mediaquery = mediaQuery();
-	console.log('a change');
-	if (mediaquery > 'large') {
-		mobileButton.setAttribute('aria-expanded', false);
-		console.log('mobile');
-
-	} else {
-		mobileButton.setAttribute('aria-expanded', true);
-		console.log('desktop');
-	}
-}
-posSwitch();
-// watch for window resize
-resizer(posSwitch);
-
-
-const stateBeforeClick = mobileButton.getAttribute('aria-pressed');
-console.log('state before click' + stateBeforeClick);
 // Set tab-index to -1 before click event (menu closed)
-if (stateBeforeClick === 'false') {
+
+const mediaquery = mediaQuery();
+	if (mediaquery !== 'large') {
 
 	listItems.forEach((item) => {
 
 		const tabIndex = item.querySelector('a').tabIndex;
+		console.log(tabIndex);
 
 		if (tabIndex === 0 ) {
 			item.querySelector('a').tabIndex = -1;
@@ -65,7 +46,8 @@ function onClick(event){
  }
  
  mobileButton.addEventListener('click', onClick);
-}
+} 
+
 
 
  const buttonText = document.querySelector('.menu-mobile-text');
@@ -144,6 +126,7 @@ function toggleIsOpen() {
 		listItems.forEach((item) => {
 
 			const tabIndex = item.querySelector('a').tabIndex;
+			console.log(tabIndex);
 	
 			if (tabIndex === 0 ) {
 				item.querySelector('a').tabIndex = -1;
