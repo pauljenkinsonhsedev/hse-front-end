@@ -25,8 +25,8 @@ import { subnavMenu } from './combined/subnav-menu.js';
 import { subNavPosition } from './combined/subnav-position.js';
 import { subNavMobile } from './combined/subnav-mobile.js';
 import { accordion } from './combined/accordion.js';
-import { printGuide } from './combined/print-guide/print-guide.js';
-import { CSVTable } from './combined/csv-table.js';
+// import { printGuide } from './combined/print-guide/print-guide.js';
+// import { CSVTable } from './combined/csv-table.js';
 
 // Window load
 window.addEventListener('DOMContentLoaded', () => {
@@ -133,8 +133,8 @@ window.addEventListener('DOMContentLoaded', () => {
   feedbackSurvey();
   htmlFormsAntiSpam();
 
-  printGuide();
+  // printGuide();
 
-  CSVTable();
+  // CSVTable();
 
 }); // end window load
