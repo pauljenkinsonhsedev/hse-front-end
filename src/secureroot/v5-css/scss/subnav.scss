@@ -266,9 +266,30 @@ display: none !important;
 
 @media only screen and (max-width : $desktop) {
 
-#navSecondary {
-margin-bottom: 0;
+#menu {
+float: left;
+width: 100%;
 }
+
+.collapse.subnav-container {
+clip: rect(0 0 0 0);
+clip-path: inset(50%);
+height: 1px;
+overflow: hidden;
+position: absolute;
+white-space: nowrap;
+width: 1px;
+}
+
+.show.subnav-container {
+  clip: none;
+  clip-path: none;
+  height: none;
+  position: relative;
+  white-space: none;
+  width: 1px;
+  }
+  
 
 // Expandable
 .collapse {
@@ -284,7 +305,9 @@ margin-bottom: 0;
 }
 
 .btn-mobile {
-width: 100%;
+width: 100% !important; 
+float: left !important;
+clear: both !important;
 text-align: left !important;
 margin-bottom: 0 !important;
 background: $red !important; 
