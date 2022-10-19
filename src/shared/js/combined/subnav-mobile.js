@@ -78,6 +78,8 @@ function toggleIsOpen() {
 		// SHOW MENU
 		mobileButton.setAttribute('aria-expanded', true);
 		secondaryMenu.classList.add('show');
+		secondaryMenu.classList.remove('collapse');
+
 
 		// SVG attributes
 		svgPath.setAttribute('d', 'M18 7L7 18M7 7L18 18'); 
@@ -106,6 +108,8 @@ function toggleIsOpen() {
 
 		// HIDE MENU
 		secondaryMenu.classList.remove('show');
+		secondaryMenu.classList.add('collapse');
+
 		mobileButton.setAttribute('aria-expanded', false);
 
 		// SVG attributes
