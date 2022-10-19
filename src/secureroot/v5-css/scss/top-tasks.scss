@@ -24,6 +24,9 @@ margin: 0;
 ol.multistep li {
 margin-left: 15px;
 padding-top: 7.5px;
+@media only screen and (min-width : $desktop) {
+padding-top: 2.5px;
+}
 clear: both;
 }
 
