@@ -16,7 +16,6 @@ const mediaquery = mediaQuery();
 	listItems.forEach((item) => {
 
 		const tabIndex = item.querySelector('a').tabIndex;
-		console.log(tabIndex);
 
 		if (tabIndex === 0 ) {
 			item.querySelector('a').tabIndex = -1;

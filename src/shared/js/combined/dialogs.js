@@ -4,7 +4,6 @@ export function dialogModal(container) {
     const dialogContainer = document.querySelectorAll('.dialog');
 
     [...dialogContainer].forEach((elem) => {
-        console.log('dataset', elem.dataset);
         const size = elem.dataset.size ? elem.dataset.size : 'default';
         const content = elem.querySelector('.dialog__content').innerHTML;
         const action = elem.querySelector('.dialog__action');
