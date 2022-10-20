@@ -104,7 +104,6 @@ export function subnavMenu(container) {
     if (activePageExists) {
     const activePage = container.querySelector('.active-page').parentElement.parentElement;
     } 
-    console.log(activePage);
 
     const reset = container.querySelector('.subnav-wrapper');
 
@@ -188,9 +187,7 @@ export function subnavMenu(container) {
     // Fix for top level ( if draw active data depth to target only top)
 
     const topul = container.querySelector('.subnav-wrapper');
-    console.log('This is top ul:' + topul);
     let activePageNew = container.querySelector('.active-page');
-    console.log(activePageNew);
 
     let parentHasClass;
 
@@ -198,7 +195,6 @@ export function subnavMenu(container) {
     if (activePageNew === null)  {
       let resetActive = container.querySelector('.first a');
       parentHasClass = resetActive.parentElement.parentElement.classList.contains('subnav-wrapper');
-      console.log('I have reset');
     } else {
       parentHasClass = activePageNew.parentElement.parentElement.classList.contains('subnav-wrapper');
     }

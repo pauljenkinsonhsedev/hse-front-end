@@ -149,10 +149,7 @@ export function cookiePreferences() {
             // reload to capture tracking on page this form lives
             const hideBanner = Cookies.get('hide_banner');
 
-            console.log(outputData['cookie-usage-analytics']);
-
             if (hideBanner === undefined) {
-                console.log('should scroll');
                 smoothScroll('body', 1000);
                 setTimeout(()=> {
                     window.location.reload();

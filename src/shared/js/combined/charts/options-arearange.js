@@ -40,7 +40,6 @@ export class ChartOptionsArearange extends ChartOptions {
         const firstLast = container.dataset.xaxisFirstlast;
         const thead = this.dataTable.querySelector('.table__head');
         let rangeHeading = thead.rows[0].querySelectorAll('.heading')[1].textContent;
-        console.log(container.dataset)
         const zoneText = container.dataset.zones ? container.dataset.zones : false;
         const zone = JSON.parse(zoneText);
         const missingAverage = missingDataAverage(averagesData[0], colours);
