@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en-GB"><head>
+<html lang="en-GB">
+<head>
 
 <script src="../assets/v5-js/v5-cookies.js"></script>
 <!-- Anti-flicker snippet (recommended) If installing optimise with GTM, specifcy GTM container ID  -->
@@ -62,7 +63,6 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <!-- TemplateBeginEditable name="doctitle" -->
 <title></title>
-<meta name="keywords" content="">
 <meta name="description" content="">
 <!-- TemplateEndEditable -->
 	
@@ -123,19 +123,25 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
       <!-- TemplateEndIfClause -->
       <!-- TemplateEndMultipleIf -->
 
+      <div id="globalSearch" class="desktop-gcs-search">
+		  <div class="gcse-searchbox-only" data-enable-history="true"></div>
+      </div>
+
     </div>
 
     <!-- JS Main Navigation -->
 
     <div class="menuContainer">
-      <nav id="main-menu"  class="menu js-menu">
+      <nav id="main-menu" class="menu js-menu">
         <ul>
-          <li class="home"><a href="../index.htm">Design system</a></li>
-          <li class="style"><a href="../style/index.htm">Styles</a></li>
-          <li class="components"><a href="../components/index.htm">Components</a></li>
-          <li class="patterns"><a href="../patterns/index.htm">Patterns</a></li>
-          <li class="template"><a href="../framework/index.htm">Framework</a></li>
-		  <li class="development"><a href="../development/index.htm">Development</a></li>
+          <li class="home"><a href="../index.htm">Home</a></li>
+          <li class="news"><a href="../news/index.htm">News</a></li>
+          <li class="guidance"><a href="../guidance/index.htm">Guidance</a></li>
+          <li class="abouthse"><a href="../aboutus/index.htm">About HSE</a></li>
+          <li class="hseBooks"><a href="https://books.hse.gov.uk/">Books</a></li>
+          <li class="freeUpdates"><a href="../news/subscribe/index.htm">Free
+            updates</a></li>
+          <li class="contact"><a href="../contact/index.htm">Contact</a></li>
         </ul>
       </nav>
     </div>
@@ -178,7 +184,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <!-- TemplateEndEditable -->
   </div>
   <div id="backTo">
-    <p class="backto"><a id="backnav" href="index.htm">Back to</a></p>
+    <p class="backto"><a id="backnav" href="../Templates/index.htm">Back to</a></p>
   </div>
 </nav>
 <!-- TemplateEndIfClause -->
@@ -214,6 +220,8 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <button id="navSecondary-button" aria-pressed="false" aria-expanded="false" aria-controls="menu" class="btn btn-small btn-mobile" data-toggle="collapse" data-target=".collapse" data-text="Collapse"><span class="menu-mobile-text">Open menu</span><svg aria-hidden="true" tabindex="-1" data-menu-icon="menu" width="25px" height="25px" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg"><path id="menu-mobile-path" d="M6 8.1H19V6.9H6V8.1ZM6 18.1H19V16.9H6V18.1ZM6 13.1H19V11.9H6V13.1Z" fill="currentColor"></path></svg></button>
 
 <!-- TemplateBeginEditable name="Subnav" -->
+
+	
   <div id="menu">
     <ul>
       <li class="first"><a href="#">Microsite homepage</a></li>
@@ -259,7 +267,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
       <nav id="multistepNav" aria-label="Secondary">
 	  <!-- TemplateBeginEditable name="multistepNav" -->
         <ol class="multistep">
-          <li><a href="index.htm">Overview</a></li>
+          <li><a href="../Templates/index.htm">Overview</a></li>
           <li><a href="#">Page two</a></li>
           <li><a href="#">Page three</a></li>
         </ol>
@@ -383,7 +391,10 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
     </div>
     <div id="baseStrip">
       <div id="baseStripInner">
-        <p>HSE Design System</p>
+        <p>HSE aims to reduce work-related death, injury and ill health.</p>
+        <div class="guidance-languages">
+          <p><a href="../languages/index.htm">Information in other languages</a></p>
+        </div>
       </div>
     </div>
   </footer>

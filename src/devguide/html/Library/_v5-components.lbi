@@ -1,4 +1,4 @@
-<div id="menu" class="slinky-menu slinky-theme-default">
+<div id="menu" class="collapse">
 <ul>
     <li class="first"><a href="../components/index.htm">Components</a></li>
 	<li><a href="../components/accordion.htm">Accordion</a></li>

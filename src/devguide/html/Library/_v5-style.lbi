@@ -1,4 +1,4 @@
-<div id="menu" class="slinky-menu slinky-theme-default">
+<div id="menu" class="collapse">
   <ul>
       <li class="first"><a href="../index.htm">Style</a></li>
       <li><a href="../style/colour.htm">Colour</a></li>
