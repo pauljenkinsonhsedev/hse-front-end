@@ -77,7 +77,7 @@ padding: 0 !important;
 
 .border:last-of-type {
 border-bottom: none;
-margin-bottom: 0;
+// margin-bottom: 0;
 }
 
 .border {
@@ -91,6 +91,11 @@ padding-top: 0;
 
 #headerContainer, #baseStrip, div.diaryMonth h2, .boxSubscribe {
 background-color: $red;
+}
+
+// space fix
+.columnFull:last-of-type .oneThird, .columnFull:last-of-type .twoThird {
+margin-bottom: 0px;
 }
 
 
