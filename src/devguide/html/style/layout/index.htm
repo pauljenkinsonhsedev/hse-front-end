@@ -1,53 +1,8 @@
 <!DOCTYPE html>
 <html lang="en-GB"><!-- InstanceBegin template="/Templates/dev-kit.dwt" codeOutsideHTMLIsLocked="false" --><head>
-
-<script src="../../assets/v5-js/v5-cookies.js"></script>
-<!-- Anti-flicker snippet (recommended) If installing optimise with GTM, specifcy GTM container ID  -->
-<style>
-.async-hide { opacity: 0 !important }
-</style>
-
-<script>
-    if (Cookies.get('optInGoogleTracking') === 'true') {
-  (function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
-h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
-(a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
-})(window,document.documentElement,'async-hide','dataLayer',4000,
-{'GTM-PJPWMNL':true});
-    }</script>
-<!-- Google Tag Manager -->
-<script>
-
-      if (Cookies.get('optInGoogleTracking') === 'true') {
-        (function (w, d, s, l, i) {
-          w[l] = w[l] || [];
-          w[l].push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
-          var f = d.getElementsByTagName(s)[0],
-            j = d.createElement(s),
-            dl = l != 'dataLayer'
-              ? '&l=' + l
-              : '';
-          j.async = true;
-          j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-          f
-            .parentNode
-            .insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-PJPWMNL');
-
-        // Siteimprove analytics
-
-        /*<![CDATA[*/
-        (function() {
-        var sz = document.createElement('script'); sz.type = 'text/javascript'; sz.async = true;
-        sz.src = '//siteimproveanalytics.com/js/siteanalyze_6798.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(sz, s);
-        })();
-        /*]]>*/
-
-      }
-    </script>
-<!-- End Google Tag Manager -->
 	
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	
 
 
@@ -56,9 +11,6 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 
 <!-- Page title and meta -->
-	
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!-- InstanceBeginEditable name="doctitle" -->
 <title></title>
@@ -76,6 +28,9 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <link rel="apple-touch-icon" href="../../assets/v4-images/shared/apple-touch-icon.png">
 <link rel="home" href="../../index.htm">
 
+
+<!-- ie 11 fix for left-hand navigation -->
+<script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
 
 
 </head>
@@ -182,29 +137,68 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 
 
+<nav id="navSecondary" aria-label="Secondary">
+	
+<button id="navSecondary-button" aria-pressed="false" aria-expanded="false" aria-controls="menu" class="btn btn-small btn-mobile" data-toggle="collapse" data-target=".collapse" data-text="Collapse"><span class="menu-mobile-text">Open menu</span><svg aria-hidden="true" tabindex="-1" data-menu-icon="menu" width="25px" height="25px" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg"><path id="menu-mobile-path" d="M6 8.1H19V6.9H6V8.1ZM6 18.1H19V16.9H6V18.1ZM6 13.1H19V11.9H6V13.1Z" fill="currentColor"></path></svg></button>
+
+<!-- InstanceBeginEditable name="Subnav" --><!-- #BeginLibraryItem "/Library/_v5-style.lbi" --><div id="menu" class="collapse">
+<ul>
+ <li class="first"><a href="../../index.htm">Style</a></li>
+ <li><a href="../colour.htm">Colour</a></li>
+ <li><a href="#">Layout</a>
+<ul>
+ <li><a href="index.htm">Overview</a></li>
+ <li><a href="box.htm">Box layout</a></li>
+ <li><a href="v5.htm">V5 layout</a></li>
+</ul>
+</li>
+<li><a href="#">Typography</a>
+<ul>
+ <li><a href="../typography/index.htm">Overview</a></li>
+ <li><a href="../typography/font.htm">Font</a></li>
+ <li><a href="../typography/headings.htm">Headings</a></li>
+ <li><a href="../typography/paragraphs.htm">Paragraphs</a></li>
+ <li><a href="../typography/links.htm">Links</a></li>
+ <li><a href="../typography/lists.htm">Lists</a></li>
+ <li><a href="../typography/section-break.htm">Section break</a></li>
+</ul>
+</li>
+<li><a href="../focus.htm">Focus state</a></li>
+<li><a href="../utility.htm">Utility classes</a></li>
+<li><a href="../thumbnails.htm">Thumbnails</a></li>
+
+</ul>
+</div><!-- #EndLibraryItem --><!-- InstanceEndEditable --> </nav>
 
 
-<main id="contentContainer" class="columnbetacontentpage column1">
+
+
+<main id="contentContainer" class="columnbetacontentpage column2">
 
 
 
 
 <!-- InstanceBeginEditable name="content" -->
     <h1>Layout</h1>
-    <div class="columnFull noBoxPadding">
-      <div class="column multiCol col3">
-        <ul class="columnsList">
-          <li>
-            <h3><a href="box.htm">Box layout</a></h3>
-            <p>Box layout for creating microsite homepages with secondary navigation</p>
-          </li>
-		  <li>
-            <h3><a href="v5.htm">V5 layout</a></h3>
-            <p>V5 layout for creating microsite homepages</p>
-          </li>
-        </ul>
-      </div>
-    </div>
+	     	
+	<div class="columnFull">
+	
+	<div class="box boxHalfLeft equalHeights">
+	<h3><a href="box.htm">Box layout</a></h3>
+    <p>
+     Box layout for creating microsite homepages with secondary navigation
+    </p>
+	</div>
+	
+	<div class="box boxHalfRight equalHeights">  
+	<h3><a href="v5.htm">V5 layout</a></h3>
+    <p>V5 layout for creating microsite homepages</p>
+	</div>
+	
+		
+	</div>	
+	
+
     <!-- InstanceEndEditable -->
 
 
@@ -253,18 +247,6 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
     <div id="footer">
       <h2 class="visually-hidden">Footer links</h2>
       <div class="footer-links-container">
-        <ul>
-          <li class="first"><a href="../../search/search-results.htm">Search</a></li>
-          <li><a href="../../a-z/index.htm">A-Z</a></li>
-          <li><a href="../../acronym/index.htm">Acronyms</a></li>
-          <li><a href="../../about/site_map/index.htm">Site map</a></li>
-          <li><a href="../../copyright.htm">Copyright</a></li>
-          <li><a href="../../cookies.htm">Cookies</a></li>
-          <li><a href="../../privacy.htm">Privacy</a></li>
-          <li><a href="../../accessibility.htm">Accessibility</a></li>
-          <li><a href="../../foi/index.htm">Disclosure of information</a></li>
-          <li><a href="../../report-vulnerability.htm">Vulnerability disclosure</a></li>
-        </ul>
       </div>
     </div>
     <div id="baseStrip">
@@ -276,7 +258,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </nav>
 
 <section id="lastUpdated" aria-label="Last updated">
-<!-- InstanceBeginEditable name="updated" -->Updated:<!-- #BeginDate format:IS1 -->2020-11-19<!-- #EndDate --> 
+<!-- InstanceBeginEditable name="updated" -->Updated:<!-- #BeginDate format:IS1 -->2022-10-26<!-- #EndDate --> 
   <!-- InstanceEndEditable -->
 </section>
 
@@ -288,7 +270,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <!-- InstanceParam name="bodyClass" type="text" value="style" -->
 <!-- InstanceParam name="layout" type="text" value="betacontentpage" -->
-<!-- InstanceParam name="columnLayout" type="number" value="1" -->
+<!-- InstanceParam name="columnLayout" type="number" value="2" -->
 <!-- InstanceParam name="platform" type="text" value="v5" -->
 <!-- InstanceParam name="rdfa" type="boolean" value="false" -->
 <!-- InstanceParam name="welsh" type="boolean" value="false" -->

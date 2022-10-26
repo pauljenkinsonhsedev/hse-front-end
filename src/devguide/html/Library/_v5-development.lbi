@@ -3,10 +3,10 @@
 	  <li class="first"><a href="../development/index.htm">Development</a></li>
     <li><a href="#">Workflow</a>
 		  <ul>
-			  <li><a href="../development/workflow/index.htm">Workflow</a></li>
+			  <li><a href="../development/workflow/index.htm">Overview</a></li>
 			  <li><a href="#">Gitflow</a>
 			  <ul>
-				  <li><a href="../development/workflow/gitflow.htm">Gitflow</a></li>
+				  <li><a href="../development/workflow/gitflow.htm">Overview</a></li>
 				  <li><a href="../development/workflow/gitflow-features.htm">Feature branches</a></li>
 				  <li><a href="../development/workflow/gitflow-releases.htm">Release branches</a></li>
 				  <li><a href="../development/workflow/gitflow-hotfixes.htm">Hotfixes</a></li>
