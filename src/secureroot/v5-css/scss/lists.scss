@@ -154,6 +154,8 @@ padding-right: 5px;
 list-style-type: none !important;
 }
 
+
+
 #contentContainer .box ul {
 margin: 0 0 10px 15px;    
 }
@@ -185,6 +187,10 @@ list-style-image: none !important;
 ul.columnsList li::before, #pagination ul li::before, ul.hsl-links li, ul.social li, ul.articleList, ul.linkListNoBullet li {
 padding-left: 0 !important;
 background: none !important;
+}
+
+.backgroundRed ul.linkListNoBullet li::before {
+display: none !important;
 }
 
 #contentContainer ul.linkList li::before {
