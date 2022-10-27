@@ -15,7 +15,7 @@
 <!-- InstanceBeginEditable name="doctitle" -->
 <title>Cookie Banner - HSE.GOV.UK Design System</title>
 <meta name="Description" content="HSE's job is to protect people against risks to health or safety arising out of work activities. Provides advice, guidance, regulations and inspections." />
-<meta name="Keywords" content="HSE, health and safety executive,  occupational ill-health, occupational health and safety, accident, safety, employee safety, health and safety at work act, law" />
+
 <!-- Custom CSS -->
 <!-- InstanceEndEditable -->
 	
@@ -266,8 +266,6 @@
 
   <h2 id="cookie-preferences">Cookie preferences</h2>
 
-  <p>The JS file <a href="cookie-preferences.js">cookie-preferences.js</a>, is used to set and modify cookies, <a href="https://github.com/js-cookie/js-cookie/tree/latest#readme">JS Cookie</a> is used for managing cookies.</p>
-
   <p>The file contains JS functions to perform the following functions:</p>
 
   <ul>
@@ -288,15 +286,8 @@
 
   <h3>Framework dependencies</h3>
 
-  <p>The following scripts are imported and used in <a href="cookie-preferences.js">cookie-preferences.js</a></p>
-
   <ul>
-
-  <li><a href="https://github.com/js-cookie/js-cookie/tree/latest#readme">JS Cookie</a></li>
-  <li><a href="add-custom-event-listener.js">Event listener</a></li>
-  <li><a href="dialog.js">Dialog modal</a></li>
-  <li><a href="smooth-scroll.js">Smooth scroll</a></li>
-
+   <li><a href="https://github.com/js-cookie/js-cookie/tree/latest#readme">JS Cookie</a></li>
   </ul>
 
   <h3>Setting cookies</h3>
@@ -506,19 +497,20 @@ export function cookiePreferences() {
     if (settingsForm) {
         const submitForm = () => {
             const outputData = {};
-            const formData = new FormData(settingsForm)
-            for (var pair of formData.entries()) {
+            const formData = new FormData(settingsForm);
+        
+            for (let pair of formData.entries()) {
                 let key = pair[0];
                 let val = pair[1];
                 outputData[key] = val;
             }
             setCookiePreferences(outputData);
+
             controlAnalytics();
             // reload to capture tracking on page this form lives
             const hideBanner = Cookies.get('hide_banner');
 
             if (hideBanner === undefined) {
-                console.log('should scroll');
                 smoothScroll('body', 1000);
                 setTimeout(()=> {
                     window.location.reload();
@@ -534,7 +526,6 @@ export function cookiePreferences() {
             event.preventDefault();
             setFields();
             submitForm();
-            // formFeedback();
         });
 
         const choices = document.querySelectorAll('.input-switch');
@@ -560,7 +551,7 @@ export function cookiePreferences() {
         event.preventDefault();
         // destroy banner
         Cookies.set('hide_banner', true, setCookieSettings);
-        messageContainer.remove();
+        messageContainer.parentNode.removeChild(messageContainer);
     });
 
     // accept all
@@ -608,8 +599,8 @@ export function cookiePreferences() {
         // reload to capture tracking
         window.location.reload();
     });
-
-}</code></pre>
+}
+</code></pre>
 
   <h2 id="template-code">Template code</h2>
 
@@ -701,38 +692,36 @@ export function cookiePreferences() {
  <p>The following snippet is included after the opening <strong>&lt;body&gt;</strong> tag.</p>
 
 
-<pre class="language-markup"><code>&lt;noscript aria-hidden=&quot;true&quot; aria-label=&quot;GTM-PJPWMNL&quot;&gt;
-  &lt;iframe title=&quot;GTM-PJPWMNL&quot;
-    src=&quot;https://www.googletagmanager.com/ns.html?id=GTM-PJPWMNL&quot;
-    height=&quot;0&quot;
-    width=&quot;0&quot;
-    style=&quot;display:none;visibility:hidden&quot;
-    aria-hidden=&quot;true&quot;&gt;
-  &lt;/iframe&gt;
-&lt;/noscript&gt;</code></pre>
+  <pre class="language-markup"><code>&lt;noscript aria-hidden=&quot;true&quot; aria-label=&quot;GTM-PJPWMNL&quot;&gt;
+    &lt;iframe title=&quot;GTM-PJPWMNL&quot;
+      src=&quot;https://www.googletagmanager.com/ns.html?id=GTM-PJPWMNL&quot;
+      height=&quot;0&quot;
+      width=&quot;0&quot;
+      style=&quot;display:none;visibility:hidden&quot;
+      aria-hidden=&quot;true&quot;&gt;
+    &lt;/iframe&gt;
+  &lt;/noscript&gt;</code></pre>
 
-<h3 id="js-conditionals">JS conditionals</h3>
+  <h3 id="js-conditionals">JS conditionals</h3>
 
-<p>JS conditionals are used in the template code to check if the user has opted in, it does this by getting the value of the <strong>optInGoogleTracking</strong> cookie and checking if it is set to <strong>&lsquo;true&rsquo;</strong>.</p>
+  <p>JS conditionals are used in the template code to check if the user has opted in, it does this by getting the value of the <strong>optInGoogleTracking</strong> cookie and checking if it is set to <strong>&lsquo;true&rsquo;</strong>.</p>
 
-<p>The <strong>optInGoogleTracking</strong> cookie is specificaly used for template conditional statements.</p>
+  <p>The <strong>optInGoogleTracking</strong> cookie is specificaly used for template conditional statements.</p>
 
-<pre class="language-js"><code>if (Cookies.get('optInGoogleTracking') === 'true') {
+  <pre class="language-js"><code>if (Cookies.get('optInGoogleTracking') === 'true') {
 
-}</code></pre>
-<h2 id="cookies-page">Cookies page</h2>
+  }</code></pre>
+  <h2 id="cookies-page">Cookies page</h2>
 
-<p>A cookies page is used to provide the user a way to control their cookie preferences, this allows users an alternative way to the cookie banner to accept or reject analytics.</p>
+  <p>A cookies page is used to provide the user a way to control their cookie preferences, this allows users an alternative way to the cookie banner to accept or reject analytics.</p>
 
-<p>The HTML form inclues:</p>
+  <p>The HTML form inclues:</p>
 
- <ul>
-
-  <li>A button to accept all cookies</li>
-  <li>A checkbox styled as a switch to toggle between accepting or rejecting analytics</li>
-  <li>Button to save changes</li>
-
- </ul>
+  <ul>
+    <li>A button to accept all cookies</li>
+    <li>A checkbox styled as a switch to toggle between accepting or rejecting analytics</li>
+    <li>Button to save changes</li>
+  </ul>
 
  <h3>Auto save and refresh</h3>
 
@@ -773,9 +762,7 @@ export function cookiePreferences() {
 
   <h2 id="banner-html">Banner HTML</h2>
 
-  <p>The JS file <a href="../cookie-banner-html.js">cookies-banner-html.js</a> contains HTML for the Cookie Banner and related banner messages.</p>
-
-  <p>The file contains 3 cookie banner messages, contained in variables that are interchangeable depending on the outcome of the users actions.</p>
+  <p>The banner HTML is written in JS, it contains 3 cookie banner messages, contained in variables that are interchangeable depending on the outcome of the users actions.</p>
 
   <p>The 3 messages are:</p>
 
@@ -906,7 +893,7 @@ export function cookiePreferences() {
 
 <section id="lastUpdated" aria-label="Last updated">
 <!-- InstanceBeginEditable name="updated" --> Updated:
-	<!-- #BeginDate format:IS1 -->2021-09-03<!-- #EndDate -->
+	<!-- #BeginDate format:IS1 -->2022-10-27<!-- #EndDate -->
 	<!-- InstanceEndEditable -->
 </section>
 

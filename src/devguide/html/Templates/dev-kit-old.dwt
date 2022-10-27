@@ -26,7 +26,7 @@ display: none;
 	
 <!-- TemplateBeginEditable name="doctitle" -->
 <title></title>
-<meta name="keywords" content=" " />
+
 <meta name="description" content=" " />
 <!-- TemplateEndEditable -->
 <meta name="HSE.contentType" content="@@(contentType)@@" />

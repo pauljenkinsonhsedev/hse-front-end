@@ -15,7 +15,7 @@
 <!-- InstanceBeginEditable name="doctitle" -->
 <title>Design System</title>
 <meta name="Description" content="HSE's job is to protect people against risks to health or safety arising out of work activities. Provides advice, guidance, regulations and inspections." />
-<meta name="Keywords" content="HSE, health and safety executive,  occupational ill-health, occupational health and safety, accident, safety, employee safety, health and safety at work act, law" />
+
 
 
 <!-- InstanceEndEditable -->
@@ -227,8 +227,18 @@
 <p>The JSON file is named <strong>global-message.json</strong> and can be found in the website root assets folder <strong>secureroot/assets/ajax/global-message.json</strong></p>
 
 <p>To display the banner, set the JSON property of <strong>'active'</strong> to true and enter a HTML paragraph as a JSON string in the <strong>'message'</strong> property. </p>
+  
+<h3>JSON global file example</h3>
 	
-<p><a href="../global-message.json">JSON file example</a></p>	
+<pre class="language-json">
+<code>
+{
+&quot;name&quot;: &quot;Global notification&quot;,
+&quot;active&quot;: &quot;true&quot;,
+&quot;message&quot;: &quot;&lt;p&gt;&lt;a href=\&quot;https://www.hse.gov.uk/coronavirus/index.htm\&quot;&gt;Coronavirus (COVID-19)&lt;\/a&gt; Guidance and support&lt;\/p&gt;&quot;
+}
+</code>
+</pre>
 	
 <div class="box">
 <h3>JSON</h3>
@@ -309,7 +319,7 @@ If you have to use special character in your JSON string, you can escape it usin
 
 <section id="lastUpdated" aria-label="Last updated">
 <!-- InstanceBeginEditable name="updated" --> Updated:
-	<!-- #BeginDate format:IS1 -->2021-08-27<!-- #EndDate -->
+	<!-- #BeginDate format:IS1 -->2022-10-27<!-- #EndDate -->
 	<!-- InstanceEndEditable -->
 </section>
 
