@@ -13,9 +13,9 @@
 <!-- Page title and meta -->
 
 <!-- InstanceBeginEditable name="doctitle" -->
-    <title></title>
-    <meta name="keywords" content=" " />
-<meta name="description" content=" " />
+<title></title>
+
+<meta name="description" content="">
 <!-- InstanceEndEditable -->
 	
 <!-- InstanceBeginEditable name="meta" -->
@@ -29,12 +29,9 @@
 <link rel="home" href="../index.htm">
 
 
-<!-- ie 11 fix for left-hand navigation -->
-<script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
-
 
 </head>
-<body class="components normalFont">
+<body class="guidance normalFont">
 
 <!-- GTM -->
 
@@ -82,9 +79,9 @@
         <ul>
           <li class="home"><a href="../index.htm">Design system</a></li>
           <li class="style"><a href="../style/index.htm">Styles</a></li>
-          <li class="components"><a href="index.htm">Components</a></li>
+          <li class="components"><a href="../components/index.htm">Components</a></li>
           <li class="patterns"><a href="../patterns/index.htm">Patterns</a></li>
-          <li class="template"><a href="../framework/index.htm">Framework</a></li>
+          <li class="template"><a href="index.htm">Framework</a></li>
 		  <li class="development"><a href="../development/index.htm">Development</a></li>
         </ul>
       </nav>
@@ -106,16 +103,12 @@
   <div class="breadCrumbContainer">
 
 <!-- InstanceBeginEditable name="Breadcrumbs" -->
-      <ol>
-        <li class="home">
-          <a href="../index.htm">Design System</a>
-        </li>
-        <li>
-          <a href="index.htm">Components</a>
-        </li>
-        <li>Accordion</li>
-      </ol>
-      <!-- InstanceEndEditable -->
+		<ol>
+			<li class="home"><a href="../index.htm">Design System</a></li>
+			<li><a href="index.htm">Framework</a></li>
+      <li>Regex</li>
+		</ol>
+<!-- InstanceEndEditable -->
   </div>
   <div id="backTo">
     <p class="backto"><a id="backnav" href="index.htm">Back to</a></p>
@@ -141,95 +134,57 @@
 
 
 
-<nav id="navSecondary" aria-label="Secondary">
-	
-<button id="navSecondary-button" aria-pressed="false" aria-expanded="false" aria-controls="menu" class="btn btn-small btn-mobile" data-toggle="collapse" data-target=".collapse" data-text="Collapse"><span class="menu-mobile-text">Open menu</span><svg aria-hidden="true" tabindex="-1" data-menu-icon="menu" width="25px" height="25px" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg"><path id="menu-mobile-path" d="M6 8.1H19V6.9H6V8.1ZM6 18.1H19V16.9H6V18.1ZM6 13.1H19V11.9H6V13.1Z" fill="currentColor"></path></svg></button>
-
-<!-- InstanceBeginEditable name="Subnav" --><!-- #BeginLibraryItem "/Library/_v5-components.lbi" --><div id="menu" class="collapse">
-<ul>
-    <li class="first"><a href="index.htm">Components</a></li>
-	<li><a href="accordion.htm">Accordion</a></li>
-	<li><a href="boxes.htm">Box</a></li>
-	<li><a href="#">Charts (JS)</a>
-		<ul>
-			<li><a href="charts/index.htm">Overview</a></li>
-			<li><a href="charts/data-attributes.htm">Data attributes</a></li>
-		    <li><a href="charts/pie-chart.htm">Pie chart</a></li>
-			<li><a href="charts/donut-chart.htm">Donut chart</a></li>
-			<li><a href="charts/line-chart.htm">Line chart</a></li>
-			<li><a href="charts/bar-chart.htm">Bar chart</a></li>
-			<li><a href="charts/bar-stacked-chart.htm">Bar (stacked) chart</a></li>
-			<li><a href="charts/column-chart.htm">Column chart</a></li>
-			<li><a href="charts/column-stacked-chart.htm">Column (stacked) chart</a></li>
-			<li><a href="charts/arearange-chart.htm">Area range chart</a></li>
-			<li><a href="charts/dual-chart.htm">Dual charts</a></li>
-			<li><a href="charts/missing-data.htm">Missing data</a></li>
-			<li><a href="charts/confidence-intervals.htm">Confidence Intervals</a></li>
-			<li><a href="charts/plot-bands.htm">Plot bands</a></li>
-		</ul>
-	</li>
-	<li><a href="dialog.htm">Dialog box</a></li>
-	<li><a href="#">Forms</a>
-		<ul>
-			<li><a href="forms/index.htm">Overview</a></li>
-		    <li><a href="forms/buttons.htm">Buttons</a></li>
-			<li><a href="forms/inputs.htm">inputs</a></li>
-			<li><a href="forms/input-sizes.htm">Input sizes</a></li>
-			<li><a href="forms/form-validation.htm">Form validation</a></li>
-			<li><a href="forms/checkboxes.htm">Checkboxes</a></li>
-			<li><a href="forms/dates.htm">Dates</a></li>
-			<li><a href="forms/radios.htm">Radios</a></li>
-			<li><a href="forms/switch.htm">Switch</a></li>
-			<li><a href="forms/textarea.htm">Text area</a></li>
-			<li><a href="forms/drop-down.htm">Drop-down list (Input)</a></li>
-			<li><a href="forms/subscribe.htm">Subscribe (Input)</a></li>
-		</ul>
-	</li>
-	<li><a href="images.htm">Images</a></li>
-	<li><a href="lightbox.htm">Lightbox (JS)</a></li>
-    <li><a href="tables.htm">Table</a></li>
-	<li><a href="tabs.htm">Tabs (JS)</a></li>
-	<li><a href="video.htm">Video (Embed)</a></li>
- </ul>
-</div><!-- #EndLibraryItem --><!-- InstanceEndEditable --> </nav>
 
 
-
-
-<main id="contentContainer" class="columnbetacontentpage column2">
+<main id="contentContainer" class="columnbetacontentpage column1">
 
 
 
 
 <!-- InstanceBeginEditable name="content" -->
-      <h1>Accordion (JS)</h1>
-      <p>The accordion component lets users show and hide sections of related content on a page.</p>
-
-      <div class="accordion">
-
-        <h3 id="accordionSection1">Accordion section 1 title</h3>
-        <div>
-          <p>Accordion section 1 content</p>
-        </div>
-
-        <h3 id="accordionSection2">Accordion section 2 title</h3>
-        <div>
-          <p>Accordion section 2 content</p>
-        </div>
-
-        <h3 id="accordionSection3">Accordion section 3 title</h3>
-        <div>
-          <p>Accordion section 3 content</p>
-        </div>
-
-      </div>
-
-      <h2>JS</h2>
-
-      <pre><code class="javascript hljs">$(".accordion").accordion({header: "h3", collapsible: true, autoHeight: false, navigation: true, active: false});$('.accordion h3').attr('tabindex','0');
-</code></pre>
-
-      <!-- InstanceEndEditable -->
+  
+<h1>Regex</h1>  
+  
+<p>Regex is useful when searching the HSE website to find specific code or text and replace or remove it.</p>
+  
+<p>Advanced find and replace can be used in Dreamweaver to achieve the same results as RegEx but only for a small number of pages as it will cause Dreamweaver to crash.</p>
+  
+<h2>How to use</h2>
+  
+<ol>
+<li>Select Find &lt; Find and Replace In Files</li>
+<li>Select the filters icon in the top right of the Find and Replace panel</li>
+<li>Uncheck <strong>Match Case</strong></li>
+<li>Check <strong>Use Regular Expressions</strong></li>
+<li>Enter Regex in Find field</li>
+<li>Enter replacement code in Replace field or leave blank to remove</li>
+<li>Check it works by selecting the <strong>Replace</strong> button</li>
+<li>Select <strong>Replace All</strong> to apply to all selected pages or the entire site</li>
+</ol>
+  
+<figure class="v5-figure full-width">
+<img alt="Regex" height="394" width="735" src="../../images/examples/regex-dreamweaver.png">
+</figure>
+ 
+<h2>Useful regex</h2>
+  
+<h3>Find all keyword meta tags</h3>
+<pre class="language-xml">
+<code>&lt;meta name=&quot;keywords&quot;[^&gt;]+&gt;</code>
+</pre>
+  
+  
+<div class="box">
+<h2>Dreamweaver help</h2>  
+  
+<p class="linkList">
+<a href="https://helpx.adobe.com/uk/dreamweaver/using/find-replace-text.html#:~:text=Select%20Find%20%3E%20Find%20and%20Replace,document%20that%20is%20currently%20open">
+Find and replace text, tags, and attributes
+</a></p>
+  
+</div>
+	
+<!-- InstanceEndEditable -->
 
 
 
@@ -288,24 +243,20 @@
 </nav>
 
 <section id="lastUpdated" aria-label="Last updated">
-<!-- InstanceBeginEditable name="updated" -->Updated:<!-- #BeginDate format:IS1 -->2020-09-09<!-- #EndDate -->-->
-  <!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="updated" -->Updated:<!-- #BeginDate -->2021-03-01<!-- #EndDate --><!-- InstanceEndEditable -->
 </section>
 
 <script src="../assets/v5-js/v5-main.min.js"></script>
 
 <div id="gutter">
 <!-- InstanceBeginEditable name="gutter" -->
-    <script>
-      $(".accordion").accordion({header: "h3", collapsible: true, autoHeight: false, navigation: true, active: false});
-      $('.accordion h3').attr('tabindex', '0');
-    </script>
-    <!-- InstanceEndEditable -->
+
+<!-- InstanceEndEditable -->
 </div>
 
-<!-- InstanceParam name="bodyClass" type="text" value="components" -->
+<!-- InstanceParam name="bodyClass" type="text" value="guidance" -->
 <!-- InstanceParam name="layout" type="text" value="betacontentpage" -->
-<!-- InstanceParam name="columnLayout" type="number" value="2" -->
+<!-- InstanceParam name="columnLayout" type="number" value="1" -->
 <!-- InstanceParam name="platform" type="text" value="v5" -->
 <!-- InstanceParam name="rdfa" type="boolean" value="false" -->
 <!-- InstanceParam name="welsh" type="boolean" value="false" -->
