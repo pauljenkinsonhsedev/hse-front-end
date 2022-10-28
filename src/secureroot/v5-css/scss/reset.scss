@@ -1,6 +1,6 @@
 html,
 body {
-height: 100%;
+  height: 100%;
 }
 abbr,
 acronym,
@@ -110,7 +110,7 @@ blockquote:after,
 blockquote:before,
 q:after,
 q:before {
-  content: '';
+  content: "";
   content: none;
 }
 table {
@@ -246,7 +246,7 @@ acronym {
 }
 .cf:after,
 .cf:before {
-  content: '';
+  content: "";
   display: table;
 }
 .cf:after {
@@ -270,6 +270,8 @@ acronym {
 }
 a.skip:link,
 a.skip:visited {
+  pointer-events: none;
+  height: 48px;
   display: block;
   overflow: hidden;
   text-indent: -600em;
@@ -549,7 +551,6 @@ ul.navSupp li a {
   color: #fff;
 }
 
-
 ul.no-style {
   margin: 0 !important;
   padding: 0 !important;
@@ -808,7 +809,7 @@ div.icaplr span.download {
 .tooltip > :last-child:after,
 .tooltip > :last-child:before {
   border: solid 11px;
-  content: '';
+  content: "";
   display: block;
   margin: 0 20px 0 20px;
   position: absolute;
