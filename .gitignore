@@ -13,8 +13,8 @@ asbestos
 src/secureroot/html/**/*
 src/secureroot/**/*.lbi
 /secureroot
-/devguide
-/gulp/tasks/shared/devguide/js/report.html
+/designsystem
+/gulp/tasks/shared/designsystem/js/report.html
 /report.html
 /yarn-error.log
 /yarn.lock

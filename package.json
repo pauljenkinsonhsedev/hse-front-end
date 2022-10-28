@@ -1,13 +1,13 @@
 {
   "name": "hse-front-end",
-  "version": "5.6.9",
+  "version": "5.7.0",
   "description": "",
   "main": "gulpfile.babel.js",
   "scripts": {
     "bundle-report": "webpack-bundle-analyzer --port 8081 dist/stats.json",
     "gulp": "gulp --development",
     "hse": "gulp --staging",
-    "devguide": "gulp development --development",
+    "designsystem": "gulp development --development",
     "prod": "gulp production --production"
   },
   "author": "",
