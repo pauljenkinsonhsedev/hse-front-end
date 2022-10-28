@@ -7,7 +7,7 @@
     "bundle-report": "webpack-bundle-analyzer --port 8081 dist/stats.json",
     "gulp": "gulp --development",
     "hse": "gulp --staging",
-    "devguide": "gulp development --development",
+    "designsystem": "gulp development --development",
     "prod": "gulp production --production"
   },
   "author": "",

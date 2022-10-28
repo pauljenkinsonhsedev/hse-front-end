@@ -1,6 +1,6 @@
-import merge from 'merge-stream';
-import { src, dest, task } from 'gulp';
-import * as config from '../../config.json';
+import merge from "merge-stream";
+import { src, dest, task } from "gulp";
+import * as config from "../../config.json";
 import connect from "gulp-connect";
 
 const highchartsAssets = [
@@ -21,46 +21,59 @@ const highchartsAssets = [
   "./node_modules/highcharts/modules/accessibility.js.map",
   "./node_modules/highcharts/highcharts-more.js",
   "./node_modules/highcharts/highcharts-more.src.js",
-  "./node_modules/highcharts/highcharts-more.js.map"
+  "./node_modules/highcharts/highcharts-more.js.map",
 ];
 
 function copyHighchartsjs() {
-  return src(highchartsAssets)
-    .pipe(dest('./devguide/assets/v5-js/vendor/highcharts'))
-};
+  return src(highchartsAssets).pipe(
+    dest("./designsystem/assets/v5-js/vendor/highcharts")
+  );
+}
 
-function copyDevguideAssets() {
-  const tidy = src(['./node_modules/tidy-html5/tidy.js'])
-  .pipe(dest('./devguide/assets/v5-js/vendor/tidy'));
-
-  const ariaAccordion = src(['./node_modules/a11y_accordions/index.js']).pipe(
-    dest('./devguide/assets/v5-js/vendor/a11y_accordions')
+function copydesignsystemAssets() {
+  const tidy = src(["./node_modules/tidy-html5/tidy.js"]).pipe(
+    dest("./designsystem/assets/v5-js/vendor/tidy")
   );
 
-  const papaparse = src(['./node_modules/papaparse/papaparse.min.js']).pipe(
-    dest('./devguide/assets/v5-js/vendor/papaparse')
+  const ariaAccordion = src(["./node_modules/a11y_accordions/index.js"]).pipe(
+    dest("./designsystem/assets/v5-js/vendor/a11y_accordions")
   );
 
-  const moment = src(['./node_modules/moment/moment.js'])
-  .pipe(dest('./devguide/assets/v5-js/vendor/moment'));
+  const papaparse = src(["./node_modules/papaparse/papaparse.min.js"]).pipe(
+    dest("./designsystem/assets/v5-js/vendor/papaparse")
+  );
 
-  const html = src([config.devguide.markup.all])
-  .pipe(connect.reload())
-  .pipe(dest(config.devguide.markup.output));
+  const moment = src(["./node_modules/moment/moment.js"]).pipe(
+    dest("./designsystem/assets/v5-js/vendor/moment")
+  );
 
-  const imageAssets = src([config.devguide.imageAssets.all])
-  .pipe(connect.reload())
-  .pipe(dest(config.devguide.imageAssets.output));
+  const html = src([config.designsystem.markup.all])
+    .pipe(connect.reload())
+    .pipe(dest(config.designsystem.markup.output));
 
-  const js = src([config.devguide.copyjs.all])
-  .pipe(dest(config.devguide.copyjs.output));
+  const imageAssets = src([config.designsystem.imageAssets.all])
+    .pipe(connect.reload())
+    .pipe(dest(config.designsystem.imageAssets.output));
 
-  const misc = src([config.devguide.copyAll.all])
-  .pipe(dest(config.devguide.copyAll.output));
+  const js = src([config.designsystem.copyjs.all]).pipe(
+    dest(config.designsystem.copyjs.output)
+  );
 
+  const misc = src([config.designsystem.copyAll.all]).pipe(
+    dest(config.designsystem.copyAll.output)
+  );
 
-  return merge(html, imageAssets, tidy, moment, js, misc, ariaAccordion, papaparse);
-};
+  return merge(
+    html,
+    imageAssets,
+    tidy,
+    moment,
+    js,
+    misc,
+    ariaAccordion,
+    papaparse
+  );
+}
 
-task('devguideHighChats', copyHighchartsjs);
-task('devguideCopyAssets', copyDevguideAssets);
+task("designsystemHighChats", copyHighchartsjs);
+task("designsystemCopyAssets", copydesignsystemAssets);

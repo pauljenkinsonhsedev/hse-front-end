@@ -40,7 +40,7 @@ There are two main areas for source files:
 ```
 src/
 └──secureroot/
-└──devguide/
+└──designsystem/
 ```
 
 ### Secure Root
@@ -57,13 +57,13 @@ src/
     └──html/
 ```
 
-### Devguide
+### designsystem
 
 The HSE development guide is a resource for unit testing, web based tools and to showcase components.
 
 ```
 src/
-└──devguide/
+└──designsystem/
 ```
 
 Additionally there is a 'shared' directory which currently is being used for phasing in new javascript.
