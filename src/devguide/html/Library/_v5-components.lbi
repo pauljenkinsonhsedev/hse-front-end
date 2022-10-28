@@ -1,4 +1,4 @@
-<div id="menu" class="slinky-menu slinky-theme-default">
+<div id="menu" class="collapse">
 <ul>
     <li class="first"><a href="../components/index.htm">Components</a></li>
 	<li><a href="../components/accordion.htm">Accordion</a></li>
@@ -40,7 +40,6 @@
 	</li>
 	<li><a href="../components/images.htm">Images</a></li>
 	<li><a href="../components/lightbox.htm">Lightbox (JS)</a></li>
-	<li><a href="../components/print-guide.htm">Print guide</a></li>
     <li><a href="../components/tables.htm">Table</a></li>
 	<li><a href="../components/tabs.htm">Tabs (JS)</a></li>
 	<li><a href="../components/video.htm">Video (Embed)</a></li>
