@@ -8,7 +8,7 @@ $type-settings: (
     line-height: 1.5
   ),
   1: (
-    font-size: 2.45em,
+    font-size: 2.45rem,
     line-height: 1
   ),
   2: (
@@ -43,6 +43,9 @@ body {
 .heading-xl,
 h1 {
     @include type-setting(1);
+    @media only screen and (max-width : $desktop) {
+    font-size: 2rem;
+    }
     font-weight: bold;
     margin-bottom: $dp*3;
     color: $red;
@@ -129,5 +132,25 @@ abbr[title] {
     border-bottom: none;
     text-decoration: underline;
     text-decoration: underline dotted;
+}
+
+#navSub li.active {
+	border-left:#B30030 solid 3px;
+}
+
+p,
+li,
+h4 {
+	color:#111;
+}
+
+h1 {
+	color: $red;
+}
+
+h2 a:hover,
+h2 a:active,
+h2 a:focus {
+	color:#555;
 }
 

@@ -1,0 +1,47 @@
+<div id="menu" class="collapse">
+<ul>
+    <li class="first"><a href="../components/index.htm">Components</a></li>
+	<li><a href="../components/accordion.htm">Accordion</a></li>
+	<li><a href="../components/boxes.htm">Box</a></li>
+	<li><a href="#">Charts (JS)</a>
+		<ul>
+			<li><a href="../components/charts/index.htm">Overview</a></li>
+			<li><a href="../components/charts/data-attributes.htm">Data attributes</a></li>
+		    <li><a href="../components/charts/pie-chart.htm">Pie chart</a></li>
+			<li><a href="../components/charts/donut-chart.htm">Donut chart</a></li>
+			<li><a href="../components/charts/line-chart.htm">Line chart</a></li>
+			<li><a href="../components/charts/bar-chart.htm">Bar chart</a></li>
+			<li><a href="../components/charts/bar-stacked-chart.htm">Bar (stacked) chart</a></li>
+			<li><a href="../components/charts/column-chart.htm">Column chart</a></li>
+			<li><a href="../components/charts/column-stacked-chart.htm">Column (stacked) chart</a></li>
+			<li><a href="../components/charts/arearange-chart.htm">Area range chart</a></li>
+			<li><a href="../components/charts/dual-chart.htm">Dual charts</a></li>
+			<li><a href="../components/charts/missing-data.htm">Missing data</a></li>
+			<li><a href="../components/charts/confidence-intervals.htm">Confidence Intervals</a></li>
+			<li><a href="../components/charts/plot-bands.htm">Plot bands</a></li>
+		</ul>
+	</li>
+	<li><a href="../components/dialog.htm">Dialog box</a></li>
+	<li><a href="#">Forms</a>
+		<ul>
+			<li><a href="../components/forms/index.htm">Overview</a></li>
+		    <li><a href="../components/forms/buttons.htm">Buttons</a></li>
+			<li><a href="../components/forms/inputs.htm">inputs</a></li>
+			<li><a href="../components/forms/input-sizes.htm">Input sizes</a></li>
+			<li><a href="../components/forms/form-validation.htm">Form validation</a></li>
+			<li><a href="../components/forms/checkboxes.htm">Checkboxes</a></li>
+			<li><a href="../components/forms/dates.htm">Dates</a></li>
+			<li><a href="../components/forms/radios.htm">Radios</a></li>
+			<li><a href="../components/forms/switch.htm">Switch</a></li>
+			<li><a href="../components/forms/textarea.htm">Text area</a></li>
+			<li><a href="../components/forms/drop-down.htm">Drop-down list (Input)</a></li>
+			<li><a href="../components/forms/subscribe.htm">Subscribe (Input)</a></li>
+		</ul>
+	</li>
+	<li><a href="../components/images.htm">Images</a></li>
+	<li><a href="../components/lightbox.htm">Lightbox (JS)</a></li>
+    <li><a href="../components/tables.htm">Table</a></li>
+	<li><a href="../components/tabs.htm">Tabs (JS)</a></li>
+	<li><a href="../components/video.htm">Video (Embed)</a></li>
+ </ul>
+</div>

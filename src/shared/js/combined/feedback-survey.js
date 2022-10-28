@@ -6,8 +6,14 @@
 
 */
 import { scrollPos } from './utils/feedback-position';
+import { bowser } from './bowser.js';
+
+
+
 
 export function feedbackSurvey() {
+
+
     const container = document.querySelector('.feedback-container');
 
     if (!container) {
@@ -67,7 +73,27 @@ export function feedbackSurvey() {
   
 
     function reportProblem() {
-      
+
+      bowser();
+
+      const Bowser = require("bowser");
+      const browserUA = Bowser.getParser(window.navigator.userAgent);
+
+      // Get browser info
+      const browser = browserUA.getBrowser();
+      const os = browserUA.getOS();
+      const platform = browserUA.getPlatform();
+
+      // Browser
+      const browserName = (browser.name);
+      const browserVersion = (browser.version);
+      // OS
+      const osName = (os.name);
+      const osVersion = (os.version);
+      // Platform
+      const platformType = (platform.type);
+      const platformVendor = (platform.vendor);
+
       const newURL = window.location.protocol + '//' + window.location.host + window.location.pathname + window.location.search;           
       const action = document.createElement('button');
       action.id = 'close-report-a-problem';
@@ -94,8 +120,7 @@ export function feedbackSurvey() {
       const notFoundHeading = document.querySelector("h1").innerText;
       const notFound = '404';
 
-      if (notFoundHeading.includes(notFound)) {
-          var notFoundTrue = '404! ' } else { var notFoundTrue = '';}
+      if (notFoundHeading.includes(notFound)) { var notFoundTrue = '404! ' } else { var notFoundTrue = '';}
 
       form.id = 'report-problem-form-html';
       form.action = 'https://resources.hse.gov.uk/responseform.asp';
@@ -119,6 +144,7 @@ export function feedbackSurvey() {
         <div class="form-group js-hide" id="user-url"></div>
         <fieldset>
             <input name="url" type="hidden" id="url" size="100" class="input input-text" value="${newURL}">
+            <input name="ua" type="hidden" id="ua" size="100" class="input input-text" value="Browser name: ${browserName}, Browser version: ${browserVersion}, OS name: ${osName}, OS version: ${osVersion}, Platform type: ${platformType}, Platform vendor: ${platformVendor}">
             <input type="hidden" name="mailredirect" value="${newURL}">
             <input type="hidden" name="mailsubject" value="${notFoundTrue}Report a problem with this page: ${newURL}">
             <input type="submit" value="Submit" class="btn btn-primary" />

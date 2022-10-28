@@ -35,35 +35,7 @@ button:hover {
     text-decoration: none;
 }
 
-#contentContainer ul.linkList li {
-background: none !important;
-}
 
-#contentContainer ul li {
-list-style-type: square;
-}
-
-#contentContainer ul li::marker {
-color: $red;
-}
-
-#contentContainer ul.linkList {
-margin: 0 0 10px 18px !important;
-padding-left: 0;    
-}
-
-ul.social {
-margin: 0 0 10px 0 !important;
-}
-
-#contentContainer .mostPopular ul.linkList {
-margin-bottom: 0 !important;
-}
-
-#contentContainer .backgroundRed .linkList li a::before {
-background-image: none;
-padding-right: 0;
-}
 
 
 // Margins - Padding - Borders
@@ -72,19 +44,7 @@ padding-right: 0;
     padding: 10px !important;
 }
 
-#contentContainer {
-    .noPadding {
-        padding: 0 !important;
-    }
-
-    .border:last-of-type {
-        border-bottom: none;
-    }
-}
-
 // Lists
-
-
 
 .backgroundRed ul.listCaret li:before {
     color: white;
@@ -92,26 +52,6 @@ padding-right: 0;
 
 #contentContainer .backgroundRed p, #contentContainer .backgroundRed ul li  {
     color: white !important;
-}
-
-#contentContainer ol.multistep li {
-    margin-left: 15px;
-    padding: 0;
-    clear: both;
-}
-
-#contentContainer ul.multistep li {
-    padding-left: 0;
-    margin-left: 15px;
-    background: none;
-}
-
-#contentContainer ul.multistep li::before {
-    content: "— ";
-    color: $hseblack;
-}
-#contentContainer ul.linkArrow li {
-    padding-left: 0;
 }
 
 #contentContainer .linkArrow li {
@@ -185,15 +125,7 @@ padding-right: 0;
     margin-bottom: 0;
 }
 
-
-
-
-
 // Main content
-
-#contentContainer ol {
-    margin-bottom: 0;
-}
 
 
 // Forms
@@ -237,15 +169,6 @@ img.responsiveImg {
 #pageContainer {
     margin: 20px auto;
     clear: both;
-}
-
-
-#contentContainer {
-    margin: 0 !important;
-// Important fix for Edge
-// 81.0.416.62
-//-webkit-transform: translateZ(0);
-//transform: translateZ(0);
 }
 
 /* V5 global styles */

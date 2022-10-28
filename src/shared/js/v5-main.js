@@ -23,8 +23,10 @@ import { codeHighlighter } from './combined/code-highlighter.js';
 import { htmlFormsAntiSpam } from './combined/html-forms-anti-spam.js';
 import { subnavMenu } from './combined/subnav-menu.js';
 import { subNavPosition } from './combined/subnav-position.js';
+import { subNavMobile } from './combined/subnav-mobile.js';
 import { accordion } from './combined/accordion.js';
-
+// import { printGuide } from './combined/print-guide/print-guide.js';
+// import { CSVTable } from './combined/csv-table.js';
 
 // Window load
 window.addEventListener('DOMContentLoaded', () => {
@@ -117,15 +119,22 @@ window.addEventListener('DOMContentLoaded', () => {
 
   lightbox();
 
+  
 
   const secondaryMenuSelector = document.getElementById('menu');
 
   if (secondaryMenuSelector) {
     subnavMenu(secondaryMenuSelector);
+    subNavMobile();
+    subNavPosition();
   }
-  subNavPosition();
+
 
   feedbackSurvey();
   htmlFormsAntiSpam();
+
+  // printGuide();
+
+  // CSVTable();
 
 }); // end window load

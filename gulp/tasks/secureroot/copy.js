@@ -3,7 +3,11 @@
 const { src, dest, task, series } = require('gulp');
 import * as config from '../../config.json';
 
+const papaparseAssets = ['./node_modules/papaparse/papaparse.min.js'];
+
 const picturefillAssets = ['./node_modules/picturefill/dist/picturefill.min.js'];
+
+const bowserAssets = ['./node_modules/bowser/es5.js'];
 
 const highchartsAssets = [
   "./node_modules/highcharts/highcharts.js",
@@ -26,6 +30,11 @@ const highchartsAssets = [
   "./node_modules/highcharts/highcharts-more.js.map"
 ];
 
+function bowser() {
+  return src(bowserAssets)
+    .pipe(dest(`${config.secureroot.assetPath}/v5-js/vendor/bowser`))
+}
+
 function picturefill() {
   return src(picturefillAssets)
     .pipe(dest(`${config.secureroot.assetPath}/v5-js/vendor/picturefill`))
@@ -33,6 +42,11 @@ function picturefill() {
 function highCharts() {
   return src(highchartsAssets)
     .pipe(dest(`${config.secureroot.assetPath}/v5-js/vendor/highcharts`))
+}
+
+function papaparse() {
+  return src(papaparseAssets)
+    .pipe(dest(`${config.secureroot.assetPath}/v5-js/vendor/papaparse`))
 }
 
 function moment() {
@@ -71,5 +85,5 @@ function templates() {
   .pipe(dest(config.secureroot.copy.templates.output));
 }
 
-const toReturn = series(misc, html, vendorCSS, vendorJS, templates, moment, highCharts, picturefill, ariaAccordion);
+const toReturn = series(misc, html, vendorCSS, vendorJS, templates, moment, highCharts, picturefill, ariaAccordion, papaparse, bowser);
 task('hseCopy', toReturn)

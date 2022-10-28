@@ -1,0 +1,33 @@
+<div id="menu" class="collapse">
+  <ul>
+	  <li class="first"><a href="../development/index.htm">Development</a></li>
+    <li><a href="#">Workflow</a>
+		  <ul>
+			  <li><a href="../development/workflow/index.htm">Overview</a></li>
+			  <li><a href="#">Gitflow</a>
+			  <ul>
+				  <li><a href="../development/workflow/gitflow.htm">Overview</a></li>
+				  <li><a href="../development/workflow/gitflow-features.htm">Feature branches</a></li>
+				  <li><a href="../development/workflow/gitflow-releases.htm">Release branches</a></li>
+				  <li><a href="../development/workflow/gitflow-hotfixes.htm">Hotfixes</a></li>
+				</ul>
+			  </li>
+			  <li><a href="../development/workflow/client-tools.htm">Git-client management tools</a></li>
+		  </ul>
+	  </li>
+    
+    <li><a href="#">Testing</a>
+      <ul>
+		<li><a href="../development/testing/index.htm">Overview</a></li>
+        <li><a href="../development/testing/browsers-devices.htm">Browsers and devices</a></li>
+		<li><a href="../development/testing/test.htm">Test page</a></li>
+      </ul>
+    </li>
+	<li><a href="#">Javascript</a>
+      <ul>
+		<li><a href="../development/javascript/index.htm">Overview</a></li>
+        <li><a href="../development/javascript/create-a-basic-component.htm">Create a component</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>

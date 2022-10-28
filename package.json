@@ -1,13 +1,13 @@
 {
   "name": "hse-front-end",
-  "version": "5.6.7",
+  "version": "5.7.0",
   "description": "",
   "main": "gulpfile.babel.js",
   "scripts": {
     "bundle-report": "webpack-bundle-analyzer --port 8081 dist/stats.json",
     "gulp": "gulp --development",
     "hse": "gulp --staging",
-    "devguide": "gulp development --development",
+    "designsystem": "gulp development --development",
     "prod": "gulp production --production"
   },
   "author": "",
@@ -61,12 +61,16 @@
   },
   "dependencies": {
     "a11y_accordions": "^3.2.1",
+    "bowser": "^2.11.0",
     "clipboard": "^2.0.8",
     "formdata-polyfill": "^4.0.6",
     "highcharts": "^8.2.0",
+    "html-to-pdfmake": "^2.3.9",
     "js-cookie": "^2.2.1",
     "moment": "2.27.0",
     "os": "^0.1.1",
+    "papaparse": "^5.3.2",
+    "pdfmake": "^0.2.4",
     "picturefill": "^3.0.3",
     "prismjs": "^1.24.1",
     "tidy-html5": "^0.1.1"

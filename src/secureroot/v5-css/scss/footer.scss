@@ -31,7 +31,7 @@
 }
 
 #baseStrip p {
-    @include type-setting(-1);
+    @include type-setting(0);
     padding: 0 !important;
 }
 
