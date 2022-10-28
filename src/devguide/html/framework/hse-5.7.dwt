@@ -63,7 +63,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <!-- TemplateBeginEditable name="doctitle" -->
 <title></title>
-<meta name="description" content="">
+
 <!-- TemplateEndEditable -->
 	
 <!-- TemplateBeginEditable name="meta" -->
