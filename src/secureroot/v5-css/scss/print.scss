@@ -1,12 +1,19 @@
 // V5 elements removed from print style
-#beta-user-testing, #off-canvas-container {
-	@media print {
-	display: none;	
-	}
+@media print {
+  #cookie-message,
+  #headerLogo,
+  .display-none-print,
+  #breadCrumb,
+  #headerContainer,
+  #feedback,
+  #footer-nav {
+    display: none !important;
+  }
 }
 
-#contentContainer ul li:before {
-@media print {
-display: none;
-}
+// HTML print guides
+
+.lead-paragraph {
+  @include type-setting(2);
+  line-height: 1.5;
 }
