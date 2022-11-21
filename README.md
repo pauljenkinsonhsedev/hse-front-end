@@ -2,8 +2,8 @@
 
 ## Release notes
 
-HSE.GOV.UK framework: 5.7.0
-DW Template: hse-5.7.dwt
+- HSE.GOV.UK framework: 5.7.1
+- DW Template: hse-5.7.dwt
 
 ## Requirements and getting started
 
