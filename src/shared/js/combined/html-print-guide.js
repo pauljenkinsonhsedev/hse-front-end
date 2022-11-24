@@ -1,4 +1,5 @@
 import { footnoteLinks } from "./footnote-links.js";
+import pathEnv from "./utils/asset-env-path";
 
 export function htmlPrintGuide() {
   // Get print guide JSON file name from dataset
@@ -6,26 +7,30 @@ export function htmlPrintGuide() {
   const printGuideName = CTAPrintGuide.dataset.printGuide;
 
   // Get JSON and return data
-  const guidePages = fetch(`/print-guides/${printGuideName}`)
+  const guidePages = fetch(`${pathEnv}/print-guides/${printGuideName}`)
     .then((response) => response.json())
     .then((guide) => {
       return guide.pages;
-    });
+    })
+    .catch((error) =>
+      CTAPrintGuide.insertAdjacentHTML(
+        "afterend",
+        `<p>Print guide unavailable (Valid JSON required) - <a href="./index.htm">guide overview</a></p>`
+      )
+    );
 
-  const guideMeta = fetch(`/print-guides/${printGuideName}`)
+  const guideMeta = fetch(`${pathEnv}/print-guides/${printGuideName}`)
     .then((response) => response.json())
     .then((meta) => {
-      var h1 = meta.metadata.title;
-      console.log(h1);
-
+      const h1 = meta.metadata.title;
       const metaContent = document.querySelector("#contentContainer");
 
-      let h1Tag = document.createElement("h1");
-      let pTag = document.createElement("p");
-      let printButton = document.createElement("button");
+      const h1Tag = document.createElement("h1");
+      const pTag = document.createElement("p");
+      const printButton = document.createElement("button");
 
       // Add classes
-      printButton.classList.add("btn", "btn-primary", "display-none-print");
+      printButton.classList.add("btn", "display-none-print", "btn-print");
       pTag.classList.add("lead-paragraph", "display-none-print");
 
       // Prepend meta content
@@ -53,20 +58,28 @@ export function htmlPrintGuide() {
     var doc = parser.parseFromString(data, "text/html");
 
     // Get the content from the article tag
-    var content = doc.querySelector("#article");
+    let content = doc.querySelector("#article");
 
     // Assemble
 
     const printContent = document.querySelector("#contentContainer");
 
-    printContent.append(content);
+    if (content != null) {
+      printContent.append(content);
+    } else {
+      console.log(
+        "One or more of your page URLs retured null, check the JSON file"
+      );
+    }
 
-    var pagination = document.querySelector("#pagination");
-    var surveybox = document.querySelector(".box.backgroundRed");
+    const pagination = document.querySelector("#pagination");
+    const surveybox = document.querySelector(".box.backgroundRed");
+    const printableVersion = document.querySelector(".printable-version");
 
     // Remove clutter
     pagination.remove();
     surveybox.remove();
+    printableVersion.remove();
   };
 
   const fetchPages = async () => {
@@ -77,7 +90,11 @@ export function htmlPrintGuide() {
     }
   };
 
-  fetchPages();
+  fetchPages().catch((err) =>
+    console.log(
+      "Cannot fetch all pages, check pages exist in JSON file and have correct file names, with .htm extension included"
+    )
+  );
 
   // When page has loaded, rename <article> ids for accessibility
 
