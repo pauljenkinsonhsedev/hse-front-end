@@ -77,9 +77,15 @@ export function htmlPrintGuide() {
     const printableVersion = document.querySelector(".printable-version");
 
     // Remove clutter
-    pagination.remove();
-    surveybox.remove();
-    printableVersion.remove();
+    if (pagination) {
+      pagination.remove();
+    }
+    if (surveybox) {
+      surveybox.remove();
+    }
+    if (printableVersion) {
+      printableVersion.remove();
+    }
   };
 
   const fetchPages = async () => {
