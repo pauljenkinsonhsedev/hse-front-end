@@ -86,18 +86,27 @@ export function ariaLabels() {
     asideBottom.setAttribute("role", "complementary");
   }
 
-  const boxNote = document.querySelector(".boxNoteInformation");
-  if (boxNote) {
-    boxNote.setAttribute("role", "note");
-  }
+  const boxNoteInformation = document.querySelectorAll(".boxNoteInformation");
+  console.log(boxNoteInformation);
 
-  const boxNoteInformation = document.querySelector(".boxNoteInformation");
-  if (boxNoteInformation) {
-    boxNoteInformation.setAttribute("aria-label", "Information");
-  }
+  boxNoteInformation.forEach((box, index) => {
+    box.setAttribute("id", `note-information-${index}`);
+    box.setAttribute("role", "note");
+    box.setAttribute("aria-label", "Information");
+  });
 
-  const boxNoteWarning = document.querySelector(".boxNoteWarning");
-  if (boxNoteWarning) {
-    boxNoteWarning.setAttribute("aria-label", "Warning");
-  }
+  const boxNoteWarning = document.querySelectorAll(".boxNoteWarning");
+  console.log(boxNoteWarning);
+  boxNoteWarning.forEach((box, index) => {
+    box.setAttribute("id", `note-warning-${index}`);
+    box.setAttribute("role", "note");
+    box.setAttribute("aria-label", "Warning");
+  });
+
+  const boxNoteSurvey = document.querySelectorAll(".boxNoteSurvey");
+  boxNoteSurvey.forEach((box, index) => {
+    box.setAttribute("id", `note-survey-${index}`);
+    box.setAttribute("role", "note");
+    box.setAttribute("aria-label", "Survey");
+  });
 }
