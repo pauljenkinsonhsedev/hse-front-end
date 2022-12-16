@@ -86,27 +86,37 @@ export function ariaLabels() {
     asideBottom.setAttribute("role", "complementary");
   }
 
-  const boxNoteInformation = document.querySelectorAll(".boxNoteInformation");
-  console.log(boxNoteInformation);
+  const micrositeHomepage = document.querySelector(
+    ".columnbetacontentpage.column1"
+  );
 
-  boxNoteInformation.forEach((box, index) => {
-    box.setAttribute("id", `note-information-${index}`);
-    box.setAttribute("role", "note");
-    box.setAttribute("aria-label", "Information");
-  });
+  const boxNoteInformation = document.querySelectorAll(".boxNoteInformation");
+  if (boxNoteInformation) {
+    boxNoteInformation.forEach((box, index) => {
+      box.setAttribute("id", `note-information-${index}`);
+      box.setAttribute("role", "note");
+      box.setAttribute("aria-label", "Information");
+      if (micrositeHomepage) {
+        box.setAttribute("role", "region");
+      }
+    });
+  }
 
   const boxNoteWarning = document.querySelectorAll(".boxNoteWarning");
-  console.log(boxNoteWarning);
-  boxNoteWarning.forEach((box, index) => {
-    box.setAttribute("id", `note-warning-${index}`);
-    box.setAttribute("role", "note");
-    box.setAttribute("aria-label", "Warning");
-  });
+  if (boxNoteWarning) {
+    boxNoteWarning.forEach((box, index) => {
+      box.setAttribute("id", `note-warning-${index}`);
+      box.setAttribute("role", "note");
+      box.setAttribute("aria-label", "Warning");
+    });
+  }
 
   const boxNoteSurvey = document.querySelectorAll(".boxNoteSurvey");
-  boxNoteSurvey.forEach((box, index) => {
-    box.setAttribute("id", `note-survey-${index}`);
-    box.setAttribute("role", "note");
-    box.setAttribute("aria-label", "Survey");
-  });
+  if (boxNoteSurvey) {
+    boxNoteSurvey.forEach((box, index) => {
+      box.setAttribute("id", `note-survey-${index}`);
+      box.setAttribute("role", "note");
+      box.setAttribute("aria-label", "Survey");
+    });
+  }
 }
