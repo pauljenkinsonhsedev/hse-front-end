@@ -86,9 +86,18 @@ export function ariaLabels() {
     asideBottom.setAttribute("role", "complementary");
   }
 
-  const boxNote = document.querySelector(".boxNote");
+  const boxNote = document.querySelector(".boxNoteInformation");
   if (boxNote) {
     boxNote.setAttribute("role", "note");
-    boxNote.setAttribute("aria-label", "Information");
+  }
+
+  const boxNoteInformation = document.querySelector(".boxNoteInformation");
+  if (boxNoteInformation) {
+    boxNoteInformation.setAttribute("aria-label", "Information");
+  }
+
+  const boxNoteWarning = document.querySelector(".boxNoteWarning");
+  if (boxNoteWarning) {
+    boxNoteWarning.setAttribute("aria-label", "Warning");
   }
 }
