@@ -522,11 +522,9 @@ form fieldset input.checkbox {
   font-weight: 700;
 }
 
-.boxNote [role="region"] {
+.columnbetacontentpage.column1 .boxNoteInformation {
   border: 1px solid $darkgray;
-}
-
-.boxNoteInformation[role="region"] {
+  border-left: 6px solid $red;
   background: $gray;
 }
 
