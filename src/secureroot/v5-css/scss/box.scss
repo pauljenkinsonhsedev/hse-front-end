@@ -508,7 +508,32 @@ form fieldset input.checkbox {
   margin-bottom: 2.5px;
 }
 
-.boxNote {
+.boxNote.boxNoteInformation {
+  border-left: 6px solid $red;
+  background: none;
+}
+
+.boxNote.boxNoteSurvey {
+  border-left: 6px solid $beta;
+}
+
+.boxNote.boxNoteWarning {
+  background: none;
+  font-weight: 700;
+}
+
+.boxNote [role="region"] {
   border: 1px solid $darkgray;
-  border-left: 4px solid $red;
+}
+
+.boxNoteInformation[role="region"] {
+  background: $gray;
+}
+
+.boxNoteWarning {
+  background-image: url("../../assets/v5-images/icons/warning.svg") !important;
+  background-size: 35px 35px !important;
+  background-repeat: no-repeat !important;
+  min-height: 35px !important;
+  padding: 5px 0 0 45px;
 }
