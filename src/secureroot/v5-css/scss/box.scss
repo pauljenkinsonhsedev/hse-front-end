@@ -1,99 +1,99 @@
 .box {
-padding: 10px;
-margin: 0 0 16px 0;
-float: left;
-position: relative;
-background-color: #f3f3f3;
-border-radius: 0;
+  padding: 10px;
+  margin: 0 0 16px 0;
+  float: left;
+  position: relative;
+  background-color: #f3f3f3;
+  border-radius: 0;
 }
 .box1col,
 .box2col,
 .box3col {
-margin-right: 20px;
+  margin-right: 20px;
 }
 .box1col {
-width: 200px;
+  width: 200px;
 }
 .box2col {
-width: 440px;
+  width: 440px;
 }
 .box3col {
-width: 680px;
+  width: 680px;
 }
 
 // box split
 
 .boxSplit {
-background-color: white;
-@media only screen and (max-width: $desktop) {
-  display: none;
-}
-height: 15px;
-padding: 0;
-margin: 0 0 4px -10px;
-float: left;
+  background-color: white;
+  @media only screen and (max-width: $desktop) {
+    display: none;
+  }
+  height: 15px;
+  padding: 0;
+  margin: 0 0 4px -10px;
+  float: left;
 }
 .box1col .boxSplit {
-width: 220px;
+  width: 220px;
 }
 .box2col .boxSplit {
-width: 460px;
+  width: 460px;
 }
 
 // document box
 .box.document {
-border: 2px solid $red;
+  border: 2px solid $red;
 }
 
 .box.document .fileType {
-display: none;
+  display: none;
 }
 
 // box promo image
 
 .boxPromoImage img {
-float: right;
-margin: 0 0 10px 10px;
-position: relative;
-border-radius: 10px;
+  float: right;
+  margin: 0 0 10px 10px;
+  position: relative;
+  border-radius: 10px;
 }
 .boxPromoImage img.fileIcon {
-float: none;
-border-radius: 0;
-margin: 0;
+  float: none;
+  border-radius: 0;
+  margin: 0;
 }
 .boxNoBackground {
-padding-left: 0 !important;
-padding-right: 0 !important;
-border-radius: 0 !important;
-background-color: transparent !important;
-background-image: none !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  border-radius: 0 !important;
+  background-color: transparent !important;
+  background-image: none !important;
 }
 .box1col.boxNoBackground {
-width: 220px !important;
+  width: 220px !important;
 }
 .box2col.boxNoBackground {
-width: 460px !important;
+  width: 460px !important;
 }
 .box3col.boxNoBackground {
-width: 700px !important;
+  width: 700px !important;
 }
 .boxLast {
-margin-right: 0 !important;
+  margin-right: 0 !important;
 }
 .boxBackgroundBlack {
-background-color: #333;
+  background-color: #333;
 }
 .boxBackgroundRed {
-background-color: #981e32;
+  background-color: #981e32;
 }
 .boxBackgroundBlue {
-background-color: #197c98;
-background-image: linear-gradient(to bottom, #197c98, #144350);
+  background-color: #197c98;
+  background-image: linear-gradient(to bottom, #197c98, #144350);
 }
 .boxBackgroundGreen {
-background-color: #b9db0c;
-background-image: linear-gradient(to bottom, #b9db0c, #788f07);
+  background-color: #b9db0c;
+  background-image: linear-gradient(to bottom, #b9db0c, #788f07);
 }
 .boxBackgroundBlack h2,
 .boxBackgroundBlack h3,
@@ -107,235 +107,235 @@ background-image: linear-gradient(to bottom, #b9db0c, #788f07);
 .boxSubscribe h2,
 .boxSubscribe h3,
 .boxSubscribe p {
-color: #fff;
+  color: #fff;
 }
 .boxBackgroundGreen h2,
 .boxBackgroundGreen h3,
 .boxBackgroundGreen p {
-color: #000;
-text-decoration: none !important;
+  color: #000;
+  text-decoration: none !important;
 }
 .box2col.boxSubscribe ul.subscribeIcons li {
-width: 210px;
-margin: 0 10px 10px 0;
-background: 0 0 !important;
+  width: 210px;
+  margin: 0 10px 10px 0;
+  background: 0 0 !important;
 }
 .boxSubscribe ul {
-margin: 0 !important;
+  margin: 0 !important;
 }
 .boxSubscribe ul.subscribeIcons {
-display: block;
-padding: 0;
+  display: block;
+  padding: 0;
 }
 .boxSubscribe ul.subscribeIcons li {
-list-style: none;
-display: inline;
-padding: 0;
-margin: 0;
-width: 48px;
-float: left;
-text-align: center;
+  list-style: none;
+  display: inline;
+  padding: 0;
+  margin: 0;
+  width: 48px;
+  float: left;
+  text-align: center;
 }
 .boxSubscribe ul.subscribeIcons li span {
-display: block;
-padding: 0;
-padding: 34px 0 0 0;
+  display: block;
+  padding: 0;
+  padding: 34px 0 0 0;
 }
 .boxSubscribe ul.subscribeIcons li a {
-color: #fff;
-padding: 0;
-width: 48px;
-float: left;
+  color: #fff;
+  padding: 0;
+  width: 48px;
+  float: left;
 }
 #contentContainer .boxHalfLeft {
-margin-right: 10px;
+  margin-right: 10px;
 }
 #contentContainer .boxHalfRight {
-margin-left: 10px;
+  margin-left: 10px;
 }
 .more,
 .moreAboveSplit {
-background-color: #fff;
-padding: 4px 5px;
-clear: both;
-border-radius: 0;
-z-index: 1;
-border-bottom: 2px solid #981e32;
+  background-color: #fff;
+  padding: 4px 5px;
+  clear: both;
+  border-radius: 0;
+  z-index: 1;
+  border-bottom: 2px solid #981e32;
 }
 .moreAboveSplit {
-position: relative;
+  position: relative;
 }
 
 .box .more {
-margin-top: auto;
+  margin-top: auto;
 }
 
 .column2 .box .more {
-width: 670px;
+  width: 670px;
 }
 .column1 .box .more {
-width: 910px;
+  width: 910px;
 }
 .box1col .more {
-width: 190px !important;
+  width: 190px !important;
 }
 .box2col .more {
-width: 430px !important;
+  width: 430px !important;
 }
 .box3col .more {
-width: 670px !important;
+  width: 670px !important;
 }
 .boxHalfLeft .more,
 .boxHalfRight .more {
-width: 190px;
+  width: 190px;
 }
 .column2 .boxHalfLeft .more,
 .column2 .boxHalfRight .more {
-width: 310px;
+  width: 310px;
 }
 .column1 .boxHalfLeft .more,
 .column1 .boxHalfRight .more {
-width: 430px;
+  width: 430px;
 }
 
 .box .ddmStyling,
 .homepageDropdown .ddmStyling {
-float: left;
+  float: left;
 }
 .ie7 .homepageDropdown .ddmStyling {
-margin-bottom: 0.5em;
+  margin-bottom: 0.5em;
 }
 .box .ddmStyling select,
 .homepageDropdown .ddmStyling select {
-display: inline;
-float: left;
-margin: 0 0.5em 0 0;
+  display: inline;
+  float: left;
+  margin: 0 0.5em 0 0;
 }
 .homepageDropdown .ddmStyling select {
-width: 265px;
+  width: 265px;
 }
 .box .ddmStyling input,
 .box .ddmStyling select {
-margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 form fieldset.visibleFieldset {
-border: 1px solid #ababab;
-display: block;
-width: auto !important;
-padding: 0 10px;
-margin: -1em 0 1em 0;
+  border: 1px solid #ababab;
+  display: block;
+  width: auto !important;
+  padding: 0 10px;
+  margin: -1em 0 1em 0;
 }
 .ie7 form fieldset.visibleFieldset {
-position: relative;
+  position: relative;
 }
 
 form fieldset.radioButton input {
-display: inline;
-width: auto;
+  display: inline;
+  width: auto;
 }
 form fieldset.radioButton label {
-padding: 0 20px 0.5em 0;
+  padding: 0 20px 0.5em 0;
 }
 form fieldset.radioButton label {
-display: inline;
-clear: none;
+  display: inline;
+  clear: none;
 }
 form fieldset.radioButton label input {
-width: auto;
-float: left;
-clear: left;
-display: block;
-margin: 0 10px 0 0;
+  width: auto;
+  float: left;
+  clear: left;
+  display: block;
+  margin: 0 10px 0 0;
 }
 form label.checkbox {
-margin: 0 0 1em 0;
-display: inline-block;
-padding-right: 20px;
+  margin: 0 0 1em 0;
+  display: inline-block;
+  padding-right: 20px;
 }
 form input.checkbox {
-display: inline;
-width: auto;
+  display: inline;
+  width: auto;
 }
 form fieldset input.checkbox {
-width: auto;
+  width: auto;
 }
 
 .boxSubscribeSingle {
-margin: 0.5em 0;
-overflow: hidden;
-padding: 10px;
-background-color: #e8e8e8;
-background-image: linear-gradient(to bottom, #e8e8e8, #dbdbdb);
+  margin: 0.5em 0;
+  overflow: hidden;
+  padding: 10px;
+  background-color: #e8e8e8;
+  background-image: linear-gradient(to bottom, #e8e8e8, #dbdbdb);
 }
 .boxSubscribeSingle form label {
-clear: both;
-float: left;
-margin: 0 10px 0 0;
-padding: 0;
+  clear: both;
+  float: left;
+  margin: 0 10px 0 0;
+  padding: 0;
 }
 .boxSubscribeSingle h2,
 .boxSubscribeSingle img {
-float: left;
+  float: left;
 }
 .boxSubscribeSingle h2 {
-clear: none !important;
-margin-left: 10px;
+  clear: none !important;
+  margin-left: 10px;
 }
 .boxSubscribeSingle form,
 .boxSubscribeSingle p {
-clear: both;
-margin-left: 40px;
+  clear: both;
+  margin-left: 40px;
 }
 .boxSubscribeSingle form input {
-display: inline;
-float: left;
-width: 180px;
+  display: inline;
+  float: left;
+  width: 180px;
 }
 .boxSubscribeSingle form input.eBulletinButton {
-display: inline;
-float: right;
-margin-left: 20px;
-width: auto;
+  display: inline;
+  float: right;
+  margin-left: 20px;
+  width: auto;
 }
 
 .box {
-width: 100%;
-border-radius: 0;
-margin-bottom: 15px;
+  width: 100%;
+  border-radius: 0;
+  margin-bottom: 15px;
 }
 
 .box .more {
-width: 100%;
-position: relative;
+  width: 100%;
+  position: relative;
 }
 
 .box1col .more {
-width: 100% !important;
+  width: 100% !important;
 }
 
 .box.backgroundRed.hasMore p.more a {
-color: $red !important;
+  color: $red !important;
 }
 
 .box p:last-child {
-margin-bottom: 0 !important;
+  margin-bottom: 0 !important;
 }
 .box.hasMore p:last-child {
-margin-bottom: 10px !important;
+  margin-bottom: 10px !important;
 }
 
 .more {
-border-radius: 0;
-margin-bottom: 10px !important;
+  border-radius: 0;
+  margin-bottom: 10px !important;
 }
 
 .box.boxNoPadding {
-padding: 0;
+  padding: 0;
 }
 
 .box .box {
-margin-bottom: 0 !important;
+  margin-bottom: 0 !important;
 }
 
 // Box V5
@@ -345,159 +345,158 @@ margin-bottom: 0 !important;
 #contentContainer.columnbetacontentpage .box3col,
 #contentContainer.columnbetacontentpage .boxHalfLeft,
 #contentContainer.columnbetacontentpage .boxHalfRight {
-width: 100%;
+  width: 100%;
 }
 
 #contentContainer.columnbetacontentpage .boxHalfRight {
-margin-left: 0 !important;
+  margin-left: 0 !important;
 }
 
 .box3col .more,
 .box2col .more,
 .box1col .more,
 .box .more {
-width: 100% !important;
-}
-
-@media only screen and (max-width: $desktop) and (min-width: 550px) {
-#contentContainer.columnbetacontentpage .boxHalfLeft,
-#contentContainer.columnbetacontentpage .boxHalfRight {
-  width: 49%;
-}
-
-#contentContainer .boxHalfLeft {
-  margin-right: 2%;
-}
-}
-
-@media only screen and (min-width: $desktop) {
-#contentContainer.columnbetacontentpage .box1col {
-  width: 220px !important;
-}
-
-#contentContainer.columnbetacontentpage .box2col {
-  width: 459px !important;
-}
-
-#contentContainer.columnbetacontentpage .box3col {
   width: 100% !important;
 }
 
-#contentContainer.columnbetacontentpage .boxHalfLeft,
-#contentContainer.columnbetacontentpage .boxHalfRight {
-  width: 345px !important;
-  float: left;
-}
+@media only screen and (max-width: $desktop) and (min-width: 550px) {
+  #contentContainer.columnbetacontentpage .boxHalfLeft,
+  #contentContainer.columnbetacontentpage .boxHalfRight {
+    width: 49%;
+  }
 
-#contentContainer.columnbetacontentpage .box .boxHalfLeft,
-#contentContainer.columnbetacontentpage .box .boxHalfRight {
-  width: 335px !important;
-  float: left;
-}
-
-#contentContainer.columnbetacontentpage {
-  .box1col,
-  .box2col {
-    display: flex;
-    justify-content: flex-start;
-    flex-direction: column;
+  #contentContainer .boxHalfLeft {
+    margin-right: 2%;
   }
 }
 
-#contentContainer.columnbetacontentpage .hasMore .more {
-  margin-top: auto !important;
-}
+@media only screen and (min-width: $desktop) {
+  #contentContainer.columnbetacontentpage .box1col {
+    width: 220px !important;
+  }
+
+  #contentContainer.columnbetacontentpage .box2col {
+    width: 459px !important;
+  }
+
+  #contentContainer.columnbetacontentpage .box3col {
+    width: 100% !important;
+  }
+
+  #contentContainer.columnbetacontentpage .boxHalfLeft,
+  #contentContainer.columnbetacontentpage .boxHalfRight {
+    width: 345px !important;
+    float: left;
+  }
+
+  #contentContainer.columnbetacontentpage .box .boxHalfLeft,
+  #contentContainer.columnbetacontentpage .box .boxHalfRight {
+    width: 335px !important;
+    float: left;
+  }
+
+  #contentContainer.columnbetacontentpage {
+    .box1col,
+    .box2col {
+      display: flex;
+      justify-content: flex-start;
+      flex-direction: column;
+    }
+  }
+
+  #contentContainer.columnbetacontentpage .hasMore .more {
+    margin-top: auto !important;
+  }
 }
 
 // Cards (Box list)
 
 .boxList {
-display: inline-block;
-margin-bottom: 10px !important;
-background-image: none !important;
-@media only screen and (min-width: $desktop) {
-  display: flex;
-  justify-content: flex-start;
-}
+  display: inline-block;
+  margin-bottom: 10px !important;
+  background-image: none !important;
+  @media only screen and (min-width: $desktop) {
+    display: flex;
+    justify-content: flex-start;
+  }
 }
 
 .boxList ul {
-margin: 0 0 10px 0 !important;
+  margin: 0 0 10px 0 !important;
 }
 
 .boxList ul li {
-float: left;
-padding: 0 !important;
-margin: 5px 0;
+  float: left;
+  padding: 0 !important;
+  margin: 5px 0;
 }
 
 .boxList ul a:hover {
-background-color: $darkergray;
+  background-color: $darkergray;
 }
 .boxList ul li a:focus {
-border-bottom: 0 !important;
+  border-bottom: 0 !important;
 }
 
 .boxList ul li h3 {
-color: $red !important;
+  color: $red !important;
 }
 .boxList ul li h3 {
-margin: 0;
-display: inline;
-width: 95%;
-float: left;
+  margin: 0;
+  display: inline;
+  width: 95%;
+  float: left;
 }
 
-
-
-.boxList.boxList-2col ul li, .boxList ul li {
-flex: 1 0 100%;
-width: 100%;
-@media only screen and (min-width: $desktop) {
-flex: 1 0 465px;
-max-width: 465px;
-width: 465px;
-margin-right: 10px;
-}
+.boxList.boxList-2col ul li,
+.boxList ul li {
+  flex: 1 0 100%;
+  width: 100%;
+  @media only screen and (min-width: $desktop) {
+    flex: 1 0 465px;
+    max-width: 465px;
+    width: 465px;
+    margin-right: 10px;
+  }
 }
 
 .boxList.boxList-1col ul li {
-flex: 1 0 100%;
-width: 100%;
-max-width: 100%;
-margin-right: 10px;
+  flex: 1 0 100%;
+  width: 100%;
+  max-width: 100%;
+  margin-right: 10px;
 }
 
-.boxList.boxList-2col ul li:nth-child(2n+2), .boxList ul li:nth-child(2n+2) {
-margin-right: 0;    
+.boxList.boxList-2col ul li:nth-child(2n + 2),
+.boxList ul li:nth-child(2n + 2) {
+  margin-right: 0;
 }
 
-.boxList.boxList-1col ul li:nth-child(2n+2) {
-margin-right: 0;    
+.boxList.boxList-1col ul li:nth-child(2n + 2) {
+  margin-right: 0;
 }
 
 .boxList ul li:last-of-type {
-@media only screen and (max-width: $desktop) {
-  margin-bottom: 0;
-}
+  @media only screen and (max-width: $desktop) {
+    margin-bottom: 0;
+  }
 }
 .boxList ul li a {
-width: 100%;
-position: relative;
-float: left;
-padding: 10px;
-float: left;
-clear: both;
-width: 100%;
-background: none;
-background-color: $gray;
-background-image: none !important;
-text-decoration: none;
+  width: 100%;
+  position: relative;
+  float: left;
+  padding: 10px;
+  float: left;
+  clear: both;
+  width: 100%;
+  background: none;
+  background-color: $gray;
+  background-image: none !important;
+  text-decoration: none;
 }
 // margin for tap target spacing
 .box .linkList li {
-@media only screen and (max-width: $desktop) {
-margin-bottom: 6px;
+  @media only screen and (max-width: $desktop) {
+    margin-bottom: 6px;
+  }
 }
-}
-
