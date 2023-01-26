@@ -90,7 +90,9 @@ export function ariaLabels() {
     ".columnbetacontentpage.column1"
   );
 
-  const boxNoteInformation = document.querySelectorAll(".boxNoteInformation");
+  const boxNoteInformation = document.querySelectorAll(
+    ".box--callout-information"
+  );
   if (boxNoteInformation) {
     boxNoteInformation.forEach((box, index) => {
       box.setAttribute("id", `note-information-${index}`);
@@ -102,7 +104,7 @@ export function ariaLabels() {
     });
   }
 
-  const boxNoteWarning = document.querySelectorAll(".boxNoteWarning");
+  const boxNoteWarning = document.querySelectorAll(".box--callout-warning");
   if (boxNoteWarning) {
     boxNoteWarning.forEach((box, index) => {
       box.setAttribute("id", `note-warning-${index}`);
@@ -111,7 +113,7 @@ export function ariaLabels() {
     });
   }
 
-  const boxNoteSurvey = document.querySelectorAll(".boxNoteSurvey");
+  const boxNoteSurvey = document.querySelectorAll(".box--callout-survey");
   if (boxNoteSurvey) {
     boxNoteSurvey.forEach((box, index) => {
       box.setAttribute("id", `note-survey-${index}`);
