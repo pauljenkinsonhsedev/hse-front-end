@@ -106,7 +106,6 @@ export function htmlPrintGuide() {
 
   window.onload = function (event) {
     var articleElements = document.querySelectorAll("#article");
-    console.log(articleElements);
 
     // Set their ids
     for (var i = 0; i < articleElements.length; i++)
