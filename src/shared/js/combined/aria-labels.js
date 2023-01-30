@@ -13,9 +13,12 @@ export function ariaLabels() {
     navSecondary.setAttribute("aria-label", "Secondary");
   }
 
+<<<<<<< HEAD
   const printBanner = document.getElementById("printBanner");
   printBanner.setAttribute("aria-label", "Print banner");
 
+=======
+>>>>>>> html-print-guide
   const lastUpdated = document.getElementById("lastUpdated");
   lastUpdated.setAttribute("aria-label", "Last updated");
 
@@ -85,6 +88,7 @@ export function ariaLabels() {
   if (asideBottom) {
     asideBottom.setAttribute("role", "complementary");
   }
+<<<<<<< HEAD
 
   const micrositeHomepage = document.querySelector(
     ".columnbetacontentpage.column1"
@@ -121,4 +125,6 @@ export function ariaLabels() {
       box.setAttribute("aria-label", "Survey");
     });
   }
+=======
+>>>>>>> html-print-guide
 }
