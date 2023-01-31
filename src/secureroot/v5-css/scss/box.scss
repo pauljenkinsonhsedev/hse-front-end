@@ -500,3 +500,26 @@ form fieldset input.checkbox {
     margin-bottom: 6px;
   }
 }
+
+// 2 column box lists
+
+.columnbetatwocol .column .boxList.boxList-2col ul li,
+.columnbetatwocol .column .boxList ul li {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 0 100%;
+  -ms-flex: 1 0 100%;
+  flex: 1 0 100%;
+  width: 100%;
+}
+@media only screen and (min-width: 980px) {
+  .columnbetatwocol .column .boxList.boxList-2col ul li,
+  .columnbetatwocol .column .boxList ul li {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 0 300px;
+    -ms-flex: 1 0 300px;
+    flex: 1 0 300px;
+    max-width: 300px;
+    width: 300px;
+    margin-right: 10px;
+  }
+}
