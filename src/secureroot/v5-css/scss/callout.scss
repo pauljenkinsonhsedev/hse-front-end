@@ -1,35 +1,39 @@
 // Callouts
 
-// modifier of .box
+.callout {
+  padding: 10px;
+  margin-bottom: 20px;
+}
 
-.box--callout p {
+.callout p {
   padding: 0;
   margin-bottom: 2.5px;
 }
 
-.box--callout-information {
+.callout--information {
   border-left: 6px solid $red;
   background: $gray;
 }
 
-.box--callout-survey {
+.callout--survey {
   border-left: 6px solid $beta;
+  background: $gray;
 }
 
 // Modify style for full width
 .columnbetacontentpage.column1 {
-  .box--callout-information {
+  .callout--information {
     border: 1px solid $darkgray;
     border-left: 6px solid $red;
   }
 
-  .box--callout-survey {
+  .callout--survey {
     border: 1px solid $darkgray;
     border-left: 6px solid $beta;
   }
 }
 
-.box--callout-warning {
+.callout--warning {
   margin: 10px 0 20px 0;
   background: none;
   font-weight: 700;
@@ -38,4 +42,12 @@
   background-repeat: no-repeat !important;
   min-height: 35px !important;
   padding: 5px 0 0 45px;
+}
+
+.callout h2 {
+  font-size: 1.1rem;
+}
+
+.callout h3 {
+  font-size: 0.9rem;
 }
