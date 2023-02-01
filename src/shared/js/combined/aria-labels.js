@@ -87,12 +87,10 @@ export function ariaLabels() {
     ".columnbetacontentpage.column1"
   );
 
-  const boxNoteInformation = document.querySelectorAll(
-    ".box--callout-information"
-  );
+  const boxNoteInformation = document.querySelectorAll(".callout--information");
   if (boxNoteInformation) {
     boxNoteInformation.forEach((box, index) => {
-      box.setAttribute("id", `note-information-${index}`);
+      box.setAttribute("id", `callout-information-${index}`);
       box.setAttribute("role", "note");
       box.setAttribute("aria-label", "Information");
       if (micrositeHomepage) {
@@ -101,19 +99,19 @@ export function ariaLabels() {
     });
   }
 
-  const boxNoteWarning = document.querySelectorAll(".box--callout-warning");
+  const boxNoteWarning = document.querySelectorAll(".callout--warning");
   if (boxNoteWarning) {
     boxNoteWarning.forEach((box, index) => {
-      box.setAttribute("id", `note-warning-${index}`);
+      box.setAttribute("id", `callout-warning-${index}`);
       box.setAttribute("role", "note");
       box.setAttribute("aria-label", "Warning");
     });
   }
 
-  const boxNoteSurvey = document.querySelectorAll(".box--callout-survey");
+  const boxNoteSurvey = document.querySelectorAll(".callout--survey");
   if (boxNoteSurvey) {
     boxNoteSurvey.forEach((box, index) => {
-      box.setAttribute("id", `note-survey-${index}`);
+      box.setAttribute("id", `callout-survey-${index}`);
       box.setAttribute("role", "note");
       box.setAttribute("aria-label", "Survey");
     });
