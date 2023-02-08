@@ -18,8 +18,7 @@ export function topTasks() {
 
     if (href === url || href === urlAnchor) {
       if (!parent.classList.contains("step-detail")) {
-        parent.innerHTML = step.textContent;
-        console.log("no detail");
+        parent.innerHTML = step.innerHTML;
       }
     }
   });
