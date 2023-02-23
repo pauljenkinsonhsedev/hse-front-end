@@ -5,129 +5,126 @@
     Data is captured in GA, these functions are purely superficial
 
 */
-import { scrollPos } from './utils/feedback-position';
-import { bowser } from './bowser.js';
-
-
-
+import { scrollPos } from "./utils/feedback-position";
+import { bowser } from "./bowser.js";
 
 export function feedbackSurvey() {
+  const container = document.querySelector(".feedback-container");
 
+  if (!container) {
+    return;
+  }
+  const survey = document.querySelector(".feedback-survey");
 
-    const container = document.querySelector('.feedback-container');
+  const message = container.querySelector(".feedback-message");
 
-    if (!container) {
-        return;
+  // Containers
+  const yesNoContainer = document.querySelector(".yes-no-container");
+  const reportProblemButtonContainer = document.querySelector(
+    ".report-a-problem-container"
+  );
+
+  // Report a problem
+
+  const userReportProblem = document.querySelector("#report-problem-button");
+  const reportProblemForm = document.querySelector(".report-a-problem-form");
+
+  // User yes/no
+  const userYes = document.querySelector("#userYes");
+  const userNo = document.querySelector("#userNo");
+
+  const surveyHandle = [userYes, userNo];
+  const ReportProblemHandle = [userReportProblem];
+
+  scrollPos();
+
+  // open survey
+  surveyHandle.forEach((elem) => {
+    elem.addEventListener("click", feedbackActions);
+  });
+
+  // open report a problem
+  ReportProblemHandle.forEach((elem) => {
+    elem.addEventListener("click", reportProblem);
+  });
+
+  function feedbackActions(e) {
+    e.preventDefault();
+    websiteFeedback();
+    if (survey) {
+      setTimeout(function () {
+        showSurvey();
+      }, 300);
     }
-    const survey = document.querySelector('.feedback-survey');
+  }
 
-    const message = container.querySelector('.feedback-message');
+  function websiteFeedback() {
+    userYes.parentNode.removeChild(userYes);
+    userNo.parentNode.removeChild(userNo);
+    userReportProblem.parentNode.removeChild(userReportProblem);
+    message.innerHTML = `Thank you for your feedback.`;
+    message.classList.add("feedback-message-active");
+  }
 
-    // Containers
-    const yesNoContainer = document.querySelector('.yes-no-container');
-    const reportProblemButtonContainer = document.querySelector('.report-a-problem-container');
+  function reportProblem() {
+    bowser();
 
+    const Bowser = require("bowser");
+    const browserUA = Bowser.getParser(window.navigator.userAgent);
 
-    // Report a problem
+    // Get browser info
+    const browser = browserUA.getBrowser();
+    const os = browserUA.getOS();
+    const platform = browserUA.getPlatform();
 
-    const userReportProblem = document.querySelector('#report-problem-button');
-    const reportProblemForm = document.querySelector('.report-a-problem-form');
+    // Browser
+    const browserName = browser.name;
+    const browserVersion = browser.version;
+    // OS
+    const osName = os.name;
+    const osVersion = os.version;
+    // Platform
+    const platformType = platform.type;
+    const platformVendor = platform.vendor;
 
-    // User yes/no
-    const userYes = document.querySelector('#userYes');
-    const userNo = document.querySelector('#userNo');
+    const newURL =
+      window.location.protocol +
+      "//" +
+      window.location.host +
+      window.location.pathname +
+      window.location.search;
+    const action = document.createElement("button");
+    action.id = "close-report-a-problem";
+    action.classList.add("btn");
+    action.textContent = "Close";
 
-    const surveyHandle = [userYes, userNo];
-    const ReportProblemHandle = [userReportProblem];
-
-    scrollPos();
-
-    // open survey
-    surveyHandle.forEach((elem) => {
-        elem.addEventListener('click', feedbackActions);
-    });
-
-    // open report a problem
-    ReportProblemHandle.forEach((elem) => {
-        elem.addEventListener('click', reportProblem);
-    });
-
-    function feedbackActions (e) {
+    action.addEventListener(
+      "click",
+      (e) => {
+        e.stopPropagation();
         e.preventDefault();
-        websiteFeedback();
-        if (survey) {
-            setTimeout(function() {
-                showSurvey();
-            }, 300);
-        }
+        closeProblemForm(e);
+      },
+      false
+    );
+
+    const form = document.createElement("form");
+
+    const notFoundHeading = document.querySelector("h1").innerText;
+    const notFound = "404";
+
+    if (notFoundHeading.includes(notFound)) {
+      var notFoundTrue = "404! ";
+    } else {
+      var notFoundTrue = "";
     }
 
-    function websiteFeedback() {
-        userYes.parentNode.removeChild(userYes);
-        userNo.parentNode.removeChild(userNo);
-        userReportProblem.parentNode.removeChild(userReportProblem);
-        message.innerHTML = `Thank you for your feedback.`;
-        message.classList.add('feedback-message-active');
-    }
+    form.id = "report-problem-form-html";
+    form.action = "https://www.hse.gov.uk/assets/asp/feedback.asp";
+    form.method = "POST";
+    form.autocomplete = "on";
 
-  
-
-    function reportProblem() {
-
-      bowser();
-
-      const Bowser = require("bowser");
-      const browserUA = Bowser.getParser(window.navigator.userAgent);
-
-      // Get browser info
-      const browser = browserUA.getBrowser();
-      const os = browserUA.getOS();
-      const platform = browserUA.getPlatform();
-
-      // Browser
-      const browserName = (browser.name);
-      const browserVersion = (browser.version);
-      // OS
-      const osName = (os.name);
-      const osVersion = (os.version);
-      // Platform
-      const platformType = (platform.type);
-      const platformVendor = (platform.vendor);
-
-      const newURL = window.location.protocol + '//' + window.location.host + window.location.pathname + window.location.search;           
-      const action = document.createElement('button');
-      action.id = 'close-report-a-problem';
-      action.classList.add('btn');
-      action.textContent = 'Close';
-
-      action.addEventListener(
-        'click',
-        (e) => {
-          e.stopPropagation();
-          e.preventDefault();
-          closeProblemForm(e);
-
-        },
-        false
-      );
-
-    
-
-
-      // <form id="report-problem-form-html" action="https://resources.hse.gov.uk/responseform.asp" method="post" autocomplete="on">
-      const form = document.createElement('form');
-
-      const notFoundHeading = document.querySelector("h1").innerText;
-      const notFound = '404';
-
-      if (notFoundHeading.includes(notFound)) { var notFoundTrue = '404! ' } else { var notFoundTrue = '';}
-
-      form.id = 'report-problem-form-html';
-      form.action = 'https://resources.hse.gov.uk/responseform.asp';
-      form.method = 'POST';
-      form.autocomplete = 'on';
-
-      const formFields = `<fieldset class="fieldset">
+    const formFields = `<fieldset class="fieldset">
             <legend class="fieldset__legend">
                 <h2 class="fieldset__heading">Help us improve HSE.GOV.UK</h2>
             </legend>
@@ -150,72 +147,73 @@ export function feedbackSurvey() {
             <input type="submit" value="Submit" class="btn btn-primary" />
         </fieldset>`;
 
-        // const formFeedbackHTML = `<div class="report-problem-form-feeback"><h2>Thank you</h2><p>Your feedback is appreciated.</p></div>`;
+    // const formFeedbackHTML = `<div class="report-problem-form-feeback"><h2>Thank you</h2><p>Your feedback is appreciated.</p></div>`;
 
-        form.innerHTML = formFields;
-        // form.addEventListener('submit', (e) => {
-        //     e.stopPropagation();
-        //     e.preventDefault();
+    form.innerHTML = formFields;
+    // form.addEventListener('submit', (e) => {
+    //     e.stopPropagation();
+    //     e.preventDefault();
 
-        //     reportProblemForm.innerHTML = formFeedbackHTML;
+    //     reportProblemForm.innerHTML = formFeedbackHTML;
 
-        //     form.submit();
-        // }, false);
+    //     form.submit();
+    // }, false);
 
-      reportProblemForm.insertAdjacentElement('afterbegin', form);
-      reportProblemForm.insertAdjacentElement('beforebegin', action);
+    reportProblemForm.insertAdjacentElement("afterbegin", form);
+    reportProblemForm.insertAdjacentElement("beforebegin", action);
 
-      reportProblemForm.classList.add('survey-in');
-      reportProblemButtonContainer.classList.add('js-hide');
-      yesNoContainer.classList.add('js-hide');
-      reportProblemForm.scrollIntoView({behavior: "auto", block: "start"});
+    reportProblemForm.classList.add("survey-in");
+    reportProblemButtonContainer.classList.add("js-hide");
+    yesNoContainer.classList.add("js-hide");
+    reportProblemForm.scrollIntoView({ behavior: "auto", block: "start" });
+  }
 
-    }
+  function closeProblemForm(e) {
+    reportProblemForm.classList.remove("survey-in");
+    reportProblemButtonContainer.classList.remove("js-hide");
+    yesNoContainer.classList.remove("js-hide");
 
-    function closeProblemForm(e) {
-        reportProblemForm.classList.remove('survey-in');
-        reportProblemButtonContainer.classList.remove('js-hide');
-        yesNoContainer.classList.remove('js-hide');
+    reportProblemForm.innerHTML = "";
+    e.target.parentNode.removeChild(e.target);
+  }
 
-        reportProblemForm.innerHTML = '';
-        e.target.parentNode.removeChild(e.target);
-    }
+  function closeSurvey() {
+    survey.classList.remove("survey-in");
+  }
 
-    function closeSurvey() {
-        survey.classList.remove('survey-in');
-    }
+  function showSurvey() {
+    const questionaire = survey.querySelector(".questionaire");
+    const questions = questionaire.querySelectorAll(".question");
 
-    function showSurvey() {
-        const questionaire = survey.querySelector('.questionaire');
-        const questions = questionaire.querySelectorAll('.question');
+    const surveyQuestions = survey.querySelectorAll(".question-list__item a");
+    const surveyClose = survey.querySelector(".survey-close");
 
-        const surveyQuestions = survey.querySelectorAll('.question-list__item a');
-        const surveyClose = survey.querySelector('.survey-close');
+    [...surveyQuestions].forEach((elem) => {
+      // prevent default behaviour
+      elem.addEventListener("click", (e) => e.preventDefault());
+    });
 
-        [...surveyQuestions].forEach((elem) => {
-            // prevent default behaviour
-            elem.addEventListener('click', (e) => e.preventDefault());
-        });
+    // display questions
+    questions[0].classList.add("active");
+    [...questions].forEach((elem) => {
+      elem.addEventListener("click", (e) => {
+        e.preventDefault();
+        const target = e.target;
+        if (
+          target.classList.contains("answer") &&
+          elem.classList.contains("active")
+        ) {
+          elem.classList.remove("active");
+          elem.nextElementSibling.classList.add("active");
+        }
+      });
+    });
 
-        // display questions
-        questions[0].classList.add('active');
-        [...questions].forEach((elem) => {
-            elem.addEventListener('click', (e) => {
-                e.preventDefault();
-                const target = e.target;
-                if (target.classList.contains('answer') && elem.classList.contains('active')) {
-                    elem.classList.remove('active');
-                    elem.nextElementSibling.classList.add('active');
-                }
-            });
-        });
+    surveyClose.addEventListener("click", closeSurvey);
 
-        surveyClose.addEventListener('click', closeSurvey);
+    // open survey panel
+    survey.classList.add("survey-in");
 
-        // open survey panel
-        survey.classList.add('survey-in');
-
-        questionaire.scrollIntoView({behavior: "auto", block: "start"});
-
-    }
+    questionaire.scrollIntoView({ behavior: "auto", block: "start" });
+  }
 }
