@@ -1,106 +1,112 @@
 // V5 layout
 
 #contentContainer * {
-box-sizing: border-box;
-}    
-
-#contentContainer {
-width: 100%;
-margin: 0 !important;
+  box-sizing: border-box;
 }
 
-.oneThird, .twoThird, .half, .twoThirdHalf, .mostPopular, .homepageBanner {
-width: 100%;
+#contentContainer {
+  width: 100%;
+  margin: 0 !important;
+}
+
+.oneThird,
+.twoThird,
+.half,
+.twoThirdHalf,
+.mostPopular,
+.homepageBanner {
+  width: 100%;
 }
 
 #pageContainer {
-width: 90%;
+  width: 90%;
 }
 
 #sideBar {
-width: 100%;
-float: left;
+  width: 100%;
+  float: left;
 }
 
 #sideBar .box {
-box-sizing: border-box !important;
+  box-sizing: border-box !important;
 }
 
 .fixed-container {
-width: 100%;
-margin: auto;
-@media only screen and (min-width : $desktop) {
-width: 940px;
-}
+  width: 100%;
+  margin: auto;
+  @media only screen and (min-width: $desktop) {
+    width: $full-width;
+  }
 }
 
 // Columns
 
 .columnFull {
-width: 100%;
-float: left;
-height: auto;
-clear: both;
-padding: 0;
+  width: 100%;
+  float: left;
+  height: auto;
+  clear: both;
+  padding: 0;
 }
 
 .column {
-float: left;
-width: 100%;
-position: relative;
-padding: 10px;
-margin: 0 1.5% 20px 0;
+  float: left;
+  width: 100%;
+  position: relative;
+  padding: 10px;
+  margin: 0 1.5% 20px 0;
 }
 
 .column.noBoxPadding {
-margin: 0 10px 10px 0;
-@media only screen and (min-width : $desktop) {
-margin: 0 20px 20px 0;
-}
-padding: 0;
+  margin: 0 10px 10px 0;
+  @media only screen and (min-width: $desktop) {
+    margin: 0 20px 20px 0;
+  }
+  padding: 0;
 }
 
 .noBoxPadding .column {
-padding-left: 0 !important;
-padding-right: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 }
 
 .column.backgroundRed {
-padding: 20px;
+  padding: 20px;
 }
 
 /* Spacing & Borders */
 
 .noPadding {
-padding: 0 !important;
+  padding: 0 !important;
 }
 
 .border:last-of-type {
-border-bottom: none;
-// margin-bottom: 0;
+  border-bottom: none;
+  // margin-bottom: 0;
 }
 
 .border {
-margin-bottom: 20px;
-border-bottom: 2px solid $red;
+  margin-bottom: 20px;
+  border-bottom: 2px solid $red;
 }
 
 .columnFull:first-of-type {
-padding-top: 0;
+  padding-top: 0;
 }
 
-#headerContainer, #baseStrip, div.diaryMonth h2, .boxSubscribe {
-background-color: $red;
+#headerContainer,
+#baseStrip,
+div.diaryMonth h2,
+.boxSubscribe {
+  background-color: $red;
 }
 
 // space fix
-.columnFull:last-of-type .oneThird, .columnFull:last-of-type .twoThird {
-margin-bottom: 0px;
+.columnFull:last-of-type .oneThird,
+.columnFull:last-of-type .twoThird {
+  margin-bottom: 0px;
 }
 
 .column.oneThird.backgroundRed {
-margin-bottom: 20px;
+  margin-bottom: 20px;
 }
-
-
-

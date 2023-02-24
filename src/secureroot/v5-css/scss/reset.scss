@@ -299,13 +299,13 @@ a.skip:hover {
 }
 #header {
   padding: 10px 0 0 0;
-  width: 940px;
+  width: $full-width;
   height: 56px;
   margin: 0 auto;
 }
 #pageContainer {
   position: relative;
-  width: 940px;
+  width: $full-width;
   margin: 12px auto 10px auto;
   padding: 0 10px;
 }
@@ -412,7 +412,7 @@ a.skip:hover {
   fill: #333 !important;
 }
 #navigationContainer {
-  width: 940px;
+  width: $full-width;
   margin: 15px auto 0 auto;
   height: 33px;
 }
@@ -519,7 +519,7 @@ ul.navSupp li a {
 
 #footer {
   margin: 0 auto;
-  width: 940px;
+  width: $full-width;
   overflow: auto;
   padding: 10px 0;
 }
@@ -540,7 +540,7 @@ ul.navSupp li a {
   position: relative;
 }
 #baseStripInner {
-  width: 940px;
+  width: $full-width;
   margin: 0 auto;
 }
 #baseStrip p {
