@@ -3,190 +3,189 @@
 // Lightbox
 
 .lightbox {
-margin-bottom: 10px !important;
+  margin-bottom: 10px !important;
 }
 
 .lightbox li {
-background: none;
-padding-right: 0 !important;
-background-color: $gray;
-border: 5px solid $gray;
+  background: none;
+  padding-right: 0 !important;
+  background-color: $gray;
+  border: 5px solid $gray;
 }
 
 #contentContainer ul.lightbox li {
-padding-bottom: 0 !important;
+  padding-bottom: 0 !important;
 }
 
 .lightbox li a {
-float: left;
+  float: left;
 }
 
 body.hasScript #contentContainer ul.lightbox li {
-margin-right: 10px;
+  margin-right: 10px;
 }
 
 .expand {
-bottom: 10px !important;
-left: auto !important;
+  bottom: 10px !important;
+  left: auto !important;
 }
 
 // Alert box
 
 .v5-notice-box {
-float: left;
-padding: 10px;
-width: 100%;
-border: 2px solid $red;
-margin-bottom: 20px;
+  float: left;
+  padding: 10px;
+  width: 100%;
+  border: 2px solid $red;
+  margin-bottom: 20px;
 }
 
 // Containers
 
 .v5-container {
-width: 90%;
-clear: both;
-padding-left: 5%;
-padding-right: 5%;
-@media only screen and (min-width : $desktop) {
-width: 940px !important;
-margin: 0 auto;
-padding: 0;
-}
+  width: 90%;
+  clear: both;
+  padding-left: 5%;
+  padding-right: 5%;
+  @media only screen and (min-width: $desktop) {
+    width: $full-width !important;
+    margin: 0 auto;
+    padding: 0;
+  }
 }
 
 .home #headerContainer {
-margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 // Column lists
 
 .column.multiCol {
-margin-bottom: 0;
-padding-bottom: 0;
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 
 ul.columnsList {
-margin: 0 !important;
-@media only screen and (min-width : $desktop) {
-flex-wrap: wrap;
-display: flex;
-}
+  margin: 0 !important;
+  @media only screen and (min-width: $desktop) {
+    flex-wrap: wrap;
+    display: flex;
+  }
 }
 
 .columnsList li p {
-padding-bottom: 20px;
-margin: 0;    
+  padding-bottom: 20px;
+  margin: 0;
 }
 .column.multiCol.col2 {
-.columnsList li {
+  .columnsList li {
     flex: 1 0 465px;
-    max-width: 465px;  
+    max-width: 465px;
     margin-right: 10px;
-} 
-.columnsList li:nth-child(2n+2) {
-margin-right: 0;    
-}   
+  }
+  .columnsList li:nth-child(2n + 2) {
+    margin-right: 0;
+  }
 }
 .columnsList li {
-padding: 0 !important;
-background: none;
-list-style-image: none !important;
-@media only screen and (min-width : $desktop) {
--webkit-column-break-inside: avoid; /* Chrome, Safari, Opera */
-page-break-inside: avoid; /* Firefox */
-break-inside: avoid; /* IE 10+ */
-flex: 1 0 306.666666666666667px;
-max-width: 306.666666666666667px;
-margin-right: 10px;
-}
+  padding: 0 !important;
+  background: none;
+  list-style-image: none !important;
+  @media only screen and (min-width: $desktop) {
+    -webkit-column-break-inside: avoid; /* Chrome, Safari, Opera */
+    page-break-inside: avoid; /* Firefox */
+    break-inside: avoid; /* IE 10+ */
+    flex: 1 0 306.666666666666667px;
+    max-width: 306.666666666666667px;
+    margin-right: 20px; // Gutter
+  }
 }
 
-.columnsList li:nth-child(3n+3) {
-margin-right: 0;    
+.columnsList li:nth-child(3n + 3) {
+  margin-right: 0;
 }
 
 .addToBasket a {
-background: $red;
+  background: $red;
 }
 
 div.diaryMonth {
-	margin-bottom: 30px;
+  margin-bottom: 30px;
 }
 
 div.diaryMonth h2 {
-	color:#4E4E4E;
+  color: #4e4e4e;
 }
 
 div.diaryMonth h2 {
-	color: #ffffff;
+  color: #ffffff;
 }
 div.diaryMonth li h3 {
-	color:#981e32;
+  color: #981e32;
 }
 
 div#contentContainer div.diaryMonth li.odd {
-	background-color:#f2f2f2;
-	border: 0px;
+  background-color: #f2f2f2;
+  border: 0px;
 }
 
 div#contentContainer div.diaryMonth li.even {
-	background-color:#e4e4e4;
-	border: 0px;
-
+  background-color: #e4e4e4;
+  border: 0px;
 }
-
 
 div.diaryMonth {
-	margin-bottom: 30px;
-  }
-  div.diaryMonth h2 {
-	text-align: center;
-	font-weight: 700;
-  }
-  div.diaryMonth h2 {
-	color: #fff;
-	padding: 8px;
-	font-weight: 400;
-	clear: none;
-  }
-  div.diaryMonth li h3 {
-	font-size: 1em;
-	color: #981e32;
-	margin: 0;
-  }
-  div.diaryMonth ul {
-	margin: 0;
-  }
-  div.diaryMonth li p {
-	margin: 0;
-  }
-  div.diaryMonth li {
-	border-bottom: 1px solid #c2c2c2;
-	padding: 5px 10px;
-	background: 0 0;
-	margin: 0;
-  }
-  div.diaryMonth li.odd {
-	background-color: #f2f2f2;
-	border: 0;
-  }
-  div.diaryMonth li.even {
-	background-color: #e4e4e4;
-	border: 0;
-  }
-  #diaryContainer {
-	position: relative;
-	overflow: hidden;
-  }
-
-.buy-button{
-	background-color: #981e32;
-	color: #fff !important;
-	padding: 5px;
+  margin-bottom: 30px;
+}
+div.diaryMonth h2 {
+  text-align: center;
+  font-weight: 700;
+}
+div.diaryMonth h2 {
+  color: #fff;
+  padding: 8px;
+  font-weight: 400;
+  clear: none;
+}
+div.diaryMonth li h3 {
+  font-size: 1em;
+  color: #981e32;
+  margin: 0;
+}
+div.diaryMonth ul {
+  margin: 0;
+}
+div.diaryMonth li p {
+  margin: 0;
+}
+div.diaryMonth li {
+  border-bottom: 1px solid #c2c2c2;
+  padding: 5px 10px;
+  background: 0 0;
+  margin: 0;
+}
+div.diaryMonth li.odd {
+  background-color: #f2f2f2;
+  border: 0;
+}
+div.diaryMonth li.even {
+  background-color: #e4e4e4;
+  border: 0;
+}
+#diaryContainer {
+  position: relative;
+  overflow: hidden;
 }
 
-.buy-button a:hover, .buy-button a:visited {
-	background-color: #981e32;
-	text-decoration: underline;
-	padding: 5px;
+.buy-button {
+  background-color: #981e32;
+  color: #fff !important;
+  padding: 5px;
+}
+
+.buy-button a:hover,
+.buy-button a:visited {
+  background-color: #981e32;
+  text-decoration: underline;
+  padding: 5px;
 }
