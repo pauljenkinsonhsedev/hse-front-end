@@ -24,7 +24,7 @@ ol.multistep.multistepDashed li::before {
   position: absolute;
   color: $darkergray;
   left: 0;
-  width: 20px;
+  width: $gutter;
   overflow: hidden;
 }
 
@@ -51,7 +51,7 @@ ol.multistep li {
 #pagination {
   width: 100%;
   float: left;
-  margin-bottom: 20px;
+  margin-bottom: $gutter;
 }
 
 #pagination ul li {

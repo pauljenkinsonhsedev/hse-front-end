@@ -3,267 +3,265 @@
 // Homepage banner
 
 .homepageBanner {
-	padding: 0;
-	margin-bottom: 20px !important;
+  padding: 0;
+  margin-bottom: $gutter !important;
 
-	@media only screen and (min-width : $desktop) {
-		margin-bottom: 0;
-		a {
-			height: 100%;
-			display: flex;
-			flex-direction: row;
-			flex-wrap: nowrap;
-			justify-content: flex-start;
-		}
-	}
+  @media only screen and (min-width: $desktop) {
+    margin-bottom: 0;
+    a {
+      height: 100%;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+    }
+  }
 }
 
 .homepageBanner {
-	@media only screen and (min-width : 980px) {
-		max-height: 258px !important;
-	}
+  @media only screen and (min-width: 980px) {
+    max-height: 258px !important;
+  }
 }
 
 .homepageBanner a {
-	float: left;
-	width: 100%;
+  float: left;
+  width: 100%;
 }
 
 .homepageBanner img {
-	@media only screen and (min-width : 980px) {
-
-	}
+  @media only screen and (min-width: 980px) {
+  }
 }
 
 .mostPopular {
-	@media only screen and (min-width : 980px) {
-		margin-bottom: 20px;
-	}
+  @media only screen and (min-width: 980px) {
+    margin-bottom: $gutter;
+  }
 }
 
 .mostPopular {
-	min-height: 256.62px;
+  min-height: 256.62px;
 }
-
-
-
 
 .homepageBannerInner {
-	display: flex;
-	flex-direction: column;
-	flex-wrap: nowrap;
-	padding: 20px;
-	order: 2;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  padding: $gutter;
+  order: 2;
 
-	overflow: hidden;
+  overflow: hidden;
 
-	@media only screen and (min-width : 600px) {
-		order: 1;
-	}
+  @media only screen and (min-width: 600px) {
+    order: 1;
+  }
 }
 
 .homepageBannerImage {
-	order: 1;
-	@media only screen and (min-width : 600px) {
-		order: 2;
-		overflow: hidden;
-	}
+  order: 1;
+  @media only screen and (min-width: 600px) {
+    order: 2;
+    overflow: hidden;
+  }
 
-	@media only screen and (min-width : $desktop) {
-		width: 100%;
-	}
+  @media only screen and (min-width: $desktop) {
+    width: 100%;
+  }
 }
 
 .coronaPoster {
-	background-color: #3272b2;
-	font-weight: 100;
-	letter-spacing: 1px;
+  background-color: #3272b2;
+  font-weight: 100;
+  letter-spacing: 1px;
 
-	h2 {
-	   margin-bottom: 5px;
-	   color: $white;
-	}
+  h2 {
+    margin-bottom: 5px;
+    color: $white;
+  }
 
-	a p {
-		font-size: 22px;
-		line-height: 1.5;
-		font-weight: normal;
-		text-decoration: none;
-		color: #FFFFFF;
-	}
+  a p {
+    font-size: 22px;
+    line-height: 1.5;
+    font-weight: normal;
+    text-decoration: none;
+    color: #ffffff;
+  }
 
-	a:link,
-	a:hover,
-	a:visited,
-	a:active {
-		text-decoration: none;
-		color: #FFFFFF;
-	}
+  a:link,
+  a:hover,
+  a:visited,
+  a:active {
+    text-decoration: none;
+    color: #ffffff;
+  }
 }
 
 .stayAlertBanner {
-	margin-top: auto;
-	align-items: flex-end;
+  margin-top: auto;
+  align-items: flex-end;
 }
-
 
 // Bestsellers (publications)
 
-ul.itemThumbBook .header, ul.itemThumbBook .resourceTitle {
-color: $red;
+ul.itemThumbBook .header,
+ul.itemThumbBook .resourceTitle {
+  color: $red;
 }
 
-ul.itemThumbBook .header:hover , ul.itemThumbBook .resourceTitle:hover, ul.itemThumbBook a:focus .header, ul.itemThumbBook a:focus .resourceTitle {
-color: $black !important;
+ul.itemThumbBook .header:hover,
+ul.itemThumbBook .resourceTitle:hover,
+ul.itemThumbBook a:focus .header,
+ul.itemThumbBook a:focus .resourceTitle {
+  color: $black !important;
 }
 
 ul.itemThumbBook .subText {
-width: 100% !important;
+  width: 100% !important;
 }
 
 ul.itemThumbBook {
-margin: 0 !important;
+  margin: 0 !important;
 }
 
 ul.itemThumbBook a {
-float: left !important;
-width: 100%;
+  float: left !important;
+  width: 100%;
 }
 
 ul.itemThumbBook a span {
-text-decoration: underline;
+  text-decoration: underline;
 }
 
 ul.itemThumbBook a:hover span {
-text-decoration: none;
+  text-decoration: none;
 }
 
-
 ul.itemThumbBook a:hover .resourcePrice {
-text-decoration: none;
-color: $hseblack;
+  text-decoration: none;
+  color: $hseblack;
 }
 
 ul.itemThumbBook li {
-float: left;
-width: 100%;
+  float: left;
+  width: 100%;
 }
 
 ul.itemThumbBook li p {
-margin: 0 !important;
+  margin: 0 !important;
 }
 
 ul.itemThumbBook span {
-padding-right: 0;
+  padding-right: 0;
 }
 
 .v5-float-right {
-float: right !important
+  float: right !important;
 }
 
 .hsl-links {
-margin: 0 !important;
+  margin: 0 !important;
 }
 
 ul.itemThumbBook.publications {
-flex-wrap: wrap;
-display: flex;
-justify-content: left;
-width: 100%;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: left;
+  width: 100%;
 }
 
 ul.itemThumbBook.publications img {
-width: 100%;
+  width: 100%;
 }
 
 ul.itemThumbBook.publications li {
-margin-left: 0;
-width: 100%;
-flex: 0 1 auto;
-flex-direction: row;
-@media only screen and (min-width: 350px) and (max-width : $small) {
-width: calc(50% - 10px);
-margin-left: 20px; 
-}
-@media only screen and (min-width : $small) {
-width: calc(25% - 15px);
-margin-left: 20px;
-}
-@media only screen and (min-width : $desktop) {
-width: 10.6382978723404%;
-margin-left: 02.1276595744681%; // 20px
-min-width: 100px;
-max-width: 100px;
-}
-}
-
-ul.itemThumbBook.publications li:nth-child(2n+1) {
-@media only screen and (min-width : 350px) and (max-width : 499px) {
-margin-left: 0 !important;
-}
+  margin-left: 0;
+  width: 100%;
+  flex: 0 1 auto;
+  flex-direction: row;
+  @media only screen and (min-width: 350px) and (max-width: $small) {
+    width: calc(50% - 10px);
+    margin-left: $gutter;
+  }
+  @media only screen and (min-width: $small) {
+    width: calc(25% - 15px);
+    margin-left: $gutter;
+  }
+  @media only screen and (min-width: $desktop) {
+    width: 10.6382978723404%;
+    margin-left: 02.1276595744681%; // 20px
+    min-width: 100px;
+    max-width: 100px;
+  }
 }
 
-ul.itemThumbBook.publications li:nth-child(4n+1) {
-@media only screen and (min-width : $small) and (max-width : 979px) { 
-margin-left: 0 !important;
-}
+ul.itemThumbBook.publications li:nth-child(2n + 1) {
+  @media only screen and (min-width: 350px) and (max-width: 499px) {
+    margin-left: 0 !important;
+  }
 }
 
-ul.itemThumbBook.publications li:nth-child(8n+1) {
-@media only screen and (min-width : $desktop) {
-margin-left: 0 !important; 
+ul.itemThumbBook.publications li:nth-child(4n + 1) {
+  @media only screen and (min-width: $small) and (max-width: 979px) {
+    margin-left: 0 !important;
+  }
 }
+
+ul.itemThumbBook.publications li:nth-child(8n + 1) {
+  @media only screen and (min-width: $desktop) {
+    margin-left: 0 !important;
+  }
 }
 
 .resourceTitle {
-padding-top: 10px;
-float: left;
+  padding-top: 10px;
+  float: left;
 }
 
 // News list
 
 ul.newsList li img {
-float: left;
-margin: 0 10px 10px 0;
+  float: left;
+  margin: 0 10px 10px 0;
 }
 ul.newsList li a {
-float: left;
-width: 100%;
+  float: left;
+  width: 100%;
 }
 
 ul.newsList li {
-float: left;
-margin-bottom: 10px;
+  float: left;
+  margin-bottom: 10px;
 }
 
 ul.newsList li h3 {
-float: left;
+  float: left;
 }
 
 .subText {
-color: #111;
+  color: #111;
 }
 
 .itemThumbBook li a:hover span.subText {
-color: $hseblack !important;
+  color: $hseblack !important;
 }
 
 .itemThumbBook li a:hover span {
-color:#981e32;
+  color: #981e32;
 }
 
 .publications-products a {
-background-color: #2846A5;
+  background-color: #2846a5;
 }
 
 .training a {
-background-color: #4F2170;
+  background-color: #4f2170;
 }
 
 .testing a {
-background-color: #CE421B;
+  background-color: #ce421b;
 }
 
 .research a {
-background-color: #287826;
+  background-color: #287826;
 }

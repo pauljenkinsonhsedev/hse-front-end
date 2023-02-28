@@ -317,7 +317,7 @@ a.skip:hover {
 #navSecondary {
   float: left;
   width: 220px;
-  margin: 7px 20px 7px 0;
+  margin: 7px $gutter 7px 0;
   position: relative;
 }
 #footerContainer {
@@ -790,7 +790,7 @@ div.icaplr span.download {
   // font-size:1em;
   line-height: 1.5;
   opacity: 0;
-  padding: 10px 20px;
+  padding: 10px $gutter;
   position: absolute;
   -webkit-transition: 0.2s 0s;
   -moz-transition: 0.2s 0s;
@@ -811,7 +811,7 @@ div.icaplr span.download {
   border: solid 11px;
   content: "";
   display: block;
-  margin: 0 20px 0 20px;
+  margin: 0 $gutter 0 20px;
   position: absolute;
 }
 .tooltip > :last-child {
@@ -955,7 +955,7 @@ ul.semtabs li.active a {
   overflow: hidden;
 }
 #contentContainer ul.lightbox li {
-  padding: 0 0 20px 0;
+  padding: 0 0 $gutter 0;
   margin: 0;
   list-style: none;
   width: 100%;
@@ -972,7 +972,7 @@ ul.semtabs li.active a {
   padding-left: 16px;
 }
 body.hasScript #contentContainer ul.lightbox li {
-  padding: 0 0 20px 0;
+  padding: 0 0 $gutter 0;
   margin: 0;
   list-style: none;
   float: left;
@@ -1013,7 +1013,7 @@ body.hasScript #contentContainer ul.lightbox li.lastOnLine {
 }
 .alertbox {
   padding: 8px 35px 8px 14px !important;
-  margin-bottom: 20px !important;
+  margin-bottom: $gutter !important;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) !important;
   background-color: #fcf8e3 !important;
   border: 1px solid #fbeed5 !important;
@@ -1030,7 +1030,7 @@ body.hasScript #contentContainer ul.lightbox li.lastOnLine {
   position: relative !important;
   top: -2px !important;
   right: -21px !important;
-  line-height: 20px !important;
+  line-height: $gutter !important;
 }
 .alertbox-success {
   color: #468847 !important;

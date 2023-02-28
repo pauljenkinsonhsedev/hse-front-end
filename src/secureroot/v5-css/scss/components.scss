@@ -37,7 +37,7 @@ body.hasScript #contentContainer ul.lightbox li {
   padding: 10px;
   width: 100%;
   border: 2px solid $red;
-  margin-bottom: 20px;
+  margin-bottom: $gutter;
 }
 
 // Containers
@@ -55,7 +55,7 @@ body.hasScript #contentContainer ul.lightbox li {
 }
 
 .home #headerContainer {
-  margin-bottom: 20px;
+  margin-bottom: $gutter;
 }
 
 // Column lists
@@ -74,7 +74,7 @@ ul.columnsList {
 }
 
 .columnsList li p {
-  padding-bottom: 20px;
+  padding-bottom: $gutter;
   margin: 0;
 }
 .column.multiCol.col2 {
@@ -97,7 +97,7 @@ ul.columnsList {
     break-inside: avoid; /* IE 10+ */
     flex: 1 0 306.666666666666667px;
     max-width: 306.666666666666667px;
-    margin-right: 20px; // Gutter
+    margin-right: $gutter; // Gutter
   }
 }
 

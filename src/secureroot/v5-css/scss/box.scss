@@ -9,7 +9,7 @@
 .box1col,
 .box2col,
 .box3col {
-  margin-right: 20px;
+  margin-right: $gutter;
 }
 .box1col {
   width: 200px;
@@ -235,7 +235,7 @@ form fieldset.radioButton input {
   width: auto;
 }
 form fieldset.radioButton label {
-  padding: 0 20px 0.5em 0;
+  padding: 0 $gutter 0.5em 0;
 }
 form fieldset.radioButton label {
   display: inline;
@@ -251,7 +251,7 @@ form fieldset.radioButton label input {
 form label.checkbox {
   margin: 0 0 1em 0;
   display: inline-block;
-  padding-right: 20px;
+  padding-right: $gutter;
 }
 form input.checkbox {
   display: inline;
@@ -295,7 +295,7 @@ form fieldset input.checkbox {
 .boxSubscribeSingle form input.eBulletinButton {
   display: inline;
   float: right;
-  margin-left: 20px;
+  margin-left: $gutter;
   width: auto;
 }
 
@@ -459,7 +459,7 @@ form fieldset input.checkbox {
     flex: 1 0 470px;
     max-width: 470px;
     width: 470px;
-    margin-right: 20px;
+    margin-right: $gutter;
   }
 }
 
@@ -533,7 +533,7 @@ form fieldset input.checkbox {
   background-repeat: no-repeat;
   /* position: relative; */
   /* float: right; */
-  /* top: 20px; */
+  /* top: $gutter; */
   /* -webkit-transform: translateY(-100%); */
   -ms-transform: translateY(-100%);
   /* transform: translateY(-100%); */

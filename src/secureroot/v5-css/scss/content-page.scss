@@ -1,7 +1,7 @@
 // Secondary nav
 
 #navSecondary {
-  margin-bottom: 20px;
+  margin-bottom: $gutter;
   width: 100%;
 }
 
@@ -69,20 +69,20 @@ p.backto a:focus {
   /* One column layout */
   #contentContainer.columnbetacontentpage.column1 .noBoxPadding.oneThird {
     width: 300px;
-    margin-right: 20px;
+    margin-right: $gutter;
     margin-bottom: 0;
   }
 
   #contentContainer.columnbetacontentpage .noBoxPadding.oneThird {
     width: 215px;
-    margin-right: 20px;
+    margin-right: $gutter;
   }
 }
 
 // Responsive secondary nav
 
 #menu {
-  margin-bottom: 20px;
+  margin-bottom: $gutter;
 }
 
 #navSecondary .ui-accordion .ui-accordion-content {
@@ -160,7 +160,7 @@ p.backto a:focus {
 // Construction - overiding custom.css
 
 #lwet-steps {
-  margin-bottom: 20px !important;
+  margin-bottom: $gutter !important;
 }
 
 #feature-home {
@@ -188,7 +188,7 @@ body.lwet #feature-home ol {
 }
 
 body.lwet #feature-home {
-  margin-bottom: 20px;
+  margin-bottom: $gutter;
 }
 
 // Pubns
@@ -203,7 +203,7 @@ body.lwet #feature-home {
 .v5-figure {
   float: left;
   width: auto !important;
-  margin-bottom: 20px;
+  margin-bottom: $gutter;
   width: auto;
 }
 
@@ -254,7 +254,7 @@ body.lwet #feature-home {
   padding-bottom: 56.25%;
   height: 0;
   // overflow:hidden;
-  margin-bottom: 20px;
+  margin-bottom: $gutter;
 }
 
 .v5-youtube-embed iframe {
@@ -268,7 +268,7 @@ body.lwet #feature-home {
 // Print page
 #printGuide {
   float: left;
-  margin-top: 20px;
+  margin-top: $gutter;
 }
 
 //

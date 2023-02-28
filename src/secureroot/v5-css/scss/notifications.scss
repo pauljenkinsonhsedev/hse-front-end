@@ -171,8 +171,8 @@
   @media only screen and (min-width: 980px) {
     padding: 0;
     width: $full-width;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: $gutter;
+    margin-bottom: $gutter;
     // float: none;
   }
 }
@@ -183,7 +183,7 @@
 
 .notification-container img {
   float: left;
-  margin-right: 20px;
+  margin-right: $gutter;
 }
 
 .notification-message {
@@ -204,7 +204,7 @@
     display: none;
   }
   @media only screen and (min-width: 980px) {
-    margin-right: 20px;
+    margin-right: $gutter;
     float: left;
   }
 }
@@ -219,7 +219,7 @@
 // position: relative;
 // right: 0;
 // top: 0;
-// margin-bottom: 20px;
+// margin-bottom: $gutter;
 // }
 // }
 

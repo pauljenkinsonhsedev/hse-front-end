@@ -41,7 +41,7 @@
   }
   .columnbetacontentpage.column3 {
     width: 680px !important;
-    margin-right: 20px !important;
+    margin-right: $gutter !important;
   }
 
   #sideBar {
@@ -93,7 +93,7 @@
 
   .twoThirdHalf {
     width: 290px;
-    margin-right: 20px;
+    margin-right: $gutter;
   }
 
   .twoThirdHalf.subColumn {
@@ -106,7 +106,7 @@
   }
 
   .column {
-    margin: 0 20px 0 0;
+    margin: 0 $gutter 0 0;
   }
 
   /* No box padding */
@@ -115,7 +115,7 @@
 
   .oneThird.noBoxPadding {
     width: 300px;
-    margin-right: 20px;
+    margin-right: $gutter;
   }
 
   .twoThird.noBoxPadding {

@@ -1,187 +1,187 @@
 // BASE
 
 .hide-notification {
-    display: none !important;
+  display: none !important;
 }
 
 .visually-hidden {
-    clip: rect(0 0 0 0);
-    clip-path: inset(50%);
-    height: 1px;
-    overflow: hidden;
-    position: absolute;
-    white-space: nowrap;
-    width: 1px;
-    opacity: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  opacity: 0;
 }
 
 // Background box colour
 .backgroundRed {
-    background-color: $red !important;
+  background-color: $red !important;
 }
 .backgroundGray {
-    background-color: $gray !important;
+  background-color: $gray !important;
 }
 
- .backgroundRed h2, .backgroundRed h3, .backgroundRed p {
-    color: white;
+.backgroundRed h2,
+.backgroundRed h3,
+.backgroundRed p {
+  color: white;
 }
 
 button {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 button:hover {
-    text-decoration: none;
+  text-decoration: none;
 }
-
-
-
 
 // Margins - Padding - Borders
 
 .p-10 {
-    padding: 10px !important;
+  padding: 10px !important;
 }
 
 // Lists
 
 .backgroundRed ul.listCaret li:before {
-    color: white;
+  color: white;
 }
 
-#contentContainer .backgroundRed p, #contentContainer .backgroundRed ul li  {
-    color: white !important;
+#contentContainer .backgroundRed p,
+#contentContainer .backgroundRed ul li {
+  color: white !important;
 }
 
 #contentContainer .linkArrow li {
-    display: block;
+  display: block;
 }
 
 #contentContainer .linkArrow li a:hover {
-    text-decoration: underline !important;
+  text-decoration: underline !important;
 }
 
-@media only screen and (min-width : $desktop) {
-    .linkArrow li {
-        display: block;
-    }
+@media only screen and (min-width: $desktop) {
+  .linkArrow li {
+    display: block;
+  }
 }
 
 #contentContainer ul.mostPopular li {
-    font-weight: 700;
+  font-weight: 700;
 }
 
 #contentContainer .columnFull .column.noBoxPadding ul.listLinks {
-    margin-bottom: 10px !important;
+  margin-bottom: 10px !important;
 }
 
 #contentContainer ul.listLinks li a {
-    float: left;
+  float: left;
 }
 
 #contentContainer ul.listLinks li span {
-    display: inline-block;
+  display: inline-block;
 }
 
 #contentContainer ul.listLinks p {
-    clear:both;
+  clear: both;
 }
 
 // Article lists
 
 #contentContainer .article {
-    padding-top: 0;
-    padding-bottom: 0;
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
-#contentContainer ul.guidanceList, #contentContainer ul.articleList {
-    font-size: inherit;
+#contentContainer ul.guidanceList,
+#contentContainer ul.articleList {
+  font-size: inherit;
+  float: left;
+}
+
+#contentContainer ul.guidanceList li,
+ul.articleList li {
+  list-style-type: none;
+  background: none;
+  padding: 0;
+  @media only screen and (min-width: $desktop) {
+    min-height: 87px;
+    margin-bottom: 10px;
+    clear: both;
     float: left;
-}
-
-#contentContainer ul.guidanceList li, ul.articleList li {
-    list-style-type: none;
-    background: none;
-    padding: 0;
-    @media only screen and (min-width : $desktop) {
-        min-height: 87px;
-        margin-bottom: 10px;
-        clear: both;
-        float: left;
-    }
+  }
 }
 
 .columnFull .guidanceList li {
-    margin-bottom: 20px !important;
+  margin-bottom: $gutter !important;
 }
 
 #contentContainer ul.list li {
-    background: none;
-    padding: 0;
+  background: none;
+  padding: 0;
 }
 
 #contentContainer .mb0 {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 // Main content
 
-
 // Forms
 input#email {
-    box-sizing: border-box;
-    // padding: 5px;
+  box-sizing: border-box;
+  // padding: 5px;
 }
 
 .eBulletinButton {
-    background-color: $red;
-    color: white;
-    padding: 5px;
-    margin-top: 10px;
-    border: 0;
+  background-color: $red;
+  color: white;
+  padding: 5px;
+  margin-top: 10px;
+  border: 0;
 }
 
 // Responsive images
 
 picture,
 img {
-    height: auto;
-    max-width: 100%;
-    vertical-align: bottom !important;
+  height: auto;
+  max-width: 100%;
+  vertical-align: bottom !important;
 }
 
 img.featuredImg {
-    width: 100%;
-    height: auto;
-    float: left;
-    @media only screen and (min-width : $desktop) {
-        min-height: 200px;
-    }
+  width: 100%;
+  height: auto;
+  float: left;
+  @media only screen and (min-width: $desktop) {
+    min-height: 200px;
+  }
 }
 
 img.responsiveImg {
-    width: 100%;
-    float: left;
-    height: auto;
+  width: 100%;
+  float: left;
+  height: auto;
 }
 
 #pageContainer {
-    margin: 20px auto;
-    clear: both;
+  margin: $gutter auto;
+  clear: both;
 }
 
 /* V5 global styles */
 
 .v5-inline {
-display: inline-block;
+  display: inline-block;
 }
 
 .no-wrap {
-white-space: nowrap;
+  white-space: nowrap;
 }
 
 .noFileType .fileType {
-display: none;
+  display: none;
 }
-

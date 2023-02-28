@@ -54,13 +54,13 @@
   width: 100%;
   position: relative;
   padding: 10px;
-  margin: 0 1.5% 20px 0;
+  margin: 0 1.5% $gutter 0;
 }
 
 .column.noBoxPadding {
   margin: 0 10px 10px 0;
   @media only screen and (min-width: $desktop) {
-    margin: 0 20px 20px 0;
+    margin: 0 $gutter 20px 0;
   }
   padding: 0;
 }
@@ -71,7 +71,7 @@
 }
 
 .column.backgroundRed {
-  padding: 20px;
+  padding: $gutter;
 }
 
 /* Spacing & Borders */
@@ -86,7 +86,7 @@
 }
 
 .border {
-  margin-bottom: 20px;
+  margin-bottom: $gutter;
   border-bottom: 2px solid $red;
 }
 
@@ -108,5 +108,5 @@ div.diaryMonth h2,
 }
 
 .column.oneThird.backgroundRed {
-  margin-bottom: 20px;
+  margin-bottom: $gutter;
 }

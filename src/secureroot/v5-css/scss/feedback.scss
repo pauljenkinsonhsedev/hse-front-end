@@ -7,7 +7,7 @@
   z-index: 1;
   display: block;
   width: 90%;
-  margin: 20px auto;
+  margin: $gutter auto;
   background-color: #fff;
   border-bottom: 10px solid #981e32;
   @media only screen and (min-width: $desktop) {
@@ -254,7 +254,7 @@ p.question-hint {
   @media only screen and (min-width: 661px) {
     position: absolute;
     right: 0;
-    top: 20px;
+    top: $gutter;
     z-index: 1;
   }
 }

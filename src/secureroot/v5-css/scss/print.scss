@@ -46,7 +46,7 @@
   background: url(../../assets/v5-images/icons/icon-print.png) white no-repeat 0;
   background-size: 16px 18px;
   padding: 10px 30px;
-  margin-bottom: 20px;
+  margin-bottom: $gutter;
 }
 
 .printable-version p {
