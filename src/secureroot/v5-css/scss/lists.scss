@@ -1,304 +1,325 @@
 li,
 ol ul li {
-padding:.1em 0;
+  padding: 0.1em 0;
 }
 
 ol li {
-background: 0 0;
-padding-left: 4px;
-margin-left: 2.2em;
+  background: 0 0;
+  padding-left: 4px;
+  margin-left: 2.2em;
 }
 
 dd {
-margin: 0;
+  margin: 0;
 }
 
 ol {
-list-style: decimal outside;
+  list-style: decimal outside;
 }
 
 ol.list-alpha,
 ol.a {
-list-style-type: lower-alpha;
+  list-style-type: lower-alpha;
 }
 
 ol.list-numeric,
 ol.i {
-list-style-type: lower-roman;
+  list-style-type: lower-roman;
 }
 
 ul.listhorizontal li.first {
-border:none;
-padding-right:.6em;
-margin-left:-1.6em;
+  border: none;
+  padding-right: 0.6em;
+  margin-left: -1.6em;
 }
 
 ul.listhorizontal li {
-background: 0 0;
-margin: 0;
-padding: 0 .6em;
-display: inline;
-border-left-width: 1px;
-border-left-style: solid;
+  background: 0 0;
+  margin: 0;
+  padding: 0 0.6em;
+  display: inline;
+  border-left-width: 1px;
+  border-left-style: solid;
 }
 
 ul.listhorizontal {
-margin: 1em 0 2em 0;
+  margin: 1em 0 2em 0;
 }
 
 ul.linkList li {
-background: none !important;
-@media only screen and (max-width : $desktop) {
-padding-top: 7.5px;
-}
+  background: none !important;
+  @media only screen and (max-width: $desktop) {
+    padding-top: 7.5px;
+  }
 }
 
 #contentContainer ul li {
-list-style-type: square;
+  list-style-type: square;
 }
 
 #contentContainer ul li::marker {
-color: $red;
+  color: $red;
 }
 
 #contentContainer ul.linkList {
-margin: 0 0 10px 18px !important;
-padding-left: 0;    
+  margin: 0 0 10px 18px !important;
+  padding-left: 0;
 }
 
 #contentContainer .mostPopular ul.linkList {
-margin-bottom: 0 !important;
+  margin-bottom: 0 !important;
 }
 
 #contentContainer .backgroundRed .linkList li a::before {
-background-image: none;
-padding-right: 0;
+  background-image: none;
+  padding-right: 0;
 }
 
 #contentContainer ul.list-plain {
-margin: 0;
-padding: 0;
-li {
+  margin: 0;
+  padding: 0;
+  li {
     margin: 0;
     padding: 0;
     background-image: none;
     list-style-type: none;
-}
+  }
 }
 #contentContainer ul.list-inline {
-margin: 0;
-padding: 0;
-li {
+  margin: 0;
+  padding: 0;
+  li {
     display: inline-block;
     margin: 0;
     padding: 0;
     background-image: none;
     list-style-type: none;
-}
+  }
 }
 
 .splitList2 ul {
-column-count: 2;
-column-gap: 20px;
+  column-count: 2;
+  column-gap: $gutter;
 }
 .splitList3 ul {
-column-count: 3;
-column-gap: 20px;
+  column-count: 3;
+  column-gap: $gutter;
 }
 .splitList4 ul {
-column-count: 4;
-column-gap: 20px;
+  column-count: 4;
+  column-gap: $gutter;
 }
 
 .ie .splitList2 ul,
 .ie .splitList3 ul,
 .ie .splitList4 ul {
-float: left;
-margin-left: 1em;
+  float: left;
+  margin-left: 1em;
 }
 .ie .splitList2 ul:first-child,
 .ie .splitList3 ul:first-child,
 .ie .splitList4 ul:first-child {
-float: none;
-clear: both;
+  float: none;
+  clear: both;
 }
 
 #contentContainer .pressReleases li {
-padding-bottom: 20px;
+  padding-bottom: $gutter;
 }
 
 #contentContainer .safetyAlerts li {
-list-style-type: none;
+  list-style-type: none;
 }
 
 // description lists
 
-dl.inline dt{
-float: left;
-font-size: 0.9rem;
-line-height: 1.5;
-padding-right: 5px;
+dl.inline dt {
+  float: left;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  padding-right: 5px;
 }
 
-.document dl, .document dd {
-margin: 0 !important;
+.document dl,
+.document dd {
+  margin: 0 !important;
 }
 
-.document dl dt{
-font-size: 0.9rem;
-line-height: 1.5;
-padding-right: 5px;
+.document dl dt {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  padding-right: 5px;
 }
 
-.social li, .tick li, .cross li, li.next-page, li.previous-page, .columnsList li, #contentContainer ul.linkList li, #contentContainer ul.itemThumbBook li, #contentContainer ul.hsl-links li, #contentContainer .boxList ul li, #contentContainer ul.linkListNoBullet li, #contentContainer ul.alphabetList li, ul.multistep li  {
-list-style-type: none !important;
+.social li,
+.tick li,
+.cross li,
+li.next-page,
+li.previous-page,
+.columnsList li,
+#contentContainer ul.linkList li,
+#contentContainer ul.itemThumbBook li,
+#contentContainer ul.hsl-links li,
+#contentContainer .boxList ul li,
+#contentContainer ul.linkListNoBullet li,
+#contentContainer ul.alphabetList li,
+ul.multistep li {
+  list-style-type: none !important;
 }
-
-
 
 #contentContainer .box ul {
-margin: 0 0 10px 15px;    
+  margin: 0 0 10px 15px;
 }
 
 dl.document {
-align-items: center;
-float: left;
+  align-items: center;
+  float: left;
 }
 
-dl.document dt  {
-float: left;
-clear: left;
-padding-right: 10px;
+dl.document dt {
+  float: left;
+  clear: left;
+  padding-right: 10px;
 }
 
 dl.document dd {
-float: left;
-margin-bottom: 5px;
+  float: left;
+  margin-bottom: 5px;
 }
 
 #contentContainer ul.linkListNoBullet {
-margin: 0 0 10px 0 !important;
+  margin: 0 0 10px 0 !important;
 }
 
 #contentContainer ul.linkListNoBullet li {
-list-style-image: none !important;
+  list-style-image: none !important;
 }
 
-ul.columnsList li::before, #pagination ul li::before, ul.hsl-links li, ul.social li, ul.articleList, ul.linkListNoBullet li {
-padding-left: 0 !important;
-background: none !important;
+ul.columnsList li::before,
+#pagination ul li::before,
+ul.hsl-links li,
+ul.social li,
+ul.articleList,
+ul.linkListNoBullet li {
+  padding-left: 0 !important;
+  background: none !important;
 }
 
 .backgroundRed ul.linkListNoBullet li::before {
-display: none !important;
+  display: none !important;
 }
 
 #contentContainer ul.linkList li::before {
-content: "";
-position: relative;
-float: left;
-top: 5px;
-width: 0;
-height: 0;
-border-style: solid;
-border-width: 5.5px 0 5.5px 6.5px;
-border-color: transparent transparent transparent $red;
-margin-left: -18px;
-padding-right: 12px;
+  content: "";
+  position: relative;
+  float: left;
+  top: 5px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 5.5px 0 5.5px 6.5px;
+  border-color: transparent transparent transparent $red;
+  margin-left: -18px;
+  padding-right: 12px;
 }
-
-
 
 // Single list items
 
-#contentContainer p.linkList, #contentContainer p.linkBullet  {
-padding: 0 0 0 18px;
-clear: both;
-position: relative;
+#contentContainer p.linkList,
+#contentContainer p.linkBullet {
+  padding: 0 0 0 18px;
+  clear: both;
+  position: relative;
 }
 
 #contentContainer p.linkBullet::before {
-    content: "";
-    position: absolute;
-    background-image: url('../../assets/v5-images/icons/svg/solid/square-full-solid-red.svg');
-    background-repeat: no-repeat;
-    height: 4px;
-    width: 4px;
-    top: 8px;
-    left: 0;
+  content: "";
+  position: absolute;
+  background-image: url("../../assets/v5-images/icons/svg/solid/square-full-solid-red.svg");
+  background-repeat: no-repeat;
+  height: 4px;
+  width: 4px;
+  top: 8px;
+  left: 0;
 }
 
-#contentContainer p.linkList::before  {
-    content: "";
-    position: absolute;
-    background-image: url('../../assets/v5-images/icons/svg/solid/caret-right-red.svg');
-    background-repeat: no-repeat;
-    height: 10px;
-    width: 10px;
-    top: 6px;
-    left: 0;
+#contentContainer p.linkList::before {
+  content: "";
+  position: absolute;
+  background-image: url("../../assets/v5-images/icons/svg/solid/caret-right-red.svg");
+  background-repeat: no-repeat;
+  height: 10px;
+  width: 10px;
+  top: 6px;
+  left: 0;
 }
 
 p.more {
-padding-left: 20px;
+  padding-left: $gutter;
 }
 
 #contentContainer p.more::before {
-    content: "";
-    position: relative;
-    margin-left: -15px;
-    float: left;
-    top: 4px;
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 5.5px 0 5.5px 6.5px;
-    border-color: transparent transparent transparent $red;
+  content: "";
+  position: relative;
+  margin-left: -15px;
+  float: left;
+  top: 4px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 5.5px 0 5.5px 6.5px;
+  border-color: transparent transparent transparent $red;
 }
 
-#contentContainer .backgroundRed ul li::before, #contentContainer .backgroundRed p.linkBullet::before, #contentContainer .backgroundRed p.linkList::before {
-    content: '';
-    display: inline-block;
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 5.5px 0 5.5px 6.5px;
-    border-color: transparent transparent transparent white;
-    margin-left: -18px;
-    padding-right: 12px;
+#contentContainer .backgroundRed ul li::before,
+#contentContainer .backgroundRed p.linkBullet::before,
+#contentContainer .backgroundRed p.linkList::before {
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 5.5px 0 5.5px 6.5px;
+  border-color: transparent transparent transparent white;
+  margin-left: -18px;
+  padding-right: 12px;
 }
 
 #contentContainer .backgroundRed p.linkList::before {
-margin-left: 0;
+  margin-left: 0;
 }
 
-ul.listtick, ul.tick, ul.listcross, ul.cross {
-margin: 0 0 10px 20px !important;
+ul.listtick,
+ul.tick,
+ul.listcross,
+ul.cross {
+  margin: 0 0 10px $gutter !important;
 }
 
 ul.listtick li::before,
 ul.tick li::before {
-content: '' !important;
-float: left;
-position: relative;
-background: url(../../assets/v5-images/icons/svg/solid/check-solid-green.svg) no-repeat 0 !important;
-width: auto;
-height: 10px;
-top: 5px;
-margin-left: -18px;
-padding-left: 12px;
+  content: "" !important;
+  float: left;
+  position: relative;
+  background: url(../../assets/v5-images/icons/svg/solid/check-solid-green.svg)
+    no-repeat 0 !important;
+  width: auto;
+  height: 10px;
+  top: 5px;
+  margin-left: -18px;
+  padding-left: 12px;
 }
 
 ul.listcross li::before,
 ul.cross li::before {
-content: '' !important;
-float: left;
-position: relative;
-background: url(../../assets/v5-images/icons/svg/solid/cross-solid.svg) no-repeat 0 !important;
-width: auto;
-height: 10px;
-top: 5px;
-margin-left: -18px;
-padding-left: 12px;
+  content: "" !important;
+  float: left;
+  position: relative;
+  background: url(../../assets/v5-images/icons/svg/solid/cross-solid.svg)
+    no-repeat 0 !important;
+  width: auto;
+  height: 10px;
+  top: 5px;
+  margin-left: -18px;
+  padding-left: 12px;
 }
-

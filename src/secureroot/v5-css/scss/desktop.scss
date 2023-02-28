@@ -1,170 +1,159 @@
-
 /* Desktop */
-@media only screen and (min-width : $desktop) {
+@media only screen and (min-width: $desktop) {
+  #headerContainer {
+    min-width: 960px;
+  }
+  #header {
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  #pageContainer {
+    width: $full-width;
+    margin: 0 auto;
+  }
+  #pageTitle {
+    float: right;
+    width: 690px;
+  }
 
-#headerContainer {
-min-width: 960px;
-}
-#header {
-width: 100%;
-padding-left: 0;
-padding-right: 0;
-}
-#pageContainer {
-width: 940px;
-margin: 0 auto;
-}	
-#pageTitle {
-float: right;
-width: 690px;
-}
+  .breadCrumbContainer {
+    width: $full-width;
+    margin: auto;
+  }
 
-.breadCrumbContainer {
-width: 940px;
-margin: auto;
-}
+  #backTo {
+    display: none;
+  }
 
-#backTo {
-display: none;
-}
+  #contentContainer {
+    margin: 0;
+    width: $full-width;
+  }
 
-	
-#contentContainer {
-margin: 0;
-width: 940px;
-}
-	
+  .columnbetacontentpage.column1 {
+    width: $full-width !important;
+  }
 
-.columnbetacontentpage.column1 {
-width: 940px !important;
-}
-	
-.columnbetacontentpage, .columnbetacontentpage.column2 {
-width: 700px !important;		
-}	
-.columnbetacontentpage.column3 {
-width: 680px !important;
-margin-right: 20px !important;
-}
+  .columnbetacontentpage,
+  .columnbetacontentpage.column2 {
+    width: 700px !important;
+  }
+  .columnbetacontentpage.column3 {
+    width: 680px !important;
+    margin-right: $gutter !important;
+  }
 
-	
-#sideBar {
-float: left;
-width: 240px !important;
-margin-top: 0px !important;
-}
+  #sideBar {
+    float: left;
+    width: 240px !important;
+    margin-top: 0px !important;
+  }
 
-#sideBar .box {
-width: 100% !important;
-}
-	
-.more {
-box-sizing: border-box !important;
-}
+  #sideBar .box {
+    width: 100% !important;
+  }
 
-/* Layout */
-	
-.last, .noBoxPadding.last {
-margin-right: 0 !important;
-}
-	
-/* 3 Col */
+  .more {
+    box-sizing: border-box !important;
+  }
 
-.oneThird {
-width: 300px;
-}
-	
-#contentContainer .half {
-width: 460px;
-}
+  /* Layout */
 
-.twoThird {
-width: 620px;
-}
-	
+  .last,
+  .noBoxPadding.last {
+    margin-right: 0 !important;
+  }
 
-	
+  /* 3 Col */
 
-.mostPopular {
-width: 300px;
-}
+  .oneThird {
+    width: 300px;
+  }
 
-.homepageBanner {
-width: 620px;
-}
+  #contentContainer .half {
+    width: 460px;
+  }
 
-.noPadding.twoThird {
-width: 620px;	
-}
+  .twoThird {
+    width: 620px;
+  }
 
-.twoThirdHalf {
-width: 290px;
-margin-right: 20px;
-}
+  .mostPopular {
+    width: 300px;
+  }
 
-.twoThirdHalf.subColumn {
-width: 290px;
-padding: 0;
-}
+  .homepageBanner {
+    width: 620px;
+  }
 
-.columnFull {
-width: 940px;
-}
-	
-.column {
-margin: 0 20px 0 0;
-}	
+  .noPadding.twoThird {
+    width: 620px;
+  }
 
+  .twoThirdHalf {
+    width: 290px;
+    margin-right: $gutter;
+  }
 
-/* No box padding */
-	
-/* 3 col (No box paddding) */
+  .twoThirdHalf.subColumn {
+    width: 290px;
+    padding: 0;
+  }
 
-.oneThird.noBoxPadding {
-width: 300px;
-margin-right: 20px;
-}
+  .columnFull {
+    width: $full-width;
+  }
 
-.twoThird.noBoxPadding  {
-width: 620px;
-margin-right: 20px;
-}
+  .column {
+    margin: 0 $gutter 0 0;
+  }
 
+  /* No box padding */
 
-	
-.noBoxPadding .twoThirdHalf.subColumn {
-width: 300px;
-}
+  /* 3 col (No box paddding) */
 
-.noBoxPadding.twoThirdHalf {
-width: 300px;
-}
-	
+  .oneThird.noBoxPadding {
+    width: 300px;
+    margin-right: $gutter;
+  }
 
-/* Offset */
+  .twoThird.noBoxPadding {
+    width: 620px;
+    margin-right: 40px;
+  }
 
-.offsetTwoThird {
-margin-left: 640px !important;
-}
+  .noBoxPadding .twoThirdHalf.subColumn {
+    width: 300px;
+  }
 
+  .noBoxPadding.twoThirdHalf {
+    width: 300px;
+  }
 
-/* Beta */
+  /* Offset */
 
-#globalSearch  {
-float: right;
-}
-#globalSearch table, #globalSearchMobile  table {
-width: 250px !important;	
-}
+  .offsetTwoThird {
+    margin-left: 640px !important;
+  }
 
-.beta-highlight {
-margin-left: 0;
-}
+  /* Beta */
 
-.footer-links-container {
-width: 940px;
-padding-left: 0;
-padding-right: 0;
-}
+  #globalSearch {
+    float: right;
+  }
+  #globalSearch table,
+  #globalSearchMobile table {
+    width: 250px !important;
+  }
 
+  .beta-highlight {
+    margin-left: 0;
+  }
+
+  .footer-links-container {
+    width: $full-width;
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
