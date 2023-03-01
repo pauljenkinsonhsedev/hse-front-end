@@ -77,6 +77,9 @@ ul.columnsList {
   padding-bottom: $gutter;
   margin: 0;
 }
+.columnsList li h2 {
+  @include type-setting(3);
+}
 .column.multiCol.col2 {
   .columnsList li {
     flex: 1 0 465px;
