@@ -1,25 +1,30 @@
 // Multi step pagination
 
 #multistepNav {
+  width: 100%;
   float: left;
 }
 
-ul.multistep li {
-  padding-top: 7.5px;
+.multistep--two-col {
+  width: 100%;
+  @media only screen and (min-width: $desktop) {
+    column-count: 2;
+    width: 620px !important;
+  }
 }
 
-ol.multistep.multistepDashed {
+ol.multistep.multistep--dashed {
   list-style-type: none;
   position: relative;
 }
 
-ol.multistep.multistepDashed li,
-ul.multistep.multistepDashed li {
+ol.multistep.multistep--dashed li,
+ul.multistep.multistep--dashed li {
   padding-left: 10px;
 }
 
 ul.multistep li::before,
-ol.multistep.multistepDashed li::before {
+ol.multistep.multistep--dashed li::before {
   content: "—";
   position: absolute;
   color: $darkergray;
