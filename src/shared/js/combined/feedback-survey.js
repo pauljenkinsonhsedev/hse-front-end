@@ -144,7 +144,7 @@ export function feedbackSurvey() {
             <input name="ua" type="hidden" id="ua" size="100" class="input input-text" value="Browser name: ${browserName}, Browser version: ${browserVersion}, OS name: ${osName}, OS version: ${osVersion}, Platform type: ${platformType}, Platform vendor: ${platformVendor}">
             <input type="hidden" name="mailredirect" value="${newURL}">
             <input type="hidden" name="mailsubject" value="${notFoundTrue}Report a problem with this page: ${newURL}">
-            <input type="submit" value="Submit" class="btn btn-primary" />
+            <input type="submit" value="Submit" class="btn btn-primary report-problem-submit" />
         </fieldset>`;
 
     // const formFeedbackHTML = `<div class="report-problem-form-feeback"><h2>Thank you</h2><p>Your feedback is appreciated.</p></div>`;
@@ -166,6 +166,31 @@ export function feedbackSurvey() {
     reportProblemButtonContainer.classList.add("js-hide");
     yesNoContainer.classList.add("js-hide");
     reportProblemForm.scrollIntoView({ behavior: "auto", block: "start" });
+
+    // Acknowledge submit click
+
+    const reportProblemPage = window.location.href;
+    const encodedURL = window.btoa(reportProblemPage);
+    console.log(encodedURL);
+
+    function logSubmit(event) {
+      event.preventDefault();
+      Cookies.set("report-problem", encodedURL, { expires: 1 });
+    }
+
+    reportProblemForm.addEventListener("submit", logSubmit);
+  }
+
+  // Acknowledge status
+  const URLcheck = window.location.href;
+  const reportProblemStatus = Cookies.get("report-problem");
+
+  if (reportProblemStatus) {
+    const decoded = window.atob(reportProblemStatus);
+    if (decoded === URLcheck) {
+      container.innerHTML =
+        '<div class="feedback__report-problem-alert" role="alert">Thank you for your feedback</div>';
+    }
   }
 
   function closeProblemForm(e) {
