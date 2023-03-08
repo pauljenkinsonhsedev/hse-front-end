@@ -157,13 +157,15 @@ dl.inline dt {
 li.next-page,
 li.previous-page,
 .columnsList li,
-#contentContainer ul.linkList li,
-#contentContainer ul.itemThumbBook li,
-#contentContainer ul.hsl-links li,
-#contentContainer .boxList ul li,
-#contentContainer ul.linkListNoBullet li,
-#contentContainer ul.alphabetList li,
-ul.multistep li {
+ul.linkList li,
+ul.itemThumbBook li,
+ul.hsl-links li,
+.boxList ul li,
+ul.linkListNoBullet li,
+ul.alphabetList li,
+ul.multistep li,
+ul.listtick li,
+ul.listcross li {
   list-style-type: none !important;
 }
 
