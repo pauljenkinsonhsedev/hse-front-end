@@ -167,26 +167,26 @@ export function feedbackSurvey() {
     yesNoContainer.classList.add("js-hide");
     reportProblemForm.scrollIntoView({ behavior: "auto", block: "start" });
 
-    // Acknowledge submit
+    // Form confirmation
 
     // Get page URL and encode
     const reportProblemPage = window.location.href;
     const encodedURL = window.btoa(reportProblemPage);
 
-    // Set cookies for acknowledgement status
+    // Set cookies for confirmation status
 
-    function acknowledgeCookies(event) {
+    function confirmationCookies(event) {
       Cookies.set("report_problem", encodedURL, { expires: 1 });
-      Cookies.set("report_problem_acknowledged", true, { expires: 1 });
+      Cookies.set("report_problem_confirmation", true, { expires: 1 });
     }
 
-    reportProblemForm.addEventListener("submit", acknowledgeCookies);
+    reportProblemForm.addEventListener("submit", confirmationCookies);
   }
 
-  // Acknowledgement status
+  // Confirmation status
   const URLcheck = window.location.href;
   const reportProblemStatus = Cookies.get("report_problem");
-  const reportProblemAcknowledged = Cookies.get("report_problem_acknowledged");
+  const reportProblemConfirmation = Cookies.get("report_problem_confirmation");
 
   if (reportProblemStatus) {
     // Add feedback alert
@@ -198,18 +198,16 @@ export function feedbackSurvey() {
 
     // page refreshes on submission (asp script), move viewport to report problem alert message
 
-    if (reportProblemAcknowledged === "true") {
+    if (reportProblemConfirmation === "true") {
       var anchor = document.querySelector(".feedback__report-problem-alert");
 
       setTimeout(function () {
         anchor.scrollIntoView();
       }, 1);
 
-      Cookies.set("report_ problem_acknowledged", false, { expires: 1 });
+      Cookies.set("report_ problem_confirmation", false, { expires: 1 });
     }
   }
-
-  // End of form acknowledgement
 
   function closeProblemForm(e) {
     reportProblemForm.classList.remove("survey-in");
