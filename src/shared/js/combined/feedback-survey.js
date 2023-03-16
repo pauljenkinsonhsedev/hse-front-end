@@ -205,7 +205,7 @@ export function feedbackSurvey() {
         anchor.scrollIntoView();
       }, 1);
 
-      Cookies.set("report_ problem_confirmation", false, { expires: 1 });
+      Cookies.set("report_problem_confirmation", false, { expires: 1 });
     }
   }
 
