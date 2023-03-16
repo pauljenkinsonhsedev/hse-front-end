@@ -167,31 +167,49 @@ export function feedbackSurvey() {
     yesNoContainer.classList.add("js-hide");
     reportProblemForm.scrollIntoView({ behavior: "auto", block: "start" });
 
-    // Acknowledge submit click
+    // Acknowledge submit
 
+    // Get page URL and encode
     const reportProblemPage = window.location.href;
     const encodedURL = window.btoa(reportProblemPage);
-    console.log(encodedURL);
 
-    function logSubmit(event) {
-      event.preventDefault();
-      Cookies.set("report-problem", encodedURL, { expires: 1 });
+    // Set cookies for acknowledgement status
+
+    function acknowledgeCookies(event) {
+      Cookies.set("report_problem", encodedURL, { expires: 1 });
+      Cookies.set("report_problem_acknowledged", true, { expires: 1 });
     }
 
-    reportProblemForm.addEventListener("submit", logSubmit);
+    reportProblemForm.addEventListener("submit", acknowledgeCookies);
   }
 
-  // Acknowledge status
+  // Acknowledgement status
   const URLcheck = window.location.href;
-  const reportProblemStatus = Cookies.get("report-problem");
+  const reportProblemStatus = Cookies.get("report_problem");
+  const reportProblemAcknowledged = Cookies.get("report_problem_acknowledged");
 
   if (reportProblemStatus) {
+    // Add feedback alert
     const decoded = window.atob(reportProblemStatus);
     if (decoded === URLcheck) {
       container.innerHTML =
         '<div class="feedback__report-problem-alert" role="alert">Thank you for your feedback</div>';
     }
+
+    // page refreshes on submission (asp script), move viewport to report problem alert message
+
+    if (reportProblemAcknowledged === "true") {
+      var anchor = document.querySelector(".feedback__report-problem-alert");
+
+      setTimeout(function () {
+        anchor.scrollIntoView();
+      }, 1);
+
+      Cookies.set("report_ problem_acknowledged", false, { expires: 1 });
+    }
   }
+
+  // End of form acknowledgement
 
   function closeProblemForm(e) {
     reportProblemForm.classList.remove("survey-in");
