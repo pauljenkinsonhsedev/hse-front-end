@@ -43,10 +43,11 @@
 }
 
 .cookies-message__heading {
-  color: $red;
-  @include type-setting(1);
+  font-weight: 700;
+  margin-bottom: 10px !important;
+  @include type-setting(2);
   @media only screen and (max-width: $desktop) {
-    font-size: 2rem;
+    @include type-setting(3);
   }
   line-height: 1.5;
   margin-bottom: 0;
@@ -54,7 +55,7 @@
 
 .cookies-message__copy {
   p {
-    @include type-setting(3);
+    @include type-setting(0);
     line-height: 1.5;
   }
 }
