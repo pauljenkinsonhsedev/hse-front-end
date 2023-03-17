@@ -188,10 +188,8 @@ ul.itemThumbBook.publications li {
     margin-left: $gutter;
   }
   @media only screen and (min-width: $desktop) {
-    width: 10.6382978723404%;
-    margin-left: 02.1276595744681%; // 20px
-    min-width: 100px;
-    max-width: 100px;
+    width: calc(117.5px - 15px);
+    margin-left: $gutter;
   }
 }
 
