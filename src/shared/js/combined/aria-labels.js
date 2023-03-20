@@ -87,6 +87,17 @@ export function ariaLabels() {
     ".columnbetacontentpage.column1"
   );
 
+  const callout = document.querySelectorAll(".callout");
+  if (callout) {
+    callout.forEach((box, index) => {
+      box.setAttribute("id", `callout-${index}`);
+      box.setAttribute("role", "note");
+      if (micrositeHomepage) {
+        box.setAttribute("role", "region");
+      }
+    });
+  }
+
   const boxNoteInformation = document.querySelectorAll(".callout--information");
   if (boxNoteInformation) {
     boxNoteInformation.forEach((box, index) => {
