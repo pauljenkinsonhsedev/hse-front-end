@@ -3,6 +3,8 @@
 .callout {
   padding: 10px;
   margin-bottom: 20px;
+  background: $gray;
+  border-left: 6px solid $red;
 }
 
 .callout p {
@@ -36,6 +38,7 @@
 .callout--warning {
   margin: 10px 0 20px 0;
   background: none;
+  border-left: 0;
   font-weight: 700;
   background-image: url("../../assets/v5-images/icons/warning.svg") !important;
   background-size: 35px 35px !important;
