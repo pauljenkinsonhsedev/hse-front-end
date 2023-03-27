@@ -112,5 +112,6 @@ export function htmlPrintGuide() {
       articleElements[i].id = "guide-section-" + i;
 
     footnoteLinks();
+    footnoteAbbr();
   };
 }
