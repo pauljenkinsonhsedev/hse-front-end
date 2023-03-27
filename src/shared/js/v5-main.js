@@ -60,11 +60,11 @@ window.addEventListener("DOMContentLoaded", () => {
   const htmlPrintGuideContainer = document.querySelector(".html-print-guide");
   if (htmlPrintGuideContainer) {
     htmlPrintGuide();
+  } else {
+    // footnotes (for all printed pages)
+    footnoteLinks();
+    footnoteAbbr();
   }
-
-  // footnotes (for printed pages)
-  footnoteLinks();
-  footnoteAbbr();
 
   const googleSearchContainer = document.getElementById("globalSearch");
   if (googleSearchContainer) {
