@@ -1,5 +1,13 @@
 # HSE.GOV.UK Front-end
 
+<<<<<<< HEAD
+=======
+## Release notes
+
+- HSE.GOV.UK framework: 5.7.1
+- DW Template: hse-5.7.dwt
+
+>>>>>>> master
 ## Requirements and getting started
 
 ### Pre-requisites
