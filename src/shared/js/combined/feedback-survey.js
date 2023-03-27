@@ -144,7 +144,7 @@ export function feedbackSurvey() {
             <input name="ua" type="hidden" id="ua" size="100" class="input input-text" value="Browser name: ${browserName}, Browser version: ${browserVersion}, OS name: ${osName}, OS version: ${osVersion}, Platform type: ${platformType}, Platform vendor: ${platformVendor}">
             <input type="hidden" name="mailredirect" value="${newURL}">
             <input type="hidden" name="mailsubject" value="${notFoundTrue}Report a problem with this page: ${newURL}">
-            <input type="submit" value="Submit" class="btn btn-primary" />
+            <input type="submit" value="Submit" class="btn btn-primary report-problem-submit" />
         </fieldset>`;
 
     // const formFeedbackHTML = `<div class="report-problem-form-feeback"><h2>Thank you</h2><p>Your feedback is appreciated.</p></div>`;
@@ -166,6 +166,47 @@ export function feedbackSurvey() {
     reportProblemButtonContainer.classList.add("js-hide");
     yesNoContainer.classList.add("js-hide");
     reportProblemForm.scrollIntoView({ behavior: "auto", block: "start" });
+
+    // Form confirmation
+
+    // Get page URL and encode
+    const reportProblemPage = window.location.href;
+    const encodedURL = window.btoa(reportProblemPage);
+
+    // Set cookies for confirmation status
+
+    function confirmationCookies(event) {
+      Cookies.set("report_problem", encodedURL, { expires: 1 });
+      Cookies.set("report_problem_confirmation", true, { expires: 1 });
+    }
+
+    reportProblemForm.addEventListener("submit", confirmationCookies);
+  }
+
+  // Confirmation status
+  const URLcheck = window.location.href;
+  const reportProblemStatus = Cookies.get("report_problem");
+  const reportProblemConfirmation = Cookies.get("report_problem_confirmation");
+
+  if (reportProblemStatus) {
+    // Add feedback alert
+    const decoded = window.atob(reportProblemStatus);
+    if (decoded === URLcheck) {
+      container.innerHTML =
+        '<div class="feedback__report-problem-alert" role="alert">Thank you for your feedback</div>';
+    }
+
+    // page refreshes on submission (asp script), move viewport to report problem alert message
+
+    if (reportProblemConfirmation === "true") {
+      var anchor = document.querySelector(".feedback__report-problem-alert");
+
+      setTimeout(function () {
+        anchor.scrollIntoView();
+      }, 1);
+
+      Cookies.set("report_problem_confirmation", false, { expires: 1 });
+    }
   }
 
   function closeProblemForm(e) {

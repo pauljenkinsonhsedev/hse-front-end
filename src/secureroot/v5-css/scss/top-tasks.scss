@@ -1,149 +1,172 @@
 // Multi step pagination
 
 #multistepNav {
-float: left;
+  width: 100%;
+  float: left;
 }
 
-ul.multistep {
-margin: 0 !important;
+.multistep--columns-two {
+  width: 100%;
+  @media only screen and (min-width: $desktop) {
+    column-count: 2;
+    width: 620px !important;
+  }
 }
 
-ul.multistep li {
-padding-top: 7.5px;
+ol.multistep.multistep--dashed {
+  list-style-type: none;
+  position: relative;
+}
+
+ol.multistep.multistep--dashed li,
+ul.multistep.multistep--dashed li {
+  padding-left: 10px;
+}
+
+ul.multistep li::before,
+ol.multistep.multistep--dashed li::before {
+  content: "—";
+  position: absolute;
+  color: $darkergray;
+  left: 0;
+  width: $gutter;
+  overflow: hidden;
 }
 
 .multistep {
-@media only screen and (min-width : $desktop) {
-width: 310px;
-float: left;
-}
-width: 100%;
-margin: 0;
+  @media only screen and (min-width: $desktop) {
+    width: 310px;
+    float: left;
+  }
+  width: 100%;
+  margin: 0;
 }
 
 ol.multistep li {
-margin-left: 15px;
-padding-top: 7.5px;
-@media only screen and (min-width : $desktop) {
-padding-top: 2.5px;
-}
-clear: both;
+  margin-left: 15px;
+  padding-top: 7.5px;
+  @media only screen and (min-width: $desktop) {
+    padding-top: 2.5px;
+  }
+  clear: both;
 }
 
-// Pagination 
+// Pagination
 
 #pagination {
-width: 100%;
-float: left;
-margin-bottom: 20px;
+  width: 100%;
+  float: left;
+  margin-bottom: $gutter;
 }
 
 #pagination ul li {
-list-style-image: none;
-width: 100%;
-@media only screen and (min-width : $desktop) {
-width: 50%;
-}
+  list-style-image: none;
+  width: 100%;
+  @media only screen and (min-width: $desktop) {
+    width: 50%;
+  }
 }
 
-#pagination ul, #pagination ul li {
-float: left;
-background: none;
-margin: 0 !important;
-padding: 0;
+#pagination ul,
+#pagination ul li {
+  float: left;
+  background: none;
+  margin: 0 !important;
+  padding: 0;
 }
 
 #pagination ul span {
-float: left;
-clear: both;
+  float: left;
+  clear: both;
 }
 
 // Top task pagination
 
-#pagination .next-page, #pagination .previous-page {
-width: 100%;
-float: left;
-@media only screen and (min-width : $desktop) {
-width: 50%;
+#pagination .next-page,
+#pagination .previous-page {
+  width: 100%;
+  float: left;
+  @media only screen and (min-width: $desktop) {
+    width: 50%;
+  }
 }
-}
-
-
 
 #pagination span {
-color: $red;
+  color: $red;
 }
 
 #pagination a:hover {
-background-color: $gray;
+  background-color: $gray;
 }
 
 .pagination-icon {
-font-size: 2.167em;
+  font-size: 2.167em;
 }
 
 .pagination-text {
-font-size: 1.167em;
-text-decoration: underline;
+  font-size: 1.167em;
+  text-decoration: underline;
 }
 
-#pagination .next-page, #pagination .previous-page { 
-@media only screen and (min-width : $desktop) {
-margin-left: -10px;
-}
+#pagination .next-page,
+#pagination .previous-page {
+  @media only screen and (min-width: $desktop) {
+    margin-left: -10px;
+  }
 }
 
 #pagination div:nth-child(2) {
-@media only screen and (min-width : $desktop) {
-margin-left: 10px;
-}
+  @media only screen and (min-width: $desktop) {
+    margin-left: 10px;
+  }
 }
 
-.next-page:hover .pagination-text, .previous-page:hover .pagination-text {
-text-decoration: none !important;
-color: $hseblack !important;
+.next-page:hover .pagination-text,
+.previous-page:hover .pagination-text {
+  text-decoration: none !important;
+  color: $hseblack !important;
 }
 
 #pagination .previous-page a {
-width: 100%;
-padding: 10px;
-@media only screen and (min-width : $desktop) {
-padding-left: 0;
-}
-float: left;   
+  width: 100%;
+  padding: 10px;
+  @media only screen and (min-width: $desktop) {
+    padding-left: 0;
+  }
+  float: left;
 }
 
 #pagination .next-page a {
-width: 100%;
-padding: 10px;
-float: left;
+  width: 100%;
+  padding: 10px;
+  float: left;
 }
 
 #pagination ul li:first-of-type a {
-@media only screen and (min-width : $desktop) {
-padding-left: 0;
-}
-}
-
-#pagination ul, #pagination ul li {
-width: 100%;
+  @media only screen and (min-width: $desktop) {
+    padding-left: 0;
+  }
 }
 
+#pagination ul,
+#pagination ul li {
+  width: 100%;
+}
 
 // Aside
 
 .exploreTopic {
-width: 100%;
-float: left;
-box-sizing: border-box;
-padding: 10px;
-margin-bottom: 15px;
+  width: 100%;
+  float: left;
+  box-sizing: border-box;
+  padding: 10px;
+  margin-bottom: 15px;
 }
 
 #asideBottom h2 {
-font-size: 1.1rem !important;
+  font-size: 1.1rem !important;
 }
 
 #asideTop {
-padding: 0;
+  padding: 0;
 }

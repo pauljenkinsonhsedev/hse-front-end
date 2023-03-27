@@ -1,154 +1,155 @@
 %button-cosmetic {
-    box-sizing: border-box;
-    appearance: none;
-    outline: 0;
-    border: 0;
-    display: inline-block;
-    background-color: #eee;
-    background-color: #ccc;
-    color: $black;
-    #pageContainer & {
-        margin-bottom: $dp*2;
-    }
-    @media only screen and (min-width : $desktop) {
+  box-sizing: border-box;
+  appearance: none;
+  outline: 0;
+  border: 0;
+  display: inline-block;
+  background-color: #eee;
+  background-color: #ccc;
+  color: $black;
+  #pageContainer & {
+    margin-bottom: $dp * 2;
+  }
+  @media only screen and (min-width: $desktop) {
     white-space: nowrap;
-    }
-    text-align: center;
-    text-decoration: none;
-    font-weight: 700;
-    vertical-align: top;
-    user-select: none;
-    padding: ($dp) ($dp * 3);
-    border-width: $border-width;
-    border-style: solid;
-    border-color: transparent;
-    border-radius: $button-border-radius;
-    cursor: pointer;
+  }
+  text-align: center;
+  text-decoration: none;
+  font-weight: 700;
+  vertical-align: top;
+  user-select: none;
+  padding: ($dp) ($dp * 3);
+  border-width: $border-width;
+  border-style: solid;
+  border-color: transparent;
+  border-radius: $button-border-radius;
+  cursor: pointer;
 
-    @include type-setting(0);
+  @include type-setting(0);
 
-    transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
 
-    &:focus {
-        outline: $focus-width solid $focus;
-    }
+  &:focus {
+    outline: $focus-width solid $focus;
+  }
 }
 
 .btn:not(.visually-hidden) + .btn {
-    @media (min-width: $tablet) {
-        margin-left: $dp*2;
-    }
+  @media (min-width: $tablet) {
+    margin-left: $dp * 2;
+  }
 }
 
 input,
 button,
 a {
-    &.btn {
-        @extend %button-cosmetic;
+  &.btn {
+    @extend %button-cosmetic;
 
-        &:hover {
-            background-color: darken(#eee, 10%);
-        }
-        &:disabled {
-            background-color: rgba(#eee, .5);
-            color: #ccc;
-        }
-
-        &-small {
-            padding: ($vr) $dp+$vr;
-        }
+    &:hover {
+      background-color: darken(#eee, 10%);
+    }
+    &:disabled {
+      background-color: rgba(#eee, 0.5);
+      color: #ccc;
     }
 
-    &.btn-primary {
-        background-color: $yes;
-        color: $white;
-        margin-bottom: 20px;
+    &-small {
+      padding: ($vr) $dp + $vr;
+    }
+  }
 
-        &:hover {
-            background-color: $focus;
-            color: $black;        }
+  &.btn-primary {
+    background-color: $yes;
+    color: $white;
+    margin-bottom: $gutter;
 
-        &:focus {
-            background-color: $focus;
-            color: $black;
-            outline: none;
-         }
-
-        &:disabled {
-            background-color: rgba($yes, .5);
-            color: $white;
-        }
+    &:hover {
+      background-color: $focus;
+      color: $black;
     }
 
-    &.btn-secondary {
-        background-color: $red;
-        border: 1px solid white;
-        color: $white;
-        margin-bottom: 20px;
-
-        &:hover {
-            background-color: $focus;
-            border: 1px solid $focus; 
-            color: $black;
-        }
-
-        &:disabled {
-            background-color: rgba($yes, .5);
-            color: $white;
-        }
-        &:focus {
-           background-color: $focus;
-           color: $black;
-           border: none;
-        }
+    &:focus {
+      background-color: $focus;
+      color: $black;
+      outline: none;
     }
 
-    &.btn-cautionary {
-        background-color: $red;
-        color: $white;
-        &:hover {
-            background-color: lighten($red, 10%);
-        }
-        &:disabled {
-            background-color: rgba($red, .5);
-            color: $white;
-        }
+    &:disabled {
+      background-color: rgba($yes, 0.5);
+      color: $white;
+    }
+  }
+
+  &.btn-secondary {
+    background-color: $red;
+    border: 1px solid white;
+    color: $white;
+    margin-bottom: $gutter;
+
+    &:hover {
+      background-color: $focus;
+      border: 1px solid $focus;
+      color: $black;
     }
 
-    &.btn-important {
-        background-color: $focus;
-        color: #333;
-        &:hover {
-            background-color: $red;
-            color: white;
-        }
-        &:disabled {
-            background-color: rgba($focus, .5);
-            color: #666;
-        }
-        &:focus {
-        background: $red;
-        color: white;
-        }
+    &:disabled {
+      background-color: rgba($yes, 0.5);
+      color: $white;
     }
+    &:focus {
+      background-color: $focus;
+      color: $black;
+      border: none;
+    }
+  }
+
+  &.btn-cautionary {
+    background-color: $red;
+    color: $white;
+    &:hover {
+      background-color: lighten($red, 10%);
+    }
+    &:disabled {
+      background-color: rgba($red, 0.5);
+      color: $white;
+    }
+  }
+
+  &.btn-important {
+    background-color: $focus;
+    color: #333;
+    &:hover {
+      background-color: $red;
+      color: white;
+    }
+    &:disabled {
+      background-color: rgba($focus, 0.5);
+      color: #666;
+    }
+    &:focus {
+      background: $red;
+      color: white;
+    }
+  }
 }
 
 .btn.btn-start {
-border-bottom: 2px solid #333;
-@include type-setting(3);
-line-height: 1.5;
+  border-bottom: 2px solid #333;
+  @include type-setting(3);
+  line-height: 1.5;
 }
 
 .btn-start::after {
-content: " ";
-position: relative;
-background-image: url(../../assets/v5-images/icons/svg/solid/chevron-right-white.svg);
- background-repeat: no-repeat;
-background-position: bottom;
-display: inline-block;
-width: 15px;
-height: 20px;
-margin: 0;
-bottom: -4px;
-border-left: 10px solid transparent;
+  content: " ";
+  position: relative;
+  background-image: url(../../assets/v5-images/icons/svg/solid/chevron-right-white.svg);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  display: inline-block;
+  width: 15px;
+  height: $gutter;
+  margin: 0;
+  bottom: -4px;
+  border-left: 10px solid transparent;
 }

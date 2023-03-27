@@ -1,41 +1,42 @@
-import './combined/polyfills.js';
+import "./combined/polyfills.js";
 
 // import CsvConvert from './combined/csv-convertor/csv-convertor';
-import ChartsDefault from './combined/charts/charts';
-import { mainMenu } from './combined/main-menu';
-import { loadPicturefillFn } from './combined/utils/picture-elem.js';
-import { fileTypeFunction } from './combined/file-type.js';
-import { getInternetExplorerVersion } from './combined/utils/internet-explorer-detection.js';
-import { tableSortable } from './combined/tables/table-sortable.js';
-import { lightbox } from './combined/lightbox.js';
-import { feedbackSurvey } from './combined/feedback-survey.js';
-import { dialogModal } from './combined/dialogs.js';
-import { tabs } from './combined/tabs.js';
-import { backLinks } from './combined/back-link.js';
-import { ariaLabels } from './combined/aria-labels.js';
-import { googleSearch } from './combined/google-search.js';
-import { footnoteLinks } from './combined/footnote-links.js';
-import { footnoteAbbr } from './combined/footnote-abbr.js';
-import { topTasks } from './combined/top-tasks.js';
-import { equalHeights } from './combined/equal-heights.js';
-import { informationBanner } from './combined/information-banner.js';
-import { codeHighlighter } from './combined/code-highlighter.js';
-import { htmlFormsAntiSpam } from './combined/html-forms-anti-spam.js';
-import { subnavMenu } from './combined/subnav-menu.js';
-import { subNavPosition } from './combined/subnav-position.js';
-import { subNavMobile } from './combined/subnav-mobile.js';
-import { accordion } from './combined/accordion.js';
+import ChartsDefault from "./combined/charts/charts";
+import { mainMenu } from "./combined/main-menu";
+import { loadPicturefillFn } from "./combined/utils/picture-elem.js";
+import { fileTypeFunction } from "./combined/file-type.js";
+import { getInternetExplorerVersion } from "./combined/utils/internet-explorer-detection.js";
+import { tableSortable } from "./combined/tables/table-sortable.js";
+import { lightbox } from "./combined/lightbox.js";
+import { feedbackSurvey } from "./combined/feedback-survey.js";
+import { dialogModal } from "./combined/dialogs.js";
+import { tabs } from "./combined/tabs.js";
+import { backLinks } from "./combined/back-link.js";
+import { ariaLabels } from "./combined/aria-labels.js";
+import { googleSearch } from "./combined/google-search.js";
+import { footnoteLinks } from "./combined/footnote-links.js";
+import { footnoteAbbr } from "./combined/footnote-abbr.js";
+import { topTasks } from "./combined/top-tasks.js";
+import { equalHeights } from "./combined/equal-heights.js";
+import { informationBanner } from "./combined/information-banner.js";
+import { codeHighlighter } from "./combined/code-highlighter.js";
+import { htmlFormsAntiSpam } from "./combined/html-forms-anti-spam.js";
+import { subnavMenu } from "./combined/subnav-menu.js";
+import { subNavPosition } from "./combined/subnav-position.js";
+import { subNavMobile } from "./combined/subnav-mobile.js";
+import { accordion } from "./combined/accordion.js";
 // import { printGuide } from './combined/print-guide/print-guide.js';
 // import { CSVTable } from './combined/csv-table.js';
+import { htmlPrintGuide } from "./combined/html-print-guide";
 
 // Window load
-window.addEventListener('DOMContentLoaded', () => {
+window.addEventListener("DOMContentLoaded", () => {
   // Selector to reference prgressive enhancements in css
-  const body = document.querySelector('body');
-  body.classList.add('hasScript');
+  const body = document.querySelector("body");
+  body.classList.add("hasScript");
 
   // picturefill.min.js
-  const pictureElemSelector = document.getElementsByTagName('picture')[0];
+  const pictureElemSelector = document.getElementsByTagName("picture")[0];
   if (pictureElemSelector && getInternetExplorerVersion() <= 11) {
     loadPicturefillFn();
   }
@@ -55,45 +56,51 @@ window.addEventListener('DOMContentLoaded', () => {
   // Equal heights
   equalHeights();
 
-  // footnotes (for printed pages)
-  footnoteLinks();
-  footnoteAbbr();
+  // HTML Print Guide
+  const htmlPrintGuideContainer = document.querySelector(".html-print-guide");
+  if (htmlPrintGuideContainer) {
+    htmlPrintGuide();
+  } else {
+    // footnotes (for all printed pages)
+    footnoteLinks();
+    footnoteAbbr();
+  }
 
-  const googleSearchContainer = document.getElementById('globalSearch');
+  const googleSearchContainer = document.getElementById("globalSearch");
   if (googleSearchContainer) {
     googleSearch();
   }
 
   // Back links
-  const backLink = document.querySelector('#backTo');
+  const backLink = document.querySelector("#backTo");
   if (backLink) {
     backLinks();
   }
 
   // small device menu
-  const menu = document.querySelector('.js-menu');
+  const menu = document.querySelector(".js-menu");
   if (menu) {
     mainMenu();
   }
 
   // JS Enabled flag
-  const htmlDoc = document.getElementsByTagName('html')[0];
-  htmlDoc.classList.add('js-enabled');
+  const htmlDoc = document.getElementsByTagName("html")[0];
+  htmlDoc.classList.add("js-enabled");
 
   // Tables
-  const tableSortableSelector = document.querySelector('.sortable');
+  const tableSortableSelector = document.querySelector(".sortable");
   if (document.body.contains(tableSortableSelector)) {
     tableSortable(tableSortableSelector);
   }
 
   // Tabs
-  const tabSelector = document.querySelector('.tabs');
+  const tabSelector = document.querySelector(".tabs");
   if (document.body.contains(tabSelector)) {
     tabs(tabSelector);
   }
 
   // Dialogs
-  const dialog = document.querySelector('.dialog');
+  const dialog = document.querySelector(".dialog");
   if (document.body.contains(dialog)) {
     dialogModal(dialog);
   }
@@ -106,22 +113,20 @@ window.addEventListener('DOMContentLoaded', () => {
   // }
 
   // HighCharts JS
-  const chartSelector = document.querySelector('.chart');
+  const chartSelector = document.querySelector(".chart");
   if (document.body.contains(chartSelector)) {
     new ChartsDefault();
   }
 
   // Append file types to anchors
-  const anchorSelector = document.querySelector('#pageContainer a');
+  const anchorSelector = document.querySelector("#pageContainer a");
   if (document.body.contains(anchorSelector)) {
     fileTypeFunction();
   }
 
   lightbox();
 
-  
-
-  const secondaryMenuSelector = document.getElementById('menu');
+  const secondaryMenuSelector = document.getElementById("menu");
 
   if (secondaryMenuSelector) {
     subnavMenu(secondaryMenuSelector);
@@ -129,12 +134,10 @@ window.addEventListener('DOMContentLoaded', () => {
     subNavPosition();
   }
 
-
   feedbackSurvey();
   htmlFormsAntiSpam();
 
   // printGuide();
 
   // CSVTable();
-
 }); // end window load

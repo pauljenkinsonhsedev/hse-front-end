@@ -1,12 +1,55 @@
 // V5 elements removed from print style
-#beta-user-testing, #off-canvas-container {
-	@media print {
-	display: none;	
-	}
+@media print {
+  #cookie-message,
+  .display-none-print,
+  #breadCrumb,
+  #feedback,
+  #footer-nav,
+  #top,
+  #globalSearch,
+  #navSecondary,
+  #printBanner {
+    display: none !important;
+  }
+}
+@media print {
+  #headerLogo svg path {
+    fill: $hseblack !important;
+  }
+  #headerLogo a {
+    color: $hseblack;
+  }
+  .headerTop {
+    margin: 0;
+    padding: 0;
+  }
 }
 
-#contentContainer ul li:before {
-@media print {
-display: none;
+// HTML print guides
+
+.lead-paragraph {
+  @include type-setting(2);
+  line-height: 1.5;
 }
+
+.btn-print {
+  background: url(../../assets/v5-images/icons/icon-print.png) no-repeat 10px
+    50%;
+  background-size: 16px 18px;
+  padding: 10px 10px 10px 36px !important;
+  text-decoration: none;
+}
+
+.printable-version {
+  width: 100%;
+  float: left;
+  background: url(../../assets/v5-images/icons/icon-print.png) white no-repeat 0;
+  background-size: 16px 18px;
+  padding: 10px 30px;
+  margin-bottom: $gutter;
+}
+
+.printable-version p {
+  margin: 0;
+  font-weight: 700;
 }

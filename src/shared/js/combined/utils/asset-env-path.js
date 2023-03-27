@@ -4,6 +4,14 @@ const envPath = (function () {
 
   path = window.location.protocol + "//" + window.location.host;
 
+  var pathArray = window.location.pathname.split("/");
+
+  console.log(pathArray);
+
+  var thirdLevel = pathArray[3];
+
+  console.log(thirdLevel);
+
   if (window.location.href.match(/(?:\b|_)(?:livelive)(?:\b|_)/i)) {
     path =
       window.location.protocol +
@@ -13,6 +21,15 @@ const envPath = (function () {
   }
   if (window.location.href.match(/(?:\b|_)(?:testbed)(?:\b|_)/i)) {
     path = window.location.protocol + "//" + window.location.host + "/testbed/";
+  }
+  if (window.location.href.match(/(?:\b|_)(?:drafts)(?:\b|_)/i)) {
+    path =
+      window.location.protocol +
+      "//" +
+      window.location.host +
+      "/website/drafts/" +
+      thirdLevel +
+      "/";
   }
   if (window.location.href.match(/(?:\b|_)(?:designsystem)(?:\b|_)/i)) {
     path =
