@@ -3,7 +3,12 @@
 <head>
 	
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- TemplateBeginMultipleIf -->
+<!-- TemplateBeginIfClause cond="noIndex == true" -->
+<meta name="robots" content="noindex, nofollow">
+<!-- TemplateEndIfClause -->
+<!-- TemplateEndMultipleIf -->
 
 <script src="../assets/v5-js/v5-cookies.js"></script>
 <!-- Anti-flicker snippet (recommended) If installing optimise with GTM, specifcy GTM container ID  -->
@@ -55,7 +60,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 	
 <!-- TemplateBeginMultipleIf -->
 <!-- TemplateBeginIfClause cond="platform == 'v5'" -->
-<link rel="stylesheet" href="../assets/v5-css/v5.min.css" type="text/css" media="screen,print">
+<link rel="stylesheet" href="../assets/v5-css/v5.min.css"  media="screen,print">
 <!-- TemplateEndIfClause -->
 <!-- TemplateEndMultipleIf -->
 
@@ -102,10 +107,6 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <!-- TemplateBeginMultipleIf -->
 <!-- TemplateBeginIfClause cond="platform == 'v5'" -->
-
-<section id="printBanner" aria-label="Print banner"> 
-<img src="../assets/v4-images/website/print/print-logo.jpg" width="193" height="65" alt="Health and Safety Executive" id="printLogo">
-</section>
 
 <header id="headerContainer">
   <div id="header">
@@ -269,14 +270,13 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
           <li><a href="#">Page two</a></li>
           <li><a href="#">Page three</a></li>
         </ol>
-        <ol class="multistep" start="4">
-          <li><a href="#">Page four</a></li>
-          <li><a href="#">Page five</a></li>
-          <li><a href="#">Page six</a></li>
-        </ol>
        <!-- TemplateEndEditable --> </nav>
     </div>
-    <div id="asideTop" class="column oneThird boxLast noBoxPadding"> <!-- TemplateBeginEditable name="asideTop" --> <!-- TemplateEndEditable --> </div>
+    <div id="asideTop" class="column oneThird boxLast noBoxPadding"> 
+      <!-- TemplateBeginEditable name="asideTop" --> 
+      
+      <!-- TemplateEndEditable --> 
+    </div>
   </div>
   <div class="columnFull noBoxPadding">
     <article id="article" class="column twoThird border-top noBoxPadding"> <!-- TemplateBeginEditable name="article" -->
@@ -288,7 +288,18 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
         <li>list item</li>
         <li>list item</li>
       </ul>
-      <!-- TemplateEndEditable --> </article>
+      <!-- TemplateEndEditable --> 
+      
+          <!-- TemplateBeginMultipleIf -->
+<!-- TemplateBeginIfClause cond="printGuide == true" -->
+  
+<div role="note" aria-label="Printable version" class="printable-version"><p><a href="./print.htm">View a printable version of the whole guide</a></p></div>
+      
+<!-- TemplateEndIfClause -->
+<!-- TemplateEndMultipleIf -->
+
+    
+    </article>
     <aside id="asideBottom" class="column oneThird border-top-red aside noBoxPadding boxLast"> <!-- TemplateBeginEditable name="asideBottom" -->
       <div class="backgroundRed exploreTopic">
         <ul class="linkList">
@@ -377,7 +388,6 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
           <li class="first"><a href="../search/search-results.htm">Search</a></li>
           <li><a href="../a-z/index.htm">A-Z</a></li>
           <li><a href="../acronym/index.htm">Acronyms</a></li>
-          <li><a href="../about/site_map/index.htm">Site map</a></li>
           <li><a href="../copyright.htm">Copyright</a></li>
           <li><a href="../cookies.htm">Cookies</a></li>
           <li><a href="../privacy.htm">Privacy</a></li>
@@ -399,7 +409,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </nav>
 
 <section id="lastUpdated" aria-label="Last updated">
-<!-- TemplateBeginEditable name="updated" -->Updated:<!-- #BeginDate -->2021-03-01<!-- #EndDate --><!-- TemplateEndEditable -->
+<!-- TemplateBeginEditable name="updated" -->Updated:<!-- #BeginDate -->2023-03-16<!-- #EndDate --><!-- TemplateEndEditable -->
 </section>
 
 <script src="../assets/v5-js/v5-main.min.js"></script>
@@ -416,7 +426,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <!-- TemplateParam name="platform" type="text" value="v5" -->
 <!-- TemplateParam name="rdfa" type="boolean" value="false" -->
 <!-- TemplateParam name="welsh" type="boolean" value="false" -->
-<!-- TemplateParam name="homepage" type="boolean" value="true" -->
+<!-- TemplateParam name="homepage" type="boolean" value="false" -->
 <!-- TemplateParam name="weblite" type="boolean" value="false" -->
 <!-- TemplateParam name="feedback" type="boolean" value="true" -->
 <!-- TemplateParam name="feedbackClass" type="text" value="" -->
@@ -425,5 +435,8 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <!-- TemplateParam name="notificationBar" type="boolean" value="false" -->
 <!-- TemplateParam name="infoBanner" type="boolean" value="false" -->
 <!-- TemplateParam name="infoBannerContent" type="text" value="" -->
+<!-- TemplateParam name="noIndex" type="boolean" value="false" -->
+<!-- TemplateParam name="printGuide" type="boolean" value="false" -->
+
 </body>
 </html>
