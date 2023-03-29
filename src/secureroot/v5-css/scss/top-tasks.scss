@@ -16,6 +16,7 @@
 ol.multistep.multistep--dashed {
   list-style-type: none;
   position: relative;
+  width: 100%;
 }
 
 ol.multistep.multistep--dashed li,
@@ -34,11 +35,11 @@ ol.multistep.multistep--dashed li::before {
 }
 
 .multistep {
+  width: 100%;
   @media only screen and (min-width: $desktop) {
     width: 310px;
     float: left;
   }
-  width: 100%;
   margin: 0;
 }
 
