@@ -75,10 +75,14 @@ export function htmlPrintGuide() {
     const pagination = document.querySelector("#pagination");
     const surveybox = document.querySelector(".box.backgroundRed");
     const printableVersion = document.querySelector(".printable-version");
+    const calloutSurvey = document.querySelector(".callout.callout--survey");
 
     // Remove clutter
     if (pagination) {
       pagination.remove();
+    }
+    if (calloutSurvey) {
+      calloutSurvey.remove();
     }
     if (surveybox) {
       surveybox.remove();
