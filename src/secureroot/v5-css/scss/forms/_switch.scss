@@ -74,7 +74,7 @@ $switch-size: 26px;
     height: $switch-size;
     width: $switch-size;
     left: 4px;
-    bottom: $switch-size / 6;
+    bottom: calc($switch-size / 6);
     background-color: white;
     -webkit-transition: .4s;
     transition: .4s;
