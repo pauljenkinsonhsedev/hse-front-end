@@ -68,7 +68,7 @@ $btnSize: 30px;
     display: flex;
     column-gap: ($btnSize + 15px);
     justify-content: space-between;
-    padding-top: $btnSize / 2;
+    padding-top: calc($btnSize / 2)
 }
 
 .lightbox__nav {
