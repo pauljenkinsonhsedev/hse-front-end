@@ -1,0 +1,111 @@
+
+.tooltip {
+    position: relative;
+    border-bottom: 1px dashed #111;
+    cursor: help;
+  }
+  .tooltip :focus + :last-child,
+  .tooltip:focus > :last-child,
+  .tooltip:hover > :last-child {
+    opacity: 1;
+    -webkit-transition: 0.4s 0s;
+    -moz-transition: 0.4s 0s;
+    -ms-transition: 0.4s 0s;
+    -o-transition: 0.4s 0s;
+    transition: 0.4s 0s;
+    visibility: visible;
+  }
+  .tooltip > :last-child {
+    border: solid 1px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3),
+      0 1px 0 rgba(255, 255, 255, 0.3) inset;
+    -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3),
+      0 1px 0 rgba(255, 255, 255, 0.3) inset;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3),
+      0 1px 0 rgba(255, 255, 255, 0.3) inset;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    // font-size:1em;
+    line-height: 1.5;
+    opacity: 0;
+    padding: 10px $gutter;
+    position: absolute;
+    -webkit-transition: 0.2s 0s;
+    -moz-transition: 0.2s 0s;
+    -ms-transition: 0.2s 0s;
+    -o-transition: 0.2s 0s;
+    transition: 0.2s 0s;
+    visibility: hidden;
+    width: 275px;
+    z-index: 999;
+    font-weight: 400;
+    font-style: normal;
+  }
+  .tooltip > :last-child * {
+    max-width: 100%;
+  }
+  .tooltip > :last-child:after,
+  .tooltip > :last-child:before {
+    border: solid 11px;
+    content: "";
+    display: block;
+    margin: 0 $gutter 0 20px;
+    position: absolute;
+  }
+  .tooltip > :last-child {
+    background-color: #ffdb58;
+    border-color: #f1bd00;
+    color: #3f3100;
+  }
+  .tooltip > :last-child:after {
+    border-color: #ffdb58;
+  }
+  .tooltip > :last-child:before {
+    border-color: #f1bd00;
+  }
+  .tooltip > :last-child {
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+  }
+  .tooltip.tooltipToolbox > :last-child {
+    bottom: 100%;
+    margin-bottom: 15px;
+  }
+  .tooltip.tooltipToolbox > :last-child:after {
+    margin-top: -1px;
+  }
+  .tooltip.tooltipToolbox > :last-child:after,
+  .tooltip.tooltipToolbox > :last-child:before {
+    border-bottom-color: transparent !important;
+    border-left-color: transparent !important;
+    border-right-color: transparent !important;
+    top: 100%;
+  }
+  .tooltip.tooltipToolbox > :last-child:before {
+    margin-top: 0;
+  }
+  .tooltip.tooltipToolbox > :last-child {
+    right: 0;
+  }
+  .tooltip.tooltipToolbox > :last-child:after,
+  .tooltip.tooltipToolbox > :last-child:before {
+    right: 0;
+  }
+  .ie8 .tooltip span {
+    display: none;
+  }
+  .ie8 .tooltip:focus span,
+  .ie8 .tooltip:hover span {
+    display: block;
+    background-color: #ffdb58;
+    border-color: #f1bd00;
+    color: #3f3100;
+    position: absolute;
+    top: -9.5em;
+    right: 0;
+    width: 275px;
+    padding: 5px 10px;
+    z-index: 999;
+  }

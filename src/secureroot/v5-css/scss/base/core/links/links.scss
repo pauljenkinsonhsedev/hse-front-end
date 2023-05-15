@@ -1,0 +1,10 @@
+a {
+    text-decoration: none;
+  }
+  a.hover,
+  a:active,
+  a:focus,
+  a:hover {
+    text-decoration: underline;
+    color: #000;
+  }

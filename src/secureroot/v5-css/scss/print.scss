@@ -25,6 +25,110 @@
   }
 }
 
+@media print {
+  body {
+    font-size: 100%;
+  }
+  #baseStrip,
+  #breadCrumb,
+  #cookieContainer,
+  #footerContainer,
+  #headerContainer,
+  #navDivider,
+  #navSecondary,
+  #navigationPositioner,
+  #sideBar,
+  #siteAlert,
+  #top,
+  #printBanner {
+    display: block;
+    position: relative;
+    height: 65px;
+    margin: 0 0 10px 0;
+  }
+  #printBground {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+  }
+  #printLogo {
+    top: 0;
+    left: 0;
+    z-index: 110;
+    position: absolute;
+  }
+  #columnContainer,
+  #contentContainer,
+  #pageContainer,
+  .column1,
+  .column2 {
+    width: auto !important;
+    float: none;
+    margin: 0;
+    padding: 0;
+  }
+  .hideFromScreen {
+    display: inline;
+  }
+  h2.hideFromScreen {
+    display: block;
+  }
+  .box {
+    width: 98% !important;
+    margin-top: 5px !important;
+    margin-bottom: 5px !important;
+    padding: 5px !important;
+    border: 1px solid #ccc;
+    height: auto !important;
+  }
+  .box1col,
+  .box2col,
+  .box3col,
+  .boxHalfLeft {
+    margin-right: 12px !important;
+  }
+  .box1col {
+    width: 28% !important;
+  }
+  .box2col {
+    width: 63% !important;
+  }
+  .box3col {
+    width: 98% !important;
+  }
+  .boxLast {
+    margin-right: 0 !important;
+  }
+  .boxHalfLeft,
+  .boxHalfRight {
+    width: 30% !important;
+  }
+  .more {
+    display: none !important;
+  }
+  .bl,
+  .br,
+  .tl,
+  .tr {
+    display: none;
+  }
+  ul li {
+    list-style: disc outside !important;
+    padding: 0 !important;
+    margin: 0.5em 1em 0.5em 2em !important;
+  }
+  ul li a {
+    padding: 0 !important;
+    background-image: none !important;
+    margin: 0 !important;
+  }
+  ul li a img {
+    list-style: none;
+  }
+}
+
 // HTML print guides
 
 .lead-paragraph {

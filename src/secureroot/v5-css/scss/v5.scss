@@ -1,12 +1,12 @@
-@import "settings/variables.scss";
-@import "settings/functions.scss";
-@import "settings/colours.scss";
-@import "settings/breakpoints.scss";
-@import "settings/typography.scss";
 
+@import "base/initial/_all.scss";
+@import "base/core/_all.scss";
+@import "base/overrides/_all.scss";
+@import "base/settings/_all.scss";
+@import "base/objects/_all.scss";
+@import "skip-links.scss";
 @import "reset.scss";
 @import "base.scss";
-@import "normalize.scss";
 @import "focus.scss";
 @import "components.scss";
 @import "subscribe-box.scss";
@@ -35,7 +35,7 @@
 @import "more-links.scss";
 @import "icons.scss";
 @import "forms-legacy.scss";
-
+@import "images.scss";
 @import "forms/forms.scss";
 @import "forms/date-formatted.scss";
 @import "forms/datepicker.scss";
@@ -54,7 +54,6 @@
 @import "forms/telephone.scss";
 @import "forms/textarea.scss";
 @import "forms/switch.scss";
-
 @import "charts.scss";
 @import "aria.accordion.scss";
 @import "tables.scss";

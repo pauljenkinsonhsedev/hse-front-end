@@ -1,4 +1,7 @@
 /* Tabs */
+.tabs .ui-tabs-nav {
+  margin: 0 !important;
+}
 
 .tabs__tab {
   &:focus {
@@ -65,7 +68,7 @@ ul.tabs__list {
   }
 }
 
-#contentContainer ul li .tabs__tab {
+ul li .tabs__tab {
   display: block;
 
   &:link,
