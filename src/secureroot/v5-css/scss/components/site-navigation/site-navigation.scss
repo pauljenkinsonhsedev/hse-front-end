@@ -1,5 +1,61 @@
 // Main menu
 
+.navDrop {
+  display: none;
+  /* Hides drop-down menu */
+}
+
+.navDropdown li {
+  background: none;
+}
+
+// Main menu
+
+.menuContainer {
+  width: 100%;
+  float: left;
+  margin-top: $gutter;
+  background-color: $gray;
+  @media only screen and (min-width: $desktop) {
+    background-color: $red;
+    margin-bottom: 0;
+  }
+}
+
+/* ---------------------------- */
+/* Main menu */
+/* ---------------------------- */
+
+@media only screen and (min-width: $desktop) {
+  .menu li.search {
+    display: none;
+  }
+
+  .home .menu li.home,
+  .news .menu li.news,
+  .guidance .menu li.guidance,
+  .aboutyou .menu li.aboutyou,
+  .abouthse .menu li.abouthse,
+  .contact .menu li.contact,
+  .freeUpdates .menu li.freeUpdates {
+    background-color: #333;
+    border-radius: 0px;
+  }
+
+  .home .menu li.home > a,
+  .home .menu li.home + li.news > a,
+  .news .menu li.news > a,
+  .news .menu li.news + li.guidance > a,
+  .guidance .menu li.guidance > a,
+  .guidance .menu li.guidance + li.aboutyou > a,
+  .aboutyou .menu li.aboutyou > a,
+  .aboutyou .menu li.aboutyou + li.abouthse > a,
+  .abouthse .menu li.abouthse > a,
+  .abouthse .menu li.abouthse + li.contact > a {
+    background-image: none; /* remove seperator background image on selected and adjacent tabs */
+  }
+}
+
 .desktop-hide {
   display: none;
   @media only screen and (min-width: $desktop) {

@@ -119,3 +119,27 @@ $btnSize: 30px;
         }
     }
 }
+
+
+.lightbox {
+    margin-bottom: 10px !important;
+  }
+  
+  .lightbox li {
+    background: none;
+    padding-right: 0 !important;
+    background-color: $gray;
+    border: 5px solid $gray;
+  }
+  
+  #contentContainer ul.lightbox li {
+    padding-bottom: 0 !important;
+  }
+  
+  .lightbox li a {
+    float: left;
+  }
+  
+  body.hasScript #contentContainer ul.lightbox li {
+    margin-right: 10px;
+  }

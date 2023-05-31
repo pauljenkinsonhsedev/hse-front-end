@@ -1,0 +1,97 @@
+// Cookie notification
+
+#cookieContainer p a {
+    // color: $focus;
+    text-decoration: underline;
+  }
+  
+  #cookieContainer p a:hover {
+    text-decoration: none;
+  }
+
+  
+  #cookieContainer button:hover {
+    cursor: pointer;
+  }
+  
+  .cookies-message {
+    display: block;
+    max-width: 680px;
+  }
+  
+  .cookies-message__actions {
+    margin-top: $dp * 3;
+  }
+  
+  .cookies-message-accepted,
+  .cookies-message-rejected {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  
+    p,
+    .btn {
+      margin: 0;
+    }
+  }
+  
+  .cookies-message__heading {
+    font-weight: 700;
+    margin-bottom: 10px !important;
+    @include type-setting(2);
+    @media only screen and (max-width: $desktop) {
+      @include type-setting(3);
+    }
+    line-height: 1.5;
+    margin-bottom: 0;
+  }
+  
+  .cookies-message__copy {
+    p {
+      @include type-setting(0);
+      line-height: 1.5;
+    }
+  }
+  
+  .cookies-message__link {
+    margin-bottom: 0;
+  }
+
+  .v5-span-heading1 {
+    color: $black;
+    font-size: 2em;
+    padding: 0;
+    margin-bottom: 10px;
+  }
+  
+  #cookieNotify {
+    background: none !important;
+  }
+  
+  #cookieNotify p {
+    padding: 0;
+  }
+  
+  #cookieContainer {
+    background-color: #eee;
+    display: block;
+  }
+  
+  #cookieNotify {
+    width: 100%;
+    @media only screen and (min-width: $desktop) {
+      width: $full-width;
+    }
+    padding: 0px !important;
+    margin: 5px auto;
+    background: url(../v4-images/shared/cookie-icon.png) no-repeat 0 4px;
+  }
+  
+  .ie7 #cookieNotify {
+    height: 2.667em;
+  }
+  
+  #cookieNotify p {
+    color: $black;
+    // font-size: 1.1em;
+  }
