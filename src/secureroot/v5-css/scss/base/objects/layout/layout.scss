@@ -1,0 +1,269 @@
+// V5 layout
+
+#contentContainer * {
+    box-sizing: border-box;
+  }
+  
+  #contentContainer {
+    width: 100%;
+    margin: 0 !important;
+  }
+  
+  .oneThird,
+  .twoThird,
+  .half,
+  .twoThirdHalf,
+  .mostPopular,
+  .homepageBanner {
+    width: 100%;
+  }
+  
+  #pageContainer {
+    width: 90%;
+  }
+  
+  #sideBar {
+    width: 100%;
+    float: left;
+  }
+  
+  #sideBar .box {
+    box-sizing: border-box !important;
+  }
+  
+  .fixed-container {
+    width: 100%;
+    margin: auto;
+    @media only screen and (min-width: $desktop) {
+      width: $full-width;
+    }
+  }
+
+  // Columns
+
+.columnFull {
+    width: 100%;
+    float: left;
+    height: auto;
+    clear: both;
+    padding: 0;
+  }
+  
+  .column {
+    float: left;
+    width: 100%;
+    position: relative;
+    padding: 10px;
+    margin: 0 1.5% $gutter 0;
+  }
+  
+  .column.noBoxPadding {
+    margin: 0 10px 10px 0;
+    @media only screen and (min-width: $desktop) {
+      margin: 0 $gutter 20px 0;
+    }
+    padding: 0;
+  }
+  
+  .noBoxPadding .column {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  
+  .column.backgroundRed {
+    padding: $gutter;
+  }
+  
+  /* Spacing & Borders */
+  
+  .noPadding {
+    padding: 0 !important;
+  }
+  
+  .border:last-of-type {
+    border-bottom: none;
+    // margin-bottom: 0;
+  }
+  
+  .border {
+    margin-bottom: $gutter;
+    border-bottom: 2px solid $red;
+  }
+  
+  .columnFull:first-of-type {
+    padding-top: 0;
+  }
+  
+  #headerContainer,
+  #baseStrip,
+  div.diaryMonth h2,
+  .boxSubscribe {
+    background-color: $red;
+  }
+  
+  // space fix
+  .columnFull:last-of-type .oneThird,
+  .columnFull:last-of-type .twoThird {
+    margin-bottom: 0px;
+  }
+  
+  .column.oneThird.backgroundRed {
+    margin-bottom: $gutter;
+  }
+
+  /* Desktop */
+@media only screen and (min-width: $desktop) {
+  #headerContainer {
+    min-width: 960px;
+  }
+  #header {
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  #pageContainer {
+    width: $full-width;
+    margin: 0 auto;
+  }
+  #pageTitle {
+    float: right;
+    width: 690px;
+  }
+
+  #backTo {
+    display: none;
+  }
+
+  #contentContainer {
+    margin: 0;
+    width: $full-width;
+  }
+
+  .columnbetacontentpage.column1 {
+    width: $full-width !important;
+  }
+
+  .columnbetacontentpage,
+  .columnbetacontentpage.column2 {
+    width: 700px !important;
+  }
+  .columnbetacontentpage.column3 {
+    width: 680px !important;
+    margin-right: $gutter !important;
+  }
+
+  #sideBar {
+    float: left;
+    width: 240px !important;
+    margin-top: 0px !important;
+  }
+
+  #sideBar .box {
+    width: 100% !important;
+  }
+
+  .more {
+    box-sizing: border-box !important;
+  }
+
+  /* Layout */
+
+  .last,
+  .noBoxPadding.last {
+    margin-right: 0 !important;
+  }
+
+  /* 3 Col */
+
+  .oneThird {
+    width: 300px;
+  }
+
+  #contentContainer .half {
+    width: 460px;
+  }
+
+  .twoThird {
+    width: 620px;
+  }
+
+  .mostPopular {
+    width: 300px;
+  }
+
+  .homepageBanner {
+    width: 640px;
+  }
+
+  .noPadding.twoThird {
+    width: 620px;
+  }
+
+  .twoThirdHalf {
+    width: 290px;
+    margin-right: $gutter;
+  }
+
+  .twoThirdHalf.subColumn {
+    width: 290px;
+    padding: 0;
+  }
+
+  .columnFull {
+    width: $full-width;
+  }
+
+  .column {
+    margin: 0 $gutter 0 0;
+  }
+
+  /* No box padding */
+
+  /* 3 col (No box paddding) */
+
+  .oneThird.noBoxPadding {
+    width: 300px;
+    margin-right: $gutter;
+  }
+
+  .twoThird.noBoxPadding {
+    width: 620px;
+    margin-right: 40px;
+  }
+
+  .noBoxPadding .twoThirdHalf.subColumn {
+    width: 300px;
+  }
+
+  .noBoxPadding.twoThirdHalf {
+    width: 300px;
+  }
+
+  /* Offset */
+
+  .offsetTwoThird {
+    margin-left: 640px !important;
+  }
+
+  /* Beta */
+
+  #globalSearch {
+    float: right;
+  }
+  #globalSearch table,
+  #globalSearchMobile table {
+    width: 250px !important;
+  }
+
+  .beta-highlight {
+    margin-left: 0;
+  }
+
+  .footer-links-container {
+    width: $full-width;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+

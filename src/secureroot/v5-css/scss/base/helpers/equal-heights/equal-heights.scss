@@ -1,0 +1,9 @@
+// Equal heights fix
+
+@media only screen and (max-width : 979px) {
+    /* Disables auto height on mobile devices */
+    [class*="equalHeights"], [class*="equalHeight"] {
+    height: auto !important;	
+    }
+        
+    }
