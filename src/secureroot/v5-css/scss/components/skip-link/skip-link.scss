@@ -1,0 +1,24 @@
+a.skip:link,
+a.skip:visited {
+  pointer-events: none;
+  height: 48px;
+  display: block;
+  overflow: hidden;
+  text-indent: -600em;
+  background: 0 0;
+  width: 5em;
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-weight: 700;
+}
+a.skip:active,
+a.skip:focus,
+a.skip:hover {
+  text-indent: 0;
+  width: 10em;
+  padding: 3px;
+  z-index: 10000;
+  text-decoration: underline;
+  background-color: #fff;
+}

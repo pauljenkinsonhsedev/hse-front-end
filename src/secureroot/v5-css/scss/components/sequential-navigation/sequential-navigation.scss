@@ -1,0 +1,103 @@
+
+
+// Pagination
+
+#pagination {
+    width: 100%;
+    float: left;
+    margin-bottom: $gutter;
+  }
+  
+  #pagination ul li {
+    list-style-image: none;
+    width: 100%;
+    @media only screen and (min-width: $desktop) {
+      width: 50%;
+    }
+  }
+  
+  #pagination ul,
+  #pagination ul li {
+    float: left;
+    background: none;
+    margin: 0 !important;
+    padding: 0;
+  }
+  
+  #pagination ul span {
+    float: left;
+    clear: both;
+  }
+  
+  // Top task pagination
+  
+  #pagination .next-page,
+  #pagination .previous-page {
+    width: 100%;
+    float: left;
+    @media only screen and (min-width: $desktop) {
+      width: 50%;
+    }
+  }
+  
+  #pagination span {
+    color: $red;
+  }
+  
+  #pagination a:hover {
+    background-color: $gray;
+  }
+  
+  .pagination-icon {
+    font-size: 2.167em;
+  }
+  
+  .pagination-text {
+    font-size: 1.167em;
+    text-decoration: underline;
+  }
+  
+  #pagination .next-page,
+  #pagination .previous-page {
+    @media only screen and (min-width: $desktop) {
+      margin-left: -10px;
+    }
+  }
+  
+  #pagination div:nth-child(2) {
+    @media only screen and (min-width: $desktop) {
+      margin-left: 10px;
+    }
+  }
+  
+  .next-page:hover .pagination-text,
+  .previous-page:hover .pagination-text {
+    text-decoration: none !important;
+    color: $hseblack !important;
+  }
+  
+  #pagination .previous-page a {
+    width: 100%;
+    padding: 10px;
+    @media only screen and (min-width: $desktop) {
+      padding-left: 0;
+    }
+    float: left;
+  }
+  
+  #pagination .next-page a {
+    width: 100%;
+    padding: 10px;
+    float: left;
+  }
+  
+  #pagination ul li:first-of-type a {
+    @media only screen and (min-width: $desktop) {
+      padding-left: 0;
+    }
+  }
+  
+  #pagination ul,
+  #pagination ul li {
+    width: 100%;
+  }

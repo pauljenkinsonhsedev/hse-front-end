@@ -1,0 +1,32 @@
+h1 {
+margin: 0 0 0.5em 0;
+}
+h2 {
+margin: 0 0 0.5em 0;
+}
+
+h3 {
+margin: 0 0 0.5em 0;
+}
+h4 {
+margin: 0 0 0.5em 0;
+}
+
+#contentContainer h2,
+#contentContainer h3 {
+  clear: left;
+}
+
+// Headings top task
+
+.v5 .aside h2, .v5 .aside h3 {
+  margin: 0 0 15px !important;
+}
+
+.v5 .articleList h3, .v5 .articleList h4 {
+  margin: 0 0 5px !important;
+}
+
+.v5 .guidanceList h3, .v5 .guidanceList h4 {
+  margin: 0 0 5px !important;
+}

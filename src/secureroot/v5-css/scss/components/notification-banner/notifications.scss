@@ -1,0 +1,124 @@
+/* Notification bar */
+
+.notification-banner {
+  background-color: $gray;
+  width: 100%;
+  height: auto;
+  float: left;
+  font-size: 16px;
+  border-bottom: 2px solid $red;
+  line-height: normal !important;
+}
+
+.notification-banner.global {
+  background-color: $hseblack;
+  border-bottom: 2px solid $focus;
+}
+
+.notification-banner p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.notification-banner.global p {
+  color: white;
+}
+
+.notification-banner.global p a {
+  color: $focus;
+  text-decoration: underline;
+}
+
+.notification-banner.global p a:hover,
+.notification-banner.global p a:focus {
+  text-decoration: none;
+  background: $focus;
+  color: $black;
+}
+
+.notification-banner button {
+  padding: 0;
+}
+
+.notification-banner button:hover {
+  text-decoration: none;
+}
+
+.notification-banner button {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.brexit-icon {
+  float: left;
+}
+
+.notification-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 10px 5%;
+  @media only screen and (min-width: 980px) {
+    padding: 0;
+    width: $full-width;
+    margin-top: $gutter;
+    margin-bottom: $gutter;
+    // float: none;
+  }
+}
+
+.notification-container p {
+  margin: 0;
+}
+
+.notification-container img {
+  float: left;
+  margin-right: $gutter;
+}
+
+.notification-message {
+  margin: 0;
+  float: left;
+}
+
+.notification-call-to-action {
+  display: block;
+  width: 100%;
+  @media only screen and (min-width: 980px) {
+    margin-left: 54px;
+  }
+}
+
+.notification-message img {
+  @media only screen and (max-width: 979px) {
+    display: none;
+  }
+  @media only screen and (min-width: 980px) {
+    margin-right: $gutter;
+    float: left;
+  }
+}
+
+// .notification-hide, .notification-banner.global .notification-hide
+// {
+// background: none;
+// border: none;
+// float: right;
+// margin-top: 10px;
+// @media only screen and (min-width : 980px) {
+// position: relative;
+// right: 0;
+// top: 0;
+// margin-bottom: $gutter;
+// }
+// }
+
+.notification-bar-title {
+  font-weight: bold;
+  vertical-align: top !important;
+  width: 100%;
+}
+/* Notification bar end */
