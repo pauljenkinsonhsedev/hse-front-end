@@ -19,7 +19,7 @@
 
 export function missingData(data) {
     // collect all data
-    for (var items in data) {
+    for (let items in data) {
         const withData = [];
         const withoutData = [];
         const PrevNext = [];
@@ -27,7 +27,7 @@ export function missingData(data) {
         const heading = data[items].name;
 
         // find index of value 0
-        for (var key in units) {
+        for (let key in units) {
             const value = units[key].y;
 
             if (value === 0) {
