@@ -1,0 +1,18 @@
+// Construction - overiding custom.css
+
+#lwet-steps {
+margin-bottom: $gutter !important;
+}
+
+#lwet-steps li a {
+box-sizing: content-box !important;
+color: white !important;
+}
+
+.lwet #feature-home ol {
+border-top: none;
+}
+
+.lwet #feature-home {
+margin-bottom: $gutter;
+}

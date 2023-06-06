@@ -31,8 +31,7 @@
     background-repeat: no-repeat;
     background-position: bottom;
     float: left;
-    top: 4px;
-    // padding: 0 4px;
+    top: 2px;
     padding-right: 4px;
     position: relative;
     width: 17px;
@@ -75,4 +74,34 @@
   #breadCrumb ol li a:hover {
     text-decoration: none;
   }
+
+  #backTo {
+    background-color: $hseblack;
+  }
+  
+  .backto {
+    box-sizing: border-box;
+    padding-top: 10px;
+    margin: 0;
+    display: inline-block;
+    width: 100%;
+    @media only screen and (min-width: $desktop) {
+      display: none;
+    }
+  }
+  
+  p.backto {
+    font-size: 0.9rem;
+    padding: 0;
+  }
+  
+  p.backto a {
+    color: white;
+  }
+  
+  p.backto a:focus {
+    color: $black;
+    outline: none;
+  }
+  
   

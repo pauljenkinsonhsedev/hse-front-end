@@ -1,0 +1,101 @@
+// Homepage banner
+
+.homepageBanner {
+    padding: 0;
+    margin-bottom: $gutter !important;
+  
+    @media only screen and (min-width: $desktop) {
+      margin-bottom: 0;
+      a {
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+      }
+    }
+  }
+  
+  .homepageBanner {
+    @media only screen and (min-width: 980px) {
+      max-height: 258px !important;
+    }
+  }
+  
+  .homepageBanner a {
+    float: left;
+    width: 100%;
+  }
+  
+  .homepageBanner img {
+    @media only screen and (min-width: 980px) {
+    }
+  }
+  
+  .mostPopular {
+    @media only screen and (min-width: 980px) {
+      margin-bottom: $gutter;
+    }
+  }
+  
+  .mostPopular {
+    min-height: 256.62px;
+  }
+  
+  .homepageBannerInner {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    padding: $gutter;
+    order: 2;
+  
+    overflow: hidden;
+  
+    @media only screen and (min-width: 600px) {
+      order: 1;
+    }
+  }
+  
+  .homepageBannerImage {
+    order: 1;
+    @media only screen and (min-width: 600px) {
+      order: 2;
+      overflow: hidden;
+    }
+  
+    @media only screen and (min-width: $desktop) {
+      width: 100%;
+    }
+  }
+  
+  .coronaPoster {
+    background-color: #3272b2;
+    font-weight: 100;
+    letter-spacing: 1px;
+  
+    h2 {
+      margin-bottom: 5px;
+      color: $white;
+    }
+  
+    a p {
+      font-size: 22px;
+      line-height: 1.5;
+      font-weight: normal;
+      text-decoration: none;
+      color: #ffffff;
+    }
+  
+    a:link,
+    a:hover,
+    a:visited,
+    a:active {
+      text-decoration: none;
+      color: #ffffff;
+    }
+  }
+  
+  .stayAlertBanner {
+    margin-top: auto;
+    align-items: flex-end;
+  }

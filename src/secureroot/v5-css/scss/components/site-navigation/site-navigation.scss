@@ -16,6 +16,7 @@
   float: left;
   margin-top: $gutter;
   background-color: $gray;
+  margin: 0;
   @media only screen and (min-width: $desktop) {
     background-color: $red;
     margin-bottom: 0;
