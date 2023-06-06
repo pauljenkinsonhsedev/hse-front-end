@@ -1,0 +1,85 @@
+// ==========================================================================
+// SETTINGS / #GLOBALS
+// ==========================================================================
+
+//
+// Fonts
+//
+// 1. Fallback fonts if Frutiger fails to load
+//
+
+$hse-font: Frutiger W01 !default;
+$hse-font-fallback: Arial, Sans-serif !default; // [1] //
+$hse-font-family-print: sans-serif !default;
+$hse-font-bold: 600 !default;
+$hse-font-normal: 400 !default;
+$hse-font-light: $hse-font-normal !default;
+$hse-fonts-path: "https://assets.nhs.uk/fonts/" !default;
+$hse-include-font-face: true !default;
+
+//
+// Font sizing and spacing
+//
+
+$hse-base-font-size: 16px !default;
+$hse-base-line-height: 24px !default;
+
+//
+// Icon default sizing
+//
+
+$hse-icon-size: 34px !default;
+
+//
+// Grid spacing
+//
+
+$hse-page-width: 960px;
+$hse-gutter: 32px;
+$hse-gutter-half: $hse-gutter * 0.5;
+
+//
+// Border sizes
+//
+
+$hse-border-width-inset-text: 8px !default;
+$hse-care-card-triangle-border: 16px !default;
+$hse-hero-content-triangle-border: 16px !default;
+$hse-hero-border: 1px !default;
+$hse-border-table-header-width: 2px !default;
+$hse-border-table-cell-width: 1px !default;
+
+//
+// Border radius
+//
+
+$hse-border-radius: 4px !default;
+
+//
+// Box shadow
+//
+
+$hse-box-shadow-spread: 4px !default;
+$hse-box-shadow-blur: 4px !default;
+$hse-box-shadow-link: 4px !default;
+$hse-box-details: 8px !default;
+$hse-box-expander: 4px !default;
+$hse-box-shadow-pagination: 16px !default;
+$hse-box-shadow-link: 4px !default;
+
+//
+// Header spacing
+//
+
+$hse-header-spacing: 20px;
+
+//
+// Form elements
+//
+
+$hse-border-width-form-element: 2px !default;
+$hse-border-width-form-element-error: 2px !default;
+$hse-focus-width: 4px !default;
+$hse-border-width: 4px !default;
+$hse-border-width-mobile: 4px !default;
+$hse-border-width-form-group-error: $hse-border-width !default;
