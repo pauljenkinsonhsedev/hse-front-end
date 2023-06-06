@@ -2,8 +2,6 @@
 font-size: 14px;
 }
 
-
-
 #headerContainer {
 width: 100%;
 min-width: 960px;
@@ -34,6 +32,14 @@ clear: both;
 float: left;
 position: relative;
 margin: 7px 0 0 0;
+}
+
+#menu {
+  margin-bottom: $gutter;
+}
+#navSecondary {
+  margin-bottom: $gutter;
+  width: 100%;
 }
 #navSecondary {
 float: left;
@@ -143,6 +149,7 @@ display: none;
 
 .footer-links-container ul {
 list-style-type: none;
+margin: 0;
 }
 
 #baseStrip {
@@ -294,6 +301,20 @@ list-style-type: none;
     width: 100% !important;
     padding-left: 0;
     padding-right: 0;
+  }
+}
+
+// Print page
+#printGuide {
+  float: left;
+  margin-top: $gutter;
+}
+
+@media only screen and (min-width: $desktop) {
+  #navSecondary {
+    width: 220px;
+    margin: 0;
+    margin-right: 40px;
   }
 }
 

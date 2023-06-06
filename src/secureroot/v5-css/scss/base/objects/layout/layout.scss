@@ -239,6 +239,39 @@
     width: 300px;
   }
 
+  // 2 Col
+
+/* Desktop */
+@media only screen and (min-width: $desktop) {
+  /* Layout */
+
+  .columnbetacontentpage .columnFull:first-of-type {
+    padding-top: 0 !important;
+  }
+
+  #contentContainer.columnbetacontentpage .columnFull {
+    width: 700px;
+  }
+
+  #contentContainer.columnbetacontentpage.column1 .columnFull {
+    width: 100% !important;
+  }
+
+  /* No box padding */
+
+  /* One column layout */
+  #contentContainer.columnbetacontentpage.column1 .noBoxPadding.oneThird {
+    width: 300px;
+    margin-right: $gutter;
+    margin-bottom: 0;
+  }
+
+  #contentContainer.columnbetacontentpage .noBoxPadding.oneThird {
+    width: 215px;
+    margin-right: $gutter;
+  }
+}
+
   /* Offset */
 
   .offsetTwoThird {
@@ -265,5 +298,7 @@
     padding-right: 0;
   }
 }
+
+
 
 
