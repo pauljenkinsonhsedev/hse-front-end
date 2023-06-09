@@ -1,13 +1,4 @@
 // V5 layout
-
-#contentContainer * {
-    box-sizing: border-box;
-  }
-  
-  #contentContainer {
-    width: 100%;
-    margin: 0 !important;
-  }
   
   .oneThird,
   .twoThird,
@@ -16,10 +7,6 @@
   .mostPopular,
   .homepageBanner {
     width: 100%;
-  }
-  
-  #pageContainer {
-    width: 90%;
   }
   
   #sideBar {
@@ -94,7 +81,6 @@
     padding-top: 0;
   }
   
-  #headerContainer,
   #baseStrip,
   div.diaryMonth h2,
   .boxSubscribe {
@@ -113,18 +99,8 @@
 
   /* Desktop */
 @media only screen and (min-width: $desktop) {
-  #headerContainer {
-    min-width: 960px;
-  }
-  #header {
-    width: 100%;
-    padding-left: 0;
-    padding-right: 0;
-  }
-  #pageContainer {
-    width: $full-width;
-    margin: 0 auto;
-  }
+
+
   #pageTitle {
     float: right;
     width: 690px;
@@ -278,11 +254,6 @@
     margin-left: 640px !important;
   }
 
-  /* Beta */
-
-  #globalSearch {
-    float: right;
-  }
   #globalSearch table,
   #globalSearchMobile table {
     width: 250px !important;

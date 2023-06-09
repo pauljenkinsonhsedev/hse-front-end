@@ -90,7 +90,7 @@ $_hse-grid-widths: (
 //   @include govuk-grid-column(one-half, $float: right);
 //
 
-@mixin govuk-grid-column($width: full, $float: left, $at: desktop, $class: "hse-grid-column") {
+@mixin govuk-grid-column($width: full, $float: left, $at: hse-desktop, $class: "hse-grid-column") {
   .#{$class}-#{$width} {
     box-sizing: border-box;
     padding: 0 $hse-gutter-half;

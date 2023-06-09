@@ -2,51 +2,16 @@
 font-size: 14px;
 }
 
-#headerContainer {
-width: 100%;
-min-width: 960px;
-}
-#header {
-padding: 10px 0 0 0;
-width: $full-width;
-height: 56px;
-margin: 0 auto;
-}
-
-#pageContainer {
-position: relative;
-width: $full-width;
-margin: $gutter auto;
-padding: 0 10px;
-}
-
 #contentContainer ul,
 #sideBar ul {
 margin: 0 0 10px 28px;
-}
-#contentContainer ul {
-clear: both;
-}
-
-#contentContainer {
-float: left;
-position: relative;
-margin: 7px 0 0 0;
 }
 
 #menu {
   margin-bottom: $gutter;
 }
-#navSecondary {
-  margin-bottom: $gutter;
-  width: 100%;
-}
-#navSecondary {
-float: left;
-width: 220px;
-margin: 7px $gutter 7px 0;
-position: relative;
-}
+
+
 #navigationContainer {
 width: $full-width;
 margin: 15px auto 0 auto;
@@ -220,34 +185,8 @@ margin: 0;
 
 
 // Header
-#headerContainer {
-  width: 100%;
-  float: left;
-  max-width: 100%;
-  min-width: 100%;
-  background-image: none;
-  background-color: $red;
-}
-
-#header {
-  width: 100%;
-  background-color: $red;
-}
-
-.headerTop {
-  min-width: 90%;
-  @media only screen and (min-width: $desktop) {
-    max-width: $full-width;
-    min-width: $full-width;
-    margin: 0 auto;
-    padding: 0;
-  }
-  margin-left: 5%;
-  margin-right: 5%;
-}
 
 #headerLogo {
-  float: left;
   line-height: 1.333em;
   font-weight: 700;
   float: left;
@@ -275,7 +214,6 @@ margin: 0;
 }
 
 #headerLogo {
-  float: left;
   text-decoration: none;
 }
 
@@ -292,17 +230,6 @@ margin: 0;
 
 
 // Cookie container
-#cookieContainer {
-  width: 90% !important;
-  padding: 10px 0;
-  padding-left: 5%;
-  padding-right: 5%;
-  @media only screen and (min-width: $desktop) {
-    width: 100% !important;
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
 
 // Print page
 #printGuide {
@@ -312,7 +239,7 @@ margin: 0;
 
 @media only screen and (min-width: $desktop) {
   #navSecondary {
-    width: 220px;
+    width: 100%;
     margin: 0;
     margin-right: 40px;
   }

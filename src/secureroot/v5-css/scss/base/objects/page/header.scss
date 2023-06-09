@@ -1,0 +1,31 @@
+.hse-header {
+    @include clearfix();
+    background-color: $color_hse-red;
+  }
+  
+  .hse-header__top-container {
+    @include clearfix();  
+    padding: 20px 0;
+    @include mq($until: hse-desktop) {
+      margin: 0;
+    }
+  }
+
+.hse-header__top-container {
+  @include clearfix();
+}
+
+.hse-header__navigation-container {
+@include mq($until: hse-desktop) {
+}
+}
+
+.hse-header__search {
+    @include clearfix();
+    position: relative;
+    text-align: right;
+    @include mq($from: tablet) {
+      float: right;
+    }
+}
+
