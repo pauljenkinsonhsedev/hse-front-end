@@ -2,9 +2,9 @@ import { mediaQuery } from './utils/media-query.js';
 
 export function mainMenu(){
   const mediaquery = mediaQuery();
-  const header = document.querySelector('.headerTop');
+  const header = document.querySelector('.hse-header__top-container');
   const menu = document.querySelector('.js-menu');
-  const menuLocation = document.querySelector('#globalSearch');
+  const menuLocation = document.querySelector('.hse-header__search');
   const searchLinkLocation = document.querySelector('#main-menu ul');
   const searchListItemLocation = document.querySelector('#main-menu ul').lastChild;
   const menuButton = document.createElement('button');

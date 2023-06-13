@@ -1,5 +1,30 @@
-// Main menu
+// Navigation
 
+.hse-navigation {
+  @include clearfix();
+  display: flex;
+  @include mq($until: hse-desktop) {
+  background: $gray;
+  }
+  }
+  
+  .hse-header__navigation-container {
+  @include clearfix();
+  @include mq($until: hse-desktop) {
+  margin: 0;
+  } 
+  }
+  
+  .hse-navigation__navigation-list {
+  margin: 0;
+  }
+  
+  .hse-navigation__navigation-link {
+  padding: hse-spacing(3);
+  @include mq($from: hse-desktop) {
+  padding: hse-spacing(2) hse-spacing(3);
+  }
+  }
 .navDrop {
   display: none;
   /* Hides drop-down menu */
@@ -7,20 +32,6 @@
 
 .navDropdown li {
   background: none;
-}
-
-// Main menu
-
-.menuContainer {
-  width: 100%;
-  float: left;
-  margin-top: $gutter;
-  background-color: $gray;
-  margin: 0;
-  @media only screen and (min-width: $desktop) {
-    background-color: $red;
-    margin-bottom: 0;
-  }
 }
 
 /* ---------------------------- */
@@ -72,14 +83,13 @@
   }
 }
 
-@media only screen and (min-width: $desktop) {
-  .menu-button {
-    display: none;
-  }
+.menu-button {
+@include mq($from: hse-desktop) {
+ display: none;
+}
 }
 
 .menu-button {
-  float: right;
   height: 25px;
   width: 25px;
   padding: 0;
@@ -103,17 +113,7 @@
   display: block;
 }
 
-.menu {
-  width: 100%;
-  @media only screen and (min-width: $desktop) {
-    max-width: $full-width;
-    min-width: $full-width;
-    margin: 0 auto;
-  }
-  clear: both;
-  font-size: 1rem;
-  background-color: $gray;
-}
+
 
 .menu li {
   width: 100%;
@@ -144,16 +144,11 @@
   width: 100%;
   color: $body;
   box-sizing: border-box;
-  padding: 15px 5% 15px 5%;
-  line-height: 25px;
   @media only screen and (min-width: $desktop) {
-    position: relative;
     background-image: none;
     vertical-align: middle;
     font-weight: bold;
     color: #fff;
-    padding: 6px 19px 0 19px;
-    height: 33px;
     text-decoration: none;
     display: block;
     line-height: inherit;
