@@ -1,66 +1,51 @@
-#feedback {
-  clear: both;
-  position: relative;
-}
 
-.feedback {
-  z-index: 1;
-  display: block;
-  width: 90%;
-  margin: $gutter auto;
-  background-color: #fff;
-  border-bottom: 10px solid #981e32;
-  @media only screen and (min-width: $desktop) {
-    width: $full-width;
-    margin: 0 auto;
+.hse-feedback__prompt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @include mq($from: hse-desktop) {
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0;
   }
-  &.feedback-beta {
-    bottom: 0;
-    border: 0;
-  }
-
-  .feedback-in & {
-    opacity: 1;
-  }
-}
-
-.feedback-container {
-  width: 100%;
-  float: left;
-  background-color: $red;
   padding: 10px;
-  box-sizing: border-box;
-  button {
-    margin-bottom: 0 !important;
-  }
 
-  p {
-    color: white;
-    display: inline-block;
-    text-align: center;
-    margin: 0;
-  }
-
-  /* Large Devices, Wide Screens */
-  @media only screen and (min-width: $desktop) {
-    padding: 10px;
-    box-sizing: border-box;
-    float: left;
-    .feedback-beta & {
-      padding: 10px;
-      width: 100%;
-      border: 0;
+  background: $red;
+  &.js-feedback-open
+  {
+    background: white;
     }
-  }
 }
 
-.feedback-container a,
-.feedback-container p {
-  color: white;
+
+
+
+.hse-feedback__prompt-questions-answers {
+display: flex;
+padding: 10px;
+align-items: center;
 }
 
-.feedback-links {
-  display: inline-block;
+.hse-feedback__prompt-questions-answers .btn {
+margin: 0;
+}
+
+.hse-feedback__report-a-problem {
+padding: 10px;
+}
+
+.fieldset {
+&.report-a-problem-form__questions, &.report-a-problem-form__hidden-fields {margin: 0;}
+}
+
+.hse-feedback__report-a-problem button.btn-secondary {
+margin: 0;
+}
+
+.hse-feedback__prompt-question {
+color: white;
+margin: 0;
+margin-right: 10px;
 }
 
 .feedback-links a {
@@ -94,7 +79,6 @@
 .feedback-survey,
 .report-a-problem-form {
   width: 100%;
-  padding: 10px;
   box-sizing: border-box;
   position: relative;
   overflow-y: hidden;
@@ -194,22 +178,6 @@ p.question-hint {
   }
 }
 
-.yes-no-container {
-  margin-bottom: 10px;
-  text-align: center;
-  @media only screen and (min-width: 661px) {
-    margin-bottom: 0;
-    float: left;
-    text-align: left;
-  }
-  @media only screen and (min-width: $desktop) {
-    width: 50%;
-  }
-}
-
-.yes-no-container .feedback-message {
-  margin: 10px 10px 0 0;
-}
 
 .feedback-message-active {
   margin-top: 0 !important;
@@ -248,15 +216,6 @@ p.question-hint {
 
 .js-hide {
   display: none !important;
-}
-
-#close-report-a-problem {
-  @media only screen and (min-width: 661px) {
-    position: absolute;
-    right: 0;
-    top: $gutter;
-    z-index: 1;
-  }
 }
 
 .feedback__report-problem-alert {
