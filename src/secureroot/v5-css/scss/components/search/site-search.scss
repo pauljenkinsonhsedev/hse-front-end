@@ -1,14 +1,5 @@
 // Google Custom Search
 
-#globalSearch,
-#globalSearchMobile {
-  margin-top: $gutter;
-  margin-bottom: $gutter;
-  @media only screen and (min-width: $desktop) {
-    margin-top: 0px;
-  }
-}
-
 #globalSearch tr,
 #globalSearchMobile tr {
   background-color: $red;
