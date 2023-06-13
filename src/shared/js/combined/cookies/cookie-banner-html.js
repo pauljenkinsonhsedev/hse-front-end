@@ -47,8 +47,8 @@ export function cookieMessageHTML() {
     }
 
     const cookieBanner = `
-    <div id="cookieContainer" class="cf" role="region" aria-label="Cookie banner">
-        <div id="cookieNotify" class="cf">${cookieMessage}</div>
+    <div class="hse-cookie-banner cf" role="region" aria-label="Cookie banner">
+        <div class="hse-width-container cf">${cookieMessage}</div>
     </div>
     `;
     return cookieBanner;
