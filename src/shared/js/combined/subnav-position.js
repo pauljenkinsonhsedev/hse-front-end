@@ -1,3 +1,4 @@
+/*
 import { mediaQuery } from './utils/media-query.js';
 import resizer from './utils/resizer.js';
 
@@ -23,3 +24,4 @@ export function subNavPosition() {
     // watch for window resize
     resizer(posSwitch);
 };
+*/

@@ -1,3 +1,11 @@
+#side-navigation {
+@include mq($until: hse-desktop) {
+margin: 20px 0;
+float: left;
+}
+}
+
+
 .subnav-container {
   background-color: transparent;
   // transition: all 450ms ease-in-out;
