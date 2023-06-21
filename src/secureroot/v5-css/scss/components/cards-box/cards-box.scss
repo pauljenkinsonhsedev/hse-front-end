@@ -1,0 +1,109 @@
+// Cards (Box list)
+
+
+  
+  .boxList ul {
+    margin: 0 0 10px 0 !important;
+    column-count: 1;
+    @include mq($from: hse-desktop) {
+      column-count: 2;
+    }
+    column-gap: 20px;
+  }
+
+  .boxList-1col ul {
+    column-count: 1;    
+}
+
+ 
+  
+  .boxList ul li {
+  width: 100%;
+  padding: 0;
+  display: inline-block;
+  margin: 5px 0;
+  }
+  
+  .boxList ul a:hover {
+    background-color: $darkergray;
+  }
+  .boxList ul li a:focus {
+    border: 0 !important;
+    outline: 0;
+    box-shadow: inset 0 -4px 0 0 $hseblack;
+  }
+  
+  .boxList ul li h3 {
+    color: $red !important;
+  }
+  .boxList ul li h3 {
+    margin: 0;
+    font-weight: normal;
+    display: inline;
+  }
+  
+  .boxList ul li a {
+    width: 100%;
+    @include type-setting(3);
+    font-weight: normal;
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+    padding: 10px;
+    clear: both;
+    width: 100%;
+    background: none;
+    background-color: $gray;
+    background-image: none !important;
+    text-decoration: none;
+    &:hover {
+    color: white;
+    }
+  }
+  // margin for tap target spacing
+  
+  .box .linkList li {
+    @media only screen and (max-width: $desktop) {
+      margin-bottom: 6px;
+    }
+  }
+  
+  .boxList ul li a::after {
+    content: " ";
+    background-image: url(../../assets/v5-images/icons/svg/solid/arrow-right-red.svg);
+    background-repeat: no-repeat;
+    /* position: relative; */
+    /* float: right; */
+    /* top: $gutter; */
+    /* -webkit-transform: translateY(-100%); */
+    -ms-transform: translateY(-100%);
+    /* transform: translateY(-100%); */
+    width: 16px;
+    height: 16px;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    right: -2px;
+    /* left: 50%; */
+    transform: translate(-50%, -50%);
+  }
+  
+  .boxList ul li:hover a::after {
+    content: " ";
+    background-image: url("../../assets/v5-images/icons/svg/solid/arrow-right-white.svg");
+    background-repeat: no-repeat;
+    /* position: relative; */
+    /* float: right; */
+    /* top: $gutter; */
+    /* -webkit-transform: translateY(-100%); */
+    -ms-transform: translateY(-100%);
+    /* transform: translateY(-100%); */
+    width: 16px;
+    height: 16px;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    right: -2px;
+    /* left: 50%; */
+    transform: translate(-50%, -50%);
+  }
