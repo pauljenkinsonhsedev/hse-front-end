@@ -112,7 +112,10 @@ export function feedbackSurvey() {
 
     const form = document.createElement("form");
 
+    const checkH1 = document.querySelector("h1");
+    if (checkH1) {
     const notFoundHeading = document.querySelector("h1").innerText;
+      
     const notFound = "404";
 
     if (notFoundHeading.includes(notFound)) {
@@ -120,6 +123,8 @@ export function feedbackSurvey() {
     } else {
       var notFoundTrue = "";
     }
+  }
+
 
     form.id = "report-problem-form-html";
     form.action = "https://www.hse.gov.uk/assets/asp/feedback.asp";
