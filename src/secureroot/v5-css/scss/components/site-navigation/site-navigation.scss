@@ -12,19 +12,33 @@
   @include clearfix();
   @include mq($until: hse-desktop) {
   margin: 0;
+  .hse-width-container {
+    margin: 0;
+    max-width: 100%;
+    }
   } 
+ 
   }
   
   .hse-navigation__navigation-list {
   margin: 0;
   }
   
+// fix required for overriding width-container for mobile navigation
+
   .hse-navigation__navigation-link {
-  padding: hse-spacing(3);
+  @include mq($until: hse-desktop) {
+  padding: 10px hse-spacing(3);
+  }
+  @include mq($from: 769px) {
+  padding: 10px hse-spacing(5);
+  }
   @include mq($from: hse-desktop) {
   padding: hse-spacing(2) hse-spacing(3);
   }
   }
+
+
 .navDrop {
   display: none;
   /* Hides drop-down menu */
@@ -54,18 +68,37 @@
     border-radius: 0px;
   }
 
-  .home .menu li.home > a,
-  .home .menu li.home + li.news > a,
-  .news .menu li.news > a,
-  .news .menu li.news + li.guidance > a,
-  .guidance .menu li.guidance > a,
-  .guidance .menu li.guidance + li.aboutyou > a,
-  .aboutyou .menu li.aboutyou > a,
-  .aboutyou .menu li.aboutyou + li.abouthse > a,
-  .abouthse .menu li.abouthse > a,
-  .abouthse .menu li.abouthse + li.contact > a {
-    background-image: none; /* remove seperator background image on selected and adjacent tabs */
+  .home .menu  {
+    & li.home a { border-bottom: 2px solid #333;
+    }
   }
+
+  .news .menu  {
+    & li.news a { border-bottom: 2px solid #333;
+    }
+  }
+
+  .guidance .menu  {
+    & li.guidance a { border-bottom: 2px solid #333;
+    }
+  }
+
+  .abouthse .menu  {
+    & li.abouthse a { border-bottom: 2px solid #333;
+    }
+  }
+
+  .freeUpdates .menu  {
+    & li.freeUpdates a { border-bottom: 2px solid #333;
+    }
+  }
+
+  .contact .menu  {
+    & li.contact a { border-bottom: 2px solid #333;
+    }
+  }
+
+
 }
 
 .desktop-hide {
@@ -95,6 +128,7 @@
   padding: 0;
   background: none;
   border: none;
+  margin-left: auto;
 }
 
 .menu-button:hover {
@@ -121,7 +155,6 @@
   list-style-type: none;
   background: none;
   padding: 0;
-  border-bottom: 1px solid #c2c2c2;
   @media only screen and (min-width: $desktop) {
     width: auto;
     margin: 0;
@@ -129,21 +162,23 @@
     text-align: center;
     position: relative;
     background-color: $red;
-    border-bottom: none;
   }
 }
 
 .menu li a:hover {
   background-color: $black;
+  @include mq($from: hse-desktop) {
+  border-bottom: 1px solid $black;
+  }
   color: white;
 }
 
 .menu li a {
   text-decoration: none;
-  float: left;
   width: 100%;
   color: $body;
   box-sizing: border-box;
+  border-bottom: 1px solid $gray;
   @media only screen and (min-width: $desktop) {
     background-image: none;
     vertical-align: middle;
@@ -152,6 +187,7 @@
     text-decoration: none;
     display: block;
     line-height: inherit;
+    border-bottom: 2px solid $red;
   }
 }
 

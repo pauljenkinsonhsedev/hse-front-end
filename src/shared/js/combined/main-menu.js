@@ -22,7 +22,8 @@ export function mainMenu(){
 
   // Search list item
   menuListItem.classList.add('search');
-  menuListItem.innerHTML = '<a href="https://www.hse.gov.uk/search/search-results.htm">Search</a>';
+  menuListItem.classList.add('hse-navigation__navigation-item');
+  menuListItem.innerHTML = '<a class="hse-navigation__navigation-link" href="https://www.hse.gov.uk/search/search-results.htm">Search</a>';
 
   // Menu properties
   if (mediaquery === 'large') {
