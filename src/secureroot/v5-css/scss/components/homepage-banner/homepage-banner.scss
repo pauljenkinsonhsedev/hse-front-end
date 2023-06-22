@@ -1,6 +1,21 @@
 // Homepage banner
 
+.homepage-section {
+border-bottom: 2px solid $red;
+margin-bottom: 20px;
+&:first-of-type {
+ margin-top: 20px;
+}
+&:last-of-type {
+margin-bottom: 0; 
+border-bottom: none;
+}
+}
+
+
+
 .homepageBanner {
+  min-height: 258px;
     padding: 0;
     margin-bottom: $gutter !important;
   
@@ -17,6 +32,7 @@
   }
   
   .homepageBanner {
+    overflow: hidden;
     @media only screen and (min-width: 980px) {
       max-height: 258px !important;
     }
@@ -31,17 +47,6 @@
     @media only screen and (min-width: 980px) {
     }
   }
-  
-  .mostPopular {
-    @media only screen and (min-width: 980px) {
-      margin-bottom: $gutter;
-    }
-  }
-  
-  .mostPopular {
-    min-height: 256.62px;
-  }
-  
   .homepageBannerInner {
     display: flex;
     flex-direction: column;
@@ -66,6 +71,11 @@
     @media only screen and (min-width: $desktop) {
       width: 100%;
     }
+  }
+
+  .homepageBannerImage img {
+    max-width: 100%;
+    height: auto;
   }
   
   .coronaPoster {

@@ -14,10 +14,6 @@ ul.itemThumbBook .subText {
 width: 100% !important;
 }
 
-ul.itemThumbBook {
-margin: 0 !important;
-}
-
 ul.itemThumbBook a {
 float: left !important;
 width: 100%;
@@ -34,11 +30,6 @@ text-decoration: none;
 ul.itemThumbBook a:hover .resourcePrice {
 text-decoration: none;
 color: $hseblack;
-}
-
-ul.itemThumbBook li {
-float: left;
-width: 100%;
 }
 
 ul.itemThumbBook li p {
