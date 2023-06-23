@@ -28,13 +28,13 @@
 
   .hse-navigation__navigation-link {
   @include mq($until: hse-desktop) {
-  padding: 10px hse-spacing(3);
+  padding: 15px hse-spacing(3);
   }
   @include mq($from: 769px) {
-  padding: 10px hse-spacing(5);
+  padding: 15px hse-spacing(5);
   }
   @include mq($from: hse-desktop) {
-  padding: hse-spacing(2) hse-spacing(3);
+  padding: 4px hse-spacing(3);
   }
   }
 
@@ -166,9 +166,9 @@
 }
 
 .menu li a:hover {
-  background-color: $black;
+  background-color: $hseblack;
   @include mq($from: hse-desktop) {
-  border-bottom: 1px solid $black;
+  border-bottom: 2px solid $hseblack;
   }
   color: white;
 }
