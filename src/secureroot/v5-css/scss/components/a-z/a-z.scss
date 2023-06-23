@@ -1,22 +1,22 @@
 /* A-Z lists */
 
 .boxAtoZ {
-    margin: 0 0 $gutter 0 !important;
+    margin: 0 0 $hse-legacy-spacing-20 0 !important;
     padding: 0 !important;
-    float: left;
   }
   
   ul.alphabetList {
-    float: left;
     margin: 0 !important;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
   }
   
   ul.alphabetList li {
-    float: left;
     list-style-type: none;
     background: none;
     padding-left: 0 !important;
-    margin: 0 10px 10px 0;
+    margin: 0 $hse-legacy-spacing-10 $hse-legacy-spacing-10 0;
   }
   
   ul.alphabetList li.empty span {
@@ -24,7 +24,7 @@
     font-weight: bold;
     font-size: large;
     border: 2px solid #f3f3f3;
-    padding: 10px 14px;
+    padding: $hse-legacy-spacing-10 14px;
     text-align: center;
     background-color: #fff;
     color: #333;
@@ -35,7 +35,7 @@
     font-weight: bold;
     font-size: large;
     border: 2px solid #f3f3f3;
-    padding: 10px 14px;
+    padding: $hse-legacy-spacing-10 14px;
     text-align: center;
     background-color: #fff;
   }
@@ -59,7 +59,6 @@
   // A-Z list
   
   .listAtoZ {
-    float: left;
     clear: both;
   }
   
@@ -67,7 +66,7 @@
     display: inline-block;
     background-color: $red;
     color: white;
-    padding: 10px 14px;
+    padding: $hse-legacy-spacing-10 14px;
   }
   
   .listAtoZ ul li {
