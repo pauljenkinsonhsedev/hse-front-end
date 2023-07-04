@@ -3,14 +3,14 @@
 .hse-navigation {
   @include clearfix();
   display: flex;
-  @include mq($until: hse-desktop) {
+  @include mq($until: desktop) {
   background: $gray;
   }
   }
   
   .hse-header__navigation-container {
   @include clearfix();
-  @include mq($until: hse-desktop) {
+  @include mq($until: desktop) {
   margin: 0;
   .hse-width-container {
     margin: 0;
@@ -19,40 +19,49 @@
   } 
  
   }
+
+  .hse-navigation__navigation-item {
+  padding: 0;
+  }
   
   .hse-navigation__navigation-list {
   margin: 0;
+  width: 100%;
+  list-style-type: none;
+  background: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  @include mq($from: desktop) {
+  flex-direction: row;
+  width: auto;
+  margin: 0;
+  text-align: center;
+  position: relative;
+  background-color: $red;
+  }
   }
   
 // fix required for overriding width-container for mobile navigation
 
   .hse-navigation__navigation-link {
-  @include mq($until: hse-desktop) {
+  @include mq($until: desktop) {
   padding: 15px hse-spacing(3);
   }
   @include mq($from: 769px) {
   padding: 15px hse-spacing(5);
   }
-  @include mq($from: hse-desktop) {
+  @include mq($from: desktop) {
   padding: 4px hse-spacing(3);
   }
   }
 
 
-.navDrop {
-  display: none;
-  /* Hides drop-down menu */
-}
-
-.navDropdown li {
-  background: none;
-}
-
 /* ---------------------------- */
 /* Main menu */
 /* ---------------------------- */
 
-@media only screen and (min-width: $desktop) {
+@include mq($from: desktop) {
   .menu li.search {
     display: none;
   }
@@ -64,8 +73,10 @@
   .abouthse .menu li.abouthse,
   .contact .menu li.contact,
   .freeUpdates .menu li.freeUpdates {
+  a {
     background-color: #333;
     border-radius: 0px;
+  }
   }
 
   .home .menu  {
@@ -103,7 +114,7 @@
 
 .desktop-hide {
   display: none;
-  @media only screen and (min-width: $desktop) {
+  @include mq($from: desktop) {
     display: block;
   }
 }
@@ -111,13 +122,13 @@
 .menu {
   display: none;
   font-size: 1.1em !important;
-  @media only screen and (min-width: $desktop) {
+  @include mq($from: desktop) {
     display: block;
   }
 }
 
 .menu-button {
-@include mq($from: hse-desktop) {
+@include mq($from: desktop) {
  display: none;
 }
 }
@@ -149,25 +160,11 @@
 
 
 
-.menu li {
-  width: 100%;
-  float: left;
-  list-style-type: none;
-  background: none;
-  padding: 0;
-  @media only screen and (min-width: $desktop) {
-    width: auto;
-    margin: 0;
-    float: left;
-    text-align: center;
-    position: relative;
-    background-color: $red;
-  }
-}
+
 
 .menu li a:hover {
   background-color: $hseblack;
-  @include mq($from: hse-desktop) {
+  @include mq($from: desktop) {
   border-bottom: 2px solid $hseblack;
   }
   color: white;
@@ -179,7 +176,7 @@
   color: $body;
   box-sizing: border-box;
   border-bottom: 1px solid $gray;
-  @media only screen and (min-width: $desktop) {
+  @include mq($from: desktop) {
     background-image: none;
     vertical-align: middle;
     font-weight: bold;
@@ -192,7 +189,7 @@
 }
 
 .menu li a:hover {
-  @media only screen and (min-width: $desktop) {
+  @include mq($from: desktop) {
     background-color: $hseblack;
   }
 }
@@ -222,7 +219,7 @@
 .menu li a::before {
   content: " ";
   background-image: url("../../assets/v5-images/icons/svg/solid/chevron-right-gray.svg");
-  @media only screen and (min-width: $desktop) {
+  @include mq($from: desktop) {
     display: none;
   }
   float: right;
@@ -236,7 +233,7 @@
 .menu li a:hover::before {
   content: " ";
   background-image: url("../../assets/v5-images/icons/svg/solid/chevron-right-white.svg");
-  @media only screen and (min-width: $desktop) {
+  @include mq($from: desktop) {
     display: none;
   }
   float: right;

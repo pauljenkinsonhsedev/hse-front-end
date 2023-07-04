@@ -4,9 +4,12 @@
   }
   
   .hse-header__top-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     @include clearfix();  
-    padding: 20px 0;
-    @include mq($until: hse-desktop) {
+    padding: $hse-legacy-spacing-10 0 $hse-legacy-spacing-20 0;
+    @include mq($until: large-desktop) {
       margin: 0;
     }
   }
@@ -15,17 +18,17 @@
   @include clearfix();
 }
 
-.hse-header__navigation-container {
-@include mq($until: hse-desktop) {
-}
-}
 
 .hse-header__search {
     @include clearfix();
     position: relative;
     text-align: right;
-    @include mq($from: tablet) {
-      float: right;
+    flex-basis: 100%;
+    margin-top: $hse-legacy-spacing-20;
+    @include mq($from: desktop) {
+      margin-left: auto;
+      flex-basis: content;
+      margin-top: 0;
     }
 }
 

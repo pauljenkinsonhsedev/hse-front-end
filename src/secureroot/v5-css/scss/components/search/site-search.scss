@@ -16,8 +16,8 @@ input.gsc-input {
   width: 100% !important;
   background-color: white !important;
   background-color: white !important;
-  text-indent: 10px !important;
-  padding: 10px !important;
+  text-indent: $hse-legacy-spacing-10 !important;
+  padding: $hse-legacy-spacing-10 !important;
   padding: 0px !important;
 }
 
@@ -101,6 +101,7 @@ td.gsib_b {
 
 .gsc-input-box {
   padding: 0 !important;
+  min-width: 250px;
 }
 
 // a:focus
