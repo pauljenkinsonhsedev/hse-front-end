@@ -7,9 +7,9 @@ background-color: $gray;
 }
 
 .hse-breadcrumb__container {
-  padding: hse-spacing(2) 0;
-  @include mq($from: hse-desktop) {
-    margin-bottom: 20px;
+  padding-top: hse-spacing(2);
+  @include mq($from: large-desktop) {
+    margin-bottom: $hse-legacy-spacing-20;
   }
 }
 
@@ -21,6 +21,7 @@ background-color: $gray;
 
 .hse-breadcrumb__back {
 padding: hse-spacing(2) 0;
+margin-bottom: $hse-legacy-spacing-20;
 }
   
 .hse-breadcrumb ol li::before {
@@ -35,6 +36,13 @@ padding: hse-spacing(2) 0;
     width: 17px;
     height: 17px;
   }
+
+.hse-breadcrumb ol li {
+padding-bottom: hse-spacing(2);
+display: inline-block;
+font-size: 0.9em;
+margin: 0;
+}
   
   #breadCrumb ol li.home {
     background: 0 0;
@@ -43,13 +51,6 @@ padding: hse-spacing(2) 0;
   
   #breadCrumb ol li.home::before {
     display: none;
-  }
-  
-  #breadCrumb ol li {
-    display: inline-block;
-    font-size: 0.9em;
-    margin: 0;
-    padding: 0;
   }
   
   #breadCrumb ol li a {
