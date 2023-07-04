@@ -5,10 +5,10 @@
   .boxList ul {
     margin: 0 0 10px 0 !important;
     column-count: 1;
-    @include mq($from: hse-desktop) {
+    @include mq($from: desktop) {
       column-count: 2;
     }
-    column-gap: 20px;
+    column-gap: $hse-legacy-spacing-20;
   }
 
   .boxList-1col ul {
@@ -74,7 +74,7 @@
     background-repeat: no-repeat;
     /* position: relative; */
     /* float: right; */
-    /* top: $gutter; */
+    /* top: $hse-legacy-spacing-20; */
     /* -webkit-transform: translateY(-100%); */
     -ms-transform: translateY(-100%);
     /* transform: translateY(-100%); */
@@ -94,7 +94,7 @@
     background-repeat: no-repeat;
     /* position: relative; */
     /* float: right; */
-    /* top: $gutter; */
+    /* top: $hse-legacy-spacing-20; */
     /* -webkit-transform: translateY(-100%); */
     -ms-transform: translateY(-100%);
     /* transform: translateY(-100%); */

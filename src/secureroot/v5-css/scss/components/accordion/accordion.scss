@@ -43,7 +43,7 @@
     line-height: inherit;
     font-weight: normal;
     margin: 0;
-    padding: 10px 30px 10px 10px;
+    padding: $hse-legacy-spacing-10 30px $hse-legacy-spacing-10 $hse-legacy-spacing-10;
     position: relative;
     text-align: left;
     width: 100%;
@@ -59,7 +59,7 @@
     margin: auto;
     width: 15px;
     height: 15px;
-    right: 10px;
+    right: $hse-legacy-spacing-10;
     top: 0;
     bottom: 0;
   }

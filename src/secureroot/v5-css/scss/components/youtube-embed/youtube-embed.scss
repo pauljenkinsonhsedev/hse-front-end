@@ -1,11 +1,10 @@
 .v5-youtube-embed {
-    float: left;
     width: 100%;
     position: relative;
     padding-bottom: 56.25%;
     height: 0;
     // overflow:hidden;
-    margin-bottom: $gutter;
+    margin-bottom: $hse-legacy-spacing-20;
   }
   
   .v5-youtube-embed iframe {

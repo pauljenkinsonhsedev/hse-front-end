@@ -44,6 +44,7 @@
   button,
   a {
     &.btn {
+      margin-bottom: $hse-legacy-spacing-20;
       @extend %button-cosmetic;
   
       &:hover {
@@ -62,7 +63,7 @@
     &.btn-primary {
       background-color: $yes;
       color: $white;
-      margin-bottom: $gutter;
+      margin-bottom: $hse-legacy-spacing-20;
   
       &:hover {
         background-color: $focus;
@@ -85,7 +86,7 @@
       background-color: $red;
       border: 1px solid white;
       color: $white;
-      margin-bottom: $gutter;
+      margin-bottom: $hse-legacy-spacing-20;
   
       &:hover {
         background-color: $focus;
@@ -148,7 +149,7 @@
     background-position: bottom;
     display: inline-block;
     width: 15px;
-    height: $gutter;
+    height: $hse-legacy-spacing-20;
     margin: 0;
     bottom: -4px;
     border-left: 10px solid transparent;

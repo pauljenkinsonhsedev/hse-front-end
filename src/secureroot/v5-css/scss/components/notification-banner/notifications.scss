@@ -58,14 +58,14 @@
   align-items: center;
   justify-content: space-between;
   width: 90%;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  padding: 10px 5%;
+  margin-top: $hse-legacy-spacing-10;
+  margin-bottom: $hse-legacy-spacing-10;
+  padding: $hse-legacy-spacing-10 5%;
   @media only screen and (min-width: 980px) {
     padding: 0;
     width: $full-width;
-    margin-top: $gutter;
-    margin-bottom: $gutter;
+    margin-top: $hse-legacy-spacing-20;
+    margin-bottom: $hse-legacy-spacing-20;
     // float: none;
   }
 }
@@ -76,7 +76,7 @@
 
 .notification-container img {
   float: left;
-  margin-right: $gutter;
+  margin-right: $hse-legacy-spacing-20;
 }
 
 .notification-message {
@@ -97,7 +97,7 @@
     display: none;
   }
   @media only screen and (min-width: 980px) {
-    margin-right: $gutter;
+    margin-right: $hse-legacy-spacing-20;
     float: left;
   }
 }
@@ -112,7 +112,7 @@
 // position: relative;
 // right: 0;
 // top: 0;
-// margin-bottom: $gutter;
+// margin-bottom: $hse-legacy-spacing-20;
 // }
 // }
 

@@ -31,7 +31,7 @@
     // font-size:1em;
     line-height: 1.5;
     opacity: 0;
-    padding: 10px $gutter;
+    padding: $hse-legacy-spacing-10 $hse-legacy-spacing-20;
     position: absolute;
     -webkit-transition: 0.2s 0s;
     -moz-transition: 0.2s 0s;
@@ -52,7 +52,7 @@
     border: solid 11px;
     content: "";
     display: block;
-    margin: 0 $gutter 0 20px;
+    margin: 0 $hse-legacy-spacing-20 0 $hse-legacy-spacing-20;
     position: absolute;
   }
   .tooltip > :last-child {
@@ -106,6 +106,6 @@
     top: -9.5em;
     right: 0;
     width: 275px;
-    padding: 5px 10px;
+    padding: 5px $hse-legacy-spacing-10;
     z-index: 999;
   }

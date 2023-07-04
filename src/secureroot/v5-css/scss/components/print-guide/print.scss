@@ -19,10 +19,6 @@
   #headerLogo a {
     color: $hseblack;
   }
-  .headerTop {
-    margin: 0;
-    padding: 0;
-  }
 }
 
 @media print {
@@ -140,17 +136,16 @@
   background: url(../../assets/v5-images/icons/icon-print.png) no-repeat 10px
     50%;
   background-size: 16px 18px;
-  padding: 10px 10px 10px 36px !important;
+  padding: $hse-legacy-spacing-10 $hse-legacy-spacing-10 $hse-legacy-spacing-10 36px !important;
   text-decoration: none;
 }
 
 .printable-version {
   width: 100%;
-  float: left;
   background: url(../../assets/v5-images/icons/icon-print.png) white no-repeat 0;
   background-size: 16px 18px;
-  padding: 10px 30px;
-  margin-bottom: $gutter;
+  padding: $hse-legacy-spacing-10 30px;
+  margin-bottom: $hse-legacy-spacing-20;
 }
 
 .printable-version p {

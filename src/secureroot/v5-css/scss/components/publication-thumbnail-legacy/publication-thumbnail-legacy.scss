@@ -14,11 +14,6 @@ ul.itemThumbBook .subText {
 width: 100% !important;
 }
 
-ul.itemThumbBook a {
-float: left !important;
-width: 100%;
-}
-
 ul.itemThumbBook a span {
 text-decoration: underline;
 }
@@ -49,7 +44,7 @@ color: #981e32;
 }
 
 .resourceTitle {
-  padding-top: 10px;
+  padding-top: $hse-legacy-spacing-10;
   float: left;
 }
 
