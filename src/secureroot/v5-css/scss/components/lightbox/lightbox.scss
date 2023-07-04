@@ -132,7 +132,7 @@ $btnSize: 30px;
     border: 5px solid $gray;
   }
   
-  #contentContainer ul.lightbox li {
+  ul.lightbox li {
     padding-bottom: 0 !important;
   }
   
@@ -140,6 +140,6 @@ $btnSize: 30px;
     float: left;
   }
   
-  body.hasScript #contentContainer ul.lightbox li {
+  body.hasScript ul.lightbox li {
     margin-right: 10px;
   }
