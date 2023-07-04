@@ -1,10 +1,12 @@
-#side-navigation {
-@include mq($until: hse-desktop) {
-margin: 20px 0;
-float: left;
-}
-}
 
+
+.hse-side-navigation {
+float: left;
+width: 100%;
+@include mq($until: desktop) {
+  margin-bottom: $hse-legacy-spacing-20;
+  }
+}
 
 .subnav-container {
   background-color: transparent;
@@ -115,7 +117,7 @@ outline: none;
   color: #333;
   padding: 14px;
   @media only screen and (min-width : $desktop) {
-  padding: 10px;
+  padding: $hse-legacy-spacing-10;
   }
 }
 .subnav-container a:not(.back):hover {
@@ -267,15 +269,14 @@ li.first a.active-page {
 
 
 .btn-mobile {
-@media only screen and (min-width : $desktop) {
-display: none !important;
+@include mq($from: desktop) {
+    display: none !important;
 }
 }
 
-@media only screen and (max-width : $desktop) {
+@include mq($until: desktop) {
 
 #menu {
-float: left;
 width: 100%;
 }
 
@@ -339,9 +340,9 @@ color: $hseblack;
   height: 16px;
   margin: 0;
   transform: translateX(
-    10px
+    $hse-legacy-spacing-10
   ) !important; // Important to reverse slinky transform CSS
-  border-right: 10px solid transparent;
+  border-right: $hse-legacy-spacing-10 solid transparent;
 }
 
 
