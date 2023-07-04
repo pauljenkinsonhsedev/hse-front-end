@@ -18,6 +18,7 @@ a:hover,
 a:focus {
   text-decoration: none;
   color: $redhover;
+  outline: none;
 }
 
 // COMPONENT FOCUS
@@ -28,7 +29,7 @@ a:focus {
   color: $black !important;
 }
 
-#contentContainer li a:focus-within {
+.hse-page-contents li a:focus-within {
   background-color: $focus;
   outline: solid transparent !important;
   color: $black;
@@ -38,13 +39,13 @@ ul li a:focus {
   border-bottom: 2px solid $black !important;
 }
 
-#contentContainer .backgroundRed a:focus {
+.backgroundRed a:focus {
   color: $black;
 }
 
-#contentContainer .backgroundRed p a:focus,
+.backgroundRed p a:focus,
 #beta-user-testing p a:focus,
-#contentContainer .backgroundRed li a:focus-within,
+.backgroundRed li a:focus-within,
 .hsl-links a:focus-within,
 .footer-links-container li a:focus-within,
 .breadCrumbContainer li a:focus,
@@ -69,8 +70,8 @@ a:focus .pagination-text,
 // outline: $focus 5px solid !important;
 // }
 
-#contentContainer li h3 a:focus,
-#contentContainer p a:focus {
+.hse-page-contents li h3 a:focus,
+.hse-page-contents p a:focus {
   outline: solid transparent !important;
   color: #0b0c0c;
   background-color: $focus;
