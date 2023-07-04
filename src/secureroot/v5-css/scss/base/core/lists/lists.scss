@@ -31,7 +31,7 @@ ul.listcross li {
 }
 
 
-#contentContainer dl {
+.hse-page-contents dl {
 margin: 0 0 1em 0;
 }
 
@@ -100,29 +100,29 @@ ul.linkList li {
   }
 }
 
-#contentContainer ul li {
+.hse-page-contents li {
   list-style-type: square;
 }
 
-#contentContainer ul li::marker {
+.hse-page-contents ul li::marker {
   color: $red;
 }
 
-#contentContainer ul.linkList {
+.hse-page-contents ul.linkList {
   margin: 0 0 10px 18px !important;
   padding-left: 0;
 }
 
-#contentContainer .mostPopular ul.linkList {
+.hse-page-contents .mostPopular ul.linkList {
   margin-bottom: 0 !important;
 }
 
-#contentContainer .backgroundRed .linkList li a::before {
+.backgroundRed .linkList li a::before {
   background-image: none;
   padding-right: 0;
 }
 
-#contentContainer ul.list-plain {
+.hse-page-contents ul.list-plain {
   margin: 0;
   padding: 0;
   li {
@@ -132,7 +132,7 @@ ul.linkList li {
     list-style-type: none;
   }
 }
-#contentContainer ul.list-inline {
+.hse-page-contents ul.list-inline {
   margin: 0;
   padding: 0;
   li {
@@ -144,17 +144,19 @@ ul.linkList li {
   }
 }
 
+
+/* review split list */
 .splitList2 ul {
   column-count: 2;
-  column-gap: $gutter;
+  column-gap: $hse-legacy-spacing-20;
 }
 .splitList3 ul {
   column-count: 3;
-  column-gap: $gutter;
+  column-gap: $hse-legacy-spacing-20;
 }
 .splitList4 ul {
   column-count: 4;
-  column-gap: $gutter;
+  column-gap: $hse-legacy-spacing-20;
 }
 
 .ie .splitList2 ul,
@@ -170,11 +172,11 @@ ul.linkList li {
   clear: both;
 }
 
-#contentContainer .pressReleases li {
-  padding-bottom: $gutter;
+.hse-page-contents .pressReleases li {
+  padding-bottom: $hse-legacy-spacing-20;
 }
 
-#contentContainer .safetyAlerts li {
+.hse-page-contents .safetyAlerts li {
   list-style-type: none;
 }
 
@@ -198,7 +200,7 @@ dl.inline dt {
   padding-right: 5px;
 }
 
-#contentContainer .box ul {
+.hse-page-contents .box ul {
   margin: 0 0 10px 15px;
 }
 
@@ -218,11 +220,11 @@ dl.document dd {
   margin-bottom: 5px;
 }
 
-#contentContainer ul.linkListNoBullet {
+.hse-page-contents ul.linkListNoBullet {
   margin: 0 0 10px 0 !important;
 }
 
-#contentContainer ul.linkListNoBullet li {
+.hse-page-contents ul.linkListNoBullet li {
   list-style-image: none !important;
 }
 
@@ -240,7 +242,7 @@ ul.linkListNoBullet li {
   display: none !important;
 }
 
-#contentContainer ul.linkList li::before {
+ul.linkList li::before {
   content: "";
   position: relative;
   float: left;
@@ -256,14 +258,14 @@ ul.linkListNoBullet li {
 
 // Single list items
 
-#contentContainer p.linkList,
-#contentContainer p.linkBullet {
+.hse-page-contents p.linkList,
+.hse-page-contents .linkBullet {
   padding: 0 0 0 18px;
   clear: both;
   position: relative;
 }
 
-#contentContainer p.linkBullet::before {
+.hse-page-contents .linkBullet::before {
   content: "";
   position: absolute;
   background-image: url("../../assets/v5-images/icons/svg/solid/square-full-solid-red.svg");
@@ -274,22 +276,22 @@ ul.linkListNoBullet li {
   left: 0;
 }
 
-#contentContainer p.linkList::before {
+.hse-page-contents p.linkList::before {
   content: "";
   position: absolute;
   background-image: url("../../assets/v5-images/icons/svg/solid/caret-right-red.svg");
   background-repeat: no-repeat;
-  height: 10px;
-  width: 10px;
+  height: $hse-legacy-spacing-10;
+  width: $hse-legacy-spacing-10;
   top: 6px;
   left: 0;
 }
 
 p.more {
-  padding-left: $gutter;
+  padding-left: $hse-legacy-spacing-20;
 }
 
-#contentContainer p.more::before {
+.hse-page-contents .more::before {
   content: "";
   position: relative;
   margin-left: -15px;
@@ -302,9 +304,9 @@ p.more {
   border-color: transparent transparent transparent $red;
 }
 
-#contentContainer .backgroundRed ul li::before,
-#contentContainer .backgroundRed p.linkBullet::before,
-#contentContainer .backgroundRed p.linkList::before {
+.backgroundRed ul li::before,
+.backgroundRed p.linkBullet::before,
+.backgroundRed p.linkList::before {
   content: "";
   display: inline-block;
   width: 0;
@@ -316,7 +318,7 @@ p.more {
   padding-right: 12px;
 }
 
-#contentContainer .backgroundRed p.linkList::before {
+.backgroundRed p.linkList::before {
   margin-left: 0;
 }
 
@@ -324,7 +326,7 @@ ul.listtick,
 ul.tick,
 ul.listcross,
 ul.cross {
-  margin: 0 0 10px $gutter !important;
+  margin: 0 0 10px $hse-legacy-spacing-20 !important;
 }
 
 ul.listtick li::before,
@@ -335,7 +337,7 @@ ul.tick li::before {
   background: url(../../assets/v5-images/icons/svg/solid/check-solid-green.svg)
     no-repeat 0 !important;
   width: auto;
-  height: 10px;
+  height: $hse-legacy-spacing-10;
   top: 5px;
   margin-left: -18px;
   padding-left: 12px;
@@ -349,19 +351,30 @@ ul.cross li::before {
   background: url(../../assets/v5-images/icons/svg/solid/cross-solid.svg)
     no-repeat 0 !important;
   width: auto;
-  height: 10px;
+  height: $hse-legacy-spacing-10;
   top: 5px;
   margin-left: -18px;
   padding-left: 12px;
 }
 
+.mostPopular {
+padding: 0 $hse-legacy-spacing-20;
+min-height: 258px;
+@include mq($until: desktop) {
+margin-bottom: $hse-legacy-spacing-20;
+}
+}
+
+.mostPopular h2 {
+padding-top: $hse-legacy-spacing-20;
+}
+
+.mostPopular ul.linkList {
+margin: 0 0 0 $hse-legacy-spacing-20;
+}
 
 ul.mostPopular li {
   font-weight: 700;
-}
-
-.columnFull .column.noBoxPadding ul.listLinks {
-  margin-bottom: 10px !important;
 }
 
 ul.listLinks li a {
@@ -375,3 +388,18 @@ ul.listLinks li span {
 ul.listLinks p {
   clear: both;
 }
+
+/* page-contents */
+
+.hse-page-contents ul {
+  margin: 0 0 $hse-legacy-spacing-10 28px;
+}
+
+.box .linkList {
+margin: 0 0 $hse-legacy-spacing-10 18px !important;
+}
+
+.box p.linkList {
+  margin: 0 !important;
+}
+  
