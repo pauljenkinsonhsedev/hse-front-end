@@ -2,14 +2,14 @@
 
 a:focus,
 button:focus {
-  outline: $focus 5px solid;
+  outline: $hse-focus-color 5px solid;
   z-index: 100;
 }
 
 .slinky-menu ul li a:focus {
   outline: solid transparent !important;
   text-decoration: none !important;
-  background-color: $focus !important;
+  background-color: $hse-focus-color !important;
   color: $black !important;
   border-bottom: 2px solid $black !important;
 }
@@ -17,7 +17,7 @@ button:focus {
 a:hover,
 a:focus {
   text-decoration: none;
-  color: $redhover;
+  color: $hse-link-hover-color;
   outline: none;
 }
 
@@ -30,7 +30,7 @@ a:focus {
 }
 
 .hse-page-contents li a:focus-within {
-  background-color: $focus;
+  background-color: $hse-focus-color;
   outline: solid transparent !important;
   color: $black;
 }
@@ -61,20 +61,20 @@ a:focus .pagination-text,
 .listLinks a:focus {
   outline: solid transparent !important;
   text-decoration: none !important;
-  background-color: $focus !important;
+  background-color: $hse-focus-color !important;
   color: $black !important;
   border-bottom: 2px solid $black !important;
 }
 
 // #contentContainer input:focus {
-// outline: $focus 5px solid !important;
+// outline: $hse-focus-color 5px solid !important;
 // }
 
 .hse-page-contents li h3 a:focus,
 .hse-page-contents p a:focus {
   outline: solid transparent !important;
   color: #0b0c0c;
-  background-color: $focus;
+  background-color: $hse-focus-color;
   text-decoration: none;
   border-bottom: 2px solid $black !important;
 }
@@ -91,9 +91,9 @@ button.v5-button:focus,
 // itemThumbBook within box component
 
 .box ul.itemThumbBook li a:focus {
-  background-color: $focus;
+  background-color: $hse-focus-color;
 }
 
 .box ul.itemThumbBook li a:focus .resourceTitle {
-  color: $hseblack;
+  color: $color_hse-grey-1;
 }
