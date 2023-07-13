@@ -3,12 +3,12 @@
 // .hse-breadcrumb ol specificty can be removed if .hse-breadrumb__list is applied to all breadcrumbs
 
 .hse-breadcrumb {
-background-color: $gray;
+background-color: $color_hse-grey-4;
 }
 
 .hse-breadcrumb__container {
   padding-top: hse-spacing(2);
-  @include mq($from: large-desktop) {
+  @include mq($from: desktop) {
     margin-bottom: $hse-legacy-spacing-20;
   }
 }
@@ -17,11 +17,15 @@ background-color: $gray;
   list-style: none;
   margin: 0;
   padding: 0;
+  font-size: 1.1em;
 }
 
 .hse-breadcrumb__back {
 padding: hse-spacing(2) 0;
 margin-bottom: $hse-legacy-spacing-20;
+@include mq($from: desktop) {
+display: none;
+}
 }
   
 .hse-breadcrumb ol li::before {
@@ -54,7 +58,7 @@ margin: 0;
   }
   
   #breadCrumb ol li a {
-    color: $hseblack;
+    color: $color_hse-grey-1;
     text-decoration: underline;
   }
   
@@ -63,7 +67,7 @@ margin: 0;
   }
 
   #backTo {
-    background-color: $hseblack;
+    background-color: $color_hse-grey-1;
   }
   
   .backto {
