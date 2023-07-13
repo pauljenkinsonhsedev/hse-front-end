@@ -81,8 +81,6 @@
     clear: left;
   }
   .itemThumbBook img {
-    float: left;
-    clear: left;
     margin: 0;
     border-right: #dbdbdb 1px solid;
     border-bottom: #dbdbdb 1px solid;
@@ -160,12 +158,12 @@ img.responsiveImg {
 .v5-figure {
   float: left;
   width: auto !important;
-  margin-bottom: $gutter;
+  margin-bottom: $hse-legacy-spacing-20;
   width: auto;
 }
 
 .v5-figure-border {
-  border: 1px solid $hseblack;
+  border: 1px solid $color_hse-grey-1;
   border-bottom: 0;
 }
 
@@ -187,7 +185,7 @@ img.responsiveImg {
   float: left;
   width: 100%;
   padding: 10px;
-  background-color: $hseblack;
+  background-color: $color_hse-grey-1;
   color: white;
   clear: both;
   text-align: center;
