@@ -37,7 +37,7 @@ $type-settings: (
 }
 
 body {
-    font-family: $body-font;
+    font-family: $color_hse-black;
 }
 
 .heading-xl,
@@ -47,8 +47,8 @@ h1 {
     font-size: 2rem;
     }
     font-weight: bold;
-    margin-bottom: $dp*3;
-    color: $red;
+    margin: 0 0 15px;
+    color: $color_hse-red;
 }
 
 .heading-l,
@@ -141,7 +141,7 @@ h4 {
 }
 
 h1 {
-	color: $red;
+	color: $color_hse-red;
 }
 
 h2 a:hover,
@@ -150,3 +150,15 @@ h2 a:focus {
 	color:#555;
 }
 
+
+$body-font: Arial,Helvetica,sans-serif;
+
+$vr: 6px;
+$hr: 10px;
+
+$dp: 8px;
+$dp-half: 4px;
+
+$button-border-radius: 0;
+$focus-width: 3px;
+$border-width: 2px;
