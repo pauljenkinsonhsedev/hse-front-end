@@ -12,10 +12,10 @@ a {
   a, .backgroundRed .more a {
     text-decoration: underline;
     &:link {
-        color: $red; 
+        color: $color_hse-red; 
     }
     &:visited {
-        color: $darkred;
+        color: $hse-link-hover-color;
         text-decoration: underline;
     }
     &:hover,
@@ -23,7 +23,7 @@ a {
     &:focus,
     a span.subText {
         text-decoration: none !important;
-        color: $redhover;
+        color: $hse-link-hover-color;
     }
 }
 
@@ -52,12 +52,12 @@ a {
 
 ul.newsList a h3, ul.newsList h3 a {
 text-decoration: underline;
-color: $red;
+color: $color_hse-red;
 }
 
 ul.newsList h3 a {
 &:hover {
-background: $focus;   
+background: $hse-focus-color;   
 }     
 }
 
@@ -65,12 +65,12 @@ ul.newsList a {
 &:hover {
 text-decoration: none;
 color: $black ; 
-background: $white;   
+background: $color_hse-white;   
 } 
 &:hover h3 {
 text-decoration: none;
 color: $black ; 
-background: $focus;   
+background: $hse-focus-color;   
 } 
 &:focus h3 {
 color: $black ; 
@@ -84,10 +84,6 @@ p a, li a {
     &:hover, &:focus {
     text-decoration: none;
     color: $black ; 
-    background: $focus;   
+    background: $hse-focus-color;   
     }
-}
-
-.footer-links-container a, .guidance-languages a {
-color: white;
 }

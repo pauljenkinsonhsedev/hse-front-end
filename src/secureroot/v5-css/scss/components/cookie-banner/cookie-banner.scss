@@ -1,7 +1,16 @@
-// Cookie notification
+
+
+.hse-cookie-banner {
+  padding: 20px 0;
+  background: #eee;
+}
+
+
+
+
 
 #cookieContainer p a {
-    // color: $focus;
+    // color: $hse-focus-color;
     text-decoration: underline;
   }
   
@@ -12,11 +21,6 @@
   
   #cookieContainer button:hover {
     cursor: pointer;
-  }
-  
-  .cookies-message {
-    display: block;
-    max-width: 680px;
   }
   
   .cookies-message__actions {
@@ -63,34 +67,7 @@
     padding: 0;
     margin-bottom: 10px;
   }
-  
-  #cookieNotify {
-    background: none !important;
-  }
-  
-  #cookieNotify p {
-    padding: 0;
-  }
-  
-  #cookieContainer {
-    background-color: #eee;
-    display: block;
-  }
-  
-  #cookieNotify {
-    width: 100%;
-    @media only screen and (min-width: $desktop) {
-      width: $full-width;
-    }
-    padding: 0px !important;
-    margin: 5px auto;
-    background: url(../v4-images/shared/cookie-icon.png) no-repeat 0 4px;
-  }
-  
-  .ie7 #cookieNotify {
-    height: 2.667em;
-  }
-  
+
   #cookieNotify p {
     color: $black;
     // font-size: 1.1em;

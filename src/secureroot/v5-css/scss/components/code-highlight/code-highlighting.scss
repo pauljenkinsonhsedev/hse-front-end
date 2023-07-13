@@ -11,7 +11,7 @@ pre {
 pre[class*='language-'] {
   &:after {
     display: block;
-    color: $white;
+    color: $color_hse-white;
     position: absolute;
     right: 8px;
     top: 8px;
@@ -52,7 +52,7 @@ pre[class*='language-'] {
   }
 
   .copy {
-    font-family: $body-font;
+    font-family: $color_hse-black;
     content: 'copy';
     padding: 2px 10px 0;
     position: absolute;
@@ -61,13 +61,13 @@ pre[class*='language-'] {
     transform: translate(-10px, -90%);
     border-top-left-radius: $radius;
     border-top-right-radius: $radius;
-    color: $white;
+    color: $color_hse-white;
     background: $background;
     cursor: pointer;
     transition: all 250ms ease;
 
     &:hover {
-      color: darken($white, 25%);
+      color: darken($color_hse-white, 25%);
     }
   }
 }

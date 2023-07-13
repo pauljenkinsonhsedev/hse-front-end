@@ -1,41 +1,32 @@
-#information-banner {
-    clear: both;
-    margin: 0 0 $gutter 0;
+.information-banner {
+    @include clearfix();
+    margin-bottom: $hse-legacy-spacing-20;
+    &:a:link,
+    &:a:visited,
+    &:a:focus {
+        color: $color_hse-beta;
+      }
   }
   
-  #information-banner p a {
+.information-banner p a {
     text-decoration: underline;
   }
-  #information-banner p a:hover {
+
+.information-banner p a:hover {
     text-decoration: none;
-    color: $hseblack;
+    color: $color_hse-grey-1;
   }
   
   /* Beta */
   
-  #information-banner {
+.information-banner {
     padding: 10px;
-    width: 100%;
-    border: 2px solid $beta;
+    border: 2px solid $color_hse-beta;
     box-sizing: border-box;
-    @media only screen and (min-width: $desktop) {
-      width: $full-width;
-    }
   }
   
-  .v5 #information-banner {
-    @media only screen and (min-width: $desktop) {
-      width: $full-width;
-    }
-  }
-  
-  .v5 #information-banner p {
+.information-banner p {
     margin-bottom: 0 !important;
-  }
-  
-  .home .v5 #information-banner,
-  .news .v5 #information-banner {
-    margin-top: 0 !important;
   }
   
   .beta-highlight {
@@ -49,18 +40,12 @@
     letter-spacing: 1px;
     text-decoration: none;
     color: #fff;
-    background-color: $beta;
+    background-color: $color_hse-beta;
     font-size: 16px;
     line-height: 1.25;
   }
   
-  #information-banner a:link,
-  #information-banner a:visited,
-  #information-banner a:focus {
-    color: $beta;
-  }
-  
-  #information-banner p {
+  .information-banner p {
     font-size: 0.9rem;
     margin: 0px;
   }

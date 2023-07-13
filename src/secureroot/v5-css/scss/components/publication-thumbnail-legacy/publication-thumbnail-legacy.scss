@@ -1,6 +1,6 @@
 ul.itemThumbBook .header,
 ul.itemThumbBook .resourceTitle {
-color: $red;
+color: $color_hse-red;
 }
 
 ul.itemThumbBook .header:hover,
@@ -14,15 +14,6 @@ ul.itemThumbBook .subText {
 width: 100% !important;
 }
 
-ul.itemThumbBook {
-margin: 0 !important;
-}
-
-ul.itemThumbBook a {
-float: left !important;
-width: 100%;
-}
-
 ul.itemThumbBook a span {
 text-decoration: underline;
 }
@@ -33,12 +24,7 @@ text-decoration: none;
 
 ul.itemThumbBook a:hover .resourcePrice {
 text-decoration: none;
-color: $hseblack;
-}
-
-ul.itemThumbBook li {
-float: left;
-width: 100%;
+color: $color_hse-grey-1;
 }
 
 ul.itemThumbBook li p {
@@ -50,7 +36,7 @@ padding-right: 0;
 }
 
 .itemThumbBook li a:hover span.subText {
-color: $hseblack !important;
+color: $color_hse-grey-1 !important;
 }
 
 .itemThumbBook li a:hover span {
@@ -58,7 +44,7 @@ color: #981e32;
 }
 
 .resourceTitle {
-  padding-top: 10px;
+  padding-top: $hse-legacy-spacing-10;
   float: left;
 }
 
@@ -79,7 +65,7 @@ color: #981e32;
 
 .resourcePrice {
   text-decoration: none;
-  color: $hseblack;
+  color: $color_hse-grey-1;
 }
 
 .subText {

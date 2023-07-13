@@ -1,31 +1,34 @@
 // Breadcrumbs
 
-#breadCrumb {
-    clear: both;
-    width: 100%;
+// .hse-breadcrumb ol specificty can be removed if .hse-breadrumb__list is applied to all breadcrumbs
+
+.hse-breadcrumb {
+background-color: $color_hse-grey-4;
+}
+
+.hse-breadcrumb__container {
+  padding-top: hse-spacing(2);
+  @include mq($from: desktop) {
+    margin-bottom: $hse-legacy-spacing-20;
   }
+}
+
+.hse-breadcrumb__list, .hse-breadcrumb ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 1.1em;
+}
+
+.hse-breadcrumb__back {
+padding: hse-spacing(2) 0;
+margin-bottom: $hse-legacy-spacing-20;
+@include mq($from: desktop) {
+display: none;
+}
+}
   
-  .breadCrumbContainer {
-    width: 90%;
-    padding: 0 5%;
-    @media only screen and (min-width: $desktop) {
-      padding: 10px 0 0 0;
-      width: $full-width;
-      margin: auto;
-    }
-    padding-top: 10px;
-  }
-  
-  .breadCrumbContainer ol {
-    margin: 0;
-  }
-  
-  #backTo {
-    width: 90%;
-    padding: 10px 5%;
-  }
-  
-  #breadCrumb ol li::before {
+.hse-breadcrumb ol li::before {
     content: " ";
     background-image: url("../../assets/v5-images/icons/svg/solid/chevron-right-gray.svg");
     background-repeat: no-repeat;
@@ -37,6 +40,13 @@
     width: 17px;
     height: 17px;
   }
+
+.hse-breadcrumb ol li {
+padding-bottom: hse-spacing(2);
+display: inline-block;
+font-size: 0.9em;
+margin: 0;
+}
   
   #breadCrumb ol li.home {
     background: 0 0;
@@ -47,27 +57,8 @@
     display: none;
   }
   
-  #breadCrumb {
-    margin-bottom: $gutter !important;
-    background-color: $gray;
-    margin: 0;
-    float: left;
-  }
-  
-  #breadCrumb ol {
-    list-style: none;
-  }
-  
-  #breadCrumb ol li {
-    display: inline-block;
-    font-size: 0.9em;
-    margin: 0;
-    margin-bottom: 10px;
-    padding: 0;
-  }
-  
   #breadCrumb ol li a {
-    color: $hseblack;
+    color: $color_hse-grey-1;
     text-decoration: underline;
   }
   
@@ -76,7 +67,7 @@
   }
 
   #backTo {
-    background-color: $hseblack;
+    background-color: $color_hse-grey-1;
   }
   
   .backto {

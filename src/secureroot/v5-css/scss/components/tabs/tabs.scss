@@ -19,7 +19,7 @@
 }
 
 ul.tabs__list {
-  margin: 0 0 10px 0 !important;
+  margin: 0 0 $hse-legacy-spacing-10 0 !important;
   padding: 0;
   font-size: 0;
   list-style: none;
@@ -84,12 +84,12 @@ ul li .tabs__tab {
   }
 
   @media only screen and (min-width: $tablet) {
-    padding: 3px 10px;
+    padding: 3px $hse-legacy-spacing-10;
   }
 }
 
 .tabs__panel {
-  margin-bottom: $gutter;
+  margin-bottom: $hse-legacy-spacing-20;
   padding: 15px;
 
   background-color: #e6e6e6;

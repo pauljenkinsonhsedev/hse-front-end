@@ -1,22 +1,13 @@
 // Google Custom Search
 
-#globalSearch,
-#globalSearchMobile {
-  margin-top: $gutter;
-  margin-bottom: $gutter;
-  @media only screen and (min-width: $desktop) {
-    margin-top: 0px;
-  }
-}
-
 #globalSearch tr,
 #globalSearchMobile tr {
-  background-color: $red;
+  background-color: $color_hse-red;
 }
 
 .gsc-search-box {
   margin: 0 !important;
-  background-color: $red;
+  background-color: $color_hse-red;
   background: none !important;
   font-size: 0.9rem !important;
 }
@@ -25,8 +16,8 @@ input.gsc-input {
   width: 100% !important;
   background-color: white !important;
   background-color: white !important;
-  text-indent: 10px !important;
-  padding: 10px !important;
+  text-indent: $hse-legacy-spacing-10 !important;
+  padding: $hse-legacy-spacing-10 !important;
   padding: 0px !important;
 }
 
@@ -54,16 +45,21 @@ td.gsib_b {
   margin-left: 0 !important;
   width: auto !important;
   padding: 0 !important;
-  background: $hseblack !important;
+  background: $color_hse-grey-1 !important;
   min-width: 38px !important;
   max-width: 38px !important;
   min-height: 38px !important;
   max-height: 38px !important;
 }
 
+.gsc-search-button svg {
+top: 2px !important;
+position: relative !important;
+}
+
 .gsc-search-button-v2 {
   font-size: 0.9rem !important;
-  background-color: $hseblack !important;
+  background-color: $color_hse-grey-1 !important;
   border: 0 !important;
   border-radius: 0 !important;
   -webkit-border-radius: 0 !important;
@@ -82,7 +78,7 @@ td.gsib_b {
   background-color: white !important;
 }
 .gsst_a .gscb_a {
-  color: $red !important;
+  color: $color_hse-red !important;
   font-size: 30px !important;
   position: relative;
   top: 2px;
@@ -98,7 +94,7 @@ td.gsib_b {
 }
 
 #globalSearch #gsc-i-id1:focus {
-  outline: $focus 5px solid !important;
+  outline: $hse-focus-color 5px solid !important;
   z-index: 2 !important;
 }
 
@@ -110,6 +106,7 @@ td.gsib_b {
 
 .gsc-input-box {
   padding: 0 !important;
+  min-width: 250px;
 }
 
 // a:focus
@@ -142,7 +139,7 @@ td.gsc-search-button button:focus {
     font-size: 0.9rem !important;
   }
   .gsc-input-box {
-    border: 1px solid $hseblack !important;
+    border: 1px solid $color_hse-grey-1 !important;
     border-right: 0px !important;
     border-top-left-radius: 0 !important;
     border-bottom-left-radius: 0 !important;
@@ -155,7 +152,7 @@ td.gsc-search-button button:focus {
   }
 
   .gsc-search-button-v2 {
-    background-color: $red !important;
+    background-color: $color_hse-red !important;
   }
 
   .gsc-control-cse {
@@ -173,22 +170,22 @@ td.gsc-search-button button:focus {
   }
 
   .gsst_a .gscb_a {
-    color: $hseblack !important;
+    color: $color_hse-grey-1 !important;
   }
 
   .gs-visibleUrl {
-    color: $hseblack !important;
+    color: $color_hse-grey-1 !important;
   }
 
   .gsc-tabHeader.gsc-tabhActive,
   .gsc-refinementHeader.gsc-refinementhActive {
-    color: $red !important;
+    color: $color_hse-red !important;
   }
 
   .gsc-tabHeader.gsc-tabhInactive,
   .gsc-refinementHeader.gsc-refinementhInactive,
   .gsc-results .gsc-cursor-box .gsc-cursor-page,
   .gsc-result-info {
-    color: $hseblack !important;
+    color: $color_hse-grey-1 !important;
   }
 }

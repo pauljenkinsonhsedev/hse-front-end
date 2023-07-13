@@ -29,7 +29,7 @@ export function subnavMenu(container) {
 
   // create back navigation
   function createBackLinks(elem) {
-    const text = elem.parentElement.parentElement.firstElementChild.textContent;
+    const text = elem.parentElement.parentElement.firstElementChild.innerText;
     const regex1 = /Overview -/gi;
     const regex2 = /- Overview/gi;
     const headerText = text.replaceAll(regex1, '').replaceAll(regex2, '');

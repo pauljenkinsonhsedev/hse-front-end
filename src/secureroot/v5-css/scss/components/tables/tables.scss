@@ -24,9 +24,9 @@ th a {
   th {
     position: relative;
     cursor: pointer;
-    padding-right: $gutter;
+    padding-right: $hse-legacy-spacing-20;
     background-image: url("../../assets/v5-images/icons/svg/tables/table-sortable.svg");
-    background-size: 10px 13px;
+    background-size: $hse-legacy-spacing-10 13px;
     background-position: top 8px right 5px;
     background-repeat: no-repeat;
 
@@ -45,15 +45,15 @@ table.no-border {
   td,
   th {
     border: none;
-    padding: 10px $gutter 10px 0;
-    border-bottom: 1px solid $darkgray;
+    padding: $hse-legacy-spacing-10 $hse-legacy-spacing-20 $hse-legacy-spacing-10 0;
+    border-bottom: 1px solid $color_hse-grey-3;
   }
 
   caption {
     background: none;
     color: $black;
     text-align: left;
-    padding: 10px $gutter 10px 0;
+    padding: $hse-legacy-spacing-10 $hse-legacy-spacing-20 $hse-legacy-spacing-10 0;
   }
 }
 
@@ -73,7 +73,7 @@ table.no-background {
 }
 
 table {
-  margin: 0 0 $gutter 1px;
+  margin: 0 0 $hse-legacy-spacing-20 1px;
   border-spacing: 0;
   font-size: 0.9rem;
   line-height: 1.5;
@@ -85,7 +85,7 @@ caption {
   border-collapse: collapse;
 }
 td {
-  padding: 10px $gutter 10px 10px;
+  padding: $hse-legacy-spacing-10 $hse-legacy-spacing-20 $hse-legacy-spacing-10 $hse-legacy-spacing-10;
   border: 1px solid #787878;
 }
 table td.numbers,
@@ -103,7 +103,7 @@ table.tablenumgrid td {
   white-space: nowrap;
 }
 th {
-  padding: 10px $gutter 10px 10px;
+  padding: $hse-legacy-spacing-10 $hse-legacy-spacing-20 $hse-legacy-spacing-10 $hse-legacy-spacing-10;
   text-align: left;
 }
 th.secondary,
@@ -118,8 +118,8 @@ tr.secondary th {
 div.sortDown,
 div.sortNone,
 div.sortUp {
-  height: 10px;
-  width: 10px;
+  height: $hse-legacy-spacing-10;
+  width: $hse-legacy-spacing-10;
   background-repeat: no-repeat;
 }
 div.sortUp {
@@ -143,7 +143,7 @@ table a.tableRowToggleClosed {
 
 table caption {
   @include type-setting(3);
-  padding: 10px;
+  padding: $hse-legacy-spacing-10;
   color: #000;
   text-align: left;
 }

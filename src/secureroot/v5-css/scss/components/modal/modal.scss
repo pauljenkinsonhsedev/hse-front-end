@@ -95,8 +95,8 @@ body {
 
   .close-icon {
     position: relative;
-    height: $gutter;
-    width: $gutter;
+    height: $hse-legacy-spacing-20;
+    width: $hse-legacy-spacing-20;
     cursor: pointer;
 
     &:before,
@@ -106,7 +106,7 @@ body {
       position: absolute;
       top: 0;
       left: 50%;
-      height: $gutter;
+      height: $hse-legacy-spacing-20;
       width: 2px;
       background-color: $black;
     }

@@ -1,5 +1,5 @@
-@mixin ds_colwidth($columns: 1, $total: 12, $gutter: $grid-gap-x) {
-    width: calc(100% * #{$columns/$total} - #{$gutter});
+@mixin ds_colwidth($columns: 1, $total: 12, $hse-legacy-spacing-20: $grid-gap-x) {
+    width: calc(100% * #{$columns/$total} - #{$hse-legacy-spacing-20});
 }
 
 @mixin ds_colpush($columns: 1, $total: 12) {
@@ -10,19 +10,19 @@
     margin-left: calc(100% * #{$columns/$total} * -1);
 }
 
-@mixin ds_layout($gutter: $grid-gap-x, $sub: false) {
+@mixin ds_layout($hse-legacy-spacing-20: $grid-gap-x, $sub: false) {
     @if $sub {} @else {
-        margin-right: #{$gutter * -1};
+        margin-right: #{$hse-legacy-spacing-20 * -1};
     }
     overflow: hidden;
 
     > * {
-        margin-right: $gutter;
+        margin-right: $hse-legacy-spacing-20;
     }
 
     @supports (display: grid) {
         display: grid;
-        grid-gap: 0 $gutter;
+        grid-gap: 0 $hse-legacy-spacing-20;
         margin-right: 0;
         overflow: visible;
 
@@ -38,8 +38,8 @@
 
 
 /// legacy non-prefixed names
-@mixin colwidth($columns: 1, $total: 12, $gutter: $grid-gap-x) {
-    @include ds_colwidth($columns, $total, $gutter);
+@mixin colwidth($columns: 1, $total: 12, $hse-legacy-spacing-20: $grid-gap-x) {
+    @include ds_colwidth($columns, $total, $hse-legacy-spacing-20);
 }
 
 @mixin colpush($columns: 1, $total: 12) {
@@ -50,6 +50,6 @@
     @include ds_colpull($columns, $total);
 }
 
-@mixin layout($gutter: $grid-gap-x, $sub: false) {
-    @include ds_layout($gutter, $sub);
+@mixin layout($hse-legacy-spacing-20: $grid-gap-x, $sub: false) {
+    @include ds_layout($hse-legacy-spacing-20, $sub);
 }

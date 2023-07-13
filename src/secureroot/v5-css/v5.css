@@ -452,8 +452,8 @@ body {
   font-size: 14px;
 }
 
-.normalFont #breadCrumb ol,
-.normalFont .boxSubscribe ul.subscribeIcons {
+#breadCrumb ol,
+ {
   font-size: 0.917em;
 }
 

@@ -3,30 +3,34 @@
 // Pagination
 
 #pagination {
-    width: 100%;
-    float: left;
-    margin-bottom: $gutter;
+margin-bottom: $hse-legacy-spacing-20;
+}
+
+#pagination ul {
+  display: flex;
+  flex-direction: column;
+  @include mq($from: large-desktop) {
+  flex-direction: row;
+  }
   }
   
   #pagination ul li {
     list-style-image: none;
-    width: 100%;
-    @media only screen and (min-width: $desktop) {
-      width: 50%;
-    }
+  }
+
+  #pagination ul li a {
+  padding: $hse-legacy-spacing-10;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  text-decoration: none;
   }
   
   #pagination ul,
   #pagination ul li {
-    float: left;
     background: none;
     margin: 0 !important;
     padding: 0;
-  }
-  
-  #pagination ul span {
-    float: left;
-    clear: both;
   }
   
   // Top task pagination
@@ -34,18 +38,19 @@
   #pagination .next-page,
   #pagination .previous-page {
     width: 100%;
-    float: left;
     @media only screen and (min-width: $desktop) {
       width: 50%;
     }
   }
   
-  #pagination span {
-    color: $red;
+  #pagination a span {
+    &:focus {
+      color: $color_hse-grey-1 !important;
+    }
   }
   
   #pagination a:hover {
-    background-color: $gray;
+    background-color: $color_hse-grey-4;
   }
   
   .pagination-icon {
@@ -66,29 +71,27 @@
   
   #pagination div:nth-child(2) {
     @media only screen and (min-width: $desktop) {
-      margin-left: 10px;
+      margin-left: $hse-legacy-spacing-10;
     }
   }
   
   .next-page:hover .pagination-text,
   .previous-page:hover .pagination-text {
     text-decoration: none !important;
-    color: $hseblack !important;
+    color: $color_hse-grey-1 !important;
   }
   
   #pagination .previous-page a {
     width: 100%;
-    padding: 10px;
+    padding: $hse-legacy-spacing-10;
     @media only screen and (min-width: $desktop) {
       padding-left: 0;
     }
-    float: left;
   }
   
   #pagination .next-page a {
     width: 100%;
-    padding: 10px;
-    float: left;
+    padding: $hse-legacy-spacing-10;
   }
   
   #pagination ul li:first-of-type a {
@@ -97,7 +100,3 @@
     }
   }
   
-  #pagination ul,
-  #pagination ul li {
-    width: 100%;
-  }

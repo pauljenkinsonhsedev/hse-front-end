@@ -128,11 +128,11 @@ $btnSize: 30px;
   .lightbox li {
     background: none;
     padding-right: 0 !important;
-    background-color: $gray;
-    border: 5px solid $gray;
+    background-color: $color_hse-grey-4;
+    border: 5px solid $color_hse-grey-4;
   }
   
-  #contentContainer ul.lightbox li {
+  ul.lightbox li {
     padding-bottom: 0 !important;
   }
   
@@ -140,6 +140,6 @@ $btnSize: 30px;
     float: left;
   }
   
-  body.hasScript #contentContainer ul.lightbox li {
+  body.hasScript ul.lightbox li {
     margin-right: 10px;
   }

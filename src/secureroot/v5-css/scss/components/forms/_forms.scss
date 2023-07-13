@@ -1,6 +1,6 @@
 %form-focus {
   &:focus {
-    outline: $focus-width solid $form-focus-color;
+    outline: solid $hse-focus-color;
     outline-offset: 0;
   }
 }
@@ -16,11 +16,11 @@
 }
 
 input:required:valid {
-  outline: $focus-width solid $yes;
+  outline: $hse-focus-color solid $yes;
 }
 
 // input:required:invalid:not(:placeholder-shown) {
-//   outline: 3px solid $red;
+//   outline: 3px solid $color_hse-red;
 // }
 
 // input:required:invalid:not(:placeholder-shown) + .validation {
@@ -33,8 +33,8 @@ input:required:valid {
   @extend .subtext;
   margin: $dp 0;
   padding: $dp $dp * 2;
-  background-color: $red;
-  color: $white;
+  background-color: $color_hse-red;
+  color: $color_hse-white;
   font-weight: 700;
 }
 .validation {
@@ -88,7 +88,7 @@ input:required:valid {
 .fieldset__heading {
   @include type-setting(2);
   margin-bottom: $dp * 2;
-  color: $red;
+  color: $color_hse-red;
 }
 
 .fieldset__legend {
@@ -163,6 +163,9 @@ input:required:valid {
 }
 .input-width-l {
   max-width: 45ex;
+  @include mq($until: large-desktop) {
+  width: 100%;
+  }
 }
 
 textarea {

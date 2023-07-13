@@ -1,6 +1,6 @@
 export function fileTypeFunction() {
 
-    const anchors = document.querySelectorAll('#pageContainer a');
+    const anchors = document.querySelectorAll('#page-contents a');
 
     // Add file extentions and descriptions here
     const fileTypeArr = [

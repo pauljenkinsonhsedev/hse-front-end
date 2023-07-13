@@ -32,8 +32,8 @@
     padding: 10px;
     width: 100%;
     float: left;
-    background-color: $gray;
-    margin-bottom: $gutter;
+    background-color: $color_hse-grey-4;
+    margin-bottom: $hse-legacy-spacing-20;
   }
   
   .v5-legend {
@@ -58,7 +58,7 @@
   .v5-button {
     float: left;
     margin: 10px 10px 10px 0;
-    background-color: $red;
+    background-color: $color_hse-red;
     color: rgb(165, 165, 165);
   }
   
@@ -73,12 +73,12 @@
   
   .v5-button:hover {
     cursor: pointer;
-    background-color: $hseblack;
+    background-color: $color_hse-grey-1;
   }
   
   .v5-button a {
     float: left;
-    background-color: $red;
+    background-color: $color_hse-red;
     padding: 10px;
     color: white;
     text-decoration: none;
@@ -122,20 +122,20 @@
   }
   
   .radio-toolbar .v5-label-on {
-    border-right: 0 solid $darkgray;
+    border-right: 0 solid $color_hse-grey-3;
   }
   
   .radio-toolbar .v5-label-off {
-    border-left: 0 solid $darkgray;
+    border-left: 0 solid $color_hse-grey-3;
   }
   
   .radio-toolbar label {
     display: inline-block;
-    background-color: $gray;
+    background-color: $color_hse-grey-4;
     padding: 5px 10px;
     font-family: sans-serif, Arial;
     color: black;
-    outline: 2px solid $darkgray;
+    outline: 2px solid $color_hse-grey-3;
   }
   
   .radio-toolbar label:hover {
@@ -143,11 +143,11 @@
   }
   
   .radio-toolbar input[type="radio"]:focus + label {
-    outline: 3px solid $focus;
+    outline: 3px solid $hse-focus-color;
   }
   
   .radio-toolbar input[type="radio"]:checked + label {
-    background-color: $red;
+    background-color: $color_hse-red;
     color: white;
   }
   
