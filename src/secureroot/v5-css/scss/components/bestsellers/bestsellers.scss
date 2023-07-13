@@ -15,6 +15,7 @@ ul.itemThumbBook.publications {
 
 ul.itemThumbBook.publications li {
   margin: $hse-legacy-spacing-10;
+  display: flex;
 }
 
 ul.itemThumbBook.publications img {
@@ -28,26 +29,3 @@ ul.itemThumbBook.publications img {
   padding: 0;
 }
 
-
-
-
-.hsl-links {
-    margin: 0 -10px 20px -10px;
-}
-  
-
-.publications-products a {
-  background-color: #2846a5;
-}
-
-.training a {
-  background-color: #4f2170;
-}
-
-.testing a {
-  background-color: #ce421b;
-}
-
-.research a {
-  background-color: #287826;
-}
