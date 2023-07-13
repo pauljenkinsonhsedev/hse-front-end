@@ -1,0 +1,15 @@
+/* ==========================================================================
+   UTILITIES / #READING-WIDTH
+   ========================================================================== */
+
+/**
+ * Reading width mixin, add a maximum width
+ * to large pieces of content
+ *
+ * Usage: class="hse-u-reading-width"
+ * See tools/mixins
+ */
+
+.hse-u-reading-width {
+@include reading-width();
+}
