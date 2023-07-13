@@ -1,4 +1,4 @@
-#contentContainer .columnFull p.moreLink a::before {
+.hse-section p.moreLink a::before {
     content: " ";
     position: relative;
     top: 2px;
@@ -11,7 +11,7 @@
     margin: 0;
   }
   
-  #contentContainer .columnFull p.moreLink a:hover::before {
+.hse-section p.moreLink a:hover::before {
     content: " ";
     background-image: url("../../assets/v5-images/icons/svg/solid/arrow-right-black.svg");
     background-repeat: no-repeat;
@@ -109,45 +109,7 @@
     margin: 0;
   }
   
-  /* HSL */
-  
-  .hsl-links li {
-    background: none;
-    list-style-image: none !important;
-    width: 100%;
-    @media only screen and (min-width: $desktop) {
-      width: 237.7px;
-      margin-right: 3px;
-    }
-    float: left;
-    padding: 0 0 10px 0;
-  }
-  
-  .hsl-links li a:hover {
-    background-color: $hseblack;
-  }
-  
-  .hsl-links a {
-    float: left;
-    width: 100%;
-    color: white !important;
-    display: block;
-    font-weight: bold;
-    text-decoration: none !important;
-    padding: 10px;
-  }
-  
-  .hsl-links li a::before {
-    content: " ";
-    background-image: url("../../assets/v5-images/icons/svg/solid/chevron-circle-right-white.svg");
-    background-repeat: no-repeat;
-    display: inline-block;
-    float: left;
-    width: 17px;
-    height: 17px;
-    margin: 0;
-    border-right: 10px solid transparent;
-  }
+
   
   #contentContainer p.linkList a {
     text-decoration: underline;
@@ -185,25 +147,7 @@
     margin: 0;
   }
   
-  .boxList ul li:hover a::after {
-    content: " ";
-    background-image: url("../../assets/v5-images/icons/svg/solid/arrow-right-white.svg");
-    background-repeat: no-repeat;
-    /* position: relative; */
-    /* float: right; */
-    /* top: $gutter; */
-    /* -webkit-transform: translateY(-100%); */
-    -ms-transform: translateY(-100%);
-    /* transform: translateY(-100%); */
-    width: 16px;
-    height: 16px;
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    right: -2px;
-    /* left: 50%; */
-    transform: translate(-50%, -50%);
-  }
+
   
   .boxList ul li:hover h3 {
     color: white !important;
@@ -218,7 +162,7 @@
     top: 3px;
     width: 16px;
     height: 16px;
-    padding-right: 10px;
+    padding-right: $hse-legacy-spacing-10;
     margin: 0;
   }
   
