@@ -22,7 +22,7 @@ import { informationBanner } from "./combined/information-banner.js";
 import { codeHighlighter } from "./combined/code-highlighter.js";
 import { htmlFormsAntiSpam } from "./combined/html-forms-anti-spam.js";
 import { subnavMenu } from "./combined/subnav-menu.js";
-import { subNavPosition } from "./combined/subnav-position.js";
+// import { subNavPosition } from "./combined/subnav-position.js";
 import { subNavMobile } from "./combined/subnav-mobile.js";
 import { accordion } from "./combined/accordion.js";
 // import { printGuide } from './combined/print-guide/print-guide.js';
@@ -40,6 +40,8 @@ window.addEventListener("DOMContentLoaded", () => {
   if (pictureElemSelector && getInternetExplorerVersion() <= 11) {
     loadPicturefillFn();
   }
+
+  
 
   accordion();
 
@@ -119,22 +121,25 @@ window.addEventListener("DOMContentLoaded", () => {
   }
 
   // Append file types to anchors
-  const anchorSelector = document.querySelector("#pageContainer a");
+  const anchorSelector = document.querySelector("#page-contents a");
   if (document.body.contains(anchorSelector)) {
     fileTypeFunction();
   }
 
   lightbox();
 
+
+  feedbackSurvey();
+
+  
   const secondaryMenuSelector = document.getElementById("menu");
 
   if (secondaryMenuSelector) {
     subnavMenu(secondaryMenuSelector);
     subNavMobile();
-    subNavPosition();
+    // subNavPosition();
   }
 
-  feedbackSurvey();
   htmlFormsAntiSpam();
 
   // printGuide();
