@@ -45,12 +45,12 @@ margin-bottom: $hse-legacy-spacing-20;
   
   #pagination a span {
     &:focus {
-      color: $hseblack !important;
+      color: $color_hse-grey-1 !important;
     }
   }
   
   #pagination a:hover {
-    background-color: $gray;
+    background-color: $color_hse-grey-4;
   }
   
   .pagination-icon {
@@ -78,7 +78,7 @@ margin-bottom: $hse-legacy-spacing-20;
   .next-page:hover .pagination-text,
   .previous-page:hover .pagination-text {
     text-decoration: none !important;
-    color: $hseblack !important;
+    color: $color_hse-grey-1 !important;
   }
   
   #pagination .previous-page a {

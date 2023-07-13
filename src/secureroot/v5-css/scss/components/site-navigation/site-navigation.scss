@@ -4,7 +4,7 @@
   @include clearfix();
   display: flex;
   @include mq($until: desktop) {
-  background: $gray;
+  background: $color_hse-grey-4;
   }
   }
   
@@ -38,13 +38,32 @@
   margin: 0;
   text-align: center;
   position: relative;
-  background-color: $red;
+  background-color: $color_hse-red;
   }
   }
   
 // fix required for overriding width-container for mobile navigation
 
   .hse-navigation__navigation-link {
+    text-decoration: none;
+    width: 100%;
+    &:link, &:visited {
+    color: $color_hse-black;
+    }
+    box-sizing: border-box;
+    border-bottom: 1px solid $color_hse-grey-3;
+    @include mq($from: desktop) {
+      background-image: none;
+      vertical-align: middle;
+      font-weight: bold;
+      &:link, &:visited {
+      color: #fff;
+      }
+      text-decoration: none;
+      display: block;
+      line-height: inherit;
+      border-bottom: 2px solid $color_hse-red;
+    }
   @include mq($until: desktop) {
   padding: 15px hse-spacing(3);
   }
@@ -163,34 +182,17 @@
 
 
 .menu li a:hover {
-  background-color: $hseblack;
+  background-color: $color_hse-grey-1;
   @include mq($from: desktop) {
-  border-bottom: 2px solid $hseblack;
+  border-bottom: 2px solid $color_hse-grey-1;
   }
   color: white;
 }
 
-.menu li a {
-  text-decoration: none;
-  width: 100%;
-  color: $body;
-  box-sizing: border-box;
-  border-bottom: 1px solid $gray;
-  @include mq($from: desktop) {
-    background-image: none;
-    vertical-align: middle;
-    font-weight: bold;
-    color: #fff;
-    text-decoration: none;
-    display: block;
-    line-height: inherit;
-    border-bottom: 2px solid $red;
-  }
-}
 
 .menu li a:hover {
   @include mq($from: desktop) {
-    background-color: $hseblack;
+    background-color: $color_hse-grey-1;
   }
 }
 

@@ -41,7 +41,7 @@
   }
   
   ul.alphabetList li a:hover {
-    background-color: $red;
+    background-color: $color_hse-red;
     color: white !important;
     text-decoration: none !important;
   }
@@ -64,7 +64,7 @@
   
   .listAtoZ h2 {
     display: inline-block;
-    background-color: $red;
+    background-color: $color_hse-red;
     color: white;
     padding: $hse-legacy-spacing-10 14px;
   }

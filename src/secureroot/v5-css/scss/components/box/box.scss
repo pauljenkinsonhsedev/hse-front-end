@@ -42,7 +42,7 @@
 
 // document box
 .box.document {
-  border: 2px solid $red;
+  border: 2px solid $color_hse-red;
 }
 
 .box.document .fileType {
@@ -277,7 +277,7 @@ form fieldset input.checkbox {
 }
 
 .box.backgroundRed.hasMore p.more a {
-  color: $red !important;
+  color: $color_hse-red !important;
 }
 
 .box p:last-child {
@@ -316,6 +316,6 @@ form fieldset input.checkbox {
 }
 
 .box {
-  background-color: $gray;
+  background-color: $color_hse-grey-4;
 }
 

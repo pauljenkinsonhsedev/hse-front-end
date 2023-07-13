@@ -1,6 +1,6 @@
 ul.itemThumbBook .header,
 ul.itemThumbBook .resourceTitle {
-color: $red;
+color: $color_hse-red;
 }
 
 ul.itemThumbBook .header:hover,
@@ -24,7 +24,7 @@ text-decoration: none;
 
 ul.itemThumbBook a:hover .resourcePrice {
 text-decoration: none;
-color: $hseblack;
+color: $color_hse-grey-1;
 }
 
 ul.itemThumbBook li p {
@@ -36,7 +36,7 @@ padding-right: 0;
 }
 
 .itemThumbBook li a:hover span.subText {
-color: $hseblack !important;
+color: $color_hse-grey-1 !important;
 }
 
 .itemThumbBook li a:hover span {
@@ -65,7 +65,7 @@ color: #981e32;
 
 .resourcePrice {
   text-decoration: none;
-  color: $hseblack;
+  color: $color_hse-grey-1;
 }
 
 .subText {

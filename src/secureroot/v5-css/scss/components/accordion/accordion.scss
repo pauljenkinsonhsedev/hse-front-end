@@ -25,7 +25,7 @@
   * Accordion Heading
   */
   .accordion__heading {
-    border: 1px solid $gray;
+    border: 1px solid $color_hse-grey-4;
     font-size: inherit;
     margin: -1px 0 0 !important;
   }
@@ -36,7 +36,7 @@
     border: none;
     border-radius: 0;
     box-shadow: none;
-    color: $red;
+    color: $color_hse-red;
     cursor: pointer;
     display: block;
     font-size: inherit;
@@ -96,8 +96,8 @@
   
   .accordion__trigger:hover,
   .accordion__trigger:focus {
-    background-color: $focus !important;
-    color: $hseblack !important;
+    background-color: $hse-focus-color !important;
+    color: $color_hse-grey-1 !important;
     outline: none;
   }
   
@@ -106,13 +106,13 @@
   }
   
   .accordion__trigger[aria-disabled="true"]:hover {
-    background-color: $red;
+    background-color: $color_hse-red;
     color: #fff;
     cursor: not-allowed;
   }
   
   .accordion__trigger[aria-disabled="true"]:focus {
-    background-color: $hseblack;
+    background-color: $color_hse-grey-1;
   }
   
   .accordion__panel {
@@ -123,7 +123,7 @@
     position: relative;
     visibility: hidden;
     z-index: 1;
-    border: 1px solid $gray;
+    border: 1px solid $color_hse-grey-4;
     border-top: 0;
     margin-bottom: 15px;
   }
@@ -145,7 +145,7 @@
   }
   
   .accordion__trigger[aria-expanded="true"] {
-    background: $red;
+    background: $color_hse-red;
     color: #fff;
   }
   

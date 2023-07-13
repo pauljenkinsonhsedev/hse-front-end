@@ -25,16 +25,16 @@
   }
   
   .boxList ul a:hover {
-    background-color: $darkergray;
+    background-color: $color_hse-grey-3;
   }
   .boxList ul li a:focus {
     border: 0 !important;
     outline: 0;
-    box-shadow: inset 0 -4px 0 0 $hseblack;
+    box-shadow: inset 0 -4px 0 0 $color_hse-grey-1;
   }
   
   .boxList ul li h3 {
-    color: $red !important;
+    color: $color_hse-red !important;
   }
   .boxList ul li h3 {
     margin: 0;
@@ -53,7 +53,7 @@
     clear: both;
     width: 100%;
     background: none;
-    background-color: $gray;
+    background-color: $color_hse-grey-4;
     background-image: none !important;
     text-decoration: none;
     &:hover {
@@ -106,4 +106,50 @@
     right: -2px;
     /* left: 50%; */
     transform: translate(-50%, -50%);
+  }
+
+  .hse-card--chevron {
+   position: relative;
+
+   a {
+    font-weight: normal;
+    @include type-setting(3);
+   }
+  &:hover{
+  background-color: $hse-focus-color;
+  }
+  }
+
+  .hse-card--chevron {
+   background: $color_hse-grey-4;
+   padding: $hse-legacy-spacing-10;
+  border-bottom: none;
+  margin-bottom: $hse-legacy-spacing-10;
+  }
+
+
+
+ .hse-card--chevron a:focus::after {
+  border: 0 !important;
+  outline: 0;
+  box-shadow: inset 0 -4px 0 0 #333;
+ }
+
+  .hse-card--chevron a:before {
+    border-right: 3px solid $color_hse-red;
+    border-top: 3px solid $color_hse-red;
+    content: "";
+    display: block;
+    height: 7px;
+    position: absolute;
+    right: 10px;
+    top: 18px;
+    -webkit-transform: translateY(0) rotate(45deg) scale(1);
+    -ms-transform: translateY(0) rotate(45deg) scale(1);
+    transform: translateY(0) rotate(45deg) scale(1);
+    width: 7px;
+  }
+  .hse-card--chevron h3 {
+   margin: 0;
+   padding: 0;
   }

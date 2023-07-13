@@ -1,18 +1,18 @@
 /* Notification bar */
 
 .notification-banner {
-  background-color: $gray;
+  background-color: $color_hse-grey-4;
   width: 100%;
   height: auto;
   float: left;
   font-size: 16px;
-  border-bottom: 2px solid $red;
+  border-bottom: 2px solid $color_hse-red;
   line-height: normal !important;
 }
 
 .notification-banner.global {
-  background-color: $hseblack;
-  border-bottom: 2px solid $focus;
+  background-color: $color_hse-grey-1;
+  border-bottom: 2px solid $hse-focus-color;
 }
 
 .notification-banner p {
@@ -25,14 +25,14 @@
 }
 
 .notification-banner.global p a {
-  color: $focus;
+  color: $hse-focus-color;
   text-decoration: underline;
 }
 
 .notification-banner.global p a:hover,
 .notification-banner.global p a:focus {
   text-decoration: none;
-  background: $focus;
+  background: $hse-focus-color;
   color: $black;
 }
 

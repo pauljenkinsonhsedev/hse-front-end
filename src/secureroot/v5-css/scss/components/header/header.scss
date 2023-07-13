@@ -1,34 +1,37 @@
 .hse-header {
-    @include clearfix();
-    background-color: $color_hse-red;
-  }
+@include clearfix();
+background-color: $color_hse-red;
+}
   
-  .hse-header__top-container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    @include clearfix();  
-    padding: $hse-legacy-spacing-10 0 $hse-legacy-spacing-20 0;
-    @include mq($until: large-desktop) {
-      margin: 0;
-    }
-  }
+.hse-header__top-container {
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+@include clearfix();  
+padding: $hse-legacy-spacing-10 0 $hse-legacy-spacing-20 0;
+}
 
 .hse-header__top-container {
-  @include clearfix();
+@include clearfix();
 }
 
 
 .hse-header__search {
-    @include clearfix();
-    position: relative;
-    text-align: right;
-    flex-basis: 100%;
-    margin-top: $hse-legacy-spacing-20;
-    @include mq($from: desktop) {
-      margin-left: auto;
-      flex-basis: content;
-      margin-top: 0;
-    }
+@include clearfix();
+position: relative;
+text-align: right;
+flex-basis: 100%;
+margin-top: $hse-legacy-spacing-20;
+@include mq($from: desktop) {
+margin-left: auto;
+flex-basis: content;
+margin-top: 0;
+}
+}
+
+.hse-header__logo a {
+&:focus {
+outline: #fd0 5px solid !important;
+}
 }
 

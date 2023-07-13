@@ -54,10 +54,10 @@ width: 100%;
   font-size: 0;
 }
 .subnav-container li:hover {
-  background: $darkgray;
+  background: $color_hse-grey-3;
 }
 .subnav-container a:focus {
-  background: $focus !important;
+  background: $hse-focus-color !important;
 }
 .subnav-container a:focus-visible {
 outline: none;
@@ -74,7 +74,7 @@ outline: none;
   align-items: center;
   display: flex;
   overflow: visible;
-  background-color: $gray;
+  background-color: $color_hse-grey-4;
   cursor: pointer;
   @include type-setting(0);
 }
@@ -121,11 +121,11 @@ outline: none;
   }
 }
 .subnav-container a:not(.back):hover {
-  background-color: $darkgray;
+  background-color: $color_hse-grey-3;
   color: $black;
 }
 .subnav-container a:not(.back):active {
-  background-color: $darkgray;
+  background-color: $color_hse-grey-3;
   color: $black;
 }
 
@@ -185,7 +185,7 @@ outline: none;
 
 .subnav-container li.first a {
   font-weight: bold;
-  background-color: $red;
+  background-color: $color_hse-red;
 }
 
 .subnav-container li.first a {
@@ -193,20 +193,20 @@ outline: none;
 }
 
 .subnav-container li.first a:hover {
-  background-color: $red;
+  background-color: $color_hse-red;
   color: white;
 }
 
 // Active page
 
 li a.active-page {
-  background-color: $darkgray;
-  border-left: 3px solid $red;
+  background-color: $color_hse-grey-3;
+  border-left: 3px solid $color_hse-red;
   text-decoration: none;
 }
 
 li.first a.active-page {
-  background-color: $red;
+  background-color: $color_hse-red;
 }
 
 .no-active-style {
@@ -218,7 +218,7 @@ li.first a.active-page {
 
 .subnav-container li a.back {
   width: 100%;
-  background-color: $red;
+  background-color: $color_hse-red;
   color: white;
 }
 
@@ -254,7 +254,7 @@ li.first a.active-page {
 }
 
 .subnav-container li a:focus-within {
-  background-color: $focus;
+  background-color: $hse-focus-color;
   color: $black !important;
 }
 
@@ -319,17 +319,17 @@ float: left !important;
 clear: both !important;
 text-align: left !important;
 margin-bottom: 0 !important;
-background: $red !important; 
+background: $color_hse-red !important; 
 color: white !important;
 }
 
 .btn-mobile:focus {
-background: $hseblack !important;
+background: $color_hse-grey-1 !important;
 }
 
 li.first a.active-page, .subnav-container li a.back {
-background: $gray;
-color: $hseblack;
+background: $color_hse-grey-4;
+color: $color_hse-grey-1;
 }
 
 .subnav-container .back::before {
@@ -347,18 +347,18 @@ color: $hseblack;
 
 
 li.first a.active-page:hover {
-background: $darkgray;
-color: $hseblack;
+background: $color_hse-grey-3;
+color: $color_hse-grey-1;
 }
 
 .subnav-container li.first a {
-background: $gray;
-color: $hseblack;
+background: $color_hse-grey-4;
+color: $color_hse-grey-1;
 }
 
 .subnav-container li.first a:hover {
 background: #c2c2c2;
-color: $hseblack;
+color: $color_hse-grey-1;
 }
 
 .btn-mobile svg {
