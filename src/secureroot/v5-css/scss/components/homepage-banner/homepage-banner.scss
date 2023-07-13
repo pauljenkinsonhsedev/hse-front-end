@@ -1,24 +1,34 @@
 // Homepage banner
 
-.homepage-section {
-border-bottom: 2px solid $red;
-margin-bottom: 20px;
+
+
+.hse-section {
 &:first-of-type {
- margin-top: 20px;
+ margin-top: $hse-legacy-spacing-20;
 }
 &:last-of-type {
 margin-bottom: 0; 
-border-bottom: none;
 }
+
 }
+
+.hse-section--homepage {
+  margin-bottom: $hse-legacy-spacing-20;
+  &:last-of-type {
+    border-bottom: none;
+  }
+}
+
+.hse-section--homepage {
+border-bottom: 2px solid $color_hse-red;
+}
+
+
 
 
 
 .homepageBanner {
-  min-height: 258px;
-    padding: 0;
-    margin-bottom: $gutter !important;
-  
+    padding: 0;  
     @media only screen and (min-width: $desktop) {
       margin-bottom: 0;
       a {
@@ -33,25 +43,20 @@ border-bottom: none;
   
   .homepageBanner {
     overflow: hidden;
-    @media only screen and (min-width: 980px) {
+    @include mq($from: hse-desktop) {
       max-height: 258px !important;
     }
   }
   
   .homepageBanner a {
-    float: left;
     width: 100%;
   }
   
-  .homepageBanner img {
-    @media only screen and (min-width: 980px) {
-    }
-  }
   .homepageBannerInner {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
-    padding: $gutter;
+    padding: $hse-legacy-spacing-20;
     order: 2;
   
     overflow: hidden;
@@ -63,12 +68,15 @@ border-bottom: none;
   
   .homepageBannerImage {
     order: 1;
+    @include mq($from: tablet) {
+    max-height: 258px;
+    }
     @media only screen and (min-width: 600px) {
       order: 2;
       overflow: hidden;
     }
   
-    @media only screen and (min-width: $desktop) {
+    @include mq($until: desktop) {
       width: 100%;
     }
   }
@@ -85,7 +93,7 @@ border-bottom: none;
   
     h2 {
       margin-bottom: 5px;
-      color: $white;
+      color: $color_hse-white;
     }
   
     a p {
