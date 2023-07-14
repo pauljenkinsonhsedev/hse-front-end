@@ -1,4 +1,5 @@
 import { footnoteLinks } from "./footnote-links.js";
+import { footnoteAbbr } from "./footnote-abbr.js";
 import pathEnv from "./utils/asset-env-path";
 
 export function htmlPrintGuide() {
@@ -23,7 +24,7 @@ export function htmlPrintGuide() {
     .then((response) => response.json())
     .then((meta) => {
       const h1 = meta.metadata.title;
-      const metaContent = document.querySelector("#contentContainer");
+      const metaContent = document.querySelector("#pageContainer");
 
       const h1Tag = document.createElement("h1");
       const pTag = document.createElement("p");
@@ -41,6 +42,7 @@ export function htmlPrintGuide() {
       metaContent.prepend(printButton);
       metaContent.prepend(pTag);
       metaContent.prepend(h1Tag);
+      metaContent.classList.add('hse-print-guide-page');
 
       document.title = "Print: " + h1;
 
@@ -62,7 +64,7 @@ export function htmlPrintGuide() {
 
     // Assemble
 
-    const printContent = document.querySelector("#contentContainer");
+    const printContent = document.querySelector("#pageContainer");
 
     if (content != null) {
       printContent.append(content);
@@ -114,7 +116,6 @@ export function htmlPrintGuide() {
     // Set their ids
     for (var i = 0; i < articleElements.length; i++)
       articleElements[i].id = "guide-section-" + i;
-
     footnoteLinks();
     footnoteAbbr();
   };

@@ -49,12 +49,12 @@
     left: 0;
     z-index: 100;
   }
-  #printLogo {
-    top: 0;
-    left: 0;
-    z-index: 110;
-    position: absolute;
+
+  .hse-header__top-container {
+  margin: 0 !important;
+  padding: 0 !important;
   }
+
   #columnContainer,
   #contentContainer,
   #pageContainer {
@@ -72,7 +72,7 @@
  
    // remove margins & padding from components 
 
-   ul.columnsList li, .hse-page-contents ul.linkList, .box {
+   ul.columnsList li, .hse-page-contents ul.linkList, .box, .hse-print-guide-page ul {
     margin: 0 !important;
     padding: 0 !important
     }
@@ -128,6 +128,10 @@
 
 // HTML print guides
 
+.hse-print-guide-page  ul {
+  margin: 0 0 10px 28px;
+}
+
 .lead-paragraph {
   @include type-setting(2);
   line-height: 1.5;
@@ -152,4 +156,8 @@
 .printable-version p {
   margin: 0;
   font-weight: 700;
+}
+
+.hse-print-guide-page article {
+max-width: 44em;
 }
