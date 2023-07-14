@@ -16,7 +16,7 @@ export function feedbackSurvey() {
   }
   const survey = document.querySelector(".feedback-survey");
 
-  const message = container.querySelector(".feedback-message");
+  const message = container.querySelector("#feedback-message");
 
   const feedbackPrompt = container.querySelector(".hse-feedback__prompt");
 
