@@ -104,9 +104,9 @@ ul.linkList li {
   list-style-type: square;
 }
 
-.hse-page-contents ul li::marker {
+.hse-page-contents ul li::marker, .hse-print-guide-page ul li::marker {
   color: $color_hse-red;
-}
+} 
 
 .hse-page-contents ul.linkList {
   margin: 0 0 10px 18px !important;
