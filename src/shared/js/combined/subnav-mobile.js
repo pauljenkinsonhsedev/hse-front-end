@@ -125,8 +125,7 @@ function toggleIsOpen() {
 		listItems.forEach((item) => {
 
 			const tabIndex = item.querySelector('a').tabIndex;
-			console.log(tabIndex);
-	
+				
 			if (tabIndex === 0 ) {
 				item.querySelector('a').tabIndex = -1;
 				item.classList.add("close-state-0");
