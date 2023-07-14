@@ -148,7 +148,16 @@
     background: $color_hse-red;
     color: #fff;
   }
-  
+
+  .accordion__panel ul {
+  margin: 0 0 10px 28px;
+  }
+  .accordion__panel li {
+    list-style-type: square;
+  }
+  .accordion__panel ul li::marker {
+  color: #981e32;  
+  }
   // ol fix
   
   .v5 ol .accordion__heading {
