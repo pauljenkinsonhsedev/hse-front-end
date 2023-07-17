@@ -1,0 +1,157 @@
+%button-cosmetic {
+    box-sizing: border-box;
+    appearance: none;
+    outline: 0;
+    border: 0;
+    display: inline-block;
+    background-color: #eee;
+    background-color: #ccc;
+    color: $black;
+    #pageContainer & {
+      margin-bottom: $dp * 2;
+    }
+    @media only screen and (min-width: $desktop) {
+      white-space: nowrap;
+    }
+    text-align: center;
+    text-decoration: none;
+    font-weight: 700;
+    vertical-align: top;
+    user-select: none;
+    padding: ($dp) ($dp * 3);
+    border-width: $border-width;
+    border-style: solid;
+    border-color: transparent;
+    border-radius: $button-border-radius;
+    cursor: pointer;
+  
+    @include type-setting(0);
+  
+    transition: all 300ms ease-in-out;
+  
+    &:focus {
+      outline: $hse-focus-color solid;
+    }
+  }
+  
+  .btn:not(.visually-hidden) + .btn {
+    @media (min-width: $tablet) {
+      margin-left: $dp * 2;
+    }
+  }
+  
+  input,
+  button,
+  a {
+    &.btn {
+      margin-bottom: $hse-legacy-spacing-20;
+      @extend %button-cosmetic;
+  
+      &:hover {
+        background-color: darken(#eee, 10%);
+      }
+      &:disabled {
+        background-color: rgba(#eee, 0.5);
+        color: #ccc;
+      }
+  
+      &-small {
+        padding: ($vr) $dp + $vr;
+      }
+    }
+  
+    &.btn-primary {
+      background-color: $yes;
+      color: $color_hse-white;
+      margin-bottom: $hse-legacy-spacing-20;
+  
+      &:hover {
+        background-color: $hse-focus-color;
+        color: $black;
+      }
+  
+      &:focus {
+        background-color: $hse-focus-color;
+        color: $black;
+        outline: none;
+      }
+  
+      &:disabled {
+        background-color: rgba($yes, 0.5);
+        color: $color_hse-white;
+      }
+    }
+  
+    &.btn-secondary {
+      background-color: $color_hse-red;
+      border: 1px solid white;
+      color: $color_hse-white;
+      margin-bottom: $hse-legacy-spacing-20;
+  
+      &:hover {
+        background-color: $hse-focus-color;
+        border: 1px solid $hse-focus-color;
+        color: $black;
+      }
+  
+      &:disabled {
+        background-color: rgba($yes, 0.5);
+        color: $color_hse-white;
+      }
+      &:focus {
+        background-color: $hse-focus-color;
+        color: $black;
+        border: none;
+      }
+    }
+  
+    &.btn-cautionary {
+      background-color: $color_hse-red;
+      color: $color_hse-white;
+      &:hover {
+        background-color: lighten($color_hse-red, 10%);
+      }
+      &:disabled {
+        background-color: rgba($color_hse-red, 0.5);
+        color: $color_hse-white;
+      }
+    }
+  
+    &.btn-important {
+      background-color: $hse-focus-color;
+      color: #333;
+      &:hover {
+        background-color: $color_hse-red;
+        color: white;
+      }
+      &:disabled {
+        background-color: rgba($hse-focus-color, 0.5);
+        color: #666;
+      }
+      &:focus {
+        background: $color_hse-red;
+        color: white;
+      }
+    }
+  }
+  
+  .btn.btn-start {
+    border-bottom: 2px solid #333;
+    @include type-setting(3);
+    line-height: 1.5;
+  }
+  
+  .btn-start::after {
+    content: " ";
+    position: relative;
+    background-image: url(../../assets/v6-images/icons/svg/solid/chevron-right-white.svg);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    display: inline-block;
+    width: 15px;
+    height: $hse-legacy-spacing-20;
+    margin: 0;
+    bottom: -4px;
+    border-left: 10px solid transparent;
+  }
+  

@@ -5,7 +5,7 @@ import { collate } from './collate.js';
 
 function loadmomentFn() {
   return Promise.all([
-      load.js(pathEnv + '/assets/v5-js/vendor/moment/moment.js'),
+      load.js(pathEnv + '/assets/v6-js/vendor/moment/moment.js'),
   ])
   .catch((err) => {
       console.error(`Error initiating charts: ${err}`);

@@ -1,0 +1,56 @@
+// Callouts
+
+.callout {
+  padding: 10px;
+  margin-bottom: $hse-legacy-spacing-20;
+  background: $color_hse-grey-4;
+  border-left: 6px solid $color_hse-red;
+}
+
+.callout p {
+  padding: 0;
+  margin-bottom: 2.5px;
+}
+
+.callout--information {
+  border-left: 6px solid $color_hse-red;
+  background: $color_hse-grey-4;
+}
+
+.callout--survey {
+  border-left: 6px solid $color_hse-beta;
+  background: $color_hse-grey-4;
+}
+
+// Modify style for full width
+.columnbetacontentpage.column1 {
+  .callout--information {
+    border: 1px solid $color_hse-grey-3;
+    border-left: 6px solid $color_hse-red;
+  }
+
+  .callout--survey {
+    border: 1px solid $color_hse-grey-3;
+    border-left: 6px solid $color_hse-beta;
+  }
+}
+
+.callout--warning {
+  margin: 10px 0 20px 0;
+  background: none;
+  border-left: 0;
+  font-weight: 700;
+  background-image: url("../../assets/v6-images/icons/warning.svg") !important;
+  background-size: 35px 35px !important;
+  background-repeat: no-repeat !important;
+  min-height: 35px !important;
+  padding: 5px 0 0 45px;
+}
+
+.callout h2 {
+  font-size: 1.1rem;
+}
+
+.callout h3 {
+  font-size: 0.9rem;
+}

@@ -10,7 +10,7 @@ export function accordion() {
     }
 
     return Promise.all([
-      load.js(pathEnv + '/assets/v5-js/vendor/a11y_accordions/index.js'),
+      load.js(pathEnv + '/assets/v6-js/vendor/a11y_accordions/index.js'),
     ]).catch((err) => {
       console.error(`Error initiating accordion: ${err}`);
     });

@@ -1,0 +1,81 @@
+  /* HSL */
+
+  .hsl-links {
+    display: flex;
+    flex-direction: column;
+    @include mq($from: desktop) {
+      flex-wrap: wrap;
+      flex-direction: row;
+    }
+    }
+  
+    .hsl-links li {
+        margin: 0 $hse-legacy-spacing-10;
+    }
+    
+    .hsl-links li a:hover {
+      background-color: $color_hse-grey-1;
+    }
+    
+    .hsl-links a {
+      color: white !important;
+      display: flex;
+      font-weight: bold;
+      text-decoration: none !important;
+      padding: $hse-legacy-spacing-10;
+      @include mq($from: large-desktop) {
+      text-wrap: nowrap;
+      }
+    }
+    
+    .hsl-links li a::before {
+      content: " ";
+      background-image: url("../../assets/v6-images/icons/svg/solid/chevron-circle-right-white.svg");
+      background-repeat: no-repeat;
+      display: inline-block;
+      position: relative;
+      top: 2px;
+      width: 17px;
+      height: 17px;
+      margin: 0;
+      border-right: $hse-legacy-spacing-10 solid transparent;
+    }
+
+
+
+
+.hsl-links {
+    margin: 0 -10px 20px -10px;
+    @include mq($from: 769px) {
+    margin-bottom: 40px;
+    }
+    @include mq($from: 990px) {
+    margin-bottom: 20px;
+    }
+}
+
+.hsl-links li {
+flex: 1;
+@include mq($until: large-desktop) {
+a {
+height: 100%;
+}
+}
+}
+
+
+.publications-products a {
+  background-color: #2846a5;
+}
+
+.training a {
+  background-color: #4f2170;
+}
+
+.testing a {
+  background-color: #ce421b;
+}
+
+.research a {
+  background-color: #287826;
+}

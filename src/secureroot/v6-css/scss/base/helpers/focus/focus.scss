@@ -1,0 +1,99 @@
+// GLOBAL FOCUS
+
+a:focus,
+button:focus {
+  outline: $hse-focus-color 5px solid;
+  z-index: 100;
+}
+
+.slinky-menu ul li a:focus {
+  outline: solid transparent !important;
+  text-decoration: none !important;
+  background-color: $hse-focus-color !important;
+  color: $black !important;
+  border-bottom: 2px solid $black !important;
+}
+
+a:hover,
+a:focus {
+  text-decoration: none;
+  color: $hse-link-hover-color;
+  outline: none;
+}
+
+// COMPONENT FOCUS
+
+// Content focus
+
+.boxList ul li a:focus h3 {
+  color: $black !important;
+}
+
+.hse-page-contents li a:focus-within {
+  background-color: $hse-focus-color;
+  outline: solid transparent !important;
+  color: $black;
+}
+
+ul li a:focus {
+  border-bottom: 2px solid $black !important;
+}
+
+.backgroundRed a:focus {
+  color: $black;
+}
+
+.backgroundRed p a:focus,
+#beta-user-testing p a:focus,
+.backgroundRed li a:focus-within,
+.hsl-links a:focus-within,
+.footer-links-container li a:focus-within,
+.breadCrumbContainer li a:focus,
+.skip:focus,
+.slinky-menu ul li a:focus,
+.v6-button a:focus,
+.v6-hide-button:focus,
+button.v6-button:focus,
+.menu li a:focus,
+.multistep li a:focus,
+.listCaret li a:focus,
+a:focus .pagination-text,
+.listLinks a:focus {
+  outline: solid transparent !important;
+  text-decoration: none !important;
+  background-color: $hse-focus-color !important;
+  color: $black !important;
+  border-bottom: 2px solid $black !important;
+}
+
+// #contentContainer input:focus {
+// outline: $hse-focus-color 5px solid !important;
+// }
+
+.hse-page-contents li h3 a:focus,
+.hse-page-contents p a:focus {
+  outline: solid transparent !important;
+  color: #0b0c0c;
+  background-color: $hse-focus-color;
+  text-decoration: none;
+  border-bottom: 2px solid $black !important;
+}
+
+// Form focus
+
+.v6-button a:focus,
+button.v6-button:focus,
+#navSecondary ul li a:focus,
+.footer-links-container li a:focus-within {
+  border-bottom: 0 !important;
+}
+
+// itemThumbBook within box component
+
+.box ul.itemThumbBook li a:focus {
+  background-color: $hse-focus-color;
+}
+
+.box ul.itemThumbBook li a:focus .resourceTitle {
+  color: $color_hse-grey-1;
+}

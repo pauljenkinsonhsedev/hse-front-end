@@ -1,0 +1,98 @@
+// Breadcrumbs
+
+// .hse-breadcrumb ol specificty can be removed if .hse-breadrumb__list is applied to all breadcrumbs
+
+.hse-breadcrumb {
+background-color: $color_hse-grey-4;
+}
+
+.hse-breadcrumb__container {
+  padding-top: hse-spacing(2);
+  @include mq($from: desktop) {
+    margin-bottom: $hse-legacy-spacing-20;
+  }
+}
+
+.hse-breadcrumb__list, .hse-breadcrumb ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 1.1em;
+}
+
+.hse-breadcrumb__back {
+padding: hse-spacing(2) 0;
+margin-bottom: $hse-legacy-spacing-20;
+@include mq($from: desktop) {
+display: none;
+}
+}
+  
+.hse-breadcrumb ol li::before {
+    content: " ";
+    background-image: url("../../assets/v6-images/icons/svg/solid/chevron-right-gray.svg");
+    background-repeat: no-repeat;
+    background-position: bottom;
+    float: left;
+    top: 2px;
+    padding-right: 4px;
+    position: relative;
+    width: 17px;
+    height: 17px;
+  }
+
+.hse-breadcrumb ol li {
+padding-bottom: hse-spacing(2);
+display: inline-block;
+font-size: 0.9em;
+margin: 0;
+}
+  
+  #breadCrumb ol li.home {
+    background: 0 0;
+    padding: 0;
+  }
+  
+  #breadCrumb ol li.home::before {
+    display: none;
+  }
+  
+  #breadCrumb ol li a {
+    color: $color_hse-grey-1;
+    text-decoration: underline;
+  }
+  
+  #breadCrumb ol li a:hover {
+    text-decoration: none;
+  }
+
+  #backTo {
+    background-color: $color_hse-grey-1;
+  }
+  
+  .backto {
+    box-sizing: border-box;
+    padding-top: 10px;
+    margin: 0;
+    display: inline-block;
+    width: 100%;
+    @media only screen and (min-width: $desktop) {
+      display: none;
+    }
+  }
+  
+  p.backto {
+    font-size: 0.9rem;
+    padding: 0;
+  }
+  
+  p.backto a {
+    color: white;
+  }
+  
+  p.backto a:focus {
+    color: $black;
+    outline: none;
+  }
+  
+  

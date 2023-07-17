@@ -4,7 +4,7 @@ import { tableSortable } from './tables/table-sortable.js';
 
 function loadPapaparseFn() {
     return Promise.all([
-        load.js(pathEnv + '/assets/v5-js/vendor/papaparse/papaparse.min.js'),
+        load.js(pathEnv + '/assets/v6-js/vendor/papaparse/papaparse.min.js'),
     ])
     .catch((err) => {
         console.error(`Error initiating CSV tables: ${err}`);
