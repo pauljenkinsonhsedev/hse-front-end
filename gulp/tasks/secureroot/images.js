@@ -9,30 +9,30 @@ import * as config from "../../config.json";
 import { isDefault, isStaging, isDev, isProd } from "../base/mode.js";
 
 let v4output;
-let v5output;
+let v6output;
 let v4Homepage;
 
 if (isProd) {
   v4output = config.secureroot.images.v4.output;
-  v5output = config.secureroot.images.v5.output;
+  v6output = config.secureroot.images.v6.output;
   v4Homepage = config.secureroot.images.v4homepage.output;
 }
 
 if (isDefault) {
   v4output = config.secureroot.images.v4.output;
-  v5output = config.secureroot.images.v5.output;
+  v6output = config.secureroot.images.v6.output;
   v4Homepage = config.secureroot.images.v4homepage.output;
 }
 
 if (isStaging) {
   v4output = config.secureroot.images.v4.output;
-  v5output = config.secureroot.images.v5.output;
+  v6output = config.secureroot.images.v6.output;
   v4Homepage = config.secureroot.images.v4homepage.output;
 }
 
 if (isDev) {
   v4output = config.designsystem.images.v4.output;
-  v5output = config.designsystem.images.v5.output;
+  v6output = config.designsystem.images.v6.output;
   v4Homepage = config.designsystem.images.v4homepage.output;
 }
 
@@ -51,8 +51,8 @@ function imagesV4() {
     .pipe(dest(v4output));
 }
 
-function imagesV5() {
-  return src(config.secureroot.images.v5.all)
+function imagesv6() {
+  return src(config.secureroot.images.v6.all)
     .pipe(
       imagemin([
         imagemin.gifsicle(),
@@ -63,7 +63,7 @@ function imagesV5() {
         imageminJpegRecompress(),
       ])
     )
-    .pipe(dest(v5output));
+    .pipe(dest(v6output));
 }
 
 function imagesV4Homepage() {
@@ -81,5 +81,5 @@ function imagesV4Homepage() {
     .pipe(dest(v4Homepage));
 }
 
-const toReturn = series(imagesV4, imagesV5, imagesV4Homepage);
+const toReturn = series(imagesV4, imagesv6, imagesV4Homepage);
 task("hseImages", toReturn);

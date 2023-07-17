@@ -27,7 +27,7 @@ console.log("output", output);
 function hseScripts() {
   return src(config.secureroot.scripts.all)
     .pipe(concat(config.secureroot.scripts.entry))
-    .pipe(rename("v5-footer.min.js"))
+    .pipe(rename("v6-footer.min.js"))
     .pipe(dest(output));
 }
 

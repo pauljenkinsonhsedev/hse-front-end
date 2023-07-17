@@ -26,25 +26,25 @@ const highchartsAssets = [
 
 function copyHighchartsjs() {
   return src(highchartsAssets).pipe(
-    dest("./designsystem/assets/v5-js/vendor/highcharts")
+    dest("./designsystem/assets/v6-js/vendor/highcharts")
   );
 }
 
 function copydesignsystemAssets() {
   const tidy = src(["./node_modules/tidy-html5/tidy.js"]).pipe(
-    dest("./designsystem/assets/v5-js/vendor/tidy")
+    dest("./designsystem/assets/v6-js/vendor/tidy")
   );
 
   const ariaAccordion = src(["./node_modules/a11y_accordions/index.js"]).pipe(
-    dest("./designsystem/assets/v5-js/vendor/a11y_accordions")
+    dest("./designsystem/assets/v6-js/vendor/a11y_accordions")
   );
 
   const papaparse = src(["./node_modules/papaparse/papaparse.min.js"]).pipe(
-    dest("./designsystem/assets/v5-js/vendor/papaparse")
+    dest("./designsystem/assets/v6-js/vendor/papaparse")
   );
 
   const moment = src(["./node_modules/moment/moment.js"]).pipe(
-    dest("./designsystem/assets/v5-js/vendor/moment")
+    dest("./designsystem/assets/v6-js/vendor/moment")
   );
 
   const html = src([config.designsystem.markup.all])

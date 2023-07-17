@@ -32,31 +32,31 @@ const highchartsAssets = [
 
 function bowser() {
   return src(bowserAssets)
-    .pipe(dest(`${config.secureroot.assetPath}/v5-js/vendor/bowser`))
+    .pipe(dest(`${config.secureroot.assetPath}/v6-js/vendor/bowser`))
 }
 
 function picturefill() {
   return src(picturefillAssets)
-    .pipe(dest(`${config.secureroot.assetPath}/v5-js/vendor/picturefill`))
+    .pipe(dest(`${config.secureroot.assetPath}/v6-js/vendor/picturefill`))
 }
 function highCharts() {
   return src(highchartsAssets)
-    .pipe(dest(`${config.secureroot.assetPath}/v5-js/vendor/highcharts`))
+    .pipe(dest(`${config.secureroot.assetPath}/v6-js/vendor/highcharts`))
 }
 
 function papaparse() {
   return src(papaparseAssets)
-    .pipe(dest(`${config.secureroot.assetPath}/v5-js/vendor/papaparse`))
+    .pipe(dest(`${config.secureroot.assetPath}/v6-js/vendor/papaparse`))
 }
 
 function moment() {
   return src(['./node_modules/moment/moment.js'])
-  .pipe(dest(`${config.secureroot.assetPath}/v5-js/vendor/moment`));
+  .pipe(dest(`${config.secureroot.assetPath}/v6-js/vendor/moment`));
 }
 
 function ariaAccordion() {
   return src(['./node_modules/a11y_accordions/index.js']).pipe(
-    dest(`${config.secureroot.assetPath}/v5-js/vendor/a11y_accordions`)
+    dest(`${config.secureroot.assetPath}/v6-js/vendor/a11y_accordions`)
   );
 }
 
