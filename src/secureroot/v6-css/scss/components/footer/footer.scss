@@ -64,12 +64,14 @@
     display: flex;
     }
     
-    .hse-footer__languages-link:link {
-    color: white;
+    .hse-footer__languages-link {
     &:hover {
-    color: $color_hse-black;
+    color: $color_hse-black !important;
     }
     &:focus {
-    color: $color_hse-black;
+    color: $color_hse-black !important;
+    }
+    &:visited {
+    color: $color_hse-white;    
     }
     }
