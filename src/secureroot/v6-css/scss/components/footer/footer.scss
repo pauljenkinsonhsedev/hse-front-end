@@ -41,7 +41,9 @@
     .hse-footer__list-item {
     display: inline-block;
     margin-right: 15px;
-    padding: 0;
+    @include mq($until: desktop) {
+    padding: 5px 0;
+    }
     }
     
     .hse-footer__base-container {
