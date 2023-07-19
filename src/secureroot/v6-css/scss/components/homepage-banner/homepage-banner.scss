@@ -21,10 +21,12 @@ margin-bottom: 0;
 
 .hse-section--homepage {
 border-bottom: 2px solid $color_hse-red;
+&:first-of-type {
+@include mq($until: desktop) {
+border: none;
 }
-
-
-
+}
+}
 
 
 .homepageBanner {
