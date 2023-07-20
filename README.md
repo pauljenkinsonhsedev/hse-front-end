@@ -11,7 +11,7 @@ You must install globally
 
 ### Node version
 
-Last run with NodeJs v14.18.1 and yarn v1.22.17
+Last run with NodeJs v14.20.0 and yarn v1.22.19
 
 ### Installation
 
@@ -76,9 +76,9 @@ src/
 ```
 src/
 └──secureroot/
-    └──v5-css/
+    └──v6-css/
     └───────scss/
-    └──v5.css
+    └──v6.css
 ```
 
 ## Javascript es6
@@ -92,8 +92,8 @@ src/
     └───────combined/
     └─────────classes/
     └─────────utils/
-    └──v5-cookies.js
-    └──v5-main.js
+    └──v6-cookies.js
+    └──v6-main.js
 
 ```
 
