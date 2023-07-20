@@ -1,0 +1,31 @@
+ul.itemThumbBook.publications {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+}
+
+ul.itemThumbBook.publications,
+ul.itemThumbBook.publications li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+ul.itemThumbBook.publications {
+  margin: 0 -10px;
+}
+
+ul.itemThumbBook.publications li {
+  margin: $hse-legacy-spacing-10;
+  display: flex;
+}
+
+ul.itemThumbBook.publications img {
+  width: 100%;
+  max-width: 100px;
+}
+
+ul.itemThumbBook.publications figure,
+ul.itemThumbBook.publications img {
+  margin: 0;
+  padding: 0;
+}
+

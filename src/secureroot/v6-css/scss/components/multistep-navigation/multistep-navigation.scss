@@ -1,0 +1,51 @@
+// Multi step nav
+
+.hse-contents-list {
+margin-bottom: $hse-legacy-spacing-20;
+}
+  
+  .multistep--columns-two {
+    width: 100%;
+    @media only screen and (min-width: $desktop) {
+      column-count: 2;
+      width: 620px !important;
+    }
+  }
+  
+  ol.multistep.multistep--dashed {
+    list-style-type: none;
+    position: relative;
+    width: 100%;
+  }
+  
+  ol.multistep.multistep--dashed li,
+  ul.multistep.multistep--dashed li {
+    padding-left: $hse-legacy-spacing-10;
+  }
+  
+  ul.multistep li::before,
+  ol.multistep.multistep--dashed li::before {
+    content: "—";
+    position: absolute;
+    color: $color_hse-grey-3;
+    left: 0;
+    width: $hse-legacy-spacing-20;
+    overflow: hidden;
+  }
+  
+  .multistep {
+    width: 100%;
+    @media only screen and (min-width: $desktop) {
+      width: 310px;
+    }
+    margin: 0;
+  }
+  
+  ol.multistep li {
+    margin-left: 15px;
+    padding-top: 7.5px;
+    @media only screen and (min-width: $desktop) {
+      padding-top: 2.5px;
+    }
+    clear: both;
+  }

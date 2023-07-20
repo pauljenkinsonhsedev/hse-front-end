@@ -1,0 +1,74 @@
+
+
+.hse-cookie-banner {
+  padding: 20px 0;
+  background: #eee;
+}
+
+
+
+
+
+#cookieContainer p a {
+    // color: $hse-focus-color;
+    text-decoration: underline;
+  }
+  
+  #cookieContainer p a:hover {
+    text-decoration: none;
+  }
+
+  
+  #cookieContainer button:hover {
+    cursor: pointer;
+  }
+  
+  .cookies-message__actions {
+    margin-top: $dp * 3;
+  }
+  
+  .cookies-message-accepted,
+  .cookies-message-rejected {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  
+    p,
+    .btn {
+      margin: 0;
+    }
+  }
+  
+  .cookies-message__heading {
+    font-weight: 700;
+    margin-bottom: 10px !important;
+    @include type-setting(2);
+    @media only screen and (max-width: $desktop) {
+      @include type-setting(3);
+    }
+    line-height: 1.5;
+    margin-bottom: 0;
+  }
+  
+  .cookies-message__copy {
+    p {
+      @include type-setting(0);
+      line-height: 1.5;
+    }
+  }
+  
+  .cookies-message__link {
+    margin-bottom: 0;
+  }
+
+  .v6-span-heading1 {
+    color: $black;
+    font-size: 2em;
+    padding: 0;
+    margin-bottom: 10px;
+  }
+
+  #cookieNotify p {
+    color: $black;
+    // font-size: 1.1em;
+  }

@@ -13,7 +13,7 @@ export function loadPicturefillFn() {
     }
 
     return Promise.all([
-        load.js(path + '/assets/v5-js/vendor/picturefill/picturefill.min.js'),
+        load.js(path + '/assets/v6-js/vendor/picturefill/picturefill.min.js'),
     ])
     .catch((err) => {
         console.error(`Error initiating picturefill: ${err}`);

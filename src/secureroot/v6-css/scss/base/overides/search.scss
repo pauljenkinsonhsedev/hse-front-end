@@ -1,0 +1,83 @@
+
+
+
+#globalSearch,
+#globalSearchIntranet {
+  width: auto;
+}
+.ie7 #globalSearch,
+.ie7 #globalSearchIntranet {
+  width: 26em;
+}
+#globalSearch input,
+#globalSearchIntranet input {
+  width: 15em;
+  margin: 0;
+  float: left;
+}
+#globalSearch label,
+#globalSearchIntranet label {
+  color: #fff;
+}
+#globalSearch input.button,
+#globalSearchIntranet input.button {
+  width: 5em;
+  float: right;
+  margin: 0 0 0 1em !important;
+}
+#sitesearchContainer {
+  width: auto;
+  margin: 0.5em 0 0 0;
+  clear: both;
+  float: left;
+}
+#sitesearchContainer input {
+  width: auto;
+}
+#sitesearchContainer .sitesearchScope {
+  float: left;
+  margin-bottom: 3px;
+  overflow: hidden;
+  line-height: 0.9em !important;
+}
+#sitesearchContainer .sitesearchScope label {
+  float: left;
+  color: #fff;
+  margin-left: 5px;
+  padding: 0;
+}
+#sitesearchContainer .sitesearchScopePadding {
+  margin: 0 0 0 $hse-legacy-spacing-10;
+}
+.sitesearchScope input {
+  height: 14px;
+  padding: 0;
+}
+
+  #globalSearch td,
+  #globalSearchMobile td {
+    border: hidden;
+    background-color: transparent;
+  }
+  .gsc-branding,
+  .gsc-clear-button {
+    display: none;
+  }
+  #globalSearch input.gsc-search-button {
+    width: 5em;
+  }
+  #globalSearch input.gsc-input {
+    border-top: #444 2px solid;
+    border-right: #f7f7f7 2px solid;
+    border-bottom: #f7f7f7 2px solid;
+    border-left: #444 2px solid;
+  }
+  #globalSearch table.gsc-search-box td.gsc-input {
+    padding: 0 5px 0 0;
+  }
+  .gstl_50 {
+    margin: 0 !important;
+  }
+  .gsc-search-button-v2 svg {
+    fill: #333 !important;
+  }

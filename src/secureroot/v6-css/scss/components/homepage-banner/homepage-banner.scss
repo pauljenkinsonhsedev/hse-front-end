@@ -1,0 +1,121 @@
+// Homepage banner
+
+
+
+.hse-section {
+&:first-of-type {
+ margin-top: $hse-legacy-spacing-20;
+}
+&:last-of-type {
+margin-bottom: 0; 
+}
+
+}
+
+.hse-section--homepage {
+  margin-bottom: $hse-legacy-spacing-20;
+  &:last-of-type {
+    border-bottom: none;
+  }
+}
+
+.hse-section--homepage {
+border-bottom: 2px solid $color_hse-red;
+&:first-of-type {
+@include mq($until: desktop) {
+border: none;
+}
+}
+}
+
+
+.homepageBanner {
+    padding: 0;  
+    @media only screen and (min-width: $desktop) {
+      margin-bottom: 0;
+      a {
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+      }
+    }
+  }
+  
+  .homepageBanner {
+    overflow: hidden;
+    @include mq($from: hse-desktop) {
+      max-height: 258px !important;
+    }
+  }
+  
+  .homepageBanner a {
+    width: 100%;
+  }
+  
+  .homepageBannerInner {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    padding: $hse-legacy-spacing-20;
+    order: 2;
+  
+    overflow: hidden;
+  
+    @media only screen and (min-width: 600px) {
+      order: 1;
+    }
+  }
+  
+  .homepageBannerImage {
+    order: 1;
+    @include mq($from: tablet) {
+    max-height: 258px;
+    }
+    @media only screen and (min-width: 600px) {
+      order: 2;
+      overflow: hidden;
+    }
+  
+    @include mq($until: desktop) {
+      width: 100%;
+    }
+  }
+
+  .homepageBannerImage img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .coronaPoster {
+    background-color: #3272b2;
+    font-weight: 100;
+    letter-spacing: 1px;
+  
+    h2 {
+      margin-bottom: 5px;
+      color: $color_hse-white;
+    }
+  
+    a p {
+      font-size: 22px;
+      line-height: 1.5;
+      font-weight: normal;
+      text-decoration: none;
+      color: #ffffff;
+    }
+  
+    a:link,
+    a:hover,
+    a:visited,
+    a:active {
+      text-decoration: none;
+      color: #ffffff;
+    }
+  }
+  
+  .stayAlertBanner {
+    margin-top: auto;
+    align-items: flex-end;
+  }

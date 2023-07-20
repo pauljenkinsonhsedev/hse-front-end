@@ -1,5 +1,5 @@
 export function backLinks() {
-  const breadCrumbs = document.querySelectorAll('.breadCrumbContainer ol li a');
+  const breadCrumbs = document.querySelectorAll('.hse-breadcrumb ol li a');
 
   if (breadCrumb) {
     const lastItem = [ ...breadCrumbs ].pop();

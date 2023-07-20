@@ -1,0 +1,124 @@
+/* Notification bar */
+
+.notification-banner {
+  background-color: $color_hse-grey-4;
+  width: 100%;
+  height: auto;
+  float: left;
+  font-size: 16px;
+  border-bottom: 2px solid $color_hse-red;
+  line-height: normal !important;
+}
+
+.notification-banner.global {
+  background-color: $color_hse-grey-1;
+  border-bottom: 2px solid $hse-focus-color;
+}
+
+.notification-banner p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.notification-banner.global p {
+  color: white;
+}
+
+.notification-banner.global p a {
+  color: $hse-focus-color;
+  text-decoration: underline;
+}
+
+.notification-banner.global p a:hover,
+.notification-banner.global p a:focus {
+  text-decoration: none;
+  background: $hse-focus-color;
+  color: $black;
+}
+
+.notification-banner button {
+  padding: 0;
+}
+
+.notification-banner button:hover {
+  text-decoration: none;
+}
+
+.notification-banner button {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.brexit-icon {
+  float: left;
+}
+
+.notification-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  margin-top: $hse-legacy-spacing-10;
+  margin-bottom: $hse-legacy-spacing-10;
+  padding: $hse-legacy-spacing-10 5%;
+  @media only screen and (min-width: 980px) {
+    padding: 0;
+    width: $full-width;
+    margin-top: $hse-legacy-spacing-20;
+    margin-bottom: $hse-legacy-spacing-20;
+    // float: none;
+  }
+}
+
+.notification-container p {
+  margin: 0;
+}
+
+.notification-container img {
+  float: left;
+  margin-right: $hse-legacy-spacing-20;
+}
+
+.notification-message {
+  margin: 0;
+  float: left;
+}
+
+.notification-call-to-action {
+  display: block;
+  width: 100%;
+  @media only screen and (min-width: 980px) {
+    margin-left: 54px;
+  }
+}
+
+.notification-message img {
+  @media only screen and (max-width: 979px) {
+    display: none;
+  }
+  @media only screen and (min-width: 980px) {
+    margin-right: $hse-legacy-spacing-20;
+    float: left;
+  }
+}
+
+// .notification-hide, .notification-banner.global .notification-hide
+// {
+// background: none;
+// border: none;
+// float: right;
+// margin-top: 10px;
+// @media only screen and (min-width : 980px) {
+// position: relative;
+// right: 0;
+// top: 0;
+// margin-bottom: $hse-legacy-spacing-20;
+// }
+// }
+
+.notification-bar-title {
+  font-weight: bold;
+  vertical-align: top !important;
+  width: 100%;
+}
+/* Notification bar end */

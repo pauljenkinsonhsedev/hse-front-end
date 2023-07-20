@@ -50,7 +50,7 @@ function watchTask() {
   );
 
   // const hseImages = watch(
-  //     [config.secureroot.v4.all, config.secureroot.v4homepage.all, config.secureroot.v5.all],
+  //     [config.secureroot.v4.all, config.secureroot.v4homepage.all, config.secureroot.v6.all],
   //     series('hseImages', )
   // );
 }

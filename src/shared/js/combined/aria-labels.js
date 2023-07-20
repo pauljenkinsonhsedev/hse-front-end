@@ -73,14 +73,20 @@ export function ariaLabels() {
     gscSearch.setAttribute("role", "search");
   }
 
-  const article = document.querySelector("#article");
-  if (article) {
-    article.setAttribute("role", "article");
-  }
-
   const asideBottom = document.querySelector("#asideBottom");
   if (asideBottom) {
     asideBottom.setAttribute("role", "complementary");
+  }
+
+  const sidebarAside = document.querySelector("#sidebarAside");
+  if (sidebarAside) {
+    sidebarAside.setAttribute("role", "complementary");
+  }
+
+
+  const aside = document.querySelector("#contentAside");
+  if (aside) {
+    aside.setAttribute("role", "complementary");
   }
 
   const micrositeHomepage = document.querySelector(

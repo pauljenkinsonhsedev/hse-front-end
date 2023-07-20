@@ -1,0 +1,22 @@
+// Background box colour
+.backgroundRed {
+    background-color: $color_hse-red !important;
+  }
+.backgroundGray {
+background-color: $color_hse-grey-4 !important;
+}
+
+.backgroundRed ul.listCaret li:before {
+    color: white;
+  }
+  
+.backgroundRed h2,
+.backgroundRed h3,
+.backgroundRed p {
+color: white;
+}
+
+.backgroundRed p,
+.backgroundRed ul li {
+  color: white !important;
+}

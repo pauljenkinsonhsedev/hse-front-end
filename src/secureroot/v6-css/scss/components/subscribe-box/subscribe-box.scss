@@ -1,0 +1,24 @@
+// Subscribe box
+
+.eBulletinButton {
+width: auto;
+max-width: 100px;
+font-size: 1em;
+padding: $hse-legacy-spacing-10;
+}
+
+.eBulletinButton:hover {
+cursor: pointer;
+background: $color_hse-grey-1;
+}
+
+.subscribe .form-group, .subscribe .btn, .subscribe fieldset {
+margin-bottom: 0;
+margin: 0 !important;
+}
+
+.subscribe .fieldset__heading {
+color: $black;
+}
+
+

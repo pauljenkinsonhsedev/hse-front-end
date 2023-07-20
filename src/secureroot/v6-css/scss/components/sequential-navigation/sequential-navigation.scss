@@ -1,0 +1,102 @@
+
+
+// Pagination
+
+#pagination {
+margin-bottom: $hse-legacy-spacing-20;
+}
+
+#pagination ul {
+  display: flex;
+  flex-direction: column;
+  @include mq($from: large-desktop) {
+  flex-direction: row;
+  }
+  }
+  
+  #pagination ul li {
+    list-style-image: none;
+  }
+
+  #pagination ul li a {
+  padding: $hse-legacy-spacing-10;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  text-decoration: none;
+  }
+  
+  #pagination ul,
+  #pagination ul li {
+    background: none;
+    margin: 0 !important;
+    padding: 0;
+  }
+  
+  // Top task pagination
+  
+  #pagination .next-page,
+  #pagination .previous-page {
+    width: 100%;
+    @media only screen and (min-width: $desktop) {
+      width: 50%;
+    }
+  }
+  
+  #pagination a span {
+    &:focus {
+      color: $color_hse-grey-1 !important;
+    }
+  }
+  
+  #pagination a:hover {
+    background-color: $color_hse-grey-4;
+  }
+  
+  .pagination-icon {
+    font-size: 2.167em;
+  }
+  
+  .pagination-text {
+    font-size: 1.167em;
+    text-decoration: underline;
+  }
+  
+  #pagination .next-page,
+  #pagination .previous-page {
+    @media only screen and (min-width: $desktop) {
+      margin-left: -10px;
+    }
+  }
+  
+  #pagination div:nth-child(2) {
+    @media only screen and (min-width: $desktop) {
+      margin-left: $hse-legacy-spacing-10;
+    }
+  }
+  
+  .next-page:hover .pagination-text,
+  .previous-page:hover .pagination-text {
+    text-decoration: none !important;
+    color: $color_hse-grey-1 !important;
+  }
+  
+  #pagination .previous-page a {
+    width: 100%;
+    padding: $hse-legacy-spacing-10;
+    @media only screen and (min-width: $desktop) {
+      padding-left: 0;
+    }
+  }
+  
+  #pagination .next-page a {
+    width: 100%;
+    padding: $hse-legacy-spacing-10;
+  }
+  
+  #pagination ul li:first-of-type a {
+    @media only screen and (min-width: $desktop) {
+      padding-left: 0;
+    }
+  }
+  

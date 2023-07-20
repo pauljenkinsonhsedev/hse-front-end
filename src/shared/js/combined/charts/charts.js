@@ -21,12 +21,12 @@ class ChartsDefault {
 
     loadChartsFn() {
         return Promise.all([
-            load.js(pathEnv + '/assets/v5-js/vendor/highcharts/highcharts.js'),
-            load.js(pathEnv + '/assets/v5-js/vendor/highcharts/highcharts-more.js'),
-            load.js(pathEnv + '/assets/v5-js/vendor/highcharts/data.js'),
-            load.js(pathEnv + '/assets/v5-js/vendor/highcharts/exporting.js'),
-            load.js(pathEnv + '/assets/v5-js/vendor/highcharts/accessibility.js'),
-            load.js(pathEnv + '/assets/v5-js/vendor/moment/moment.js'),
+            load.js(pathEnv + '/assets/v6-js/vendor/highcharts/highcharts.js'),
+            load.js(pathEnv + '/assets/v6-js/vendor/highcharts/highcharts-more.js'),
+            load.js(pathEnv + '/assets/v6-js/vendor/highcharts/data.js'),
+            load.js(pathEnv + '/assets/v6-js/vendor/highcharts/exporting.js'),
+            load.js(pathEnv + '/assets/v6-js/vendor/highcharts/accessibility.js'),
+            load.js(pathEnv + '/assets/v6-js/vendor/moment/moment.js'),
         ])
         .catch((err) => {
             console.error(`Error initiating charts: ${err}`);

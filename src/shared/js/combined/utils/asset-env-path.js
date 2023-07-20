@@ -6,11 +6,7 @@ const envPath = (function () {
 
   var pathArray = window.location.pathname.split("/");
 
-  console.log(pathArray);
-
   var thirdLevel = pathArray[3];
-
-  console.log(thirdLevel);
 
   if (window.location.href.match(/(?:\b|_)(?:livelive)(?:\b|_)/i)) {
     path =

@@ -1,0 +1,106 @@
+#headerLogo {
+font-size: 14px;
+}
+
+#menu {
+  margin-bottom: $hse-legacy-spacing-20;
+}
+
+#navigationContainer {
+width: $full-width;
+margin: 15px auto 0 auto;
+height: 33px;
+}
+
+
+
+#baseStrip p {
+vertical-align: baseline;
+color: #fff;
+}
+
+#gutter,
+#printBanner {
+display: none;
+}
+
+#lastUpdated {
+display: none;
+}
+
+
+  /* Footer */
+
+#footer h2 {
+  color: white;
+}
+
+
+
+.footer-links-container ul {
+list-style-type: none;
+margin: 0;
+}
+
+
+
+#baseStrip p {
+  @include type-setting(0);
+}
+
+
+#languagesDropdown-container {
+  width: 100%;
+}
+
+
+// Header
+
+#headerLogo {
+  line-height: 1.333em;
+  font-weight: 700;
+  font-family: Helvetica, Arial, sans-serif;
+  color: #fff;
+  margin: 0;
+  text-decoration: none;
+  a {
+    color: #fff;
+    display: block;
+    padding: 0;
+    width: 183px;
+    text-decoration: none !important;
+    display: flex;
+  }
+  svg {
+    padding-right: $hse-legacy-spacing-20;
+  }
+}
+
+@media only screen and (min-width: 980px) {
+  #headerLogo {
+    margin: 0 0 0.5em 0;
+  }
+}
+
+#navigationContainer {
+  height: 33px;
+}
+
+.navDropdown {
+  font-size: 1.1em !important;
+}
+
+
+
+
+
+// Cookie container
+
+// Print page
+#printGuide {
+  margin-top: $hse-legacy-spacing-20;
+}
+
+
+
+  

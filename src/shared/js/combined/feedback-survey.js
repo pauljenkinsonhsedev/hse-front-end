@@ -9,19 +9,21 @@ import { scrollPos } from "./utils/feedback-position";
 import { bowser } from "./bowser.js";
 
 export function feedbackSurvey() {
-  const container = document.querySelector(".feedback-container");
+  const container = document.querySelector(".hse-feedback");
 
   if (!container) {
     return;
   }
   const survey = document.querySelector(".feedback-survey");
 
-  const message = container.querySelector(".feedback-message");
+  const message = container.querySelector("#feedback-message");
+
+  const feedbackPrompt = container.querySelector(".hse-feedback__prompt");
 
   // Containers
-  const yesNoContainer = document.querySelector(".yes-no-container");
+  const yesNoContainer = document.querySelector(".hse-feedback__prompt-questions-answers");
   const reportProblemButtonContainer = document.querySelector(
-    ".report-a-problem-container"
+    ".hse-feedback__report-a-problem"
   );
 
   // Report a problem
@@ -110,7 +112,10 @@ export function feedbackSurvey() {
 
     const form = document.createElement("form");
 
+    const checkH1 = document.querySelector("h1");
+    if (checkH1) {
     const notFoundHeading = document.querySelector("h1").innerText;
+      
     const notFound = "404";
 
     if (notFoundHeading.includes(notFound)) {
@@ -118,13 +123,15 @@ export function feedbackSurvey() {
     } else {
       var notFoundTrue = "";
     }
+  }
+
 
     form.id = "report-problem-form-html";
     form.action = "https://www.hse.gov.uk/assets/asp/feedback.asp";
     form.method = "POST";
     form.autocomplete = "on";
 
-    const formFields = `<fieldset class="fieldset">
+    const formFields = `<fieldset class="report-a-problem-form__questions fieldset">
             <legend class="fieldset__legend">
                 <h2 class="fieldset__heading">Help us improve HSE.GOV.UK</h2>
             </legend>
@@ -139,7 +146,7 @@ export function feedbackSurvey() {
             </div>
         </fieldset>
         <div class="form-group js-hide" id="user-url"></div>
-        <fieldset>
+        <fieldset class="report-a-problem-form__hidden-fields fieldset">
             <input name="url" type="hidden" id="url" size="100" class="input input-text" value="${newURL}">
             <input name="ua" type="hidden" id="ua" size="100" class="input input-text" value="Browser name: ${browserName}, Browser version: ${browserVersion}, OS name: ${osName}, OS version: ${osVersion}, Platform type: ${platformType}, Platform vendor: ${platformVendor}">
             <input type="hidden" name="mailredirect" value="${newURL}">
@@ -159,15 +166,23 @@ export function feedbackSurvey() {
     //     form.submit();
     // }, false);
 
+    
     reportProblemForm.insertAdjacentElement("afterbegin", form);
-    reportProblemForm.insertAdjacentElement("beforebegin", action);
 
     reportProblemForm.classList.add("survey-in");
     reportProblemButtonContainer.classList.add("js-hide");
     yesNoContainer.classList.add("js-hide");
+    feedbackPrompt.classList.add("js-feedback-open");
+
     reportProblemForm.scrollIntoView({ behavior: "auto", block: "start" });
+    const reportProblemFormEnd = document.querySelector("#report-problem-form-html");
+    
+    reportProblemFormEnd.insertAdjacentElement("beforeend", action);
 
     // Form confirmation
+
+
+
 
     // Get page URL and encode
     const reportProblemPage = window.location.href;
@@ -213,7 +228,7 @@ export function feedbackSurvey() {
     reportProblemForm.classList.remove("survey-in");
     reportProblemButtonContainer.classList.remove("js-hide");
     yesNoContainer.classList.remove("js-hide");
-
+    feedbackPrompt.classList.remove("js-feedback-open");
     reportProblemForm.innerHTML = "";
     e.target.parentNode.removeChild(e.target);
   }

@@ -10,14 +10,14 @@
   "shared": {
     "js": {
       "vendor": "./src/shared/js/vendor/**/*.js",
-      "vendorOutput": "./secureroot/hseonline/website/livelive/secureroot/assets/v5-js/vendor",
+      "vendorOutput": "./secureroot/hseonline/website/livelive/secureroot/assets/v6-js/vendor",
       "all": "./src/shared/js/**/*.js",
       "entrypoint": [
-        "./src/shared/js/v5-main.js",
-        "./src/shared/js/v5-cookies.js"
+        "./src/shared/js/v6-main.js",
+        "./src/shared/js/v6-cookies.js"
       ],
-      "outputSecureroot": "./secureroot/hseonline/website/livelive/secureroot/assets/v5-js",
-      "outputdesignsystem": "./designsystem/assets/v5-js"
+      "outputSecureroot": "./secureroot/hseonline/website/livelive/secureroot/assets/v6-js",
+      "outputdesignsystem": "./designsystem/assets/v6-js"
     }
   },
   "secureroot": {
@@ -37,16 +37,16 @@
       "output": "./secureroot/hseonline/website/livelive/secureroot"
     },
     "scripts": {
-      "all": ["./src/secureroot/v5-scripts/slinky-ie11-fix.js"],
-      "entry": "./src/secureroot/v5-js/v5-footer.js",
-      "output": "./secureroot/hseonline/website/livelive/secureroot/assets/v5-js"
+      "all": ["./src/secureroot/v6-scripts/slinky-ie11-fix.js"],
+      "entry": "./src/secureroot/v6-js/v6-footer.js",
+      "output": "./secureroot/hseonline/website/livelive/secureroot/assets/v6-js"
     },
     "styles": {
-      "all": "./src/secureroot/v5-css/scss/**/*.scss",
-      "entry": "./src/secureroot/v5-css/scss/v5.scss",
-      "output": "./secureroot/hseonline/website/livelive/secureroot/assets/v5-css/",
-      "vendor": "./src/secureroot/v5-css/vendor/**/*.css",
-      "vendorOutput": "./secureroot/hseonline/website/livelive/secureroot/assets/v5-css/vendor/"
+      "all": "./src/secureroot/v6-css/scss/**/*.scss",
+      "entry": "./src/secureroot/v6-css/scss/v6.scss",
+      "output": "./secureroot/hseonline/website/livelive/secureroot/assets/v6-css/",
+      "vendor": "./src/secureroot/v6-css/vendor/**/*.css",
+      "vendorOutput": "./secureroot/hseonline/website/livelive/secureroot/assets/v6-css/vendor/"
     },
     "images": {
       "v4": {
@@ -59,17 +59,17 @@
         "entry": "./src/secureroot/v4-homepage/",
         "output": "./secureroot/hseonline/website/livelive/secureroot/assets/v4-homepage/"
       },
-      "v5": {
-        "all": "./src/secureroot/v5-images/**/*.+(png|jpg|jpeg|gif|svg|ico)",
-        "entry": "./src/secureroot/v5-images/",
-        "output": "./secureroot/hseonline/website/livelive/secureroot/assets/v5-images/"
+      "v6": {
+        "all": "./src/secureroot/v6-images/**/*.+(png|jpg|jpeg|gif|svg|ico)",
+        "entry": "./src/secureroot/v6-images/",
+        "output": "./secureroot/hseonline/website/livelive/secureroot/assets/v6-images/"
       }
     }
   },
   "designsystem": {
     "output": "./designsystem",
     "styles": {
-      "output": "./designsystem/assets/v5-css"
+      "output": "./designsystem/assets/v6-css"
     },
     "markup": {
       "all": "./src/designsystem/html/**/*.+(htm|html)",
@@ -90,18 +90,18 @@
         "entry": "./src/secureroot/v4-homepage/",
         "output": "./designsystem/assets/v4-homepage/"
       },
-      "v5": {
-        "all": "./src/secureroot/v5-images/**/*.+(png|jpg|jpeg|gif|svg|ico)",
-        "entry": "./src/secureroot/v5-images/",
-        "output": "./designsystem/assets/v5-images/"
+      "v6": {
+        "all": "./src/secureroot/v6-images/**/*.+(png|jpg|jpeg|gif|svg|ico)",
+        "entry": "./src/secureroot/v6-images/",
+        "output": "./designsystem/assets/v6-images/"
       }
     },
     "scripts": {
-      "output": "./designsystem/assets/v5-js"
+      "output": "./designsystem/assets/v6-js"
     },
     "copyjs": {
-      "all": "./src/secureroot/copy/assets/v5-js/**/*",
-      "output": "./designsystem/assets/v5-js"
+      "all": "./src/secureroot/copy/assets/v6-js/**/*",
+      "output": "./designsystem/assets/v6-js"
     },
     "copyAll": {
       "all": "./src/secureroot/copy/assets/**/*",

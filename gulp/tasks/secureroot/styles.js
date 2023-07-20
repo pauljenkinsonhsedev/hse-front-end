@@ -2,7 +2,7 @@
 
 import { src, dest, task } from "gulp";
 import * as config from "../../config.json";
-import sass from "gulp-sass";
+import sass from "gulp-dart-sass";
 import connect from "gulp-connect";
 import sourcemaps from "gulp-sourcemaps";
 import autoprefixer from "gulp-autoprefixer";
@@ -29,7 +29,7 @@ if (isDev) {
   output = config.designsystem.styles.output;
 }
 
-sass.compiler = require("node-sass");
+sass.compiler = require("sass");
 
 function hseStyles() {
   return src(config.secureroot.styles.entry)
@@ -44,7 +44,7 @@ function hseStyles() {
     .pipe(autoprefixer({ grid: true }))
     .pipe(sourcemaps.write())
     .pipe(pxtorem())
-    .pipe(rename("v5.min.css"))
+    .pipe(rename("v6.min.css"))
     .pipe(mode.development(sourcemaps.write()))
     .pipe(connect.reload())
     .pipe(dest(output));

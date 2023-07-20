@@ -1,0 +1,35 @@
+.js-enabled .chart table,
+.js-enabled .datacontent__subtitle,
+.js-enabled .datacontent__title,
+.js-enabled .datacontent__description {
+    display: none;
+}
+
+.chart {
+    position: relative;
+    border: 1px solid #e0e0e0;
+    padding: 8px;
+    background-color: $color_hse-white;
+
+    min-height: 400px;
+    margin-bottom: 1rem;
+
+    &[data-chart-type="bar"] {
+        min-height: 700px;
+    }
+}
+
+.highcharts-root {
+    font-family: 'Arial, Helvetica, sans-serif';
+    font-size: '0.7rem';
+    font-weight: 'regular';
+}
+
+.highcharts-caption {
+    *{
+        font-family: inherit;
+        font-size: inherit;
+        color: inherit;
+        white-space: inherit;
+    }
+}

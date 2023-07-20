@@ -1,0 +1,75 @@
+/* A-Z lists */
+
+.boxAtoZ {
+    margin: 0 0 $hse-legacy-spacing-20 0 !important;
+    padding: 0 !important;
+  }
+  
+  ul.alphabetList {
+    margin: 0 !important;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  
+  ul.alphabetList li {
+    list-style-type: none;
+    background: none;
+    padding-left: 0 !important;
+    margin: 0 $hse-legacy-spacing-10 $hse-legacy-spacing-10 0;
+  }
+  
+  ul.alphabetList li.empty span {
+    display: block;
+    font-weight: bold;
+    font-size: large;
+    border: 2px solid #f3f3f3;
+    padding: $hse-legacy-spacing-10 14px;
+    text-align: center;
+    background-color: #fff;
+    color: #333;
+  }
+  
+  ul.alphabetList li a {
+    display: block;
+    font-weight: bold;
+    font-size: large;
+    border: 2px solid #f3f3f3;
+    padding: $hse-legacy-spacing-10 14px;
+    text-align: center;
+    background-color: #fff;
+  }
+  
+  ul.alphabetList li a:hover {
+    background-color: $color_hse-red;
+    color: white !important;
+    text-decoration: none !important;
+  }
+  
+  .AtoZSelected {
+    color: #000 !important;
+    background-color: #d5d5d5 !important;
+    border: 1px solid #e90542 !important;
+  }
+  
+  dl.dlpretty {
+    margin-top: 15px;
+  }
+  
+  // A-Z list
+  
+  .listAtoZ {
+    clear: both;
+  }
+  
+  .listAtoZ h2 {
+    display: inline-block;
+    background-color: $color_hse-red;
+    color: white;
+    padding: $hse-legacy-spacing-10 14px;
+  }
+  
+  .listAtoZ ul li {
+    background: none;
+  }
+  
