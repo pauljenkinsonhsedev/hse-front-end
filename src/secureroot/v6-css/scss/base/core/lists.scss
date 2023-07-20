@@ -204,20 +204,20 @@ dl.inline dt {
   margin: 0 0 10px 15px;
 }
 
-dl {
-display: grid;
-grid-template-columns: max-content auto;
+.box dl {
+margin: 0;
 }
 
 dt {
-grid-column-start: 1;
 font-weight: bold;
 padding-right: $hse-legacy-spacing-10;
+box-sizing: border-box;
+float: left;
+clear: left;
+padding-right: 5px;
+margin-top: 0;
 }
 
-dd {
-grid-column-start: 2;
-}
 
 dl.document {
   align-items: center;
