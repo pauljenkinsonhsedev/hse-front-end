@@ -73,7 +73,7 @@
     &:focus {
     color: $color_hse-black !important;
     }
-    &:visited {
+    &:link, &:visited {
     color: $color_hse-white;    
     }
     }
