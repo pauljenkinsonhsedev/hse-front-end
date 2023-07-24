@@ -48,7 +48,6 @@
     font-weight: normal;
     position: relative;
     display: block;
-    box-sizing: border-box;
     padding: 10px;
     clear: both;
     width: 100%;
@@ -140,14 +139,14 @@
     border-top: 3px solid $color_hse-red;
     content: "";
     display: block;
-    height: 7px;
+    height: 10px;
     position: absolute;
     right: 10px;
     top: 18px;
     -webkit-transform: translateY(0) rotate(45deg) scale(1);
     -ms-transform: translateY(0) rotate(45deg) scale(1);
     transform: translateY(0) rotate(45deg) scale(1);
-    width: 7px;
+    width: 10px;
   }
   .hse-card--chevron h3 {
    margin: 0;
