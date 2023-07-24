@@ -1,9 +1,15 @@
 export function mediaQuery() {
   let result;
 
-  const small = '375';
-  const medium = '800';
-  const large = '980';
+  const small = '320';
+  const medium = '641';
+  const large = '769';
+
+  // match sass-mq breakpoints
+  // const mobile = '320';
+  // const tablet = '641';
+  // const desktop = '769';
+  // const largeDesktop = '990';
 
   const smallDeviceQuery = window.matchMedia(`(min-width: ${small}px)`);
   const mediumDeviceQuery = window.matchMedia(`(min-width: ${medium}px)`);
