@@ -86,13 +86,9 @@ margin-right: 10px;
 .feedback-survey,
 .report-a-problem-form {
   width: 100%;
-  box-sizing: border-box;
   position: relative;
   overflow-y: hidden;
   float: left;
-  * {
-    box-sizing: border-box;
-  }
   display: none;
 
   &.survey-in {

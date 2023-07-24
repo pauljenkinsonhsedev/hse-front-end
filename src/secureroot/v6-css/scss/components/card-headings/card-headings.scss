@@ -31,7 +31,6 @@
   .columnsList li {
     background: none;
     padding: 0;
-    box-sizing: border-box;
     list-style-image: none !important;
     @include mq($from: tablet) {
       background: none;
@@ -76,7 +75,6 @@
     .hse-card-group .hse-grid-column-one-third li {
     background: none;
     padding: 0;
-    box-sizing: border-box;
     list-style-image: none !important;
     @include mq($from: tablet) {
       background: none;

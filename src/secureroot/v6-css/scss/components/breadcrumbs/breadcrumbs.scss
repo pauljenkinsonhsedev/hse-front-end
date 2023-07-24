@@ -35,7 +35,7 @@ display: none;
     background-position: bottom;
     float: left;
     top: 2px;
-    padding-right: 4px;
+    margin-right: 4px;
     position: relative;
     width: 17px;
     height: 17px;
@@ -71,7 +71,6 @@ margin: 0;
   }
   
   .backto {
-    box-sizing: border-box;
     padding-top: 10px;
     margin: 0;
     display: inline-block;

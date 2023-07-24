@@ -156,7 +156,6 @@ img.responsiveImg {
 // v6
 
 .v6-figure {
-  float: left;
   width: auto !important;
   margin-bottom: $hse-legacy-spacing-20;
   width: auto;
@@ -168,11 +167,8 @@ img.responsiveImg {
 }
 
 .v6-figure img {
-  float: left;
-  @media only screen and (max-width: 500px) {
-    width: 100%;
-    height: auto;
-  }
+  display: block;
+  width: 100%;
 }
 
 .v6-figure.full-width,
@@ -182,9 +178,8 @@ img.responsiveImg {
 }
 
 .v6-figure figcaption {
-  float: left;
   width: 100%;
-  padding: 10px;
+  padding: $hse-legacy-spacing-10;
   background-color: $color_hse-grey-1;
   color: white;
   clear: both;
@@ -201,4 +196,5 @@ img.responsiveImg {
 .v6-figure figcaption.fix {
   max-width: fit-content;
 }
+
 

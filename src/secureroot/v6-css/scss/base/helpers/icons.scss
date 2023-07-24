@@ -5,10 +5,9 @@
     background-image: url("../../assets/v6-images/icons/svg/solid/arrow-right-red.svg");
     background-repeat: no-repeat;
     display: inline-block;
-    padding-right: 5px;
+    margin-right: 5px;
     width: 16px;
     height: 16px;
-    margin: 0;
   }
   
 .hse-section p.moreLink a:hover::before {
@@ -16,21 +15,19 @@
     background-image: url("../../assets/v6-images/icons/svg/solid/arrow-right-black.svg");
     background-repeat: no-repeat;
     display: inline-block;
-    padding-right: 5px;
+    margin-right: 5px;
     width: 16px;
     height: 16px;
-    margin: 0;
   }
   
-  #contentContainer .columnFull .backgroundRed p.moreLink a::before {
+  .backgroundRed p.moreLink a::before {
     content: " ";
     background-image: url("../../assets/v6-images/icons/svg/solid/arrow-right-white.svg");
     background-repeat: no-repeat;
     display: inline-block;
-    padding-right: 5px;
+    margin-right: 5px;
     width: 16px;
     height: 16px;
-    margin: 0;
   }
   
   // Social
@@ -82,10 +79,9 @@
     background-image: url("../../assets/v6-images/icons/svg/solid/print.svg");
     background-repeat: no-repeat;
     display: inline-block;
-    padding-right: 5px;
+    margin-right: 5px;
     width: 16px;
     height: 16px;
-    margin: 0;
   }
   
   .menu-button span::before,
@@ -130,8 +126,7 @@
     display: inline-block;
     width: 30px;
     height: 30px;
-    padding-left: 5px;
-    margin: 0;
+    margin-left: 5px;
   }
   
   #contentContainer #pagination .previous-page .pagination-icon::before {
@@ -143,8 +138,7 @@
     display: inline-block;
     width: 30px;
     height: 30px;
-    padding-right: 5px;
-    margin: 0;
+    margin-right: 5px;
   }
   
 
@@ -162,7 +156,6 @@
     top: 3px;
     width: 16px;
     height: 16px;
-    padding-right: $hse-legacy-spacing-10;
-    margin: 0;
+    margin-right: $hse-legacy-spacing-10;
   }
   
