@@ -50,7 +50,6 @@
     &:link, &:visited {
     color: $color_hse-black;
     }
-    box-sizing: border-box;
     border-bottom: 1px solid $color_hse-grey-3;
     @include mq($from: desktop) {
       background-image: none;

@@ -92,7 +92,6 @@ $_hse-grid-widths: (
 
 @mixin govuk-grid-column($width: full, $float: left, $at: desktop, $class: "hse-grid-column") {
   .#{$class}-#{$width} {
-    box-sizing: border-box;
     padding: 0 $hse-gutter-half;
     @if $at != desktop {
       width: 100%;
