@@ -1,12 +1,33 @@
-@import "margins.scss"; // Margins has to come first
-@import "abbr.scss";
-@import "headings.scss";
-@import "lists.scss";
-@import "links/links.scss";
-@import "links/more-links.scss";
-@import "utilities/_all.scss";
-@import "elements/_all.scss";
+//*-----------------------------------*//
+// #CORE
+//*-----------------------------------*//
+
+// Settings
+@import "settings/_all.scss";
+
+// Tools
+
+@import "tools/_all.scss";
+
+// Generic
+
 @import "generic/box-sizing.scss";
+
+// Elements
+
+@import "elements/_all.scss";
+
+// Objects
+
+@import "objects/_all.scss";
+
+// Styles
+
+@import "styles/_all.scss";
+
+// Utilities
+
+@import "utilities/_all.scss";
 
 
 
