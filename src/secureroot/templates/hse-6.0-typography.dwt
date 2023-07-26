@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en-GB"><head>
+	
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- TemplateBeginMultipleIf -->
+<!-- TemplateBeginIfClause cond="noIndex == true" -->
+<meta name="robots" content="noindex, nofollow">
+<!-- TemplateEndIfClause -->
+<!-- TemplateEndMultipleIf -->
+
+<script src="../assets/v6-js/v6-cookies.js"></script>
+<!-- Anti-flicker snippet (recommended) If installing optimise with GTM, specifcy GTM container ID  -->
+<style>
+.async-hide { opacity: 0 !important }
+</style>
+
+<script>
+if (Cookies.get('optInGoogleTracking') === 'true') {
+(function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
+h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
+(a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
+})(window,document.documentElement,'async-hide','dataLayer',4000,
+{'GTM-PJPWMNL':true});
+}
+</script>
+  
+<!-- TemplateBeginMultipleIf -->
+  
+<!-- TemplateBeginIfClause cond="contentGroup != 'default'" -->
+<!-- Content groups GTM -->
+<script>
+window.dataLayer = window.dataLayer || [];
+window.dataLayer.push({'content_group': '@@(_document['contentGroup'])@@'});
+</script>	
+<!-- TemplateEndIfClause -->
+  
+  
+<!-- TemplateBeginIfClause cond="contentType != 'default'" -->
+<meta name="HSE.contentType" content="@@(contentType)@@">
+<!-- TemplateEndIfClause -->
+  
+<!-- TemplateEndMultipleIf -->  
+  
+  
+<!-- Google Tag Manager -->
+
+<script>
+      if (Cookies.get('optInGoogleTracking') === 'true') {
+        (function (w, d, s, l, i) {
+          w[l] = w[l] || [];
+          w[l].push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
+          var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s),
+            dl = l != 'dataLayer'
+              ? '&l=' + l
+              : '';
+          j.async = true;
+          j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+          f
+            .parentNode
+            .insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-PJPWMNL');
+
+        // Siteimprove analytics
+
+        /*<![CDATA[*/
+        (function() {
+        var sz = document.createElement('script'); sz.type = 'text/javascript'; sz.async = true;
+        sz.src = '//siteimproveanalytics.com/js/siteanalyze_6798.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(sz, s);
+        })();
+        /*]]>*/
+
+      }
+    </script>
+<!-- End Google Tag Manager -->
+	
+	
+<!-- TemplateBeginMultipleIf -->
+<!-- TemplateBeginIfClause cond="platform == 'v6'" -->
+<link rel="stylesheet" href="../assets/v6-css/v6.min.css"  media="screen,print">
+<link href="https://fonts.googleapis.com/css?family=Roboto:100,200,300,400,500,600,700,400italic&display=swap" rel="stylesheet">
+  
+<!-- TemplateEndIfClause -->
+<!-- TemplateEndMultipleIf -->
+
+<!-- Page title and meta -->
+
+<!-- TemplateBeginEditable name="doctitle" -->
+<title></title>
+<meta name="description" content="">
+<!-- TemplateEndEditable -->	
+
+<link rel="shortcut icon" href="../favicon.ico">
+<link rel="apple-touch-icon" href="../assets/v6-images/shared/apple-touch-icon.png">
+<link rel="home" href="../index.htm">
+<!-- TemplateBeginMultipleIf -->
+<!-- TemplateBeginIfClause cond="layout == 'sideNavigation'" -->
+<!-- ie 11 fix for left-hand navigation -->
+<script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
+<!-- TemplateEndIfClause -->
+<!-- TemplateEndMultipleIf -->
+</head>
+<body class="@@(_document['bodyClass'])@@  hse-template-@@(_document['layout'])@@">
+
+<!-- GTM -->
+
+<noscript>
+<iframe title="GTM-PJPWMNL" src="https://www.googletagmanager.com/ns.html?id=GTM-PJPWMNL" height="0" width="0" style="display:none;visibility:hidden" aria-hidden="true"></iframe>
+</noscript>
+
+<section id="top" aria-label="Skip to content">
+
+<!-- TemplateBeginMultipleIf -->
+<!-- TemplateBeginIfClause cond="weblite == false" -->
+	<a href="#contentContainer" class="skip">Skip to content</a>
+<!-- TemplateEndIfClause -->
+<!-- TemplateEndMultipleIf -->
+
+</section>
+
+<!-- TemplateBeginMultipleIf --> 
+<!-- TemplateBeginIfClause cond="platform == 'v6'"  -->
+
+<header id="headerContainer" class="hse-header">
+  <div id="header" class="hse-header__container">
+    <div class="hse-width-container hse-header__top-container headerTop js-header">
+	  <!-- TemplateBeginMultipleIf -->
+	  <!-- TemplateBeginIfClause cond="bodyClass != 'home'" -->
+      <div id="headerLogo" class="headerLogo hse-header__logo"><a href="../index.htm"><svg aria-hidden="true" width="45" height="46" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21.508 7.328V.984a.976.976 0 00-.975-.974H.03v.974h19.11l-3.897 3.912H.029v.974H14.29l-3.904 3.905H.029v.974H9.41l-.772.787a.982.982 0 00-.274.678.88.88 0 00.065.304l.722 2.114H.029v.982H9.41l1.314 3.904H.029v.975h13.67a.974.974 0 01.974.967v2.93H.029v.974h20.504a.975.975 0 00.974-.974v-8.25a.974.974 0 00-.974-.98h-2.952a.967.967 0 01-.952-.975.989.989 0 01.209-.6l4.46-5.622a.923.923 0 00.224-.591M43.953.984V.01H23.456a.975.975 0 00-.967.974v6.352a.924.924 0 00.224.591l4.518 5.695a.902.902 0 01.173.527.967.967 0 01-.953.974h-2.995a.974.974 0 00-.967.982v8.292a.968.968 0 00.967.975h20.497v-.975H29.31V21.51a.974.974 0 01.975-.974h13.67v-1.003H33.25l1.314-3.905h9.382v-.974h-9.05l.721-2.122c.034-.1.053-.205.058-.31a.945.945 0 00-.274-.679l-.78-.786h9.383v-.975H33.625l-3.897-3.904h14.225v-.975H28.725L24.856.984h19.097zM1.111 30.575c0-.664-.288-.981-1.111-1.003v-.44c1.06.072 1.992.144 2.887.144s1.826-.072 2.887-.144v.454c-.816 0-1.104.34-1.104 1.004v4.749h5.773v-4.764c0-.664-.288-.981-1.104-1.003v-.44c1.054.072 1.985.144 2.887.144.902 0 1.819-.072 2.887-.144v.454c-.816 0-1.104.34-1.104 1.004v12.565c0 .671.288.982 1.104 1.003v.455c-1.054-.072-1.992-.145-2.887-.145s-1.826.073-2.887.145v-.455c.816 0 1.104-.332 1.104-1.003v-5.514H4.67v5.514c0 .671.288.982 1.104 1.003v.455c-1.054-.072-1.992-.145-2.887-.145s-1.819.073-2.887.145v-.455c.823 0 1.111-.332 1.111-1.003v-12.58zm16.831 8.661c.477 2.62 2.317 3.84 4.886 3.84 1.444 0 3.457-.412 3.457-2.166 0-1.443-1.494-1.826-2.59-2.165l-1.704-.505c-2.447-.722-4.893-1.747-4.893-4.576 0-3.717 3.608-4.843 7.167-4.843a13.304 13.304 0 014.467.765c0 1.725.087 3.19.188 4.44h-.462c-.498-2.217-2.44-3.242-4.598-3.242-1.198 0-3.211.383-3.211 2.036 0 1.32 1.154 1.703 2.165 1.992l2.512.721c2.424.722 4.676 1.581 4.676 4.692 0 3.11-3.219 4.785-7.123 4.785a15.77 15.77 0 01-5.204-.859c0-1.891-.072-3.55-.188-4.944l.455.029zm15.113-8.48c0-.679-.288-.99-1.104-1.01v-.455h12.002c0 1.313.072 2.583.195 3.882h-.455c-.238-1.313-.57-1.775-1.869-1.775h-5.218v4.143h3.284c1.075 0 1.241-.361 1.386-1.213h.44a20.984 20.984 0 00-.144 2.266c.006.763.054 1.524.144 2.281h-.455c-.144-.859-.31-1.22-1.385-1.22h-3.284v4.72h5.485c1.292 0 1.696-.432 2.107-2.446h.6c-.217 1.97-.26 3.24-.29 4.554H31.937v-.447c.816 0 1.105-.347 1.105-1.01l.014-12.27z" fill="#fff"/></svg>Health and Safety<br>Executive</a></div>
+      <!-- TemplateEndIfClause -->
+      <!-- TemplateEndMultipleIf -->
+
+      <!-- TemplateBeginMultipleIf -->
+      <!-- TemplateBeginIfClause cond="bodyClass == 'home'" -->
+      <h1 id="headerLogo" class="headerLogo hse-header__logo"><a href="../index.htm"><svg aria-hidden="true" width="45" height="46" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21.508 7.328V.984a.976.976 0 00-.975-.974H.03v.974h19.11l-3.897 3.912H.029v.974H14.29l-3.904 3.905H.029v.974H9.41l-.772.787a.982.982 0 00-.274.678.88.88 0 00.065.304l.722 2.114H.029v.982H9.41l1.314 3.904H.029v.975h13.67a.974.974 0 01.974.967v2.93H.029v.974h20.504a.975.975 0 00.974-.974v-8.25a.974.974 0 00-.974-.98h-2.952a.967.967 0 01-.952-.975.989.989 0 01.209-.6l4.46-5.622a.923.923 0 00.224-.591M43.953.984V.01H23.456a.975.975 0 00-.967.974v6.352a.924.924 0 00.224.591l4.518 5.695a.902.902 0 01.173.527.967.967 0 01-.953.974h-2.995a.974.974 0 00-.967.982v8.292a.968.968 0 00.967.975h20.497v-.975H29.31V21.51a.974.974 0 01.975-.974h13.67v-1.003H33.25l1.314-3.905h9.382v-.974h-9.05l.721-2.122c.034-.1.053-.205.058-.31a.945.945 0 00-.274-.679l-.78-.786h9.383v-.975H33.625l-3.897-3.904h14.225v-.975H28.725L24.856.984h19.097zM1.111 30.575c0-.664-.288-.981-1.111-1.003v-.44c1.06.072 1.992.144 2.887.144s1.826-.072 2.887-.144v.454c-.816 0-1.104.34-1.104 1.004v4.749h5.773v-4.764c0-.664-.288-.981-1.104-1.003v-.44c1.054.072 1.985.144 2.887.144.902 0 1.819-.072 2.887-.144v.454c-.816 0-1.104.34-1.104 1.004v12.565c0 .671.288.982 1.104 1.003v.455c-1.054-.072-1.992-.145-2.887-.145s-1.826.073-2.887.145v-.455c.816 0 1.104-.332 1.104-1.003v-5.514H4.67v5.514c0 .671.288.982 1.104 1.003v.455c-1.054-.072-1.992-.145-2.887-.145s-1.819.073-2.887.145v-.455c.823 0 1.111-.332 1.111-1.003v-12.58zm16.831 8.661c.477 2.62 2.317 3.84 4.886 3.84 1.444 0 3.457-.412 3.457-2.166 0-1.443-1.494-1.826-2.59-2.165l-1.704-.505c-2.447-.722-4.893-1.747-4.893-4.576 0-3.717 3.608-4.843 7.167-4.843a13.304 13.304 0 014.467.765c0 1.725.087 3.19.188 4.44h-.462c-.498-2.217-2.44-3.242-4.598-3.242-1.198 0-3.211.383-3.211 2.036 0 1.32 1.154 1.703 2.165 1.992l2.512.721c2.424.722 4.676 1.581 4.676 4.692 0 3.11-3.219 4.785-7.123 4.785a15.77 15.77 0 01-5.204-.859c0-1.891-.072-3.55-.188-4.944l.455.029zm15.113-8.48c0-.679-.288-.99-1.104-1.01v-.455h12.002c0 1.313.072 2.583.195 3.882h-.455c-.238-1.313-.57-1.775-1.869-1.775h-5.218v4.143h3.284c1.075 0 1.241-.361 1.386-1.213h.44a20.984 20.984 0 00-.144 2.266c.006.763.054 1.524.144 2.281h-.455c-.144-.859-.31-1.22-1.385-1.22h-3.284v4.72h5.485c1.292 0 1.696-.432 2.107-2.446h.6c-.217 1.97-.26 3.24-.29 4.554H31.937v-.447c.816 0 1.105-.347 1.105-1.01l.014-12.27z" fill="#fff"/></svg>Health and Safety<br>Executive</a></h1>
+      <!-- TemplateEndIfClause -->
+      <!-- TemplateEndMultipleIf -->
+
+      <div id="globalSearch" class="desktop-gcs-search hse-header__search">
+		  <div class="gcse-searchbox-only" data-enable-history="true"></div>
+      </div>
+
+    </div>
+
+    <!-- JS Main Navigation -->
+
+    <div class="menuContainer hse-header__navigation-container">
+      <div class="hse-width-container">
+      <nav id="main-menu" class="hse-navigation menu js-menu">
+        <ul class="hse-navigation__navigation-list">
+          <li class="home hse-navigation__navigation-item">
+            <a class="hse-navigation__navigation-link" href="../index.htm">Home</a>
+          </li>
+          <li class="news hse-navigation__navigation-item">
+            <a class="hse-navigation__navigation-link" href="../news/index.htm">News</a>
+          </li>
+          <li class="guidance hse-navigation__navigation-item">
+            <a class="hse-navigation__navigation-link" href="../guidance/index.htm">Guidance</a>
+          </li>
+          <li class="abouthse hse-navigation__navigation-item">
+            <a class="hse-navigation__navigation-link" href="../aboutus/index.htm">About HSE</a>
+          </li>
+          <li class="hseBooks hse-navigation__navigation-item">
+            <a class="hse-navigation__navigation-link" href="https://books.hse.gov.uk/">Books</a>
+          </li>
+          <li class="freeUpdates hse-navigation__navigation-item">
+            <a class="hse-navigation__navigation-link" href="../news/subscribe/index.htm">Free
+            updates</a>
+          </li>
+          <li class="contact hse-navigation__navigation-item">
+            <a class="hse-navigation__navigation-link" href="../contact/index.htm">Contact</a>
+          </li>
+        </ul>
+      </nav>
+      </div>
+      
+  </div>
+
+  <!-- TemplateBeginMultipleIf -->
+  <!-- TemplateBeginIfClause cond="notificationBar == true" -->
+
+  <div id="notificationBanner" class="notification-banner">
+    <div class="notification-container fixed-container">
+
+    <!-- TemplateBeginEditable name="notification-message" --> 
+		
+    <!-- TemplateEndEditable -->
+
+    <button class="notification-hide">Hide&nbsp;message</button>
+		
+    </div>
+  </div>
+  <!-- TemplateEndIfClause -->
+  <!-- TemplateEndMultipleIf -->
+    
+    
+</div>
+   
+    
+</header>
+
+  <!-- TemplateEndIfClause -->
+  <!-- TemplateEndMultipleIf -->
+
+<!-- TemplateBeginMultipleIf -->
+<!-- TemplateBeginIfClause cond="bodyClass != 'home'" -->
+
+<nav id="breadCrumb"  class="hse-breadcrumb" aria-label="Previous pages:">
+  <div class="hse-breadcrumb__container hse-width-container">
+
+<!-- TemplateBeginEditable name="Breadcrumbs" -->
+    <ol class="hse-breadcrumb__list">
+      <li class="home"><a href="../index.htm">HSE</a></li>
+      <li>#1</li>
+      <li>#2</li>
+      <li>#3</li>
+    </ol>
+<!-- TemplateEndEditable -->
+  </div>
+  <div id="backTo" class="hse-breadcrumb__back">
+     <div class="hse-width-container">
+    <p class="backto"><a id="backnav" href="index.htm">Back to</a></p>
+     </div>
+  </div>
+</nav>
+<!-- TemplateEndIfClause -->
+<!-- TemplateEndMultipleIf -->
+
+
+<!-- TemplateBeginMultipleIf -->
+<!-- <main> variants -->
+<!-- TemplateBeginIfClause cond="layout == 'sideNavigation'" -->
+<!-- Includes page container for side navigation layout -->
+<main id="contentContainer" class="@@(_document['layout'])@@ hse-width-container">
+<!-- TemplateEndIfClause -->
+
+<!-- Welsh language -->
+<!-- TemplateBeginIfClause cond="welsh == false" -->
+<main id="contentContainer" class="@@(_document['layout'])@@">
+<!-- TemplateEndIfClause -->
+  
+<!-- TemplateBeginIfClause cond="welsh == true" -->
+  
+<!-- TemplateBeginEditable name="beta-survey-welsh" -->
+  
+<!-- TemplateEndEditable -->
+  
+<main id="contentContainer" class="@@(_document['layout'])@@" lang="cy">
+
+<!-- TemplateEndIfClause -->
+<!-- TemplateEndMultipleIf -->
+
+<!-- TemplateBeginMultipleIf -->
+<!-- TemplateBeginIfClause cond="infoBanner == true" -->
+  <section id="information-banner" class="information-banner hse-width-container" aria-label="Information" data-content="@@(_document['infoBannerContent'])@@">
+    <div class="information-banner__inner"></div>
+  </section>
+<!-- TemplateEndIfClause -->
+<!-- TemplateEndMultipleIf -->
+
+  
+<!-- TemplateBeginMultipleIf -->
+<!-- TemplateBeginIfClause cond="layout == 'sideNavigation'" -->
+  
+<!-- start grid row -->
+<div class="hse-grid-row">
+  
+<!-- start grid column (one-quarter and three-quarters) -->
+
+<div id="side-navigation" class="hse-side-navigation-container hse-grid-column-one-quarter">
+  
+<nav id="navSecondary" aria-label="Secondary" class="hse-side-navigation">
+	
+<button id="navSecondary-button" aria-pressed="false" aria-expanded="false" aria-controls="menu" class="btn btn-small btn-mobile" data-toggle="collapse" data-target=".collapse" data-text="Collapse"><span class="menu-mobile-text">Open menu</span><svg aria-hidden="true" tabindex="-1" data-menu-icon="menu" width="25px" height="25px" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg"><path id="menu-mobile-path" d="M6 8.1H19V6.9H6V8.1ZM6 18.1H19V16.9H6V18.1ZM6 13.1H19V11.9H6V13.1Z" fill="currentColor"></path></svg></button>
+
+<!-- TemplateBeginEditable name="Subnav" -->
+  <div id="menu" class="collapse">
+    <ul>
+      <li class="first"><a href="#">Microsite homepage</a></li>
+    </ul>
+  </div>
+  <!-- TemplateEndEditable --> 
+</nav>
+  
+</div>
+<!-- end grid column (one-quarter and three-quarters)  -->
+  
+<!-- Start grid column (three-quarters) -->
+
+<div id="page-contents" class="hse-grid-column-three-quarters hse-page-contents">
+  
+<article id="article">
+ 
+<!-- TemplateEndIfClause -->
+<!-- TemplateEndMultipleIf -->
+    
+  
+<!-- TemplateBeginMultipleIf -->
+  
+<!-- TemplateBeginIfClause cond="layout != 'topTask' && layout != 'twoThirdsOneThird' && layout != 'sideNavigation'" -->
+<!-- full width --> 
+
+<div id="pageContainer" class="@@(_document['platform'])@@ hse-width-container hse-page-contents--@@(_document['layout'])@@"> 
+
+<!-- TemplateEndIfClause -->
+
+<!-- TemplateBeginIfClause cond="layout == 'topTask' || layout == 'twoThirdsOneThird' " -->
+<!-- two-thirds / one-third --> 
+  
+<div id="pageContainer" class="@@(_document['platform'])@@  hse-width-container"> 
+
+<!-- TemplateBeginMultipleIf -->
+<!-- TemplateBeginIfClause cond="layout == 'topTask'" -->
+  
+<!-- start top grid row for 'Top task' layout -->
+<div class="hse-grid-row">
+  
+    <!-- start grid column (two-thirds) -->
+    <div class="hse-grid-column-two-thirds">
+	  <!-- TemplateBeginEditable name="heading1" -->
+      <h1>Title</h1>
+      <!-- TemplateEndEditable -->
+      <nav id="multistepNav" class="hse-contents-list" aria-label="Secondary">
+      
+	  <!-- TemplateBeginEditable name="multistepNav" -->
+        <ol class="multistep">
+          <li><a href="index.htm">Overview</a></li>
+          <li><a href="#">Page two</a></li>
+          <li><a href="#">Page three</a></li>
+        </ol>
+        <ol class="multistep" start="4">
+          <li><a href="#">Page four</a></li>
+          <li><a href="#">Page five</a></li>
+          <li><a href="#">Page six</a></li>
+        </ol>
+       <!-- TemplateEndEditable --> </nav>
+    </div>
+    <!-- end grid column (two-thirds) -->
+  
+    <!-- start grid column (one-third) -->
+    <div id="asideTop" class="hse-grid-column-one-third hse-sidebar-top"> 
+      <!-- TemplateBeginEditable name="asideTop" --> 
+      
+      <!-- TemplateEndEditable --> 
+    </div>
+    <!-- end grid column (one-third) -->
+  
+  </div> 
+<!-- End top grid row for 'Top task' -->
+
+    
+<!-- TemplateEndIfClause -->
+<!-- TemplateEndMultipleIf --> 
+
+<!-- start grid row for page contents -->
+<div class="hse-grid-row">
+  
+<!-- start grid column (two thirds) -->
+  
+<div id="page-contents" class="hse-grid-column-two-thirds hse-page-contents">
+  
+<!-- TemplateEndIfClause -->
+<!-- TemplateEndMultipleIf -->
+
+<!-- start page content -->
+  
+<!-- TemplateBeginMultipleIf -->
+<!-- TemplateBeginIfClause cond="layout == 'topTask' || layout == 'twoThirdsOneThird'" -->
+
+<article id="article">
+  
+<!-- TemplateEndIfClause -->
+<!-- TemplateEndMultipleIf -->
+
+
+<!-- TemplateBeginEditable name="content" -->
+	
+<!-- TemplateEndEditable -->
+  
+<!-- end page content -->
+
+  
+<!-- TemplateBeginMultipleIf -->
+<!-- TemplateBeginIfClause cond="layout == 'sideNavigation'" -->
+  
+  </article>
+  
+  </div> <!-- end grid column (three-quarters) -->
+  </div> <!-- end grid row -->
+  </main> <!-- end <main> -->
+  
+<!-- TemplateEndIfClause -->
+<!-- TemplateEndMultipleIf -->
+
+<!-- TemplateBeginMultipleIf -->
+<!-- TemplateBeginIfClause cond="layout == 'fullWidth'" -->
+  
+ </div> <!-- first main closed -->
+  
+<!-- TemplateEndIfClause -->
+<!-- TemplateEndMultipleIf -->
+
+  
+<!-- TemplateBeginMultipleIf -->
+<!-- TemplateBeginIfClause cond="layout == 'topTask' || layout == 'twoThirdsOneThird'" -->
+  
+<!-- TemplateBeginMultipleIf -->
+<!-- TemplateBeginIfClause cond="printGuide == true" -->
+
+<div role="note" aria-label="Printable version" class="printable-version"><p><a href="./print.htm">View a printable version of the whole guide</a></p></div>
+
+<!-- TemplateEndIfClause -->
+<!-- TemplateEndMultipleIf -->
+  
+</article>
+  
+</div> <!-- end grid column (two thirds) -->
+  
+
+
+<!-- Start sidebar (one-third) -->
+
+<div class="hse-grid-column-one-third hse-sidebar">
+<!-- TemplateBeginMultipleIf -->
+
+<!-- TemplateBeginIfClause cond="layout == 'topTask'" -->
+<aside id="sidebarAside" class="hse-sidebar__navigation">
+<!-- TemplateEndIfClause -->
+
+<!-- TemplateEndMultipleIf -->
+
+
+<!-- TemplateBeginEditable name="asideBottom" -->
+<!-- Related content -->
+<!-- TemplateEndEditable -->
+
+<!-- TemplateBeginMultipleIf -->
+
+<!-- TemplateBeginIfClause cond="layout == 'topTask'" -->
+</aside>
+<!-- TemplateEndIfClause -->
+<!-- TemplateEndMultipleIf -->
+
+</div>
+  
+<!-- End sidebar (one-third) -->
+
+<!-- TemplateEndIfClause -->
+<!-- TemplateEndMultipleIf -->
+    
+<!-- TemplateBeginMultipleIf -->
+<!-- TemplateBeginIfClause cond="layout == 'topTask' || layout == 'twoThirdsOneThird'" -->
+
+  </div> <!-- end grid row -->
+  </div> <!-- end page container -->
+  
+<!-- TemplateEndIfClause -->
+<!-- TemplateEndMultipleIf -->
+  
+<!-- TemplateBeginMultipleIf -->
+<!-- TemplateBeginIfClause cond="layout == 'fullWidth' || layout == 'topTask' || layout == 'twoThirdsOneThird'" -->
+  
+ </main> <!-- last main closed -->
+  
+<!-- TemplateEndIfClause -->
+<!-- TemplateEndMultipleIf -->
+  
+<!-- TemplateBeginMultipleIf -->
+<!-- TemplateBeginIfClause cond="feedback == true" -->
+  
+<!-- start feedback component -->
+
+<div class="hse-width-container">
+<section id="feedback" class="hse-feedback @@(_document['feedbackClass'])@@" aria-describedby="feedback-message" aria-label="Is this page useful">
+    <div class="hse-feedback__prompt">
+      <div class="hse-feedback__prompt-questions-answers">
+        <p class="hse-feedback__prompt-question" id="feedback-message"><strong>Is this page useful?</strong></p>
+        <div class="hse-feedback__prompt-answers">
+        <button class="btn btn-secondary" id="userYes">Yes</button>
+        <button class="btn btn-secondary" id="userNo">No</button>
+        </div>
+    </div>
+    <div class="hse-feedback__report-a-problem">
+		<button class="btn btn-secondary" id="report-problem-button">Report a problem with this page</button>
+    </div>
+      
+  <div class="report-a-problem-form"></div>
+      
+</div>
+  
+<!-- TemplateBeginMultipleIf -->
+<!-- TemplateBeginIfClause cond="survey == true" -->
+
+  <div class="feedback-survey">
+    <div class="feedback-survey__inner">
+	<!-- TemplateBeginEditable name="survey" -->
+
+	<!-- TemplateEndEditable --> </div>
+  </div>
+<!-- TemplateEndIfClause -->
+<!-- TemplateEndMultipleIf --> 
+  
+</section>
+</div>
+  
+  
+<!-- end feedback component -->
+
+<!-- TemplateEndIfClause -->
+<!-- TemplateEndMultipleIf -->
+  
+<!--start footer -->
+
+<footer id="footerContainer" class="hse-footer">
+
+
+<nav id="footer-nav" aria-label="Footer menu">
+<div class="hse-width-container">
+
+<div id="footer">
+  
+<h2 class="visually-hidden">Footer links</h2>
+<div class="hse-footer__navigation">
+<ul class="hse-footer__list">
+  <li class="hse-footer__list-item"><a class="hse-footer__list-item-link" href="../search/search-results.htm">Search</a></li>
+  <li class="hse-footer__list-item"><a class="hse-footer__list-item-link" href="../a-z/index.htm">A-Z</a></li>
+  <li class="hse-footer__list-item"><a class="hse-footer__list-item-link" href="../acronym/index.htm">Acronyms</a></li>
+  <li class="hse-footer__list-item"><a class="hse-footer__list-item-link" href="../copyright.htm">Copyright</a></li>
+  <li class="hse-footer__list-item"><a class="hse-footer__list-item-link" href="../cookies.htm">Cookies</a></li>
+  <li class="hse-footer__list-item"><a class="hse-footer__list-item-link" href="../privacy.htm">Privacy</a></li>
+  <li class="hse-footer__list-item"><a class="hse-footer__list-item-link" href="../accessibility.htm">Accessibility</a></li>
+  <li class="hse-footer__list-item"><a class="hse-footer__list-item-link" href="../foi/index.htm">Disclosure of information</a></li>
+  <li class="hse-footer__list-item"><a class="hse-footer__list-item-link" href="../report-vulnerability.htm">Vulnerability disclosure</a></li>
+</ul>
+</div>
+</div>
+  
+</div>
+  
+
+</nav>
+  
+<div id="baseStrip" class="hse-footer__base">
+  <div class="hse-width-container">
+    <div class="hse-footer__base-container">
+      <div class="hse-footer__base-inner">
+       <p>HSE aims to reduce work-related death, injury and ill health.</p>
+      </div>
+      <div class="hse-footer__languages">
+       <p class="hse-footer__languages-description"><a class="hse-footer__languages-link" href="../languages/index.htm">Information in other languages</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+  
+</footer>
+	
+<!-- end footer -->
+
+<section id="lastUpdated" aria-label="Last updated">
+<!-- TemplateBeginEditable name="updated" -->Updated:<!-- #BeginDate -->2023-03-16<!-- #EndDate --><!-- TemplateEndEditable -->
+</section>
+
+<script src="../assets/v6-js/v6-main.min.js"></script>
+
+<div id="gutter">
+<!-- TemplateBeginEditable name="gutter" -->
+
+<!-- TemplateEndEditable -->
+</div>
+  
+<!-- TemplateParam name="bodyClass" type="text" value="guidance" -->
+<!-- TemplateParam name="layout" type="text" value="twoThirdsOneThird" -->
+<!-- TemplateParam name="platform" type="text" value="v6" -->
+<!-- TemplateParam name="rdfa" type="boolean" value="false" -->
+<!-- TemplateParam name="welsh" type="boolean" value="false" -->
+<!-- TemplateParam name="homepage" type="boolean" value="false" -->
+<!-- TemplateParam name="weblite" type="boolean" value="false" -->
+<!-- TemplateParam name="feedback" type="boolean" value="true" -->
+<!-- TemplateParam name="feedbackClass" type="text" value="" -->
+<!-- TemplateParam name="survey" type="boolean" value="false" -->
+<!-- TemplateParam name="contentType" type="text" value="default" -->
+<!-- TemplateParam name="contentGroup" type="text" value="default" -->
+<!-- TemplateParam name="notificationBar" type="boolean" value="false" -->
+<!-- TemplateParam name="infoBanner" type="boolean" value="false" -->
+<!-- TemplateParam name="infoBannerContent" type="text" value="" -->
+<!-- TemplateParam name="noIndex" type="boolean" value="false" -->
+<!-- TemplateParam name="printGuide" type="boolean" value="false" -->
+
+</body>
+</html>
