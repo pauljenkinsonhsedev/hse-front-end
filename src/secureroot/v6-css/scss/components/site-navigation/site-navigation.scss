@@ -22,11 +22,14 @@
 
   .hse-navigation__navigation-item {
   padding: 0;
+  margin-bottom: 0;
   }
+  
   
   .hse-navigation__navigation-list {
   margin: 0;
   width: 100%;
+  @include hse-font(16);
   list-style-type: none;
   background: none;
   padding: 0;
@@ -54,7 +57,6 @@
     @include mq($from: desktop) {
       background-image: none;
       vertical-align: middle;
-      font-weight: bold;
       &:link, &:visited {
       color: #fff;
       }

@@ -93,7 +93,6 @@ input:required:valid {
 
 .fieldset__legend {
   margin-bottom: $dp;
-
   p {
     margin-bottom: $dp;
 
@@ -183,10 +182,6 @@ input {
 }
 
 // style fixes to forms in subscribe boxes
-
-.box .subscribe .form-group .label, .column .subscribe .form-group .label {
-font-size: 0.9rem !important;
-}
 
 .box .subscribe .fieldset__legend, .column .subscribe .fieldset__legend {
 margin-bottom: 0 !important;

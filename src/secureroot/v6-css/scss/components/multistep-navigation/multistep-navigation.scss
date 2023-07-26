@@ -18,10 +18,6 @@ margin-bottom: $hse-legacy-spacing-20;
     width: 100%;
   }
   
-  ol.multistep.multistep--dashed li,
-  ul.multistep.multistep--dashed li {
-    padding-left: $hse-legacy-spacing-10;
-  }
   
   ul.multistep li::before,
   ol.multistep.multistep--dashed li::before {
@@ -35,17 +31,14 @@ margin-bottom: $hse-legacy-spacing-20;
   
   .multistep {
     width: 100%;
-    @media only screen and (min-width: $desktop) {
-      width: 310px;
-    }
-    margin: 0;
+    margin: 0 0 0 20px;
+    padding: 0;
   }
   
   ol.multistep li {
-    margin-left: 15px;
-    padding-top: 7.5px;
-    @media only screen and (min-width: $desktop) {
-      padding-top: 2.5px;
-    }
+    padding: 0 hse-spacing(2);
     clear: both;
+    &:a {
+      display: inline-block;
+    }
   }
