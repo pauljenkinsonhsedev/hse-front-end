@@ -1,0 +1,155 @@
+// ==========================================================================
+// SETTINGS / #COLOURS
+// ==========================================================================
+
+//
+// NHS colour palette
+//
+// Colours are prefixed with color_ to make them easier to
+// search for within the code base.
+//
+// We also prefix them with hse- to prevent clashing with
+// other colours in existing code bases.
+//
+// We use the word color, not colour, for variables.
+//
+
+/* stylelint-disable color-no-hex */
+
+$color_hse-blue: #005eb8;
+$color_hse-white: #ffffff;
+$color_hse-black: #212b32;
+$color_hse-green: #007f3b;
+$color_hse-purple: #330072;
+$color_hse-dark-pink: #7c2855;
+$color_hse-red: #981e32;
+$color_hse-dark-red: #58041b;
+$color_hse-yellow: #ffdd00;
+
+
+//
+// Secondary colours
+//
+
+$color_hse-pale-yellow: #fff9c4;
+$color_hse-warm-yellow: #ffb81c;
+$color_hse-orange: #ed8b00;
+$color_hse-aqua-green: #00a499;
+$color_hse-pink: #ae2573;
+
+//
+// Greyscale
+//
+
+$color_hse-grey-1: #333333;
+$color_hse-grey-2: #4e4e4e;
+$color_hse-grey-3: #c2c2c2;
+$color_hse-grey-4: #f3f3f3;
+$color_hse-grey-5: #f0f4f5;
+
+/* stylelint-enable color-no-hex */
+//
+// RGB and alpha values
+//
+// Used to create drop/box shadows e.g. for search suggestions dropdown
+//
+
+$color_hse-grey-1-rgb: rgb(66, 84, 98);
+$alpha-transparency-50: 0.5;
+
+//
+// Functions for tint and shade
+//
+// Usage: tint(color, percentage)
+//        tint($color_hse-black, 10%)
+//        shade(color, percentage)
+//        shade($color_hse-blue, 50%)
+//
+
+@function tint($color, $percentage) {
+  @return mix(white, $color, $percentage);
+}
+
+@function shade($color, $percentage) {
+  @return mix(black, $color, $percentage);
+}
+
+//
+// Primary colour variations
+//
+// 1. used for link :active states
+// 2. used for .is-active state on main navigation
+// 3. used for :hover states on main navigation
+// 4. used for :active states on main navigation
+// 5. used for primary button and action link icon :hover states
+// 6. used for primary button and action link icon :active states
+//
+
+$color_tint_hse-black-10: tint($color_hse-black, 10%); // [1] //
+
+$color_shade_hse-blue-20: shade($color_hse-blue, 20%); // [2] //
+$color_shade_hse-blue-35: shade($color_hse-blue, 35%); // [3] //
+$color_shade_hse-blue-50: shade($color_hse-blue, 50%); // [4] //
+
+$color_shade_hse-green-35: shade($color_hse-green, 35%); // [5] //
+$color_shade_hse-green-50: shade($color_hse-green, 50%); // [6] //
+
+$color_transparent_hse-white-20: rgba($color_hse-white, 0.2);
+$color_transparent_hse-blue-50: rgba($color_shade_hse-blue-50, 0.1);
+
+//
+// Colour aliases
+//
+
+// Text
+$hse-text-color: $color_hse-black;
+$hse-secondary-text-color: $color_hse-grey-1;
+$hse-print-text-color: $color_hse-black;
+
+// Links
+$hse-link-color: $color_hse-blue;
+$hse-link-hover-color: $color_hse-dark-pink;
+$hse-link-active-color: shade($hse-link-color, 50%);
+$hse-link-visited-color: $color_hse-purple;
+
+// Focus
+$hse-focus-color: $color_hse-yellow;
+$hse-focus-text-color: $color_hse-black;
+
+// Border
+$hse-border-color: $color_hse-grey-4;
+$hse-secondary-border-color: $color_transparent_hse-white-20;
+
+// Box shadow
+$hse-box-shadow: rgba(33, 43, 50, 0.16);
+$hse-box-shadow-color: $color_hse-grey-1-rgb;
+
+//
+// Forms
+//
+
+$hse-error-color: $color_hse-red;
+$hse-form-border-color: $color_hse-grey-1;
+$hse-form-element-background-color: $color_hse-white;
+
+//
+// Buttons
+//
+
+$hse-button-color: $color_hse-green;
+$hse-button-hover-color: shade($hse-button-color, 20%);
+$hse-button-active-color: shade($hse-button-color, 50%);
+$hse-button-shadow-color: shade($hse-button-color, 50%);
+
+$hse-secondary-button-color: $color_hse-grey-1;
+$hse-secondary-button-hover-color: shade($hse-secondary-button-color, 20%);
+$hse-secondary-button-active-color: shade($hse-secondary-button-color, 50%);
+$hse-secondary-button-shadow-color: shade($hse-secondary-button-color, 50%);
+
+$hse-reverse-button-color: $color_hse-white;
+$hse-reverse-button-hover-color: shade($hse-reverse-button-color, 20%);
+$hse-reverse-button-active-color: $color-hse-black;
+$hse-reverse-button-shadow-color: $color-hse-black;
+
+$hse-button-text-color: $color_hse-white;
+$hse-reverse-button-text-color: $color_hse-black;

@@ -25,12 +25,14 @@
     .hse-footer__base-inner, .hse-footer__languages {
     p {
     margin-bottom: 0;
+    @include hse-font(16);
     }
     }
     
     .hse-footer__list {
     list-style: none;
     margin: 0;
+    padding-left: 0;
     }
     
     .report-a-problem-form.survey-in {
@@ -40,6 +42,7 @@
     
     .hse-footer__list-item {
     display: inline-block;
+    @include hse-font(16);
     margin-right: 15px;
     @include mq($until: desktop) {
     padding: 5px 0;
@@ -64,6 +67,7 @@
     
     .hse-footer__languages {
     display: flex;
+    @include hse-font(16);
     }
     
     .hse-footer__languages-link {

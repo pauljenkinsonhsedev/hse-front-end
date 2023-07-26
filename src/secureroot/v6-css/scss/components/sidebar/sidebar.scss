@@ -1,3 +1,23 @@
-.hse-sidebar h2 {
-    font-size: 1.1rem !important;
-  }
+// Global style for sidebar
+
+
+.hse-sidebar__navigation, .hse-sidebar-top {
+
+p, label {  @include hse-font(16);}
+
+ul {
+margin: 0;
+padding-left: 0;
+list-style: none;
+li {
+  @include hse-font(16);
+}
+}  
+
+
+h2 {
+  @include hse-font(19);
+  margin-bottom: hse-spacing(2);
+  font-weight: 700;
+}
+}

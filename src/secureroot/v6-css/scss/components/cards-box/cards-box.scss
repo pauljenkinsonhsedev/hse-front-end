@@ -60,12 +60,7 @@
     }
   }
   // margin for tap target spacing
-  
-  .box .linkList li {
-    @media only screen and (max-width: $desktop) {
-      margin-bottom: 6px;
-    }
-  }
+
   
   .boxList ul li a::after {
     content: " ";
