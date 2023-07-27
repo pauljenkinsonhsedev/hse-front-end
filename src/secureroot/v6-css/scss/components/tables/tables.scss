@@ -142,7 +142,6 @@ table a.tableRowToggleClosed {
 }
 
 table caption {
-  @include type-setting(3);
   padding: $hse-legacy-spacing-10;
   color: #000;
   text-align: left;
