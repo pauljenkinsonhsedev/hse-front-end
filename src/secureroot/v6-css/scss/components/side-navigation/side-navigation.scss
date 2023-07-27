@@ -75,7 +75,6 @@ outline: none;
   align-items: center;
   display: flex;
   overflow: visible;
-  background-color: $color_hse-grey-4;
   cursor: pointer;
   @include hse-font(14);
 }
@@ -89,6 +88,7 @@ outline: none;
 .subnav-container li ul {
   left: 100%;
   top: 0;
+  padding: 0;
 }
 .subnav-container .header {
   display: flex;
@@ -122,7 +122,7 @@ outline: none;
   }
 }
 .subnav-container a:not(.back):hover {
-  background-color: $color_hse-grey-3;
+  background-color: $color_hse-grey-4;
   color: $black;
 }
 .subnav-container a:not(.back):active {
@@ -132,7 +132,7 @@ outline: none;
 
 .subnav-container .back::before {
   content: ' ';
-  background: url('../../assets/v6-images/icons/svg/solid/arrow-left-white.svg');
+  background: url('../../assets/v6-images/icons/svg/solid/arrow-left-red.svg');
   background-repeat: no-repeat;
   display: inline-block;
   height: 16px;
@@ -186,11 +186,6 @@ outline: none;
 
 .subnav-container li.first a {
   font-weight: bold;
-  background-color: $color_hse-red;
-}
-
-.subnav-container li.first a {
-  color: white;
 }
 
 .subnav-container li.first a:hover {
@@ -201,15 +196,9 @@ outline: none;
 // Active page
 
 li a.active-page {
-  background-color: $color_hse-grey-3;
   border-left: 3px solid $color_hse-red;
   text-decoration: none;
 }
-
-li.first a.active-page {
-  background-color: $color_hse-red;
-}
-
 .no-active-style {
   background: none !important;
   border-left: none !important;
@@ -219,8 +208,6 @@ li.first a.active-page {
 
 .subnav-container li a.back {
   width: 100%;
-  background-color: $color_hse-red;
-  color: white;
 }
 
 .subnav-container li.first a {
@@ -232,11 +219,6 @@ li.first a.active-page {
 .subnav-container li.first a:hover span,
 .subnav-container li.header a:hover {
   text-decoration: underline !important;
-}
-
-.subnav-container a,
-.subnav-container a span {
-  text-decoration: none;
 }
 
 .subnav-container .header .title {
@@ -326,11 +308,6 @@ color: white !important;
 
 .btn-mobile:focus {
 background: $color_hse-grey-1 !important;
-}
-
-li.first a.active-page, .subnav-container li a.back {
-background: $color_hse-grey-4;
-color: $color_hse-grey-1;
 }
 
 .subnav-container .back::before {
