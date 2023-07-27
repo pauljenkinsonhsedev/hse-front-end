@@ -2,15 +2,8 @@
 
 // .hse-breadcrumb ol specificty can be removed if .hse-breadrumb__list is applied to all breadcrumbs
 
-.hse-breadcrumb {
-background-color: $color_hse-grey-4;
-}
-
 .hse-breadcrumb__container {
-  padding-top: hse-spacing(2);
-  @include mq($from: desktop) {
-    margin-bottom: $hse-legacy-spacing-20;
-  }
+  padding: hse-spacing(3) 0;
 }
 
 .hse-breadcrumb__list, .hse-breadcrumb ol {
@@ -34,17 +27,21 @@ display: none;
     background-repeat: no-repeat;
     background-position: bottom;
     float: left;
-    top: 2px;
-    margin-right: 4px;
+    top: 8px;
+    margin: 0 8px;
     position: relative;
-    width: 17px;
-    height: 17px;
+    width: 10px;
+    height: 10px;
   }
 
 .hse-breadcrumb ol li {
 padding-bottom: hse-spacing(2);
 display: inline-block;
 margin: 0;
+
+a:visited {
+ color: $color_hse-red;
+}
 }
   
   #breadCrumb ol li.home {
@@ -55,11 +52,7 @@ margin: 0;
   #breadCrumb ol li.home::before {
     display: none;
   }
-  
-  #breadCrumb ol li a {
-    color: $color_hse-grey-1;
-    text-decoration: underline;
-  }
+
   
   #breadCrumb ol li a:hover {
     text-decoration: none;
