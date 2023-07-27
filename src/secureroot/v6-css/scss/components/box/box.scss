@@ -70,57 +70,10 @@
   background-color: transparent !important;
   background-image: none !important;
 }
-.box1col.boxNoBackground {
-  width: 220px !important;
-}
-.box2col.boxNoBackground {
-  width: 460px !important;
-}
-.box3col.boxNoBackground {
-  width: 700px !important;
-}
 .boxLast {
   margin-right: 0 !important;
 }
-.boxBackgroundBlack {
-  background-color: #333;
-}
-.boxBackgroundRed {
-  background-color: #981e32;
-}
-.boxBackgroundBlue {
-  background-color: #197c98;
-  background-image: linear-gradient(to bottom, #197c98, #144350);
-}
-.boxBackgroundGreen {
-  background-color: #b9db0c;
-  background-image: linear-gradient(to bottom, #b9db0c, #788f07);
-}
-.boxBackgroundBlack h2,
-.boxBackgroundBlack h3,
-.boxBackgroundBlack p,
-.boxBackgroundBlue h2,
-.boxBackgroundBlue h3,
-.boxBackgroundBlue p,
-.boxBackgroundRed h2,
-.boxBackgroundRed h3,
-.boxBackgroundRed p,
-.boxSubscribe h2,
-.boxSubscribe h3,
-.boxSubscribe p {
-  color: #fff;
-}
-.boxBackgroundGreen h2,
-.boxBackgroundGreen h3,
-.boxBackgroundGreen p {
-  color: #000;
-  text-decoration: none !important;
-}
-.box2col.boxSubscribe ul.subscribeIcons li {
-  width: 210px;
-  margin: 0 10px 10px 0;
-  background: 0 0 !important;
-}
+
 .boxSubscribe ul {
   margin: 0 !important;
 }
