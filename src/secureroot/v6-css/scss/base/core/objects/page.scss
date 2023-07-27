@@ -12,11 +12,8 @@ margin: 15px auto 0 auto;
 height: 33px;
 }
 
-
-
 #baseStrip p {
 vertical-align: baseline;
-color: #fff;
 }
 
 #gutter,
@@ -47,18 +44,17 @@ margin: 0;
   width: 100%;
 }
 
-
 // Header
 
 #headerLogo {
   line-height: 1.333em;
   font-weight: 700;
   font-family: Helvetica, Arial, sans-serif;
-  color: #fff;
+  color: $color_hse-red;
   margin: 0;
   text-decoration: none;
   a {
-    color: #fff;
+    color: $color_hse-black;
     display: block;
     padding: 0;
     width: 183px;
@@ -84,10 +80,6 @@ margin: 0;
   font-size: 1.1em !important;
 }
 
-
-
-
-
 // Cookie container
 
 // Print page
@@ -97,4 +89,26 @@ margin: 0;
 
 
 
+// sections
+
+.hse-section {
+  &:last-of-type {
+  margin-bottom: 0; 
+  }
+}
   
+  .hse-section--homepage {
+    margin-bottom: $hse-legacy-spacing-20;
+    &:last-of-type {
+      border-bottom: none;
+    }
+  }
+  
+  .hse-section--homepage {
+  border-bottom: 2px solid $color_hse-red;
+  &:first-of-type {
+  @include mq($until: desktop) {
+  border: none;
+  }
+  }
+  }
