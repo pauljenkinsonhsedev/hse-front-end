@@ -1,127 +1,22 @@
-// Cards (Box list)
-
-
-  
-  .boxList ul {
-    margin: 0 0 10px 0 !important;
-    column-count: 1;
-    @include mq($from: desktop) {
-      column-count: 2;
-    }
-    column-gap: $hse-legacy-spacing-20;
-  }
-
-  .boxList-1col ul {
-    column-count: 1;    
-}
-
- 
-  
-  .boxList ul li {
-  width: 100%;
-  padding: 0;
-  display: inline-block;
-  margin: 5px 0;
-  }
-  
-  .boxList ul a:hover {
-    background-color: $color_hse-grey-3;
-  }
-  .boxList ul li a:focus {
-    border: 0 !important;
-    outline: 0;
-    box-shadow: inset 0 -4px 0 0 $color_hse-grey-1;
-  }
-  
-  .boxList ul li h3 {
-    color: $color_hse-red !important;
-  }
-  .boxList ul li h3 {
-    margin: 0;
-    font-weight: normal;
-    display: inline;
-  }
-  
-  .boxList ul li a {
-    width: 100%;
-    @include type-setting(3);
-    font-weight: normal;
-    position: relative;
-    display: block;
-    padding: 10px;
-    clear: both;
-    width: 100%;
-    background: none;
-    background-color: $color_hse-grey-4;
-    background-image: none !important;
-    text-decoration: none;
-    &:hover {
-    color: white;
-    }
-  }
-  // margin for tap target spacing
-
-  
-  .boxList ul li a::after {
-    content: " ";
-    background-image: url(../../assets/v6-images/icons/svg/solid/arrow-right-red.svg);
-    background-repeat: no-repeat;
-    /* position: relative; */
-    /* float: right; */
-    /* top: $hse-legacy-spacing-20; */
-    /* -webkit-transform: translateY(-100%); */
-    -ms-transform: translateY(-100%);
-    /* transform: translateY(-100%); */
-    width: 16px;
-    height: 16px;
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    right: -2px;
-    /* left: 50%; */
-    transform: translate(-50%, -50%);
-  }
-  
-  .boxList ul li:hover a::after {
-    content: " ";
-    background-image: url("../../assets/v6-images/icons/svg/solid/arrow-right-white.svg");
-    background-repeat: no-repeat;
-    /* position: relative; */
-    /* float: right; */
-    /* top: $hse-legacy-spacing-20; */
-    /* -webkit-transform: translateY(-100%); */
-    -ms-transform: translateY(-100%);
-    /* transform: translateY(-100%); */
-    width: 16px;
-    height: 16px;
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    right: -2px;
-    /* left: 50%; */
-    transform: translate(-50%, -50%);
-  }
-
-  .hse-card--chevron {
+.hse-card--chevron {
    position: relative;
 
    a {
     font-weight: normal;
-    @include type-setting(3);
    }
   &:hover{
-  background-color: $hse-focus-color;
+  background-color: none;
+  border-bottom: none;
   }
   }
 
   .hse-card--chevron {
-   background: $color_hse-grey-4;
    padding: $hse-legacy-spacing-10;
-  border-bottom: none;
   margin-bottom: $hse-legacy-spacing-10;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.15);
+  border-bottom: none;
+  padding: hse-spacing(3);
   }
-
-
 
  .hse-card--chevron a:focus::after {
   border: 0 !important;
@@ -137,7 +32,7 @@
     height: 10px;
     position: absolute;
     right: 10px;
-    top: 18px;
+    top: 25px;
     -webkit-transform: translateY(0) rotate(45deg) scale(1);
     -ms-transform: translateY(0) rotate(45deg) scale(1);
     transform: translateY(0) rotate(45deg) scale(1);
