@@ -1,34 +1,6 @@
 // Homepage banner
 
 
-
-.hse-section {
-&:first-of-type {
- margin-top: $hse-legacy-spacing-20;
-}
-&:last-of-type {
-margin-bottom: 0; 
-}
-
-}
-
-.hse-section--homepage {
-  margin-bottom: $hse-legacy-spacing-20;
-  &:last-of-type {
-    border-bottom: none;
-  }
-}
-
-.hse-section--homepage {
-border-bottom: 2px solid $color_hse-red;
-&:first-of-type {
-@include mq($until: desktop) {
-border: none;
-}
-}
-}
-
-
 .homepageBanner {
     padding: 0;  
     @media only screen and (min-width: $desktop) {
