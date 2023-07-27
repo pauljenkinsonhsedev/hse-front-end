@@ -128,7 +128,7 @@
 }
 
 .lead-paragraph {
-  @include type-setting(2);
+  @include hse-font(16);
   line-height: 1.5;
 }
 
