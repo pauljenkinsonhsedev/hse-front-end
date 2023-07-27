@@ -10,8 +10,6 @@
   width: 100%;
   padding: $dp;
   border: 2px solid $mono-a;
-  @include type-setting(0);
-
   @extend %form-focus;
 }
 
@@ -30,7 +28,6 @@ input:required:valid {
 %validation-error {
   opacity: 0;
   display: block;
-  @extend .subtext;
   margin: $dp 0;
   padding: $dp $dp * 2;
   background-color: $color_hse-red;
@@ -86,7 +83,6 @@ input:required:valid {
   border: none;
 }
 .fieldset__heading {
-  @include type-setting(2);
   margin-bottom: $dp * 2;
   color: $color_hse-red;
 }
@@ -105,7 +101,6 @@ input:required:valid {
 /* Labels */
 .label {
   display: block;
-  @include type-setting(3);
   font-weight: 400;
   margin-bottom: $dp;
   max-width: 55ex;
