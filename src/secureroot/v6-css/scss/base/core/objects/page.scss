@@ -93,22 +93,33 @@ margin: 0;
 
 .hse-section {
   &:last-of-type {
-  margin-bottom: 0; 
+  padding-bottom: 0; 
   }
+ 
 }
   
   .hse-section--homepage {
-    margin-bottom: $hse-legacy-spacing-20;
+    padding-bottom: hse-spacing(7);
     &:last-of-type {
       border-bottom: none;
     }
+    h2 {
+      display: inline-block;
+      position: relative;
+    }
+    h2::before {
+      background-color: $color_hse-red;
+        content: '';
+        height: 4px;
+        position: absolute;
+        top: -8px;
+        width: 100%;
+      
+      }
   }
   
   .hse-section--homepage {
-  border-bottom: 2px solid $color_hse-red;
   &:first-of-type {
-  @include mq($until: desktop) {
-  border: none;
-  }
+  padding-top: hse-spacing(7);
   }
   }
