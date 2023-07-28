@@ -17,7 +17,7 @@
   }
   padding: 10px;
 
-  background: $color_hse-red;
+  background: $color_hse-grey-4;
   &.js-feedback-open
   {
     background: white;
@@ -27,18 +27,13 @@
 
 
 
-.hse-feedback__prompt-questions-answers {
+.hse-feedback__prompt-questions-answers, .hse-feedback__report-a-problem {
 display: flex;
 padding: 10px;
 align-items: center;
-}
-
-.hse-feedback__prompt-questions-answers .btn {
-margin: 0;
-}
-
-.hse-feedback__report-a-problem {
-padding: 10px;
+.btn {
+  margin: 0;
+  }
 }
 
 .fieldset {
@@ -50,7 +45,6 @@ margin: 0;
 }
 
 .hse-feedback__prompt-question {
-color: white;
 margin: 0;
 margin-right: 10px;
 @include hse-font(16);

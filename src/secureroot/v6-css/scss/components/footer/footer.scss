@@ -1,6 +1,12 @@
 
 .hse-footer {
-    background: $color_hse-grey-1;   
+    background: $color_hse-grey-4;   
+    &::before {
+        background: $color_hse-red;
+        display: block;
+        content: '';
+        height: 8px;
+        } 
     }
     
     .hse-footer__navigation {
@@ -9,12 +15,11 @@
     @include mq($from: desktop) {
     flex-direction: row;
     }
-    background: $color_hse-grey-1;
+    background: $color_hse-grey-4;
     padding: $hse-legacy-spacing-10 0;
     }
     
     .hse-footer__base {
-    background: $color_hse-red;
     padding: $hse-legacy-spacing-10 0;
     }
     
@@ -60,7 +65,7 @@
     }
     
     .hse-footer__list-item-link {
-    &:link, &:visited { color: white; }
+    &:link, &:visited { color: $color_hse-black; }
     &:hover, &:focus {color: $color_hse-black;}
     }
 
@@ -78,6 +83,6 @@
     color: $color_hse-black !important;
     }
     &:link, &:visited {
-    color: $color_hse-white;    
+    color: $color_hse-black;    
     }
     }

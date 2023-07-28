@@ -19,6 +19,5 @@ category: Page features - Form elements
 .hint {
   display: block;
   margin-bottom: $dp;
-  @extend .subtext;
   color: $mono-b;
 }

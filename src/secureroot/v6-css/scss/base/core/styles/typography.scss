@@ -21,6 +21,8 @@
   
     @include hse-responsive-margin(7, "bottom");
   }
+
+  h1 { color: $color_hse-red;}
   
   h1,
   .hse-heading-xl {

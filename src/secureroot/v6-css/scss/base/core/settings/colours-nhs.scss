@@ -23,7 +23,8 @@ $color_hse-green: #007f3b;
 $color_hse-purple: #330072;
 $color_hse-dark-pink: #7c2855;
 $color_hse-red: #981e32;
-$color_hse-dark-red: #58041b;
+$color_hse-dark-red: #5b121e;
+$color_hse-darker-red: #1e060a;
 $color_hse-yellow: #ffdd00;
 
 
@@ -44,7 +45,7 @@ $color_hse-pink: #ae2573;
 $color_hse-grey-1: #333333;
 $color_hse-grey-2: #4e4e4e;
 $color_hse-grey-3: #c2c2c2;
-$color_hse-grey-4: #f3f3f3;
+$color_hse-grey-4: #ebebeb;
 $color_hse-grey-5: #f0f4f5;
 
 /* stylelint-enable color-no-hex */
@@ -87,15 +88,15 @@ $alpha-transparency-50: 0.5;
 
 $color_tint_hse-black-10: tint($color_hse-black, 10%); // [1] //
 
-$color_shade_hse-blue-20: shade($color_hse-blue, 20%); // [2] //
-$color_shade_hse-blue-35: shade($color_hse-blue, 35%); // [3] //
-$color_shade_hse-blue-50: shade($color_hse-blue, 50%); // [4] //
+$color_shade_hse-red-20: shade($color_hse-red, 20%); // [2] //
+$color_shade_hse-red-35: shade($color_hse-red, 35%); // [3] //
+$color_shade_hse-red-50: shade($color_hse-red, 50%); // [4] //
 
 $color_shade_hse-green-35: shade($color_hse-green, 35%); // [5] //
 $color_shade_hse-green-50: shade($color_hse-green, 50%); // [6] //
 
 $color_transparent_hse-white-20: rgba($color_hse-white, 0.2);
-$color_transparent_hse-blue-50: rgba($color_shade_hse-blue-50, 0.1);
+$color_transparent_hse-red-50: rgba($color_shade_hse-red-50, 0.1);
 
 //
 // Colour aliases
@@ -107,10 +108,10 @@ $hse-secondary-text-color: $color_hse-grey-1;
 $hse-print-text-color: $color_hse-black;
 
 // Links
-$hse-link-color: $color_hse-blue;
-$hse-link-hover-color: $color_hse-dark-pink;
+$hse-link-color: $color_hse-red;
+$hse-link-hover-color: $color_hse-dark-red;
 $hse-link-active-color: shade($hse-link-color, 50%);
-$hse-link-visited-color: $color_hse-purple;
+$hse-link-visited-color: $color_hse-darker-red;
 
 // Focus
 $hse-focus-color: $color_hse-yellow;

@@ -87,7 +87,7 @@
   .menu-button span::before,
   .menu-button.main-menu span::before {
     content: " ";
-    background-image: url("../../assets/v6-images/icons/svg/solid/bars-white.svg");
+    background-image: url("../../assets/v6-images/icons/svg/solid/bars-red.svg");
     background-repeat: no-repeat;
     display: inline-block;
     width: 25px;
@@ -97,7 +97,7 @@
   
   .menu-button.main-menu-expanded span::before {
     content: " ";
-    background-image: url("../../assets/v6-images/icons/svg/solid/window-close-white.svg");
+    background-image: url("../../assets/v6-images/icons/svg/solid/window-close-red.svg");
     background-repeat: no-repeat;
     display: inline-block;
     width: 25px;

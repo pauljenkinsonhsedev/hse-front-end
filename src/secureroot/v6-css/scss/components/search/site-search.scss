@@ -1,10 +1,5 @@
 // Google Custom Search
 
-#globalSearch tr,
-#globalSearchMobile tr {
-  background-color: $color_hse-red;
-}
-
 .gsc-search-box {
   margin: 0 !important;
   background-color: $color_hse-red;
@@ -34,22 +29,20 @@ td.gsib_b {
 }
 
 .gsc-input-box {
-  border: 0 !important;
-  border-top-left-radius: 0 !important;
-  border-bottom-left-radius: 0 !important;
+border-width: 2px !important;
+border-color: $color_hse-grey-3 !important;
+border-right: 0 !important;
 }
 
 .gsc-search-button {
   z-index: 1;
-  float: left !important;
   margin-left: 0 !important;
   width: auto !important;
   padding: 0 !important;
-  background: $color_hse-grey-1 !important;
   min-width: 38px !important;
   max-width: 38px !important;
-  min-height: 38px !important;
-  max-height: 38px !important;
+  min-height: 42px !important;
+  max-height: 42px !important;
 }
 
 .gsc-search-button svg {
@@ -59,7 +52,7 @@ position: relative !important;
 
 .gsc-search-button-v2 {
   font-size: 0.9rem !important;
-  background-color: $color_hse-grey-1 !important;
+  background-color: $color_hse-red !important;
   border: 0 !important;
   border-radius: 0 !important;
   -webkit-border-radius: 0 !important;
@@ -88,7 +81,7 @@ td.gsib_b {
   margin: 0 !important;
   height: 38px !important;
   background: none !important;
-  background-color: white !important;
+  background-color: #eee !important;
   border: 0px !important;
   position: relative !important;
 }

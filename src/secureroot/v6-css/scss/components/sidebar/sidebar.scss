@@ -14,10 +14,29 @@ li {
 }
 }  
 
+h2, h3 {
+  position: relative;
+  padding-top: 10px;
+  }
+
+  h2::before {
+  background-color: $color_hse-red;
+    content: '';
+    height: 4px;
+    position: absolute;
+    top: -4px;
+    width: 100%;
+  
+  }
+
 
 h2 {
   @include hse-font(19);
   margin-bottom: hse-spacing(2);
   font-weight: 700;
 }
+.box {
+background: none !important;
 }
+}
+

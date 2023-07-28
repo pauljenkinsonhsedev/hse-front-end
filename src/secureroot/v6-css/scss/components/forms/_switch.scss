@@ -23,8 +23,6 @@ $switch-size: 26px;
       transform: translateY(-50%);
       color: $black;
       cursor: pointer;
-      @include type-setting(0);
-
       transition: color 300ms ease-in-out;
   }
   &:before {

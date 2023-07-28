@@ -1,14 +1,21 @@
 .hse-header {
 @include clearfix();
-background-color: $color_hse-red;
+background-color: $color_hse-white;
 }
-  
+
+.hse-header::before {
+background: $color_hse-red;
+display: block;
+content: '';
+height: 4px;
+} 
+
 .hse-header__top-container {
 display: flex;
 flex-direction: row;
 flex-wrap: wrap;
 @include clearfix();  
-padding: $hse-legacy-spacing-10 0 $hse-legacy-spacing-20 0;
+padding: $hse-legacy-spacing-20 0 $hse-legacy-spacing-20 0;
 }
 
 .hse-header__top-container {

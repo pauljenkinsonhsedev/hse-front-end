@@ -127,11 +127,6 @@
   margin: 0 0 10px 28px;
 }
 
-.lead-paragraph {
-  @include type-setting(2);
-  line-height: 1.5;
-}
-
 .btn-print {
   background: url(../../assets/v6-images/icons/icon-print.png) no-repeat 10px
     50%;

@@ -1,55 +1,113 @@
-// Column lists
 
+/* ==========================================================================
+   COMPONENTS / #CARD
+   ========================================================================== */
 
-  
-  ul.columnsList {
-    flex-wrap: wrap;
-    padding: 0;
-    @include mq($from: tablet) {
-      margin: 0 -15px;
-      display: flex;
-    }
-  }
-  
-  .columnsList li p {
-    padding-bottom: $hse-legacy-spacing-20;
-    margin: 0;
-  }
-  .columnsList li h2 {
-    @include type-setting(3);
-  }
-  .column.multiCol.col2 {
-    .columnsList li {
-      @include mq($from: tablet) {
-        background: none;
-        padding: 0 16px;
-        float: left;
-        width: 50%;
-      }
-    }
-  }
-  .columnsList li {
-    background: none;
-    padding: 0;
-    list-style-image: none !important;
-    @include mq($from: tablet) {
-      background: none;
-      padding: 0 16px;
-      float: left;
-      width: 33.3333%;
-    }
-  }
+/**
+ * 1. Is needed for the :active top positioning, and invisible clickable overlay.
+ * 2. Border is used to create a divider between the white content
+ *    box and an image.
+ * 3. Creates the 'pressed down' effect when clicked.
+ * 4. Removes padding-top from headings directly after the card group.
+ * 5. Includes the border width to achieve the correct left alignment.
+ * 6. Stops the heading from spanning the full width of the card.
+ * 7. Removes padding top for the feature heading positioning.
+ * 8. Default care card colour set to blue (non-urgent care card) -
+ *    using the @mixin care-card tools/_mixins.scss.
+ *    The same mixin is used for each care card, setting the background
+ *    colour,text colour and print border width with the variables.
+ * 9. 'Random number' for the heading triangle.
+ * 10. 'Random number' for the heading triangle positioning.
+ * 11. 'Random number' used for spacing to compensate for the triangle.
+ * 12. Needed to enable the triangle to show correctly in high contrast mode.
+ * 13. Prevent additional padding on headings
+ * 14. Give the action link icon sufficient contrast when used in the emergency variant
+ * 15. Reset the positioning to the default [1] to display heading triangle on a coloured background.
+ * 16. Emergency care card <a> needs to be white because the background colour is black.
+ * 17. Trick IE10 into rendering the invisible clickable area. Without this it does not.
+ */
 
+ $card-border-width: 1px;
+ $card-border-bottom-width: hse-spacing(1);
+ $card-border-color: $color_hse-grey-4;
+ $card-border-hover-color: $color_hse-grey-3;
+ 
+ .hse-card {
+   @include hse-responsive-margin(7, "bottom");
+ 
+   background: $color_hse-white;
+   position: relative; /* [1] */
+   width: 100%;
+ }
+ 
+ .hse-card__img {
+   @include print-hide();
+ 
+   border-bottom: $card-border-width solid $color_hse-grey-5; /* [2] */
+   display: block;
+   width: 100%;
+ }
+ 
+ .hse-card__content {
+   @include top-and-bottom();
+   @include hse-responsive-padding(5);
+ }
+ 
+ .hse-card__heading,
+ .hse-card__metadata,
+ .hse-card__description {
+   margin-bottom: hse-spacing(3);
+ }
 
-  //
+ 
+ /* Card group
+   ========================================================================== */
+ 
+ /**
+ * Card group allows you to have a row of cards.
+ *
+ * Flexbox is used to make each card in a row the same height.
+ */
+ 
+ .hse-card-group {
+   @include flex();
+ 
+   margin-bottom: hse-spacing(3);
+   padding: 0;
+ 
+   @include mq($until: desktop) {
+     margin-bottom: hse-spacing(6);
+   }
+ 
+   + h2,
+   + .hse-heading-l,
+   + h3,
+   + .hse-heading-m {
+     padding-top: 0; /* [4] */
+   }
+ }
+ 
+ .hse-card-group__item {
+   @include flex-item();
+ 
+   list-style-type: none;
+   margin-bottom: 0;
+ 
+ }
+
+ //////////
+
+.hse-card__content {
+  @include top-and-bottom();
+  @include hse-responsive-padding(5);
+}
 
   .hse-card-group {
     padding: 0;
     list-style-type: none;
-    margin-bottom: 20px;
     @include mq($from: tablet) {
       margin: 0 -15px;
-      margin-bottom: $hse-legacy-spacing-10;
+      margin-top: hse-spacing(3);
       @include flex();
       }
   }
@@ -57,13 +115,11 @@
  .hse-card-group li {
     @include flex-item();
     @include mq($from: desktop) {
-    margin-bottom: hse-spacing(4) !important; // temporary fix for equal height cards, apply utility class (.hse-u-margin-bottom-4) in html or dynamially add class with JS 
+    // margin-bottom: hse-spacing(4) !important; // temporary fix for equal height cards, apply utility class (.hse-u-margin-bottom-4) in html or dynamially add class with JS 
     }
   }
   
-  .hse-card-group li h2 {
-    @include type-setting(3);
-  }
+
     .hse-card-group .hse-grid-column-one-half li {
       @include mq($from: tablet) {
         background: none;
@@ -90,6 +146,13 @@
   h3, h2 {
     @include hse-font(22);
   }
+  &:hover {
+  border-bottom: 4px solid $color_hse-red;
+  }
+  a:hover {
+   color: #1e060a;
+   background: none;
+  }
   }
 
   .hse-card a::after {
@@ -102,3 +165,13 @@
     z-index: 1;
     content: "";
    }
+
+   .hse-card__img {  
+    border-bottom: $card-border-width solid $color_hse-grey-5; /* [2] */
+    display: block;
+    width: 100%;
+  }
+  .hse-card--img {
+    border: 2px solid $color_hse-grey-4;
+    border-bottom: 4px $color_hse-grey-4 solid;
+  }

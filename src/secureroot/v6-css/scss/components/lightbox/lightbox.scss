@@ -54,9 +54,6 @@ $btnSize: 30px;
     white-space: pre-line;
     align-self: center;
     text-align: left;
-
-    @include type-setting(0);
-
     p {
         margin: 0;
     }
