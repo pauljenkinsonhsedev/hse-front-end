@@ -74,7 +74,7 @@ window.addEventListener("DOMContentLoaded", () => {
   }
 
   // Back links
-  const backLink = document.querySelector("#backTo");
+  const backLink = document.querySelector(".hse-breadcrumb");
   if (backLink) {
     backLinks();
   }
