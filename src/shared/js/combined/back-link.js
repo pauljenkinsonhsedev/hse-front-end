@@ -1,13 +1,5 @@
 export function backLinks() {
-  const breadCrumbs = document.querySelectorAll('.hse-breadcrumb ol li a');
-
-  if (breadCrumb) {
-    const lastItem = [ ...breadCrumbs ].pop();
-    const linkText = lastItem.textContent;
-    const linkUrl = lastItem.attributes['href'].value;
-    const backnav = breadCrumb.querySelector('#backnav');
-
-    backnav.href = linkUrl;
-    backnav.textContent = linkText;
-  }
+const elems = Array.from(document.querySelectorAll(".hse-breadcrumb ol li:not(:first-child) a"))
+elems.pop()
+elems.map(node => node.parentNode.remove(node))
 }
