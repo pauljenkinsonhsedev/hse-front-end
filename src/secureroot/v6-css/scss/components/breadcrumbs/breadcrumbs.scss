@@ -58,32 +58,6 @@ a:visited {
     text-decoration: none;
   }
 
-  #backTo {
-    background-color: $color_hse-grey-1;
-  }
-  
-  .backto {
-    padding-top: 10px;
-    margin: 0;
-    display: inline-block;
-    width: 100%;
-    @media only screen and (min-width: $desktop) {
-      display: none;
-    }
-  }
-  
-  p.backto {
-    font-size: 0.9rem;
-    padding: 0;
-  }
-  
-  p.backto a {
-    color: white;
-  }
-  
-  p.backto a:focus {
-    color: $black;
-    outline: none;
-  }
+
   
   

@@ -9,7 +9,7 @@
     #pageContainer & {
       margin-bottom: $dp * 2;
     }
-    @media only screen and (min-width: $desktop) {
+    @include mq($from: desktop) {
       white-space: nowrap;
     }
     text-align: center;
@@ -34,7 +34,7 @@
   }
   
   .btn:not(.visually-hidden) + .btn {
-    @media (min-width: $tablet) {
+    @include mq($from: tablet) {
       margin-left: $dp * 2;
     }
   }

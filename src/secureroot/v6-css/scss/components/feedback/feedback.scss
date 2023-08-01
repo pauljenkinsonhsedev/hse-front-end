@@ -183,25 +183,12 @@ p.question-hint {
 
 .report-a-problem-container {
   text-align: center;
-  @media only screen and (min-width: 661px) {
-    float: right;
-  }
-  @media only screen and (min-width: $desktop) {
-    width: 50%;
-  }
 }
 
 .report-a-problem-form {
   width: 100%;
   margin: 0 auto;
   display: none;
-}
-
-.report-a-problem-container .btn {
-  float: none;
-  @media only screen and (min-width: 661px) {
-    float: right;
-  }
 }
 
 .report-a-problem-form form {

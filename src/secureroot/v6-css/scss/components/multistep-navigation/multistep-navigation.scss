@@ -6,7 +6,7 @@ margin-bottom: $hse-legacy-spacing-20;
   
   .multistep--columns-two {
     width: 100%;
-    @media only screen and (min-width: $desktop) {
+    @include mq($from: desktop) {
       column-count: 2;
       width: 620px !important;
     }

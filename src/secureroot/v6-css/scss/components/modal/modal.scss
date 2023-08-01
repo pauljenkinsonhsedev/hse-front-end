@@ -22,7 +22,7 @@ body {
     box-shadow: none;
   }
 
-  @media only screen and (min-width: $tablet) {
+  @include mq($from: tablet) {
     transform: translateX(-50%) translateY(-50%) scale(0);
     transition: transform 150ms ease-in, opacity 250ms ease-in-out;
     margin: 0;
@@ -33,7 +33,7 @@ body {
   &.modal-show {
     opacity: 1;
     transform: scale(1);
-    @media only screen and (min-width: $tablet) {
+    @include mq($from: tablet) {
       transform: translateX(-50%) translateY(-50%) scale(1);
     }
   }

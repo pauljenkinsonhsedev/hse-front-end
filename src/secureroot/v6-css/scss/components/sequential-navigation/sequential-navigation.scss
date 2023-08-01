@@ -38,7 +38,7 @@ margin-bottom: $hse-legacy-spacing-20;
   #pagination .next-page,
   #pagination .previous-page {
     width: 100%;
-    @media only screen and (min-width: $desktop) {
+    @include mq($from: desktop) {
       width: 50%;
     }
   }
@@ -64,13 +64,13 @@ margin-bottom: $hse-legacy-spacing-20;
   
   #pagination .next-page,
   #pagination .previous-page {
-    @media only screen and (min-width: $desktop) {
+    @include mq($from: desktop) {
       margin-left: -10px;
     }
   }
   
   #pagination div:nth-child(2) {
-    @media only screen and (min-width: $desktop) {
+    @include mq($from: desktop) {
       margin-left: $hse-legacy-spacing-10;
     }
   }
@@ -84,7 +84,7 @@ margin-bottom: $hse-legacy-spacing-20;
   #pagination .previous-page a {
     width: 100%;
     padding: $hse-legacy-spacing-10;
-    @media only screen and (min-width: $desktop) {
+    @include mq($from: desktop) {
       padding-left: 0;
     }
   }
@@ -95,7 +95,7 @@ margin-bottom: $hse-legacy-spacing-20;
   }
   
   #pagination ul li:first-of-type a {
-    @media only screen and (min-width: $desktop) {
+    @include mq($from: desktop) {
       padding-left: 0;
     }
   }

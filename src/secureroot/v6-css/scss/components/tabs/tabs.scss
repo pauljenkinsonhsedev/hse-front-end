@@ -8,7 +8,7 @@
     outline: none;
   }
 
-  @media only screen and (min-width: $tablet) {
+  @include mq($from: tablet) {
     &:link,
     &:hover,
     &:visited,
@@ -24,7 +24,7 @@ ul.tabs__list {
   font-size: 0;
   list-style: none;
 
-  @media only screen and (min-width: $tablet) {
+  @include mq($from: tablet) {
     margin: 0 !important;
   }
 }
@@ -41,7 +41,7 @@ ul.tabs__list {
     margin-right: 0;
   }
 
-  @media only screen and (min-width: $tablet) {
+  @include mq($from: tablet) {
     display: inline-block;
     background-color: #333;
 
@@ -83,7 +83,7 @@ ul li .tabs__tab {
     background-color: #fd0;
   }
 
-  @media only screen and (min-width: $tablet) {
+  @include mq($from: tablet) {
     padding: 3px $hse-legacy-spacing-10;
   }
 }
@@ -94,7 +94,7 @@ ul li .tabs__tab {
 
   background-color: #e6e6e6;
 
-  @media only screen and (min-width: $tablet) {
+  @include mq($from: tablet) {
     .js-enabled & {
       display: none;
       border-bottom: none;

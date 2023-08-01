@@ -3,7 +3,7 @@
 
 .homepageBanner {
     padding: 0;  
-    @media only screen and (min-width: $desktop) {
+    @include mq($from: desktop) {
       margin-bottom: 0;
       a {
         height: 100%;
@@ -17,7 +17,7 @@
   
   .homepageBanner {
     overflow: hidden;
-    @include mq($from: hse-desktop) {
+    @include mq($from: desktop) {
       max-height: 258px !important;
     }
   }
@@ -35,7 +35,7 @@
   
     overflow: hidden;
   
-    @media only screen and (min-width: 600px) {
+    @include mq($from: tablet) {
       order: 1;
     }
   }
@@ -45,7 +45,7 @@
     @include mq($from: tablet) {
     max-height: 258px;
     }
-    @media only screen and (min-width: 600px) {
+    @include mq($from: tablet) {
       order: 2;
       overflow: hidden;
     }
