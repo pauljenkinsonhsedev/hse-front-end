@@ -6,6 +6,12 @@
   padding: hse-spacing(3) 0;
 }
 
+.hse-breadcrumb__container ol {
+@include mq($until: desktop) {
+display: none;
+}
+}
+
 .hse-breadcrumb__list, .hse-breadcrumb ol {
   list-style: none;
   margin: 0;
@@ -14,6 +20,22 @@
 }
 
 .hse-breadcrumb__back {
+
+&::before {
+  content: " ";
+  background-image: url(../../assets/v6-images/icons/svg/solid/chevron-right-gray.svg);
+  transform: rotate(180deg);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  float: left;
+  top: 8px;
+  margin: 0 8px;
+  position: relative;
+  width: 10px;
+  height: 10px;  
+}
+
+
 padding: hse-spacing(2) 0;
 margin-bottom: $hse-legacy-spacing-20;
 @include mq($from: desktop) {
