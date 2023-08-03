@@ -138,6 +138,25 @@
     }
   }
 
+ /* Card group equal heights
+   ========================================================================== */
+ 
+ /**
+ * equal heights fix for common card groups (this could also be achieved in HTML using the spacing override classes hse-u-margin-bottom-4)
+ */
+
+.hse-card-group {
+  .hse-grid-column-one-third {
+    @include hse-responsive-margin(4, "bottom");
+  } 
+  .hse-grid-column-one-half {
+    @include hse-responsive-margin(4, "bottom");
+  } 
+}
+
+ /* Default clickable card
+   ========================================================================== */
+
   .hse-card {
   border-bottom: 4px solid $color_hse-grey-4;
   margin-bottom: $hse-legacy-spacing-20;
@@ -155,8 +174,9 @@
   }
   }
 
+  // makes entire card clickable (method used in Bootstrap framework, differs to NHS code)
+
   .hse-card a::after {
-    // make mixin for clickable wrapper
     position: absolute;
     top: 0;
     right: 0;
@@ -165,6 +185,9 @@
     z-index: 1;
     content: "";
    }
+
+ /* Image card
+   ========================================================================== */
 
    .hse-card__img {  
     border-bottom: $card-border-width solid $color_hse-grey-5; /* [2] */
@@ -175,3 +198,51 @@
     border: 2px solid $color_hse-grey-4;
     border-bottom: 4px $color_hse-grey-4 solid;
   }
+
+ /* Chevron card
+   ========================================================================== */
+
+  .hse-card--chevron {
+    position: relative;
+ 
+    a {
+     font-weight: normal;
+    }
+   &:hover{
+   background-color: none;
+   border-bottom: none;
+   }
+   }
+ 
+   .hse-card--chevron {
+    padding: $hse-legacy-spacing-10;
+   margin-bottom: $hse-legacy-spacing-10;
+   box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.15);
+   border-bottom: none;
+   padding: hse-spacing(3);
+   }
+ 
+  .hse-card--chevron a:focus::after {
+   border: 0 !important;
+   outline: 0;
+   box-shadow: inset 0 -4px 0 0 #333;
+  }
+ 
+   .hse-card--chevron a:before {
+     border-right: 3px solid $color_hse-red;
+     border-top: 3px solid $color_hse-red;
+     content: "";
+     display: block;
+     height: 10px;
+     position: absolute;
+     right: 10px;
+     top: 25px;
+     -webkit-transform: translateY(0) rotate(45deg) scale(1);
+     -ms-transform: translateY(0) rotate(45deg) scale(1);
+     transform: translateY(0) rotate(45deg) scale(1);
+     width: 10px;
+   }
+   .hse-card--chevron h3 {
+    margin: 0;
+    padding: 0;
+   }
