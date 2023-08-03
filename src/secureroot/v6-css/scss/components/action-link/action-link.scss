@@ -16,6 +16,12 @@
  .hse-action-link {
     @include hse-responsive-margin(6, "bottom");
   }
+
+  .hse-width-container--full {
+    .hse-action-link {
+    margin-bottom: 0;
+    }  
+  }
   
   .hse-action-link__link {
     @include hse-font(22);
