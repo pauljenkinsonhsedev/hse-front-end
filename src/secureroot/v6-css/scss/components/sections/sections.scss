@@ -40,26 +40,24 @@ max-width: none;
 }
 
 
+// Beta section headings border style
 
-
-
-    .hse-section--homepage {
-      &:last-of-type {
-        border-bottom: none;
-      }
-      h2 {
-        display: inline-block;
-        position: relative;
-      }
-      h2::before {
-        background-color: $color_hse-red;
-          content: '';
-          height: 4px;
-          position: absolute;
-          top: -8px;
-          width: 100%;
-        
-        }
+.hse-section--homepage {
+  &:last-of-type {
+    border-bottom: none;
+  }
+  h2.hse-section__heading {
+    display: inline-block;
+    position: relative;
+  }
+  h2.hse-section__heading::before {
+    background-color: $color_hse-red;
+      content: '';
+      height: 4px;
+      position: absolute;
+      top: -8px;
+      width: 100%;
     }
+}
 
 
