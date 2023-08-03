@@ -298,7 +298,17 @@ window.dataLayer.push({'content_group': '@@(_document['contentGroup'])@@'});
 <!-- TemplateBeginIfClause cond="layout != 'topTask' && layout != 'twoThirdsOneThird' && layout != 'sideNavigation'" -->
 <!-- full width --> 
 
+<!-- TemplateBeginMultipleIf -->
+<!-- TemplateBeginIfClause cond="containerType == 'full'" -->
+<div id="pageContainer" class="@@(_document['platform'])@@ hse-width-container--full hse-page-contents--@@(_document['layout'])@@"> 
+<!-- TemplateEndIfClause -->
+<!-- TemplateEndMultipleIf -->
+  
+<!-- TemplateBeginMultipleIf -->
+<!-- TemplateBeginIfClause cond="containerType == 'default'" -->
 <div id="pageContainer" class="@@(_document['platform'])@@ hse-width-container hse-page-contents--@@(_document['layout'])@@"> 
+<!-- TemplateEndIfClause -->
+<!-- TemplateEndMultipleIf -->
 
 <!-- TemplateEndIfClause -->
 
@@ -569,6 +579,7 @@ window.dataLayer.push({'content_group': '@@(_document['contentGroup'])@@'});
   
 <!-- TemplateParam name="bodyClass" type="text" value="guidance" -->
 <!-- TemplateParam name="layout" type="text" value="twoThirdsOneThird" -->
+<!-- TemplateParam name="containerType" type="text" value="default" -->
 <!-- TemplateParam name="platform" type="text" value="v6" -->
 <!-- TemplateParam name="rdfa" type="boolean" value="false" -->
 <!-- TemplateParam name="welsh" type="boolean" value="false" -->
