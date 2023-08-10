@@ -34,6 +34,7 @@
   
   .hse-navigation__navigation-list {
   width: 100%;
+  margin: 0;
   @include hse-font(16);
   list-style-type: none;
   background: none;
