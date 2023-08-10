@@ -165,6 +165,7 @@
   position: relative;
   h3, h2 {
     @include hse-font(22);
+    font-weight: bold;
   }
   &:hover {
   border-bottom: 4px solid $color_hse-red;
