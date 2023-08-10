@@ -34,11 +34,38 @@ max-width: none;
 @include hse-responsive-padding(4, "bottom");  
 }
 
-.hse-width-container--full .hse-section__content {
+.hse-width-container--full {
+
+.hse-section__content {
 @include hse-responsive-padding(6, "top");
 @include hse-responsive-padding(6, "bottom");
 }
+// Most popular + homepage banner
 
+.hse-section__content--most-popular {
+  @include mq($until: desktop) {
+  @include hse-responsive-padding(6, "top");
+  @include hse-responsive-padding(4, "bottom");
+  }
+  ul {margin-bottom: 0;}
+}
+
+.hse-section__content--homepage-banner {
+  @include mq($until: desktop) {
+  @include hse-responsive-padding(4, "top");
+  @include hse-responsive-padding(4, "bottom");
+  }
+}
+
+}
+
+// card groups within sections
+
+// minus margin to keep margins equal within .hse-section 
+
+.hse-section--homepage .hse-card-group {
+margin-bottom: - hse-spacing(4) !important;
+}
 
 // Beta section headings border style
 
@@ -59,5 +86,6 @@ max-width: none;
       width: 100%;
     }
 }
+
 
 
