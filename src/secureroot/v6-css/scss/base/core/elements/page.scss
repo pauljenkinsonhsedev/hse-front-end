@@ -14,6 +14,7 @@
  *    render text using sub-pixel anti-aliasing.
  * 3. Override the user agent style margin of 8px.
  * 4. Ensure the page always fills at least the entire height of the viewport.
+ * 5. Sticky footer - sticks to bottom of the screen when content of the page isn’t enough to push it there. If there is enough content, footer happily pushed down.
  */
 
  html {
@@ -32,6 +33,8 @@
     -webkit-font-smoothing: antialiased; /* [2] */
     line-height: _hse-line-height($hse-base-line-height, $hse-base-font-size);
     margin: 0; /* [3] */
-    min-height: 100%; /* [4] */
+    min-height: 101vh; /* [4][5] */
+    display: flex; /* [5] */
+    flex-direction: column; /* [5] */
   }
 
