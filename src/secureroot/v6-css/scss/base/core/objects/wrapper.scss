@@ -26,7 +26,7 @@
     margin: 0 $hse-gutter; /* [3] */
   }
 
-  @include govuk-media-query($from: 1024px) {
+  @include mq($from: 1024px) {
     width: 100%; /* [6] */
   }
 
