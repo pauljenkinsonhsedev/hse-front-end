@@ -83,13 +83,11 @@
   
     &.btn-secondary {
       background-color: $color_hse-red;
-      border: 1px solid white;
       color: $color_hse-white;
       margin-bottom: $hse-legacy-spacing-20;
   
       &:hover {
         background-color: $hse-focus-color;
-        border: 1px solid $hse-focus-color;
         color: $black;
       }
   
@@ -153,4 +151,5 @@
     bottom: -4px;
     margin-left: 10px;
   }
+
   
