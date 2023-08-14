@@ -477,6 +477,12 @@ window.dataLayer.push({'content_group': '@@(_document['contentGroup'])@@'});
 <!-- TemplateBeginIfClause cond="feedback == true" -->
   
 <!-- start feedback component -->
+  
+<!-- TemplateBeginMultipleIf -->
+<!-- TemplateBeginIfClause cond="homepage == true" -->
+<div class="hse-section hse-section--feedback">
+<!-- TemplateEndIfClause -->
+<!-- TemplateEndMultipleIf -->
 
 <div class="hse-width-container">
 <section id="feedback" class="hse-feedback @@(_document['feedbackClass'])@@" aria-describedby="feedback-message" aria-label="Is this page useful">
@@ -496,6 +502,8 @@ window.dataLayer.push({'content_group': '@@(_document['contentGroup'])@@'});
       
 </div>
   
+
+  
 <!-- TemplateBeginMultipleIf -->
 <!-- TemplateBeginIfClause cond="survey == true" -->
 
@@ -511,6 +519,13 @@ window.dataLayer.push({'content_group': '@@(_document['contentGroup'])@@'});
 </section>
 </div>
   
+<!-- TemplateBeginMultipleIf -->
+<!-- TemplateBeginIfClause cond="homepage == true" -->
+  </div>
+<!-- TemplateEndIfClause -->
+<!-- TemplateEndMultipleIf -->
+  
+
   
 <!-- end feedback component -->
 

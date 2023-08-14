@@ -8,6 +8,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  border-top: 1px solid $color_hse-grey-3;
   @include mq($from: tablet) {
   flex-direction: row;
   padding: 0;
@@ -23,6 +24,25 @@
     background: white;
     }
 }
+
+.hse-section--feedback:has(.js-feedback-open) {
+background: white;
+}
+
+.hse-section--feedback .hse-feedback__prompt {
+  background: inherit;
+  border-top: none;
+}
+
+.hse-feedback__prompt-link {
+box-shadow: 0 3px 0 #0b0c0c;
+}
+
+.hse-feedback__prompt-link.btn {
+background: none;
+border: 1px solid $color_hse-grey-2; 
+}
+
 
 
 
