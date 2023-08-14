@@ -25,6 +25,10 @@
     }
 }
 
+.hse-section--feedback:has(.js-feedback-open) {
+background: white;
+}
+
 .hse-section--feedback .hse-feedback__prompt {
   background: inherit;
   border-top: none;
