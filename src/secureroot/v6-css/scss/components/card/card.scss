@@ -155,6 +155,14 @@
 
 }
 
+.hse-grid-column-one-half:has(.hse-card--chevron) {
+  @include hse-responsive-margin(2, "bottom");
+}
+
+.hse-section__content .hse-card-group:has(.hse-card--chevron) {
+  margin-bottom: inherit;
+}
+
  /* Default clickable card
    ========================================================================== */
 
@@ -175,6 +183,19 @@
    background: none;
   }
   }
+
+  // Make non-clickable
+
+  .hse-card--non-clickable  {
+  border-bottom: none;
+  a::after {
+  display: none;
+  }
+  &:hover {
+  border-bottom: none;  
+  }
+
+}
 
   // makes entire card clickable (method used in Bootstrap framework, differs to NHS code)
 
@@ -208,43 +229,69 @@
     position: relative;
  
     a {
-     font-weight: normal;
+     font-weight: bold;
+     display: block;
     }
    &:hover{
-   background-color: none;
    border-bottom: none;
+   }
+   h3 {
+    margin: 0;
+    padding: 0;
    }
    }
  
    .hse-card--chevron {
-    padding: $hse-legacy-spacing-10;
    margin-bottom: $hse-legacy-spacing-10;
    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.15);
    border-bottom: none;
-   padding: hse-spacing(3);
+   padding: hse-spacing(3) hse-spacing(4) hse-spacing(3) hse-spacing(4);
+   a {
+   padding-right: hse-spacing(3); // fix for chevron icon positioning
    }
- 
-  .hse-card--chevron a:focus::after {
-   border: 0 !important;
-   outline: 0;
-   box-shadow: inset 0 -4px 0 0 #333;
+   &:hover {
+  background: $color_hse-red;
+   }
+   &:focus-within {
+    background: $hse-focus-color;
+   }
+   a {
+    &:before {
+      border-right: 3px solid $color_hse-red;
+      border-top: 3px solid $color_hse-red;
+      content: "";
+      display: block;
+      height: 10px;
+      position: absolute;
+      right: hse-spacing(4);
+      top: hse-spacing(4);
+      -webkit-transform: translateY(0) rotate(45deg) scale(1);
+      -ms-transform: translateY(0) rotate(45deg) scale(1);
+      transform: translateY(0) rotate(45deg) scale(1);
+      width: 10px;
+    }
+    &:hover {
+      color: white;
+    }
+    &:hover::before {
+      color: white;
+      border-right: 3px solid white;
+      border-top: 3px solid white;
+    }
+    &:focus {
+      color: $hse-text-color;
+      box-shadow: none;
+    }
+    &:focus::before {
+      border-right: 3px solid $hse-text-color;
+      border-top: 3px solid $hse-text-color;
+    }
+    &:focus::after {
+      border: 0 !important;
+      outline: 0;
+      box-shadow: inset 0 -4px 0 0 #333;
+
+   }
+
+   }
   }
- 
-   .hse-card--chevron a:before {
-     border-right: 3px solid $color_hse-red;
-     border-top: 3px solid $color_hse-red;
-     content: "";
-     display: block;
-     height: 10px;
-     position: absolute;
-     right: 10px;
-     top: 25px;
-     -webkit-transform: translateY(0) rotate(45deg) scale(1);
-     -ms-transform: translateY(0) rotate(45deg) scale(1);
-     transform: translateY(0) rotate(45deg) scale(1);
-     width: 10px;
-   }
-   .hse-card--chevron h3 {
-    margin: 0;
-    padding: 0;
-   }
