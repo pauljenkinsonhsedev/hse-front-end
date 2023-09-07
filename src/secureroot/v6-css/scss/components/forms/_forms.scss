@@ -116,6 +116,11 @@ input:required:valid {
   width: 45ex; // default width
 }
 
+.input-email {
+font-size: 1rem;
+line-height: 1.5;
+}
+
 /* Widths */
 .input-digits-1 {
   font-size: 13pt;
@@ -156,10 +161,10 @@ input:required:valid {
 
 }
 .input-width-l {
+  @include mq($until: tablet) {
+    width: 100%;
+    }
   max-width: 45ex;
-  @include mq($until: large-desktop) {
-  width: 100%;
-  }
 }
 
 textarea {
