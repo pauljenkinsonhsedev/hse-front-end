@@ -64,8 +64,7 @@
   @media only screen and (min-width: 980px) {
     padding: 0;
     width: $full-width;
-    margin-top: $hse-legacy-spacing-20;
-    margin-bottom: $hse-legacy-spacing-20;
+    margin: $hse-legacy-spacing-10 auto;
     // float: none;
   }
 }
@@ -102,19 +101,10 @@
   }
 }
 
-// .notification-hide, .notification-banner.global .notification-hide
-// {
-// background: none;
-// border: none;
-// float: right;
-// margin-top: 10px;
-// @media only screen and (min-width : 980px) {
-// position: relative;
-// right: 0;
-// top: 0;
-// margin-bottom: $hse-legacy-spacing-20;
-// }
-// }
+.notification-hide {
+color: white !important;  
+background: none !important;
+}
 
 .notification-bar-title {
   font-weight: bold;
