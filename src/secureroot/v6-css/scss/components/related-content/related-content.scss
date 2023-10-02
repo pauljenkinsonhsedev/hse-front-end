@@ -1,0 +1,11 @@
+#contentAside ul {
+list-style: none;
+padding-left: 0;
+}
+
+#contentAside {
+border-top: 4px solid $color_hse-red;
+@include hse-responsive-padding (2, "top");
+@include hse-responsive-margin (8, "top");
+}
+
