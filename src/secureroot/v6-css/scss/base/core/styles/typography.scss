@@ -162,6 +162,7 @@
   .hse-body-m {
     @extend %hse-body-m;
     color: inherit;
+    line-height: 1.5 !important;
   }
   
   %hse-body-s {
@@ -192,6 +193,7 @@
   
   .hse-lede-text {
     @include hse-font(24);
+    line-height: 1.5 !important;
     @include hse-responsive-margin(7, "bottom");
     /* [1] */
     p,
