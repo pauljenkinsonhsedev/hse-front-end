@@ -2,6 +2,11 @@ export function backToTop() {
 
     var backToTop = document.querySelector('.hse-back-to-top__container');
     var backToTopHook = document.querySelector('.hse-back-to-top');
+    var contents = document.querySelector('.hse-contents-list');
+
+    if(!contents) {
+    backToTopHook.classList.add("visually-hidden");
+    }
 
     // get aside content
     let aside = document.querySelector('#contentAside');
@@ -34,11 +39,10 @@ export function backToTop() {
     } else {
     // do nothing
     }    
-    
+   
 });
 
 }
-
 
 
 
