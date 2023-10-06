@@ -1,0 +1,38 @@
+
+.hse-back-to-top__container {
+padding-bottom: hse-spacing(4); 
+}
+
+.hse-back-to-top__container.hse-back-to-top--fixed, .hse-back-to-top__container.hse-back-to-top--above-aside {
+padding-bottom: 0; 
+}
+
+.hse-back-to-top--fixed {
+display: flex;
+position: fixed;
+bottom: 0;
+left: 0;
+width: 100%;
+background: $color_hse-grey-1;
+z-index: 10;
+.hse-back-to-top__link {
+&:link, &:visited {
+color: white;
+}
+display: flex;
+padding: hse-spacing(2) 0;
+}
+
+.hse-back-to-top__icon path {
+fill: white;
+}
+}
+
+.hse-back-to-top__icon {
+margin-right: hse-spacing(2); 
+}
+
+.hse-back-to-top--hide {
+display: inline-block;
+}
+
