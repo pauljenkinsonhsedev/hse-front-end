@@ -28,6 +28,8 @@ import { accordion } from "./combined/accordion.js";
 // import { printGuide } from './combined/print-guide/print-guide.js';
 // import { CSVTable } from './combined/csv-table.js';
 import { htmlPrintGuide } from "./combined/html-print-guide.js";
+import { backToTop } from "./combined/back-to-top.js";
+
 
 // Window load
 window.addEventListener("DOMContentLoaded", () => {
@@ -41,7 +43,10 @@ window.addEventListener("DOMContentLoaded", () => {
     loadPicturefillFn();
   }
 
-  
+  const contentsList = document.querySelector(".hse-contents-list");
+  if (contentsList) {
+    backToTop();
+  }
 
   accordion();
 
