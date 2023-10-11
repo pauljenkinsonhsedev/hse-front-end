@@ -53,6 +53,10 @@ border: none;
   .homepageBanner a {
     width: 100%;
   }
+
+  .homepageBanner:focus-within {
+   outline: 5px solid $hse-focus-color;
+  }
   
   .homepageBannerInner {
     display: flex;
