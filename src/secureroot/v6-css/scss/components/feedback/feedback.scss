@@ -224,5 +224,6 @@ p.question-hint {
 }
 
 .feedback__report-problem-alert {
-  color: white;
+  background: $color_hse-grey-4;
+  padding: $hse-legacy-spacing-10;
 }
