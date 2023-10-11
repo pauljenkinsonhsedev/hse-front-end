@@ -43,8 +43,9 @@ window.addEventListener("DOMContentLoaded", () => {
     loadPicturefillFn();
   }
 
-  const contentsList = document.querySelector(".hse-template-twoThirdsOneThird");
-  if (contentsList) {
+  const backToTopLink = document.querySelector(".hse-back-to-top");
+  
+  if (backToTopLink) {
     backToTop();
   }
 

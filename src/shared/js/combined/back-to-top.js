@@ -4,6 +4,7 @@ export function backToTop() {
     var backToTopHook = document.querySelector('.hse-back-to-top');
     var contents = document.querySelector('.hse-contents-list');
 
+    // visually hides back-to-top link if there is not contents list
     if(!contents) {
     backToTopHook.classList.add("visually-hidden");
     }
