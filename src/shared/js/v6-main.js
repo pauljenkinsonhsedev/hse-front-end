@@ -1,6 +1,5 @@
 import "./combined/polyfills.js";
 
-// import CsvConvert from './combined/csv-convertor/csv-convertor';
 import ChartsDefault from "./combined/charts/charts.js";
 import { mainMenu } from "./combined/main-menu.js";
 import { loadPicturefillFn } from "./combined/utils/picture-elem.js";
@@ -26,7 +25,6 @@ import { subnavMenu } from "./combined/subnav-menu.js";
 import { subNavMobile } from "./combined/subnav-mobile.js";
 import { accordion } from "./combined/accordion.js";
 // import { printGuide } from './combined/print-guide/print-guide.js';
-// import { CSVTable } from './combined/csv-table.js';
 import { htmlPrintGuide } from "./combined/html-print-guide.js";
 import { backToTop } from "./combined/back-to-top.js";
 
@@ -113,12 +111,6 @@ window.addEventListener("DOMContentLoaded", () => {
     dialogModal(dialog);
   }
 
-  // CSV Convertor
-  // const csvForm = document.getElementById('csvconvertor');
-  // if (document.body.contains(csvForm)) {
-  //   const convert = new CsvConvert(csvForm);
-  //   convert.init(csvForm);
-  // }
 
   // HighCharts JS
   const chartSelector = document.querySelector(".chart");
@@ -150,5 +142,4 @@ window.addEventListener("DOMContentLoaded", () => {
 
   // printGuide();
 
-  // CSVTable();
 }); // end window load
