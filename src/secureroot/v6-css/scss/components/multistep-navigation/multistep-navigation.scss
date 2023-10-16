@@ -16,6 +16,10 @@ margin-bottom: $hse-legacy-spacing-20;
     list-style-type: none;
     position: relative;
     width: 100%;
+    margin: 0;
+    li {
+      padding: 0 hse-spacing(4);
+    }
   }
   
   
