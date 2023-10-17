@@ -105,36 +105,6 @@
     margin: 0;
   }
   
-  // Pagination icons
-  
-  #contentContainer #pagination ul li::before {
-    content: "" !important;
-  }
-  
-  #contentContainer #pagination .next-page .pagination-icon::after {
-    content: " ";
-    background-size: 28px;
-    background-image: url("../../assets/v6-images/icons/svg/solid/arrow-right-red.svg");
-    background-repeat: no-repeat;
-    background-position: right;
-    display: inline-block;
-    width: 30px;
-    height: 30px;
-    margin-left: 5px;
-  }
-  
-  #contentContainer #pagination .previous-page .pagination-icon::before {
-    content: " ";
-    background-size: 28px;
-    background-image: url("../../assets/v6-images/icons/svg/solid/arrow-left-red.svg");
-    background-repeat: no-repeat;
-    background-position: left;
-    display: inline-block;
-    width: 30px;
-    height: 30px;
-    margin-right: 5px;
-  }
-  
 
   
   .boxList ul li:hover h3 {

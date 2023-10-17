@@ -7,96 +7,144 @@ margin-bottom: $hse-legacy-spacing-20;
 }
 
 #pagination ul {
-  list-style-type: none;
-  display: flex;
-  flex-direction: column;
-  @include mq($from: large-desktop) {
-  flex-direction: row;
-  }
-  }
-  
-  #pagination ul li {
-    list-style-image: none;
-  }
+list-style-type: none;
+display: flex;
+flex-direction: column;
+@include mq($from: large-desktop) {
+flex-direction: row;
+}
+}
 
-  #pagination ul li a {
-  padding: $hse-legacy-spacing-10;
-  display: flex;
-  flex-direction: column;
-  text-decoration: none;
-  }
+#pagination ul li {
+list-style-image: none;
+}
+
+#pagination ul li a {
+padding: $hse-legacy-spacing-10;
+display: flex;
+flex-direction: column;
+text-decoration: none;
+}
+
+#pagination ul,
+#pagination ul li {
+background: none;
+margin: 0 !important;
+padding: 0;
+}
+
+// Top task pagination
+
+#pagination .next-page,
+#pagination .previous-page {
+width: 100%;
+@include mq($from: desktop) {
+width: 50%;
+}
+}
+
+#pagination a span {
+&:focus {
+color: $color_hse-grey-1 !important;
+}
+}
+
+#pagination a:hover {
+background-color: $color_hse-grey-4;
+}
+
+.pagination-text {
+display: flex;
+text-decoration: underline;
+margin-top: 5px;
+order: 1;
+}
+
+.previous-page .pagination-text {
+@include mq($from: desktop) {
+padding-left: 32px;
+}
+}
+
+#pagination .next-page,
+#pagination .previous-page {
+@include mq($from: desktop) {
+margin-left: -10px;
+}
+}
+
+#pagination div:nth-child(2) {
+@include mq($from: desktop) {
+margin-left: $hse-legacy-spacing-10;
+}
+}
+
+.next-page:hover .pagination-text,
+.previous-page:hover .pagination-text {
+text-decoration: none !important;
+color: $color_hse-grey-1 !important;
+}
+
+.previous-page a {
+width: 100%;
+padding: $hse-legacy-spacing-10;
+@include mq($from: desktop) {
+padding-left: 0;
+}
+}
+
+.next-page a {
+width: 100%;
+padding: $hse-legacy-spacing-10;
+}
+
+#pagination ul li:first-of-type a {
+@include mq($from: desktop) {
+padding-left: 0;
+}
+}
+
+// Pagination icons
+
+#pagination ul li::before {
+content: "" !important;
+}
+
+.pagination-icon {
+display: flex;
+align-items: center;
+}
+
+.next-page .pagination-icon::after {
+content: " ";
+background-image: url("../../assets/v6-images/icons/svg/solid/arrow-right-red.svg");
+background-repeat: no-repeat;
+background-position: right;
+display: inline-block;
+width: 24px;
+height: 24px;
+margin-left: 10px;
+@include mq($until: desktop) {
+margin-right: 10px;
+margin-left: 0;
+order: -1;
+}
+}
+
+.previous-page .pagination-icon::before {
+content: " ";
+background-image: url("../../assets/v6-images/icons/svg/solid/arrow-left-red.svg");
+background-repeat: no-repeat;
+background-position: left;
+display: inline-block;
+width: 24px;
+height: 24px;
+margin-right: 10px;
+@include mq($until: desktop) {
+margin-right: 10px;
+order: -1;
+}
+}
+
   
-  #pagination ul,
-  #pagination ul li {
-    background: none;
-    margin: 0 !important;
-    padding: 0;
-  }
-  
-  // Top task pagination
-  
-  #pagination .next-page,
-  #pagination .previous-page {
-    width: 100%;
-    @include mq($from: desktop) {
-      width: 50%;
-    }
-  }
-  
-  #pagination a span {
-    &:focus {
-      color: $color_hse-grey-1 !important;
-    }
-  }
-  
-  #pagination a:hover {
-    background-color: $color_hse-grey-4;
-  }
-  
-  .pagination-icon {
-    @include hse-font(24);
-    }
-  
-  .pagination-text {
-    @include hse-font(16);
-    text-decoration: underline;
-  }
-  
-  #pagination .next-page,
-  #pagination .previous-page {
-    @include mq($from: desktop) {
-      margin-left: -10px;
-    }
-  }
-  
-  #pagination div:nth-child(2) {
-    @include mq($from: desktop) {
-      margin-left: $hse-legacy-spacing-10;
-    }
-  }
-  
-  .next-page:hover .pagination-text,
-  .previous-page:hover .pagination-text {
-    text-decoration: none !important;
-    color: $color_hse-grey-1 !important;
-  }
-  
-  #pagination .previous-page a {
-    width: 100%;
-    padding: $hse-legacy-spacing-10;
-    @include mq($from: desktop) {
-      padding-left: 0;
-    }
-  }
-  
-  #pagination .next-page a {
-    width: 100%;
-    padding: $hse-legacy-spacing-10;
-  }
-  
-  #pagination ul li:first-of-type a {
-    @include mq($from: desktop) {
-      padding-left: 0;
-    }
-  }
   
