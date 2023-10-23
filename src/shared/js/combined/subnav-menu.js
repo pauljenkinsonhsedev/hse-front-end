@@ -1,21 +1,25 @@
 export function subnavMenu(container) {
-  container.classList.add('subnav-container');
-  const first = container.querySelectorAll('ul:first-of-type li');
-  const wrapper = container.querySelector('ul:first-of-type');
-  wrapper.classList.add('subnav-wrapper');
+  container.classList.add("subnav-container");
+  const first = container.querySelectorAll("ul:first-of-type li");
+  const wrapper = container.querySelector("ul:first-of-type");
+  wrapper.classList.add("subnav-wrapper");
 
   // Create draws
-  const nestedChildren = container.querySelectorAll('li > ul');
+  const nestedChildren = container.querySelectorAll("li > ul");
 
   [...nestedChildren].reverse().forEach((item) => {
     // insert header
     const header = createBackLinks(item);
-    item.insertAdjacentElement('afterbegin', header);
+    const subHeader = createTitle(item);
+
+    item.insertAdjacentElement("afterbegin", header);
+
+    item.firstElementChild.append(subHeader);
 
     // create draw
-    const draw = document.createElement('div');
+    const draw = document.createElement("div");
 
-    draw.classList.add('draw');
+    draw.classList.add("draw");
     draw.appendChild(item.cloneNode(true));
 
     // replace item with draw
@@ -24,31 +28,48 @@ export function subnavMenu(container) {
     // draw.firstChild.querySelector('li').classList.add('header');
 
     const drawAction = draw.previousElementSibling;
-    drawAction.classList.add('next');
+    drawAction.classList.add("next");
   });
 
   // create back navigation
   function createBackLinks(elem) {
-    const text = elem.parentElement.parentElement.firstElementChild.innerText;
+    const text = elem.parentElement.parentElement.firstElementChild.textContent;
     const regex1 = /Overview -/gi;
     const regex2 = /- Overview/gi;
-    const headerText = text.replaceAll(regex1, '').replaceAll(regex2, '');
-    const headerItem = document.createElement('li');
-    const headerAction = document.createElement('a');
-    headerAction.href = '#';
-    headerAction.classList.add('back');
+    const headerText = text.replaceAll(regex1, "").replaceAll(regex2, "");
+    const headerItem = document.createElement("li");
+    const headerAction = document.createElement("a");
+    headerAction.href = "#";
+    headerAction.classList.add("back");
     headerAction.innerHTML = headerText;
     headerAction.title = `Back to ${headerText}`;
-    headerItem.classList.add('header');
+    headerItem.classList.add("header");
+    headerItem.appendChild(headerAction.cloneNode(true));
+
+    return headerItem;
+  }
+
+  // Create title of sub menu
+
+  function createTitle(elem) {
+    const text = elem.parentElement.querySelector("a").text;
+
+    const regex1 = /Overview -/gi;
+    const regex2 = /- Overview/gi;
+    const headerText = text.replaceAll(regex1, "").replaceAll(regex2, "");
+    const headerItem = document.createElement("div");
+    headerItem.classList.add("subnav-title");
+    const headerAction = document.createElement("p");
+    headerAction.innerHTML = headerText;
     headerItem.appendChild(headerAction.cloneNode(true));
 
     return headerItem;
   }
 
   // set depths for draws
-  const lists = container.querySelectorAll('.draw');
+  const lists = container.querySelectorAll(".draw");
   [...lists].forEach((item) => {
-    item.dataset.depth = `${depthArray(item, 'draw')}`;
+    item.dataset.depth = `${depthArray(item, "draw")}`;
   });
 
   // get depth array
@@ -70,54 +91,52 @@ export function subnavMenu(container) {
   // set current item and tab indexes
   // when a user lands on a page this will select the active page
   const urlStringPath = window.location.pathname.substring(
-    window.location.pathname.lastIndexOf('/') + 1
+    window.location.pathname.lastIndexOf("/") + 1
   );
-  const navItems = container.querySelectorAll('a');
+  const navItems = container.querySelectorAll("a");
   [...navItems].forEach((item) => {
     let activePage;
-    const link = item.getAttribute('href');
+    const link = item.getAttribute("href");
     let position = Number;
     if (link === urlStringPath) {
-      const draw = item.closest('.draw');
+      const draw = item.closest(".draw");
       if (draw) {
-        draw.classList.add('active');
+        draw.classList.add("active");
         position = parseInt(draw.dataset.depth);
       } else {
         position = 0;
       }
-      activePage = item.classList.add('active-page');
-      item.setAttribute('aria-current', 'page');
+      activePage = item.classList.add("active-page");
+      item.setAttribute("aria-current", "page");
       wrapper.style.left = `-${position}00%`;
     }
   });
 
-
-
-
-
-
   // set tab indexes
   function setTabIndexes(clickedElem, direction) {
     let active;
-    const activePageExists = container.querySelector('.active-page');
+    const activePageExists = container.querySelector(".active-page");
 
     if (activePageExists) {
-    const activePage = container.querySelector('.active-page').parentElement.parentElement;
-    } 
+      const activePage =
+        container.querySelector(".active-page").parentElement.parentElement;
+    }
 
-    const reset = container.querySelector('.subnav-wrapper');
+    const reset = container.querySelector(".subnav-wrapper");
 
-    if (clickedElem && direction === 'next') {
-      active = clickedElem.parentElement.closest('ul');
-    } else if (clickedElem && direction === 'back') {
-      active = clickedElem.parentElement.closest('ul').parentElement.closest('ul');
+    if (clickedElem && direction === "next") {
+      active = clickedElem.parentElement.closest("ul");
+    } else if (clickedElem && direction === "back") {
+      active = clickedElem.parentElement
+        .closest("ul")
+        .parentElement.closest("ul");
     } else if (activePageExists) {
       active = reset;
-    } else  {
+    } else {
       active = activePage;
     }
 
-    const lists = container.querySelectorAll('ul');
+    const lists = container.querySelectorAll("ul");
     let position = anchorPosition(active, [...lists]);
 
     function anchorPosition(elementToFind, array) {
@@ -129,16 +148,16 @@ export function subnavMenu(container) {
     }
 
     [...lists].forEach((item) => {
-      const descendants = Array.from(item.querySelectorAll('*'));
+      const descendants = Array.from(item.querySelectorAll("*"));
       const directDescendants = descendants.filter(
         (ele) => ele.parentElement === item
       );
       directDescendants.forEach((item) => {
-        if (item.parentElement.parentElement.classList.contains('active')) {
+        if (item.parentElement.parentElement.classList.contains("active")) {
           // console.log(item.querySelector('a'))
-          item.querySelector('a').tabIndex = 0;
+          item.querySelector("a").tabIndex = 0;
         } else {
-          item.querySelector('a').tabIndex = -1;
+          item.querySelector("a").tabIndex = -1;
         }
       });
     });
@@ -147,25 +166,25 @@ export function subnavMenu(container) {
   setTabIndexes();
 
   // Add click event for back
-  const back = document.querySelectorAll('.back');
+  const back = document.querySelectorAll(".back");
   back.forEach((item) => {
-    item.addEventListener('click', backHandler);
+    item.addEventListener("click", backHandler);
   });
 
   function backHandler(e) {
     e.preventDefault();
     e.stopPropagation();
 
-    const parent = e.target.closest('.draw');
-    const grandParent = parent.closest('ul').closest('.draw');
+    const parent = e.target.closest(".draw");
+    const grandParent = parent.closest("ul").closest(".draw");
     let drawHeight;
     const position = parent.dataset.depth
       ? parseInt(parent.dataset.depth) - 1
       : 0;
 
-    parent.classList.remove('active');
+    parent.classList.remove("active");
     if (grandParent) {
-      grandParent.classList.add('active');
+      grandParent.classList.add("active");
       drawHeight = grandParent.offsetHeight;
       container.style.height = `${drawHeight}px`;
     } else {
@@ -173,51 +192,55 @@ export function subnavMenu(container) {
     }
 
     wrapper.style.left = `-${position}00%`;
-    setTabIndexes(e.target, 'back');
-  
+    setTabIndexes(e.target, "back");
+
     [...first].forEach((item) => {
       if (grandParent === null) {
-        item.querySelector('a').tabIndex = 0;
+        item.querySelector("a").tabIndex = 0;
       } else {
-        item.querySelector('a').tabIndex = -1;
-      }  
-    })
-  }
-
-    // Fix for top level ( if draw active data depth to target only top)
-
-    const topul = container.querySelector('.subnav-wrapper');
-    let activePageNew = container.querySelector('.active-page');
-
-    let parentHasClass;
-
-    // Set 
-    if (activePageNew === null)  {
-      let resetActive = container.querySelector('.first a');
-      parentHasClass = resetActive.parentElement.parentElement.classList.contains('subnav-wrapper');
-    } else {
-      parentHasClass = activePageNew.parentElement.parentElement.classList.contains('subnav-wrapper');
-    }
-
-    // 
-
-    if (parentHasClass === true) {
-  
-    const listItemsActive = topul.querySelectorAll('li');
-  
-    console.log(listItemsActive);
-  
-    listItemsActive.forEach((item) => {
-      item.querySelector('a').tabIndex = 0;
+        item.querySelector("a").tabIndex = -1;
+      }
     });
-
   }
-    /// End fix
+
+  // Fix for top level ( if draw active data depth to target only top)
+
+  const topul = container.querySelector(".subnav-wrapper");
+  let activePageNew = container.querySelector(".active-page");
+
+  let parentHasClass;
+
+  // Set
+  if (activePageNew === null) {
+    let resetActive = container.querySelector(".first a");
+    parentHasClass =
+      resetActive.parentElement.parentElement.classList.contains(
+        "subnav-wrapper"
+      );
+  } else {
+    parentHasClass =
+      activePageNew.parentElement.parentElement.classList.contains(
+        "subnav-wrapper"
+      );
+  }
+
+  //
+
+  if (parentHasClass === true) {
+    const listItemsActive = topul.querySelectorAll("li");
+
+    console.log(listItemsActive);
+
+    listItemsActive.forEach((item) => {
+      item.querySelector("a").tabIndex = 0;
+    });
+  }
+  /// End fix
 
   // Add click event for next
-  const next = document.querySelectorAll('.next');
+  const next = document.querySelectorAll(".next");
   next.forEach((item) => {
-    item.addEventListener('click', nextHandler);
+    item.addEventListener("click", nextHandler);
   });
 
   function nextHandler(e) {
@@ -226,37 +249,30 @@ export function subnavMenu(container) {
 
     const parent = e.target.nextElementSibling;
     const position = parseInt(parent.dataset.depth);
-    const anchors = container.querySelectorAll('.subnav-wrapper .next');
+    const anchors = container.querySelectorAll(".subnav-wrapper .next");
     for (let n = 0; n < anchors.length; ++n) {
       if (anchors[n] !== this) {
-        anchors[n].nextElementSibling.classList.remove('active');
+        anchors[n].nextElementSibling.classList.remove("active");
       }
     }
-    e.target.nextElementSibling.classList.add('active');
+    e.target.nextElementSibling.classList.add("active");
 
     const drawHeight = e.target.nextElementSibling.offsetHeight;
     container.style.height = `${drawHeight}px`;
     wrapper.style.left = `-${position}00%`;
-    setTabIndexes(e.target, 'next');
+    setTabIndexes(e.target, "next");
   }
 
-  // height fix 
+  // height fix
 
-    const activePage = document.querySelector('.active-page');
+  const activePage = document.querySelector(".active-page");
 
-    if (activePage) {
-
-    const activeDraw = activePage.closest('.draw.active');
+  if (activePage) {
+    const activeDraw = activePage.closest(".draw.active");
 
     if (activeDraw) {
-    const activePageDrawHeight = activeDraw.clientHeight;
-    container.style.height = `${activePageDrawHeight}px`;  
+      const activePageDrawHeight = activeDraw.clientHeight;
+      container.style.height = `${activePageDrawHeight}px`;
     }
-
-    }  
-
-
+  }
 }
-
-
-
