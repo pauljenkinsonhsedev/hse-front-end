@@ -1,5 +1,4 @@
 
-
 .hse-side-navigation {
 float: left;
 width: 100%;
@@ -54,9 +53,7 @@ width: 100%;
   margin: 0;
   font-size: 0;
 }
-.subnav-container li:hover {
-  background: $color_hse-grey-3;
-}
+
 .subnav-container a:focus {
   background: $hse-focus-color !important;
 }
@@ -77,7 +74,7 @@ outline: none;
   overflow: visible;
   cursor: pointer;
   font-size: 1rem;
-  font-weight: bold;
+  text-decoration: none;
   &:visited {
   color: $color_hse-red;
   }
@@ -96,6 +93,7 @@ outline: none;
 }
 .subnav-container .header {
   display: flex;
+  flex-flow: column;
   a {
     width: 100%;
   }
@@ -118,17 +116,29 @@ outline: none;
 .subnav-container li {
   line-height: 1.4;
 }
-.subnav-container a:not(.back) {
+.subnav-container li a {
+  padding: $hse-legacy-spacing-10 0;
+  &:hover {
+  text-decoration: underline;
+  font-weight: bold;
+  }
+}
+
+.subnav-container li:not(.first) a:not(.back) {
   padding: 14px;
   @include mq($from: desktop) {
     padding: $hse-legacy-spacing-10;
   }
 }
-.subnav-container a:not(.back):hover {
-  background-color: $color_hse-grey-4;
-  color: $black;
+
+
+
+.subnav-container .draw.active li a:not(.header) {
+  padding: $hse-legacy-spacing-10 ;
 }
-.subnav-container a:not(.back):active {
+
+
+.subnav-container li a:not(.back):active {
   background-color: $color_hse-grey-3;
   color: $black;
 }
@@ -144,10 +154,6 @@ outline: none;
     10px
   ) !important; // Important to reverse slinky transform CSS
   border-right: 10px solid transparent;
-}
-
-.subnav-container .back {
-  text-decoration: none;
 }
 
 .subnav-container a.next::after {
@@ -191,16 +197,20 @@ outline: none;
   font-weight: bold;
 }
 
-.subnav-container li.first a:hover {
-  background-color: $color_hse-red;
-  color: white;
-}
-
 // Active page
 
 li a.active-page {
   border-left: 3px solid $color_hse-red;
   text-decoration: none;
+  padding: 10px !important;
+}
+li a.active-page::before {
+background-color: #0065bd;
+content: "";
+height: 4px;
+position: absolute;
+top: -4px;
+width: 100%;
 }
 .no-active-style {
   background: none !important;
@@ -349,4 +359,11 @@ cursor: pointer;
 pointer-events: none;
 }
 
+}
+
+.subnav-title p {
+font-size: 1rem;
+margin-bottom: 10px;
+font-weight: bold;
+color: black;
 }
