@@ -33,7 +33,7 @@ export function subnavMenu(container) {
 
   // create back navigation
   function createBackLinks(elem) {
-    const text = elem.parentElement.parentElement.firstElementChild.textContent;
+    const text = elem.parentElement.parentElement.firstElementChild.innerText;
     const regex1 = /Overview -/gi;
     const regex2 = /- Overview/gi;
     const headerText = text.replaceAll(regex1, "").replaceAll(regex2, "");
@@ -176,6 +176,10 @@ export function subnavMenu(container) {
     e.stopPropagation();
 
     const parent = e.target.closest(".draw");
+
+    // const backURL = e.target.closest(".draw").parentElement.closest("ul").firstElementChild.nextElementSibling.querySelector("a").getAttribute("href");
+    // console.log(backURL), location.href = backURL;
+    
     const grandParent = parent.closest("ul").closest(".draw");
     let drawHeight;
     const position = parent.dataset.depth
@@ -248,6 +252,10 @@ export function subnavMenu(container) {
     e.stopPropagation();
 
     const parent = e.target.nextElementSibling;
+
+    // var nextURL = parent.querySelector(".header").nextElementSibling.querySelector("a").getAttribute("href");
+    // console.log(nextURL), location.href = nextURL;
+  
     const position = parseInt(parent.dataset.depth);
     const anchors = container.querySelectorAll(".subnav-wrapper .next");
     for (let n = 0; n < anchors.length; ++n) {
