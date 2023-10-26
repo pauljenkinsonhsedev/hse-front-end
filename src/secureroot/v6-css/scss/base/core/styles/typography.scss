@@ -159,7 +159,7 @@
   }
   
   p,
-  .hse-body-m {
+  .hse-body-m, .accordion__heading {
     @extend %hse-body-m;
     color: inherit;
     line-height: 1.5 !important;
