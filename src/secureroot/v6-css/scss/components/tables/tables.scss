@@ -14,10 +14,7 @@ tbody tr {
 th {
   border: 1px solid #787878;
   font-weight: bold;
-}
-
-th a {
-  color: #fff;
+  @include hse-font(19);
 }
 
 .sortable {
@@ -75,7 +72,6 @@ table.no-background {
 table {
   margin: 0 0 $hse-legacy-spacing-20 1px;
   border-spacing: 0;
-  font-size: 0.9rem;
   line-height: 1.5;
 }
 caption {
@@ -87,6 +83,7 @@ caption {
 td {
   padding: $hse-legacy-spacing-10 $hse-legacy-spacing-20 $hse-legacy-spacing-10 $hse-legacy-spacing-10;
   border: 1px solid #787878;
+  @include hse-font(19);
 }
 table td.numbers,
 table td.numeric {
@@ -105,6 +102,7 @@ table.tablenumgrid td {
 th {
   padding: $hse-legacy-spacing-10 $hse-legacy-spacing-20 $hse-legacy-spacing-10 $hse-legacy-spacing-10;
   text-align: left;
+  font-weight: bold;
 }
 th.secondary,
 tr.secondary th {
