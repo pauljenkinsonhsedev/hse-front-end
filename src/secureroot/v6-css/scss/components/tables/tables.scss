@@ -1,16 +1,3 @@
-tbody tr {
-  &:nth-child(even) {
-    td {
-      background: #e0e0e0;
-    }
-  }
-  &:nth-child(odd) {
-    td {
-      background: #ededed;
-    }
-  }
-}
-
 th {
   border: 1px solid #787878;
   font-weight: bold;
