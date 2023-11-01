@@ -1,0 +1,14 @@
+.hse-news-article {
+border-bottom: 2px solid $color_hse-grey-4;
+@include hse-responsive-margin(4, "bottom");
+@include hse-all-headings {
+@include hse-font(22);
+font-weight: bold;
+}
+
+time::after {
+content: '|';
+padding-left: 4px;
+}
+
+}
