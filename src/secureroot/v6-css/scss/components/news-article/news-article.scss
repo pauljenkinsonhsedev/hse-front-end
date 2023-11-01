@@ -6,6 +6,9 @@ border-bottom: 2px solid $color_hse-grey-4;
 font-weight: bold;
 }
 
+&:last-of-type {
+border-bottom: none;    
+}
 
 time::after {
 content: '|';
