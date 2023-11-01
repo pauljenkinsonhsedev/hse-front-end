@@ -357,3 +357,17 @@
   height: 32px;
   width: 80px;
 }
+
+/// All headings
+///
+/// Saves specifying all headings 
+/// Used in news article component.
+
+
+@mixin hse-all-headings {
+  @for $index from 1 through 6 {
+	  h#{$index} {
+       @content;
+    }
+  }
+}
