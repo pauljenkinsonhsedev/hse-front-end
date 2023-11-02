@@ -16,10 +16,21 @@ padding-left: 4px;
 }
 
 .hse-news-article__category {
-padding: 5px;
 display: inline-flex;
-background: $color_hse-grey-4;
 margin-bottom: 5px;
+&:not(:has(a.hse-news-article__link)) {
+padding: 5px;
+background: $color_hse-grey-4;
 }
 
+.hse-news-article__link {
+padding: 5px;
+background: $color_hse-grey-4;
+&:hover {
+background: $color_hse-red;
+color: white;
+}
+}
+
+}
 }
