@@ -7,6 +7,7 @@ ul {
 margin: 0;
 padding-left: 0;
 list-style: none;
+@include hse-responsive-margin(6, "bottom");
 li {
   @include mq($from: desktop) {
   @include hse-font(16);
