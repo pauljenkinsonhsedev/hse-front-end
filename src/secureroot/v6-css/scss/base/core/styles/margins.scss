@@ -5,3 +5,9 @@ table,
 fieldset, figure,
 pre {
     margin: 0 0 1em 0;  }
+
+// Page contents margins
+
+.hse-page-contents,  .hse-page-contents--topTask {
+@include hse-responsive-margin(4, "top");
+}

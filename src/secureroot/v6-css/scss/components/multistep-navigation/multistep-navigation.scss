@@ -46,7 +46,3 @@
       display: inline-block;
     }
   }
-
-  .hse-page-contents {
-    @include hse-responsive-margin(4, "top");
-  }
