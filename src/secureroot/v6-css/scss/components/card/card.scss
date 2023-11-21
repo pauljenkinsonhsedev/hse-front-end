@@ -145,22 +145,10 @@
  * equal heights fix for common card groups (this could also be achieved in HTML using the spacing override classes hse-u-margin-bottom-4)
  */
 
-.hse-card-group {
-  .hse-grid-column-one-third {
+.hse-card-group:has(.hse-card) {
+  li  {
     @include hse-responsive-margin(4, "bottom");
   } 
-  .hse-grid-column-one-half {
-    @include hse-responsive-margin(4, "bottom");
-  } 
-
-}
-
-.hse-grid-column-one-half:has(.hse-card--chevron) {
-  @include hse-responsive-margin(2, "bottom");
-}
-
-.hse-section__content .hse-card-group:has(.hse-card--chevron) {
-  margin-bottom: inherit;
 }
 
  /* Default clickable card
