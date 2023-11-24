@@ -1,6 +1,9 @@
+#footer-nav {
+    padding-top: 20px;
+}
 
 .hse-footer {
-    background: $color_hse-grey-4;   
+    background: $color_hse-grey-2;   
     &::before {
         background: $color_hse-red;
         display: block;
@@ -20,12 +23,14 @@
     }
     
     .hse-footer__base {
-    padding: $hse-legacy-spacing-10 0;
+    // padding: $hse-legacy-spacing-10 0;
+    padding-top: hse-spacing(4);
+    padding-bottom: hse-spacing(6);
     }
     
-    .hse-footer__base-inner {
-     display: flex;
-    }
+    // .hse-footer__base-inner {
+    //  display: flex;
+    // }
     
     .hse-footer__base-inner, .hse-footer__languages {
     p {
@@ -49,6 +54,10 @@
     display: inline-block;
     @include hse-font(16);
     margin-right: 15px;
+    &--support-links {
+        margin-bottom: 0;
+        // a {color: $color_hse-white;}
+    }
     @include mq($until: desktop) {
     padding: 5px 0;
     }
@@ -57,6 +66,8 @@
     .hse-footer__base-container {
     display: flex;
     flex-direction: column;
+    color: $color_hse-white;
+        a {color: $color_hse-white}
     @include mq($from: desktop) {
     flex-direction: row;
     justify-content: space-between;
@@ -65,8 +76,13 @@
     }
     
     .hse-footer__list-item-link {
-    &:link, &:visited { color: $color_hse-black; }
-    &:hover, &:focus {color: $color_hse-black;}
+        &:link, &:visited {color: $color_hse-black;}
+        &:hover, &:focus {color: $color_hse-black;}
+    }
+
+    .hse-footer__list-item-support-link {
+        &:link, &:visited {color: $color_hse-white;}
+        &:hover, &:focus {color: $color_hse-white;}
     }
 
     
@@ -77,12 +93,122 @@
     
     .hse-footer__languages-link {
     &:hover {
-    color: $color_hse-black !important;
+    color: $color_hse-white !important;
     }
     &:focus {
-    color: $color_hse-black !important;
+    color: $color_hse-white !important;
     }
     &:link, &:visited {
-    color: $color_hse-black;    
+    color: $color_hse-white;    
     }
     }
+
+    .hse-footer__heading {
+        border-bottom: 1px solid $color_hse-white;
+        color: $color_hse-white;
+        padding-bottom: 20px;
+    }
+
+    .hse-footer__section-break {
+        border-bottom: 1px solid $color_hse-white;
+        margin-top: 20px;
+        margin-bottom: 15px;
+    }
+
+    .hse-footer__licence-logo {
+        margin-right: 10px;
+    }
+
+    .hse-footer__support-links {
+        padding-left: 0;
+        margin-bottom: 15px;
+    }
+
+
+
+    /* CHOOSE CITY*/
+// .chooseCity {
+//     position: relative;
+//     display: inline-block;
+//   }
+  
+//   .dropbtn {
+//     background-color: #3498db;
+//     color: white;
+//     padding: 16px;
+//     font-size: 16px;
+//     border: none;
+//     cursor: pointer;
+//   }
+//   .dropbtn:hover,
+//   .dropbtn:focus {
+//     background-color: #2980b9;
+//   }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    // background-color: #f1f1f1;
+    // min-width: 160px;
+    // max-width: 960px;
+    // margin-left: auto;
+    // margin-right: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
+//   .dropdown-content a {
+//     color: black;
+//     padding: 12px 16px;
+//     text-decoration: none;
+//     display: block;
+//   }
+//   .dropdown-content a:hover {
+//     background-color: #ddd;
+//   }
+  
+//   .show {
+//     display: block;
+//   }
+  
+  /* CHOOSE YEAR*/
+//   .chooseyear {
+//     position: relative;
+//     display: inline-block;
+//   }
+  
+//   .dropbtn {
+//     background-color: #3498db;
+//     color: white;
+//     padding: 16px;
+//     font-size: 16px;
+//     border: none;
+//     cursor: pointer;
+//   }
+//   .dropbtn:hover,
+//   .dropbtn:focus {
+//     background-color: #2980b9;
+//   }
+  
+//   .dropdown-content {
+//     display: none;
+//     position: absolute;
+//     background-color: #f1f1f1;
+//     min-width: 160px;
+//     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+//     z-index: 1;
+//   }
+//   .dropdown-content a {
+//     color: black;
+//     padding: 12px 16px;
+//     text-decoration: none;
+//     display: block;
+//   }
+//   .dropdown-content a:hover {
+//     background-color: #ddd;
+//   }
+  
+  .show {
+    display: block;
+    flex-direction: column;
+    position: relative;
+  }
