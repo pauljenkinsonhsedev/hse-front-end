@@ -10,6 +10,10 @@ content: '';
 height: 4px;
 } 
 
+.hse-header__container {
+border-bottom: 1px solid #c2c2c2;
+}
+
 .hse-header__top-container {
 display: flex;
 flex-direction: row;
