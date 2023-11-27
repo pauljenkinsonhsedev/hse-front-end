@@ -3,23 +3,25 @@
 .hse-navigation {
   @include clearfix();
   display: flex;
-  @include mq($until: desktop) {
-  background: $color_hse-grey-4;
-  }
-  /* @include mq($from: desktop) {
-  margin: 0 -16px;
-  }
-  */
+  padding-top: 25px;
+}
+
+  .hse-navigation-header {
+    margin-right: 0;
+    @include mq($from: desktop) {
+      margin-right: -16px;
+    }
   }
   
   .hse-header__navigation-container {
-  border-top: 1px solid $color_hse-grey-3;
-  border-bottom: 1px solid $color_hse-grey-3;
+  background-color: $color_hse-grey-4;
   @include clearfix();
   @include mq($until: desktop) {
   margin: 0;
+  padding-left: 16px;
   .hse-width-container {
     margin: 0;
+    padding-left: 0;
     max-width: 100%;
     }
   } 
@@ -27,10 +29,17 @@
   }
 
   .hse-navigation__navigation-item {
-  padding: 0;
+  padding-bottom: 15px;
   margin-bottom: 0;
+  &:last-of-type {
+    }
   }
   
+  .hse-navigation__primary-navigation-item {
+    a {
+      padding: 4px 16px;
+    }
+  }
   
   .hse-navigation__navigation-list {
   width: 100%;
@@ -39,50 +48,48 @@
   list-style-type: none;
   background: none;
   padding: 0;
-  display: flex;
-  flex-direction: column;
+  background-color: $color_hse-grey-4;
+  &--footer {
+    background-color: $color_hse-grey-2;
+  }
   @include mq($from: desktop) {
   margin: 0 0 0 -16px;
-  flex-direction: row;
   width: auto;
   margin: 0;
-  text-align: center;
   position: relative;
-  background-color: $color_hse-white;
+  &--columns-2 {
+    column-count: 2;
   }
+ }
+}
+
+  .navigation-third-list {
+    grid-template-columns: none; 
+    display: block;
   }
   
 // fix required for overriding width-container for mobile navigation
 
   .hse-navigation__navigation-link {
-    text-decoration: none;
+    text-decoration: underline;
     width: 100%;
+    display: inline;
     &:link, &:visited {
-    color: $color_hse-black;
+    color: $color_hse-white;
+    }
+    &--menu {
+      &:link, &:visited {
+      color: $color_hse-red;
+      font-weight: 700;
+      }
     }
 
     @include mq($from: desktop) {
       background-image: none;
-
       vertical-align: middle;
-      &:hover {
-       background: none;
-       color: $color_hse-dark-red;
-       border-bottom: 2px solid $color_hse-red !important;
-       }
-      text-decoration: none;
-      display: block;
+      text-decoration: underline;
       line-height: inherit;
     }
-  @include mq($until: desktop) {
-  padding: 15px hse-spacing(3);
-  }
-  @include mq($from: 769px) {
-  padding: 15px hse-spacing(5);
-  }
-  @include mq($from: desktop) {
-  padding: hse-spacing(2) hse-spacing(3);
-  }
   }
 
 
@@ -93,24 +100,6 @@
 @include mq($from: desktop) {
   .menu li.search {
     display: none;
-  }
-
-  .home .menu li.home,
-  .news .menu li.news,
-  .guidance .menu li.guidance,
-  .aboutyou .menu li.aboutyou,
-  .abouthse .menu li.abouthse,
-  .contact .menu li.contact,
-  .freeUpdates .menu li.freeUpdates {
-  a {
-    border-radius: 0px;
-    background: $color_hse-grey-4;
-  }
-  }
-
-  .home .menu  {
-    & li.home a { border-bottom: 2px solid #333;
-    }
   }
 
   .news .menu  {
@@ -137,66 +126,63 @@
     & li.contact a { border-bottom: 2px solid #333;
     }
   }
-
-
 }
 
-.desktop-hide {
-  display: none;
-  @include mq($from: desktop) {
-    display: block;
-  }
-}
 
-.menu {
+.menu, .search {
   display: none;
   font-size: 1.1em !important;
   @include mq($from: desktop) {
-    display: block;
+    display: none;
   }
 }
 
-.menu-button {
+.menu-button, .search-button {
 @include mq($from: desktop) {
- display: none;
+  margin-right: 20px !important;
 }
 }
 
-.menu-button {
-  height: 25px;
-  width: 25px;
-  padding: 0;
+.menu-button, .search-button {
+  padding: 1px 20px;
   background: none;
   border: none;
   margin-left: auto;
+  margin-bottom: 4px;
+  font-weight: 700;
+  text-decoration: none;
+  border-left: 1px solid $color_hse-grey-3;
+  &:last-of-type {
+    margin-left: 0;
+  }
 }
 
 .menu-button:hover {
   cursor: pointer;
+  position: relative;
+  color: $color_hse-red;
+}
+
+.menu-button.main-menu-expanded:hover {
+  color: $color_hse-black;
 }
 
 .menu.active {
   display: block;
 }
 
-.menu a {
+.search.active {
   display: block;
 }
+
+.search {
+  display: none;
+}
+
 
 .no-js .menu {
   display: block;
 }
-
-
-
-
-
-.menu li a:hover {
-  @include mq($from: desktop) {
-  border-bottom: 2px solid $color_hse-grey-1;
-  }
-}
-
 
 .full-width-container {
   width: 100%;
@@ -221,33 +207,7 @@
 // icons
 
 .menu li a::before {
-  content: " ";
-  background-image: url("../../assets/v6-images/icons/svg/solid/chevron-right-gray.svg");
   @include mq($from: desktop) {
     display: none;
   }
-  float: right;
-  background-repeat: no-repeat;
-  display: inline-block;
-  width: 25px;
-  height: 25px;
-  margin: 0;
-}
-
-.menu li a:hover::before {
-  content: " ";
-  background-image: url("../../assets/v6-images/icons/svg/solid/chevron-right-white.svg");
-  @include mq($from: desktop) {
-    display: none;
-  }
-  float: right;
-  background-repeat: no-repeat;
-  display: inline-block;
-  width: 25px;
-  height: 25px;
-  margin: 0;
-}
-
-.menu li a:focus::before {
-  background-image: url("../../assets/v6-images/icons/svg/solid/chevron-right-dark-gray.svg");
 }

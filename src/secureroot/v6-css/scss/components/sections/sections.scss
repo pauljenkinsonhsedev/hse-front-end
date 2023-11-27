@@ -7,8 +7,14 @@ max-width: none;
 
 // section backgrounds
 
-.hse-width-container--full .hse-section--homepage:nth-of-type(even) {
+.hse-width-container--full .hse-section--homepage:nth-of-type(odd) {
   background: $color_hse-grey-4;
+}
+
+.hse-section--homepage-header {
+  background: $color_hse-red;
+  padding-top: 60px;
+  padding-bottom: 40px;
 }
 
 .hse-section {
@@ -23,7 +29,7 @@ max-width: none;
     }
 }
 
-.hse-width-container--full .hse-section {
+.hse-width-container--full .hse-section:not(.hse-section--homepage-header) {
   &:first-of-type {
     padding-top: 0;
   }  
