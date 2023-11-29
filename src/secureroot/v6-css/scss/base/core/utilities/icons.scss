@@ -85,9 +85,9 @@
   }
   
   .menu-button span::before,
-  .menu-button.main-menu span::before,
-  .search-button span::before,
-  .search-button.main-search span::before {
+  .menu-button.main-menu span:before,
+  .search-button span:before,
+  .search-button.main-search span:before {
     -webkit-transform: translateY(-35%) rotate(45deg) scale(1);
     -ms-transform: translateY(-35%) rotate(45deg) scale(1);
     transform: translateY(-35%) rotate(45deg) scale(1);
@@ -101,8 +101,8 @@
     width: 8px;
   }
   
-  .menu-button.main-menu-expanded span::before,
-  .search-button.main-search-expanded span::before {
+  .menu-button.main-menu-expanded span:before,
+  .search-button.main-search-expanded span:before {
     content: "";
     display: inline-block;
     height: 8px;
@@ -120,9 +120,19 @@
   }
 
   // .menu-button span::after,
-  .menu-button.main-search-expanded span::after,
-  .menu-button:hover:after,
-  .search-button.main-search-expanded span::after,
+  .menu-button.main-search-expanded span:after,
+  .menu-button:hover:after {
+    content: "";
+    height: 3px;
+    left: 20px;
+    position: absolute;
+    right: 20px;
+    bottom: -14px;
+    top: auto;
+    background: $color_hse-black;
+  }
+// .search-button span:after,
+  .search-button.main-search-expanded span:after,
   .search-button:hover:after {
     content: "";
     height: 3px;
@@ -135,21 +145,27 @@
   }
 
 
-  .menu-button:hover span::before,
-  .menu-button.main-menu:hover span::before {
+  .menu-button:hover span:before,
+  .menu-button.main-menu:hover span:before {
     border-bottom: 2px solid $color_hse-red;
     border-right: 2px solid $color_hse-red;
   }
 
-  .menu-button.main-menu-expanded:hover span::before {
+  .search-button:hover span:before,
+  .search-button.main-menu:hover span:before {
+    border-bottom: 2px solid $color_hse-red;
+    border-right: 2px solid $color_hse-red;
+  }
+
+  .menu-button.main-menu-expanded:hover span:before {
     border-bottom: 2px solid $color_hse-black;
     border-right: 2px solid $color_hse-black;
   }
 
-  .menu-button.main-menu-expanded span::after {
+  .menu-button.main-menu-expanded span:after {
     background: $color_hse-black; 
   }
-  .menu-button:hover:after {
+  .menu-button:hover:after, .search-button:hover:after {
     background: $color_hse-red;
   }
   .menu-button.main-menu-expanded:hover:after {
