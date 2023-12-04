@@ -426,7 +426,7 @@ window.dataLayer.push({'content_group': '@@(_document['contentGroup'])@@'});
 	  <!-- TemplateBeginEditable name="heading1" -->
       <h1>Title</h1>
       <!-- TemplateEndEditable -->
-      <nav id="multistepNav" class="hse-contents-list" aria-label="Secondary">
+      <nav id="multistepNav" class="hse-multistep-navigation" aria-label="Secondary">
       
 	  <!-- TemplateBeginEditable name="multistepNav" -->
         <ol class="multistep">
