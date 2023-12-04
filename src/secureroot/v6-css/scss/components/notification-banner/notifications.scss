@@ -64,8 +64,7 @@
   @include mq($from: desktop) {
     padding: 0;
     width: $full-width;
-    margin-top: $hse-legacy-spacing-20;
-    margin-bottom: $hse-legacy-spacing-20;
+    margin: $hse-legacy-spacing-10 auto;
     // float: none;
   }
 }
@@ -89,6 +88,10 @@
   width: 100%;
 }
 
+.notification-hide {
+color: white !important;  
+background: none !important;
+}
 
 .notification-bar-title {
   font-weight: bold;

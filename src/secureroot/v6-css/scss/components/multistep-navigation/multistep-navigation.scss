@@ -1,14 +1,14 @@
 // Multi step nav
 
-.hse-contents-list {
-margin-bottom: $hse-legacy-spacing-20;
+.hse-multistep-navigation {
+  @include hse-responsive-padding(4, "bottom");
+  border-bottom: 4px solid $color_hse-grey-4;
 }
   
   .multistep--columns-two {
     width: 100%;
     @include mq($from: desktop) {
       column-count: 2;
-      width: 620px !important;
     }
   }
   
@@ -16,6 +16,10 @@ margin-bottom: $hse-legacy-spacing-20;
     list-style-type: none;
     position: relative;
     width: 100%;
+    margin: 0;
+    li {
+      padding: 0 hse-spacing(4);
+    }
   }
   
   
@@ -31,11 +35,11 @@ margin-bottom: $hse-legacy-spacing-20;
   
   .multistep {
     width: 100%;
-    margin: 0 0 0 20px;
-    padding: 0;
+    padding: 0 0 0 20px;
   }
   
   ol.multistep li {
+    @include hse-font(16);
     padding: 0 hse-spacing(2);
     clear: both;
     &:a {

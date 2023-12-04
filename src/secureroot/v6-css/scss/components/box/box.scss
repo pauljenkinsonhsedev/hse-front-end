@@ -1,5 +1,5 @@
 .box {
-  padding: 10px;
+  @include hse-responsive-padding(4);
   margin: 0 0 16px 0;
   position: relative;
   background-color: #f3f3f3;

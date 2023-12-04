@@ -24,11 +24,4 @@ if (isDev) {
   output = config.designsystem.scripts.output;
 }
 console.log("output", output);
-function hseScripts() {
-  return src(config.secureroot.scripts.all)
-    .pipe(concat(config.secureroot.scripts.entry))
-    .pipe(rename("v6-footer.min.js"))
-    .pipe(dest(output));
-}
 
-task("hseScripts", hseScripts);

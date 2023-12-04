@@ -19,6 +19,11 @@ display: none;
   font-size: 1.1em;
 }
 
+.hse-breadcrumb__item:first-of-type::before {
+display: none;
+}
+    
+
 .hse-breadcrumb__back {
 
 &::before {

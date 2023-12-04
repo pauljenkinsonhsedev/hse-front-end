@@ -83,10 +83,19 @@
   font-weight: bold;  
   list-style: none;
   padding: 0;
+  margin-left: 20px;
+  li a:focus-within {
+  background: $hse-focus-color;
+  }
   }
 
   .hse-list--key-links li {
   @include hse-responsive-margin(3, "bottom");
+  text-indent: -20px;
+  }
+
+  .hse-list--key-links.hse-card-group {
+   margin-left: 0;
   }
 
   .hse-list--key-links li a:before {

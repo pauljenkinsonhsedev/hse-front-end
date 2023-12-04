@@ -175,7 +175,7 @@ export function feedbackSurvey() {
     feedbackPrompt.classList.add("js-feedback-open");
 
     reportProblemForm.scrollIntoView({ behavior: "auto", block: "start" });
-    const reportProblemFormEnd = document.querySelector("#report-problem-form-html");
+    const reportProblemFormEnd = document.querySelector(".report-a-problem-form__hidden-fields");
     
     reportProblemFormEnd.insertAdjacentElement("beforeend", action);
 

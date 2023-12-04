@@ -133,4 +133,12 @@ export function ariaLabels() {
       box.setAttribute("aria-label", "Survey");
     });
   }
+
+
+  const contentsList = document.querySelector(".hse-contents-list");
+  if (contentsList) {
+    contentsList.setAttribute("aria-label", "Contents");
+  }
+
+
 }

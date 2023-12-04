@@ -157,7 +157,7 @@
   }
 }
 
-.menu-button:hover {
+.menu-button:hover, .search-button:hover {
   cursor: pointer;
   position: relative;
   color: $color_hse-red;

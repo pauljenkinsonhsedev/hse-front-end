@@ -1,21 +1,87 @@
-// Subscribe box
 
-.eBulletinButton {
-width: auto;
-max-width: 100px;
-font-size: 1em;
-padding: $hse-legacy-spacing-10;
-}
+.hse-subscribe {
+display: flex;
+align-items: center;
+flex-direction: column;
+border: 2px solid $color_hse-grey-4;
+@include hse-responsive-padding(4);
+padding-left: hse-spacing(2);
+margin-bottom: hse-spacing(6);
 
-.eBulletinButton:hover {
-cursor: pointer;
-background: $color_hse-grey-1;
-}
-
-.subscribe .form-group, .subscribe .btn, .subscribe fieldset {
+.form-group {
 margin-bottom: 0;
-margin: 0 !important;
 }
+
+&:before {
+content: "";
+background: url(../../assets/v6-images/icons/mail.svg) white no-repeat 0;
+background-repeat: no-repeat;
+display: inline-block;
+margin-right: 5px;
+width: 24px;
+height: 24px;
+}
+
+.hse-subscribe__text {
+margin-bottom: 0;
+@include hse-responsive-padding(2);
+}
+
+button.btn {
+margin-bottom: 0 !important;
+@include mq($until: 1002px) {
+display: flex;
+margin: auto;
+margin-top:  hse-spacing(2);
+}
+}
+
+ 
+
+
+
+}
+
+// Full width layout
+
+.hse-section .hse-subscribe {
+@include mq($from: large-desktop) {
+flex-direction: row;
+}
+.hse-subscribe__form {
+    @include mq($from: large-desktop) {
+    margin-left: auto;
+    }
+    }
+}
+
+.hse-section .hse-subscribe .form-group {
+input {
+@include mq($from: 990px) {
+margin-bottom: 0;
+}
+}
+}
+
+// sidebar
+
+.hse-sidebar-top, .hse-sidebar  {
+.hse-subscribe {
+ .input-email {
+  width: 100%;
+ }
+ button.btn {
+    margin-bottom: 0 !important;
+    display: flex;
+    margin: auto;
+    margin-top:  hse-spacing(2);
+}
+}
+}
+
+
+// legacy subscribe box
+
 
 .subscribe .fieldset__heading {
 color: $black;

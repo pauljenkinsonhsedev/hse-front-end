@@ -1,6 +1,4 @@
 import "./combined/polyfills.js";
-
-// import CsvConvert from './combined/csv-convertor/csv-convertor';
 import ChartsDefault from "./combined/charts/charts.js";
 import { mainMenu } from "./combined/main-menu.js";
 import { loadPicturefillFn } from "./combined/utils/picture-elem.js";
@@ -26,9 +24,9 @@ import { subnavMenu } from "./combined/subnav-menu.js";
 // import { subNavPosition } from "./combined/subnav-position.js";
 import { subNavMobile } from "./combined/subnav-mobile.js";
 import { accordion } from "./combined/accordion.js";
-// import { printGuide } from './combined/print-guide/print-guide.js';
-// import { CSVTable } from './combined/csv-table.js';
 import { htmlPrintGuide } from "./combined/html-print-guide.js";
+import { backToTop } from "./combined/back-to-top.js";
+
 
 // Window load
 window.addEventListener("DOMContentLoaded", () => {
@@ -42,7 +40,11 @@ window.addEventListener("DOMContentLoaded", () => {
     loadPicturefillFn();
   }
 
+  const backToTopLink = document.querySelector(".hse-back-to-top");
   
+  if (backToTopLink) {
+    backToTop();
+  }
 
   accordion();
 
@@ -114,13 +116,6 @@ window.addEventListener("DOMContentLoaded", () => {
     dialogModal(dialog);
   }
 
-  // CSV Convertor
-  // const csvForm = document.getElementById('csvconvertor');
-  // if (document.body.contains(csvForm)) {
-  //   const convert = new CsvConvert(csvForm);
-  //   convert.init(csvForm);
-  // }
-
   // HighCharts JS
   const chartSelector = document.querySelector(".chart");
   if (document.body.contains(chartSelector)) {
@@ -149,7 +144,4 @@ window.addEventListener("DOMContentLoaded", () => {
 
   htmlFormsAntiSpam();
 
-  // printGuide();
-
-  // CSVTable();
 }); // end window load

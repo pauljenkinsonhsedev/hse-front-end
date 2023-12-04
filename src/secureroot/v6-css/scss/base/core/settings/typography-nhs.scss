@@ -157,3 +157,10 @@ $hse-font-normal: 400 !default;
 //
 
 $hse-font-bold: 600 !default;
+
+// Roboto font overrides 
+// ==========================================================================
+
+body {
+font-variant-ligatures: no-common-ligatures;
+}

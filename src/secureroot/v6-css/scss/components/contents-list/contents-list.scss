@@ -1,0 +1,25 @@
+.hse-contents-list__title {
+@include hse-font(16);
+margin-bottom: hse-spacing(2);
+}
+
+.hse-contents-list__list {
+list-style-type: none;
+position: relative;
+width: 100%;
+@include hse-responsive-padding(4, "bottom");
+}
+
+
+.hse-contents-list__list li::before {
+content: "—";
+position: absolute;
+color: $color_hse-grey-3;
+left: 0;
+width: $hse-legacy-spacing-20;
+overflow: hidden;
+}
+
+.hse-contents-list__list li {
+padding-left: hse-spacing(2);
+}
