@@ -419,28 +419,32 @@ window.dataLayer.push({'content_group': '@@(_document['contentGroup'])@@'});
 <!-- TemplateBeginIfClause cond="layout == 'topTask'" -->
   
 <!-- start top grid row for 'Top task' layout -->
-<div class="hse-grid-row">
+<div class="hse-grid-row hse-page-header">
   
     <!-- start grid column (two-thirds) -->
     <div class="hse-grid-column-two-thirds">
 	  <!-- TemplateBeginEditable name="heading1" -->
-      <h1>Title</h1>
+      <!--<h1>Title</h1>-->
       <!-- TemplateEndEditable -->
-      <nav id="multistepNav" class="hse-multistep-navigation" aria-label="Secondary">
       
-	  <!-- TemplateBeginEditable name="multistepNav" -->
-        <ol class="multistep">
-          <li><a href="index.htm">Overview</a></li>
-          <li><a href="#">Page two</a></li>
-          <li><a href="#">Page three</a></li>
-        </ol>
-        <ol class="multistep" start="4">
-          <li><a href="#">Page four</a></li>
-          <li><a href="#">Page five</a></li>
-          <li><a href="#">Page six</a></li>
-        </ol>
-       <!-- TemplateEndEditable --> </nav>
+<!-- Multistep navigation for 'Top task' -->
+
+    <nav id="multistepNav" class="hse-multistep-navigation" aria-label="Secondary">
+
+  <!-- TemplateBeginEditable name="multistepNav" -->
+      <ol class="multistep">
+        <li><a href="index.htm">Overview</a></li>
+        <li><a href="#">Page two</a></li>
+        <li><a href="#">Page three</a></li>
+        <li><a href="#">Page four</a></li>
+        <li><a href="#">Page five</a></li>
+        <li><a href="#">Page six</a></li>
+      </ol>
+     <!-- TemplateEndEditable --> 
+    </nav>
+      
     </div>
+  
     <!-- end grid column (two-thirds) -->
   
     <!-- start grid column (one-third) -->
@@ -454,9 +458,9 @@ window.dataLayer.push({'content_group': '@@(_document['contentGroup'])@@'});
   </div> 
 <!-- End top grid row for 'Top task' -->
 
-    
 <!-- TemplateEndIfClause -->
-<!-- TemplateEndMultipleIf --> 
+<!-- TemplateEndMultipleIf -->     
+
 
 <!-- start grid row for page contents -->
 <div class="hse-grid-row">
