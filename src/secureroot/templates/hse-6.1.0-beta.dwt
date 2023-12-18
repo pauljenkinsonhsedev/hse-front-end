@@ -372,9 +372,7 @@ window.dataLayer.push({'content_group': '@@(_document['contentGroup'])@@'});
 <!-- Start grid column (three-quarters) -->
 
 <div id="page-contents" class="hse-grid-column-three-quarters hse-page-contents">
-  
-<article id="article">
- 
+   
 <!-- TemplateEndIfClause -->
 <!-- TemplateEndMultipleIf -->
     
@@ -415,32 +413,42 @@ window.dataLayer.push({'content_group': '@@(_document['contentGroup'])@@'});
   
 <div id="pageContainer" class="@@(_document['platform'])@@  hse-width-container"> 
 
-<!-- TemplateBeginMultipleIf -->
-<!-- TemplateBeginIfClause cond="layout == 'topTask'" -->
+
   
 <!-- start top grid row for 'Top task' layout -->
-<div class="hse-grid-row">
+<div class="hse-grid-row hse-page-header">
   
     <!-- start grid column (two-thirds) -->
     <div class="hse-grid-column-two-thirds">
 	  <!-- TemplateBeginEditable name="heading1" -->
-      <h1>Title</h1>
+      <!--<h1>Title</h1>-->
       <!-- TemplateEndEditable -->
-      <nav id="multistepNav" class="hse-contents-list" aria-label="Secondary">
       
-	  <!-- TemplateBeginEditable name="multistepNav" -->
-        <ol class="multistep">
-          <li><a href="index.htm">Overview</a></li>
-          <li><a href="#">Page two</a></li>
-          <li><a href="#">Page three</a></li>
-        </ol>
-        <ol class="multistep" start="4">
-          <li><a href="#">Page four</a></li>
-          <li><a href="#">Page five</a></li>
-          <li><a href="#">Page six</a></li>
-        </ol>
-       <!-- TemplateEndEditable --> </nav>
+<!-- TemplateBeginMultipleIf -->
+<!-- TemplateBeginIfClause cond="layout == 'topTask'" -->
+      
+<!-- Multistep navigation for 'Top task' -->
+
+    <nav id="multistepNav" class="hse-multistep-navigation" aria-label="Secondary">
+
+  <!-- TemplateBeginEditable name="multistepNav" -->
+      <ol class="multistep">
+        <li><a href="index.htm">Overview</a></li>
+        <li><a href="#">Page two</a></li>
+        <li><a href="#">Page three</a></li>
+        <li><a href="#">Page four</a></li>
+        <li><a href="#">Page five</a></li>
+        <li><a href="#">Page six</a></li>
+      </ol>
+     <!-- TemplateEndEditable --> 
+    </nav>
+      
+<!-- TemplateEndIfClause -->
+<!-- TemplateEndMultipleIf -->     
+
+      
     </div>
+  
     <!-- end grid column (two-thirds) -->
   
     <!-- start grid column (one-third) -->
@@ -454,9 +462,7 @@ window.dataLayer.push({'content_group': '@@(_document['contentGroup'])@@'});
   </div> 
 <!-- End top grid row for 'Top task' -->
 
-    
-<!-- TemplateEndIfClause -->
-<!-- TemplateEndMultipleIf --> 
+
 
 <!-- start grid row for page contents -->
 <div class="hse-grid-row">
@@ -469,15 +475,6 @@ window.dataLayer.push({'content_group': '@@(_document['contentGroup'])@@'});
 <!-- TemplateEndMultipleIf -->
 
 <!-- start page content -->
-  
-<!-- TemplateBeginMultipleIf -->
-<!-- TemplateBeginIfClause cond="layout == 'topTask' || layout == 'twoThirdsOneThird'" -->
-
-<article id="article">
-  
-<!-- TemplateEndIfClause -->
-<!-- TemplateEndMultipleIf -->
-
 
 <!-- TemplateBeginEditable name="content" -->
 	
@@ -488,9 +485,7 @@ window.dataLayer.push({'content_group': '@@(_document['contentGroup'])@@'});
   
 <!-- TemplateBeginMultipleIf -->
 <!-- TemplateBeginIfClause cond="layout == 'sideNavigation'" -->
-  
-  </article>
-  
+    
   </div> <!-- end grid column (three-quarters) -->
   </div> <!-- end grid row -->
   </main> <!-- end <main> -->
@@ -532,12 +527,9 @@ window.dataLayer.push({'content_group': '@@(_document['contentGroup'])@@'});
   </div>
   
 </div>
-  
-</article>
-  
+    
 </div> <!-- end grid column (two thirds) -->
   
-
 
 <!-- Start sidebar (one-third) -->
 
@@ -545,7 +537,11 @@ window.dataLayer.push({'content_group': '@@(_document['contentGroup'])@@'});
 <!-- TemplateBeginMultipleIf -->
 
 <!-- TemplateBeginIfClause cond="layout == 'topTask'" -->
-<aside id="sidebarAside" class="hse-sidebar__navigation">
+<aside id="sidebarAside" class="hse-sidebar__navigation hse-sidebar__navigation--top-task">
+<!-- TemplateEndIfClause -->
+  
+<!-- TemplateBeginIfClause cond="layout == 'twoThirdsOneThird'" -->
+<aside id="sidebarAside" class="hse-sidebar__navigation hse-sidebar__navigation--two-thirds-one-third">
 <!-- TemplateEndIfClause -->
 
 <!-- TemplateEndMultipleIf -->
@@ -557,7 +553,7 @@ window.dataLayer.push({'content_group': '@@(_document['contentGroup'])@@'});
 
 <!-- TemplateBeginMultipleIf -->
 
-<!-- TemplateBeginIfClause cond="layout == 'topTask'" -->
+<!-- TemplateBeginIfClause cond="layout == 'topTask' || layout == 'twoThirdsOneThird' " -->
 </aside>
 <!-- TemplateEndIfClause -->
 <!-- TemplateEndMultipleIf -->

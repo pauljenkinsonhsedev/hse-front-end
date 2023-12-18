@@ -1,7 +1,7 @@
 /* A-Z lists */
 
 .boxAtoZ {
-    margin: 0 0 $hse-legacy-spacing-20 0 !important;
+  @include hse-responsive-margin(6, "bottom");
     padding: 0 !important;
   }
   
@@ -31,22 +31,37 @@
     color: #333;
   }
   
-  ul.alphabetList li a {
+  ul.alphabetList  {
+    li a {
+    &:link {
     display: block;
     font-weight: bold;
     font-size: large;
     border: 2px solid #f3f3f3;
     padding: $hse-legacy-spacing-10 14px;
     text-align: center;
-    background-color: #fff;
-  }
+    }
+    &:hover {
+      background-color: $color_hse-red;
+      color: white !important;
+      text-decoration: none !important;
+    }
+    &:focus {
+    box-shadow: none;
+    color: $hse-text-color !important;
+    &:focus:hover {
+      color: white !important;  
+    }
+    }
+    &:visited {
+    color: $color_hse-red;
+    border: 2px solid #f3f3f3;
+    }
+    }
+    
+    }
   
-  ul.alphabetList li a:hover {
-    background-color: $color_hse-red;
-    color: white !important;
-    text-decoration: none !important;
-  }
-  
+    
   .AtoZSelected {
     color: #000 !important;
     background-color: #d5d5d5 !important;
@@ -67,7 +82,7 @@
     display: inline-block;
     background-color: $color_hse-red;
     color: white;
-    padding: $hse-legacy-spacing-10 14px;
+    padding: 6px 14px;
   }
   
   .listAtoZ ul li {

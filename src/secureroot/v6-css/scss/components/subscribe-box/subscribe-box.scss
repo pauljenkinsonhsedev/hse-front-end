@@ -3,7 +3,7 @@
 display: flex;
 align-items: center;
 flex-direction: column;
-border: 2px solid $color_hse-grey-4;
+border: 2px solid $hse-border-color;
 @include hse-responsive-padding(4);
 padding-left: hse-spacing(2);
 margin-bottom: hse-spacing(6);
