@@ -9,100 +9,16 @@
 
 
 // document box
-.box.document {
+.hse-document {
   border: 2px solid $color_hse-red;
+  @include hse-responsive-padding(4);
+  @include hse-responsive-margin(6, "bottom");
   float: left;
   width: 100%;
 }
 
-.box.document .fileType {
+.hse-document .fileType {
   display: none;
-}
-
-// box promo image
-
-.boxPromoImage img {
-  float: right;
-  margin: 0 0 10px 10px;
-  position: relative;
-  border-radius: 10px;
-}
-.boxPromoImage img.fileIcon {
-  float: none;
-  border-radius: 0;
-  margin: 0;
-}
-.boxNoBackground {
-  padding-left: 0 !important;
-  padding-right: 0 !important;
-  border-radius: 0 !important;
-  background-color: transparent !important;
-  background-image: none !important;
-}
-.boxLast {
-  margin-right: 0 !important;
-}
-
-.boxSubscribe ul {
-  margin: 0 !important;
-}
-.boxSubscribe ul.subscribeIcons {
-  display: block;
-  padding: 0;
-}
-.boxSubscribe ul.subscribeIcons li {
-  list-style: none;
-  display: inline;
-  padding: 0;
-  margin: 0;
-  width: 48px;
-  float: left;
-  text-align: center;
-}
-.boxSubscribe ul.subscribeIcons li span {
-  display: block;
-  padding: 0;
-  padding: 34px 0 0 0;
-}
-.boxSubscribe ul.subscribeIcons li a {
-  color: #fff;
-  padding: 0;
-  width: 48px;
-  float: left;
-}
-
-.more,
-.moreAboveSplit {
-  background-color: #fff;
-  padding: 4px 5px;
-  clear: both;
-  border-radius: 0;
-  z-index: 1;
-  border-bottom: 2px solid #981e32;
-}
-.moreAboveSplit {
-  position: relative;
-}
-
-.box .ddmStyling,
-.homepageDropdown .ddmStyling {
-  float: left;
-}
-.ie7 .homepageDropdown .ddmStyling {
-  margin-bottom: 0.5em;
-}
-.box .ddmStyling select,
-.homepageDropdown .ddmStyling select {
-  display: inline;
-  float: left;
-  margin: 0 0.5em 0 0;
-}
-.homepageDropdown .ddmStyling select {
-  width: 265px;
-}
-.box .ddmStyling input,
-.box .ddmStyling select {
-  margin-bottom: 0;
 }
 
 form fieldset.visibleFieldset {
@@ -147,43 +63,6 @@ form fieldset input.checkbox {
   width: auto;
 }
 
-.boxSubscribeSingle {
-  margin: 0.5em 0;
-  overflow: hidden;
-  padding: 10px;
-  background-color: #e8e8e8;
-  background-image: linear-gradient(to bottom, #e8e8e8, #dbdbdb);
-}
-.boxSubscribeSingle form label {
-  clear: both;
-  float: left;
-  margin: 0 10px 0 0;
-  padding: 0;
-}
-.boxSubscribeSingle h2,
-.boxSubscribeSingle img {
-  float: left;
-}
-.boxSubscribeSingle h2 {
-  clear: none !important;
-  margin-left: 10px;
-}
-.boxSubscribeSingle form,
-.boxSubscribeSingle p {
-  clear: both;
-  margin-left: 40px;
-}
-.boxSubscribeSingle form input {
-  display: inline;
-  float: left;
-  width: 180px;
-}
-.boxSubscribeSingle form input.eBulletinButton {
-  display: inline;
-  float: right;
-  margin-left: $hse-legacy-spacing-20;
-  width: auto;
-}
 
 .box {
   border-radius: 0;

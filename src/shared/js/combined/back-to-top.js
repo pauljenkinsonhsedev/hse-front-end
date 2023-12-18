@@ -30,11 +30,13 @@ export function backToTop() {
     backToTop.classList.remove("hse-back-to-top--fixed");
     }
 
-    // check if back-to-top link in view
+    // get element’s position within the viewport
 
     const position = backToTopHook.getBoundingClientRect();
 
-    if(position.top >= 0 && position.bottom <= window.innerHeight) {
+    // hide if back-to-top link in view or above viewport
+
+    if(position.top <= window.innerHeight) {
     backToTop.classList.add("hse-back-to-top--hide");
     backToTop.classList.remove("hse-back-to-top--fixed");
     } else {

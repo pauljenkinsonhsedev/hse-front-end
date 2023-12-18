@@ -1,9 +1,10 @@
 // Callouts
 
 .callout {
-  padding: hse-spacing(4);
+  @include hse-responsive-padding(4);
   margin-bottom: $hse-legacy-spacing-20;
   border-left: 6px solid $color_hse-red;
+  @include hse-responsive-margin(6, "bottom");
 }
 
 .callout p {
@@ -20,14 +21,14 @@
 }
 
 // Modify style for full width
-.columnbetacontentpage.column1 {
+.hse-page-contents--fullWidth {
   .callout--information {
-    border: 1px solid $color_hse-grey-3;
+    border: 2px solid $hse-border-color;
     border-left: 6px solid $color_hse-red;
   }
 
   .callout--survey {
-    border: 1px solid $color_hse-grey-3;
+    border: 2px solid $hse-border-color;
     border-left: 6px solid $color_hse-beta;
   }
 }
