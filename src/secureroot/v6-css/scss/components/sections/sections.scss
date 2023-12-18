@@ -98,4 +98,17 @@ background: $color_hse-grey-4;
 border-top: 1px solid $color_hse-grey-3;
 }
 
+// browse sections
+
+.hse-browse__section {
+@include hse-responsive-margin(6, "bottom");
+}
+
+.hse-browse__section--top-border {
+border-top: 2px solid $hse-border-color;
+@include hse-responsive-padding(4, "top");
+}
+  
+  
+
 
