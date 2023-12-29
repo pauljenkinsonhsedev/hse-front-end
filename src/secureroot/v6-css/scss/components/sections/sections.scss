@@ -100,12 +100,15 @@ border-top: 1px solid $color_hse-grey-3;
 
 // browse sections
 
-.hse-browse__section {
+.hse-browse-section {
 @include hse-responsive-margin(6, "bottom");
 }
 
-.hse-browse__section--top-border {
+.hse-browse-section--top-border {
 border-top: 2px solid $hse-border-color;
+&:first-of-type {
+border-top: none;
+}
 @include hse-responsive-padding(4, "top");
 }
   
