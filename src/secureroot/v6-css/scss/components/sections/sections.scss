@@ -51,7 +51,7 @@ max-width: none;
 .hse-section__content--most-popular {
   @include mq($until: desktop) {
   @include hse-responsive-padding(6, "top");
-  @include hse-responsive-padding(4, "bottom");
+  @include hse-responsive-padding(6, "bottom");
   }
   ul {margin-bottom: 0;}
 }
