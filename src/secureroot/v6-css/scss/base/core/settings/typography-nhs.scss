@@ -101,7 +101,7 @@ $hse-typography-scale: (
   ),
   19: (
     null: (
-      font-size: 16px,
+      font-size: 19px,
       line-height: 24px
     ),
     tablet: (
@@ -115,7 +115,7 @@ $hse-typography-scale: (
   ),
   16: (
     null: (
-      font-size: 14px,
+      font-size: 16px,
       line-height: 24px
     ),
     tablet: (
@@ -124,20 +124,6 @@ $hse-typography-scale: (
     ),
     print: (
       font-size: 14pt,
-      line-height: 1.2
-    )
-  ),
-  14: (
-    null: (
-      font-size: 12px,
-      line-height: 20px
-    ),
-    tablet: (
-      font-size: 14px,
-      line-height: 24px
-    ),
-    print: (
-      font-size: 12pt,
       line-height: 1.2
     )
   )
