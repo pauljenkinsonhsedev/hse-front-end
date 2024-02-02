@@ -119,4 +119,8 @@
     border-color: $color_hse-darker-red;
   }
 
+  .hse-list--browse {
+  @extend .hse-list--key-links;
+  }
+
 

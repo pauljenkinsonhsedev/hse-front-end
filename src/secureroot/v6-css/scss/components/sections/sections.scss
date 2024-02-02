@@ -51,7 +51,7 @@ max-width: none;
 .hse-section__content--most-popular {
   @include mq($until: desktop) {
   @include hse-responsive-padding(6, "top");
-  @include hse-responsive-padding(4, "bottom");
+  @include hse-responsive-padding(6, "bottom");
   }
   ul {margin-bottom: 0;}
 }
@@ -97,5 +97,21 @@ margin-bottom: - hse-spacing(4);
 background: $color_hse-grey-4;
 border-top: 1px solid $color_hse-grey-3;
 }
+
+// browse sections
+
+.hse-browse-section {
+@include hse-responsive-margin(6, "bottom");
+}
+
+.hse-browse-section--top-border {
+border-top: 2px solid $hse-border-color;
+&:first-of-type {
+border-top: none;
+}
+@include hse-responsive-padding(4, "top");
+}
+  
+  
 
 
