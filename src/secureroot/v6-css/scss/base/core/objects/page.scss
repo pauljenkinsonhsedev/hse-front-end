@@ -50,12 +50,19 @@ margin: 0;
 // Header
 
 #headerLogo {
-  line-height: 1.333em;
-  font-weight: 700;
-  font-family: Helvetica, Arial, sans-serif;
-  color: $color_hse-red;
+  // line-height: 1.333em;
+  // font-weight: 700;
+  // font-family: Helvetica, Arial, sans-serif;
+  // color: $color_hse-red;
   margin: 0;
-  text-decoration: none;
+  // text-decoration: none;
+  @include mq($until: desktop) {
+    width: 170px;
+  }
+  @include mq($from: desktop) {
+    height: 46px;
+    display: flex;
+  }
   a {
     color: $color_hse-black;
     display: block;
