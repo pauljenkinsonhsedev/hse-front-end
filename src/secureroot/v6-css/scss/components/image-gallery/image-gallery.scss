@@ -39,9 +39,7 @@ figure {
    }
    img {
     aspect-ratio: 4/3;
-    @include mq($from: desktop) {
-    max-height: 178.56px;
-    }
+    flex-basis: content;
    }
   }
   
