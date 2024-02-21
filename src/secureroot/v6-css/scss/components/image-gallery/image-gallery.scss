@@ -1,0 +1,42 @@
+  
+.hse-image-gallery  {
+max-width: 100%;
+margin: 0 auto;
+/* padding: 0 2rem 2rem; */
+}
+
+.hse-image-gallery__list {
+display: flex;
+flex-wrap: wrap;
+/* Compensate for excess margin on outer gallery flex items */
+margin: 0 -15px;
+padding: 0 8px;
+ li:last-child {
+  @include hse-responsive-margin(4, "bottom");
+ }
+}
+
+.hse-image-gallery__item {
+/* Minimum width of 18rem and grow to fit available space */
+flex: 1 0 18rem;
+padding: 0 8px;
+overflow: hidden;
+@include hse-font(16);
+@include hse-responsive-margin(4, "bottom");
+figure {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid $hse-border-color;
+    img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;     
+    }
+    figcaption {
+    padding: 10px;  
+   }
+  }
+  
+}
