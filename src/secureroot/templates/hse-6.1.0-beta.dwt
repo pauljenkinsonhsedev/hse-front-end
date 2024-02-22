@@ -112,11 +112,7 @@ window.dataLayer.push({'content_group': '@@(_document['contentGroup'])@@'});
 
 <section id="top" aria-label="Skip to content">
 
-<!-- TemplateBeginMultipleIf -->
-<!-- TemplateBeginIfClause cond="weblite == false" -->
 	<a href="#contentContainer" class="skip">Skip to content</a>
-<!-- TemplateEndIfClause -->
-<!-- TemplateEndMultipleIf -->
 
 </section>
 
@@ -780,7 +776,6 @@ window.dataLayer.push({'content_group': '@@(_document['contentGroup'])@@'});
 <!-- TemplateParam name="rdfa" type="boolean" value="false" -->
 <!-- TemplateParam name="welsh" type="boolean" value="false" -->
 <!-- TemplateParam name="homepage" type="boolean" value="false" -->
-<!-- TemplateParam name="weblite" type="boolean" value="false" -->
 <!-- TemplateParam name="feedback" type="boolean" value="true" -->
 <!-- TemplateParam name="feedbackClass" type="text" value="" -->
 <!-- TemplateParam name="survey" type="boolean" value="false" -->
