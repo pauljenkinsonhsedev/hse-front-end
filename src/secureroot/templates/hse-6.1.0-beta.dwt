@@ -773,7 +773,6 @@ window.dataLayer.push({'content_group': '@@(_document['contentGroup'])@@'});
 <!-- TemplateParam name="layout" type="text" value="twoThirdsOneThird" -->
 <!-- TemplateParam name="containerType" type="text" value="default" -->
 <!-- TemplateParam name="platform" type="text" value="v6" -->
-<!-- TemplateParam name="rdfa" type="boolean" value="false" -->
 <!-- TemplateParam name="welsh" type="boolean" value="false" -->
 <!-- TemplateParam name="homepage" type="boolean" value="false" -->
 <!-- TemplateParam name="feedback" type="boolean" value="true" -->
