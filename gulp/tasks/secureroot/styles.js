@@ -51,3 +51,26 @@ function hseStyles() {
 }
 
 task("hseStyles", hseStyles);
+
+// Design system styles
+
+function designStyles() {
+  return src(config.secureroot.styles.entryDesign)
+    .pipe(mode.development(sourcemaps.init()))
+    .pipe(
+      sass({
+        includePaths: "node_modules",
+        includePaths: ["node_modules/susy/sass"],
+        outputStyle: "compressed",
+      }).on("error", sass.logError)
+    )
+    .pipe(autoprefixer({ grid: true }))
+    .pipe(sourcemaps.write())
+    .pipe(pxtorem())
+    .pipe(rename("v6.min.css"))
+    .pipe(mode.development(sourcemaps.write()))
+    .pipe(connect.reload())
+    .pipe(dest(output));
+}
+
+task("designStyles", designStyles);
