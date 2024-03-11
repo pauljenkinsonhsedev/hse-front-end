@@ -26,8 +26,10 @@ if (isStaging) {
 }
 
 if (isDev) {
-  output = config.designsystem.styles.output;
+  output = config.secureroot.styles.output;
 }
+
+let outputDesignSystemStyles = config.secureroot.styles.outputDesignSystem;
 
 sass.compiler = require("sass");
 
@@ -54,8 +56,8 @@ task("hseStyles", hseStyles);
 
 // Design system styles
 
-function designStyles() {
-  return src(config.secureroot.styles.entryDesign)
+function designSystemStyles() {
+  return src(config.secureroot.styles.entryDesignSystem)
     .pipe(mode.development(sourcemaps.init()))
     .pipe(
       sass({
@@ -70,7 +72,7 @@ function designStyles() {
     .pipe(rename("v6.min.css"))
     .pipe(mode.development(sourcemaps.write()))
     .pipe(connect.reload())
-    .pipe(dest(output));
+    .pipe(dest(outputDesignSystemStyles));
 }
 
-task("designStyles", designStyles);
+task("designSystemStyles", designSystemStyles);

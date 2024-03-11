@@ -18,7 +18,7 @@ export const hseBuild = parallel(
 
 // Define combined designsystem
 export const designsystemBuild = parallel(
-  "designStyles",
+  "designSystemStyles",
   "hseImages",
   "hseCopy",
   "sharedScripts",
