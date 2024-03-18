@@ -26,8 +26,10 @@ if (isStaging) {
 }
 
 if (isDev) {
-  output = config.designsystem.styles.output;
+  output = config.secureroot.styles.output;
 }
+
+let outputDesignSystemStyles = config.secureroot.styles.outputDesignSystem;
 
 sass.compiler = require("sass");
 
@@ -51,3 +53,26 @@ function hseStyles() {
 }
 
 task("hseStyles", hseStyles);
+
+// Design system styles
+
+function designSystemStyles() {
+  return src(config.secureroot.styles.entryDesignSystem)
+    .pipe(mode.development(sourcemaps.init()))
+    .pipe(
+      sass({
+        includePaths: "node_modules",
+        includePaths: ["node_modules/susy/sass"],
+        outputStyle: "compressed",
+      }).on("error", sass.logError)
+    )
+    .pipe(autoprefixer({ grid: true }))
+    .pipe(sourcemaps.write())
+    .pipe(pxtorem())
+    .pipe(rename("v6.min.css"))
+    .pipe(mode.development(sourcemaps.write()))
+    .pipe(connect.reload())
+    .pipe(dest(outputDesignSystemStyles));
+}
+
+task("designSystemStyles", designSystemStyles);
