@@ -4,6 +4,19 @@ import { cookieMessageHTML } from './cookie-banner-html.js';
 import { dialogModalAjax } from '../dialogs.js';
 import { smoothScroll } from '../utils/smooth-scroll';
 
+/* 
+
+Cookie settings:
+
+Uncomment the specific domain you require, do not uncomment more than one cookie setting.
+
+   1. hse.gov.uk (live site)
+   2. beta.hse.gov.uk (beta testing)
+   3. localhost (local development and prototyping)
+   4. hseonline (drafts and secureroot)
+
+*/
+
    const setCookieSettings = { path: '/', domain: 'hse.gov.uk', secure: true, sameSite: 'strict', expires: 365 };
 // const setCookieSettings = { path: '/', domain: 'beta.hse.gov.uk', secure: true, sameSite: 'strict', expires: 365 };
 // const setCookieSettings = { path: '/', domain: 'localhost', secure: false, sameSite: 'strict', expires: 365 };
