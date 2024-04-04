@@ -39,7 +39,8 @@
   }
   
   ol.multistep li {
-    @include hse-font(16);
+    @include hse-typography-responsive(16);
+    line-height: 1.5 !important;
     padding: 0 hse-spacing(2);
     clear: both;
     &:a {
