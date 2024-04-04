@@ -10,7 +10,8 @@ list-style: none;
 @include hse-responsive-margin(6, "bottom");
 li {
   @include mq($from: desktop) {
-  @include hse-font(16);
+  line-height: 1.5 !important;
+  @include hse-typography-responsive(16);
   }
 }
 }  
