@@ -14,14 +14,15 @@
 
  a {
     @include hse-link-style-default;
-  
+  /*
     @include mq($media-type: print) {
       &:after {
         color: $color_hse-black;
-        content: " (Link: " attr(href) ")"; /* [1] */
-        font-size: 14pt; /* [2] */
+        content: " (Link: " attr(href) ")"; 
+        font-size: 14pt; 
       }
     }
+    */
   }
   
   .hse-link--no-visited-state {
