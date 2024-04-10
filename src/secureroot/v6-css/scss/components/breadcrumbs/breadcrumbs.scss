@@ -10,6 +10,9 @@
 @include mq($until: desktop) {
 display: none;
 }
+@include mq($media-type: print) {
+  display: block;
+}
 }
 
 .hse-breadcrumb__list, .hse-breadcrumb ol {
