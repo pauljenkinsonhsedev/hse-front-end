@@ -11,7 +11,7 @@
 display: none;
 }
 @include mq($media-type: print) {
-  display: block;
+display: block;
 }
 }
 
@@ -26,7 +26,6 @@ display: none;
 display: none;
 }
     
-
 .hse-breadcrumb__back {
 
 &::before {
@@ -48,7 +47,15 @@ margin: 0;
 @include mq($from: desktop) {
 display: none;
 }
+@include mq($media-type: print) {
+  display: none;
 }
+  
+}
+
+ 
+
+
   
 .hse-breadcrumb ol li::before {
     content: " ";
@@ -66,7 +73,9 @@ display: none;
 .hse-breadcrumb ol li {
 display: inline-block;
 margin: 0;
-
+@include mq($media-type: print) {
+padding-bottom: 10px;
+}
 a:visited {
  color: $color_hse-red;
 }
