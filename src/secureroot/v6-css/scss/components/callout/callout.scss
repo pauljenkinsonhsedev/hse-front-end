@@ -26,7 +26,7 @@ $callout-border-width: 10px;
 // Modify style for full width
 .hse-page-contents--fullWidth {
   .callout--information {
-    border: 2px solid $hse-border-color;
+    background: $color_hse-grey-4;
     border-left: $callout-border-width solid $color_hse-red;
   }
 
