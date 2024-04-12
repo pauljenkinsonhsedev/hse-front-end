@@ -1,9 +1,12 @@
 // Callouts
 
+$callout-border-width: 10px;
+
+
 .callout {
   @include hse-responsive-padding(4);
   margin-bottom: $hse-legacy-spacing-20;
-  border-left: 6px solid $color_hse-red;
+  border-left: $callout-border-width solid $color_hse-red;
   @include hse-responsive-margin(6, "bottom");
 }
 
@@ -13,23 +16,23 @@
 }
 
 .callout--information {
-  border-left: 8px solid $color_hse-red;
+  border-left: $callout-border-width solid $color_hse-red;
 }
 
 .callout--survey {
-  border-left: 6px solid $color_hse-beta;
+  border-left: $callout-border-width solid $color_hse-beta;
 }
 
 // Modify style for full width
 .hse-page-contents--fullWidth {
   .callout--information {
     border: 2px solid $hse-border-color;
-    border-left: 6px solid $color_hse-red;
+    border-left: $callout-border-width solid $color_hse-red;
   }
 
   .callout--survey {
     border: 2px solid $hse-border-color;
-    border-left: 6px solid $color_hse-beta;
+    border-left: $callout-border-width solid $color_hse-beta;
   }
 }
 
