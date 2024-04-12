@@ -31,7 +31,7 @@ $callout-border-width: 10px;
   }
 
   .callout--survey {
-    border: 2px solid $hse-border-color;
+    background: $color_hse-grey-4;
     border-left: $callout-border-width solid $color_hse-beta;
   }
 }
