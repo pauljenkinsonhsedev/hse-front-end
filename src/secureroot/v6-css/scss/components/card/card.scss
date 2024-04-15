@@ -29,8 +29,7 @@
 
  $card-border-width: 1px;
  $card-border-bottom-width: hse-spacing(1);
- $card-border-color: #e8e8e8;
- $card-border-hover-color: $color_hse-grey-3;
+
  
  .hse-card {
    @include hse-responsive-margin(7, "bottom");
