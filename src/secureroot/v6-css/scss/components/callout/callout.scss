@@ -2,7 +2,6 @@
 
 $callout-border-width: 10px;
 
-
 .callout {
   @include hse-responsive-padding(4);
   margin-bottom: $hse-legacy-spacing-20;
@@ -34,10 +33,21 @@ $callout-border-width: 10px;
     background: $color_hse-grey-4;
     border-left: $callout-border-width solid $color_hse-beta;
   }
+
+  .callout--warning {
+    background: left $color_hse-grey-4;
+    border-left: hse-spacing(4) solid $color_hse-grey-4;
+    margin: hse-spacing(6) 0;
+    @include hse-responsive-padding(4, "top");
+    @include hse-responsive-padding(4, "bottom");
+    p {
+      @include hse-responsive-padding(2);  
+    }
+  }
 }
 
 .callout--warning {
-  margin: 10px 0 20px 0;
+  margin: hse-spacing(6) 0 hse-spacing(6) 0;
   background: none;
   border-left: 0;
   font-weight: 700;
