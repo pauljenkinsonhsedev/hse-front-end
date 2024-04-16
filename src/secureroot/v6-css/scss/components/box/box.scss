@@ -6,21 +6,6 @@
   border-radius: 0;
 }
 
-
-
-// document box
-.hse-document {
-  border: 2px solid $color_hse-red;
-  @include hse-responsive-padding(4);
-  @include hse-responsive-margin(6, "bottom");
-  float: left;
-  width: 100%;
-}
-
-.hse-document .fileType {
-  display: none;
-}
-
 form fieldset.visibleFieldset {
   border: 1px solid #ababab;
   display: block;
