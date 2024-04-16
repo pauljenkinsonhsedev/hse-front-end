@@ -4,7 +4,6 @@
 
    .hse-design-side-navigation {
     @include hse-font(16);
-  
     @include mq($until: tablet) {
       display: flex;
       overflow-x: scroll;
@@ -21,7 +20,7 @@
     color: hse-colour("dark-grey");
     font-weight: normal;
     margin: 0;
-    padding: hse-spacing(2) 0;  
+    padding: hse-spacing(2) + 4px 0;
     @include mq($until: tablet) {
       display: none;
     }
@@ -30,9 +29,8 @@
   
   .hse-design-side-navigation__list {
     list-style: none !important;
-    margin: 0;
+    margin: hse-spacing(4) 0;
     padding: 0;
-  
     @include mq($until: tablet) {
       display: flex;
       margin: 0;
@@ -61,14 +59,14 @@
   
       @include mq($until: tablet) {
         border-bottom: 4px solid transparent;
-        padding: hse-spacing(3) 0;
+        padding: hse-spacing(3);
         padding-bottom: hse-spacing(3) - 4px; // Compensate for 4px border
       }
   
       @include mq($from: tablet) {
         background-color: inherit;
         border-left: 4px solid transparent;
-        padding: hse-spacing(2) 0;
+        padding: hse-spacing(2);
       }
   
   
@@ -110,7 +108,7 @@
     @include mq($from: tablet) {
       a:link,
       a:visited {
-        background-color: hse-colour("light-grey");
+        background-color: white;
       }
   
       a:focus {
