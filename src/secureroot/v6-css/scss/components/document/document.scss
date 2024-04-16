@@ -1,0 +1,13 @@
+// Document download
+.hse-document {
+    background-color: $color_hse-grey-4;
+    @include hse-responsive-padding(4);
+    @include hse-responsive-margin(6, "bottom");
+    width: 100%;
+  }
+
+
+  
+  .hse-document .fileType {
+    display: none;
+  }
