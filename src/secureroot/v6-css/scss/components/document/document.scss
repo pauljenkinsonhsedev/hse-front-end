@@ -6,7 +6,28 @@
     width: 100%;
   }
 
-
+  .hse-document__thumbnail {
+    display: block;
+    width: auto;
+    max-width: 99px;
+    height: 140px;
+    border: rgba(11, 12, 12, .1);
+    outline: 5px solid rgba(11, 12, 12, .1);
+    background: #fff;
+    box-shadow: 0 2px 2px rgba(11,12,12,.4);
+    fill: #b1b4b6;
+    stroke: #b1b4b6;
+    &::before {
+      content: " ";
+      background-image: url(../../assets/v6-images/icons/svg-hse-document-spreadsheet.svg);
+      background-repeat: no-repeat;
+      background-position: bottom;
+      float: left;
+      position: relative;
+      width: 99px;
+      height: 140px;  
+    }
+}
   
   .hse-document .fileType {
     display: none;
