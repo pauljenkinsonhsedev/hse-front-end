@@ -1,121 +1,131 @@
 /* ==========================================================================
-   #SIDE NAVIGATION
-   ========================================================================== */
+#SIDE NAVIGATION - DESIGN SYSTEM
+========================================================================== */
 
-   .hse-design-side-navigation {
-    @include hse-font(16);
-    @include mq($until: tablet) {
-      display: flex;
-      overflow-x: scroll;
-    }
-  
-    @include mq($from: tablet) {
-      display: block;
-    }
-  
+.hse-design-side-navigation {
+@include mq($until: tablet) {
+margin-bottom: hse-spacing(4);
+}
+@include hse-font(16);
+@include mq($until: tablet) {
+  display: flex;
+  overflow-x: scroll;
+}
+
+@include mq($from: tablet) {
+  display: block;
+}
+
+&__title {
+  @include hse-font($size: 19);
+  color: hse-colour("dark-grey");
+  font-weight: normal;
+  margin: 0;
+  padding: hse-spacing(2) + 4px 0;
+  @include mq($until: tablet) {
+    display: none;
   }
-  
-  .hse-design-side-navigation__title {
-    @include hse-font($size: 19);
-    color: hse-colour("dark-grey");
-    font-weight: normal;
+
+}
+
+&__list {
+  list-style: none !important;
+  margin: hse-spacing(4) 0;
+  padding: 0;
+  @include mq($until: tablet) {
+    display: flex;
     margin: 0;
-    padding: hse-spacing(2) + 4px 0;
-    @include mq($until: tablet) {
-      display: none;
-    }
-  
+    white-space: nowrap;
   }
-  
-  .hse-design-side-navigation__list {
-    list-style: none !important;
-    margin: hse-spacing(4) 0;
-    padding: 0;
+
+  @include mq($from: tablet) {
+    margin-bottom: hse-spacing(4);
+  }
+}
+
+&__item {
+  font-size: 1rem;
+
+  @include mq($until: tablet) {
+    display: flex;
+  }
+
+  a,
+  a:link,
+  a:visited {
+    background-color: inherit;
+    color: $hse-link-color;
+    display: block;
+    text-decoration: none;
+
     @include mq($until: tablet) {
-      display: flex;
-      margin: 0;
-      white-space: nowrap;
+      border-bottom: 4px solid transparent;
+      padding: hse-spacing(3);
+      padding-bottom: hse-spacing(3) - 4px; // Compensate for 4px border
     }
-  
+
     @include mq($from: tablet) {
-      margin-bottom: hse-spacing(4);
-    }
-  }
-  
-  .hse-design-side-navigation__item {
-    font-size: 1rem;
-  
-    @include mq($until: tablet) {
-      display: flex;
-    }
-  
-    a,
-    a:link,
-    a:visited {
       background-color: inherit;
-      color: $hse-link-color;
-      display: block;
-      text-decoration: none;
-  
-      @include mq($until: tablet) {
-        border-bottom: 4px solid transparent;
-        padding: hse-spacing(3);
-        padding-bottom: hse-spacing(3) - 4px; // Compensate for 4px border
-      }
-  
-      @include mq($from: tablet) {
-        background-color: inherit;
-        border-left: 4px solid transparent;
-        padding: hse-spacing(2);
-      }
-  
-  
+      border-left: 4px solid transparent;
+      padding: hse-spacing(2);
     }
-  
-    a:hover {
-      color: $hse-link-hover-color;
-    }
-  
-    a:focus {
-      color: $hse-focus-text-color;
-      background-color: $hse-focus-color;
-      border-color: $hse-focus-text-color;
-      position: relative;
-    }
-  
+
+
   }
-  
-  .hse-design-side-navigation__item--active {
-  
-    a:link,
-    a:visited {
-      border-color: $hse-link-color;
-      color: $hse-link-color;
-      font-weight: bold;
-    }
-  
-    a:hover {
-      color: $hse-link-hover-color;
-      border-color: $hse-link-hover-color;
-    }
-  
-    a:focus {
-      color: $hse-focus-text-color;
-      background-color: $hse-focus-color;
-      border-color: $hse-focus-text-color;
-    }
-  
-    @include mq($from: tablet) {
-      a:link,
-      a:visited {
-        background-color: white;
-      }
-  
-      a:focus {
-        color: $hse-focus-text-color;
-        background-color: $hse-focus-color;
-      }
-    }
-  
-  
+
+  a:hover {
+    color: $hse-link-hover-color;
   }
+
+  a:focus {
+    color: $hse-focus-text-color;
+    background-color: $hse-focus-color;
+    border-color: $hse-focus-text-color;
+    position: relative;
+  }
+
+  
+&--active {
+
+a:link,
+a:visited {
+  border-color: $hse-link-color;
+  color: $hse-link-color;
+  font-weight: bold;
+}
+
+a:hover {
+  color: $hse-link-hover-color;
+  border-color: $hse-link-hover-color;
+}
+
+a:focus {
+  color: $hse-focus-text-color;
+  background-color: $hse-focus-color;
+  border-color: $hse-focus-text-color;
+}
+
+@include mq($from: tablet) {
+  a:link,
+  a:visited {
+    background-color: white;
+  }
+
+  a:focus {
+    color: $hse-focus-text-color;
+    background-color: $hse-focus-color;
+  }
+}
+
+
+}
+
+}
+
+}
+
+
+  
+
+  
+ 
