@@ -26,6 +26,8 @@ import { subNavMobile } from "./combined/subnav-mobile.js";
 import { accordion } from "./combined/accordion.js";
 import { htmlPrintGuide } from "./combined/html-print-guide.js";
 import { backToTop } from "./combined/back-to-top.js";
+import { sideNavDesign } from "./combined/side-nav-design.js";
+
 
 
 // Window load
@@ -88,11 +90,11 @@ window.addEventListener("DOMContentLoaded", () => {
     mainMenu();
   }
 
-    // small device menu
-    const search = document.querySelector(".js-search");
-    if (search) {
-      mainSearch();
-    }
+  // small device menu
+  const search = document.querySelector(".js-search");
+  if (search) {
+    mainSearch();
+  }
 
   // JS Enabled flag
   const htmlDoc = document.getElementsByTagName("html")[0];
@@ -132,6 +134,12 @@ window.addEventListener("DOMContentLoaded", () => {
 
 
   feedbackSurvey();
+
+  // Design system side-nav
+  const dsSide = document.querySelector(".hse-design-side-navigation");
+  if (dsSide) {
+    sideNavDesign();
+  }
 
   
   const secondaryMenuSelector = document.getElementById("menu");
