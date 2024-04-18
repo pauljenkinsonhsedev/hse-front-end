@@ -1,9 +1,0 @@
-<span class="hse-design-side-navigation__title">Pages</span>
-<ul class="hse-design-side-navigation__list">
-  <li class="hse-design-side-navigation__item"><a class="nav-link" href="../patterns/a-z.htm">A-Z</a></li>
-  <li class="hse-design-side-navigation__item"><a class="nav-link" href="../patterns/complementary.htm">Related content</a></li>
-  <li class="hse-design-side-navigation__item"><a class="nav-link" href="../patterns/contents-box.htm">Contents list</a></li>
-  <li class="hse-design-side-navigation__item"><a class="nav-link" href="../patterns/top-task.htm">Top task</a></li>
-  <li class="hse-design-side-navigation__item"><a class="nav-link" href="../patterns/navigational-pages.htm">Navigational pages</a></li>
-  <li class="hse-design-side-navigation__item"><a class="nav-link" href="../patterns/document.htm">Document page</a></li>
-</ul>
