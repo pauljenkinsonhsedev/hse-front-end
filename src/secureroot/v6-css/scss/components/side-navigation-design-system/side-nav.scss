@@ -60,7 +60,7 @@ margin-bottom: hse-spacing(4);
 
 &__item {
   font-size: 1rem;
-
+  padding-left: hse-spacing(2);
   @include mq($until: tablet) {
     display: flex;
   }
@@ -82,8 +82,8 @@ margin-bottom: hse-spacing(4);
 
     @include mq($from: tablet) {
       background-color: inherit;
-      border-left: 4px solid transparent;
-      padding: hse-spacing(2);
+      // border-left: 4px solid transparent;
+      //padding: hse-spacing(2);
     }
 
 
@@ -102,9 +102,10 @@ margin-bottom: hse-spacing(4);
 
   
 &--active {
+  border-left: 4px solid $hse-link-color;
   &:has(.hse-design-side-navigation__list--nested) {
-    display: block;
     border-left: 4px solid $hse-link-color;
+    padding-left: hse-spacing(2);
     a {
       border: none;
     }
@@ -146,7 +147,22 @@ a:focus {
 
 }
 
+// Toggle nested items
 
+.hse-design-side-navigation__list--nested {
+  .hse-design-side-navigation__item & {
+    display: none;
+  }
+  .hse-design-side-navigation__item--active & {
+    display: block;
+  }
+}
+
+.hse-design-side-navigation__list--nested {
+  &:has(.hse-design-side-navigation__item--active) {
+    display: block;
+  }
+}
   
 
   
