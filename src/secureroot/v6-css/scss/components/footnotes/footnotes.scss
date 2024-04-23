@@ -1,0 +1,5 @@
+.hse-footnotes {
+@include mq($media-type: print) {
+@include hse-responsive-margin(6, "top");
+}
+}
