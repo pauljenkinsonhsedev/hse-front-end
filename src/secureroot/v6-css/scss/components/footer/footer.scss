@@ -4,6 +4,9 @@
 
 .hse-footer {
     background: $color_hse-grey-1;   
+    @include mq($media-type: print) {
+        display: none;
+    }
     &::before {
         background: $color_hse-red;
         display: block;
