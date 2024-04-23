@@ -23,10 +23,12 @@ export function footnoteLinks ()  {
     });
 
     const html = `
+    <div class="hse-footnotes">
     <h2 class="hideFromScreen footnotes">Link URLs in this page</h2>
     <ol class="hideFromScreen">
         ${listItems}
-    </ol>`;
+    </ol>
+    </div>`;
 
     if (listItems.length > 0) {
       container.insertAdjacentHTML('beforeend', html);
