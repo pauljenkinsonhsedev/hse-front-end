@@ -7,6 +7,9 @@
 }
 .hideFromScreen {
   display: none;
+  @include mq($media-type: print) {
+  display: inline;
+  }
 }
 
 /* @mixin hse-visually-hidden {
