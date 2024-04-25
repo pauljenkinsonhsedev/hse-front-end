@@ -119,31 +119,72 @@
     position: relative;
   }
 
-  // .menu-button span::after,
-  .menu-button.main-search-expanded span:after,
-  .menu-button:hover:after {
+  .menu-button.main-menu:hover:after {
     content: "";
     height: 3px;
-    left: 20px;
+    left: 5px;
+    right: 10px;
     position: absolute;
-    right: 20px;
-    bottom: -14px;
-    top: auto;
-    background: $color_hse-black;
-  }
-// .search-button span:after,
-  .search-button.main-search-expanded span:after,
-  .search-button:hover:after {
-    content: "";
-    height: 3px;
-    left: 20px;
-    position: absolute;
-    right: 20px;
     bottom: -14px;
     top: auto;
     background: $color_hse-black;
   }
 
+  .search-button.main-search:hover:after {
+    content: "";
+    height: 3px;
+    left: 0;
+    right: 0;
+    position: absolute;
+    bottom: -14px;
+    top: auto;
+    background: $color_hse-black;
+  }
+
+  .search-button.main-search.main-search-expanded:hover:after {
+    background:none;
+  }
+
+  .menu-button:hover:after  {
+    content: "";
+    height: 3px;
+    left: 5px;
+    right: 10px;
+    position: absolute;
+    bottom: -14px;
+    top: auto;
+    background: $color_hse-red;
+  }
+
+  .menu-button.main-menu-expanded span:after {
+    content: "";
+    height: 3px;
+    left: 5px;
+    right: 10px;
+    position: absolute;
+    bottom: -14px;
+    top: auto;
+    background: $color_hse-black;
+  }
+
+  .search-button .x-mark {
+    display: none;
+  }
+
+  .search-button.main-search-expanded .x-mark {
+    display: inline-block;
+    font-size: 26px;
+    font-weight: normal;
+  }
+
+  .search-button.main-search-expanded button.gsc-search-button svg {
+    display: none;
+  }
+
+  .search-button.main-search-expanded span:before,
+  .search-button.main-search-expanded span:after {
+    display: none;
+  }
 
   .menu-button:hover span:before,
   .menu-button.main-menu:hover span:before {
@@ -165,14 +206,13 @@
   .menu-button.main-menu-expanded span:after {
     background: $color_hse-black; 
   }
-  .menu-button:hover:after, .search-button:hover:after {
+  .search-button.main-search:hover:after {
     background: $color_hse-red;
   }
-  .menu-button.main-menu-expanded:hover:after {
-    background: $color_hse-black;
-  }
-  
 
+  .menu-button:hover:after {
+    background: $color_hse-red;
+  }
   
   .boxList ul li:hover h3 {
     color: white !important;
