@@ -53,7 +53,7 @@ position: relative !important;
 
 .gsc-search-button-v2 {
   font-size: 0.9rem !important;
-  background-color: $color_hse-grey-1 !important;
+  background-color: $color_hse-red !important;
   border: 0 !important;
   border-radius: 0 !important;
   -webkit-border-radius: 0 !important;
@@ -90,9 +90,6 @@ td.gsib_b {
   background-color: #fff !important;
   border: none !important;
   position: relative !important;
-  // -webkit-appearance: none !important;
-  // appearance: none !important;
-  // border-radius: 0 !important;
 }
 
 #globalSearch #gsc-i-id1:focus {
