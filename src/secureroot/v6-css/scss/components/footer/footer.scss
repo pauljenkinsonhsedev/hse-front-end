@@ -31,6 +31,11 @@
     // .hse-footer__base-inner {
     //  display: flex;
     // }
+
+    .hse-footer-white {
+        @include hse-link-style-white;
+        fill: $color_hse-white !important;
+    }
     
     .hse-footer__base-inner, .hse-footer__languages {
     p {

@@ -40,6 +40,9 @@
       font-weight: $hse-font-bold;
       padding-left: 28px;
     }
+    &--white {
+      color: $color_hse-white;
+    }
   
     &:hover {
       .hse-action-link__text {
@@ -81,6 +84,9 @@
       &--small {
         height: 26px;
         width: 26px;
+      }
+      &--white {
+        fill: $color_hse-white;
       }
   
       @include mq($until: tablet) {
