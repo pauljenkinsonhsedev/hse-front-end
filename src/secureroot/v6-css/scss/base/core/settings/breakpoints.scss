@@ -32,8 +32,9 @@ $mq-breakpoints: (
   mobile: 320px,
   tablet: 641px,
   desktop: 769px,
-  hse-desktop: 1000px,
-  large-desktop: 990px
+  large-desktop: 990px,
+  hse-desktop: 1000px
+
 );
 
 $mq-static-breakpoint: desktop; // [2] //
