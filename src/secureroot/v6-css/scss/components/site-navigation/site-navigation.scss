@@ -31,8 +31,6 @@
   .hse-navigation__navigation-item {
   padding-bottom: 15px;
   margin-bottom: 0;
-  // &:last-of-type {
-  //   }
   }
   
   .hse-navigation__primary-navigation-item {
@@ -71,16 +69,12 @@
 // fix required for overriding width-container for mobile navigation
 
   .hse-navigation__navigation-link {
-    text-decoration: underline;
-    width: 100%;
-    display: inline;
     &:link, &:visited {
-    color: $color_hse-white;
+      @include hse-link-style-white;
     }
     &--menu {
       &:link, &:visited {
-      color: $color_hse-red;
-      font-weight: 700;
+      @include hse-link-style-default;
       }
     }
 
@@ -141,13 +135,6 @@
 .menu-button {
   margin-right: 0;
 }
-// .search-button {
-//   margin-right: 20px !important;
-// }
-}
-
-.search-button {
-  padding-left: 15px;
 }
 
 .menu-button {
@@ -171,17 +158,18 @@
   }
 }
 
-.menu-button:hover, .search-button:hover {
+.search-button:hover,
+.menu-button:hover {
   cursor: pointer;
   position: relative;
   color: $color_hse-red;
 }
 
-.search-button:hover {
-  padding-left: 15px;
+.menu-button.main-menu-expanded:hover {
+  color: $color_hse-black;
 }
 
-.menu-button.main-menu-expanded:hover {
+.search-button.main-search-expanded:hover {
   color: $color_hse-black;
 }
 
@@ -196,7 +184,6 @@
 .search {
   display: none;
 }
-
 
 .no-js .menu {
   display: block;
@@ -232,24 +219,22 @@
 
 
 .hero-image h1 {
-  // font-family: LexiaBold,georgia,serif;
   margin-bottom: 0;
-  // max-width: 22ch
 }
 
 .hero-image p {
-  // font-size: clamp(1rem,.9643rem + .1786vw,1.25rem);
   margin-bottom: 0;
   max-width: 42ch;
 }
 
 .hero-image h1,.hero-image p {
   color: #fff;
-  text-shadow: 0 0 .9375rem rgba(0,0,0,.75);
+  @include mq($from: 981px) {
+    text-shadow: 0 0 .9375rem rgba(0,0,0,.75);
+  }
 }
 
 .hero-image:after {
-  // background:rgba(0,0,0,.35);
   content: "";
   inset: 0;
   opacity: 1;
@@ -277,13 +262,6 @@
 }
 }
 
-// @media screen and (min-width: 64rem) {
-//   .hero-image:after {
-//       background:linear-gradient(290deg,hsla(0,0%,100%,0) 30%,rgba(0,0,0,.75) 65%,#000);
-//       opacity: .9
-//   }
-// }
-
 .hero-image .wrapper {
   display: grid;
   flex: 1;
@@ -294,7 +272,6 @@
   padding-right: .9375rem;
   padding-top: 32px;
   padding-bottom: 16px;
-  // place-content: end start;
   width: 100%;
 }
 
@@ -310,20 +287,18 @@
   }
 }
 
-
 @include mq($from: desktop) {
   .hero-image .wrapper {
-  // place-content:center start;
   padding-left: 32px;
   padding-right: 32px;
+  margin-left: 0;
   }
 }
 
 @include mq($from: 1024px) {
   .hero-image .wrapper {
-  // place-self:center start;
   padding-left: 0;
-  padding-right: 0;
+  margin: 0 auto;
   }
   .hero-image .wrapper {
     place-self: center start;
@@ -332,18 +307,22 @@
 
 .hero-image .content {
   align-items: flex-start;
-  // background: rgba(0,0,0,.5);
   display: flex;
   flex-direction: column;
-  // padding: 1.5rem;
   z-index: 2;
   margin-bottom: 1rem;
-  max-width: 57ch;
 }
 
-@media screen and (min-width: 64rem) {
+@include mq($from: 980px) {
   .hero-image .content {
-    margin-bottom: 0;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+}
+
+@include mq($from: 981px) {
+  .hero-image .content {
+    margin-top: 1rem;
   }
 }
 
@@ -359,17 +338,17 @@
 .hero-image img {
   height: 100%;
   inset: 0;
-  -o-object-fit: cover;
   object-fit: cover;
-  -o-object-position: center;
-  object-position: center;
-  position: absolute;
+  object-position: top;
   width: 100%;
+  background-color: #333;
+  padding: 0;
+  position: relative;
 }
 
 .hero-image .button {
+  text-decoration: none;
   background: $color_hse-red;
-  // border: 2px solid #fff;
   color: #fff;
   font-weight: 700;
   line-height: 1.2;
@@ -385,7 +364,6 @@
 
 .hero-image .button:hover {
   background-color: #fff;
-  // border: 2px solid #fff;
   color: var(--dark-text);
 }
 
@@ -396,26 +374,12 @@
 }
 
 .hero-image.landing {
-  background-color: #4b4b4b;
-  // display: grid;
-  // min-height: 31.25rem;
+  background-color: $color_hse-grey-1;
   padding: 0;
   position: relative;
 }
 
-// @media screen and (min-width: 64rem) {
-//   .hero-image.landing {
-//       min-height:37.5rem
-//   }
-// }
-
-// .hero-image.landing h1 {
-//   font-size: 3rem;
-//   font-size: clamp(2.5rem,2.2rem + 1.5vw,4rem)
-// }
-
 .hero-image.standard {
-  // aspect-ratio: auto;
   display: grid;
   grid-template-columns: 1fr;
   height: 18.75rem;
@@ -427,7 +391,6 @@
 
 @media screen and (min-width: 37.5rem) {
   .hero-image.standard {
-      // grid-template-areas:"stack";
       height: 18.75rem;
       margin: 3rem auto 0;
   }
@@ -453,7 +416,6 @@
 }
 
 .hero-image.standard:not(.image) .wrapper {
-  // grid-auto-columns: 1fr;
   place-content: center start;
 }
 
@@ -494,17 +456,6 @@
 .hero-image.standard+.bg-grey {
   margin-top: 3rem;
 }
-
-
-
-
-
-
-
-
-
-
-// NEW
 
 .hero-banner-component {
   position: relative
