@@ -45,5 +45,9 @@ padding: 0;
 
 .hse-sidebar__navigation {
   @include hse-responsive-margin(6, "bottom");
+  @include mq($media-type: print) {
+  @include hse-responsive-margin(6, "top");
+
+  }
 }
 

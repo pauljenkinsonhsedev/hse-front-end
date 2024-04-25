@@ -59,8 +59,8 @@ export function htmlPrintGuide() {
     var parser = new DOMParser();
     var doc = parser.parseFromString(data, "text/html");
 
-    // Get the content from the article tag
-    let content = doc.querySelector("#article");
+    // Get the content from the page contents ID
+    let content = doc.querySelector("#page-contents");
 
     // Assemble
 
@@ -78,6 +78,7 @@ export function htmlPrintGuide() {
     const surveybox = document.querySelector(".box.backgroundRed");
     const printableVersion = document.querySelector(".printable-version");
     const calloutSurvey = document.querySelector(".callout.callout--survey");
+    const backToTop = document.querySelector(".hse-back-to-top");
 
     // Remove clutter
     if (pagination) {
@@ -91,6 +92,9 @@ export function htmlPrintGuide() {
     }
     if (printableVersion) {
       printableVersion.remove();
+    }
+    if (backToTop) {
+      backToTop.remove();
     }
   };
 
@@ -111,12 +115,13 @@ export function htmlPrintGuide() {
   // When page has loaded, rename <article> ids for accessibility
 
   window.onload = function (event) {
-    var articleElements = document.querySelectorAll("#article");
+    var articleElements = document.querySelectorAll("#page-contents");
 
     // Set their ids
     for (var i = 0; i < articleElements.length; i++)
       articleElements[i].id = "guide-section-" + i;
-    footnoteLinks();
-    footnoteAbbr();
+      footnoteLinks();
+      footnoteAbbr();
   };
+
 }

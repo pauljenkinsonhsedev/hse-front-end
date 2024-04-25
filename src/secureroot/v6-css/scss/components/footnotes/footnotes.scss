@@ -1,0 +1,18 @@
+.hse-footnotes {
+@include mq($media-type: print) {
+.hideFromScreen {
+display: block;
+}
+@include hse-responsive-margin(6, "top");
+}
+
+&__list {
+@include hse-responsive-margin(6, "top");
+}
+&__list-item-title {
+font-weight: bold;
+}
+&__list-item-title, &__list-item-url {
+display: block;
+}
+}
