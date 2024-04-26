@@ -27,8 +27,7 @@ import { accordion } from "./combined/accordion.js";
 import { htmlPrintGuide } from "./combined/html-print-guide.js";
 import { backToTop } from "./combined/back-to-top.js";
 import { sideNavDesign } from "./combined/side-nav-design.js";
-
-
+import { dsSiteNavigation } from "./combined/ds-site-navigation.js";
 
 // Window load
 window.addEventListener("DOMContentLoaded", () => {
@@ -140,6 +139,13 @@ window.addEventListener("DOMContentLoaded", () => {
   if (dsSide) {
     sideNavDesign();
   }
+
+  // Design system site navigation
+  const dsSiteNav = document.querySelector(".hse-ds-navigation");
+  if (dsSiteNav) {
+    dsSiteNavigation();
+  }
+  
 
   
   const secondaryMenuSelector = document.getElementById("menu");
