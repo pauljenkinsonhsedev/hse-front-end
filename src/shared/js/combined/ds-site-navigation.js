@@ -1,22 +1,21 @@
 export function dsSiteNavigation ()  {
 
-    const navLinkEls = document.querySelectorAll('.hse-ds-navigation__link');
+const navLinkEls = document.querySelectorAll('.hse-ds-navigation__link');
 
-    console.log(navLinkEls);
+navLinkEls.forEach(navLinkEl => {
+    
+    // Get full href of link
+    const link = navLinkEl.href;
 
-    navLinkEls.forEach(navLinkEl => {
-        
-        const link = navLinkEl.getAttribute("href");
-        const urlStringPath = window.location.pathname.substring(
-            window.location.pathname.lastIndexOf("/") + 1
-          );
+    // Get first path of page URL
+    const firstPath = window.location.pathname.split('/')[1]; 
 
-        if (link === urlStringPath) {
-            navLinkEl.classList.add('hse-ds-navigation__link--active');  
-        }
+    // Check if link contains first path of page URL
+    if (link.includes(firstPath) === true) {
+    navLinkEl.classList.add('hse-ds-navigation__link--active');  
+    }
 
-    });
+});
    
-
 }
 
