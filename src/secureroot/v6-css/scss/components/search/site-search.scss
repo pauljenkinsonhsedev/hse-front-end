@@ -60,12 +60,17 @@ position: relative !important;
   padding: 0 !important;
 }
 
+.gsc-search-button-v2.test-gsc {
+  background-color: $color_hse-white !important;
+}
+
 .gsc-search-button-v2:hover {
   cursor: pointer;
 }
 
 .gsc-search-button-v2 svg {
-  fill: white !important;
+  fill: $color_hse-white !important;
+  margin-top: -7px !important;
 }
 
 td.gsib_b {
@@ -83,7 +88,7 @@ td.gsib_b {
   height: 38px !important;
   background: none !important;
   background-color: #fff !important;
-  border: 0px !important;
+  border: none !important;
   position: relative !important;
 }
 

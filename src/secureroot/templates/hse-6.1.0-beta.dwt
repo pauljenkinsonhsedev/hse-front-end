@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-GB"><head>
-  
+	
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- TemplateBeginMultipleIf -->
@@ -127,14 +127,14 @@ window.dataLayer.push({'content_group': '@@(_document['contentGroup'])@@'});
   <div id="header" class="hse-header__container">
     <div class="hse-width-container hse-header__top-container headerTop js-header">
 	  <!-- TemplateBeginMultipleIf -->
-	  <!-- TemplateBeginIfClause cond="bodyClass != 'home'" -->
-      <div id="headerLogo" class="headerLogo hse-header__logo"><a href="../index.htm"><svg aria-hidden="true" width="45" height="46" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21.508 7.328V.984a.976.976 0 00-.975-.974H.03v.974h19.11l-3.897 3.912H.029v.974H14.29l-3.904 3.905H.029v.974H9.41l-.772.787a.982.982 0 00-.274.678.88.88 0 00.065.304l.722 2.114H.029v.982H9.41l1.314 3.904H.029v.975h13.67a.974.974 0 01.974.967v2.93H.029v.974h20.504a.975.975 0 00.974-.974v-8.25a.974.974 0 00-.974-.98h-2.952a.967.967 0 01-.952-.975.989.989 0 01.209-.6l4.46-5.622a.923.923 0 00.224-.591M43.953.984V.01H23.456a.975.975 0 00-.967.974v6.352a.924.924 0 00.224.591l4.518 5.695a.902.902 0 01.173.527.967.967 0 01-.953.974h-2.995a.974.974 0 00-.967.982v8.292a.968.968 0 00.967.975h20.497v-.975H29.31V21.51a.974.974 0 01.975-.974h13.67v-1.003H33.25l1.314-3.905h9.382v-.974h-9.05l.721-2.122c.034-.1.053-.205.058-.31a.945.945 0 00-.274-.679l-.78-.786h9.383v-.975H33.625l-3.897-3.904h14.225v-.975H28.725L24.856.984h19.097zM1.111 30.575c0-.664-.288-.981-1.111-1.003v-.44c1.06.072 1.992.144 2.887.144s1.826-.072 2.887-.144v.454c-.816 0-1.104.34-1.104 1.004v4.749h5.773v-4.764c0-.664-.288-.981-1.104-1.003v-.44c1.054.072 1.985.144 2.887.144.902 0 1.819-.072 2.887-.144v.454c-.816 0-1.104.34-1.104 1.004v12.565c0 .671.288.982 1.104 1.003v.455c-1.054-.072-1.992-.145-2.887-.145s-1.826.073-2.887.145v-.455c.816 0 1.104-.332 1.104-1.003v-5.514H4.67v5.514c0 .671.288.982 1.104 1.003v.455c-1.054-.072-1.992-.145-2.887-.145s-1.819.073-2.887.145v-.455c.823 0 1.111-.332 1.111-1.003v-12.58zm16.831 8.661c.477 2.62 2.317 3.84 4.886 3.84 1.444 0 3.457-.412 3.457-2.166 0-1.443-1.494-1.826-2.59-2.165l-1.704-.505c-2.447-.722-4.893-1.747-4.893-4.576 0-3.717 3.608-4.843 7.167-4.843a13.304 13.304 0 014.467.765c0 1.725.087 3.19.188 4.44h-.462c-.498-2.217-2.44-3.242-4.598-3.242-1.198 0-3.211.383-3.211 2.036 0 1.32 1.154 1.703 2.165 1.992l2.512.721c2.424.722 4.676 1.581 4.676 4.692 0 3.11-3.219 4.785-7.123 4.785a15.77 15.77 0 01-5.204-.859c0-1.891-.072-3.55-.188-4.944l.455.029zm15.113-8.48c0-.679-.288-.99-1.104-1.01v-.455h12.002c0 1.313.072 2.583.195 3.882h-.455c-.238-1.313-.57-1.775-1.869-1.775h-5.218v4.143h3.284c1.075 0 1.241-.361 1.386-1.213h.44a20.984 20.984 0 00-.144 2.266c.006.763.054 1.524.144 2.281h-.455c-.144-.859-.31-1.22-1.385-1.22h-3.284v4.72h5.485c1.292 0 1.696-.432 2.107-2.446h.6c-.217 1.97-.26 3.24-.29 4.554H31.937v-.447c.816 0 1.105-.347 1.105-1.01l.014-12.27z" fill="#981e32"/></svg><span class="visually-hidden">Health and Safety<br>Executive</span></a></div>
+	  <!-- TemplateBeginIfClause cond="homepage != 'home'" -->
+      <div id="headerLogo" class="headerLogo hse-header__logo"><a href="index.htm"><svg aria-hidden="true" viewBox="0 0 345.87 68.25 "width="100%" height="100%" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="#9f2447" d="M32.44 11.41V1.84c0-.82-.65-1.48-1.47-1.48H.05v1.47h28.82l-5.88 5.89H.05v1.47h21.48l-5.88 5.89H.06v1.47h14.12l-1.17 1.18-.02.03c-.25.26-.41.62-.41 1.02 0 .16.04.31.09.46h-.02l1.08 3.21H.06v1.47h14.17l1.99 5.89H.07v1.47h20.62c.81 0 1.46.65 1.47 1.47v4.41H.07v1.47h30.92c.81 0 1.47-.66 1.47-1.47v-12.5c0-.81-.65-1.47-1.47-1.47h-4.45c-.8-.03-1.44-.67-1.44-1.48 0-.34.12-.65.32-.9l6.73-8.49h-.02c.17-.27.31-.57.31-.91M35.38 23.19c-.81 0-1.47.66-1.47 1.47v12.51c0 .81.66 1.47 1.47 1.47H66.3v-1.47H44.21v-4.41c0-.81.66-1.47 1.48-1.47H66.3v-1.48H50.15l1.98-5.89H66.3v-1.47H52.63l1.08-3.2h-.02c.05-.16.09-.32.09-.48 0-.4-.16-.75-.42-1.02l-.02-.02-1.17-1.19h14.12v-1.47H50.7l-5.88-5.89h21.47V7.71H43.34l-5.88-5.89h28.82V.35H35.36c-.81 0-1.47.65-1.47 1.47v9.58c0 .34.14.65.34.9h-.02l6.81 8.6c.16.23.26.5.26.8 0 .81-.64 1.45-1.44 1.47l-4.45.02ZM1.67 46.52c0-1.01-.43-1.48-1.67-1.52v-.69c1.6.11 3 .21 4.34.21s2.75-.11 4.34-.21V45c-1.23.04-1.66.51-1.66 1.52v7.16h8.75v-7.16c0-1.01-.43-1.48-1.66-1.52v-.69c1.59.11 3 .21 4.34.21s2.75-.11 4.34-.21V45c-1.23.04-1.66.51-1.66 1.52v18.95c0 1.01.43 1.48 1.66 1.51v.69c-1.59-.11-3-.21-4.34-.21s-2.75.11-4.34.21v-.69c1.23-.03 1.66-.5 1.66-1.51v-8.32H7.02v8.32c0 1.01.43 1.48 1.66 1.51v.69c-1.58-.11-3-.21-4.34-.21s-2.74.11-4.34.21v-.69c1.23-.03 1.67-.5 1.67-1.51V46.52ZM27.06 59.5c.72 3.95 3.5 5.79 7.37 5.79 2.13 0 5.21-.62 5.21-3.33 0-2.17-2.24-2.75-3.9-3.25l-2.57-.76c-3.69-1.08-7.38-2.64-7.38-6.91 0-5.6 5.42-7.3 10.81-7.3 2.28 0 4.62.4 6.73 1.16 0 2.6.14 4.81.29 6.69h-.69c-.75-3.33-3.69-4.88-6.94-4.88-1.8 0-4.84.58-4.84 3.07 0 1.99 1.74 2.57 3.22 3l3.8 1.08c3.65 1.05 7.05 2.39 7.05 7.09s-4.81 7.3-10.7 7.3c-2.64 0-5.42-.44-7.84-1.29 0-2.86-.12-5.36-.29-7.45h.67ZM49.88 46.74c0-1.02-.44-1.48-1.66-1.52v-.69h18.11c.04 1.99.11 3.91.29 5.86h-.68c-.36-1.99-.87-2.68-2.82-2.68h-7.88v6.26h4.95c1.62 0 1.88-.54 2.09-1.84h.69c-.11.9-.21 2.46-.21 3.42s.11 2.57.21 3.44h-.69c-.21-1.3-.47-1.84-2.09-1.84h-4.95v7.12h8.28c1.95 0 2.56-.65 3.18-3.69h.9c-.33 2.96-.39 4.89-.43 6.87H48.22v-.68c1.23-.04 1.66-.51 1.66-1.52V46.74ZM99.09.01h5.85V9.3h4.66V.01h5.85v24.85h-5.85V14.25h-4.66v10.62h-5.85V.01ZM123.83 16.37v1.15c0 2.92.42 4.35 2.05 4.35 1.46 0 1.91-1.08 2.05-3.45h5.22c-.1 4.66-2.65 6.93-7.31 6.93-7.1 0-7.66-4.98-7.66-10.58 0-5.29 1.53-9.22 7.66-9.22 7 0 7.48 4.42 7.48 10.82h-9.49Zm4.07-3.27c0-2.65-.35-4.07-1.91-4.07-1.84 0-2.16 1.53-2.16 4.07h4.07ZM135.45 11.81c.04-2.58.8-4.14 2.12-5.05s2.92-1.22 5.26-1.22c4.63 0 6.68 1.6 6.68 5.57v9.68c0 1.43 0 3.24.66 4.07h-5.43c-.21-.66-.28-1.43-.31-2.16h-.07c-.77 1.67-2.54 2.65-4.42 2.65-3.17 0-5.01-1.67-5.01-5.74 0-2.19.9-4.04 2.3-4.8 1.39-.77 3.48-1.11 5.05-1.53 1.71-.45 2.02-.73 2.02-2.16 0-1.15-.52-1.88-1.78-1.88-1.57 0-2.02.94-2.05 2.58h-5.02Zm6.54 9.64c1.18 0 2.26-.7 2.26-2.58 0-1.57.04-2.54.04-3.31-1.78.94-2.54.97-3.06 1.39-.59.45-.87 1.04-.87 2.09 0 1.51.59 2.41 1.63 2.41ZM153.09.01h5.64v24.85h-5.64V.01ZM162.73 9.93h-2.33v-3.9h2.33V.5h5.64v5.53h2.61v3.9h-2.61v9.5c0 1.32.49 1.74 1.81 1.74.24 0 .56-.03.8-.07v3.76c-1.08.14-2.16.21-3.24.21-3.9 0-5.01-.7-5.01-5.08V9.93ZM172.97.01h5.64v8.07h.07c.9-1.84 2.4-2.54 4.32-2.54 3.2 0 4.91 1.6 4.91 5.22v14.1h-5.64V12.02c0-1.36-.59-2.16-1.64-2.16s-2.02.84-2.02 2.68v12.32h-5.64V.01ZM199.97 11.85c0-4.25 1.81-6.13 6.26-6.13 5.67 0 5.67 3.41 5.67 5.36v10.41c0 .77 0 1.5.91 1.5.38 0 .56-.07.7-.17v2.09c-.21.04-.97.17-1.71.17-1.11 0-2.51 0-2.65-2.4h-.07c-.94 1.67-2.75 2.68-4.49 2.68-3.48 0-5.08-2.09-5.08-5.43 0-2.61 1.11-4.42 3.52-5.15l3.93-1.18c2.12-.66 2.12-1.25 2.12-2.82 0-1.74-1.04-2.75-2.99-2.75-3.2 0-3.2 2.99-3.2 3.65v.17h-2.92Zm9.01 2.85c-1.08 1.15-3.65 1.39-4.98 2.19-.94.59-1.43 1.32-1.43 2.96 0 1.88.66 3.2 2.65 3.2s3.76-1.64 3.76-3.55v-4.8ZM215.87 6.21h2.78V8.4h.07c.77-1.71 2.71-2.68 4.52-2.68 4.91 0 4.91 3.72 4.91 5.92v13.23h-2.92V11.98c0-1.43-.1-3.76-2.75-3.76-1.57 0-3.69 1.04-3.69 3.76v12.88h-2.92V6.21ZM244.27 24.86h-2.78v-2.3h-.07c-.38 1.39-2.02 2.78-4.04 2.78-4.42 0-6.09-3.93-6.09-9.81 0-3.9.63-9.82 5.88-9.82 1.67 0 3.45 1.01 4.11 2.61h.07V0h2.92v24.86Zm-6.51-2.02c3.24 0 3.76-3.06 3.76-7.31 0-3.62-.63-7.31-3.76-7.31-2.71 0-3.41 2.85-3.41 7.31s.7 7.31 3.41 7.31ZM262.03 17.88v.87c0 1.88.52 3.31 2.54 3.31s2.65-1.53 2.65-2.96c0-5.36-10.69-2.37-10.69-11.66 0-3.97 2.12-7.31 8.14-7.31s7.94 2.96 7.94 6.79v.59h-5.64c0-1.18-.14-2.05-.49-2.61-.35-.59-.91-.87-1.78-.87-1.46 0-2.33.87-2.33 2.68 0 5.19 10.69 2.58 10.69 11.35 0 5.64-3.13 7.9-8.49 7.9-4.25 0-8.18-1.29-8.18-6.47v-1.6h5.64ZM275.53 12.42c.03-2.58.8-4.14 2.12-5.05s2.92-1.22 5.26-1.22c4.63 0 6.68 1.6 6.68 5.57v9.68c0 1.43 0 3.24.66 4.07h-5.43c-.21-.66-.28-1.43-.31-2.16h-.07c-.77 1.67-2.54 2.64-4.42 2.64-3.17 0-5.01-1.67-5.01-5.74 0-2.19.9-4.04 2.3-4.8s3.48-1.11 5.05-1.53c1.71-.45 2.02-.73 2.02-2.16 0-1.15-.52-1.88-1.77-1.88-1.57 0-2.02.94-2.05 2.58h-5.03Zm6.55 9.64c1.18 0 2.26-.7 2.26-2.58 0-1.57.03-2.54.03-3.31-1.77.94-2.54.97-3.06 1.39-.59.45-.87 1.04-.87 2.09 0 1.51.59 2.41 1.64 2.41ZM293.77 10.54h-2.33v-3.9h2.33V5.07c0-3.48 1.15-4.94 5.74-4.94 1.04 0 1.77.04 2.51.1v3.79h-.8c-1.53 0-1.81.35-1.81 1.43v1.18h2.61v3.9h-2.61v14.93h-5.64V10.54ZM308.35 16.98v1.15c0 2.92.42 4.35 2.05 4.35 1.46 0 1.91-1.08 2.05-3.45h5.22c-.1 4.66-2.65 6.93-7.31 6.93-7.1 0-7.66-4.98-7.66-10.58 0-5.29 1.53-9.22 7.66-9.22 7 0 7.48 4.42 7.48 10.82h-9.49Zm4.07-3.27c0-2.65-.35-4.07-1.91-4.07-1.84 0-2.16 1.53-2.16 4.07h4.07ZM320.81 10.54h-2.33v-3.9h2.33V1.11h5.64v5.53h2.61v3.9h-2.61v9.5c0 1.32.49 1.74 1.81 1.74.24 0 .56-.03.8-.07v3.76c-1.08.14-2.16.21-3.24.21-3.9 0-5.01-.7-5.01-5.08V10.54ZM329.82 6.64h5.85l2.3 13.19h.07l2.19-13.19h5.64l-5.05 18.97c-1.29 4.84-2.61 5.99-7 5.99-.9 0-1.71 0-2.44-.07v-3.97c.45.07.94.14 1.39.14 1.08 0 2.05-.45 2.37-2.09l-5.32-18.97ZM99.09 42.29h14.37v4.73h-8.53V52h8.01v4.73h-8.01v5.67h8.91v4.73H99.09V42.29ZM119.86 57.4l-4.73-9.08h5.64l2.23 5.6 2.3-5.6h5.64l-4.7 9.08 5.05 9.75h-5.64l-2.54-6.09-2.65 6.09h-5.64l5.04-9.75ZM137.79 58.65v1.15c0 2.92.42 4.35 2.05 4.35 1.46 0 1.91-1.08 2.05-3.45h5.22c-.1 4.66-2.65 6.93-7.31 6.93-7.1 0-7.66-4.98-7.66-10.58 0-5.29 1.53-9.22 7.66-9.22 7 0 7.48 4.42 7.48 10.82h-9.49Zm4.07-3.27c0-2.65-.35-4.07-1.91-4.07-1.84 0-2.16 1.53-2.16 4.07h4.07ZM158.77 55.41c0-2.75-.63-3.9-2.12-3.9-1.88 0-2.12 2.37-2.12 6.23 0 4.25.24 6.2 2.12 6.2 1.67 0 2.05-1.15 2.12-4.46h5.22c-.04 5.81-2.33 8.14-7.45 8.14-7.1 0-7.66-4.98-7.66-10.58 0-5.29 1.53-9.22 7.66-9.22s7.45 3.1 7.45 7.59h-5.22ZM181.18 67.14h-5.43v-2.23h-.07c-.8 1.67-2.44 2.71-4.52 2.71-3.2 0-4.91-1.6-4.91-5.22V48.3h5.64v12.84c0 1.36.59 2.16 1.64 2.16s2.02-.84 2.02-2.68V48.3h5.64v18.84h-.01ZM185.04 52.21h-2.33v-3.9h2.33v-5.53h5.64v5.53h2.61v3.9h-2.61v9.5c0 1.32.49 1.74 1.81 1.74.24 0 .56-.03.8-.07v3.76c-1.08.14-2.16.21-3.24.21-3.9 0-5.01-.7-5.01-5.08V52.21ZM195.41 42.01h5.64v4.32h-5.64v-4.32Zm0 6.3h5.64v18.83h-5.64V48.31ZM203.14 48.31h5.85l2.19 13.89h.07l2.23-13.89h5.64l-4.66 18.83h-6.68l-4.64-18.83ZM225.86 58.65v1.15c0 2.92.42 4.35 2.05 4.35 1.46 0 1.91-1.08 2.05-3.45h5.23c-.1 4.66-2.65 6.93-7.31 6.93-7.1 0-7.66-4.98-7.66-10.58 0-5.29 1.53-9.22 7.66-9.22 7 0 7.48 4.42 7.48 10.82h-9.5Zm4.08-3.27c0-2.65-.35-4.07-1.91-4.07-1.84 0-2.16 1.53-2.16 4.07h4.07Z"/></svg></a></div>
       <!-- TemplateEndIfClause -->
       <!-- TemplateEndMultipleIf -->
 
       <!-- TemplateBeginMultipleIf -->
-      <!-- TemplateBeginIfClause cond="bodyClass == 'home'" -->
-      <h1 id="headerLogo" class="headerLogo hse-header__logo"><a href="../index.htm"><svg aria-hidden="true" width="45" height="46" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21.508 7.328V.984a.976.976 0 00-.975-.974H.03v.974h19.11l-3.897 3.912H.029v.974H14.29l-3.904 3.905H.029v.974H9.41l-.772.787a.982.982 0 00-.274.678.88.88 0 00.065.304l.722 2.114H.029v.982H9.41l1.314 3.904H.029v.975h13.67a.974.974 0 01.974.967v2.93H.029v.974h20.504a.975.975 0 00.974-.974v-8.25a.974.974 0 00-.974-.98h-2.952a.967.967 0 01-.952-.975.989.989 0 01.209-.6l4.46-5.622a.923.923 0 00.224-.591M43.953.984V.01H23.456a.975.975 0 00-.967.974v6.352a.924.924 0 00.224.591l4.518 5.695a.902.902 0 01.173.527.967.967 0 01-.953.974h-2.995a.974.974 0 00-.967.982v8.292a.968.968 0 00.967.975h20.497v-.975H29.31V21.51a.974.974 0 01.975-.974h13.67v-1.003H33.25l1.314-3.905h9.382v-.974h-9.05l.721-2.122c.034-.1.053-.205.058-.31a.945.945 0 00-.274-.679l-.78-.786h9.383v-.975H33.625l-3.897-3.904h14.225v-.975H28.725L24.856.984h19.097zM1.111 30.575c0-.664-.288-.981-1.111-1.003v-.44c1.06.072 1.992.144 2.887.144s1.826-.072 2.887-.144v.454c-.816 0-1.104.34-1.104 1.004v4.749h5.773v-4.764c0-.664-.288-.981-1.104-1.003v-.44c1.054.072 1.985.144 2.887.144.902 0 1.819-.072 2.887-.144v.454c-.816 0-1.104.34-1.104 1.004v12.565c0 .671.288.982 1.104 1.003v.455c-1.054-.072-1.992-.145-2.887-.145s-1.826.073-2.887.145v-.455c.816 0 1.104-.332 1.104-1.003v-5.514H4.67v5.514c0 .671.288.982 1.104 1.003v.455c-1.054-.072-1.992-.145-2.887-.145s-1.819.073-2.887.145v-.455c.823 0 1.111-.332 1.111-1.003v-12.58zm16.831 8.661c.477 2.62 2.317 3.84 4.886 3.84 1.444 0 3.457-.412 3.457-2.166 0-1.443-1.494-1.826-2.59-2.165l-1.704-.505c-2.447-.722-4.893-1.747-4.893-4.576 0-3.717 3.608-4.843 7.167-4.843a13.304 13.304 0 014.467.765c0 1.725.087 3.19.188 4.44h-.462c-.498-2.217-2.44-3.242-4.598-3.242-1.198 0-3.211.383-3.211 2.036 0 1.32 1.154 1.703 2.165 1.992l2.512.721c2.424.722 4.676 1.581 4.676 4.692 0 3.11-3.219 4.785-7.123 4.785a15.77 15.77 0 01-5.204-.859c0-1.891-.072-3.55-.188-4.944l.455.029zm15.113-8.48c0-.679-.288-.99-1.104-1.01v-.455h12.002c0 1.313.072 2.583.195 3.882h-.455c-.238-1.313-.57-1.775-1.869-1.775h-5.218v4.143h3.284c1.075 0 1.241-.361 1.386-1.213h.44a20.984 20.984 0 00-.144 2.266c.006.763.054 1.524.144 2.281h-.455c-.144-.859-.31-1.22-1.385-1.22h-3.284v4.72h5.485c1.292 0 1.696-.432 2.107-2.446h.6c-.217 1.97-.26 3.24-.29 4.554H31.937v-.447c.816 0 1.105-.347 1.105-1.01l.014-12.27z" fill="#981e32"/></svg><span class="visually-hidden">Health and Safety<br>Executive</span></a></h1>
+      <!-- TemplateBeginIfClause cond="homepage == 'home'" -->
+      <h1 id="headerLogo" class="headerLogo hse-header__logo"><a href="index.htm"><svg aria-hidden="true" viewBox="0 0 345.87 68.25 "width="100%" height="100%" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="#9f2447" d="M32.44 11.41V1.84c0-.82-.65-1.48-1.47-1.48H.05v1.47h28.82l-5.88 5.89H.05v1.47h21.48l-5.88 5.89H.06v1.47h14.12l-1.17 1.18-.02.03c-.25.26-.41.62-.41 1.02 0 .16.04.31.09.46h-.02l1.08 3.21H.06v1.47h14.17l1.99 5.89H.07v1.47h20.62c.81 0 1.46.65 1.47 1.47v4.41H.07v1.47h30.92c.81 0 1.47-.66 1.47-1.47v-12.5c0-.81-.65-1.47-1.47-1.47h-4.45c-.8-.03-1.44-.67-1.44-1.48 0-.34.12-.65.32-.9l6.73-8.49h-.02c.17-.27.31-.57.31-.91M35.38 23.19c-.81 0-1.47.66-1.47 1.47v12.51c0 .81.66 1.47 1.47 1.47H66.3v-1.47H44.21v-4.41c0-.81.66-1.47 1.48-1.47H66.3v-1.48H50.15l1.98-5.89H66.3v-1.47H52.63l1.08-3.2h-.02c.05-.16.09-.32.09-.48 0-.4-.16-.75-.42-1.02l-.02-.02-1.17-1.19h14.12v-1.47H50.7l-5.88-5.89h21.47V7.71H43.34l-5.88-5.89h28.82V.35H35.36c-.81 0-1.47.65-1.47 1.47v9.58c0 .34.14.65.34.9h-.02l6.81 8.6c.16.23.26.5.26.8 0 .81-.64 1.45-1.44 1.47l-4.45.02ZM1.67 46.52c0-1.01-.43-1.48-1.67-1.52v-.69c1.6.11 3 .21 4.34.21s2.75-.11 4.34-.21V45c-1.23.04-1.66.51-1.66 1.52v7.16h8.75v-7.16c0-1.01-.43-1.48-1.66-1.52v-.69c1.59.11 3 .21 4.34.21s2.75-.11 4.34-.21V45c-1.23.04-1.66.51-1.66 1.52v18.95c0 1.01.43 1.48 1.66 1.51v.69c-1.59-.11-3-.21-4.34-.21s-2.75.11-4.34.21v-.69c1.23-.03 1.66-.5 1.66-1.51v-8.32H7.02v8.32c0 1.01.43 1.48 1.66 1.51v.69c-1.58-.11-3-.21-4.34-.21s-2.74.11-4.34.21v-.69c1.23-.03 1.67-.5 1.67-1.51V46.52ZM27.06 59.5c.72 3.95 3.5 5.79 7.37 5.79 2.13 0 5.21-.62 5.21-3.33 0-2.17-2.24-2.75-3.9-3.25l-2.57-.76c-3.69-1.08-7.38-2.64-7.38-6.91 0-5.6 5.42-7.3 10.81-7.3 2.28 0 4.62.4 6.73 1.16 0 2.6.14 4.81.29 6.69h-.69c-.75-3.33-3.69-4.88-6.94-4.88-1.8 0-4.84.58-4.84 3.07 0 1.99 1.74 2.57 3.22 3l3.8 1.08c3.65 1.05 7.05 2.39 7.05 7.09s-4.81 7.3-10.7 7.3c-2.64 0-5.42-.44-7.84-1.29 0-2.86-.12-5.36-.29-7.45h.67ZM49.88 46.74c0-1.02-.44-1.48-1.66-1.52v-.69h18.11c.04 1.99.11 3.91.29 5.86h-.68c-.36-1.99-.87-2.68-2.82-2.68h-7.88v6.26h4.95c1.62 0 1.88-.54 2.09-1.84h.69c-.11.9-.21 2.46-.21 3.42s.11 2.57.21 3.44h-.69c-.21-1.3-.47-1.84-2.09-1.84h-4.95v7.12h8.28c1.95 0 2.56-.65 3.18-3.69h.9c-.33 2.96-.39 4.89-.43 6.87H48.22v-.68c1.23-.04 1.66-.51 1.66-1.52V46.74ZM99.09.01h5.85V9.3h4.66V.01h5.85v24.85h-5.85V14.25h-4.66v10.62h-5.85V.01ZM123.83 16.37v1.15c0 2.92.42 4.35 2.05 4.35 1.46 0 1.91-1.08 2.05-3.45h5.22c-.1 4.66-2.65 6.93-7.31 6.93-7.1 0-7.66-4.98-7.66-10.58 0-5.29 1.53-9.22 7.66-9.22 7 0 7.48 4.42 7.48 10.82h-9.49Zm4.07-3.27c0-2.65-.35-4.07-1.91-4.07-1.84 0-2.16 1.53-2.16 4.07h4.07ZM135.45 11.81c.04-2.58.8-4.14 2.12-5.05s2.92-1.22 5.26-1.22c4.63 0 6.68 1.6 6.68 5.57v9.68c0 1.43 0 3.24.66 4.07h-5.43c-.21-.66-.28-1.43-.31-2.16h-.07c-.77 1.67-2.54 2.65-4.42 2.65-3.17 0-5.01-1.67-5.01-5.74 0-2.19.9-4.04 2.3-4.8 1.39-.77 3.48-1.11 5.05-1.53 1.71-.45 2.02-.73 2.02-2.16 0-1.15-.52-1.88-1.78-1.88-1.57 0-2.02.94-2.05 2.58h-5.02Zm6.54 9.64c1.18 0 2.26-.7 2.26-2.58 0-1.57.04-2.54.04-3.31-1.78.94-2.54.97-3.06 1.39-.59.45-.87 1.04-.87 2.09 0 1.51.59 2.41 1.63 2.41ZM153.09.01h5.64v24.85h-5.64V.01ZM162.73 9.93h-2.33v-3.9h2.33V.5h5.64v5.53h2.61v3.9h-2.61v9.5c0 1.32.49 1.74 1.81 1.74.24 0 .56-.03.8-.07v3.76c-1.08.14-2.16.21-3.24.21-3.9 0-5.01-.7-5.01-5.08V9.93ZM172.97.01h5.64v8.07h.07c.9-1.84 2.4-2.54 4.32-2.54 3.2 0 4.91 1.6 4.91 5.22v14.1h-5.64V12.02c0-1.36-.59-2.16-1.64-2.16s-2.02.84-2.02 2.68v12.32h-5.64V.01ZM199.97 11.85c0-4.25 1.81-6.13 6.26-6.13 5.67 0 5.67 3.41 5.67 5.36v10.41c0 .77 0 1.5.91 1.5.38 0 .56-.07.7-.17v2.09c-.21.04-.97.17-1.71.17-1.11 0-2.51 0-2.65-2.4h-.07c-.94 1.67-2.75 2.68-4.49 2.68-3.48 0-5.08-2.09-5.08-5.43 0-2.61 1.11-4.42 3.52-5.15l3.93-1.18c2.12-.66 2.12-1.25 2.12-2.82 0-1.74-1.04-2.75-2.99-2.75-3.2 0-3.2 2.99-3.2 3.65v.17h-2.92Zm9.01 2.85c-1.08 1.15-3.65 1.39-4.98 2.19-.94.59-1.43 1.32-1.43 2.96 0 1.88.66 3.2 2.65 3.2s3.76-1.64 3.76-3.55v-4.8ZM215.87 6.21h2.78V8.4h.07c.77-1.71 2.71-2.68 4.52-2.68 4.91 0 4.91 3.72 4.91 5.92v13.23h-2.92V11.98c0-1.43-.1-3.76-2.75-3.76-1.57 0-3.69 1.04-3.69 3.76v12.88h-2.92V6.21ZM244.27 24.86h-2.78v-2.3h-.07c-.38 1.39-2.02 2.78-4.04 2.78-4.42 0-6.09-3.93-6.09-9.81 0-3.9.63-9.82 5.88-9.82 1.67 0 3.45 1.01 4.11 2.61h.07V0h2.92v24.86Zm-6.51-2.02c3.24 0 3.76-3.06 3.76-7.31 0-3.62-.63-7.31-3.76-7.31-2.71 0-3.41 2.85-3.41 7.31s.7 7.31 3.41 7.31ZM262.03 17.88v.87c0 1.88.52 3.31 2.54 3.31s2.65-1.53 2.65-2.96c0-5.36-10.69-2.37-10.69-11.66 0-3.97 2.12-7.31 8.14-7.31s7.94 2.96 7.94 6.79v.59h-5.64c0-1.18-.14-2.05-.49-2.61-.35-.59-.91-.87-1.78-.87-1.46 0-2.33.87-2.33 2.68 0 5.19 10.69 2.58 10.69 11.35 0 5.64-3.13 7.9-8.49 7.9-4.25 0-8.18-1.29-8.18-6.47v-1.6h5.64ZM275.53 12.42c.03-2.58.8-4.14 2.12-5.05s2.92-1.22 5.26-1.22c4.63 0 6.68 1.6 6.68 5.57v9.68c0 1.43 0 3.24.66 4.07h-5.43c-.21-.66-.28-1.43-.31-2.16h-.07c-.77 1.67-2.54 2.64-4.42 2.64-3.17 0-5.01-1.67-5.01-5.74 0-2.19.9-4.04 2.3-4.8s3.48-1.11 5.05-1.53c1.71-.45 2.02-.73 2.02-2.16 0-1.15-.52-1.88-1.77-1.88-1.57 0-2.02.94-2.05 2.58h-5.03Zm6.55 9.64c1.18 0 2.26-.7 2.26-2.58 0-1.57.03-2.54.03-3.31-1.77.94-2.54.97-3.06 1.39-.59.45-.87 1.04-.87 2.09 0 1.51.59 2.41 1.64 2.41ZM293.77 10.54h-2.33v-3.9h2.33V5.07c0-3.48 1.15-4.94 5.74-4.94 1.04 0 1.77.04 2.51.1v3.79h-.8c-1.53 0-1.81.35-1.81 1.43v1.18h2.61v3.9h-2.61v14.93h-5.64V10.54ZM308.35 16.98v1.15c0 2.92.42 4.35 2.05 4.35 1.46 0 1.91-1.08 2.05-3.45h5.22c-.1 4.66-2.65 6.93-7.31 6.93-7.1 0-7.66-4.98-7.66-10.58 0-5.29 1.53-9.22 7.66-9.22 7 0 7.48 4.42 7.48 10.82h-9.49Zm4.07-3.27c0-2.65-.35-4.07-1.91-4.07-1.84 0-2.16 1.53-2.16 4.07h4.07ZM320.81 10.54h-2.33v-3.9h2.33V1.11h5.64v5.53h2.61v3.9h-2.61v9.5c0 1.32.49 1.74 1.81 1.74.24 0 .56-.03.8-.07v3.76c-1.08.14-2.16.21-3.24.21-3.9 0-5.01-.7-5.01-5.08V10.54ZM329.82 6.64h5.85l2.3 13.19h.07l2.19-13.19h5.64l-5.05 18.97c-1.29 4.84-2.61 5.99-7 5.99-.9 0-1.71 0-2.44-.07v-3.97c.45.07.94.14 1.39.14 1.08 0 2.05-.45 2.37-2.09l-5.32-18.97ZM99.09 42.29h14.37v4.73h-8.53V52h8.01v4.73h-8.01v5.67h8.91v4.73H99.09V42.29ZM119.86 57.4l-4.73-9.08h5.64l2.23 5.6 2.3-5.6h5.64l-4.7 9.08 5.05 9.75h-5.64l-2.54-6.09-2.65 6.09h-5.64l5.04-9.75ZM137.79 58.65v1.15c0 2.92.42 4.35 2.05 4.35 1.46 0 1.91-1.08 2.05-3.45h5.22c-.1 4.66-2.65 6.93-7.31 6.93-7.1 0-7.66-4.98-7.66-10.58 0-5.29 1.53-9.22 7.66-9.22 7 0 7.48 4.42 7.48 10.82h-9.49Zm4.07-3.27c0-2.65-.35-4.07-1.91-4.07-1.84 0-2.16 1.53-2.16 4.07h4.07ZM158.77 55.41c0-2.75-.63-3.9-2.12-3.9-1.88 0-2.12 2.37-2.12 6.23 0 4.25.24 6.2 2.12 6.2 1.67 0 2.05-1.15 2.12-4.46h5.22c-.04 5.81-2.33 8.14-7.45 8.14-7.1 0-7.66-4.98-7.66-10.58 0-5.29 1.53-9.22 7.66-9.22s7.45 3.1 7.45 7.59h-5.22ZM181.18 67.14h-5.43v-2.23h-.07c-.8 1.67-2.44 2.71-4.52 2.71-3.2 0-4.91-1.6-4.91-5.22V48.3h5.64v12.84c0 1.36.59 2.16 1.64 2.16s2.02-.84 2.02-2.68V48.3h5.64v18.84h-.01ZM185.04 52.21h-2.33v-3.9h2.33v-5.53h5.64v5.53h2.61v3.9h-2.61v9.5c0 1.32.49 1.74 1.81 1.74.24 0 .56-.03.8-.07v3.76c-1.08.14-2.16.21-3.24.21-3.9 0-5.01-.7-5.01-5.08V52.21ZM195.41 42.01h5.64v4.32h-5.64v-4.32Zm0 6.3h5.64v18.83h-5.64V48.31ZM203.14 48.31h5.85l2.19 13.89h.07l2.23-13.89h5.64l-4.66 18.83h-6.68l-4.64-18.83ZM225.86 58.65v1.15c0 2.92.42 4.35 2.05 4.35 1.46 0 1.91-1.08 2.05-3.45h5.23c-.1 4.66-2.65 6.93-7.31 6.93-7.1 0-7.66-4.98-7.66-10.58 0-5.29 1.53-9.22 7.66-9.22 7 0 7.48 4.42 7.48 10.82h-9.5Zm4.08-3.27c0-2.65-.35-4.07-1.91-4.07-1.84 0-2.16 1.53-2.16 4.07h4.07Z"/></svg></a></h1>
       <!-- TemplateEndIfClause -->
       <!-- TemplateEndMultipleIf -->
 
@@ -161,107 +161,245 @@ window.dataLayer.push({'content_group': '@@(_document['contentGroup'])@@'});
 	
 	<!-- MENU -->  
 	<div class="menuContainer hse-header__navigation-container">
+
       <div class="hse-width-container">
+
       <nav id="main-menu" class="hse-navigation menu js-menu" style="padding-top: 0;">
+
 		  <div class="hse-grid-row hse-navigation-header">
+
 		  <div class="hse-grid-column-one-third hse-section__content">
+
 		  <h3>Industries</h3>
+
         <ul class="hse-navigation__navigation-list">
+
           <li class="hse-navigation__navigation-item">
-            <a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="../index.htm">Agriculture</a>
+
+            <a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="../construction/index.htm">Construction</a>
+
           </li>
+
           <li class="hse-navigation__navigation-item">
-            <a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="../news/index.htm">Biocides</a>
+
+            <a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="news/index.htm"> Health and social care services</a>
+
           </li>
+
           <li class="hse-navigation__navigation-item">
-            <a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="../guidance/index.htm">Catering and hospitality</a>
+
+            <a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="guidance/index.htm">Pesticides</a>
+
           </li>
+
           <li class="hse-navigation__navigation-item">
-            <a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="../aboutus/index.htm">Chemicals</a>
+
+            <a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="aboutus/index.htm">Domestic gas</a>
+
           </li>
+
           <li class="hse-navigation__navigation-item">
-            <a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="https://books.hse.gov.uk/">Entertainment and leisure</a>
+
+            <a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="https://books.hse.gov.uk/">Public services</a>
+
           </li>
+
           <li class="hse-navigation__navigation-item">
-            <a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="../news/subscribe/index.htm">Food and drink manufacture</a>
+
+            <a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="contact/index.htm">Agriculture</a>
+
           </li>
-          <li class="hse-navigation__navigation-item">
-            <a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="../contact/index.htm">Gas - LPG (liquefied petroleum gas)</a>
-          </li>
+
 			 <li class="hse-navigation__navigation-item">
-            <a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="../index.htm">Health and Social Care Services</a>
+
+            <a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="index.htm">Entertainment</a>
+
           </li>
+
+          <li class="hse-navigation__navigation-item">
+
+            <a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="index.htm">Waste</a>
+
+          </li>
+
+          <li class="hse-navigation__navigation-item">
+
+            <a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="index.htm">Motor vehicle repair</a>
+
+          </li>
+
+          <li class="hse-navigation__navigation-item">
+
+            <a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="index.htm">Offshore oil and gas</a>
+
+          </li>
+
 		  </ul>
+
 			        <div class="hse-action-link"> <a class="hse-action-link__link hse-action-link__link--menu" href="/conditions/">
+
               <svg class="hse-icon hse-icon__arrow-right-circle hse-icon__arrow-right-circle--small" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="36" width="36">
+
                 <path d="M0 0h24v24H0z" fill="none"></path>
+
                 <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+
               </svg>
+
               <span class="hse-action-link__text hse-action-link__menu">Industries A to Z</span> </a> </div>
-		  </div>
-			<div class="hse-grid-column-one-third hse-section__content">
-			 <h3>Topics</h3>
-		  <ul class="hse-navigation__navigation-list">
-		  <li class="hse-navigation__navigation-item">
-            <a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="../index.htm">Logistics</a>
-          </li>
-          <li class="hse-navigation__navigation-item">
-            <a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="../news/index.htm">Motor vehicle repair</a>
-          </li>
-          <li class="hse-navigation__navigation-item">
-            <a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="../guidance/index.htm">Electrical safety</a>
-          </li>
-          <li class="hse-navigation__navigation-item">
-            <a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="../aboutus/index.htm">Pesticides</a>
-          </li>
-          <li class="hse-navigation__navigation-item">
-            <a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="https://books.hse.gov.uk/">Quarries</a>
-          </li>
-          <li class="hse-navigation__navigation-item">
-            <a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="../news/subscribe/index.htm">Data, Freedom of information free if</a>
-          </li>
-          <li class="hse-navigation__navigation-item">
-            <a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="../contact/index.htm">Stoneworkers</a>
-          </li>
-			<li class="hse-navigation__navigation-item">
-            <a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="../index.htm">Waste management</a>
-          </li>
-        </ul>
-				<div class="hse-action-link"><a class="hse-action-link__link hse-action-link__link--menu" href="/medicines/">
-              <svg class="hse-icon hse-icon__arrow-right-circle hse-icon__arrow-right-circle--small" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="36" width="36">
-                <path d="M0 0h24v24H0z" fill="none"></path>
-                <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
-              </svg>
-              <span class="hse-action-link__text hse-action-link__menu">Topics A to Z</span></a></div>
-		  </div>
-		  <div class="hse-grid-column-one-third hse-section__content">
-		  <h3>Quick Links</h3>
-        <ul class="hse-navigation__navigation-list navigation-third-list">
-          <li class="hse-navigation__navigation-item">
-            <a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="../index.htm">News</a>
-          </li>
-          <li class="hse-navigation__navigation-item">
-            <a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="../news/index.htm">Guidance</a>
-          </li>
-          <li class="hse-navigation__navigation-item">
-            <a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="../guidance/index.htm">About HSE</a>
-          </li>
-          <li class="hse-navigation__navigation-item">
-            <a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="https://books.hse.gov.uk/">Books</a>
-          </li>
-          <li class="hse-navigation__navigation-item">
-            <a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="../contact/index.htm">Free updates</a>
-          </li>
-			 <li class="hse-navigation__navigation-item">
-            <a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="../index.htm">Data, Freedom of information free if</a>
-          </li>
-		  </ul>
-		  </div>
+
 		  </div>
 
+			<div class="hse-grid-column-one-third hse-section__content">
+
+			 <h3>Topics</h3>
+
+		  <ul class="hse-navigation__navigation-list">
+
+		  <li class="hse-navigation__navigation-item">
+
+            <a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="index.htm">Health and safety made simple</a>
+
+          </li>
+
+          <li class="hse-navigation__navigation-item">
+
+            <a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="news/index.htm">RIDDOR</a>
+
+          </li>
+
+          <li class="hse-navigation__navigation-item">
+
+            <a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="guidance/index.htm">COSHH</a>
+
+          </li>
+
+          <li class="hse-navigation__navigation-item">
+
+            <a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="aboutus/index.htm">MSD</a>
+
+          </li>
+
+          <li class="hse-navigation__navigation-item">
+
+            <a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="https://books.hse.gov.uk/">Asbestos</a>
+
+          </li>
+
+          <li class="hse-navigation__navigation-item">
+
+            <a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="news/subscribe/index.htm">Work equipment and machinery</a>
+
+          </li>
+
+          <li class="hse-navigation__navigation-item">
+
+            <a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="contact/index.htm">Stress</a>
+
+          </li>
+
+			<li class="hse-navigation__navigation-item">
+
+            <a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="index.htm">Electricity</a>
+
+          </li>
+
+          <li class="hse-navigation__navigation-item">
+
+            <a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="index.htm">Work at height</a>
+
+          </li>
+
+          <li class="hse-navigation__navigation-item">
+
+            <a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="index.htm">COMAH</a>
+
+          </li>
+
+        </ul>
+
+				<div class="hse-action-link"><a class="hse-action-link__link hse-action-link__link--menu" href="/medicines/">
+
+              <svg class="hse-icon hse-icon__arrow-right-circle hse-icon__arrow-right-circle--small" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="36" width="36">
+
+                <path d="M0 0h24v24H0z" fill="none"></path>
+
+                <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+
+              </svg>
+
+              <span class="hse-action-link__text hse-action-link__menu">Topics A to Z</span></a></div>
+
+		  </div>
+
+		  <div class="hse-grid-column-one-third hse-section__content">
+
+		  <h3>About HSE</h3>
+
+        <ul class="hse-navigation__navigation-list navigation-third-list">
+
+          <li class="hse-navigation__navigation-item">
+
+            <a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="https://books.hse.gov.uk/">Books</a>
+
+          </li>
+
+          <li class="hse-navigation__navigation-item">
+
+            <a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="index.htm">Careers</a>
+
+          </li>
+
+          <li class="hse-navigation__navigation-item">
+
+            <a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="guidance/index.htm">Contact</a>
+
+          </li>
+
+          <li class="hse-navigation__navigation-item">
+
+            <a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="contact/index.htm">Free updates</a>
+
+          </li>
+
+          <li class="hse-navigation__navigation-item">
+
+            <a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="index.htm">Information in other languages</a>
+
+          </li>
+
+          <li class="hse-navigation__navigation-item">
+
+            <a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="index.htm">News</a>
+
+          </li>
+
+			 <li class="hse-navigation__navigation-item">
+
+            <a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="index.htm">Our mission and priorities</a>
+
+          </li>
+
+          <li class="hse-navigation__navigation-item">
+
+            <a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="index.htm"></a>
+
+          </li>
+
+		  </ul>
+
+		  </div>
+
+		  </div>
+
+
+
       </nav>
+
       </div>
+
       
+
   </div>
 
   <!-- TemplateBeginMultipleIf -->
@@ -372,7 +510,9 @@ window.dataLayer.push({'content_group': '@@(_document['contentGroup'])@@'});
 <!-- Start grid column (three-quarters) -->
 
 <div id="page-contents" class="hse-grid-column-three-quarters hse-page-contents">
-   
+  
+<article id="article">
+ 
 <!-- TemplateEndIfClause -->
 <!-- TemplateEndMultipleIf -->
     
@@ -390,13 +530,10 @@ window.dataLayer.push({'content_group': '@@(_document['contentGroup'])@@'});
 	
 	<!-- TemplateBeginMultipleIf -->
 <!-- TemplateBeginIfClause cond="homepage == true" -->
-	<div class="hse-section hse-section--homepage-header">
-<div class="hse-width-container">
-    <h1 style="color: white; margin-bottom: 30px;">Welcome to HSE.GOV.UK</h1>
-  <p style="font-size: 24px; color: white; margin-bottom: 5px;">Britain’s national regulator for workplace health and safety</p>
-  <p style="font-size: 24px; color: white; font-weight: 700;">Protecting people and places</p>
-</div>
-</div>
+
+	
+
+	
 <!-- TemplateEndIfClause -->
 <!-- TemplateEndMultipleIf -->
   
@@ -413,42 +550,32 @@ window.dataLayer.push({'content_group': '@@(_document['contentGroup'])@@'});
   
 <div id="pageContainer" class="@@(_document['platform'])@@  hse-width-container"> 
 
-
+<!-- TemplateBeginMultipleIf -->
+<!-- TemplateBeginIfClause cond="layout == 'topTask'" -->
   
 <!-- start top grid row for 'Top task' layout -->
-<div class="hse-grid-row hse-page-header">
+<div class="hse-grid-row">
   
     <!-- start grid column (two-thirds) -->
     <div class="hse-grid-column-two-thirds">
 	  <!-- TemplateBeginEditable name="heading1" -->
-      <!--<h1>Title</h1>-->
+      <h1>Title</h1>
       <!-- TemplateEndEditable -->
+      <nav id="multistepNav" class="hse-contents-list" aria-label="Secondary">
       
-<!-- TemplateBeginMultipleIf -->
-<!-- TemplateBeginIfClause cond="layout == 'topTask'" -->
-      
-<!-- Multistep navigation for 'Top task' -->
-
-    <nav id="multistepNav" class="hse-multistep-navigation" aria-label="Secondary">
-
-  <!-- TemplateBeginEditable name="multistepNav" -->
-      <ol class="multistep">
-        <li><a href="index.htm">Overview</a></li>
-        <li><a href="#">Page two</a></li>
-        <li><a href="#">Page three</a></li>
-        <li><a href="#">Page four</a></li>
-        <li><a href="#">Page five</a></li>
-        <li><a href="#">Page six</a></li>
-      </ol>
-     <!-- TemplateEndEditable --> 
-    </nav>
-      
-<!-- TemplateEndIfClause -->
-<!-- TemplateEndMultipleIf -->     
-
-      
+	  <!-- TemplateBeginEditable name="multistepNav" -->
+        <ol class="multistep">
+          <li><a href="index.htm">Overview</a></li>
+          <li><a href="#">Page two</a></li>
+          <li><a href="#">Page three</a></li>
+        </ol>
+        <ol class="multistep" start="4">
+          <li><a href="#">Page four</a></li>
+          <li><a href="#">Page five</a></li>
+          <li><a href="#">Page six</a></li>
+        </ol>
+       <!-- TemplateEndEditable --> </nav>
     </div>
-  
     <!-- end grid column (two-thirds) -->
   
     <!-- start grid column (one-third) -->
@@ -462,7 +589,9 @@ window.dataLayer.push({'content_group': '@@(_document['contentGroup'])@@'});
   </div> 
 <!-- End top grid row for 'Top task' -->
 
-
+    
+<!-- TemplateEndIfClause -->
+<!-- TemplateEndMultipleIf --> 
 
 <!-- start grid row for page contents -->
 <div class="hse-grid-row">
@@ -475,6 +604,15 @@ window.dataLayer.push({'content_group': '@@(_document['contentGroup'])@@'});
 <!-- TemplateEndMultipleIf -->
 
 <!-- start page content -->
+  
+<!-- TemplateBeginMultipleIf -->
+<!-- TemplateBeginIfClause cond="layout == 'topTask' || layout == 'twoThirdsOneThird'" -->
+
+<article id="article">
+  
+<!-- TemplateEndIfClause -->
+<!-- TemplateEndMultipleIf -->
+
 
 <!-- TemplateBeginEditable name="content" -->
 	
@@ -485,7 +623,9 @@ window.dataLayer.push({'content_group': '@@(_document['contentGroup'])@@'});
   
 <!-- TemplateBeginMultipleIf -->
 <!-- TemplateBeginIfClause cond="layout == 'sideNavigation'" -->
-    
+  
+  </article>
+  
   </div> <!-- end grid column (three-quarters) -->
   </div> <!-- end grid row -->
   </main> <!-- end <main> -->
@@ -513,23 +653,11 @@ window.dataLayer.push({'content_group': '@@(_document['contentGroup'])@@'});
 <!-- TemplateEndIfClause -->
 <!-- TemplateEndMultipleIf -->
   
-<div class="hse-back-to-top">
+</article>
   
-  <div class="hse-back-to-top__container">
-    <div class="hse-width-container">
-
-    <a class="hse-back-to-top__link" href="#pageContainer" role="button" aria-label="Back to top">
-    <svg class="hse-back-to-top__icon" xmlns="http://www.w3.org/2000/svg" width="13" height="17" viewBox="0 0 13 17" aria-hidden="true" focusable="false">
-      <path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z"></path>
-    </svg>Back to top
-    </a>
-    </div>
-  </div>
-  
-</div>
-    
 </div> <!-- end grid column (two thirds) -->
   
+
 
 <!-- Start sidebar (one-third) -->
 
@@ -537,11 +665,7 @@ window.dataLayer.push({'content_group': '@@(_document['contentGroup'])@@'});
 <!-- TemplateBeginMultipleIf -->
 
 <!-- TemplateBeginIfClause cond="layout == 'topTask'" -->
-<aside id="sidebarAside" class="hse-sidebar__navigation hse-sidebar__navigation--top-task">
-<!-- TemplateEndIfClause -->
-  
-<!-- TemplateBeginIfClause cond="layout == 'twoThirdsOneThird'" -->
-<aside id="sidebarAside" class="hse-sidebar__navigation hse-sidebar__navigation--two-thirds-one-third">
+<aside id="sidebarAside" class="hse-sidebar__navigation">
 <!-- TemplateEndIfClause -->
 
 <!-- TemplateEndMultipleIf -->
@@ -553,7 +677,7 @@ window.dataLayer.push({'content_group': '@@(_document['contentGroup'])@@'});
 
 <!-- TemplateBeginMultipleIf -->
 
-<!-- TemplateBeginIfClause cond="layout == 'topTask' || layout == 'twoThirdsOneThird' " -->
+<!-- TemplateBeginIfClause cond="layout == 'topTask'" -->
 </aside>
 <!-- TemplateEndIfClause -->
 <!-- TemplateEndMultipleIf -->
@@ -587,8 +711,8 @@ window.dataLayer.push({'content_group': '@@(_document['contentGroup'])@@'});
   
 <!-- start feedback component -->
 
-<div class="hse-width-container">
-<section id="feedback" class="hse-feedback @@(_document['feedbackClass'])@@" aria-describedby="feedback-message" aria-label="Is this page useful">
+<div class="feedback">
+<section id="feedback" class="hse-width-container hse-feedback @@(_document['feedbackClass'])@@" aria-describedby="feedback-message" aria-label="Is this page useful">
     <div class="hse-feedback__prompt">
       <div class="hse-feedback__prompt-questions-answers">
         <p class="hse-feedback__prompt-question" id="feedback-message"><strong>Is this page useful?</strong></p>
@@ -631,132 +755,309 @@ window.dataLayer.push({'content_group': '@@(_document['contentGroup'])@@'});
 <footer id="footerContainer" class="hse-footer">
 
 
+
+
+
 <nav id="footer-nav" aria-label="Footer menu">
+
 <div class="hse-width-container">
 
+
+
 <div id="footer">
+
   
+
 <h2 class="visually-hidden">Footer links</h2>
+
 			<div class="hse-grid-row">
-		  <div class="hse-grid-column-two-thirds hse-section__content">
-		  <h3 class="hse-footer__heading" style="color: white;">Placeholder title</h3>
-        <ul class="hse-navigation__navigation-list hse-navigation__navigation-list--columns-2 hse-navigation__navigation-list--footer">
-          <li class="hse-navigation__navigation-item">
-            <a class="hse-navigation__navigation-link" href="../index.htm">Agriculture</a>
-          </li>
-          <li class="hse-navigation__navigation-item">
-            <a class="hse-navigation__navigation-link" href="../news/index.htm">Biocides</a>
-          </li>
-          <li class="hse-navigation__navigation-item">
-            <a class="hse-navigation__navigation-link" href="../guidance/index.htm">Catering and hospitality</a>
-          </li>
-          <li class="hse-navigation__navigation-item">
-            <a class="hse-navigation__navigation-link" href="../aboutus/index.htm">Chemicals</a>
-          </li>
-          <li class="hse-navigation__navigation-item">
-            <a class="hse-navigation__navigation-link" href="https://books.hse.gov.uk/">Entertainment and leisure</a>
-          </li>
-          <li class="hse-navigation__navigation-item">
-            <a class="hse-navigation__navigation-link" href="../news/subscribe/index.htm">Food and drink manufacture</a>
-          </li>
-          <li class="hse-navigation__navigation-item">
-            <a class="hse-navigation__navigation-link" href="../contact/index.htm">Gas - LPG (liquefied petroleum gas)</a>
-          </li>
-			 <li class="hse-navigation__navigation-item">
-            <a class="hse-navigation__navigation-link" href="../index.htm">Health and Social Care Services</a>
-          </li>	
-	
-		  <li class="hse-navigation__navigation-item">
-            <a class="hse-navigation__navigation-link" href="../index.htm">Logistics</a>
-          </li>
-          <li class="hse-navigation__navigation-item">
-            <a class="hse-navigation__navigation-link" href="../news/index.htm">Motor vehicle repair</a>
-          </li>
-          <li class="hse-navigation__navigation-item">
-            <a class="hse-navigation__navigation-link" href="../guidance/index.htm">Electrical safety</a>
-          </li>
-          <li class="hse-navigation__navigation-item">
-            <a class="hse-navigation__navigation-link" href="../aboutus/index.htm">Pesticides</a>
-          </li>
-          <li class="hse-navigation__navigation-item">
-            <a class="hse-navigation__navigation-link" href="https://books.hse.gov.uk/">Quarries</a>
-          </li>
-          <li class="hse-navigation__navigation-item">
-            <a class="hse-navigation__navigation-link" href="../news/subscribe/index.htm">Refractories</a>
-          </li>
-          <li class="hse-navigation__navigation-item">
-            <a class="hse-navigation__navigation-link" href="../contact/index.htm">Stoneworkers</a>
-          </li>
-			<li class="hse-navigation__navigation-item">
-            <a class="hse-navigation__navigation-link" href="../index.htm">Waste management</a>
-          </li>
-        </ul>
-		  </div>
+
 		  <div class="hse-grid-column-one-third hse-section__content">
-		  <h3 class="hse-footer__heading" style="color: white;">Placeholder title</h3>
-        <ul class="hse-navigation__navigation-list hse-navigation__navigation-list--footer navigation-third-list">
+
+		  <h3 class="hse-footer__heading" style="color: white;">Industries</h3>
+
+        <ul class="hse-navigation__navigation-list hse-navigation__navigation-list--footer">
+
           <li class="hse-navigation__navigation-item">
-            <a class="hse-navigation__navigation-link" href="../index.htm">News</a>
+
+            <a class="hse-footer-white" href="../construction/index.htm">Construction</a>
+
           </li>
+
           <li class="hse-navigation__navigation-item">
-            <a class="hse-navigation__navigation-link" href="../news/index.htm">Guidance</a>
+
+            <a class="hse-footer-white" href="news/index.htm"> Health and social care services</a>
+
           </li>
+
           <li class="hse-navigation__navigation-item">
-            <a class="hse-navigation__navigation-link" href="../guidance/index.htm">About HSE</a>
+
+            <a class="hse-footer-white" href="guidance/index.htm">Pesticides</a>
+
           </li>
+
           <li class="hse-navigation__navigation-item">
-            <a class="hse-navigation__navigation-link" href="https://books.hse.gov.uk/">Books</a>
+
+            <a class="hse-footer-white" href="aboutus/index.htm">Domestic gas</a>
+
           </li>
+
           <li class="hse-navigation__navigation-item">
-            <a class="hse-navigation__navigation-link" href="../contact/index.htm">Free updates</a>
+
+            <a class="hse-footer-white" href="https://books.hse.gov.uk/">Public services</a>
+
           </li>
+
+          <li class="hse-navigation__navigation-item">
+
+            <a class="hse-footer-white" href="news/subscribe/index.htm">Agriculture</a>
+
+          </li>
+
+          <li class="hse-navigation__navigation-item">
+
+            <a class="hse-footer-white" href="contact/index.htm">Entertainment</a>
+
+          </li>
+
+          <li class="hse-navigation__navigation-item">
+
+            <a class="hse-footer-white" href="contact/index.htm">Waste</a>
+
+          </li>
+
+          <li class="hse-navigation__navigation-item">
+
+            <a class="hse-footer-white" href="contact/index.htm">Motor vehicle repair</a>
+
+          </li>
+
+          <li class="hse-navigation__navigation-item">
+
+            <a class="hse-footer-white" href="contact/index.htm">Offshore oil and gas</a>
+
+          </li>
+
+			  </ul>
+			    <div class="hse-action-link"> <a class="hse-action-link__link hse-action-link__link--menu hse-footer-white" href="/conditions/">
+              <svg class="hse-icon hse-icon__arrow-right-circle hse-icon__arrow-right-circle--small hse-footer-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="36" width="36">
+                <path d="M0 0h24v24H0z" fill="none"></path>
+                <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+              </svg>
+              <span class="hse-action-link__text hse-action-link__menu">Industries A to Z</span> </a> </div>
+
+				</div>
+
+			  <div class="hse-grid-column-one-third hse-section__content">
+
+			  <h3 class="hse-footer__heading" style="color: white;">Topics</h3>
+
+			  <ul class="hse-navigation__navigation-list hse-navigation__navigation-list--footer">
+
 			 <li class="hse-navigation__navigation-item">
-            <a class="hse-navigation__navigation-link" href="../index.htm">Contact</a>
-          </li>
-			<li class="hse-navigation__navigation-item"><a class="hse-navigation__navigation-link" href="../languages/index.htm">Information in other languages</a></li>
-		  </ul>
-		  </div>	
-	</div>
-	
-	<hr class="hse-footer__section-break">
-	
+
+            <a class="hse-footer-white" href="index.htm">Health and safety made simple</a>
+
+          </li>	
+
 	
 
+		  <li class="hse-navigation__navigation-item">
+
+            <a class="hse-footer-white" href="index.htm">RIDDOR</a>
+
+          </li>
+
+          <li class="hse-navigation__navigation-item">
+
+            <a class="hse-footer-white" href="news/index.htm">COSHH</a>
+
+          </li>
+
+          <li class="hse-navigation__navigation-item">
+
+            <a class="hse-footer-white" href="guidance/index.htm">MSD</a>
+
+          </li>
+
+          <li class="hse-navigation__navigation-item">
+
+            <a class="hse-footer-white" href="aboutus/index.htm">Asbestos</a>
+
+          </li>
+
+          <li class="hse-navigation__navigation-item">
+
+            <a class="hse-navigation__navigation-link" href="https://books.hse.gov.uk/">Work equipment and machinery</a>
+
+          </li>
+
+          <li class="hse-navigation__navigation-item">
+
+            <a class="hse-footer-white" href="news/subscribe/index.htm">Stress</a>
+
+          </li>
+
+          <li class="hse-navigation__navigation-item">
+
+            <a class="hse-footer-white" href="contact/index.htm">Electricity</a>
+
+          </li>
+
+			<li class="hse-navigation__navigation-item">
+
+            <a class="hse-footer-white" href="index.htm">Work at height</a>
+
+          </li>
+
+          <li class="hse-navigation__navigation-item">
+
+            <a class="hse-footer-white" href="index.htm">COMAH</a>
+
+          </li>
+
+        </ul>
+				  	  	<div class="hse-action-link"><a class="hse-action-link__link hse-action-link__link--menu hse-footer-white" href="/medicines/">
+              <svg class="hse-icon hse-icon__arrow-right-circle hse-icon__arrow-right-circle--small hse-footer-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="36" width="36">
+                <path d="M0 0h24v24H0z" fill="none"></path>
+                <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+              </svg>
+              <span class="hse-action-link__text hse-action-link__menu">Topics A to Z</span></a></div>
+
+		  </div>
+
+		  <div class="hse-grid-column-one-third hse-section__content">
+
+		  <h3 class="hse-footer__heading" style="color: white;">About HSE</h3>
+
+        <ul class="hse-navigation__navigation-list hse-navigation__navigation-list--footer navigation-third-list">
+
+          <li class="hse-navigation__navigation-item">
+
+            <a class="hse-footer-white" href="index.htm">Books</a>
+
+          </li>
+
+          <li class="hse-navigation__navigation-item">
+
+            <a class="hse-footer-white" href="news/index.htm">Careers</a>
+
+          </li>
+
+          <li class="hse-navigation__navigation-item">
+
+            <a class="hse-footer-white" href="guidance/index.htm">Contact</a>
+
+          </li>
+
+          <li class="hse-navigation__navigation-item">
+
+            <a class="hse-footer-white" href="https://books.hse.gov.uk/">Free updates</a>
+
+          </li>
+
+          <li class="hse-navigation__navigation-item">
+
+            <a class="hse-footer-white" href="contact/index.htm">Information in other languages</a>
+
+          </li>
+
+			 <li class="hse-navigation__navigation-item">
+
+            <a class="hse-footer-white" href="index.htm">News</a>
+
+          </li>
+
+			<li class="hse-navigation__navigation-item">
+				<a class="hse-footer-white" href="languages/index.htm">Our mission and priorities</a>
+			</li>
+
+		  </ul>
+
+		  </div>	
+
+	</div>
+
+	
+
+	<hr class="hse-footer__section-break">
+
+	
+
+	
+
+
+
 </div>
+
   
+
 </div>
+
   
+
+
 
 </nav>
+
   
+
 <div id="baseStrip" class="hse-footer__base">
+
   <div class="hse-width-container">
+
     <div class="hse-footer__base-container">
+
       <div class="hse-footer__base-inner">
+
 		
+
 <ul class="hse-footer__support-links">
+
   <li class="hse-footer__list-item hse-footer__list-item--support-links"><a class="hse-footer__list-item-support-link" href="search/search-results.htm">Search</a></li>
+
   <li class="hse-footer__list-item hse-footer__list-item--support-links"><a class="hse-footer__list-item-support-link" href="a-z/index.htm">A-Z</a></li>
+
   <li class="hse-footer__list-item hse-footer__list-item--support-links"><a class="hse-footer__list-item-support-link" href="acronym/index.htm">Acronyms</a></li>
+
   <li class="hse-footer__list-item hse-footer__list-item--support-links"><a class="hse-footer__list-item-support-link" href="copyright.htm">Copyright</a></li>
+
   <li class="hse-footer__list-item hse-footer__list-item--support-links"><a class="hse-footer__list-item-support-link" href="cookies.htm">Cookies</a></li>
+
   <li class="hse-footer__list-item hse-footer__list-item--support-links"><a class="hse-footer__list-item-support-link" href="privacy.htm">Privacy</a></li>
+
   <li class="hse-footer__list-item hse-footer__list-item--support-links"><a class="hse-footer__list-item-support-link" href="accessibility.htm">Accessibility</a></li>
+
   <li class="hse-footer__list-item hse-footer__list-item--support-links"><a class="hse-footer__list-item-support-link" href="foi/index.htm">Disclosure of information</a></li>
+
   <li class="hse-footer__list-item hse-footer__list-item--support-links"><a class="hse-footer__list-item-support-link" href="report-vulnerability.htm">Vulnerability disclosure</a></li>
+
 </ul>
 
+
+
   <div>
+
 		  <svg aria-hidden="true" focusable="false" class="hse-footer__licence-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 483.2 195.7" height="17" width="41">
+
           <path fill="currentColor" d="M421.5 142.8V.1l-50.7 32.3v161.1h112.4v-50.7zm-122.3-9.6A47.12 47.12 0 0 1 221 97.8c0-26 21.1-47.1 47.1-47.1 16.7 0 31.4 8.7 39.7 21.8l42.7-27.2A97.63 97.63 0 0 0 268.1 0c-36.5 0-68.3 20.1-85.1 49.7A98 98 0 0 0 97.8 0C43.9 0 0 43.9 0 97.8s43.9 97.8 97.8 97.8c36.5 0 68.3-20.1 85.1-49.7a97.76 97.76 0 0 0 149.6 25.4l19.4 22.2h3v-87.8h-80l24.3 27.5zM97.8 145c-26 0-47.1-21.1-47.1-47.1s21.1-47.1 47.1-47.1 47.2 21 47.2 47S123.8 145 97.8 145"></path>
+
         </svg>
+
 		  <p style="display: inline-block;">All content is available under the Open <a href="/copyright.htm">Government Licence v3.0</a>, except where otherwise stated</p>
+
 	  </div>
+
       </div>
+
     </div>
+
   </div>
+
 </div>
+
   
+
 </footer>
 	
 <!-- end footer -->
