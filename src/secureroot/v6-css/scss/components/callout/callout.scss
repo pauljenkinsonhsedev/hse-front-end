@@ -1,9 +1,11 @@
 // Callouts
 
+$callout-border-width: 10px;
+
 .callout {
   @include hse-responsive-padding(4);
   margin-bottom: $hse-legacy-spacing-20;
-  border-left: 6px solid $color_hse-red;
+  border-left: $callout-border-width solid $color_hse-red;
   @include hse-responsive-margin(6, "bottom");
 }
 
@@ -13,36 +15,48 @@
 }
 
 .callout--information {
-  border-left: 8px solid $color_hse-red;
+  border-left: $callout-border-width solid $color_hse-red;
 }
 
 .callout--survey {
-  border-left: 6px solid $color_hse-beta;
+  border-left: $callout-border-width solid $color_hse-beta;
 }
 
 // Modify style for full width
 .hse-page-contents--fullWidth {
   .callout--information {
-    border: 2px solid $hse-border-color;
-    border-left: 6px solid $color_hse-red;
+    background: $color_hse-grey-4;
+    border-left: $callout-border-width solid $color_hse-red;
   }
 
   .callout--survey {
-    border: 2px solid $hse-border-color;
-    border-left: 6px solid $color_hse-beta;
+    background: $color_hse-grey-4;
+    border-left: $callout-border-width solid $color_hse-beta;
+  }
+
+  .callout--warning {
+    background: left $color_hse-grey-4;
+    border-left: hse-spacing(4) solid $color_hse-grey-4;
+    margin: hse-spacing(6) 0;
+    @include hse-responsive-padding(4, "top");
+    @include hse-responsive-padding(4, "bottom");
+    p {
+      @include hse-responsive-padding(2);  
+    }
   }
 }
 
 .callout--warning {
-  margin: 10px 0 20px 0;
+  margin: hse-spacing(6) 0 hse-spacing(6) 0;
   background: none;
   border-left: 0;
   font-weight: 700;
   background-image: url("../../assets/v6-images/icons/warning.svg") !important;
   background-size: 35px 35px !important;
   background-repeat: no-repeat !important;
+  background-position: left;
   min-height: 35px !important;
-  padding: 5px 0 0 45px;
+  padding: 5px 0 0 55px;
 }
 
 .callout h2 {

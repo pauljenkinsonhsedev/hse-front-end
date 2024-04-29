@@ -1,13 +1,14 @@
 
-
+#cookie-message {
+  @include mq($media-type: print) {
+  display: none;
+  }
+  }
+  
 .hse-cookie-banner {
   padding: 20px 0;
   background: $color_hse-grey-4;
 }
-
-
-
-
 
 #cookieContainer p a {
     // color: $hse-focus-color;

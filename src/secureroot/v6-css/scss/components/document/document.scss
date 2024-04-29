@@ -1,0 +1,59 @@
+// Document download
+.hse-document {
+    display: flex;
+    background-color: $color_hse-grey-4;
+    @include hse-responsive-padding(4);
+    @include hse-responsive-margin(6, "bottom");    
+    width: 100%;
+    &__thumbnail {
+      display: block;
+      float: left;
+      @include hse-responsive-margin(4, "right");    
+      width: auto;
+      max-width: 99px;
+      height: 140px;
+      border: rgba(11, 12, 12, .1);
+      outline: 5px solid rgba(11, 12, 12, .1);
+      background: #fff;
+      box-shadow: 0 2px 2px rgba(11,12,12,.4);
+      fill: #b1b4b6;
+      stroke: #b1b4b6;
+      &::before {
+        content: " ";
+        background-repeat: no-repeat;
+        background-position: bottom;
+        float: left;
+        position: relative;
+        width: 99px;
+        height: 140px;  
+      } 
+      &--spreadsheet {
+      &::before {
+      background-image: url(../../assets/v6-images/icons/svg-hse-document-spreadsheet.svg);
+      }
+      }
+      &--document {
+      &::before {
+      background-image: url(../../assets/v6-images/icons/svg-hse-document-document.svg);
+      }
+      }
+      &--html {
+      &::before {
+      background-image: url(../../assets/v6-images/icons/svg-hse-document-html.svg);
+      }
+      }
+  }
+  }
+
+.hse-document__thumbnail + .hse-document__details {
+  padding-left: hse-spacing(4);
+}
+
+.hse-document__details {
+dl {
+margin: 0;  
+}
+}
+.hse-document .fileType {
+  display: none;
+}

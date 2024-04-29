@@ -1,6 +1,9 @@
 
 .hse-feedback {
   @include clearfix();
+  @include mq($media-type: print) {
+    display: none;
+  }
 }
 
 .hse-feedback__prompt {
@@ -230,3 +233,4 @@ p.question-hint {
   background: $color_hse-grey-4;
   padding: $hse-legacy-spacing-10;
 }
+

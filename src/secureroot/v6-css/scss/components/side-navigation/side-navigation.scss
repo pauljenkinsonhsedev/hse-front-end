@@ -5,6 +5,9 @@ width: 100%;
 @include mq($until: desktop) {
 margin-bottom: $hse-legacy-spacing-20;
 }
+@include mq($media-type: print) {
+  display: none;
+}
 
 > ul {
 left: 0;

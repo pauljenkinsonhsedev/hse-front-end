@@ -45,8 +45,10 @@ $color_hse-pink: #ae2573;
 $color_hse-grey-1: #333333;
 $color_hse-grey-2: #4e4e4e;
 $color_hse-grey-3: #c2c2c2;
-$color_hse-grey-4: #f7f7f7;
+$color_hse-grey-4: #f0f0f0;
 $color_hse-grey-5: #f0f4f5;
+
+
 
 /* stylelint-enable color-no-hex */
 //
@@ -120,6 +122,11 @@ $hse-focus-text-color: $color_hse-black;
 // Border
 $hse-border-color: $color_hse-grey-4;
 $hse-secondary-border-color: $color_transparent_hse-white-20;
+
+// Cards
+
+$card-border-color: #d8d8d8;
+$card-border-hover-color: $color_hse-grey-3;
 
 // Box shadow
 $hse-box-shadow: rgba(33, 43, 50, 0.16);

@@ -1,5 +1,5 @@
 export function footnoteLinks ()  {
-    const container = document.getElementById('contentContainer');
+    const container = document.getElementById('pageContainer');
     const links = document.querySelectorAll(
       "#contentContainer a:not([href^='javascript:']):not([href^='mailto:']):not(:empty):not([href^='#'])"
     );
@@ -11,7 +11,7 @@ export function footnoteLinks ()  {
         count++;
 
         // build list items
-        listItems += `<li>${item.text}<br>${item.href}</li>
+        listItems += `<li class="hse-footnotes__list-item"><span class="hse-footnotes__list-item-title">${item.text}</span><span class="hse-footnotes__list-item-url">${item.href}</span></li>
         `;
 
         // add counter to each link
@@ -23,10 +23,12 @@ export function footnoteLinks ()  {
     });
 
     const html = `
+    <div class="hse-footnotes">
     <h2 class="hideFromScreen footnotes">Link URLs in this page</h2>
-    <ol class="hideFromScreen">
+    <ol class="hse-footnotes__list hideFromScreen">
         ${listItems}
-    </ol>`;
+    </ol>
+    </div>`;
 
     if (listItems.length > 0) {
       container.insertAdjacentHTML('beforeend', html);

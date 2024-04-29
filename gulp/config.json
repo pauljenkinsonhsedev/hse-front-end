@@ -44,7 +44,9 @@
     "styles": {
       "all": "./src/secureroot/v6-css/scss/**/*.scss",
       "entry": "./src/secureroot/v6-css/scss/v6.scss",
+      "entryDesignSystem": "./src/secureroot/v6-css/scss/design-system.scss",
       "output": "./secureroot/hseonline/website/livelive/secureroot/assets/v6-css/",
+      "outputDesignSystem": "./designsystem/assets/v6-css/",
       "vendor": "./src/secureroot/v6-css/vendor/**/*.css",
       "vendorOutput": "./secureroot/hseonline/website/livelive/secureroot/assets/v6-css/vendor/"
     },
