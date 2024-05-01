@@ -1,119 +1,153 @@
-/*doc
----
-title: Checkboxes
-name: b-forms-c-checkbox
-category: Page features - Form elements
----
+/* ==========================================================================
+   COMPONENTS/ #CHECKBOXES
+   ========================================================================== */
 
-```html_example
-<div class="form-group">
-  <fieldset class="fieldset" aria-describedby="waste-hint">
-    <legend class="fieldset__legend fieldset__legend--xl">
-      <h1 class="fieldset__heading">
-        Which types of waste do you transport?
-      </h1>
-    </legend>
-    <span id="waste-hint" class="hint">
-      Select all that apply.
-    </span>
-    <div class="checkboxes">
-      <div class="checkboxes__item">
-        <input class="checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
-        <label class="label checkboxes__label" for="waste">
-          Waste from animal carcasses
-        </label>
-      </div>
-      <div class="checkboxes__item">
-        <input class="checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines">
-        <label class="label checkboxes__label" for="waste-2">
-          Waste from mines or quarries
-        </label>
-      </div>
-      <div class="checkboxes__item">
-        <input class="checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm">
-        <label class="label checkboxes__label" for="waste-3">
-          Farm or agricultural waste
-        </label>
-      </div>
-    </div>
-  </fieldset>
-</div>
-```
+/**
+ * 1. remove 300ms pause on mobile.
+ * 2. Fix bug in IE11 caused by transform rotate (-45deg).
+ */
 
-*/
-.checkboxes__item {
-  -moz-osx-font-smoothing: grayscale;
-  font-weight: 400;
-  font-size: 16px;
-  font-size: 1rem;
-  line-height: 1.25;
-
-  display: block;
-  position: relative;
-  min-height: 40px;
-  margin-bottom: 10px;
-  padding-left: 40px;
-  clear: left;
-}
-
-.checkboxes__input {
-  cursor: pointer;
-  position: absolute;
-  z-index: 1;
-  top: -2px;
-  left: -2px;
-  width: 44px;
-  height: 44px;
-  margin: 0;
-  opacity: 0;
-}
-.checkboxes__label {
-  display: inline-block;
-  margin-bottom: 0;
-  padding: 8px 15px 5px;
-
-  cursor: pointer;
-  -ms-touch-action: manipulation;
-  touch-action: manipulation;
-
-  &:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 40px;
-    height: 40px;
-    border: 2px solid $black;
-    background: transparent;
-  }
-  &:after {
-    content: '';
-    position: absolute;
-    top: 11px;
-    left: 9px;
-    width: 18px;
-    height: 7px;
-    -webkit-transform: rotate(-45deg);
-    -ms-transform: rotate(-45deg);
-    transform: rotate(-45deg);
-    border: solid;
-    border-top-color: currentcolor;
-    border-top-width: medium;
-    border-right-width: medium;
-    border-bottom-width: medium;
-    border-left-width: medium;
-    border-width: 0 0 5px 5px;
-    border-top-color: transparent;
-    opacity: 0;
-    background: transparent;
-  }
-}
-
-.checkboxes__input:checked + .checkboxes__label::after {
-  opacity: 1;
-}
-
-.checkboxes__input:focus + .checkboxes__label::before,
-.checkboxes__input:checked + .checkboxes__label::before {
-    box-shadow: 0 0 0 3px #fd0;
-}
+ $hse-checkboxes-size: hse-spacing(6);
+ $hse-checkboxes-label-padding-left-right: 12px;
+ 
+ .hse-checkboxes__item {
+   @include hse-font(19);
+ 
+   clear: left;
+   display: block;
+   margin-bottom: hse-spacing(2);
+   min-height: $hse-checkboxes-size;
+   padding: 0 0 0 $hse-checkboxes-size;
+   position: relative;
+ }
+ 
+ .hse-checkboxes__item:last-child,
+ .hse-checkboxes__item:last-of-type {
+   margin-bottom: 0;
+ }
+ 
+ .hse-checkboxes__input {
+   cursor: pointer;
+   height: $hse-checkboxes-size;
+   left: 0;
+   margin: 0;
+   opacity: 0;
+   position: absolute;
+   top: 0;
+   width: $hse-checkboxes-size;
+   z-index: 1;
+ }
+ 
+ .hse-checkboxes__label {
+   cursor: pointer;
+   display: inline-block;
+   margin-bottom: 0;
+   padding: 8px $hse-checkboxes-label-padding-left-right hse-spacing(1);
+   -ms-touch-action: manipulation; /* 1 */
+   touch-action: manipulation;
+ }
+ 
+ .hse-checkboxes__hint {
+   display: block;
+   padding-left: $hse-checkboxes-label-padding-left-right;
+   padding-right: $hse-checkboxes-label-padding-left-right;
+ }
+ 
+ .hse-checkboxes__input + .hse-checkboxes__label::before {
+   background: $hse-form-element-background-color;
+   border: $hse-border-width-form-element solid $hse-form-border-color;
+   box-sizing: border-box;
+   content: "";
+   height: $hse-checkboxes-size;
+   left: 0;
+   position: absolute;
+   top: 0;
+   width: $hse-checkboxes-size;
+ }
+ 
+ .hse-checkboxes__input + .hse-checkboxes__label::after {
+   background: transparent;
+   border: solid;
+   border-top-color: transparent;
+   border-width: 0 0 $hse-border-width $hse-border-width;
+   content: "";
+   height: 10px;
+   left: 10px;
+   opacity: 0; /* 2 */
+   position: absolute;
+   top: 13px;
+   -ms-transform: rotate(-45deg);
+   -webkit-transform: rotate(-45deg);
+   transform: rotate(-45deg);
+   width: 22px;
+ }
+ 
+ /*
+  * Focus state
+  *
+  * 1. Since box-shadows are removed when users customise their colours
+  *    We set a transparent outline that is shown instead.
+  *    https://accessibility.blog.gov.uk/2017/03/27/how-users-change-colours-on-websites/
+  */
+ 
+ .hse-checkboxes__input:focus + .hse-checkboxes__label::before {
+   @include hse-focused-checkbox();
+ }
+ 
+ /* Selected state */
+ 
+ .hse-checkboxes__input:checked + .hse-checkboxes__label::after {
+   opacity: 1;
+ }
+ 
+ /* Disabled state */
+ 
+ .hse-checkboxes__input:disabled,
+ .hse-checkboxes__input:disabled + .hse-checkboxes__label {
+   cursor: default;
+ }
+ 
+ .hse-checkboxes__input:disabled + .hse-checkboxes__label {
+   opacity: 0.5;
+ }
+ 
+ /* Divider variant */
+ 
+ .hse-checkboxes__divider {
+   $hse-divider-size: $hse-checkboxes-size !default;
+   @include hse-font(19);
+ 
+   color: $hse-text-color;
+   margin-bottom: hse-spacing(2);
+   text-align: center;
+   width: $hse-divider-size;
+ }
+ 
+ /*
+  * Conditional
+  *
+  * 1. Calculate the amount of padding needed to keep the border
+  *    centered against the checkbox.
+  * 2. Move the border centered with the checkbox.
+  * 3. Move the contents of the conditional inline with the label.
+  */
+ 
+ $conditional-border-width: $hse-border-width-mobile;
+ $conditional-border-padding: ($hse-checkboxes-size * 0.5) - ($conditional-border-width * 0.5); /* 1 */
+ $conditional-margin-left: $conditional-border-padding; /* 2 */
+ $conditional-padding-left: $conditional-border-padding + $hse-checkboxes-label-padding-left-right; /* 3 */
+ 
+ .hse-checkboxes__conditional {
+   @include hse-responsive-margin(4, "bottom");
+   border-left: $conditional-border-width solid $hse-form-border-color;
+   margin-left: $conditional-margin-left;
+   padding-left: $conditional-padding-left;
+ 
+   & > :last-child {
+     margin-bottom: 0;
+   }
+ }
+ 
+ .js-enabled .hse-checkboxes__conditional--hidden {
+   display: none;
+ }
