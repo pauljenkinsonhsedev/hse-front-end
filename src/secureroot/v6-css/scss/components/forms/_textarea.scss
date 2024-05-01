@@ -1,26 +1,25 @@
-/*doc
----
-title: Textarea
-name: b-forms-b-textarea
-category: Page features - Form elements
----
+/* ==========================================================================
+   COMPONENTS/ #TEXTAREA
+   ========================================================================== */
 
-```html_example
-<div class="form-group">
-  <label class="label" for="more-detail">
-    Can you provide more detail?
-  </label>
-  <span id="more-detail-hint" class="hint">
-    Do not include personal or financial information, like your National Insurance number or credit card details.
-  </span>
-  <textarea class="textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
-</div>
-```
-
-*/
-
-.textarea {
-  @extend .input;
-  width: 100%;
-  font-family: $color_hse-black;
-}
+   .hse-textarea {
+    @include hse-font(19);
+  
+    -webkit-appearance: none;
+    border: $hse-border-width-form-element solid $hse-form-border-color;
+    border-radius: 0;
+    box-sizing: border-box;
+    display: block;
+    min-height: 40px;
+    padding: hse-spacing(1);
+    resize: vertical;
+    width: 100%;
+  
+    &:focus {
+      @include hse-focused-input;
+    }
+  }
+  
+  .hse-textarea--error {
+    border: $hse-border-width-form-element-error solid $hse-error-color;
+  }
