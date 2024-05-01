@@ -11,7 +11,7 @@ navLinkEls.forEach(navLinkEl => {
     const firstPath = window.location.pathname.split('/')[1]; 
 
     // Check if link contains first path of page URL
-    if (link.includes(firstPath) === true) {
+    if (link.includes(firstPath) === true && firstPath != 'index.htm') {
     navLinkEl.classList.add('hse-ds-navigation__link--active');  
     }
 
