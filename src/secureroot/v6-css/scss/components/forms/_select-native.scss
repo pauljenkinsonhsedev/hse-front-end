@@ -29,11 +29,6 @@ category: Page features - Form elements
   }
 }
 
-.select {
-  @extend .input;
-  width: 45ex;
-}
-
 .select-styled {
   display: inline-block;
   position: relative;
