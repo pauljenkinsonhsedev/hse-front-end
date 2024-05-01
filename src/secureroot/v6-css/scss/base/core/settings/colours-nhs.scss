@@ -149,10 +149,15 @@ $hse-button-hover-color: shade($hse-button-color, 20%);
 $hse-button-active-color: shade($hse-button-color, 50%);
 $hse-button-shadow-color: shade($hse-button-color, 50%);
 
-$hse-secondary-button-color: $color_hse-grey-1;
-$hse-secondary-button-hover-color: shade($hse-secondary-button-color, 20%);
+$hse-secondary-button-color: $color_hse-grey-4;
+$hse-secondary-button-hover-color: shade($hse-secondary-button-color, 50%);
 $hse-secondary-button-active-color: shade($hse-secondary-button-color, 50%);
 $hse-secondary-button-shadow-color: shade($hse-secondary-button-color, 50%);
+
+$hse-cautionary-button-color: $color_hse-red;
+$hse-cautionary-button-hover-color: shade($hse-secondary-button-color, 20%);
+$hse-cautionary-button-active-color: shade($hse-secondary-button-color, 50%);
+$hse-cautionary-button-shadow-color: shade($hse-secondary-button-color, 50%);
 
 $hse-reverse-button-color: $color_hse-white;
 $hse-reverse-button-hover-color: shade($hse-reverse-button-color, 20%);
