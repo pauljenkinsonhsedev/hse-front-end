@@ -1,0 +1,60 @@
+
+.hse-header__bottom-container {
+border-top: 1px solid $color_hse-grey-3;
+}
+
+.hse-ds-navigation {
+clear: both;
+
+// List
+
+&__list {
+display: flex;
+flex-wrap: wrap;
+margin: 0 0 0 -32px;
+list-style-type: none;
+
+}
+
+&__item {
+display: inline-block;
+margin: 0;
+}
+
+// Links 
+
+&__link {
+display: block;
+position: relative;
+padding: 8px 16px;
+text-decoration: none;
+white-space: nowrap;
+&:visited {
+color: $color_hse-red;
+}
+&:hover:not(:focus) {
+background: rgba(215, 51, 78, 0.1)
+}
+&--active:not(:focus) {
+background: $color_hse-grey-4;
+} 
+&--active:not(:focus):after {
+border-bottom: 3px solid rgba(0, 0, 0, 0);
+left: 0;
+opacity: 1;
+right: 0;
+}
+&::after {
+background-color: $color_hse-red;
+bottom: -2px;
+content: "";
+height: 1px;
+left: 50%;
+opacity: 0;
+position: absolute;
+right: 50%;
+transition: left .2s, right .2s, opacity .2s;
+}
+}
+
+}
