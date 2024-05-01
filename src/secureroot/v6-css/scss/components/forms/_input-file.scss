@@ -13,8 +13,8 @@
 
   + label {
     cursor: pointer; /* "hand" cursor */
-    @extend .btn;
-    @extend .btn-primary;
+   // @extend .btn;
+   // @extend .btn-primary;
   }
 
   &:focus + label {
