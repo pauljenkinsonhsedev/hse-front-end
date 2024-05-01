@@ -149,15 +149,27 @@ $hse-button-hover-color: shade($hse-button-color, 20%);
 $hse-button-active-color: shade($hse-button-color, 50%);
 $hse-button-shadow-color: shade($hse-button-color, 50%);
 
-$hse-secondary-button-color: $color_hse-grey-1;
-$hse-secondary-button-hover-color: shade($hse-secondary-button-color, 20%);
+$hse-secondary-button-color: $color_hse-grey-4;
+$hse-secondary-button-hover-color: shade($hse-secondary-button-color, 50%);
 $hse-secondary-button-active-color: shade($hse-secondary-button-color, 50%);
 $hse-secondary-button-shadow-color: shade($hse-secondary-button-color, 50%);
+
+$hse-cautionary-button-color: $color_hse-red;
+$hse-cautionary-button-hover-color: shade($hse-secondary-button-color, 20%);
+$hse-cautionary-button-active-color: shade($hse-secondary-button-color, 50%);
+$hse-cautionary-button-shadow-color: shade($hse-secondary-button-color, 50%);
 
 $hse-reverse-button-color: $color_hse-white;
 $hse-reverse-button-hover-color: shade($hse-reverse-button-color, 20%);
 $hse-reverse-button-active-color: $color-hse-black;
 $hse-reverse-button-shadow-color: $color-hse-black;
+
+$hse-transparent-button-color: transparent;
+$hse-transparent-button-hover-color: shade($hse-transparent-button-color, 20%);
+$hse-transparent-button-active-color: $color-hse-black;
+$hse-transparent-button-shadow-color: $color-hse-black;
+$hse-transparent-button-border-color: $color-hse-black;
+
 
 $hse-button-text-color: $color_hse-white;
 $hse-reverse-button-text-color: $color_hse-black;
