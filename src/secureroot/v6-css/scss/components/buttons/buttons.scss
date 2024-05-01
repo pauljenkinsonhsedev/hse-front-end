@@ -210,6 +210,36 @@ $button-shadow-size: 4px;
   }
 }
 
+.hse-button--transparent {
+  background-color: $hse-transparent-button-color;
+  box-shadow: 0 $button-shadow-size 0 $hse-transparent-button-shadow-color;
+  border: 1px solid $hse-transparent-button-border-color;
+  color: $hse-reverse-button-text-color;
+  &:hover {
+    background-color: $color_hse-grey-3;
+    color: $hse-reverse-button-text-color;
+    color: $hse-reverse-button-text-color;
+  }
+
+  &:focus {
+    background: $hse-focus-color;
+    box-shadow: 0 $button-shadow-size 0 $hse-focus-text-color;
+    color: $hse-focus-text-color;
+    outline: $hse-focus-width solid transparent;
+  }
+
+  &:active {
+    background: $hse-transparent-button-active-color;
+    box-shadow: none;
+    color: $hse-button-text-color;
+    top: $button-shadow-size;
+  }
+
+  &.hse-button--disabled {
+    background-color: $hse-transparent-button-color;
+  }
+}
+
 /**
  * Button disabled states
  */
