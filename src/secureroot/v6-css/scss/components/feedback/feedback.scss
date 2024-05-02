@@ -111,7 +111,9 @@ margin-right: 10px;
   overflow-y: hidden;
   float: left;
   display: none;
-
+  .hse-fieldset__heading {
+  font-weight: 600;
+  }
   &.survey-in {
     display: flex;
   }
