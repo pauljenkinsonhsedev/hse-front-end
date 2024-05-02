@@ -97,7 +97,7 @@ export function feedbackSurvey() {
       window.location.search;
     const action = document.createElement("button");
     action.id = "close-report-a-problem";
-    action.classList.add("btn");
+    action.classList.add("hse-button", "hse-button--secondary");
     action.textContent = "Close";
 
     action.addEventListener(
@@ -131,27 +131,27 @@ export function feedbackSurvey() {
     form.method = "POST";
     form.autocomplete = "on";
 
-    const formFields = `<fieldset class="report-a-problem-form__questions fieldset">
-            <legend class="fieldset__legend">
-                <h2 class="fieldset__heading">Help us improve HSE.GOV.UK</h2>
+    const formFields = `<fieldset class="hse-fieldset report-a-problem-form__questions fieldset">
+            <legend class="hse-fieldset__legend">
+                <h2 class="hse-fieldset__heading">Help us improve HSE.GOV.UK</h2>
             </legend>
             <p>Don’t include personal or financial information like your National Insurance number or credit card details.</p>
-            <div class="form-group">
-                <label class="label" for="what-were-you-doing?">What were you doing?</label>
-                <input required class="input input-text input-width-full" name="what-were-you-doing?" type="text" id="what-were-you-doing?"/>
+            <div class="hse-form-group">
+                <label class="hse-label" for="what-were-you-doing?">What were you doing?</label>
+                <input required class="hse-input" name="what-were-you-doing?" type="text" id="what-were-you-doing?"/>
             </div>
-            <div class="form-group">
-                <label class="label" for="what-went-wrong?">What went wrong?</label>
-                <input required class="input input-text input-width-full" id="what-went-wrong?" name="what-went-wrong?" type="text">
+            <div class="hse-form-group">
+                <label class="hse-label" for="what-went-wrong?">What went wrong?</label>
+                <input required class="hse-input" id="what-went-wrong?" name="what-went-wrong?" type="text">
             </div>
         </fieldset>
-        <div class="form-group js-hide" id="user-url"></div>
+        <div class="hse-form-group js-hide" id="user-url"></div>
         <fieldset class="report-a-problem-form__hidden-fields fieldset">
-            <input name="url" type="hidden" id="url" size="100" class="input input-text" value="${newURL}">
-            <input name="ua" type="hidden" id="ua" size="100" class="input input-text" value="Browser name: ${browserName}, Browser version: ${browserVersion}, OS name: ${osName}, OS version: ${osVersion}, Platform type: ${platformType}, Platform vendor: ${platformVendor}">
+            <input name="url" type="hidden" id="url" size="100" class="hse-input" value="${newURL}">
+            <input name="ua" type="hidden" id="ua" size="100" class="hse-input" value="Browser name: ${browserName}, Browser version: ${browserVersion}, OS name: ${osName}, OS version: ${osVersion}, Platform type: ${platformType}, Platform vendor: ${platformVendor}">
             <input type="hidden" name="mailredirect" value="${newURL}">
             <input type="hidden" name="mailsubject" value="${notFoundTrue}Report a problem with this page: ${newURL}">
-            <input type="submit" value="Submit" class="btn btn-primary report-problem-submit" />
+            <input type="submit" value="Submit" class="hse-button report-problem-submit" />
         </fieldset>`;
 
     // const formFeedbackHTML = `<div class="report-problem-form-feeback"><h2>Thank you</h2><p>Your feedback is appreciated.</p></div>`;
