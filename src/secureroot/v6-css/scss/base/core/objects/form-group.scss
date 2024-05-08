@@ -1,6 +1,5 @@
 .hse-form-group {
     @include hse-responsive-margin(4, "bottom");
-  
     .hse-form-group:last-of-type {
       margin-bottom: 0; // Remove margin from last item in nested groups
     }
