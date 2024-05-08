@@ -4,7 +4,7 @@
 
    .hse-label {
     @include hse-font(19);
-  
+    font-weight: 500;
     display: block;
     margin-bottom: hse-spacing(1);
   }
