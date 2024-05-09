@@ -50,6 +50,12 @@ margin-top: 0;
 }
 }
 
+.hse-header__logo svg {
+@include mq($until: desktop) {
+width: 170px;
+}
+}
+
 .hse-header__logo a {
 &:focus {
 outline: #fd0 5px solid !important;
@@ -76,3 +82,37 @@ outline: #fd0 5px solid !important;
     }
 }
 
+#headerLogo {
+    // line-height: 1.333em;
+    // font-weight: 700;
+    // font-family: Helvetica, Arial, sans-serif;
+    // color: $color_hse-red;
+    margin: 0;
+    // text-decoration: none;
+    @include mq($from: desktop) {
+      height: 46px;
+      display: flex;
+    }
+    a {
+      color: $color_hse-black;
+      display: block;
+      padding: 0;
+      // width: 183px;
+      text-decoration: none !important;
+      display: flex;
+    }
+    svg {
+      // margin-right: $hse-legacy-spacing-20;
+    }
+  }
+
+.hse-header__logo-text {
+@include hse-typography-responsive(19);
+display: flex;
+flex-direction: column;
+padding-left: 20px;
+@include mq($from: desktop) {
+line-height: 1 !important;
+}
+font-weight: 500;
+}
