@@ -2,12 +2,16 @@ export function backToTop() {
 
     var backToTop = document.querySelector('.hse-back-to-top__container');
     var backToTopHook = document.querySelector('.hse-back-to-top');
-    var contents = document.querySelector('.hse-contents-list');
+    // var contents = document.querySelector('.hse-contents-list');
 
-    // visually hides back-to-top link if there is not contents list
+    /* 
+
+    visually hides back-to-top link if there is not contents list
+
     if(!contents) {
     backToTopHook.classList.add("visually-hidden");
     }
+    */
 
     // get aside content
     let aside = document.querySelector('#contentAside');
