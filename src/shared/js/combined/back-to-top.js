@@ -27,7 +27,7 @@ export function backToTop() {
 
     window.addEventListener('scroll', function() {
     let scroll = window.scrollY;
-    if (scroll > 1000) {
+    if (scroll > 2000) {
     backToTop.classList.add("hse-back-to-top--fixed");
     backToTop.classList.remove("hse-back-to-top--hide");
     } else {
