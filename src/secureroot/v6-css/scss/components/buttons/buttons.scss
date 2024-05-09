@@ -240,6 +240,25 @@ $button-shadow-size: 4px;
   }
 }
 
+.hse-button--start {
+&:after {
+  content: " ";
+  position: relative;
+  background-image: url(../../assets/v6-images/icons/svg/solid/chevron-right-white.svg);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  display: inline-block;
+  width: 15px;
+  height: 20px;
+  margin: 0;
+  bottom: -4px;
+  margin-left: 10px;
+}
+&:focus::after {
+  background-image: url(../../assets/v6-images/icons/svg/solid/chevron-right-black.svg);
+}
+}
+
 /**
  * Button disabled states
  */
