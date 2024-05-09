@@ -1,4 +1,10 @@
 
+.hse-back-to-top {
+display: flex;
+flex-direction: row-reverse;
+}
+
+
 .hse-back-to-top__container {
 padding-bottom: hse-spacing(4); 
 }
