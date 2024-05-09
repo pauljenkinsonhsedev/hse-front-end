@@ -93,7 +93,7 @@ function formFeedback() {
         <p>Some HSE digital services may set additional cookies and, if so, will have their own cookie policy and banner.</p>
         </div>
         <div class="dialog__actions">
-        <button class="btn btn-cautionary close-action">Close</button>
+        <button class="hse-button hse-button--cautionary close-action">Close</button>
     </div>`;
     dialog.innerHTML = content;
 

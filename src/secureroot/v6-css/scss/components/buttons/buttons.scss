@@ -21,7 +21,7 @@ $button-shadow-size: 4px;
   -webkit-appearance: none;
   background-color: $hse-button-color;
   border: $hse-border-width-form-element solid transparent;
-  border-radius: 4px;
+  // border-radius: 4px;
   box-shadow: 0 $button-shadow-size 0 $hse-button-shadow-color; // s0
   box-sizing: border-box;
   color: $hse-button-text-color;

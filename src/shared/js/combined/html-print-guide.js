@@ -31,7 +31,7 @@ export function htmlPrintGuide() {
       const printButton = document.createElement("button");
 
       // Add classes
-      printButton.classList.add("btn", "display-none-print", "btn-print");
+      printButton.classList.add("hse-button", "display-none-print", "btn-print");
       pTag.classList.add("lead-paragraph", "display-none-print");
 
       // Prepend meta content
