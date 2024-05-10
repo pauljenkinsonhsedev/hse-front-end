@@ -13,6 +13,18 @@ export function backToTop() {
     }
     */
 
+    var pageContents = document.querySelector('#page-contents');
+   
+    let viewportHeight = pageContents.offsetHeight;
+
+    // hides back-to-top link if page contents height is less than 2000px
+    if (pageContents) {
+        if (viewportHeight < 2000) {
+            backToTopHook.classList.add("visually-hidden");
+        }
+    }
+
+
     // get aside content
     let aside = document.querySelector('#contentAside');
 
