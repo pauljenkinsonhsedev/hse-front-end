@@ -5,7 +5,6 @@ import { loadPicturefillFn } from "./combined/utils/picture-elem.js";
 import { fileTypeFunction } from "./combined/file-type.js";
 import { getInternetExplorerVersion } from "./combined/utils/internet-explorer-detection.js";
 import { tableSortable } from "./combined/tables/table-sortable.js";
-import { lightbox } from "./combined/lightbox.js";
 import { feedbackSurvey } from "./combined/feedback-survey.js";
 import { dialogModal } from "./combined/dialogs.js";
 import { tabs } from "./combined/tabs.js";
@@ -128,8 +127,6 @@ window.addEventListener("DOMContentLoaded", () => {
   if (document.body.contains(anchorSelector)) {
     fileTypeFunction();
   }
-
-  lightbox();
 
 
   feedbackSurvey();
