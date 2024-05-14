@@ -6,8 +6,8 @@
 .tabs__tab {
   &:focus {
     outline: none;
+    border: none !important;
   }
-
   @include mq($from: tablet) {
     &:link,
     &:hover,
@@ -19,10 +19,16 @@
 }
 
 ul.tabs__list {
-  margin: 0 0 $hse-legacy-spacing-10 0 !important;
+  position: relative;
+  z-index: 100;
   padding: 0;
   font-size: 0;
   list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
 
   @include mq($from: tablet) {
     margin: 0 !important;
@@ -30,10 +36,8 @@ ul.tabs__list {
 }
 .tabs__list-item {
   background-image: none !important;
-  background-color: $color_hse-grey-3;
+  background-color: $color_hse-grey-4;
   margin-bottom: 0;
-  margin: 0 5px 0 0;
-  padding: 5px;
   font-size: 14px;
   font-weight: 600;
 
@@ -53,7 +57,13 @@ ul.tabs__list {
     }
 
     &.selected {
+      background: white;
+      margin-bottom: -2px !important;
       a {
+        border-top: 3px solid $color_hse-red;
+        border-left: 2px solid $card-border-color;
+        border-right: 2px solid $card-border-color;
+        border-bottom: 0;
         &:link,
         &:hover,
         &:active,
@@ -81,7 +91,7 @@ ul li .tabs__tab {
   }
 
   @include mq($from: tablet) {
-    padding: 3px $hse-legacy-spacing-10;
+    padding: 12px 16px;
   }
 }
 
@@ -91,7 +101,7 @@ ul li .tabs__tab {
   @include mq($from: tablet) {
     .js-enabled & {
       display: none;
-      border: 1px solid $card-border-color;
+      border: 2px solid $card-border-color;
       padding: 15px 15px 5px 15px;
 
       &.show {
