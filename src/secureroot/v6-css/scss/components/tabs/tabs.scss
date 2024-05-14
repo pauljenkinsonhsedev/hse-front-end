@@ -91,15 +91,10 @@ ul li .tabs__tab {
 .tabs__panel {
   margin-bottom: $hse-legacy-spacing-20;
   padding: 15px;
-
-  background-color: #e6e6e6;
-
   @include mq($from: tablet) {
     .js-enabled & {
       display: none;
-      border-bottom: none;
-      border-left: 0;
-      border-right: 0;
+      border: 1px solid $card-border-color;
       padding: 15px 15px 5px 15px;
 
       &.show {
