@@ -3,16 +3,16 @@
 ========================================================================== */
 
 .hse-design-side-navigation {
-@include mq($until: tablet) {
+@include mq($until: desktop) {
 margin-bottom: hse-spacing(4);
 }
 @include hse-font(16);
-@include mq($until: tablet) {
+@include mq($until: desktop) {
   display: flex;
   overflow-x: scroll;
 }
 
-@include mq($from: tablet) {
+@include mq($from: desktop) {
   display: block;
 }
 
@@ -22,7 +22,7 @@ margin-bottom: hse-spacing(4);
   font-weight: normal;
   margin: 0;
   padding: hse-spacing(2) + 4px 0;
-  @include mq($until: tablet) {
+  @include mq($until: desktop) {
     display: none;
   }
 
@@ -33,13 +33,13 @@ margin-bottom: hse-spacing(4);
   list-style: none !important;
   margin: hse-spacing(4) 0;
   padding: 0;
-  @include mq($until: tablet) {
+  @include mq($until: desktop) {
     display: flex;
     margin: 0;
     white-space: nowrap;
   }
 
-  @include mq($from: tablet) {
+  @include mq($from: desktop) {
     margin-bottom: hse-spacing(4);
   }
   // Nested
@@ -64,7 +64,7 @@ margin-bottom: hse-spacing(4);
 &__item {
   font-size: 1rem;
   padding-left: hse-spacing(2);
-  @include mq($until: tablet) {
+  @include mq($until: desktop) {
     display: flex;
   }
 
@@ -77,13 +77,13 @@ margin-bottom: hse-spacing(4);
     display: block;
     text-decoration: none;
 
-    @include mq($until: tablet) {
+    @include mq($until: desktop) {
       border-bottom: 4px solid transparent;
       padding: hse-spacing(3);
       padding-bottom: hse-spacing(3) - 4px; // Compensate for 4px border
     }
 
-    @include mq($from: tablet) {
+    @include mq($from: desktop) {
       background-color: inherit;
       // border-left: 4px solid transparent;
       //padding: hse-spacing(2);
@@ -105,12 +105,12 @@ margin-bottom: hse-spacing(4);
 
   
 &--active {
-  @include mq($from: tablet) {
+  @include mq($from: desktop) {
   border-left: 4px solid $hse-link-color;
   }
   &:has(.hse-design-side-navigation__list--nested) {
     border-left: 4px solid $hse-link-color;
-    @include mq($until: tablet) {
+    @include mq($until: desktop) {
     border-bottom: 4px solid $hse-link-color !important;
     border-left: none;
     }
