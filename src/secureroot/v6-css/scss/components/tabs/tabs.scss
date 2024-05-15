@@ -1,110 +1,119 @@
-/* Tabs */
-.tabs .ui-tabs-nav {
-  margin: 0 !important;
+.hse-tabs {
+  @include hse-responsive-margin(1, "top");
+  @include hse-responsive-margin(6, "bottom");
 }
 
-.tabs__tab {
-  &:focus {
-    outline: none;
-  }
-
-  @include mq($from: tablet) {
-    &:link,
-    &:hover,
-    &:visited,
-    &:active {
-      color: $black;
-    }
-  }
+.hse-tabs__title {
+  @include hse-font($size: 19);
+  color: $hse-text-color;
+  margin-bottom: hse-spacing(2);
 }
 
-ul.tabs__list {
-  margin: 0 0 $hse-legacy-spacing-10 0 !important;
-  padding: 0;
-  font-size: 0;
+.hse-tabs__list {
   list-style: none;
+  margin: 0;
+  padding: 0;
+  @include hse-responsive-margin(6, "bottom");
+}
 
-  @include mq($from: tablet) {
-    margin: 0 !important;
+.hse-tabs__list-item {
+  @include hse-font($size: 19);
+  margin-left: hse-spacing(5);
+
+  &:before {
+    color: $hse-text-color;
+    content: "\2014 "; // "— "
+    margin-left: -(hse-spacing(5));
+    padding-right: hse-spacing(1);
   }
 }
-.tabs__list-item {
-  background-image: none !important;
 
-  margin-bottom: 0;
-  margin: 0 5px 0 0;
-  padding: 5px;
-  font-size: 14px;
-  font-weight: 600;
+.hse-tabs__tab {
+  @include hse-link-style-default;
 
-  &:last-of-type {
-    margin-right: 0;
-  }
+  display: inline-block;
+  margin-bottom: hse-spacing(2);
+}
 
-  @include mq($from: tablet) {
-    display: inline-block;
-    background-color: #333;
+.hse-tabs__panel {
+  @include hse-responsive-margin(8, "bottom");
+}
 
-    a {
-      &:link,
-      &:hover,
-      &:active,
-      &:visited {
-        color: #fff;
-      }
+// JavaScript enabled
+.js-enabled {
+  @include govuk-media-query($from: tablet) {
+    .hse-tabs__list {
+      @include clearfix;
+      border-bottom: 1px solid $hse-border-color;
+      margin-bottom: 0;
     }
 
-    &.selected {
-      background-color: #e6e6e6;
-      a {
-        &:link,
-        &:hover,
-        &:active,
-        &:visited {
-          color: #333;
-        }
-      }
-    }
-  }
-}
-
-ul li .tabs__tab {
-  display: block;
-
-  &:link,
-  &:active,
-  &:hover,
-  &:focus {
-    border-bottom: 0 !important;
-    text-decoration: none;
-  }
-
-  &:focus {
-    background-color: #fd0;
-  }
-
-  @include mq($from: tablet) {
-    padding: 3px $hse-legacy-spacing-10;
-  }
-}
-
-.tabs__panel {
-  margin-bottom: $hse-legacy-spacing-20;
-  padding: 15px;
-
-  background-color: #e6e6e6;
-
-  @include mq($from: tablet) {
-    .js-enabled & {
+    .hse-tabs__title {
       display: none;
-      border-bottom: none;
-      border-left: 0;
-      border-right: 0;
-      padding: 15px 15px 5px 15px;
+    }
 
-      &.show {
-        display: block;
+    .hse-tabs__list-item {
+      background-color: $color_hse-grey-4;
+      float: left;
+      margin-bottom: 0;
+      margin-left: 0;
+      margin-right: hse-spacing(1);
+      padding: hse-spacing(2) hse-spacing(4);
+      position: relative;
+      text-align: center;
+
+      &:before {
+        content: none;
       }
+    }
+
+    .hse-tabs__list-item--selected {
+      $border-width: 1px;
+      background-color: $color_hse-white;
+      border: $border-width solid $hse-border-color;
+      border-bottom: 0;
+      margin-bottom: -$border-width; // Compensation for border (otherwise we get a shift)
+      margin-top: -(hse-spacing(1));
+      padding-bottom: (hse-spacing(2) * 1.5) + $border-width;
+      padding-left: hse-spacing(4) - $border-width;
+      padding-right: hse-spacing(4) - $border-width;
+      padding-top: (hse-spacing(2) * 1.5) - $border-width;
+      position: relative;
+
+      .hse-tabs__tab {
+        text-decoration: none;
+      }
+    }
+
+    .hse-tabs__tab {
+      @include hse-link-style-text;
+
+      margin-bottom: 0;
+
+      &:after {
+        bottom: 0;
+        content: "";
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+    }
+
+    .hse-tabs__panel {
+      @include hse-responsive-margin(0, "bottom");
+      background-color: $color_hse-white;
+      border: 1px solid $hse-border-color;
+      border-top: 0;
+      padding: hse-spacing(6) hse-spacing(4);
+
+      & > :last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    .hse-tabs__panel--hidden {
+      display: none;
     }
   }
 }

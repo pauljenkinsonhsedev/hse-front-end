@@ -105,7 +105,7 @@ window.addEventListener("DOMContentLoaded", () => {
   }
 
   // Tabs
-  const tabSelector = document.querySelector(".tabs");
+  const tabSelector = document.querySelector(".hse-tabs");
   if (document.body.contains(tabSelector)) {
     tabs(tabSelector);
   }
