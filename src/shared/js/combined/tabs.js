@@ -2,9 +2,9 @@ import { mediaQuery } from './utils/media-query.js';
 
 export function tabs(container) {
     const mediaquery = mediaQuery();
-    const tabTitle = container.getElementsByClassName('tabs__tab');
-    const listItem = container.getElementsByClassName('tabs__list-item');
-    const tabContent = container.getElementsByClassName('tabs__panel');
+    const tabTitle = container.getElementsByClassName('hse-tabs__tab');
+    const listItem = container.getElementsByClassName('hse-tabs__list-item');
+    const tabContent = container.getElementsByClassName('hse-tabs__panel');
 
     if (tabTitle.length == 0 || tabTitle == undefined || tabTitle == "undefined") {
         return;
@@ -28,13 +28,13 @@ export function tabs(container) {
         }
 
         if (!tabTitle[i].classList.contains('selected')) {
-            [].forEach.call(container.querySelectorAll('.tabs__list-item'), function (el) {
+            [].forEach.call(container.querySelectorAll('.hse-tabs__list-item'), function (el) {
                 el.classList.remove('selected');
             });
-            [].forEach.call(container.querySelectorAll('.tabs__panel'), function (el) {
+            [].forEach.call(container.querySelectorAll('.hse-tabs__panel'), function (el) {
                 el.classList.remove('show');
             });
-            [].forEach.call(container.querySelectorAll('.tabs__tab'), function (el) {
+            [].forEach.call(container.querySelectorAll('.hse-tabs__tab'), function (el) {
                 // aria-selected and tabindex
                 el.setAttribute("aria-selected", "false");
                 el.setAttribute("tabindex", "-1");

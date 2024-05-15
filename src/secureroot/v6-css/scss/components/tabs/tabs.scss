@@ -1,9 +1,10 @@
 /* Tabs */
-.tabs .ui-tabs-nav {
+.hse-tabs {
   margin: 0 !important;
 }
 
-.tabs__tab {
+
+.hse-tabs__tab {
   &:focus {
     outline: none;
     border: none !important;
@@ -19,7 +20,7 @@
   }
 }
 
-ul.tabs__list {
+ul.hse-tabs__list {
   position: relative;
   z-index: 100;
   padding: 0;
@@ -35,7 +36,7 @@ ul.tabs__list {
     margin: 0 !important;
   }
 }
-.tabs__list-item {
+.hse-tabs__list-item {
   background-image: none !important;
   background-color: $color_hse-grey-4;
   margin-bottom: 0;
@@ -76,7 +77,7 @@ ul.tabs__list {
   }
 }
 
-ul li .tabs__tab {
+ul li .hse-tabs__tab {
   display: block;
 
   &:link,
@@ -96,7 +97,7 @@ ul li .tabs__tab {
   }
 }
 
-.tabs__panel {
+.hse-tabs__panel {
   margin-bottom: $hse-legacy-spacing-20;
   padding: 15px;
   @include mq($from: tablet) {
