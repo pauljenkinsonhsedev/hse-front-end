@@ -6,7 +6,7 @@ export function informationBanner() {
       return;
     }
 
-    const inner = container.querySelector('.information-banner__inner');
+    const inner = container.querySelector('.hse-information-banner__inner');
     const content = container.dataset.content;
 
     if (content) {
