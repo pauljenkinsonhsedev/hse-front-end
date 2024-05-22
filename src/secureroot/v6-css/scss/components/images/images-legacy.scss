@@ -1,0 +1,200 @@
+// V4 captions
+
+.icapsl {
+    float: left;
+    margin: 0 10px 10px 0;
+  }
+  .icapml {
+    float: left;
+    margin: 0 10px 10px 0;
+  }
+  .icapll {
+    float: left;
+    margin: 0 10px 10px 0;
+  }
+  .icapsr {
+    float: right;
+    margin: 0 0 10px 10px;
+  }
+  .icapmr {
+    float: right;
+    margin: 0 0 10px 10px;
+  }
+  .icaplr {
+    float: right;
+    margin: 0 0 10px 10px;
+  }
+  .icapsl,
+  .icapsl img,
+  .icapsr,
+  .icapsr img {
+    width: 65px;
+  }
+  .icapml,
+  .icapml img,
+  .icapmr,
+  .icapmr img {
+    width: 130px;
+  }
+  .icapll,
+  .icapll img,
+  .icaplr,
+  .icaplr img {
+    width: 195px;
+  }
+  .icapll,
+  .icaplr,
+  .icapml,
+  .icapmr,
+  .icapsl,
+  .icapsr {
+    background-color: #e8e8e8;
+    background-image: linear-gradient(to bottom, #e8e8e8, #dbdbdb);
+  }
+  .icapll p,
+  .icaplr p,
+  .icapml p,
+  .icapmr p,
+  .icapsr p,
+  icapsl p {
+    padding: 0 6px 2px 6px;
+    margin: 0 !important;
+  }
+  div.icaplr span.download {
+    font-style: normal;
+  }
+
+// V4 publication thumbnails
+
+.itemThumbBook {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+  .itemThumbBook li {
+    position: relative;
+    list-style: none;
+    background: 0 0;
+    overflow: hidden;
+    padding: 0 0 15px 0;
+    margin-left: 0;
+    clear: left;
+  }
+  .itemThumbBook img {
+    margin: 0;
+    border-right: #dbdbdb 1px solid;
+    border-bottom: #dbdbdb 1px solid;
+  }
+  .itemThumbBook img.fileIcon {
+    border: none;
+    clear: none;
+    float: none;
+    position: absolute;
+    padding: 2px;
+    background: url(../v4-images/shared/white-semitransparant.png) repeat;
+  }
+  .box1col .itemThumbBook li {
+    background: 0 0;
+    clear: both;
+    overflow: hidden;
+    padding: 0 0 12px 0;
+    margin-left: 0;
+  }
+  .box1col .itemThumbBook li a {
+    padding: 0;
+    background: 0 0;
+    display: inline;
+  }
+  .itemThumbBook span {
+    font-weight: 400;
+    margin: 0 0 0.2em 0;
+    padding-right: 10px;
+    display: block;
+  }
+  .itemThumbBook li a:hover span {
+    text-decoration: underline;
+  }
+
+  .thumbHead {
+    float: left;
+    padding: 0 0 14px 0;
+  }
+  .thumbHead img {
+    float: left;
+  }
+  .thumbHead img.fileIcon {
+    float: none;
+  }
+  .thumbHead p {
+    padding-left: 74px;
+    margin-bottom: 0 !important;
+    color: #111;
+    font-weight: 700;
+    vertical-align: text-top;
+  }
+
+  #sideBar .itemThumbBook li,
+.box1col .itemThumbBook li {
+  width: 200px;
+}
+
+
+picture,
+img {
+  height: auto;
+  max-width: 100%;
+  vertical-align: bottom !important;
+}
+
+
+img.responsiveImg {
+  width: 100%;
+  float: left;
+  height: auto;
+}
+
+// v6
+
+.v6-figure {
+  width: auto !important;
+  margin-bottom: $hse-legacy-spacing-20;
+  width: auto;
+}
+
+.v6-figure-border {
+  border: 1px solid $color_hse-grey-1;
+  border-bottom: 0;
+}
+
+.v6-figure img {
+  display: block;
+  width: 100%;
+}
+
+.v6-figure.full-width,
+.v6-figure.full-width img {
+  min-width: 100%;
+  height: auto;
+}
+
+.v6-figure figcaption {
+  width: 100%;
+  padding: $hse-legacy-spacing-10;
+  background-color: $color_hse-grey-1;
+  color: white;
+  clear: both;
+  text-align: center;
+  line-height: 1.5;
+}
+
+// Caption width adjustment
+
+.v6-figure figcaption.fill {
+  min-width: fit-content;
+}
+
+.v6-figure figcaption.fix {
+  max-width: fit-content;
+}
+
+
