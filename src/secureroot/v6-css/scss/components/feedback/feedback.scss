@@ -6,6 +6,16 @@
   }
 }
 
+.feedback-container {
+  background: $color_hse-grey-4;
+  border-top: 1px solid $color_hse-grey-2;
+}
+
+#feedback {
+  max-width: $hse-page-width;
+  margin: 0 auto;
+}
+
 .hse-feedback__prompt {
   display: flex;
   flex-direction: column;
@@ -15,8 +25,10 @@
   flex-direction: row;
   padding: 0;
   }
-  @include mq($from: $desktop) {
+  @include mq($from: desktop) {
   justify-content: space-between;
+  padding: 0 16px;
+  margin: 0 5px;
   }
   padding: 10px;
 
