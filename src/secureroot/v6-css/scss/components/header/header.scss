@@ -59,6 +59,10 @@ width: 170px;
 .hse-header__logo a {
 &:focus {
 outline: #fd0 5px solid !important;
+box-shadow: none;
+}
+&:focus svg path {
+fill: $color_hse-black !important;
 }
 }
 
