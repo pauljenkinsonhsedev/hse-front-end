@@ -82,7 +82,7 @@ function toggleIsOpen() {
 
 		// SVG attributes
 		svgPath.setAttribute('d', 'M18 7L7 18M7 7L18 18'); 
-		svgPath.setAttribute('stroke', 'white'); 
+		svgPath.setAttribute('stroke', 'black'); 
         svgPath.setAttribute('stroke-width', '1.2'); 
 
 		// Button text
