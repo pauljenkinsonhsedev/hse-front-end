@@ -111,6 +111,13 @@ border-top: none;
 }
 @include hse-responsive-padding(4, "top");
 }
+
+// util 
+
+.hse-u-browse-link {
+font-weight: bold;
+}
+
   
   
 
