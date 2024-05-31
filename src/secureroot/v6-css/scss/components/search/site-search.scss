@@ -60,8 +60,9 @@ position: relative !important;
   padding: 0 !important;
 }
 
-.gsc-search-button-v2.test-gsc {
+.gsc-search-button-v2.gsc {
   background-color: $color_hse-white !important;
+  min-height: 0 !important;
 }
 
 .gsc-search-button-v2:hover {
