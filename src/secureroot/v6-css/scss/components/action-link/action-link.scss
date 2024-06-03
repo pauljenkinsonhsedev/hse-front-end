@@ -72,7 +72,7 @@
         color: $hse-print-text-color;
       }
     }
-  
+
     .hse-icon__arrow-right-circle {
       @include print-color($hse-print-text-color);
       fill: $color_hse-red;
@@ -80,6 +80,9 @@
       left: -3px;
       position: absolute;
       top: -2px;
+      & {
+        top: 2px;
+      }
       width: 36px;
       &--small {
         height: 26px;
