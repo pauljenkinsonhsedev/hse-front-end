@@ -11,6 +11,10 @@ margin-bottom: hse-spacing(6);
 padding-right: hse-spacing(2);
 margin-bottom: 0;
 }
+&__form {
+flex: auto;
+width: 100%;
+}
 button {
 margin-bottom: 0;
 margin-top: hse-spacing(4);
@@ -60,6 +64,7 @@ flex-direction: column;
 flex-direction: row;
 }
 &__form {
+flex: auto;
 @include mq($from: desktop) {
     margin-left: auto;
 }
