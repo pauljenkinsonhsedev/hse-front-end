@@ -187,9 +187,9 @@ window.dataLayer.push({'content_group': '@@(_document['contentGroup'])@@'});
     <!-- SEARCH -->
     <div class="searchContainer hse-header__navigation-container">
       <div class="hse-width-container">
-        <nav id="main-search" class="hse-navigation search js-search" style="padding-top: 0; margin-right: 16px; padding-top: 16px;">
+        <nav id="main-search" class="hse-navigation search js-search">
           <div class="hse-grid-column">
-            <h3 style="margin-bottom: 10px; margin-top: 10px;">Search HSE.GOV.UK</h3>
+            <h3>Search HSE.GOV.UK</h3>
             <ul class="hse-navigation__navigation-list">
               <li class="hse-navigation__navigation-item">
                 <div id="globalSearch" class="">
@@ -205,7 +205,7 @@ window.dataLayer.push({'content_group': '@@(_document['contentGroup'])@@'});
     <!-- MENU -->
     <div class="menuContainer hse-header__navigation-container">
       <div class="hse-width-container">
-        <nav id="main-menu" class="hse-navigation menu js-menu" style="padding-top: 0;">
+        <nav id="main-menu" class="hse-navigation menu js-menu">
           <div class="hse-grid-row hse-navigation-header">
             <div class="hse-grid-column-one-third hse-section__content">
               <h3>Industries</h3>
