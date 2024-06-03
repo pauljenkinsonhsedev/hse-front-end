@@ -27,10 +27,7 @@
   }
   @include mq($from: desktop) {
   justify-content: space-between;
-  padding: 0 16px;
-  margin: 0 5px;
   }
-  padding: 10px;
 
   background: $color_hse-grey-4;
   &.js-feedback-open
@@ -57,10 +54,6 @@ background: none;
 border: 1px solid $color_hse-grey-2; 
 }
 
-
-
-
-
 .hse-feedback__prompt-questions-answers, .hse-feedback__report-a-problem {
 display: flex;
 padding: 10px;
@@ -68,7 +61,16 @@ align-items: center;
 .btn {
   margin: 0;
   }
+@include mq($from: desktop) {
+  margin: 10px 32px;
+  padding: 0;
+  }
+@include mq($from: hse-desktop) {
+  margin: 10px 0;
+  padding: 0;
+  }
 }
+
 
 .fieldset {
 &.report-a-problem-form__questions, &.report-a-problem-form__hidden-fields {margin: 0;}
