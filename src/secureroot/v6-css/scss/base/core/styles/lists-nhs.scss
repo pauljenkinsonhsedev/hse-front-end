@@ -98,7 +98,13 @@
    margin-left: 0;
   }
 
-  .hse-list--key-links li a:before {
+  .hse-list--key-links li a, .hse-u-browse-link a {
+  &:focus:before {
+    border-right: 3px solid $color_hse-black;
+    border-top: 3px solid $color_hse-black;    
+  }
+  
+  &:before {
     border-right: 3px solid $color_hse-red;
     border-top: 3px solid $color_hse-red;
     content: "";
@@ -113,7 +119,9 @@
     -ms-transform: translateY(0) rotate(45deg) scale(1);
     transform: translateY(0) rotate(45deg) scale(1);
     width: 10px;
+
   }
+}
 
   .hse-list--key-links li a:hover::before {
     border-color: $color_hse-darker-red;

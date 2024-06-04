@@ -29,7 +29,7 @@ $button-shadow-size: 4px;
   display: inline-block;
   font-weight: 600;
   margin-top: 0;
-  padding: 12px hse-spacing(3); // s2
+  padding: 8px hse-spacing(3); // s2
   position: relative;
   text-align: center;
   vertical-align: top;
@@ -323,5 +323,35 @@ $button-shadow-size: 4px;
   &:active {
     box-shadow: 0 $button-shadow-size 0 $hse-reverse-button-shadow-color; // s0
     top: 0;
+  }
+}
+
+.hse-button--menu {
+  background-color: $hse-secondary-button-color;
+  box-shadow: 0 $button-shadow-size 0 $hse-secondary-button-shadow-color;
+  color: $color_hse-black;
+
+  &:hover {
+    background-color: darken($hse-secondary-button-color, 10%);
+    color: inherit;
+  }
+
+
+  &:focus {
+    background: $hse-focus-color;
+    box-shadow: 0 $button-shadow-size 0 $hse-focus-text-color;
+    color: $color_hse-black;
+    outline: $hse-focus-width solid transparent;
+  }
+
+  &:active {
+    background: $hse-secondary-button-active-color;
+    box-shadow: none;
+    color: $hse-button-text-color;
+    top: $button-shadow-size;
+  }
+
+  &.hse-button--disabled {
+    background-color: $hse-secondary-button-color;
   }
 }
