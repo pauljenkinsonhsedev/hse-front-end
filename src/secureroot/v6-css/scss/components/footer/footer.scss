@@ -56,6 +56,27 @@
     .report-a-problem-form.survey-in {
     border-top: $hse-legacy-spacing-10 solid $color_hse-red;
     padding-top: $hse-legacy-spacing-20;
+    background: $color_hse-grey-4;
+    padding-left: 16px;
+    padding-right: 16px;
+    @include mq($from: desktop) {
+        padding-left: 32px;
+        padding-right: 32px;
+        }
+    @include mq($from: large-desktop) {
+        padding-left: 16px;
+        padding-right: 16px;
+        }
+    @include mq($from: 1024px) {
+        padding-left: 0;
+        padding-right: 0;
+        }
+    }
+
+    #close-report-a-problem {
+    border: 1px solid #212b32;
+    box-shadow: 0 3px 0 #0b0c0c;
+    padding-top: 11px;
     }
     
     .hse-footer__list-item {
