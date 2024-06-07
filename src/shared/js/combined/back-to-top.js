@@ -17,12 +17,20 @@ export function backToTop() {
    
     let viewportHeight = pageContents.offsetHeight;
 
+    var topTask = document.querySelector('.topTask');
+
+    if (topTask) {
+        backToTopHook.classList.add("visually-hidden"); 
+    }
+
     // hides back-to-top link if page contents height is less than 2000px
     if (pageContents) {
         if (viewportHeight < 2000) {
             backToTopHook.classList.add("visually-hidden");
         }
     }
+
+    
 
 
     // get aside content
