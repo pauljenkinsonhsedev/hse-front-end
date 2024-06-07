@@ -13,6 +13,8 @@ export function backToTop() {
     }
     */
 
+    var scrollHeight = 1200;
+
     var pageContents = document.querySelector('#page-contents');
    
     let viewportHeight = pageContents.offsetHeight;
@@ -25,7 +27,7 @@ export function backToTop() {
 
     // hides back-to-top link if page contents height is less than 2000px
     if (pageContents) {
-        if (viewportHeight < 2000) {
+        if (viewportHeight < scrollHeight) {
             backToTopHook.classList.add("visually-hidden");
         }
     }
@@ -47,7 +49,7 @@ export function backToTop() {
 
     window.addEventListener('scroll', function() {
     let scroll = window.scrollY;
-    if (scroll > 2000) {
+    if (scroll > scrollHeight) {
     backToTop.classList.add("hse-back-to-top--fixed");
     backToTop.classList.remove("hse-back-to-top--hide");
     } else {
