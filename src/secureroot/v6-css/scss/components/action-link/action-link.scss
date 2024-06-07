@@ -39,6 +39,9 @@
       @include hse-font(16);
       font-weight: $hse-font-bold;
       padding-left: 28px;
+      .hse-icon__arrow-right-circle {
+        top: 2px !important;
+      }
     }
     &--white {
       color: $color_hse-white;
@@ -80,9 +83,6 @@
       left: -3px;
       position: absolute;
       top: -2px;
-      & {
-        top: 2px;
-      }
       width: 36px;
       &--small {
         height: 26px;
