@@ -103,14 +103,12 @@ margin: 0;
 }
 
 // sidebar
-hse-sidebar__navigation
-.hse-sidebar-top, .hse-sidebar  {
-.hse-subscribe {
- .hse-input {
-  width: 100%;
- }
 
-}
+.hse-sidebar-top .hse-subscribe {
+    &__form-group {
+        flex-direction: column;
+        align-items: center;
+    }  
 }
 
 
