@@ -157,7 +157,7 @@
   &:hover {
   border-bottom: 4px solid $color_hse-red;
   }
-  a:hover {
+  &:link {
    color: #1e060a;
    background: none;
   }
