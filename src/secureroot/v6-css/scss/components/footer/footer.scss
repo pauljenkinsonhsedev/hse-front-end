@@ -26,18 +26,17 @@
     }
     
     .hse-footer__base {
-    // padding: $hse-legacy-spacing-10 0;
     padding-top: hse-spacing(4);
     padding-bottom: hse-spacing(6);
     }
-    
-    // .hse-footer__base-inner {
-    //  display: flex;
-    // }
 
     .hse-footer-white {
         @include hse-link-style-white;
         fill: $color_hse-white !important;
+    }
+
+    .hse-footer-white:focus .hse-icon {
+        fill: $color_hse-black !important;
     }
     
     .hse-footer__base-inner, .hse-footer__languages {
@@ -97,6 +96,7 @@
     flex-direction: column;
     color: $color_hse-white;
         a {color: $color_hse-white}
+        a:focus {color: $color_hse-black}
     @include mq($from: desktop) {
     flex-direction: row;
     justify-content: space-between;
@@ -111,7 +111,7 @@
 
     .hse-footer__list-item-support-link {
         &:link, &:visited {color: $color_hse-white;}
-        &:hover, &:focus {color: $color_hse-white;}
+        &:hover, &:focus {color: $color_hse-black;}
     }
 
     
