@@ -64,6 +64,9 @@ box-shadow: none;
 &:focus svg path {
 fill: $color_hse-black !important;
 }
+&:focus-visible {
+outline-offset: initial;
+}
 }
 
 .full-width-homepage-banner {
