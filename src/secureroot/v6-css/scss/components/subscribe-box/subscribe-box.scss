@@ -9,16 +9,27 @@ padding-left: hse-spacing(2);
 margin-bottom: hse-spacing(6);
 &__form-group {
 padding-right: hse-spacing(2);
+width: 100%;
 margin-bottom: 0;
 }
 &__form {
 flex: auto;
 width: 100%;
 }
+&__form-group {
+@include mq($until: large-desktop) {
+display: flex;
+}
+@include mq($until: tablet) {
+flex-direction: column;
+align-items: center;
+}
+}
 button {
 margin-bottom: 0;
 margin-top: hse-spacing(4);
 padding: 5px;
+max-width: fit-content;
 }
 .hse-button {
 box-shadow: none;
@@ -39,13 +50,11 @@ margin-bottom: 0;
 @include hse-responsive-padding(2);
 }
 
-button.btn {
-margin-bottom: 0 !important;
-@include mq($until: 1002px) {
-display: flex;
-margin: auto;
-margin-top:  hse-spacing(2);
-}
+.hse-input--subscribe {
+max-width: 434px;
+height: 46px;
+margin-right: 10px;
+
 }
 
 .hse-subscribe__submit {
@@ -77,13 +86,6 @@ margin: 0;
 
 }
 
-.hse-section .hse-subscribe .form-group {
-input {
-@include mq($from: 990px) {
-margin-bottom: 0;
-}
-}
-}
 
 // sidebar
 hse-sidebar__navigation
