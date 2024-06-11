@@ -14,6 +14,7 @@ Uncomment the specific domain you require, do not uncomment more than one cookie
    2. beta.hse.gov.uk (beta testing)
    3. localhost (local development and prototyping)
    4. hseonline (drafts and secureroot)
+   5. hseuat (user acceptance testing)
 
 */
 
@@ -21,6 +22,9 @@ Uncomment the specific domain you require, do not uncomment more than one cookie
 // const setCookieSettings = { path: '/', domain: 'beta.hse.gov.uk', secure: true, sameSite: 'strict', expires: 365 };
 // const setCookieSettings = { path: '/', domain: 'localhost', secure: false, sameSite: 'strict', expires: 365 };
 // const setCookieSettings = { path: '/', domain: 'hseonline', secure: false, sameSite: 'strict', expires: 365 };
+// const setCookieSettings = { path: '/', domain: 'hseuat', secure: false, sameSite: 'strict', expires: 365 };
+
+
 
 
 // So we can access Cookies inline for Analytics in the HTML
