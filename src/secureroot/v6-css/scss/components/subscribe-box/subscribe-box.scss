@@ -8,7 +8,6 @@ border: 2px solid $hse-border-color;
 padding-left: hse-spacing(2);
 margin-bottom: hse-spacing(6);
 &__form-group {
-padding-right: hse-spacing(2);
 width: 100%;
 margin-bottom: 0;
 }
@@ -44,15 +43,25 @@ padding-right: hse-spacing(4);
 }
 
 .hse-subscribe__text {
+width: 100%;
 margin-bottom: 0;
-@include hse-responsive-padding(2);
+padding: hse-spacing(4);
+@include mq($from: tablet) {
+padding: 0 hse-spacing(4);
+}
+@include mq($until: desktop) {
+text-align: center;    
+}
 }
 
 .hse-input--subscribe {
-max-width: 434px;
+width: 100%;
+@include mq($until: desktop) {
+min-width: 220px;
+}
+min-width: 320px;
 height: 46px;
 margin-right: 10px;
-
 }
 
 .hse-subscribe__submit {
@@ -92,6 +101,9 @@ margin: 0;
 // contents
 
 .hse-page-contents .hse-subscribe {
+.hse-subscribe__text {
+padding: hse-spacing(4);
+}
 &__form-group {
 display: flex;
 flex-direction: column;
@@ -104,13 +116,19 @@ margin: 0;
 
 // sidebar
 
-.hse-sidebar-top .hse-subscribe {
+.hse-sidebar-top .hse-subscribe, .hse-sidebar .hse-subscribe {
     &__form-group {
         flex-direction: column;
         align-items: center;
     }  
-}
+    .hse-input--subscribe {
+    min-width: fit-content;
+    }
+    .hse-subscribe__text {
+    text-align: center;
+    }
 
+}
 
 // legacy subscribe box
 
