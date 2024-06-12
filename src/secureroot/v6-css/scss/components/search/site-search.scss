@@ -124,13 +124,10 @@ td.gsc-search-button button:focus {
 // Search results
 
 .gcs-results {
-  .gs-title {
-    font-size: 1.4rem !important;
-    line-height: normal !important;
-  }
 
   .gs-snippet {
     font-size: 1rem !important;
+    margin-bottom: 10px !important;
   }
 
   .gsc-input {
@@ -162,7 +159,8 @@ td.gsc-search-button button:focus {
   .gsc-control-cse .gs-spelling,
   .gsc-control-cse .gs-result .gs-title,
   .gsc-control-cse .gs-result .gs-title * {
-    font-size: 1.4rem !important;
+    font-size: 1.1875rem !important;
+    line-height: 1.25 !important;
   }
 
   td.gsib_b {
@@ -187,5 +185,17 @@ td.gsc-search-button button:focus {
   .gsc-results .gsc-cursor-box .gsc-cursor-page,
   .gsc-result-info {
     color: $color_hse-grey-1 !important;
+  }
+
+  .gsc-refinementHeader:nth-child(n+7) {
+  display: none !important;
+  }
+
+  .gsc-tabHeader:last-of-type {
+  display: none !important;
+  }
+
+  .gs-webResult div.gs-visibleUrl-breadcrumb {
+    margin-bottom: 8px !important;
   }
 }
