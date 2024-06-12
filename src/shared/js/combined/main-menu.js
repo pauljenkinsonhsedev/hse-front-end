@@ -12,7 +12,7 @@ export function mainMenu(){
   const menuListItem = document.createElement('li');
 
   // Button properties
-  menuButton.classList.add('menu-button');
+  menuButton.classList.add('global-menu-button');
   menuButton.setAttribute('href', '#main-menu');
   menuButton.setAttribute('id', 'menu-button');
   menuButton.setAttribute('aria-label', 'Menu button');
