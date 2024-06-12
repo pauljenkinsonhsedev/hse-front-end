@@ -124,27 +124,27 @@ td.gsc-search-button button:focus {
 // Search results
 
 .gcs-results {
-  .gs-title {
-    font-size: 1.4rem !important;
-    line-height: normal !important;
-  }
 
   .gs-snippet {
     font-size: 1rem !important;
+    margin-bottom: 10px !important;
   }
 
   .gsc-input {
     margin: 0 !important;
-    height: 36px !important;
-    font-size: 0.9rem !important;
+    height: 40px !important;
+    font-size: 1rem !important;
+    &:focus { 
+      outline:#fd0 5px solid !important;
+    }
   }
   .gsc-input-box {
-    border: 1px solid $color_hse-grey-1 !important;
+    border: 1px solid #dfe1e5 !important;
     border-right: 0px !important;
     border-top-left-radius: 0 !important;
     border-bottom-left-radius: 0 !important;
     margin: 0 !important;
-    height: 38px !important;
+    height: 42px !important;
   }
 
   .gsst_b {
@@ -162,7 +162,8 @@ td.gsc-search-button button:focus {
   .gsc-control-cse .gs-spelling,
   .gsc-control-cse .gs-result .gs-title,
   .gsc-control-cse .gs-result .gs-title * {
-    font-size: 1.4rem !important;
+    font-size: 1.1875rem !important;
+    line-height: 1.25 !important;
   }
 
   td.gsib_b {
@@ -187,5 +188,24 @@ td.gsc-search-button button:focus {
   .gsc-results .gsc-cursor-box .gsc-cursor-page,
   .gsc-result-info {
     color: $color_hse-grey-1 !important;
+  }
+
+  .gsc-refinementHeader:nth-child(n+7) {
+  display: none !important;
+  }
+
+  .gsc-tabHeader {
+  display: none !important;
+  }
+
+  .gs-webResult div.gs-visibleUrl-breadcrumb {
+    margin-bottom: 8px !important;
+  }
+  table.gsc-search-box td {
+  border: hidden;
+  }
+  .gsc-result-info-container {
+  padding: 0 !important;
+  border: none !important;
   }
 }
