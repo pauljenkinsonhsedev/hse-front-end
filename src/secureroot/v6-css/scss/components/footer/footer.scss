@@ -111,7 +111,8 @@
 
     .hse-footer__list-item-support-link {
         &:link, &:visited {color: $color_hse-white;}
-        &:hover, &:focus {color: $color_hse-black;}
+        &:hover {color: $color_hse-white;}
+        &:focus {color: $color_hse-black;}
     }
 
     
