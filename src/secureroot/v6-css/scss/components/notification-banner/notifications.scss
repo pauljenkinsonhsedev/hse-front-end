@@ -9,9 +9,11 @@
   line-height: normal;
   &__container {
   padding: 10px 0;
+  display: flex;
   }
   &__button {
   margin-bottom: 10px;
+  margin-left: auto;
   }
   &__text p {
   margin-bottom: 10px;
