@@ -132,23 +132,25 @@
 }
 
 @include mq($from: desktop) {
-.menu-button {
+.global-menu-button {
   margin-right: 0;
 }
 }
 
-.menu-button {
+.global-menu-button {
   color: $color_hse-red;
   padding-right: 20px;
 }
 
-.menu-button, .search-button {
+.global-menu-button, .search-button {
   padding-top: 1px;
   padding-bottom: 1px;
   background: none;
   border: none;
   margin-left: auto;
   margin-bottom: 4px;
+  margin-top: 0;
+  margin-bottom: 0;
   font-weight: 700;
   text-decoration: none;
   border-right: 1px solid $color_hse-grey-3;
@@ -159,13 +161,13 @@
 }
 
 .search-button:hover,
-.menu-button:hover {
+.global-menu-button:hover {
   cursor: pointer;
   position: relative;
   color: $color_hse-red;
 }
 
-.menu-button.main-menu-expanded:hover {
+.global-menu-button.main-menu-expanded:hover {
   color: $color_hse-black;
 }
 
@@ -368,9 +370,10 @@
 }
 
 .hero-image .button:focus {
-  background: none;
-  border: 2px solid #fff;
-  color: #fff;
+  background: $hse-focus-color;
+  box-shadow: 0 4px 0 #212b32;
+  color: $hse-focus-text-color;
+  outline: 4px solid rgba(0, 0, 0, 0);
 }
 
 .hero-image.landing {
