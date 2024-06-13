@@ -167,11 +167,11 @@
   color: $color_hse-red;
 }
 
-.global-menu-button.main-menu-expanded:hover {
-  color: $color_hse-black;
-}
+// .global-menu-button.main-menu-expanded {
+//   color: $color_hse-black;
+// }
 
-.search-button.main-search-expanded:hover {
+.search-button.main-search-expanded, .global-menu-button.main-menu-expanded {
   color: $color_hse-black;
 }
 

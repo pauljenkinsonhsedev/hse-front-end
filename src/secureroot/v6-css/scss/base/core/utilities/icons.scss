@@ -120,37 +120,41 @@
     position: relative;
   }
 
-  .search-button.main-search:hover:after {
-    content: "";
-    height: 3px;
-    left: 0;
-    right: 0;
-    position: absolute;
-    bottom: -11px;
-    top: auto;
-    background: $color_hse-black;
-  }
+  // .search-button:hover:after {
+  //   content: "";
+  //   height: 3px;
+  //   left: 0;
+  //   right: 0;
+  //   position: absolute;
+  //   bottom: -11px;
+  //   top: auto;
+  //   background: $color_hse-black;
+  // }
 
   .search-button.main-search.main-search-expanded:hover:after {
     background:none;
   }
 
-  .global-menu-button:hover:after  {
+  .global-menu-button:hover:after, .search-button:hover:after {
     content: "";
     height: 3px;
     left: 5px;
-    right: 10px;
+    right: 5px;
     position: absolute;
     bottom: -11px;
     top: auto;
     background: $color_hse-red;
   }
 
+  .search-button.main-search-expanded:hover:after {
+    background: none;
+  }
+
   #menu-button.global-menu-button.main-menu-expanded:after {
     content: "";
     height: 3px;
     left: 5px;
-    right: 10px;
+    right: 5px;
     position: absolute;
     bottom: -11px;
     top: auto;
@@ -161,9 +165,9 @@
     content: "";
     height: 3px;
     left: 5px;
-    right: 10px;
+    right: 5px;
     position: absolute;
-    bottom: 0;
+    bottom: -1px;
     top: auto;
     background: $color_hse-black;
   }
@@ -187,11 +191,11 @@
     display: none;
   }
 
-  .global-menu-button:hover span:before,
-  .global-menu-button.main-menu:hover span:before {
-    border-bottom: 2px solid $color_hse-red;
-    border-right: 2px solid $color_hse-red;
-  }
+  // .global-menu-button:hover span:before,
+  // .global-menu-button.main-menu:hover span:before {
+  //   border-bottom: 2px solid $color_hse-red;
+  //   border-right: 2px solid $color_hse-red;
+  // }
 
   .search-button:hover span:before,
   .search-button.main-menu:hover span:before {
@@ -199,7 +203,7 @@
     border-right: 2px solid $color_hse-red;
   }
 
-  .global-menu-button.main-menu-expanded:hover span:before {
+  .global-menu-button.main-menu-expanded span:before {
     border-bottom: 2px solid $color_hse-black;
     border-right: 2px solid $color_hse-black;
   }
@@ -211,9 +215,9 @@
     background: $color_hse-red;
   }
 
-  .global-menu-button:hover:after {
-    background: $color_hse-red;
-  }
+  // .global-menu-button:hover:after {
+  //   background: $color_hse-red;
+  // }
   
   .boxList ul li:hover h3 {
     color: white !important;
