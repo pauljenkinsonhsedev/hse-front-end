@@ -1,8 +1,9 @@
 .hse-information-banner {
     @include clearfix();
-    padding: 10px;
-    border: 2px solid $color_hse-beta;
-    margin-bottom: $hse-legacy-spacing-20;
+    padding: hse-spacing(3) 0;
+    // background-color: $color_hse-grey-4;
+    background-color: #f5e9eb;
+    border-bottom: 1px solid $color_hse-grey-3;
     &:a:link {
       text-decoration: underline;
     }
@@ -17,7 +18,10 @@
       p {
         margin-bottom: 0 !important;
       }
-  
+      &__inner {
+        border-left: 4px solid $color_hse-red;
+        padding-left: hse-spacing(2);
+      }
   }
 
   

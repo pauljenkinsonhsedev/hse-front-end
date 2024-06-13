@@ -10,6 +10,9 @@
   background-size: 16px 18px;
   padding: $hse-legacy-spacing-10 $hse-legacy-spacing-10 $hse-legacy-spacing-10 36px !important;
   text-decoration: none;
+  @include mq($media-type: print) {
+    display: none !important;
+  }
 }
 
 .printable-version {
@@ -27,4 +30,8 @@
 
 .hse-print-guide-page article {
 max-width: 44em;
+}
+
+div[id*='guide-section'] {
+padding: 0;
 }
