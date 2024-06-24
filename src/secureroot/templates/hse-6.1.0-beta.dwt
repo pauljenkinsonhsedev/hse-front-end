@@ -10,7 +10,7 @@
 <!-- TemplateEndIfClause -->
 <!-- TemplateEndMultipleIf -->
 
-<script src="../assets/v6-js/v6-cookies.js"></script>
+<script src="../assets/v6-js/v6-cookies-6.1.0.js"></script>
 <!-- Anti-flicker snippet (recommended) If installing optimise with GTM, specifcy GTM container ID  -->
 <style>
 .async-hide { opacity: 0 !important }
@@ -80,7 +80,7 @@ window.dataLayer.push({'content_group': '@@(_document['contentGroup'])@@'});
 	
 <!-- TemplateBeginMultipleIf -->
 <!-- TemplateBeginIfClause cond="platform == 'v6'" -->
-<link rel="stylesheet" href="../assets/v6-css/v6.min.css"  media="screen,print">
+<link rel="stylesheet" href="../assets/v6-css/v6-6.1.0.min.css"  media="screen,print">
 <link href="https://fonts.googleapis.com/css?family=Roboto:100,200,300,400,500,600,700,400italic&display=swap" rel="stylesheet">
   
 <!-- TemplateEndIfClause -->
@@ -217,7 +217,7 @@ window.dataLayer.push({'content_group': '@@(_document['contentGroup'])@@'});
                 <li class="hse-navigation__navigation-item"><a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="../services/index.htm">Public services</a></li>
                 <li class="hse-navigation__navigation-item"><a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="../agriculture/index.htm">Agriculture</a></li>
                 <li class="hse-navigation__navigation-item"><a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="../entertainment/index.htm">Entertainment</a></li>
-                <li class="hse-navigation__navigation-item"><a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="../waste/index.htm">Waste</a></li>
+                <li class="hse-navigation__navigation-item"><a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="../waste/index.htm">Waste management and recycling</a></li>
                 <li class="hse-navigation__navigation-item"><a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="../mvr/index.htm">Motor vehicle repair</a></li>
                 <li class="hse-navigation__navigation-item"><a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="../offshore/index.htm">Offshore oil and gas</a></li>
               </ul>
@@ -234,11 +234,11 @@ window.dataLayer.push({'content_group': '@@(_document['contentGroup'])@@'});
                 <li class="hse-navigation__navigation-item"><a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="../simple-health-safety/index.htm">Health and safety made simple</a></li>
                 <li class="hse-navigation__navigation-item"><a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="../riddor/index.htm">RIDDOR</a></li>
                 <li class="hse-navigation__navigation-item"><a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="../coshh/index.htm">COSHH</a></li>
-                <li class="hse-navigation__navigation-item"><a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="../msd/index.htm">MSD</a></li>
+                <li class="hse-navigation__navigation-item"><a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="../msd/dse/index.htm">Display screen equipment (DSE)</a></li>
                 <li class="hse-navigation__navigation-item"><a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="../asbestos/index.htm">Asbestos</a></li>
                 <li class="hse-navigation__navigation-item"><a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="../work-equipment-machinery/index.htm">Work equipment and machinery</a> </li>
-                <li class="hse-navigation__navigation-item"><a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="../stress/index.htm">Stress</a></li>
-                <li class="hse-navigation__navigation-item"><a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="../electricity/index.htm">Electricity</a> </li>
+                <li class="hse-navigation__navigation-item"><a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="../stress/index.htm">Stress and mental health</a></li>
+                <li class="hse-navigation__navigation-item"><a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="../electricity/faq-portable-appliance-testing.htm">PAT testing (portable appliance testing)</a> </li>
                 <li class="hse-navigation__navigation-item"><a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="../work-at-height/index.htm">Work at height</a> </li>
                 <li class="hse-navigation__navigation-item"><a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="../comah/index.htm">COMAH</a></li>
               </ul>
@@ -252,13 +252,13 @@ window.dataLayer.push({'content_group': '@@(_document['contentGroup'])@@'});
             <div class="hse-grid-column-one-third hse-section__content">
               <h3>About HSE</h3>
               <ul class="hse-navigation__navigation-list navigation-third-list">
-                <li class="hse-navigation__navigation-item"><a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="https://books.hse.gov.uk/">Books</a></li>
-                <li class="hse-navigation__navigation-item"><a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="#">Careers</a></li>
-                <li class="hse-navigation__navigation-item"><a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="../contact/index.htm">Contact</a></li>
-                <li class="hse-navigation__navigation-item"><a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="../news/subscribe/index.htm">Free updates</a></li>
-                <li class="hse-navigation__navigation-item"><a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="../languages/index.htm">Information in other languages</a> </li>
                 <li class="hse-navigation__navigation-item"><a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="../news/index.htm">News</a></li>
+                <li class="hse-navigation__navigation-item"><a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="../contact/index.htm">Contact us</a></li>
+                <li class="hse-navigation__navigation-item"><a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="https://books.hse.gov.uk/">Books and products</a></li>
+                <li class="hse-navigation__navigation-item"><a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="../news/subscribe/index.htm">Free updates</a></li>
                 <li class="hse-navigation__navigation-item"><a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="../aboutus/our-mission-and-priorities.htm">Our mission and priorities</a></li>
+                <li class="hse-navigation__navigation-item"><a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="https://careers.hse.gov.uk/">Careers</a></li>
+                <li class="hse-navigation__navigation-item"><a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="../languages/index.htm">Information in other languages</a></li>
               </ul>
             </div>
           </div>
@@ -270,6 +270,14 @@ window.dataLayer.push({'content_group': '@@(_document['contentGroup'])@@'});
 
   <!-- TemplateEndIfClause -->
   <!-- TemplateEndMultipleIf -->
+  
+<!-- TemplateBeginMultipleIf -->
+<!-- TemplateBeginIfClause cond="infoBanner == true" -->
+  <section id="information-banner" class="hse-information-banner" aria-label="Information" data-content="@@(_document['infoBannerContent'])@@">
+    <div class="hse-information-banner__inner hse-width-container"></div>
+  </section>
+<!-- TemplateEndIfClause -->
+<!-- TemplateEndMultipleIf -->
 
 <!-- TemplateBeginMultipleIf -->
 <!-- TemplateBeginIfClause cond="bodyClass != 'home'" -->
@@ -278,12 +286,10 @@ window.dataLayer.push({'content_group': '@@(_document['contentGroup'])@@'});
   <div class="hse-breadcrumb__container hse-width-container"> 
     <!-- TemplateBeginEditable name="Breadcrumbs" -->
     <ol class="hse-breadcrumb__list">
-      <li class="home"><a href="../index.htm">Home</a></li>
-      <li>#1</li>
-      <li>#2</li>
-      <li>#3</li>
+      <li class="hse-breadcrumb__item"><a href="../index.htm">Home</a></li>
     </ol>
-    <!-- TemplateEndEditable --> </div>
+    <!-- TemplateEndEditable -->
+  </div>
 </nav>
 <!-- TemplateEndIfClause -->
 <!-- TemplateEndMultipleIf -->
@@ -310,13 +316,7 @@ window.dataLayer.push({'content_group': '@@(_document['contentGroup'])@@'});
 <!-- TemplateEndIfClause -->
 <!-- TemplateEndMultipleIf -->
 
-<!-- TemplateBeginMultipleIf -->
-<!-- TemplateBeginIfClause cond="infoBanner == true" -->
-  <section id="information-banner" class="hse-information-banner hse-width-container" aria-label="Information" data-content="@@(_document['infoBannerContent'])@@">
-    <div class="hse-information-banner__inner"></div>
-  </section>
-<!-- TemplateEndIfClause -->
-<!-- TemplateEndMultipleIf -->
+
 
   
 <!-- TemplateBeginMultipleIf -->
@@ -452,6 +452,22 @@ window.dataLayer.push({'content_group': '@@(_document['contentGroup'])@@'});
     
   </div> <!-- end grid column (three-quarters) -->
   </div> <!-- end grid row -->
+    
+  <div class="hse-back-to-top">
+
+  <div class="hse-back-to-top__container">
+  <div class="hse-width-container">
+
+  <a class="hse-back-to-top__link" href="#pageContainer" role="button" aria-label="Back to top">
+  <svg class="hse-back-to-top__icon" xmlns="http://www.w3.org/2000/svg" width="13" height="17" viewBox="0 0 13 17" aria-hidden="true" focusable="false">
+  <path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z"></path>
+  </svg>Back to top
+  </a>
+  </div>
+  </div>
+
+  </div> 
+    
   </div> <!-- end page container -->
   </main> <!-- end <main> -->
   
@@ -609,7 +625,7 @@ window.dataLayer.push({'content_group': '@@(_document['contentGroup'])@@'});
               <li class="hse-navigation__navigation-item"><a class="hse-footer-white" href="../services/index.htm">Public services</a></li>
               <li class="hse-navigation__navigation-item"><a class="hse-footer-white" href="../agriculture/index.htm">Agriculture</a></li>
               <li class="hse-navigation__navigation-item"><a class="hse-footer-white" href="../entertainment/index.htm">Entertainment</a></li>
-              <li class="hse-navigation__navigation-item"><a class="hse-footer-white" href="../waste/index.htm">Waste</a></li>
+              <li class="hse-navigation__navigation-item"><a class="hse-footer-white" href="../waste/index.htm">Waste management and recycling</a></li>
               <li class="hse-navigation__navigation-item"><a class="hse-footer-white" href="../mvr/index.htm">Motor vehicle repair</a></li>
               <li class="hse-navigation__navigation-item"><a class="hse-footer-white" href="../offshore/index.htm">Offshore oil and gas</a></li>
             </ul>
@@ -626,11 +642,11 @@ window.dataLayer.push({'content_group': '@@(_document['contentGroup'])@@'});
               <li class="hse-navigation__navigation-item"><a class="hse-footer-white" href="../simple-health-safety/index.htm">Health and safety made simple</a></li>
               <li class="hse-navigation__navigation-item"><a class="hse-footer-white" href="../riddor/index.htm">RIDDOR</a></li>
               <li class="hse-navigation__navigation-item"><a class="hse-footer-white" href="../coshh/index.htm">COSHH</a></li>
-              <li class="hse-navigation__navigation-item"><a class="hse-footer-white" href="../msd/index.htm">MSD</a> </li>
+              <li class="hse-navigation__navigation-item"><a class="hse-footer-white" href="../msd/dse/index.htm">Display screen equipment (DSE)</a></li>
               <li class="hse-navigation__navigation-item"><a class="hse-footer-white" href="../asbestos/index.htm">Asbestos</a></li>
               <li class="hse-navigation__navigation-item"><a class="hse-footer-white" href="../work-equipment-machinery/index.htm">Work equipment and machinery</a></li>
-              <li class="hse-navigation__navigation-item"><a class="hse-footer-white" href="../stress/index.htm">Stress</a></li>
-              <li class="hse-navigation__navigation-item"><a class="hse-footer-white" href="../electricity/index.htm">Electricity</a></li>
+              <li class="hse-navigation__navigation-item"><a class="hse-footer-white" href="../stress/index.htm">Stress and mental health</a></li>
+              <li class="hse-navigation__navigation-item"><a class="hse-footer-white" href="../electricity/faq-portable-appliance-testing.htm">PAT testing (portable appliance testing)</a></li>
               <li class="hse-navigation__navigation-item"><a class="hse-footer-white" href="../work-at-height/index.htm">Work at height</a></li>
               <li class="hse-navigation__navigation-item"><a class="hse-footer-white" href="../comah/index.htm">COMAH</a></li>
             </ul>
@@ -644,13 +660,13 @@ window.dataLayer.push({'content_group': '@@(_document['contentGroup'])@@'});
           <div class="hse-grid-column-one-third hse-section__content">
             <h3 class="hse-footer__heading">About HSE</h3>
             <ul class="hse-navigation__navigation-list hse-navigation__navigation-list--footer navigation-third-list">
-              <li class="hse-navigation__navigation-item"><a class="hse-footer-white" href="https://books.hse.gov.uk/">Books</a></li>
-              <li class="hse-navigation__navigation-item"><a class="hse-footer-white" href="#">Careers</a></li>
-              <li class="hse-navigation__navigation-item"><a class="hse-footer-white" href="../contact/index.htm">Contact</a></li>
-              <li class="hse-navigation__navigation-item"><a class="hse-footer-white" href="../news/subscribe/index.htm">Free updates</a></li>
-              <li class="hse-navigation__navigation-item"><a class="hse-footer-white" href="../languages/index.htm">Information in other languages</a></li>
               <li class="hse-navigation__navigation-item"><a class="hse-footer-white" href="../news/index.htm">News</a></li>
+              <li class="hse-navigation__navigation-item"><a class="hse-footer-white" href="../contact/index.htm">Contact us</a></li>
+              <li class="hse-navigation__navigation-item"><a class="hse-footer-white" href="https://books.hse.gov.uk/">Books and products</a></li>
+              <li class="hse-navigation__navigation-item"><a class="hse-footer-white" href="../news/subscribe/index.htm">Free updates</a></li>
               <li class="hse-navigation__navigation-item"><a class="hse-footer-white" href="../aboutus/our-mission-and-priorities.htm">Our mission and priorities</a></li>
+              <li class="hse-navigation__navigation-item"><a class="hse-footer-white" href="https://careers.hse.gov.uk/">Careers</a></li>
+              <li class="hse-navigation__navigation-item"><a class="hse-footer-white" href="../languages/index.htm">Information in other languages</a></li>
             </ul>
           </div>
         </div>
@@ -663,7 +679,7 @@ window.dataLayer.push({'content_group': '@@(_document['contentGroup'])@@'});
       <div class="hse-footer__base-container">
         <div class="hse-footer__base-inner">
           <ul class="hse-footer__support-links">
-            <li class="hse-footer__list-item hse-footer__list-item--support-links"><a class="hse-footer__list-item-support-link" href="../search-results.htm">Search</a></li>
+            <li class="hse-footer__list-item hse-footer__list-item--support-links"><a class="hse-footer__list-item-support-link" href="../search/search-results.htm">Search</a></li>
             <li class="hse-footer__list-item hse-footer__list-item--support-links"><a class="hse-footer__list-item-support-link" href="../a-z/index.htm">A-Z</a></li>
             <li class="hse-footer__list-item hse-footer__list-item--support-links"><a class="hse-footer__list-item-support-link" href="../help/acronyms.htm">Acronyms</a></li>
             <li class="hse-footer__list-item hse-footer__list-item--support-links"><a class="hse-footer__list-item-support-link" href="../help/copyright.htm">Copyright</a></li>
@@ -677,7 +693,7 @@ window.dataLayer.push({'content_group': '@@(_document['contentGroup'])@@'});
             <svg aria-hidden="true" focusable="false" class="hse-footer__licence-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 483.2 195.7" height="17" width="41">
               <path fill="currentColor" d="M421.5 142.8V.1l-50.7 32.3v161.1h112.4v-50.7zm-122.3-9.6A47.12 47.12 0 0 1 221 97.8c0-26 21.1-47.1 47.1-47.1 16.7 0 31.4 8.7 39.7 21.8l42.7-27.2A97.63 97.63 0 0 0 268.1 0c-36.5 0-68.3 20.1-85.1 49.7A98 98 0 0 0 97.8 0C43.9 0 0 43.9 0 97.8s43.9 97.8 97.8 97.8c36.5 0 68.3-20.1 85.1-49.7a97.76 97.76 0 0 0 149.6 25.4l19.4 22.2h3v-87.8h-80l24.3 27.5zM97.8 145c-26 0-47.1-21.1-47.1-47.1s21.1-47.1 47.1-47.1 47.2 21 47.2 47S123.8 145 97.8 145"></path>
             </svg>
-            <p class="hse-footer__licence-description">All content is available under the Open <a href="/copyright.htm">Government Licence v3.0</a>, except where otherwise stated</p>
+            <p class="hse-footer__licence-description">All content is available under the Open <a href="../help/copyright.htm">Government Licence v3.0</a>, except where otherwise stated</p>
           </div>
         </div>
       </div>
@@ -690,7 +706,7 @@ window.dataLayer.push({'content_group': '@@(_document['contentGroup'])@@'});
 <!-- TemplateBeginEditable name="updated" -->Updated:<!-- #BeginDate -->2023-03-16<!-- #EndDate --><!-- TemplateEndEditable -->
 </section>
 
-<script src="../assets/v6-js/v6-main.min.js"></script>
+<script src="../assets/v6-js/v6-main-6.1.0.min.js"></script>
 
 <div id="gutter">
 <!-- TemplateBeginEditable name="gutter" -->
@@ -708,7 +724,7 @@ window.dataLayer.push({'content_group': '@@(_document['contentGroup'])@@'});
 <!-- TemplateParam name="survey" type="boolean" value="false" -->
 <!-- TemplateParam name="contentType" type="text" value="default" -->
 <!-- TemplateParam name="contentGroup" type="text" value="default" -->
-<!-- TemplateParam name="infoBanner" type="boolean" value="false" -->
+<!-- TemplateParam name="infoBanner" type="boolean" value="true" -->
 <!-- TemplateParam name="infoBannerContent" type="text" value="" -->
 <!-- TemplateParam name="noIndex" type="boolean" value="false" -->
 <!-- TemplateParam name="printGuide" type="boolean" value="false" -->
