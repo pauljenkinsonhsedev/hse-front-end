@@ -706,7 +706,7 @@ window.dataLayer.push({'content_group': '@@(_document['contentGroup'])@@'});
 <!-- TemplateBeginEditable name="updated" -->Updated:<!-- #BeginDate -->2023-03-16<!-- #EndDate --><!-- TemplateEndEditable -->
 </section>
 
-<script src="../assets/v6-js/v6.min.js"></script>
+<script src="../assets/v6-js/v6-main.min.js"></script>
 
 <div id="gutter">
 <!-- TemplateBeginEditable name="gutter" -->
