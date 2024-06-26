@@ -165,12 +165,11 @@ $hse-reverse-button-hover-color: shade($hse-reverse-button-color, 20%);
 $hse-reverse-button-active-color: $color-hse-black;
 $hse-reverse-button-shadow-color: $color-hse-black;
 
-$hse-transparent-button-color: transparent;
+$hse-transparent-button-color: rgba(255,255,255,0);
 $hse-transparent-button-hover-color: shade($hse-transparent-button-color, 20%);
 $hse-transparent-button-active-color: $color-hse-black;
 $hse-transparent-button-shadow-color: $color-hse-black;
 $hse-transparent-button-border-color: $color-hse-black;
-
 
 $hse-button-text-color: $color_hse-white;
 $hse-reverse-button-text-color: $color_hse-black;
