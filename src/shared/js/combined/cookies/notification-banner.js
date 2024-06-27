@@ -24,7 +24,7 @@ export function notificationBanner() {
             globalNotification.setAttribute('id', 'global-notification-banner');
             globalNotification.classList.add('hse-notification-banner');
             globalNotification.classList.add('global');
-            globalNotification.innerHTML = '<div class="hse-notification-banner__container hse-width-container"><div class="hse-notification-banner__text">' + message + '</div>' + '<button class="hse-notification-banner__button notification-hide hse-button hse-button--transparent">Hide&nbsp;message</a></button>';
+            globalNotification.innerHTML = '<div class="hse-notification-banner__container hse-width-container"><div class="hse-notification-banner__text hse-u-reading-width">' + message + '</div>' + '<div class="hse-notification-banner__button"><button class="notification-hide hse-button hse-button--transparent">Hide&nbsp;message</button></a></div>';
 
             headerContainer.insertBefore(globalNotification, globalBannerLocation.nextSibling);
 
