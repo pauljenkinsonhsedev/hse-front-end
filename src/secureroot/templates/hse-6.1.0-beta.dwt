@@ -96,12 +96,7 @@ window.dataLayer.push({'content_group': '@@(_document['contentGroup'])@@'});
 <link rel="shortcut icon" href="../favicon.ico">
 <link rel="apple-touch-icon" href="../assets/v6-images/shared/apple-touch-icon.png">
 <link rel="home" href="../index.htm">
-<!-- TemplateBeginMultipleIf -->
-<!-- TemplateBeginIfClause cond="layout == 'sideNavigation'" -->
-<!-- ie 11 fix for left-hand navigation -->
-<script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
-<!-- TemplateEndIfClause -->
-<!-- TemplateEndMultipleIf -->
+
 </head>
 <body class="@@(_document['bodyClass'])@@  hse-template-@@(_document['layout'])@@">
 
