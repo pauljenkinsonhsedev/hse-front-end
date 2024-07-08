@@ -26,8 +26,7 @@ z-index: 10;
 color: white;
 }
 display: flex;
-@include hse-responsive-padding(3, "top");
-@include hse-responsive-padding(3, "bottom");
+padding: hse-spacing(3) 0;
 }
 
 .hse-back-to-top__icon path {
