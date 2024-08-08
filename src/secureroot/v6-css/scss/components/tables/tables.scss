@@ -1,8 +1,158 @@
-th {
-  border: 1px solid #787878;
-  font-weight: bold;
-  @include hse-font(19);
+/* ==========================================================================
+   COMPONENTS / #TABLE
+   ========================================================================== */
+
+/**
+ * Table container is used to ensure the table does not break the container.
+ *
+ * 1. Margin is removed so there isn't double spacing.
+ */
+
+.hse-table-container {
+  @include hse-responsive-margin(7, "bottom");
+
+  display: block;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  overflow-x: auto;
+  width: 100%;
+
+  .hse-table {
+    margin: 0; /* [1] */
+  }
 }
+
+/* Table row hover
+========================================================================== */
+
+/**
+ * Table row hover is used to aid readability for users.
+ 
+
+.hse-table__row {
+  &:hover {
+    background-color: $color_hse-grey-5;
+  }
+}
+*/
+
+/* Table panel with tab heading
+========================================================================== */
+
+/**
+ * 1. Margin is removed so there isn't double spacing.
+ */
+
+.hse-table__panel-with-heading-tab {
+  @include panel-with-label($color_hse-white, $hse-text-color, $color_hse-grey-4);
+
+  .hse-table-container,
+  .hse-table {
+    margin: 0; /* [1] */
+  }
+}
+
+.hse-table__heading-tab {
+  @include heading-label($color_hse-blue, $color_hse-white);
+}
+
+/* Responsive table
+========================================================================== */
+
+/**
+ * 1. Hiding the thead on mobile
+ * 2. Displaying the thead on desktop
+ * 3. Removing default screen reader behaviour
+ * 4. Assigning role of table-row on desktop to give default screen reader behaviour
+ * 5. Using justify content to space out elements in the row on mobile
+ * 6. Assigning a minimum width in case of black cell
+ * 7. Aligning content to the right on mobile
+ * 8. Aligning mobile header to left to split it from the data
+ * 9. Hiding mobile specific header from desktop view
+ * 10. Adding a display block value due to IE 11 not having full flex support
+ */
+
+ .hse-table-responsive {
+  margin-bottom: 0;
+  width: 100%;
+
+  thead {
+    @include visually-hidden; /* [1] */
+
+    @include mq($from: desktop) {
+      @include visually-shown(table-header-group); /* [2] */
+    }
+  }
+
+  .hse-table__body {
+    .hse-table-responsive__heading {
+      font-weight: $hse-font-bold;
+      padding-right: hse-spacing(3);
+      text-align: left; /* [8] */
+
+      @include mq($from: desktop) {
+        display: none; /* [9] */
+      }
+    }
+
+    .hse-table__row {
+      display: block; /* [3] */
+      margin-bottom: hse-spacing(4);
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      @include mq($from: desktop) {
+        display: table-row; /* [4] */
+      }
+
+      th {
+        text-align: right;
+        @include mq($from: desktop) {
+          text-align: left;
+        }
+      }
+
+      td {
+        display: block; // For browsers that don't support flexbox
+        display: flex;
+        justify-content: space-between; /* [5] */
+        min-width: 1px; /* [6] */
+        @media all and (-ms-high-contrast: none) {
+          /* [10] */
+          display: block;
+        }
+
+        @include mq($from: desktop) {
+          display: table-cell;
+        }
+
+        @include mq($until: desktop) {
+          padding-right: 0;
+          text-align: right; /* [7] */
+          &:last-child {
+            border-bottom: 3px solid $color_hse-grey-4;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Numeric tables
+========================================================================== */
+
+/**
+ * Right aligns table cells for numeric tables.
+ */
+
+ .hse-table__header--numeric,
+ .hse-table__cell--numeric {
+   text-align: right;
+ }
+
+// Sortable
 
 .sortable {
   th {
@@ -23,55 +173,9 @@ th {
   }
 }
 
-// Borderless
 
-table.no-border {
-  td,
-  th {
-    border: none;
-    padding: $hse-legacy-spacing-10 $hse-legacy-spacing-20 $hse-legacy-spacing-10 0;
-    border-bottom: 1px solid $color_hse-grey-3;
-  }
 
-  caption {
-    background: none;
-    color: $black;
-    text-align: left;
-    padding: $hse-legacy-spacing-10 $hse-legacy-spacing-20 $hse-legacy-spacing-10 0;
-  }
-}
 
-table.no-background {
-  tr {
-    &:nth-child(even) {
-      td {
-        background: white;
-      }
-    }
-    &:nth-child(odd) {
-      td {
-        background: white;
-      }
-    }
-  }
-}
-
-table {
-  margin: 0 0 $hse-legacy-spacing-20 1px;
-  border-spacing: 0;
-  line-height: 1.5;
-}
-caption {
-  font-weight: 700;
-}
-.ie7 table {
-  border-collapse: collapse;
-}
-td {
-  padding: $hse-legacy-spacing-10 $hse-legacy-spacing-20 $hse-legacy-spacing-10 $hse-legacy-spacing-10;
-  border: 1px solid #787878;
-  @include hse-font(19);
-}
 table td.numbers,
 table td.numeric {
   text-align: right;
@@ -86,20 +190,8 @@ table.tablenumgrid td {
   text-align: right;
   white-space: nowrap;
 }
-th {
-  padding: $hse-legacy-spacing-10 $hse-legacy-spacing-20 $hse-legacy-spacing-10 $hse-legacy-spacing-10;
-  text-align: left;
-  font-weight: bold;
-}
-th.secondary,
-tr.secondary th {
-  border: 1px solid #545454;
-  font-weight: 400;
-  border-top: none;
-  padding: 2px 5px;
-  background-color: #333;
-  color: white;
-}
+
+
 div.sortDown,
 div.sortNone,
 div.sortUp {
@@ -124,10 +216,4 @@ table a.tableRowToggleClosed {
   cursor: pointer;
   text-indent: -9999px;
   margin: 2px 0 0 2px;
-}
-
-table caption {
-  padding: $hse-legacy-spacing-10;
-  color: #000;
-  text-align: left;
 }
