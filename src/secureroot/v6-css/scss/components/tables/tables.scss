@@ -60,6 +60,25 @@
   @include heading-label($color_hse-blue, $color_hse-white);
 }
 
+/* Small text for tables until desktop
+========================================================================== */
+
+/**
+ .hse-table--small-text-until-desktop
+ This class reduces the size of the text on small screens so large amounts of data has more empty space around it. 
+ This makes it easier to visually differentiate between each piece of data when read on small screens.
+*/
+
+.hse-table {
+&--small-text-until-desktop {
+  th,td {
+    @include mq($until: desktop) {
+    @include hse-typography-responsive(16);
+    }
+  }
+}
+}
+
 /* Responsive table
 ========================================================================== */
 
