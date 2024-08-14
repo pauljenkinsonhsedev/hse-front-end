@@ -66,15 +66,15 @@
 ========================================================================== */
 
 /**
- .hse-table--small-text-until-desktop
+ .hse-table--small-text-until-large-desktop
  This class reduces the size of the text on small screens so large amounts of data has more empty space around it. 
  This makes it easier to visually differentiate between each piece of data when read on small screens.
 */
 
 .hse-table {
-&--small-text-until-desktop {
+&--small-text-until-large-desktop {
   th,td {
-    @include mq($until: desktop) {
+    @include mq($until: large-desktop) {
     @include hse-typography-responsive(16);
     }
   }
