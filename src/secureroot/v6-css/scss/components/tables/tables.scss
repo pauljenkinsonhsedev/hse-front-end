@@ -198,15 +198,19 @@ table.tablenumgrid td {
 ========================================================================== */
 
 .hse-table--sortable, .sortable {
+  caption {
+    padding-bottom: hse-spacing(4);
+  }
   th {
     position: relative;
     cursor: pointer;
-    padding-right: $hse-legacy-spacing-20;
     background-image: url("../../assets/v6-images/icons/svg/tables/table-sortable.svg");
-    background-size: $hse-legacy-spacing-10 13px;
-    background-position: top 8px right 5px;
+    background-position: top 0 left 0;
     background-repeat: no-repeat;
-
+    @include mq($until: desktop) {
+    @include hse-responsive-padding(4, "top");
+    @include hse-responsive-padding(4, "bottom");
+    }
     &.sorted-asc {
       background-image: url("../../assets/v6-images/icons/svg/tables/table-sortable-up.svg");
     }
@@ -216,11 +220,11 @@ table.tablenumgrid td {
   }
 }
 
+
+
 div.sortDown,
 div.sortNone,
 div.sortUp {
-  height: $hse-legacy-spacing-10;
-  width: $hse-legacy-spacing-10;
   background-repeat: no-repeat;
 }
 div.sortUp {
