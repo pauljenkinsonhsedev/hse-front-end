@@ -226,7 +226,7 @@ window.dataLayer.push({'content_group': '@@(_document['contentGroup'])@@'});
             <div class="hse-grid-column-one-third hse-section__content">
               <h3>Topics</h3>
               <ul class="hse-navigation__navigation-list">
-                <li class="hse-navigation__navigation-item"><a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="../simple-health-safety/index.htm">Health and safety made simple</a></li>
+                <li class="hse-navigation__navigation-item"><a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="../simple-health-safety/index.htm">Basics for your business</a></li>
                 <li class="hse-navigation__navigation-item"><a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="../riddor/index.htm">RIDDOR</a></li>
                 <li class="hse-navigation__navigation-item"><a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="../coshh/index.htm">COSHH</a></li>
                 <li class="hse-navigation__navigation-item"><a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="../msd/dse/index.htm">Display screen equipment (DSE)</a></li>
@@ -640,7 +640,7 @@ window.dataLayer.push({'content_group': '@@(_document['contentGroup'])@@'});
           <div class="hse-grid-column-one-third hse-section__content">
             <h3 class="hse-footer__heading">Topics</h3>
             <ul class="hse-navigation__navigation-list hse-navigation__navigation-list--footer">
-              <li class="hse-navigation__navigation-item"><a class="hse-footer-white" href="../simple-health-safety/index.htm">Health and safety made simple</a></li>
+              <li class="hse-navigation__navigation-item"><a class="hse-footer-white" href="../simple-health-safety/index.htm">Basics for your business</a></li>
               <li class="hse-navigation__navigation-item"><a class="hse-footer-white" href="../riddor/index.htm">RIDDOR</a></li>
               <li class="hse-navigation__navigation-item"><a class="hse-footer-white" href="../coshh/index.htm">COSHH</a></li>
               <li class="hse-navigation__navigation-item"><a class="hse-footer-white" href="../msd/dse/index.htm">Display screen equipment (DSE)</a></li>
@@ -687,7 +687,6 @@ window.dataLayer.push({'content_group': '@@(_document['contentGroup'])@@'});
         <div class="hse-footer__base-inner">
           <ul class="hse-footer__support-links">
             <li class="hse-footer__list-item hse-footer__list-item--support-links"><a class="hse-footer__list-item-support-link" href="../search/search-results.htm">Search</a></li>
-            <li class="hse-footer__list-item hse-footer__list-item--support-links"><a class="hse-footer__list-item-support-link" href="../a-z/index.htm">A-Z</a></li>
             <li class="hse-footer__list-item hse-footer__list-item--support-links"><a class="hse-footer__list-item-support-link" href="../help/copyright.htm">Copyright</a></li>
             <li class="hse-footer__list-item hse-footer__list-item--support-links"><a class="hse-footer__list-item-support-link" href="../help/cookies.htm">Cookies</a></li>
             <li class="hse-footer__list-item hse-footer__list-item--support-links"><a class="hse-footer__list-item-support-link" href="../help/privacy.htm">Privacy</a></li>
