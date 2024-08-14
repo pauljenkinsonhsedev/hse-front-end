@@ -176,7 +176,26 @@
    text-align: right;
  }
 
-// Sortable
+ /* Numeric legacy
+========================================================================== */
+
+table td.numbers,
+table td.numeric {
+  text-align: right;
+}
+table.tablenumgrid th {
+  text-align: center;
+}
+table.tablenumgrid th.secondary {
+  text-align: right;
+}
+table.tablenumgrid td {
+  text-align: right;
+  white-space: nowrap;
+}
+
+/* Sortable tables
+========================================================================== */
 
 .hse-table--sortable, .sortable {
   th {
@@ -197,25 +216,6 @@
   }
 }
 
-
-
-
-table td.numbers,
-table td.numeric {
-  text-align: right;
-}
-table.tablenumgrid th {
-  text-align: center;
-}
-table.tablenumgrid th.secondary {
-  text-align: right;
-}
-table.tablenumgrid td {
-  text-align: right;
-  white-space: nowrap;
-}
-
-
 div.sortDown,
 div.sortNone,
 div.sortUp {
@@ -232,6 +232,7 @@ div.sortDown {
 div.sortNone {
   background-image: url("../../assets/v6-images/icons/svg/solid/sort-solid-red.svg");
 }
+
 table a.tableRowToggle,
 table a.tableRowToggleClosed {
   width: 12px;
@@ -241,3 +242,8 @@ table a.tableRowToggleClosed {
   text-indent: -9999px;
   margin: 2px 0 0 2px;
 }
+
+
+
+
+
