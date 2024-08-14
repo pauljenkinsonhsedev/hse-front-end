@@ -688,7 +688,6 @@ window.dataLayer.push({'content_group': '@@(_document['contentGroup'])@@'});
           <ul class="hse-footer__support-links">
             <li class="hse-footer__list-item hse-footer__list-item--support-links"><a class="hse-footer__list-item-support-link" href="../search/search-results.htm">Search</a></li>
             <li class="hse-footer__list-item hse-footer__list-item--support-links"><a class="hse-footer__list-item-support-link" href="../a-z/index.htm">A-Z</a></li>
-            <li class="hse-footer__list-item hse-footer__list-item--support-links"><a class="hse-footer__list-item-support-link" href="../help/acronyms.htm">Acronyms</a></li>
             <li class="hse-footer__list-item hse-footer__list-item--support-links"><a class="hse-footer__list-item-support-link" href="../help/copyright.htm">Copyright</a></li>
             <li class="hse-footer__list-item hse-footer__list-item--support-links"><a class="hse-footer__list-item-support-link" href="../help/cookies.htm">Cookies</a></li>
             <li class="hse-footer__list-item hse-footer__list-item--support-links"><a class="hse-footer__list-item-support-link" href="../help/privacy.htm">Privacy</a></li>
