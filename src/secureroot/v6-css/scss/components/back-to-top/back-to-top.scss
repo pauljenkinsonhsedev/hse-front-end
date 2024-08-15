@@ -22,9 +22,11 @@ width: 100%;
 background: $color_hse-grey-1;
 z-index: 10;
 .hse-back-to-top__link {
-&:link, &:visited {
+&:link, &:visited, &:focus {
 color: white;
 }
+&:active {
+background: inherit;}
 display: flex;
 padding: hse-spacing(3) 0;
 }
