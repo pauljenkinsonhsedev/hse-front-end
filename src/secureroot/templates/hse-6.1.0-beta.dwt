@@ -117,7 +117,7 @@ window.dataLayer.push({'content_group': '@@(_document['contentGroup'])@@'});
 
 <header id="headerContainer" class="hse-header">
   <div id="header" class="hse-header__container">
-    <div class="hse-width-container hse-header__top-container headerTop js-header">
+    <div class="hse-width-container hse-width-container--search hse-header__top-container headerTop js-header">
       <div id="headerLogo" class="headerLogo hse-header__logo"><a aria-label="HSE homepage" href="../index.htm">
         <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="233px" height="46px" viewBox="0 0 233 46">
           <path fill="#9f2447" d="M21.9,7.7V1.3c0-0.6-0.4-1-1-1H0v1h19.4l-4,4H0v1h14.5l-4,4H0v1h9.5L8.8,12l0,0c-0.2,0.2-0.3,0.4-0.3,0.7
