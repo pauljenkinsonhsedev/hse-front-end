@@ -5,14 +5,21 @@
 }
 
 .btn-print {
-  background: url(../../assets/v6-images/icons/icon-print.png) no-repeat 10px
-    50%;
+  background: url(../../assets/v6-images/icons/icon-print.png) no-repeat 10px 50%;
   background-size: 16px 18px;
   padding: $hse-legacy-spacing-10 $hse-legacy-spacing-10 $hse-legacy-spacing-10 36px !important;
   text-decoration: none;
   @include mq($media-type: print) {
     display: none !important;
   }
+}
+
+// default focus override
+.hse-button--transparent.btn-print {
+ &:focus {
+  background: url(../../assets/v6-images/icons/icon-print.png) no-repeat 10px 50%;
+  background-color: $hse-focus-color;
+ }
 }
 
 .printable-version {
