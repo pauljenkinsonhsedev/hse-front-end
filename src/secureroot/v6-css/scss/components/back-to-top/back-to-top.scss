@@ -7,6 +7,9 @@ flex-direction: row-reverse;
 
 .hse-back-to-top__container {
 @include hse-responsive-padding(4, "bottom");
+ .hse-width-container {
+  width: 100%;
+ }
 }
 
 .hse-back-to-top__container.hse-back-to-top--fixed, .hse-back-to-top__container.hse-back-to-top--above-aside {
