@@ -16,9 +16,6 @@
   -ms-overflow-style: -ms-autohiding-scrollbar;
   overflow-y: auto;
   overflow-x: auto;
-  @include mq($from: large-desktop) {
-  max-height: 100vw;
-  }
   width: 100%;
   .hse-table {
     margin: 0; /* [1] */
