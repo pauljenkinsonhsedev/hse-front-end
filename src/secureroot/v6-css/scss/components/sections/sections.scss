@@ -112,10 +112,14 @@ border-top: none;
 @include hse-responsive-padding(4, "top");
 }
 
-// util 
+// utility class 
 
 .hse-u-browse-link {
 font-weight: bold;
+margin-left: 20px;
+ a{
+  margin-left: -20px;
+ }
 }
 
   
