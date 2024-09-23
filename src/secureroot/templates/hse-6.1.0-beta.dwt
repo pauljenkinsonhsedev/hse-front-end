@@ -117,7 +117,7 @@ window.dataLayer.push({'content_group': '@@(_document['contentGroup'])@@'});
 
 <header id="headerContainer" class="hse-header">
   <div id="header" class="hse-header__container">
-    <div class="hse-width-container hse-header__top-container headerTop js-header">
+    <div class="hse-width-container hse-width-container--search hse-header__top-container headerTop js-header">
       <div id="headerLogo" class="headerLogo hse-header__logo"><a aria-label="HSE homepage" href="../index.htm">
         <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="233px" height="46px" viewBox="0 0 233 46">
           <path fill="#9f2447" d="M21.9,7.7V1.3c0-0.6-0.4-1-1-1H0v1h19.4l-4,4H0v1h14.5l-4,4H0v1h9.5L8.8,12l0,0c-0.2,0.2-0.3,0.4-0.3,0.7
@@ -226,7 +226,7 @@ window.dataLayer.push({'content_group': '@@(_document['contentGroup'])@@'});
             <div class="hse-grid-column-one-third hse-section__content">
               <h3>Topics</h3>
               <ul class="hse-navigation__navigation-list">
-                <li class="hse-navigation__navigation-item"><a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="../simple-health-safety/index.htm">Health and safety made simple</a></li>
+                <li class="hse-navigation__navigation-item"><a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="../simple-health-safety/index.htm">Basics for your business</a></li>
                 <li class="hse-navigation__navigation-item"><a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="../riddor/index.htm">RIDDOR</a></li>
                 <li class="hse-navigation__navigation-item"><a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="../coshh/index.htm">COSHH</a></li>
                 <li class="hse-navigation__navigation-item"><a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="../msd/dse/index.htm">Display screen equipment (DSE)</a></li>
@@ -245,16 +245,22 @@ window.dataLayer.push({'content_group': '@@(_document['contentGroup'])@@'});
                 <span class="hse-action-link__text hse-action-link__menu">Topics A to Z</span></a></div>
             </div>
             <div class="hse-grid-column-one-third hse-section__content">
-              <h3>About HSE</h3>
-              <ul class="hse-navigation__navigation-list navigation-third-list">
-                <li class="hse-navigation__navigation-item"><a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="../news/index.htm">News</a></li>
-                <li class="hse-navigation__navigation-item"><a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="../contact/index.htm">Contact us</a></li>
-                <li class="hse-navigation__navigation-item"><a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="https://books.hse.gov.uk/">Books and products</a></li>
-                <li class="hse-navigation__navigation-item"><a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="../news/subscribe/index.htm">Free updates</a></li>
-                <li class="hse-navigation__navigation-item"><a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="../aboutus/our-mission-and-priorities.htm">Our mission and priorities</a></li>
-                <li class="hse-navigation__navigation-item"><a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="https://careers.hse.gov.uk/">Careers</a></li>
-                <li class="hse-navigation__navigation-item"><a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="../languages/index.htm">Information in other languages</a></li>
+            <h3>About HSE</h3>
+            <ul class="hse-navigation__navigation-list navigation-third-list">
+              <li class="hse-navigation__navigation-item"><a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="../news/index.htm">News</a></li>
+              <li class="hse-navigation__navigation-item"><a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="../news/subscribe/index.htm">Sign up for free updates</a></li>
+              <li class="hse-navigation__navigation-item"><a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="../contact/index.htm">Contact us</a></li>
+              <li class="hse-navigation__navigation-item"><a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="../languages/index.htm">Information in other languages</a></li>
+              <li class="hse-navigation__navigation-item"><a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="../aboutus/our-mission-and-priorities.htm">Our mission and priorities</a></li>
+              <li class="hse-navigation__navigation-item"><a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="https://careers.hse.gov.uk/">Careers</a></li>
               </ul>
+              <h3>Products and services</h3>
+              <ul class="hse-navigation__navigation-list navigation-third-list">
+              <li class="hse-navigation__navigation-item"><a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="https://books.hse.gov.uk">Books and products</a></li>
+              <li class="hse-navigation__navigation-item"><a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="https://solutions.hse.gov.uk/training">Training and events</a></li>
+              <li class="hse-navigation__navigation-item"><a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="https://solutions.hse.gov.uk/testing-and-monitoring">Testing and monitoring</a></li>
+              <li class="hse-navigation__navigation-item"><a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="https://solutions.hse.gov.uk/research-and-consultancy">Research and consultancy</a></li>
+            </ul>
             </div>
           </div>
         </nav>
@@ -634,7 +640,7 @@ window.dataLayer.push({'content_group': '@@(_document['contentGroup'])@@'});
           <div class="hse-grid-column-one-third hse-section__content">
             <h3 class="hse-footer__heading">Topics</h3>
             <ul class="hse-navigation__navigation-list hse-navigation__navigation-list--footer">
-              <li class="hse-navigation__navigation-item"><a class="hse-footer-white" href="../simple-health-safety/index.htm">Health and safety made simple</a></li>
+              <li class="hse-navigation__navigation-item"><a class="hse-footer-white" href="../simple-health-safety/index.htm">Basics for your business</a></li>
               <li class="hse-navigation__navigation-item"><a class="hse-footer-white" href="../riddor/index.htm">RIDDOR</a></li>
               <li class="hse-navigation__navigation-item"><a class="hse-footer-white" href="../coshh/index.htm">COSHH</a></li>
               <li class="hse-navigation__navigation-item"><a class="hse-footer-white" href="../msd/dse/index.htm">Display screen equipment (DSE)</a></li>
@@ -653,16 +659,22 @@ window.dataLayer.push({'content_group': '@@(_document['contentGroup'])@@'});
               <span class="hse-action-link__text hse-action-link__menu">Topics A to Z</span></a></div>
           </div>
           <div class="hse-grid-column-one-third hse-section__content">
-            <h3 class="hse-footer__heading">About HSE</h3>
-            <ul class="hse-navigation__navigation-list hse-navigation__navigation-list--footer navigation-third-list">
-              <li class="hse-navigation__navigation-item"><a class="hse-footer-white" href="../news/index.htm">News</a></li>
-              <li class="hse-navigation__navigation-item"><a class="hse-footer-white" href="../contact/index.htm">Contact us</a></li>
-              <li class="hse-navigation__navigation-item"><a class="hse-footer-white" href="https://books.hse.gov.uk/">Books and products</a></li>
-              <li class="hse-navigation__navigation-item"><a class="hse-footer-white" href="../news/subscribe/index.htm">Free updates</a></li>
-              <li class="hse-navigation__navigation-item"><a class="hse-footer-white" href="../aboutus/our-mission-and-priorities.htm">Our mission and priorities</a></li>
-              <li class="hse-navigation__navigation-item"><a class="hse-footer-white" href="https://careers.hse.gov.uk/">Careers</a></li>
-              <li class="hse-navigation__navigation-item"><a class="hse-footer-white" href="../languages/index.htm">Information in other languages</a></li>
-            </ul>
+          <h3 class="hse-footer__heading">About HSE</h3>
+          <ul class="hse-navigation__navigation-list hse-navigation__navigation-list--footer navigation-third-list">
+            <li class="hse-navigation__navigation-item"><a class="hse-footer-white" href="../news/index.htm">News</a></li>
+            <li class="hse-navigation__navigation-item"><a class="hse-footer-white" href="../news/subscribe/index.htm">Sign up for free updates</a></li>
+            <li class="hse-navigation__navigation-item"><a class="hse-footer-white" href="../contact/index.htm">Contact us</a></li>
+            <li class="hse-navigation__navigation-item"><a class="hse-footer-white" href="../languages/index.htm">Information in other languages</a></li>
+            <li class="hse-navigation__navigation-item"><a class="hse-footer-white" href="../aboutus/our-mission-and-priorities.htm">Our mission and priorities</a></li>
+            <li class="hse-navigation__navigation-item"><a class="hse-footer-white" href="https://careers.hse.gov.uk/">Careers</a></li>
+          </ul>
+          <h3 class="hse-footer__heading">Products and services</h3>
+          <ul class="hse-navigation__navigation-list hse-navigation__navigation-list--footer navigation-third-list">
+            <li class="hse-navigation__navigation-item"><a class="hse-footer-white" href="https://books.hse.gov.uk">Books and products</a></li>
+            <li class="hse-navigation__navigation-item"><a class="hse-footer-white" href="https://solutions.hse.gov.uk/training">Training and events</a></li>
+            <li class="hse-navigation__navigation-item"><a class="hse-footer-white" href="https://solutions.hse.gov.uk/testing-and-monitoring">Testing and monitoring</a></li>
+            <li class="hse-navigation__navigation-item"><a class="hse-footer-white" href="https://solutions.hse.gov.uk/research-and-consultancy">Research and consultancy</a></li>
+          </ul>
           </div>
         </div>
         <hr class="hse-footer__section-break">
@@ -675,8 +687,6 @@ window.dataLayer.push({'content_group': '@@(_document['contentGroup'])@@'});
         <div class="hse-footer__base-inner">
           <ul class="hse-footer__support-links">
             <li class="hse-footer__list-item hse-footer__list-item--support-links"><a class="hse-footer__list-item-support-link" href="../search/search-results.htm">Search</a></li>
-            <li class="hse-footer__list-item hse-footer__list-item--support-links"><a class="hse-footer__list-item-support-link" href="../a-z/index.htm">A-Z</a></li>
-            <li class="hse-footer__list-item hse-footer__list-item--support-links"><a class="hse-footer__list-item-support-link" href="../help/acronyms.htm">Acronyms</a></li>
             <li class="hse-footer__list-item hse-footer__list-item--support-links"><a class="hse-footer__list-item-support-link" href="../help/copyright.htm">Copyright</a></li>
             <li class="hse-footer__list-item hse-footer__list-item--support-links"><a class="hse-footer__list-item-support-link" href="../help/cookies.htm">Cookies</a></li>
             <li class="hse-footer__list-item hse-footer__list-item--support-links"><a class="hse-footer__list-item-support-link" href="../help/privacy.htm">Privacy</a></li>

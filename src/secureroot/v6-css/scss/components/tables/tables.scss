@@ -1,77 +1,183 @@
-th {
-  border: 1px solid #787878;
-  font-weight: bold;
-  @include hse-font(19);
+/* ==========================================================================
+   COMPONENTS / #TABLE
+   ========================================================================== */
+
+/**
+ * Table container is used to ensure the table does not break the container.
+ *
+ * 1. Margin is removed so there isn't double spacing.
+ */
+
+.hse-table-container {
+  @include hse-responsive-margin(7, "bottom");
+
+  display: block;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  overflow-y: auto;
+  overflow-x: auto;
+  width: 100%;
+  .hse-table {
+    margin: 0; /* [1] */
+  }
+  &:has(.hse-table-responsive) {
+  max-height: 100%;
+  }
 }
 
-.sortable {
-  th {
-    position: relative;
-    cursor: pointer;
-    padding-right: $hse-legacy-spacing-20;
-    background-image: url("../../assets/v6-images/icons/svg/tables/table-sortable.svg");
-    background-size: $hse-legacy-spacing-10 13px;
-    background-position: top 8px right 5px;
-    background-repeat: no-repeat;
+/* Table row hover
+========================================================================== */
 
-    &.sorted-asc {
-      background-image: url("../../assets/v6-images/icons/svg/tables/table-sortable-up.svg");
+/**
+ * Table row hover is used to aid readability for users.
+ 
+
+.hse-table__row {
+  &:hover {
+    background-color: $color_hse-grey-5;
+  }
+}
+*/
+
+/* Table panel with tab heading
+========================================================================== */
+
+/**
+ * 1. Margin is removed so there isn't double spacing.
+ */
+
+.hse-table__panel-with-heading-tab {
+  @include panel-with-label($color_hse-white, $hse-text-color, $color_hse-grey-4);
+
+  .hse-table-container,
+  .hse-table {
+    margin: 0; /* [1] */
+  }
+}
+
+.hse-table__heading-tab {
+  @include heading-label($color_hse-blue, $color_hse-white);
+}
+
+/* Small text for tables until desktop
+========================================================================== */
+
+/**
+ .hse-table--small-text-until-large-desktop
+ This class reduces the size of the text on small screens so large amounts of data has more empty space around it. 
+ This makes it easier to visually differentiate between each piece of data when read on small screens.
+*/
+
+.hse-table {
+&--small-text-until-large-desktop {
+  th,td {
+    @include mq($until: large-desktop) {
+    @include hse-typography-responsive(16);
     }
-    &.sorted-desc {
-      background-image: url("../../assets/v6-images/icons/svg/tables/table-sortable-down.svg");
+  }
+}
+}
+
+/* Responsive table
+========================================================================== */
+
+/**
+ * 1. Hiding the thead on mobile
+ * 2. Displaying the thead on desktop
+ * 3. Removing default screen reader behaviour
+ * 4. Assigning role of table-row on desktop to give default screen reader behaviour
+ * 5. Using justify content to space out elements in the row on mobile
+ * 6. Assigning a minimum width in case of black cell
+ * 7. Aligning content to the right on mobile
+ * 8. Aligning mobile header to left to split it from the data
+ * 9. Hiding mobile specific header from desktop view
+ * 10. Adding a display block value due to IE 11 not having full flex support
+ */
+
+ .hse-table-responsive {
+
+  margin-bottom: 0;
+  width: 100%;
+
+  thead {
+    @include visually-hidden; /* [1] */
+
+    @include mq($from: desktop) {
+      @include visually-shown(table-header-group); /* [2] */
     }
   }
-}
 
-// Borderless
+  .hse-table__body {
+    .hse-table-responsive__heading {
+      font-weight: $hse-font-bold;
+      padding-right: hse-spacing(3);
+      text-align: left; /* [8] */
 
-table.no-border {
-  td,
-  th {
-    border: none;
-    padding: $hse-legacy-spacing-10 $hse-legacy-spacing-20 $hse-legacy-spacing-10 0;
-    border-bottom: 1px solid $color_hse-grey-3;
-  }
-
-  caption {
-    background: none;
-    color: $black;
-    text-align: left;
-    padding: $hse-legacy-spacing-10 $hse-legacy-spacing-20 $hse-legacy-spacing-10 0;
-  }
-}
-
-table.no-background {
-  tr {
-    &:nth-child(even) {
-      td {
-        background: white;
+      @include mq($from: desktop) {
+        display: none; /* [9] */
       }
     }
-    &:nth-child(odd) {
+
+    .hse-table__row {
+      display: block; /* [3] */
+      margin-bottom: hse-spacing(4);
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      @include mq($from: desktop) {
+        display: table-row; /* [4] */
+      }
+
+      th {
+        text-align: right;
+        @include mq($from: desktop) {
+          text-align: left;
+        }
+      }
+
       td {
-        background: white;
+        display: block; // For browsers that don't support flexbox
+        display: flex;
+        justify-content: space-between; /* [5] */
+        min-width: 1px; /* [6] */
+        @media all and (-ms-high-contrast: none) {
+          /* [10] */
+          display: block;
+        }
+
+        @include mq($from: desktop) {
+          display: table-cell;
+        }
+
+        @include mq($until: desktop) {
+          padding-right: 0;
+          text-align: right; /* [7] */
+          &:last-child {
+            border-bottom: 3px solid $color_hse-grey-4;
+          }
+        }
       }
     }
   }
 }
 
-table {
-  margin: 0 0 $hse-legacy-spacing-20 1px;
-  border-spacing: 0;
-  line-height: 1.5;
-}
-caption {
-  font-weight: 700;
-}
-.ie7 table {
-  border-collapse: collapse;
-}
-td {
-  padding: $hse-legacy-spacing-10 $hse-legacy-spacing-20 $hse-legacy-spacing-10 $hse-legacy-spacing-10;
-  border: 1px solid #787878;
-  @include hse-font(19);
-}
+/* Numeric tables
+========================================================================== */
+
+/**
+ * Right aligns table cells for numeric tables.
+ */
+
+ .hse-table__header--numeric,
+ .hse-table__cell--numeric {
+   text-align: right;
+ }
+
+ /* Numeric legacy
+========================================================================== */
+
 table td.numbers,
 table td.numeric {
   text-align: right;
@@ -86,25 +192,38 @@ table.tablenumgrid td {
   text-align: right;
   white-space: nowrap;
 }
-th {
-  padding: $hse-legacy-spacing-10 $hse-legacy-spacing-20 $hse-legacy-spacing-10 $hse-legacy-spacing-10;
-  text-align: left;
-  font-weight: bold;
+
+/* Sortable tables
+========================================================================== */
+
+.hse-table--sortable, .sortable {
+  caption {
+    padding-bottom: hse-spacing(4);
+  }
+  th {
+    position: relative;
+    cursor: pointer;
+    background-image: url("../../assets/v6-images/icons/svg/tables/table-sortable.svg");
+    background-position: top 0 left 0;
+    background-repeat: no-repeat;
+    @include mq($until: desktop) {
+    @include hse-responsive-padding(4, "top");
+    @include hse-responsive-padding(4, "bottom");
+    }
+    &.sorted-asc {
+      background-image: url("../../assets/v6-images/icons/svg/tables/table-sortable-up.svg");
+    }
+    &.sorted-desc {
+      background-image: url("../../assets/v6-images/icons/svg/tables/table-sortable-down.svg");
+    }
+  }
 }
-th.secondary,
-tr.secondary th {
-  border: 1px solid #545454;
-  font-weight: 400;
-  border-top: none;
-  padding: 2px 5px;
-  background-color: #333;
-  color: white;
-}
+
+
+
 div.sortDown,
 div.sortNone,
 div.sortUp {
-  height: $hse-legacy-spacing-10;
-  width: $hse-legacy-spacing-10;
   background-repeat: no-repeat;
 }
 div.sortUp {
@@ -116,6 +235,7 @@ div.sortDown {
 div.sortNone {
   background-image: url("../../assets/v6-images/icons/svg/solid/sort-solid-red.svg");
 }
+
 table a.tableRowToggle,
 table a.tableRowToggleClosed {
   width: 12px;
@@ -126,8 +246,7 @@ table a.tableRowToggleClosed {
   margin: 2px 0 0 2px;
 }
 
-table caption {
-  padding: $hse-legacy-spacing-10;
-  color: #000;
-  text-align: left;
-}
+
+
+
+
