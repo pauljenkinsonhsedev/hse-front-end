@@ -93,19 +93,6 @@ ul.listhorizontal {
   column-gap: $hse-legacy-spacing-20;
 }
 
-.ie .splitList2 ul,
-.ie .splitList3 ul,
-.ie .splitList4 ul {
-  float: left;
-  margin-left: 1em;
-}
-.ie .splitList2 ul:first-child,
-.ie .splitList3 ul:first-child,
-.ie .splitList4 ul:first-child {
-  float: none;
-  clear: both;
-}
-
 .hse-page-contents .pressReleases li {
   padding-bottom: $hse-legacy-spacing-20;
 }
