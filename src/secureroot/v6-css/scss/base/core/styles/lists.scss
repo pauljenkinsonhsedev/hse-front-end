@@ -14,7 +14,6 @@ margin: 0 !important;
 padding: 0 !important;
 }
 
-
 dd {
   margin: 0;
 }
@@ -160,41 +159,6 @@ dl.document dd {
 
 p.more {
   padding-left: $hse-legacy-spacing-10;
-}
-
-ul.listtick,
-ul.tick,
-ul.listcross,
-ul.cross {
-  margin: 0 0 10px $hse-legacy-spacing-20 !important;
-}
-
-ul.listtick li::before,
-ul.tick li::before {
-  content: "" !important;
-  float: left;
-  position: relative;
-  background: url(../../assets/v6-images/icons/svg/solid/check-solid-green.svg)
-    no-repeat 0 !important;
-  width: auto;
-  height: $hse-legacy-spacing-10;
-  top: 5px;
-  margin-left: -18px;
-  padding-left: 12px;
-}
-
-ul.listcross li::before,
-ul.cross li::before {
-  content: "" !important;
-  float: left;
-  position: relative;
-  background: url(../../assets/v6-images/icons/svg/solid/cross-solid.svg)
-    no-repeat 0 !important;
-  width: auto;
-  height: $hse-legacy-spacing-10;
-  top: 5px;
-  margin-left: -18px;
-  padding-left: 12px;
 }
 
 .mostPopular {
