@@ -11,7 +11,7 @@ import { tabs } from "./combined/tabs.js";
 import { backLinks } from "./combined/back-link.js";
 import { ariaLabels } from "./combined/aria-labels.js";
 import { googleSearch } from "./combined/google-search.js";
-import { mainSearch } from "./combined/main-search.js";
+// import { mainSearch } from "./combined/main-search.js";
 import { footnoteLinks } from "./combined/footnote-links.js";
 import { footnoteAbbr } from "./combined/footnote-abbr.js";
 import { topTasks } from "./combined/top-tasks.js";
@@ -89,10 +89,10 @@ window.addEventListener("DOMContentLoaded", () => {
   }
 
   // small device menu
-  const search = document.querySelector(".js-search");
-  if (search) {
-    mainSearch();
-  }
+  // const search = document.querySelector(".js-search");
+  // if (search) {
+  //   mainSearch();
+  // }
 
   // JS Enabled flag
   const htmlDoc = document.getElementsByTagName("html")[0];

@@ -21,7 +21,6 @@ $button-shadow-size: 4px;
   -webkit-appearance: none;
   background-color: $hse-button-color;
   border: $hse-border-width-form-element solid transparent;
-  // border-radius: 4px;
   box-shadow: 0 $button-shadow-size 0 $hse-button-shadow-color; // s0
   box-sizing: border-box;
   color: $hse-button-text-color;
@@ -246,7 +245,7 @@ $button-shadow-size: 4px;
   &:focus-visible {
     margin-top: -10px;
     margin-bottom: -10px;
-    background: $hse-focus-color;
+    background: $hse-focus-color !important;
     // box-shadow: 0 $button-shadow-size 0 $hse-focus-text-color;
     color: $hse-focus-text-color;
     outline: $hse-focus-width solid transparent;
@@ -256,11 +255,36 @@ $button-shadow-size: 4px;
   }
 }
 
+.search-button:focus-visible {
+  &:hover {
+    color: $color_hse-black;
+  }
+}
+
+.global-menu-button.main-menu-expanded:focus-visible {
+  background: $hse-focus-color;
+}
+
 .search-button:focus-visible .gsc-search-button-v2.gsc {
   background: $hse-focus-color !important;
-  svg path {
-    fill: $color_hse-black !important;
+  svg {
+    fill: $hse-focus-color !important;
   }
+  svg circle, svg line {
+    stroke: $color_hse-black !important;
+  }
+}
+
+.search-button.main-search-expanded:focus-visible .gsc-search-button-v2.gsc {
+    &:after {
+    content: "";
+    height: 3px;
+    position: absolute;
+    bottom: 0;
+    background: $color_hse-black;
+    width: 64px;
+    margin-left: -47px;
+    }
 }
 
 #menu-button.global-menu-button:focus-visible span:before {
@@ -363,7 +387,6 @@ $button-shadow-size: 4px;
     background-color: darken($hse-secondary-button-color, 10%);
     color: inherit;
   }
-
 
   &:focus {
     background: $hse-focus-color;
