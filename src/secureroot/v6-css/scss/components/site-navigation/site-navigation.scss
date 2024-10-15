@@ -19,13 +19,13 @@
   @include mq($until: desktop) {
   margin: 0;
   padding-left: 16px;
-  .hse-width-container {
-    margin: 0;
-    padding-left: 0;
-    max-width: 100%;
-    }
-  } 
- 
+  padding-right: 16px;
+    .hse-width-container {
+      margin: 0;
+      padding-left: 0;
+      max-width: 100%;
+      }
+    } 
   }
 
   .hse-navigation__navigation-item {
@@ -139,11 +139,22 @@
 
 .global-menu-button {
   color: $color_hse-red;
-  padding-right: 20px;
+  padding-right: 9px;
+  padding-left: 20px;
+  margin-right: -1px;
+  span {
+    display: block;
+    border-right: 1px solid $color_hse-grey-4;
+    padding: 5px 20px 5px 0;
+    margin-right: -9px;
+    @supports (-webkit-backdrop-filter: none) {
+      /* CSS rules specific to Safari */
+        margin-top: -1px;
+      }
+  }
 }
 
 .global-menu-button, .search-button {
-  padding-top: 1px;
   padding-bottom: 1px;
   background: none;
   border: none;
@@ -153,7 +164,6 @@
   margin-bottom: 0;
   font-weight: 700;
   text-decoration: none;
-  border-right: 1px solid $color_hse-grey-3;
   &:last-of-type {
     border-right: none;
     margin-left: 0;
@@ -167,12 +177,11 @@
   color: $color_hse-red;
 }
 
-// .global-menu-button.main-menu-expanded {
-//   color: $color_hse-black;
-// }
-
 .search-button.main-search-expanded, .global-menu-button.main-menu-expanded {
   color: $color_hse-black;
+  background: $color_hse-grey-4;
+  margin-top: -10px;
+  margin-bottom: -10px;
 }
 
 .menu.active {

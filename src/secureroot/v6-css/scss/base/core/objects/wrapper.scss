@@ -47,8 +47,18 @@
 
 @include govuk-exports("govuk/objects/width-container") {
   .hse-width-container {
-    @include govuk-width-container;
+      @include govuk-width-container;
+    }
+  .hse-width-container--search {
+    margin: 0 0 0 16px;
   }
+
+  @include mq($from: desktop) {
+    .hse-width-container--search {
+      @include govuk-width-container;
+    }
+  }
+
   .hse-width-container-fluid {
     @include hse-width-container-fluid;
   }
