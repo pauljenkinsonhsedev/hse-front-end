@@ -14,8 +14,11 @@
   display: block;
   -webkit-overflow-scrolling: touch;
   -ms-overflow-style: -ms-autohiding-scrollbar;
-  overflow-y: auto;
+  @include mq($until: desktop) {
+  // Allow large tables to overflow
+  overflow-y: auto; 
   overflow-x: auto;
+  }
   width: 100%;
   .hse-table {
     margin: 0; /* [1] */
