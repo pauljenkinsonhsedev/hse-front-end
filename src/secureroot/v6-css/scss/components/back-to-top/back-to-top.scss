@@ -16,6 +16,10 @@
         }
     }
 
+    .hse-back-to-top__icon {
+    margin-right: hse-spacing(2);
+    }
+
     &--fixed {
         display: flex;
         position: fixed;
@@ -49,8 +53,6 @@
             }
 
             .hse-back-to-top__icon {
-                margin-right: hse-spacing(2);
-
                 path {
                     fill: white; // Default icon color
                 }
@@ -62,3 +64,4 @@
         display: none; // Hide back-to-top by default
     }
 }
+
