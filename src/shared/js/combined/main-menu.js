@@ -128,13 +128,7 @@ export function mainMenu() {
     }
   });
 
-  // Shift+Tab to move back to search button from "Find out more"
-  findOutMoreButton.addEventListener('keydown', function (event) {
-    if (event.key === 'Tab' && event.shiftKey) {
-      event.preventDefault();
-      searchButton.focus();
-    }
-  });
+
 }
 
 // Helper function to create buttons
