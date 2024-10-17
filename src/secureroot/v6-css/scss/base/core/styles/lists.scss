@@ -14,7 +14,6 @@ margin: 0 !important;
 padding: 0 !important;
 }
 
-
 dd {
   margin: 0;
 }
@@ -93,19 +92,6 @@ ul.listhorizontal {
   column-gap: $hse-legacy-spacing-20;
 }
 
-.ie .splitList2 ul,
-.ie .splitList3 ul,
-.ie .splitList4 ul {
-  float: left;
-  margin-left: 1em;
-}
-.ie .splitList2 ul:first-child,
-.ie .splitList3 ul:first-child,
-.ie .splitList4 ul:first-child {
-  float: none;
-  clear: both;
-}
-
 .hse-page-contents .pressReleases li {
   padding-bottom: $hse-legacy-spacing-20;
 }
@@ -125,10 +111,6 @@ ul.listhorizontal {
   font-size: 0.9rem;
   line-height: 1.5;
   padding-right: 5px;
-}
-
-.hse-page-contents .box ul {
-  margin: 0 0 10px 15px;
 }
 
 .box dl {
@@ -177,41 +159,6 @@ dl.document dd {
 
 p.more {
   padding-left: $hse-legacy-spacing-10;
-}
-
-ul.listtick,
-ul.tick,
-ul.listcross,
-ul.cross {
-  margin: 0 0 10px $hse-legacy-spacing-20 !important;
-}
-
-ul.listtick li::before,
-ul.tick li::before {
-  content: "" !important;
-  float: left;
-  position: relative;
-  background: url(../../assets/v6-images/icons/svg/solid/check-solid-green.svg)
-    no-repeat 0 !important;
-  width: auto;
-  height: $hse-legacy-spacing-10;
-  top: 5px;
-  margin-left: -18px;
-  padding-left: 12px;
-}
-
-ul.listcross li::before,
-ul.cross li::before {
-  content: "" !important;
-  float: left;
-  position: relative;
-  background: url(../../assets/v6-images/icons/svg/solid/cross-solid.svg)
-    no-repeat 0 !important;
-  width: auto;
-  height: $hse-legacy-spacing-10;
-  top: 5px;
-  margin-left: -18px;
-  padding-left: 12px;
 }
 
 .mostPopular {

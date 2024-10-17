@@ -147,24 +147,4 @@
     background: $color_hse-red;
     color: #fff;
   }
-
-  .accordion__panel li {
-    list-style-type: square;
-  }
-  .accordion__panel ul li::marker {
-  color: #981e32;  
-  }
-  // ol fix
-  
-  .v6 ol .accordion__heading {
-    font-size: 1em;
-  }
-  
-  ol.accordion li {
-    padding: 0;
-  }
-  
-  ol.accordion {
-    font-size: inherit;
-  }
   
