@@ -1,8 +1,8 @@
 export function backToTop() {
     const backToTop = document.querySelector('.hse-back-to-top__container');
     const backToTopHook = document.querySelector('.hse-back-to-top');
-    const scrollThreshold = 800; // Set your desired scroll threshold
     const minimumContentHeight = 1000; // Minimum height required to show the button
+    const displayPercentage = 35; // Display the button after 50% of the content is scrolled
 
     // Move the back-to-top element before the aside with ID #contentAside
     const contentAside = document.querySelector('#contentAside');
@@ -27,7 +27,10 @@ export function backToTop() {
 
         // Only apply the logic if the content height exceeds the minimum required height
         if (contentHeight >= minimumContentHeight) {
-            // Check if the user has scrolled beyond the threshold
+            // Calculate the scroll threshold as a percentage of the total content height
+            const scrollThreshold = (contentHeight * displayPercentage) / 100;
+
+            // Check if the user has scrolled beyond the calculated threshold
             if (scrollY > scrollThreshold) {
                 // Show the back-to-top link if scrolled past the threshold and it's not in view
                 if (position.top > windowHeight) {
