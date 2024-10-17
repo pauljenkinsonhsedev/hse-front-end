@@ -123,7 +123,7 @@ window.addEventListener("DOMContentLoaded", () => {
   }
 
   // Append file types to anchors
-  const anchorSelector = document.querySelector("#page-contents a");
+  const anchorSelector = document.querySelector("#page-contents a, .hse-browse-section__list a");
   if (document.body.contains(anchorSelector)) {
     fileTypeFunction();
   }
