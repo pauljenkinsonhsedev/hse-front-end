@@ -1,7 +1,7 @@
 export function backToTop() {
     const backToTop = document.querySelector('.hse-back-to-top__container');
     const backToTopHook = document.querySelector('.hse-back-to-top');
-    const minimumContentHeight = 1000; // Minimum height required to show the button
+    const minimumContentHeight = 1200; // Minimum height required to show the button
     const displayPercentage = 35; // Display the button after 35% of the content is scrolled
     let isScrolling = false; // Flag to track if the user is scrolling back to top
 
