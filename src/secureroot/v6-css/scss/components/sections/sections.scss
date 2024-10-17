@@ -1,0 +1,128 @@
+// sections
+
+.hse-width-container--full {
+margin: 0;
+max-width: none;
+}
+
+// section backgrounds
+
+.hse-width-container--full .hse-section--homepage:nth-of-type(odd) {
+  background: $color_hse-grey-4;
+}
+
+.hse-section--homepage-header {
+  background: $color_hse-red;
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+
+.hse-section {
+    &:last-of-type {
+    padding-bottom: 0; 
+    }
+  }
+
+.hse-section.hse-section--homepage {
+    &:first-of-type {
+      @include hse-responsive-padding(4, "top");
+    }
+}
+
+.hse-width-container--full .hse-section:not(.hse-section--homepage-header) {
+  &:first-of-type {
+    padding-top: 0;
+  }  
+}
+
+.hse-section__content {
+@include hse-responsive-padding(4, "top");
+@include hse-responsive-padding(4, "bottom");  
+}
+
+.hse-width-container--full {
+
+.hse-section__content {
+@include hse-responsive-padding(6, "top");
+@include hse-responsive-padding(6, "bottom");
+}
+// Most popular + homepage banner
+
+.hse-section__content--most-popular {
+  @include mq($until: desktop) {
+  @include hse-responsive-padding(6, "top");
+  @include hse-responsive-padding(6, "bottom");
+  }
+  ul {margin-bottom: 0;}
+}
+
+.hse-section__content--homepage-banner {
+  @include mq($until: desktop) {
+  @include hse-responsive-padding(4, "top");
+  @include hse-responsive-padding(4, "bottom");
+  }
+}
+
+}
+
+// card groups within sections
+
+// minus margin to keep margins equal within .hse-section 
+
+.hse-section--homepage .hse-card-group {
+margin-bottom: - hse-spacing(4);
+}
+
+// Beta section headings border style
+
+.hse-section--homepage {
+  &:last-of-type {
+    border-bottom: none;
+  }
+  h2.hse-section__heading {
+    display: inline-block;
+    position: relative;
+  }
+  h2.hse-section__heading::before {
+    background-color: $color_hse-red;
+      content: '';
+      height: 4px;
+      position: absolute;
+      top: -8px;
+      width: 100%;
+    }
+}
+
+.hse-section--feedback {
+background: $color_hse-grey-4;
+border-top: 1px solid $color_hse-grey-3;
+}
+
+// browse sections
+
+.hse-browse-section {
+@include hse-responsive-margin(6, "bottom");
+}
+
+.hse-browse-section--top-border {
+border-top: 2px solid #d8d8d8;
+&:first-of-type {
+border-top: none;
+}
+@include hse-responsive-padding(4, "top");
+}
+
+// utility class 
+
+.hse-u-browse-link {
+font-weight: bold;
+margin-left: 20px;
+ a{
+  margin-left: -20px;
+ }
+}
+
+  
+  
+
+

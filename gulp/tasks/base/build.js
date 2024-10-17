@@ -11,7 +11,6 @@ requireDir("../", { recurse: true });
 // Define combined tasks for HSE
 export const hseBuild = parallel(
   "hseStyles",
-  "hseScripts",
   "sharedScripts",
   "hseCopy",
   "hseImages"
@@ -19,9 +18,8 @@ export const hseBuild = parallel(
 
 // Define combined designsystem
 export const designsystemBuild = parallel(
-  "hseStyles",
+  "designSystemStyles",
   "hseImages",
-  "hseScripts",
   "hseCopy",
   "sharedScripts",
   "designsystemCopyAssets",

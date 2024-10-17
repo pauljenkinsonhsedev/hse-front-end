@@ -19,19 +19,14 @@ category: Page features - Form elements
   &-up {
     border-left: $arrow-width solid transparent;
     border-right: $arrow-width solid transparent;
-    border-bottom: $arrow-width solid $black;
+    border-bottom: $arrow-width solid $hse-text-color;
   }
 
   &-down {
     border-left: $arrow-width solid transparent;
     border-right: $arrow-width solid transparent;
-    border-top: $arrow-width solid $black;
+    border-top: $arrow-width solid $hse-text-color;
   }
-}
-
-.select {
-  @extend .input;
-  width: 45ex;
 }
 
 .select-styled {

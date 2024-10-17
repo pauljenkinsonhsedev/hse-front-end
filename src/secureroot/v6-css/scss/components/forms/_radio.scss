@@ -1,144 +1,175 @@
-/*doc
----
-title: Radio buttons
-name: b-forms-c-radios
-category: Page features - Form elements
----
+/* ==========================================================================
+   COMPONENTS/ #RADIOS
+   ========================================================================== */
 
-```html_example
-<div class="form-group">
-  <fieldset class="fieldset" aria-describedby="changed-name-hint">
-    <legend class="fieldset__legend fieldset__legend--xl">
-      <h1 class="fieldset__heading">
-        Have you changed your name?
-      </h1>
-    </legend>
-    <span id="changed-name-hint" class="hint">
-      This includes changing your last name or spelling your name differently.
-    </span>
-    <div class="radios radios--inline">
-      <div class="radios__item">
-        <input class="radios__input" id="changed-name" name="changed-name" type="radio" value="yes">
-        <label class="label radios__label" for="changed-name">
-          Yes
-        </label>
-      </div>
-      <div class="radios__item">
-        <input class="radios__input" id="changed-name-2" name="changed-name" type="radio" value="no">
-        <label class="label radios__label" for="changed-name-2">
-          No
-        </label>
-      </div>
-    </div>
-  </fieldset>
-</div>
+/**
+ * 1. remove 300ms pause on mobile.
+ * 2. Fix bug in IE11 caused by transform rotate (-45deg).
+ */
 
-<div class="form-group">
-  <fieldset class="fieldset" aria-describedby="age-consent-hint">
-    <legend class="fieldset__legend fieldset__legend--xl">
-      <h1 class="fieldset__heading">
-        Are you over 18 years old?
-      </h1>
-    </legend>
-    <span id="-consent-hint" class="hint">
-      By selecting yes you are confirming you are legally of age.
-    </span>
-    <div class="radios">
-      <div class="radios__item">
-        <input class="radios__input" id="age-consent" name="-consent" type="radio" value="yes">
-        <label class="label radios__label" for="-consent">
-          Yes
-        </label>
-      </div>
-      <div class="radios__item">
-        <input class="radios__input" id="-consent-2" name="-consent" type="radio" value="no">
-        <label class="label radios__label" for="-consent-2">
-          No
-        </label>
-      </div>
-    </div>
-  </fieldset>
-</div>
-```
-
-*/
-
-.radios {
-  &--inline {
-    .radios__item {
-      display: inline-block;
-    }
-  }
-}
-
-.radios__item {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-weight: 400;
-  font-size: 16px;
-  font-size: 1rem;
-  line-height: 1.25;
-  display: block;
-  position: relative;
-  min-height: 40px;
-  margin-bottom: 10px;
-  padding-left: 40px;
-  clear: left;
-}
-
-.radios__input {
-  cursor: pointer;
-  position: absolute;
-  z-index: 1;
-  top: -2px;
-  left: -2px;
-  width: 44px;
-  height: 44px;
-  margin: 0;
-  opacity: 0;
-}
-
-.radios__label {
-  display: inline-block;
-  margin-bottom: 0;
-  padding: 8px 15px 5px;
-  cursor: pointer;
-  -ms-touch-action: manipulation;
-  touch-action: manipulation;
-
-  &:before {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 40px;
-    height: 40px;
-    border: 2px solid $black;
-    border-radius: 50%;
-    background: transparent;
-  }
-
-  &:after {
-    content: '';
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    width: 0;
-    height: 0;
-    border: 10px solid $black;
-    border-radius: 50%;
-    opacity: 0;
-    background: $black;
-  }
-}
-
-.radios__input:checked + .radios__label::after {
-  opacity: 1;
-}
-
-.radios__input:focus + .radios__label::before,
-.radios__input:checked + .radios__label::before {
-    border-radius: 50%;
-    box-shadow: 0 0 0 3px #fd0;
-}
+ $hse-radios-size: hse-spacing(6);
+ $hse-radios-label-padding-left-right: 12px;
+ // When the default focus width is used on a curved edge it looks visually smaller.
+ // So for the circular radios we bump the default to make it look visually consistent.
+ $hse-radios-focus-width: $hse-focus-width + 1px;
+ 
+ .hse-radios__item {
+   @include hse-font(19);
+ 
+   clear: left;
+   display: block;
+   margin-bottom: hse-spacing(2);
+   min-height: $hse-radios-size;
+   padding: 0 0 0 $hse-radios-size;
+   position: relative;
+ }
+ 
+ .hse-radios__item:last-child,
+ .hse-radios__item:last-of-type {
+   margin-bottom: 0;
+ }
+ 
+ .hse-radios__input {
+   cursor: pointer;
+   height: $hse-radios-size;
+   left: 0;
+   margin: 0;
+   opacity: 0;
+   position: absolute;
+   top: 0;
+   width: $hse-radios-size;
+   z-index: 1;
+ }
+ 
+ .hse-radios__label {
+   cursor: pointer;
+   display: inline-block;
+   margin-bottom: 0;
+   padding: 8px $hse-radios-label-padding-left-right hse-spacing(1);
+   -ms-touch-action: manipulation; /* 1 */
+   touch-action: manipulation; /* 1 */
+ }
+ 
+ .hse-radios__hint {
+   display: block;
+   padding-left: $hse-radios-label-padding-left-right;
+   padding-right: $hse-radios-label-padding-left-right;
+ }
+ 
+ .hse-radios__input + .hse-radios__label::before {
+   background: $hse-form-element-background-color;
+   border: $hse-border-width-form-element solid $hse-form-border-color;
+   border-radius: 50%;
+   box-sizing: border-box;
+   content: "";
+   height: $hse-radios-size;
+   left: 0;
+   position: absolute;
+   top: 0;
+   width: $hse-radios-size;
+ }
+ 
+ .hse-radios__input + .hse-radios__label::after {
+   background: $hse-form-border-color;
+   border: 10px solid $hse-text-color;
+   border-radius: 50%;
+   content: "";
+   height: 0;
+   left: 10px;
+   opacity: 0;
+   position: absolute;
+   top: 10px;
+   width: 0;
+ }
+ 
+ /**
+  * Focus state
+  *
+  * 1. Since box-shadows are removed when users customise their colours
+  *    We set a transparent outline that is shown instead.
+  *    https://accessibility.blog.gov.uk/2017/03/27/how-users-change-colours-on-websites/
+  */
+ 
+ .hse-radios__input:focus + .hse-radios__label::before {
+   @include hse-focused-radio();
+ }
+ 
+ /* Selected state */
+ 
+ .hse-radios__input:checked + .hse-radios__label::after {
+   opacity: 1;
+ }
+ 
+ /* Disabled state */
+ 
+ .hse-radios__input:disabled,
+ .hse-radios__input:disabled + .hse-radios__label {
+   cursor: default;
+ }
+ 
+ .hse-radios__input:disabled + .hse-radios__label {
+   opacity: 0.5;
+ }
+ 
+ /*
+  * Inline variant
+  *
+  * 1. Prevent inline modifier being used with conditional reveals
+  */
+ 
+ .hse-radios--inline {
+   @include mq($from: tablet) {
+     @include clearfix;
+ 
+     .hse-radios__item {
+       clear: none;
+       float: left;
+       margin-right: hse-spacing(4);
+     }
+   }
+ 
+   &.hse-radios--conditional {
+     /* 1 */
+     .hse-radios__item {
+       float: none;
+       margin-right: 0;
+     }
+   }
+ }
+ 
+ /* Divider variant */
+ 
+ .hse-radios__divider {
+   $hse-divider-size: $hse-radios-size !default;
+   @include hse-font(19);
+ 
+   color: $hse-text-color;
+   margin-bottom: hse-spacing(2);
+   text-align: center;
+   width: $hse-divider-size;
+ }
+ 
+ /* Conditional */
+ 
+ $conditional-border-width: $hse-border-width-mobile;
+ // Calculate the amount of padding needed to keep the border centered against the radios.
+ $conditional-border-padding: ($hse-radios-size * 0.5) - ($conditional-border-width * 0.5);
+ // Move the border centered with the radios
+ $conditional-margin-left: $conditional-border-padding;
+ // Move the contents of the conditional inline with the label
+ $conditional-padding-left: $conditional-border-padding + $hse-radios-label-padding-left-right;
+ 
+ .hse-radios__conditional {
+   @include hse-responsive-margin(4, "bottom");
+   border-left: $conditional-border-width solid $hse-form-border-color;
+   margin-left: $conditional-margin-left;
+   padding-left: $conditional-padding-left;
+ 
+   & > :last-child {
+     margin-bottom: 0;
+   }
+ }
+ 
+ .js-enabled .hse-radios__conditional--hidden {
+   display: none;
+ }

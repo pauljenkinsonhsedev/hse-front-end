@@ -1,6 +1,19 @@
 
 .hse-feedback {
   @include clearfix();
+  @include mq($media-type: print) {
+    display: none;
+  }
+}
+
+.feedback-container {
+  background: $color_hse-grey-4;
+  border-top: 1px solid $color_hse-grey-2;
+}
+
+#feedback {
+  max-width: $hse-page-width;
+  margin: 0 auto;
 }
 
 .hse-feedback__prompt {
@@ -8,38 +21,60 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  // remove margins from buttons
+  button {
+  margin: 0;
+  }
   @include mq($from: tablet) {
   flex-direction: row;
   padding: 0;
   }
-  @include mq($from: $desktop) {
+  @include mq($from: desktop) {
   justify-content: space-between;
   }
-  padding: 10px;
 
-  background: $color_hse-red;
+  background: $color_hse-grey-4;
   &.js-feedback-open
   {
     background: white;
     }
 }
 
+.hse-section--feedback:has(.js-feedback-open) {
+background: white;
+}
 
+.hse-section--feedback .hse-feedback__prompt {
+  background: inherit;
+  border-top: none;
+}
 
+.hse-feedback__prompt-link {
+box-shadow: 0 3px 0 #0b0c0c;
+}
 
-.hse-feedback__prompt-questions-answers {
+.hse-feedback__prompt-link.btn {
+background: none;
+border: 1px solid $color_hse-grey-2; 
+}
+
+.hse-feedback__prompt-questions-answers, .hse-feedback__report-a-problem {
 display: flex;
 padding: 10px;
 align-items: center;
+.btn {
+  margin: 0;
+  }
+@include mq($from: desktop) {
+  margin: 10px 32px;
+  padding: 0;
+  }
+@include mq($from: hse-desktop) {
+  margin: 10px 0;
+  padding: 0;
+  }
 }
 
-.hse-feedback__prompt-questions-answers .btn {
-margin: 0;
-}
-
-.hse-feedback__report-a-problem {
-padding: 10px;
-}
 
 .fieldset {
 &.report-a-problem-form__questions, &.report-a-problem-form__hidden-fields {margin: 0;}
@@ -50,9 +85,9 @@ margin: 0;
 }
 
 .hse-feedback__prompt-question {
-color: white;
 margin: 0;
 margin-right: 10px;
+@include hse-font(16);
 }
 
 .feedback-links a {
@@ -90,7 +125,9 @@ margin-right: 10px;
   overflow-y: hidden;
   float: left;
   display: none;
-
+  .hse-fieldset__heading {
+  font-weight: 600;
+  }
   &.survey-in {
     display: flex;
   }
@@ -176,11 +213,15 @@ p.question-hint {
     &:focus {
       outline: none;
       background-color: #fd0;
-      color: $black;
+      color: $hse-text-color;
     }
   }
 }
 
+.feedback {
+  background: $color_hse-grey-4;
+  border-top: 1px solid $color_hse-grey-3; 
+}
 
 .feedback-message-active {
   margin-top: 0 !important;
@@ -188,25 +229,12 @@ p.question-hint {
 
 .report-a-problem-container {
   text-align: center;
-  @media only screen and (min-width: 661px) {
-    float: right;
-  }
-  @media only screen and (min-width: $desktop) {
-    width: 50%;
-  }
 }
 
 .report-a-problem-form {
   width: 100%;
   margin: 0 auto;
   display: none;
-}
-
-.report-a-problem-container .btn {
-  float: none;
-  @media only screen and (min-width: 661px) {
-    float: right;
-  }
 }
 
 .report-a-problem-form form {
@@ -225,3 +253,4 @@ p.question-hint {
   background: $color_hse-grey-4;
   padding: $hse-legacy-spacing-10;
 }
+

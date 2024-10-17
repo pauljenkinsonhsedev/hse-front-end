@@ -21,10 +21,8 @@ $switch-size: 26px;
       width: 50%;
       top: 50%;
       transform: translateY(-50%);
-      color: $black;
+      color: $hse-text-color;
       cursor: pointer;
-      @include type-setting(0);
-
       transition: color 300ms ease-in-out;
   }
   &:before {
@@ -42,7 +40,7 @@ $switch-size: 26px;
           color: $mono-d;
       }
       &:after {
-          color: $black;
+          color: $hse-text-color;
       }
   }
 }

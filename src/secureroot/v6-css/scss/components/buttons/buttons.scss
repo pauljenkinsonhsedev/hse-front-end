@@ -1,156 +1,408 @@
-%button-cosmetic {
-    appearance: none;
-    outline: 0;
-    border: 0;
-    display: inline-block;
-    background-color: #eee;
-    background-color: #ccc;
-    color: $black;
-    #pageContainer & {
-      margin-bottom: $dp * 2;
-    }
-    @media only screen and (min-width: $desktop) {
-      white-space: nowrap;
-    }
-    text-align: center;
+/* ==========================================================================
+   COMPONENTS/ #BUTTON
+   ========================================================================== */
+
+/**
+ * 1. Ensure that any global link styles are overridden.
+ * 2. Fix unwanted button padding in Firefox.
+ * 3. Use a pseudo element to expand the click target area to include the
+ *    button's shadow as well, in case users try to click it.
+ */
+
+// Because the shadow (s0) is visually 'part of' the button, we need to reduce
+// the height of the button to compensate by adjusting its padding (s1) and
+// increase the bottom margin to include it (s1).
+$button-shadow-size: 4px;
+
+.hse-button {
+  text-decoration: none;
+  @include hse-font(19);
+  @include hse-responsive-margin(5, "bottom", $adjustment: $button-shadow-size); // s1
+  -webkit-appearance: none;
+  background-color: $hse-button-color;
+  border: $hse-border-width-form-element solid transparent;
+  box-shadow: 0 $button-shadow-size 0 $hse-button-shadow-color; // s0
+  box-sizing: border-box;
+  color: $hse-button-text-color;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 600;
+  margin-top: 0;
+  padding: 8px hse-spacing(3); // s2
+  position: relative;
+  text-align: center;
+  vertical-align: top;
+  width: auto;
+
+  @include mq($until: tablet) {
+    padding: hse-spacing(2) hse-spacing(3); // s2
+  }
+
+  /* 2 */
+  &:link,
+  &:visited,
+  &:active,
+  &:hover {
+    color: $hse-button-text-color;
     text-decoration: none;
-    font-weight: 700;
-    vertical-align: top;
-    user-select: none;
-    padding: ($dp) ($dp * 3);
-    border-width: $border-width;
-    border-style: solid;
-    border-color: transparent;
-    border-radius: $button-border-radius;
-    cursor: pointer;
-  
-    @include type-setting(0);
-  
-    transition: all 300ms ease-in-out;
-  
+  }
+
+  /* 3 */
+  &::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+  }
+
+  &:hover {
+    background-color: $hse-button-hover-color;
+  }
+
+  &:focus {
+    background: $hse-focus-color;
+    box-shadow: 0 $button-shadow-size 0 $hse-focus-text-color;
+    color: $hse-focus-text-color;
+    outline: $hse-focus-width solid transparent;
+
+    &:visited {
+      color: $hse-focus-text-color;
+
+      &:active {
+        color: $color_hse-white;
+      }
+    }
+  }
+
+  &:active {
+    background: $hse-button-active-color;
+    box-shadow: none;
+    color: $hse-button-text-color;
+    top: $button-shadow-size;
+  }
+
+  /* 4 */
+  &::before {
+    background: transparent;
+    bottom: -($hse-border-width-form-element + $button-shadow-size);
+    content: "";
+    display: block;
+    left: -$hse-border-width-form-element;
+    position: absolute;
+    right: -$hse-border-width-form-element;
+    top: -$hse-border-width-form-element;
+  }
+
+  //
+  // When the button is active it is shifted down by $button-shadow-size to
+  // denote a 'pressed' state. If the user happened to click at the very top
+  // of the button, their mouse is no longer over the button (because it has
+  // 'moved beneath them') and so the click event is not fired.
+  //
+  // This corrects that by shifting the top of the pseudo element so that it
+  // continues to cover the area that the user originally clicked, which means
+  // the click event is still fired.
+  //
+
+  &:active::before {
+    top: -($hse-border-width-form-element + $button-shadow-size);
+  }
+}
+
+/**
+ * Button variations
+ */
+
+.hse-button--secondary {
+  background-color: $hse-secondary-button-color;
+  box-shadow: 0 $button-shadow-size 0 $hse-secondary-button-shadow-color;
+  color: $color_hse-black;
+
+  &:hover {
+    background-color: darken($hse-secondary-button-color, 10%);
+    color: inherit;
+  }
+
+
+  &:focus {
+    background: $hse-focus-color;
+    box-shadow: 0 $button-shadow-size 0 $hse-focus-text-color;
+    color: $hse-focus-text-color;
+    outline: $hse-focus-width solid transparent;
+  }
+
+  &:active {
+    background: $hse-secondary-button-active-color;
+    box-shadow: none;
+    color: $hse-button-text-color;
+    top: $button-shadow-size;
+  }
+
+  &.hse-button--disabled {
+    background-color: $hse-secondary-button-color;
+  }
+}
+
+.hse-button--reverse {
+  background-color: $hse-reverse-button-color;
+  box-shadow: 0 $button-shadow-size 0 $hse-reverse-button-shadow-color;
+  color: $hse-reverse-button-text-color;
+
+  &:hover {
+    background-color: darken($hse-reverse-button-color, 5%);
+    color: $hse-reverse-button-text-color;
+  }
+
+  &:focus {
+    background: $hse-focus-color;
+    box-shadow: 0 $button-shadow-size 0 $hse-focus-text-color;
+    color: $hse-focus-text-color;
+    outline: $hse-focus-width solid transparent;
+  }
+
+  &:active {
+    background: $hse-reverse-button-active-color;
+    box-shadow: none;
+    color: $color_hse-white;
+    top: $button-shadow-size;
+  }
+
+  &:link {
+    color: $hse-reverse-button-text-color;
+
+    &:active {
+      color: $color_hse-white;
+    }
+  }
+
+  &.hse-button--disabled {
+    background-color: $hse-reverse-button-color;
+
     &:focus {
-      outline: $hse-focus-color solid;
+      background-color: $hse-reverse-button-color;
     }
   }
-  
-  .btn:not(.visually-hidden) + .btn {
-    @media (min-width: $tablet) {
-      margin-left: $dp * 2;
+}
+
+.hse-button--cautionary {
+  background-color: $hse-cautionary-button-color;
+  box-shadow: 0 $button-shadow-size 0 $hse-cautionary-button-shadow-color;
+
+  &:hover {
+    background-color: darken($hse-cautionary-button-color, 10%);
+  }
+
+  &:focus {
+    background: $hse-focus-color;
+    box-shadow: 0 $button-shadow-size 0 $hse-focus-text-color;
+    color: $hse-focus-text-color;
+    outline: $hse-focus-width solid transparent;
+  }
+
+  &:active {
+    background: $hse-cautionary-button-active-color;
+    box-shadow: none;
+    color: $hse-button-text-color;
+    top: $button-shadow-size;
+  }
+
+  &.hse-button--disabled {
+    background-color: $hse-cautionary-button-color;
+  }
+}
+
+.hse-button--transparent {
+  background-color: $hse-transparent-button-color;
+  box-shadow: 0 $button-shadow-size 0 $hse-transparent-button-shadow-color;
+  border: 1px solid $hse-transparent-button-border-color;
+  color: $hse-reverse-button-text-color;
+  &:hover {
+    background-color: $color_hse-grey-3;
+    color: $hse-reverse-button-text-color;
+    color: $hse-reverse-button-text-color;
+  }
+
+  &:focus {
+    background: $hse-focus-color;
+    box-shadow: 0 $button-shadow-size 0 $hse-focus-text-color;
+    color: $hse-focus-text-color;
+    outline: $hse-focus-width solid transparent;
+  }
+
+  &:active {
+    background: $hse-transparent-button-active-color;
+    box-shadow: none;
+    color: $hse-button-text-color;
+    top: $button-shadow-size;
+  }
+
+  &.hse-button--disabled {
+    background-color: $hse-transparent-button-color;
+  }
+}
+
+.global-menu-button, .search-button {
+  margin-top: 0;
+  margin-bottom: 0;
+  &:focus-visible {
+    margin-top: -10px;
+    margin-bottom: -10px;
+    background: $hse-focus-color !important;
+    // box-shadow: 0 $button-shadow-size 0 $hse-focus-text-color;
+    color: $hse-focus-text-color;
+    outline: $hse-focus-width solid transparent;
+    &:hover {
+      color: $color_hse-black;
     }
   }
-  
-  input,
-  button,
-  a {
-    &.btn {
-      margin-bottom: $hse-legacy-spacing-20;
-      @extend %button-cosmetic;
-  
-      &:hover {
-        background-color: darken(#eee, 10%);
-      }
-      &:disabled {
-        background-color: rgba(#eee, 0.5);
-        color: #ccc;
-      }
-  
-      &-small {
-        padding: ($vr) $dp + $vr;
-      }
-    }
-  
-    &.btn-primary {
-      background-color: $yes;
-      color: $color_hse-white;
-      margin-bottom: $hse-legacy-spacing-20;
-  
-      &:hover {
-        background-color: $hse-focus-color;
-        color: $black;
-      }
-  
-      &:focus {
-        background-color: $hse-focus-color;
-        color: $black;
-        outline: none;
-      }
-  
-      &:disabled {
-        background-color: rgba($yes, 0.5);
-        color: $color_hse-white;
-      }
-    }
-  
-    &.btn-secondary {
-      background-color: $color_hse-red;
-      border: 1px solid white;
-      color: $color_hse-white;
-      margin-bottom: $hse-legacy-spacing-20;
-  
-      &:hover {
-        background-color: $hse-focus-color;
-        border: 1px solid $hse-focus-color;
-        color: $black;
-      }
-  
-      &:disabled {
-        background-color: rgba($yes, 0.5);
-        color: $color_hse-white;
-      }
-      &:focus {
-        background-color: $hse-focus-color;
-        color: $black;
-        border: none;
-      }
-    }
-  
-    &.btn-cautionary {
-      background-color: $color_hse-red;
-      color: $color_hse-white;
-      &:hover {
-        background-color: lighten($color_hse-red, 10%);
-      }
-      &:disabled {
-        background-color: rgba($color_hse-red, 0.5);
-        color: $color_hse-white;
-      }
-    }
-  
-    &.btn-important {
-      background-color: $hse-focus-color;
-      color: #333;
-      &:hover {
-        background-color: $color_hse-red;
-        color: white;
-      }
-      &:disabled {
-        background-color: rgba($hse-focus-color, 0.5);
-        color: #666;
-      }
-      &:focus {
-        background: $color_hse-red;
-        color: white;
-      }
-    }
+}
+
+.search-button:focus-visible {
+  &:hover {
+    color: $color_hse-black;
   }
-  
-  .btn.btn-start {
-    border-bottom: 2px solid #333;
-    @include type-setting(3);
-    line-height: 1.5;
+}
+
+.global-menu-button.main-menu-expanded:focus-visible {
+  background: $hse-focus-color;
+}
+
+.search-button:focus-visible .gsc-search-button-v2.gsc {
+  background: $hse-focus-color !important;
+  svg {
+    fill: $hse-focus-color !important;
   }
-  
-  .btn-start::after {
-    content: " ";
-    position: relative;
-    background-image: url(../../assets/v6-images/icons/svg/solid/chevron-right-white.svg);
-    background-repeat: no-repeat;
-    background-position: bottom;
-    display: inline-block;
-    width: 15px;
-    height: $hse-legacy-spacing-20;
-    margin: 0;
-    bottom: -4px;
-    margin-left: 10px;
+  svg circle, svg line {
+    stroke: $color_hse-black !important;
   }
-  
+}
+
+.search-button.main-search-expanded:focus-visible .gsc-search-button-v2.gsc {
+    &:after {
+    content: "";
+    height: 3px;
+    position: absolute;
+    bottom: 0;
+    background: $color_hse-black;
+    width: 64px;
+    margin-left: -47px;
+    }
+}
+
+#menu-button.global-menu-button:focus-visible span:before {
+  border-bottom: 2px solid $color_hse-black !important;
+  border-right: 2px solid $color_hse-black !important;
+}
+
+.hse-button--start {
+&:after {
+  content: " ";
+  position: relative;
+  background-image: url(../../assets/v6-images/icons/svg/solid/chevron-right-white.svg);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  display: inline-block;
+  width: 15px;
+  height: 20px;
+  margin: 0;
+  bottom: -4px;
+  margin-left: 10px;
+}
+&:focus::after {
+  background-image: url(../../assets/v6-images/icons/svg/solid/chevron-right-black.svg);
+}
+}
+
+/**
+ * Button disabled states
+ */
+/* stylelint-disable string-quotes */
+.hse-button--disabled,
+.hse-button[disabled="disabled"],
+.hse-button[disabled] {
+  background-color: $hse-button-color;
+  opacity: (0.5);
+  pointer-events: none;
+
+  &:hover {
+    background-color: $hse-button-color;
+    cursor: default;
+  }
+
+  &:focus {
+    background-color: $hse-button-color;
+    outline: none;
+  }
+
+  &:active {
+    box-shadow: 0 $button-shadow-size 0 $hse-button-shadow-color; // s0
+    top: 0;
+  }
+}
+
+.hse-button--secondary[disabled="disabled"],
+.hse-button--secondary[disabled] {
+  background-color: $hse-secondary-button-color;
+  opacity: (0.5);
+
+  &:hover {
+    background-color: $hse-secondary-button-color;
+    cursor: default;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:active {
+    box-shadow: 0 $button-shadow-size 0 $hse-secondary-button-shadow-color; // s0
+    top: 0;
+  }
+}
+
+.hse-button--reverse[disabled="disabled"],
+.hse-button--reverse[disabled] {
+  background-color: $hse-reverse-button-color;
+  opacity: (0.5);
+
+  &:hover {
+    background-color: $hse-reverse-button-color;
+    cursor: default;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:active {
+    box-shadow: 0 $button-shadow-size 0 $hse-reverse-button-shadow-color; // s0
+    top: 0;
+  }
+}
+
+.hse-button--menu {
+  background-color: $hse-secondary-button-color;
+  box-shadow: 0 $button-shadow-size 0 $hse-secondary-button-shadow-color;
+  color: $color_hse-black;
+
+  &:hover {
+    background-color: darken($hse-secondary-button-color, 10%);
+    color: inherit;
+  }
+
+  &:focus {
+    background: $hse-focus-color;
+    box-shadow: 0 $button-shadow-size 0 $hse-focus-text-color;
+    color: $color_hse-black;
+    outline: $hse-focus-width solid transparent;
+  }
+
+  &:active {
+    background: $hse-secondary-button-active-color;
+    box-shadow: none;
+    color: $hse-button-text-color;
+    top: $button-shadow-size;
+  }
+
+  &.hse-button--disabled {
+    background-color: $hse-secondary-button-color;
+  }
+}

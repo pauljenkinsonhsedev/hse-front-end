@@ -2,96 +2,97 @@
 
 // .hse-breadcrumb ol specificty can be removed if .hse-breadrumb__list is applied to all breadcrumbs
 
-.hse-breadcrumb {
-background-color: $color_hse-grey-4;
+.hse-breadcrumb__container {
+padding: hse-spacing(3) 0;
 }
 
-.hse-breadcrumb__container {
-  padding-top: hse-spacing(2);
-  @include mq($from: desktop) {
-    margin-bottom: $hse-legacy-spacing-20;
-  }
+.hse-breadcrumb__container ol {
+@include mq($until: desktop) {
+display: none;
+}
+@include mq($media-type: print) {
+display: block;
+}
 }
 
 .hse-breadcrumb__list, .hse-breadcrumb ol {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  font-size: 1.1em;
+list-style: none;
+margin: 0;
+padding: 0;
+font-size: 1.1em;
 }
 
+.hse-breadcrumb__item:first-of-type::before {
+display: none;
+}
+  
 .hse-breadcrumb__back {
-padding: hse-spacing(2) 0;
-margin-bottom: $hse-legacy-spacing-20;
+
+&::before {
+content: " ";
+background-image: url(../../assets/v6-images/icons/svg/solid/chevron-right-gray.svg);
+transform: rotate(180deg);
+background-repeat: no-repeat;
+background-position: bottom;
+float: left;
+top: 10px;
+margin: 0 8px;
+position: relative;
+width: 10px;
+height: 10px;  
+}
+
+padding: 0;
+margin: 0;
 @include mq($from: desktop) {
 display: none;
 }
+@include mq($media-type: print) {
+display: none;
 }
-  
-.hse-breadcrumb ol li::before {
-    content: " ";
-    background-image: url("../../assets/v6-images/icons/svg/solid/chevron-right-gray.svg");
-    background-repeat: no-repeat;
-    background-position: bottom;
-    float: left;
-    top: 4px;
-    margin-right: 4px;
-    position: relative;
-    width: 17px;
-    height: 17px;
-  }
+
+}
+
+
+
+
 
 .hse-breadcrumb ol li {
-padding-bottom: hse-spacing(2);
-display: inline-block;
-font-size: 0.9em;
-margin: 0;
+&::before {
+  content: " ";
+  background-image: url("../../assets/v6-images/icons/svg/solid/chevron-right-gray.svg");
+  background-repeat: no-repeat;
+  background-position: bottom;
+  float: left;
+  top: 11px;
+  margin: 0 8px;
+  position: relative;
+  width: 10px;
+  height: 10px;
 }
-  
-  #breadCrumb ol li.home {
-    background: 0 0;
-    padding: 0;
-  }
-  
-  #breadCrumb ol li.home::before {
-    display: none;
-  }
-  
-  #breadCrumb ol li a {
-    color: $color_hse-grey-1;
-    text-decoration: underline;
-  }
-  
-  #breadCrumb ol li a:hover {
-    text-decoration: none;
-  }
+&:first-of-type {
+&::before {
+display: none;
+}
+}
+}
 
-  #backTo {
-    background-color: $color_hse-grey-1;
-  }
-  
-  .backto {
-    padding-top: 10px;
-    margin: 0;
-    display: inline-block;
-    width: 100%;
-    @media only screen and (min-width: $desktop) {
-      display: none;
-    }
-  }
-  
-  p.backto {
-    font-size: 0.9rem;
-    padding: 0;
-  }
-  
-  p.backto a {
-    color: white;
-  }
-  
-  p.backto a:focus {
-    color: $black;
-    outline: none;
-  }
-  
-  
+.hse-breadcrumb ol li {
+display: inline-block;
+margin: 0;
+@include mq($media-type: print) {
+padding-bottom: 10px;
+}
+a {
+color: $color_hse-red;
+&:visited {
+color: $color_hse-red;
+}
+&:focus {
+color: $color_hse-black;
+}
+}
+}
+
+
+

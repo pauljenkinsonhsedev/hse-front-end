@@ -1,0 +1,65 @@
+/* ==========================================================================
+   OBJECTS / #WIDTH-CONTAINER
+   ========================================================================== */
+
+/**
+ * Page width for the grid system
+ *
+ * Original code taken from GDS (Government Digital Service)
+ * https://github.com/alphagov/govuk-frontend
+ *
+ * 1. On mobile, add half width gutters
+ * 2. Limit the width of the container to the page width
+ * 3. From desktop, add full width gutters
+ * 4. As soon as the viewport is greater than the width of the page plus the
+ *    gutters, just centre the content instead of adding gutters.
+ * 5. Full width container, spanning the entire width of the viewport
+ * 6. Feedback message from 1024px is not full width. Adding 100% width fixes the issue.
+ */
+
+ @mixin govuk-width-container {
+  margin: 0 $hse-gutter-half; /* [1] */
+
+  max-width: $hse-page-width; /* [2] */
+
+  @include govuk-media-query($from: desktop) {
+    margin: 0 $hse-gutter; /* [3] */
+  }
+
+  @include mq($from: 1024px) {
+    width: 100%; /* [6] */
+  }
+
+  /* [4] */
+  @include govuk-media-query($and: "(min-width: #{($hse-page-width + $hse-gutter * 2)})") {
+    margin: 0 auto;
+  }
+}
+
+@mixin hse-width-container-fluid {
+  margin: 0 $hse-gutter-half;
+  max-width: 100%; /* [5] */
+
+  @include govuk-media-query($from: desktop) {
+    margin: 0 $hse-gutter; /* [3] */
+  }
+}
+
+@include govuk-exports("govuk/objects/width-container") {
+  .hse-width-container {
+      @include govuk-width-container;
+    }
+  .hse-width-container--search {
+    margin: 0 0 0 16px;
+  }
+
+  @include mq($from: desktop) {
+    .hse-width-container--search {
+      @include govuk-width-container;
+    }
+  }
+
+  .hse-width-container-fluid {
+    @include hse-width-container-fluid;
+  }
+}

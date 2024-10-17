@@ -1,0 +1,46 @@
+
+// V4 legacy
+.hidden,
+.hide {
+  position: absolute;
+  left: -1000em;
+}
+.hideFromScreen {
+  display: none;
+  @include mq($media-type: print) {
+  display: inline;
+  }
+}
+
+/* @mixin hse-visually-hidden {
+    clip: rect(1px, 1px, 1px, 1px);
+    height: 1px;
+    overflow: hidden;
+    position: absolute !important;
+    width: 1px;
+}
+
+@mixin visually-hidden {
+    @include hse-visually-hidden
+}
+
+*/
+
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  opacity: 0;
+}
+
+.hide-notification {
+  display: none !important;
+}
+
+.noFileType .fileType {
+display: none;
+}

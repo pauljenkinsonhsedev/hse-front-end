@@ -1,0 +1,67 @@
+.hse-back-to-top {
+    display: flex;
+    flex-direction: row-reverse;
+
+    &__container {
+        @include hse-responsive-padding(4, "bottom");
+        padding-bottom: 10px;
+
+        .hse-width-container {
+            width: 100%;
+        }
+
+        &.hse-back-to-top--fixed,
+        &.hse-back-to-top--above-aside {
+            padding-bottom: 0;
+        }
+    }
+
+    .hse-back-to-top__icon {
+    margin-right: hse-spacing(2);
+    }
+
+    &--fixed {
+        display: flex;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        z-index: 10;
+        background: $color_hse-grey-1;
+
+        .hse-back-to-top__link {
+            display: flex;
+            padding: hse-spacing(3) 0;
+            color: white; // Default link color
+
+            &:link,
+            &:visited {
+                color: white; // Ensure link color for visited and focused states
+            }
+
+            &:focus {
+                color: $hse-text-color;  
+                
+                // Change the icon color to black on focus
+                .hse-back-to-top__icon path {
+                    fill: black;
+                }
+            }
+
+            &:active {
+                background: inherit; // Maintain inherited background on active state
+            }
+
+            .hse-back-to-top__icon {
+                path {
+                    fill: white; // Default icon color
+                }
+            }
+        }
+    }
+
+    &--hidden {
+        display: none; // Hide back-to-top by default
+    }
+}
+

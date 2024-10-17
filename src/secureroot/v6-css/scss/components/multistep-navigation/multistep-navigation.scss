@@ -1,51 +1,51 @@
 // Multi step nav
 
-.hse-contents-list {
-margin-bottom: $hse-legacy-spacing-20;
+.hse-multistep-navigation {
+@include hse-responsive-padding(4, "bottom");
+border-bottom: 4px solid #d8d8d8;
 }
-  
-  .multistep--columns-two {
-    width: 100%;
-    @media only screen and (min-width: $desktop) {
-      column-count: 2;
-      width: 620px !important;
-    }
+
+.hse-multistep-navigation__title {
+@extend .hse-contents-list__title
+}
+
+.multistep--columns-two, .hse-multistep-navigation__list--columns-two  {
+  width: 100%;
+  @include mq($from: desktop) {
+    column-count: 2;
   }
-  
-  ol.multistep.multistep--dashed {
-    list-style-type: none;
-    position: relative;
-    width: 100%;
+}
+
+ol.multistep.multistep--dashed, .hse-multistep-navigation__list.hse-multistep-navigation__list--dashed  {
+  list-style-type: none;
+  position: relative;
+  width: 100%;
+  margin: 0;
+  li {
+    padding: 0 hse-spacing(2);
   }
-  
-  ol.multistep.multistep--dashed li,
-  ul.multistep.multistep--dashed li {
-    padding-left: $hse-legacy-spacing-10;
+}
+
+ol.multistep.multistep--dashed li::before, ol.hse-multistep-navigation__list.hse-multistep-navigation__list--dashed li::before {
+  content: "—";
+  position: absolute;
+  color: $color_hse-grey-3;
+  left: 0;
+  width: $hse-legacy-spacing-20;
+  overflow: hidden;
+}
+
+.multistep, .hse-multistep-navigation__list {
+  width: 100%;
+  padding: 0 0 0 20px;
+}
+
+ol.multistep li, ol.hse-multistep-navigation__list li  {
+  @include hse-typography-responsive(16);
+  line-height: 1.5 !important;
+  padding: 0 hse-spacing(2);
+  clear: both;
+  &:a {
+    display: inline-block;
   }
-  
-  ul.multistep li::before,
-  ol.multistep.multistep--dashed li::before {
-    content: "—";
-    position: absolute;
-    color: $color_hse-grey-3;
-    left: 0;
-    width: $hse-legacy-spacing-20;
-    overflow: hidden;
-  }
-  
-  .multistep {
-    width: 100%;
-    @media only screen and (min-width: $desktop) {
-      width: 310px;
-    }
-    margin: 0;
-  }
-  
-  ol.multistep li {
-    margin-left: 15px;
-    padding-top: 7.5px;
-    @media only screen and (min-width: $desktop) {
-      padding-top: 2.5px;
-    }
-    clear: both;
-  }
+}

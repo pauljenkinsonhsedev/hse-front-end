@@ -1,13 +1,14 @@
 
-
+#cookie-message {
+  @include mq($media-type: print) {
+  display: none;
+  }
+  }
+  
 .hse-cookie-banner {
   padding: 20px 0;
-  background: #eee;
+  background: $color_hse-grey-4;
 }
-
-
-
-
 
 #cookieContainer p a {
     // color: $hse-focus-color;
@@ -42,17 +43,12 @@
   .cookies-message__heading {
     font-weight: 700;
     margin-bottom: 10px !important;
-    @include type-setting(2);
-    @media only screen and (max-width: $desktop) {
-      @include type-setting(3);
-    }
     line-height: 1.5;
     margin-bottom: 0;
   }
   
   .cookies-message__copy {
     p {
-      @include type-setting(0);
       line-height: 1.5;
     }
   }
@@ -62,13 +58,19 @@
   }
 
   .v6-span-heading1 {
-    color: $black;
+    color: $hse-text-color;
     font-size: 2em;
     padding: 0;
     margin-bottom: 10px;
   }
 
   #cookieNotify p {
-    color: $black;
+    color: $hse-text-color;
     // font-size: 1.1em;
+  }
+
+  .cookies-message-accepted, .cookies-message-rejected {
+  .hse-button {
+  margin: 0;
+  }
   }

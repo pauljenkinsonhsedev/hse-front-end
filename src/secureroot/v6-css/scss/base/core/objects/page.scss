@@ -1,0 +1,67 @@
+
+#menu {
+  margin-bottom: $hse-legacy-spacing-20;
+}
+
+#navigationContainer {
+width: $full-width;
+margin: 15px auto 0 auto;
+height: 33px;
+}
+
+#gutter,
+#printBanner {
+display: none;
+}
+
+#lastUpdated {
+display: none;
+}
+
+#contentContainer {
+  flex: 1;
+}
+
+  /* Footer */
+
+#footer h2 {
+  color: white;
+}
+
+
+
+.footer-links-container ul {
+list-style-type: none;
+margin: 0;
+}
+
+
+#languagesDropdown-container {
+  width: 100%;
+}
+
+// Header
+
+
+
+#navigationContainer {
+  height: 33px;
+}
+
+.navDropdown {
+  font-size: 1.1em !important;
+}
+
+#contentContainer {
+  flex: 1;
+}
+
+// Cookie container
+
+// Print page
+#printGuide {
+  margin-top: $hse-legacy-spacing-20;
+}
+
+
+

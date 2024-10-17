@@ -1,0 +1,158 @@
+// ==========================================================================
+// TOOLS / #LINKS
+// ==========================================================================
+
+//
+// Default link styling
+//
+// Usage: @include hse-link-style-default;
+//
+
+@mixin hse-link-style-default {
+    color: $hse-link-color;
+  
+    &:visited {
+      color: $hse-link-visited-color;
+    }
+  
+    &:hover {
+      color: $hse-link-hover-color;
+      text-decoration: none;
+    }
+  
+    &:focus {
+      @include hse-focused-text();
+  
+      &:hover {
+        text-decoration: none;
+      }
+  
+      &:visited {
+        color: $hse-focus-text-color;
+      }
+  
+      .hse-icon {
+        fill: $hse-focus-text-color;
+      }
+    }
+  
+    &:active {
+      color: $hse-link-active-color;
+    }
+  }
+  
+  //
+  // White link styling, used in the footer.
+  //
+  // Usage: @include hse-link-style-white;
+  //
+  
+  @mixin hse-link-style-white {
+    color: $color_hse-white;
+  
+    &:visited {
+      color: $color_hse-white;
+    }
+  
+    &:hover {
+      color: $color_hse-white;
+      text-decoration: none;
+    }
+  
+    &:focus {
+      color: $hse-focus-text-color;
+      outline: $hse-focus-width solid transparent;
+      outline-offset: $hse-focus-width;
+      text-decoration: none;
+    }
+  
+    &:active {
+      color: $hse-link-active-color-white;
+    }
+  }
+  
+  //
+  // Default link hover only styling
+  //
+  // Usage: @include hse-link-style-hover;
+  //
+  
+  @mixin hse-link-style-hover {
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  
+  /// No visited state link mixin
+  ///
+  /// Used in cases where it is not helpful to distinguish between visited and
+  /// non-visited links.
+  ///
+  /// For example, navigation links to pages with dynamic content like admin
+  /// dashboards. The content on the page is changing all the time, so the fact
+  /// that you’ve visited it before is not important.
+  ///
+  /// If you use this mixin in a component you must also include the
+  /// hse-link-style-default mixin in order to get the focus state.
+  ///
+  /// @example scss
+  ///   .hse-component__link {
+  ///     @include hse-link-style-default;
+  ///     @include hse-link-style-no-visited-state;
+  ///   }
+  ///
+  
+  @mixin hse-link-style-no-visited-state {
+    &:link {
+      color: $hse-link-color;
+    }
+  
+    &:visited {
+      color: $hse-link-color;
+    }
+  
+    &:hover {
+      color: $hse-link-hover-color;
+    }
+  
+    &:active {
+      color: $hse-link-active-color;
+    }
+  
+    &:focus {
+      color: $hse-focus-text-color;
+    }
+  }
+  
+  /// Text link styles
+  ///
+  /// Makes links use the primary text colour, in all states. Use this mixin for
+  /// navigation components, such as breadcrumbs or the back link.
+  ///
+  /// If you use this mixin in a component, you must also include the
+  /// `hse-link-style-default` mixin to get the correct focus and hover states.
+  ///
+  /// @example scss
+  ///   .hse-component__link {
+  ///     @include hse-link-style-default;
+  ///     @include hse-link-style-text;
+  ///   }
+  ///
+  
+  @mixin hse-link-style-text {
+    &:link,
+    &:visited {
+      color: $hse-text-color;
+    }
+  
+    // Force a colour change on hover to work around a bug in Safari
+    // https://bugs.webkit.org/show_bug.cgi?id=224483
+    &:hover {
+      color: rgba($hse-text-color, 0.99);
+    }
+  
+    &:active,
+    &:focus {
+      color: $hse-text-color;
+    }
+  }

@@ -1,0 +1,178 @@
+/* ==========================================================================
+#SIDE NAVIGATION - DESIGN SYSTEM
+========================================================================== */
+
+.hse-design-side-navigation {
+@include mq($until: desktop) {
+margin-bottom: hse-spacing(4);
+}
+@include hse-font(16);
+@include mq($until: desktop) {
+  display: flex;
+  overflow-x: scroll;
+}
+
+@include mq($from: desktop) {
+  display: block;
+}
+
+&__title {
+  @include hse-font($size: 19);
+  color: hse-colour("dark-grey");
+  font-weight: normal;
+  margin: 0;
+  padding: hse-spacing(2) + 4px 0;
+  @include mq($until: desktop) {
+    display: none;
+  }
+
+}
+
+&__list {
+  margin-left: -10px !important;
+  list-style: none !important;
+  margin: hse-spacing(4) 0;
+  padding: 0;
+  @include mq($until: desktop) {
+    display: flex;
+    margin: 0;
+    white-space: nowrap;
+  }
+
+  @include mq($from: desktop) {
+    margin-bottom: hse-spacing(4);
+  }
+  // Nested
+
+  &--nested {
+  @include mq($until: desktop) {
+    display: none !important;
+  }
+  margin: 0 0 0 hse-spacing(2);
+  padding-left: 20px;
+  .hse-design-side-navigation__item {
+    a:link {
+      display: inline !important;
+      font-weight: normal;
+    }
+  }
+
+  }
+
+}
+
+&__item {
+  font-size: 1rem;
+  padding-left: hse-spacing(2);
+  @include mq($until: desktop) {
+    display: flex;
+  }
+
+
+  a,
+  a:link,
+  a:visited {
+    background-color: inherit;
+    color: $hse-link-color;
+    display: block;
+    text-decoration: none;
+
+    @include mq($until: desktop) {
+      border-bottom: 4px solid transparent;
+      padding: hse-spacing(3);
+      padding-bottom: hse-spacing(3) - 4px; // Compensate for 4px border
+    }
+
+    @include mq($from: desktop) {
+      background-color: inherit;
+      // border-left: 4px solid transparent;
+      //padding: hse-spacing(2);
+    }
+
+
+  }
+
+  a:hover {
+    color: $hse-link-hover-color;
+  }
+
+  a:focus {
+    color: $hse-focus-text-color;
+    background-color: $hse-focus-color;
+    border-color: $hse-focus-text-color;
+    position: relative;
+  }
+
+  
+&--active {
+  @include mq($from: desktop) {
+  border-left: 4px solid $hse-link-color;
+  }
+  &:has(.hse-design-side-navigation__list--nested) {
+    border-left: 4px solid $hse-link-color;
+    @include mq($until: desktop) {
+    border-bottom: 4px solid $hse-link-color !important;
+    border-left: none;
+    }
+    padding-left: hse-spacing(2);
+    a {
+      border: none;
+    }
+  }
+a:link,
+a:visited {
+  border-color: $hse-link-color;
+  color: $hse-link-color;
+  font-weight: bold;
+}
+
+a:hover {
+  color: $hse-link-hover-color;
+  border-color: $hse-link-hover-color;
+}
+
+a:focus {
+  color: $hse-focus-text-color;
+  background-color: $hse-focus-color;
+  border-color: $hse-focus-text-color;
+}
+
+@include mq($from: tablet) {
+  a:link,
+  a:visited {
+    background-color: white;
+  }
+
+  a:focus {
+    color: $hse-focus-text-color;
+    background-color: $hse-focus-color;
+  }
+}
+
+
+}
+
+}
+
+}
+
+// Toggle nested items
+
+.hse-design-side-navigation__list--nested {
+  .hse-design-side-navigation__item & {
+    display: none;
+  }
+  .hse-design-side-navigation__item--active & {
+    display: block;
+  }
+}
+
+.hse-design-side-navigation__list--nested {
+  &:has(.hse-design-side-navigation__item--active) {
+    display: block;
+  }
+}
+  
+
+  
+ 

@@ -1,24 +1,145 @@
-// Subscribe box
 
-.eBulletinButton {
-width: auto;
-max-width: 100px;
-font-size: 1em;
-padding: $hse-legacy-spacing-10;
-}
+.hse-subscribe {
+display: flex;
+align-items: center;
+flex-direction: column;
+border: 2px solid $hse-border-color;
+@include hse-responsive-padding(4);
 
-.eBulletinButton:hover {
-cursor: pointer;
-background: $color_hse-grey-1;
-}
-
-.subscribe .form-group, .subscribe .btn, .subscribe fieldset {
+margin-bottom: hse-spacing(6);
+&__form-group {
+width: 100%;
 margin-bottom: 0;
-margin: 0 !important;
 }
+&__form {
+flex: auto;
+width: 100%;
+}
+&__form-group {
+display: flex;
+@include mq($until: tablet) {
+flex-direction: column;
+align-items: center;
+}
+}
+button {
+margin-bottom: 0;
+margin-top: hse-spacing(4);
+padding: 5px;
+max-width: fit-content;
+}
+.hse-button {
+box-shadow: none;
+}
+
+&:before {
+content: "";
+background: url(../../assets/v6-images/icons/mail.svg) white no-repeat 0;
+background-repeat: no-repeat;
+display: inline-block;
+width: 24px;
+height: 24px;
+padding-right: hse-spacing(4);
+}
+
+.hse-subscribe__text {
+width: 100%;
+margin-bottom: 0;
+@include hse-responsive-padding(4);
+@include mq($from: tablet) {
+padding: 0 hse-spacing(4);
+}
+@include mq($until: desktop) {
+text-align: center;    
+}
+}
+
+.hse-input--subscribe {
+width: 100%;
+@include mq($until: desktop) {
+min-width: 220px;
+}
+min-width: 320px;
+height: 46px;
+@include mq($from: tablet) {
+margin-right: 10px;
+}
+}
+
+.hse-subscribe__submit {
+display: flex;
+flex-direction: column;
+}
+}
+
+
+
+
+// Full width layout
+
+.hse-page-contents--fullWidth {
+
+.hse-subscribe {
+flex-direction: column;
+@include mq($from: tablet) {
+flex-direction: row;
+}
+&__form {
+flex: auto;
+@include mq($from: desktop) {
+    margin-left: auto;
+}
+}
+.hse-button {
+@include mq($from: tablet) {
+margin: 0;
+}
+}
+}
+
+
+}
+
+// contents
+
+.hse-page-contents .hse-subscribe {
+.hse-subscribe__text {
+padding: hse-spacing(4);
+}
+&__form-group {
+display: flex;
+flex-direction: column;
+align-items: center;
+&__hse-input--subscribe {
+margin: 0;
+}
+}
+}
+
+// sidebar
+
+.hse-sidebar-top .hse-subscribe, .hse-sidebar .hse-subscribe {
+    @include hse-responsive-padding(3);
+    &__form-group {
+        flex-direction: column;
+        align-items: center;
+    }  
+    .hse-input--subscribe {
+    min-width: fit-content;
+    margin-right: 0;
+    }
+    .hse-subscribe__text {
+    text-align: center;
+    }
+    .hse-button {
+    @include hse-responsive-margin(2, "top");
+    }
+}
+
+// legacy subscribe box
 
 .subscribe .fieldset__heading {
-color: $black;
+color: $hse-text-color;
 }
 
 

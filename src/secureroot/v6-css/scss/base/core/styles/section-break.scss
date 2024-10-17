@@ -1,0 +1,70 @@
+/* ==========================================================================
+   STYLES / #SECTION-BREAK
+   ========================================================================== */
+
+// The % (silent class) allows code to be extended (@extend) to other elements
+// without bloating the code.
+//
+// @example scss
+//  .foo {
+//   @extend %hse-section-break--xl;
+//  }
+
+/**
+ * 1. Extended the section-break--l code for usage of a semantic <hr> with
+ * no class name.
+ *
+ * Original code taken from GDS (Government Digital Service)
+ * https://github.com/alphagov/govuk-frontend
+ */
+
+ %hse-section-break {
+    border: 0;
+    margin: 0;
+  }
+  
+  .hse-section-break {
+    @extend %hse-section-break;
+  }
+  
+  %hse-section-break--xl {
+    @include hse-responsive-margin(8, "top");
+    @include hse-responsive-margin(8, "bottom");
+  }
+  
+  .hse-section-break--xl {
+    @extend %hse-section-break--xl;
+  }
+  
+  %hse-section-break--l {
+    @include hse-responsive-margin(6, "top");
+    @include hse-responsive-margin(6, "bottom");
+  }
+  
+  .hse-section-break--l {
+    @extend %hse-section-break--l;
+  }
+  
+  %hse-section-break--m {
+    @include hse-responsive-margin(4, "top");
+    @include hse-responsive-margin(4, "bottom");
+  }
+  
+  .hse-section-break--m {
+    @extend %hse-section-break--m;
+  }
+  
+  %hse-section-break--visible {
+    border-bottom: 2px solid $hse-border-color;
+  }
+  
+  .hse-section-break--visible {
+    @extend %hse-section-break--visible;
+  }
+  
+  hr {
+    /* [1] */
+    @extend %hse-section-break;
+    @extend %hse-section-break--l;
+    @extend %hse-section-break--visible;
+  }

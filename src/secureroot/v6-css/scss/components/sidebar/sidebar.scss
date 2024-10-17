@@ -1,3 +1,53 @@
-.hse-sidebar h2 {
-    font-size: 1.1rem !important;
+
+.hse-sidebar__navigation, .hse-sidebar-top {
+
+p, label {  @include hse-font(16);}
+
+ul {
+margin: 0;
+padding-left: 0;
+list-style: none;
+@include hse-responsive-margin(6, "bottom");
+li {
+  @include mq($from: desktop) {
+  line-height: 1.5 !important;
+  @include hse-typography-responsive(16);
   }
+}
+}  
+
+h2, h3 {
+  position: relative;
+  padding-top: 10px;
+  }
+
+  h2::before {
+  background-color: $color_hse-red;
+    content: '';
+    height: 4px;
+    position: absolute;
+    top: -4px;
+    width: 100%;
+  
+  }
+
+
+h2 {
+  @include hse-font(19);
+  margin-bottom: hse-spacing(2);
+  font-weight: 700;
+}
+.box {
+background: none !important;
+padding: 0;
+}
+}
+
+.hse-sidebar__navigation {
+  @include hse-responsive-margin(6, "bottom");
+  @include mq($media-type: print) {
+  @include hse-responsive-margin(6, "top");
+
+  }
+}
+

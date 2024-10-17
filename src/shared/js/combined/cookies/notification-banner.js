@@ -1,9 +1,9 @@
 import Cookies from 'js-cookie';
 import { customEventListener } from '../utils/add-custom-event-listener';
 
-const setCookiesSettings = { path: '/', domain: 'hse.gov.uk', secure: true, sameSite: 'strict', expires: 1};
+   const setCookiesSettings = { path: '/', domain: 'hse.gov.uk', secure: true, sameSite: 'strict', expires: 1};
 // const setCookiesSettings = { path: '/', domain: 'beta.hse.gov.uk', secure: true, sameSite: 'strict', expires: 1};
-//    const setCookiesSettings = { path: '/', domain: 'localhost', secure: false, sameSite: 'strict', expires: 1};
+// const setCookiesSettings = { path: '/', domain: 'localhost', secure: false, sameSite: 'strict', expires: 1};
 
 // So we can access Cookies inline for Analytics in the HTML
 window.Cookies = Cookies;
@@ -22,9 +22,9 @@ export function notificationBanner() {
             globalBannerLocation = document.querySelector('#header'),
             globalNotification = document.createElement('div');
             globalNotification.setAttribute('id', 'global-notification-banner');
-            globalNotification.classList.add('notification-banner');
+            globalNotification.classList.add('hse-notification-banner');
             globalNotification.classList.add('global');
-            globalNotification.innerHTML = '<div class="notification-container fixed-container">' + message + '<button class="notification-hide btn btn-small btn-important">Hide&nbsp;message</a></button>';
+            globalNotification.innerHTML = '<div class="hse-notification-banner__container hse-width-container"><div class="hse-notification-banner__text hse-u-reading-width">' + message + '</div>' + '<div class="hse-notification-banner__button"><button class="notification-hide hse-button hse-button--transparent">Hide&nbsp;message</button></a></div>';
 
             headerContainer.insertBefore(globalNotification, globalBannerLocation.nextSibling);
 

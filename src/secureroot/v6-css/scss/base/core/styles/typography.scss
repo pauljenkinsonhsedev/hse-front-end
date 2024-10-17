@@ -1,0 +1,263 @@
+/* ==========================================================================
+   STYLES / #TYPOGRAPHY
+   ========================================================================== */
+
+/* Headings */
+
+// The % (silent class) allows code to be extended (@extend) to other elements
+// without bloating the code.
+//
+// @example scss
+//  .foo {
+//   @extend %hse-heading-xl;
+//  }
+
+%hse-heading-xl {
+    @include hse-typography-responsive(48);
+  
+    display: block;
+    font-weight: $hse-font-bold;
+    margin-top: 0;
+  
+    @include hse-responsive-margin(7, "bottom");
+  }
+
+  h1 { color: $color_hse-red;}
+  
+  h1,
+  .hse-heading-xl {
+    @extend %hse-heading-xl;
+  }
+  
+  %hse-heading-l {
+    @include hse-typography-responsive(32);
+  
+    display: block;
+    font-weight: $hse-font-bold;
+    margin-top: 0;
+  
+    @include hse-responsive-margin(4, "bottom");
+  }
+  
+  h2,
+  .hse-heading-l {
+    @extend %hse-heading-l;
+  }
+  
+  %hse-heading-m {
+    @include hse-typography-responsive(24);
+  
+    display: block;
+    font-weight: $hse-font-bold;
+    margin-top: 0;
+  
+    @include hse-responsive-margin(4, "bottom");
+  }
+  
+  h3,
+  .hse-heading-m {
+    @extend %hse-heading-m;
+  }
+  
+  %hse-heading-s {
+    @include hse-typography-responsive(22);
+  
+    display: block;
+    font-weight: $hse-font-bold;
+    margin-top: 0;
+  
+    @include hse-responsive-margin(4, "bottom");
+  }
+  
+  h4,
+  .hse-heading-s {
+    @extend %hse-heading-s;
+  }
+  
+  %hse-heading-xs {
+    @include hse-typography-responsive(19);
+  
+    display: block;
+    font-weight: $hse-font-bold;
+    margin-top: 0;
+  
+    @include hse-responsive-margin(4, "bottom");
+  }
+  
+  h5,
+  .hse-heading-xs {
+    @extend %hse-heading-xs;
+  }
+  
+  %hse-heading-xxs {
+    @include hse-typography-responsive(19);
+  
+    display: block;
+    font-weight: $hse-font-bold;
+    margin-top: 0;
+  
+    @include hse-responsive-margin(4, "bottom");
+  }
+  
+  h6,
+  .hse-heading-xxs {
+    @extend %hse-heading-xxs;
+  }
+  
+  /* Captions to be used inside headings */
+  
+  .hse-caption-xl {
+    @include hse-font(32);
+  
+    color: $hse-secondary-text-color;
+    display: block;
+    margin-bottom: hse-spacing(1);
+  }
+  
+  .hse-caption-l {
+    @include hse-font(24);
+  
+    color: $hse-secondary-text-color;
+    display: block;
+    margin-bottom: hse-spacing(1);
+  }
+  
+  .hse-caption-m {
+    @include hse-font(19);
+  
+    color: $hse-secondary-text-color;
+    display: block;
+  }
+  
+  .hse-caption--bottom {
+    margin-bottom: hse-spacing(0);
+    margin-top: hse-spacing(1);
+  }
+  
+  /* Body (paragraphs) */
+  
+  %hse-body-l {
+    @include hse-typography-responsive(24);
+  
+    display: block;
+    margin-top: 0;
+  
+    @include hse-responsive-margin(5, "bottom");
+  }
+  
+  .hse-body-l {
+    @extend %hse-body-l;
+  }
+  
+  %hse-body-m {
+    @include hse-typography-responsive(19);
+  
+    display: block;
+    margin-top: 0;
+  
+    @include hse-responsive-margin(4, "bottom");
+  }
+  
+  p,
+  .hse-body-m, .accordion__heading {
+    @extend %hse-body-m;
+    color: inherit;
+  }
+  
+  %hse-body-s {
+    @include hse-typography-responsive(16);
+  
+    display: block;
+    margin-top: 0;
+  
+    @include hse-responsive-margin(4, "bottom");
+  }
+  
+  .hse-body-s {
+    @extend %hse-body-s;
+  }
+  
+  address {
+    @extend %hse-body-m;
+  
+    font-style: normal;
+  }
+  
+  /**
+   * Lede text
+   *
+   * 1. Apply lede text styling to p and ul within the lede element
+   * 2. Reduces the spacing between the page heading and the lede text
+   */
+  
+  .hse-lede-text {
+    @include hse-font(24);
+    line-height: 1.5 !important;
+    @include hse-responsive-margin(7, "bottom");
+    /* [1] */
+    p,
+    ul {
+      @include hse-font(24);
+    }
+  }
+  
+  .hse-lede-text--small {
+    @include hse-font(19);
+    @include hse-responsive-margin(5, "bottom");
+  }
+  
+  /* [2] */
+  h1 + .hse-lede-text,
+  h1 + .hse-lede-text--small {
+    margin-top: -(hse-spacing(2));
+  }
+  
+  /**
+   * Contextual adjustments
+   *
+   * Add top padding to headings that appear directly after paragraphs.
+   *
+   * 1. Removes the padding-top because of the lede-text's increased margin-bottom
+   *
+   * Original code taken from GDS (Government Digital Service)
+   * https://github.com/alphagov/hse-frontend
+   */
+  
+  %hse-body-l + %hse-heading-l {
+    padding-top: hse-spacing(1);
+  
+    @include mq($from: tablet) {
+      padding-top: hse-spacing(2);
+    }
+  }
+  
+  %hse-body-m + %hse-heading-l,
+  %hse-body-s + %hse-heading-l,
+  %hse-list + %hse-heading-l {
+    @include hse-responsive-padding(4, "top");
+  }
+  
+  %hse-body-m + %hse-heading-m,
+  %hse-body-s + %hse-heading-m,
+  %hse-list + %hse-heading-m,
+  %hse-body-m + %hse-heading-s,
+  %hse-body-s + %hse-heading-s,
+  %hse-list + %hse-heading-s {
+    padding-top: hse-spacing(1);
+  
+    @include mq($from: tablet) {
+      padding-top: hse-spacing(2);
+    }
+  }
+  
+  /* [1] */
+  .hse-lede-text + %hse-heading-l {
+    padding-top: 0;
+  }
+  
+  /* Font weight for <strong> and <b> */
+  
+  strong,
+  b {
+    font-weight: $hse-font-bold;
+  }

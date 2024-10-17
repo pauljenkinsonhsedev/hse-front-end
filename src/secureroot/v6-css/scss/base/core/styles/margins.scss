@@ -1,0 +1,18 @@
+h1, h2, h3, h4, h5, h6,
+ul, ol, dl,
+blockquote, p, address,
+table,
+fieldset, figure,
+pre {
+    margin: 0 0 1em 0;  }
+
+// Page contents margins
+
+.hse-page-contents, .hse-page-header, .hse-page-contents--fullWidth, .sideNavigation {
+@include hse-responsive-margin(6, "top");
+}
+
+.sideNavigation .hse-page-contents, .twoThirdsOneThird .hse-page-contents {
+margin-top: 0;
+}
+

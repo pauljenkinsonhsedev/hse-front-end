@@ -1,0 +1,62 @@
+/* ==========================================================================
+   COMPONENTS/ #LABEL
+   ========================================================================== */
+
+   .hse-label {
+    @include hse-font(19);
+    font-weight: 500;
+    display: block;
+    margin-bottom: hse-spacing(1);
+  }
+  
+  /* Modifiers that make labels look more like their equivalent headings */
+  
+  .hse-label--xl {
+    @include hse-typography-responsive(48);
+  
+    display: block;
+    font-weight: $hse-font-bold;
+    margin-top: 0;
+  
+    @include hse-responsive-margin(7, "bottom");
+  }
+  
+  .hse-label--l {
+    @include hse-typography-responsive(32);
+  
+    display: block;
+    font-weight: $hse-font-bold;
+    margin-top: 0;
+  
+    @include hse-responsive-margin(4, "bottom");
+  }
+  
+  .hse-label--m {
+    @include hse-typography-responsive(24);
+  
+    display: block;
+    font-weight: $hse-font-bold;
+    margin-top: 0;
+  
+    @include hse-responsive-margin(4, "bottom");
+  }
+  
+  .hse-label--s {
+    @include hse-typography-responsive(19);
+  
+    display: block;
+    font-weight: $hse-font-bold;
+    margin-top: 0;
+  
+    @include hse-responsive-margin(4, "bottom");
+  }
+  
+  // When the label is nested inside a heading, override the heading so that it
+  // does not have a margin. Effectively we want to be able to treat the heading
+  // as if it is not there.
+  //
+  // This breaks BEM conventions because it exists as a parent of the 'block',
+  // so we can't really consider an element.
+  .hse-label-wrapper {
+    margin: 0;
+  }

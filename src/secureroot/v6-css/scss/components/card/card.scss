@@ -1,0 +1,280 @@
+
+/* ==========================================================================
+   COMPONENTS / #CARD
+   ========================================================================== */
+
+/**
+ * 1. Is needed for the :active top positioning, and invisible clickable overlay.
+ * 2. Border is used to create a divider between the white content
+ *    box and an image.
+ * 3. Creates the 'pressed down' effect when clicked.
+ * 4. Removes padding-top from headings directly after the card group.
+ * 5. Includes the border width to achieve the correct left alignment.
+ * 6. Stops the heading from spanning the full width of the card.
+ * 7. Removes padding top for the feature heading positioning.
+ * 8. Default care card colour set to blue (non-urgent care card) -
+ *    using the @mixin care-card tools/_mixins.scss.
+ *    The same mixin is used for each care card, setting the background
+ *    colour,text colour and print border width with the variables.
+ * 9. 'Random number' for the heading triangle.
+ * 10. 'Random number' for the heading triangle positioning.
+ * 11. 'Random number' used for spacing to compensate for the triangle.
+ * 12. Needed to enable the triangle to show correctly in high contrast mode.
+ * 13. Prevent additional padding on headings
+ * 14. Give the action link icon sufficient contrast when used in the emergency variant
+ * 15. Reset the positioning to the default [1] to display heading triangle on a coloured background.
+ * 16. Emergency care card <a> needs to be white because the background colour is black.
+ * 17. Trick IE10 into rendering the invisible clickable area. Without this it does not.
+ */
+
+ $card-border-width: 1px;
+ $card-border-bottom-width: hse-spacing(1);
+
+ 
+ .hse-card {
+   @include hse-responsive-margin(7, "bottom");
+   position: relative; /* [1] */
+   width: 100%;
+ }
+ 
+ .hse-card__img {
+   @include print-hide();
+ 
+   border-bottom: $card-border-width solid $color_hse-grey-5; /* [2] */
+   display: block;
+   width: 100%;
+ }
+ 
+ .hse-card__content {
+   @include top-and-bottom();
+   @include hse-responsive-padding(5);
+   background: $color_hse-white;
+ }
+ 
+ .hse-card__heading,
+ .hse-card__metadata,
+ .hse-card__description {
+   margin-bottom: hse-spacing(3);
+ }
+
+ 
+ /* Card group
+   ========================================================================== */
+ 
+ /**
+ * Card group allows you to have a row of cards.
+ *
+ * Flexbox is used to make each card in a row the same height.
+ */
+ 
+ .hse-card-group {
+   @include flex();
+ 
+   margin-bottom: hse-spacing(3);
+   padding: 0;
+ 
+   @include mq($until: desktop) {
+     margin-bottom: hse-spacing(6);
+   }
+ 
+   + h2,
+   + .hse-heading-l,
+   + h3,
+   + .hse-heading-m {
+     padding-top: 0; /* [4] */
+   }
+ }
+ 
+ .hse-card-group__item {
+   @include flex-item();
+ 
+   list-style-type: none;
+   margin-bottom: 0;
+ 
+ }
+
+  .hse-card-group {
+    padding: 0;
+    list-style-type: none;
+    @include mq($from: tablet) {
+      margin: 0 -15px;
+      margin-top: hse-spacing(3);
+      @include flex();
+      }
+  }
+
+ .hse-card-group li {
+    @include flex-item();
+    @include mq($from: desktop) {
+    // margin-bottom: hse-spacing(4) !important; // temporary fix for equal height cards, apply utility class (.hse-u-margin-bottom-4) in html or dynamially add class with JS 
+    }
+  }
+  
+
+    .hse-card-group .hse-grid-column-one-half li {
+      @include mq($from: tablet) {
+        background: none;
+        padding: 0 16px;
+        float: left;
+      }
+    }
+    .hse-card-group .hse-grid-column-one-third li {
+    background: none;
+    padding: 0;
+    list-style-image: none !important;
+    @include mq($from: tablet) {
+      background: none;
+      padding: 0 16px;
+      float: left;
+    }
+  }
+
+ /* Card group equal heights
+   ========================================================================== */
+ 
+ /**
+ * equal heights fix for common card groups (this could also be achieved in HTML using the spacing override classes hse-u-margin-bottom-4)
+ */
+
+.hse-card-group:has(.hse-card) {
+  li  {
+    @include hse-responsive-margin(4, "bottom");
+  } 
+}
+
+ /* Default clickable card
+   ========================================================================== */
+
+  .hse-card {
+  border-bottom: 4px solid $card-border-color;
+  margin-bottom: $hse-legacy-spacing-20;
+  width: 100%;
+  position: relative;
+  h3, h2 {
+    @include hse-font(22);
+    font-weight: bold;
+  }
+  &:hover {
+  border-bottom: 4px solid $color_hse-red;
+  }
+  &:link {
+   color: #1e060a;
+   background: none;
+  }
+  }
+
+  // Make non-clickable
+
+  .hse-card--non-clickable  {
+  box-shadow: 1px 1px 4px rgba(0,0,0,.15);
+  border-bottom: none;
+  a::after {
+  display: none;
+  }
+  &:hover {
+  border-bottom: none;  
+  }
+
+}
+
+  // makes entire card clickable (method used in Bootstrap framework, differs to NHS code)
+
+  .hse-card a::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    content: "";
+   }
+
+ /* Image card
+   ========================================================================== */
+
+   .hse-card__img {  
+    border-bottom: $card-border-width solid $color_hse-grey-5; /* [2] */
+    display: block;
+    width: 100%;
+  }
+  .hse-card--img {
+    border: 2px solid $card-border-color;
+    border-bottom: 4px $card-border-color solid;
+    background: $color_hse-white;
+  }
+
+ /* Chevron card
+   ========================================================================== */
+
+  .hse-card--chevron {
+    position: relative;
+ 
+    a {
+     font-weight: bold;
+     display: block;
+    }
+   &:hover{
+   border-bottom: none;
+   }
+   h3 {
+    margin: 0;
+    padding: 0;
+   }
+   }
+ 
+   .hse-card--chevron {
+   margin-bottom: $hse-legacy-spacing-10;
+   box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.15);
+   border-bottom: none;
+   background: $color_hse-white;
+
+   padding: hse-spacing(3) hse-spacing(4) hse-spacing(3) hse-spacing(4);
+   a {
+   padding-right: hse-spacing(3); // fix for chevron icon positioning
+   }
+   &:hover {
+  background: $color_hse-red;
+   }
+   &:focus-within {
+    background: $hse-focus-color;
+   }
+   a {
+    &:before {
+      border-right: 3px solid $color_hse-red;
+      border-top: 3px solid $color_hse-red;
+      content: "";
+      display: block;
+      height: 10px;
+      position: absolute;
+      right: hse-spacing(4);
+      top: 43%;
+      -webkit-transform: translateY(0) rotate(45deg) scale(1);
+      -ms-transform: translateY(0) rotate(45deg) scale(1);
+      transform: translateY(0) rotate(45deg) scale(1);
+      width: 10px;
+    }
+    &:hover {
+      color: white;
+    }
+    &:hover::before {
+      color: white;
+      border-right: 3px solid white;
+      border-top: 3px solid white;
+    }
+    &:focus {
+      color: $hse-text-color;
+      box-shadow: none;
+    }
+    &:focus::before {
+      border-right: 3px solid $hse-text-color;
+      border-top: 3px solid $hse-text-color;
+    }
+    &:focus::after {
+      border: 0 !important;
+      outline: 0;
+      box-shadow: inset 0 -4px 0 0 #333;
+
+   }
+
+   }
+  }

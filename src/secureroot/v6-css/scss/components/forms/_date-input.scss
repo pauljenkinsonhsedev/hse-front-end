@@ -1,0 +1,27 @@
+/* ==========================================================================
+   COMPONENTS/ #DATE-INPUT
+   ========================================================================== */
+
+/**
+ * 1. font-size: 0 removes whitespace caused by inline-block
+ */
+
+ .hse-date-input {
+    @include clearfix;
+  
+    font-size: 0; /* 1 */
+  }
+  
+  .hse-date-input__item {
+    display: inline-block;
+    margin-bottom: 0;
+    margin-right: hse-spacing(4);
+  }
+  
+  .hse-date-input__label {
+    display: block;
+  }
+  
+  .hse-date-input__input {
+    margin-bottom: 0;
+  }

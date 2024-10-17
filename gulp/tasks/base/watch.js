@@ -40,7 +40,7 @@ function watchTask() {
 
   const hseStyles = watch(config.secureroot.styles.all, series("hseStyles"));
 
-  const hseScripts = watch(config.secureroot.scripts.all, series("hseScripts"));
+  const designSystemStyles = watch(config.secureroot.styles.all, series("designSystemStyles"));
 
   const hseHTML = watch(config.secureroot.html.all, series("hseCopy"));
 

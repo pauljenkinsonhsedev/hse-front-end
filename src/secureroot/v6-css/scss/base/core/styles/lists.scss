@@ -1,0 +1,153 @@
+
+
+.hse-page-contents dl {
+margin: 0 0 1em 0;
+}
+
+ul.no-style {
+margin: 0 !important;
+padding: 0 !important;
+}
+ul.no-style li {
+background: 0 0 !important;
+margin: 0 !important;
+padding: 0 !important;
+}
+
+dd {
+  margin: 0;
+}
+
+ol {
+  list-style: decimal outside;
+}
+
+ol.list-alpha,
+ol.a {
+  list-style-type: lower-alpha;
+}
+
+ol.list-numeric,
+ol.i {
+  list-style-type: lower-roman;
+}
+
+ul.listhorizontal li.first {
+  border: none;
+  padding-right: 0.6em;
+  margin-left: -1.6em;
+}
+
+ul.listhorizontal li {
+  background: 0 0;
+  margin: 0;
+  padding: 0 0.6em;
+  display: inline;
+  border-left-width: 1px;
+  border-left-style: solid;
+}
+
+ul.listhorizontal {
+  margin: 1em 0 2em 0;
+}
+
+.hse-page-contents ul li::marker, .hse-print-guide-page ul li::marker {
+  color: $color_hse-red;
+} 
+
+.hse-page-contents ul.list-plain {
+  margin: 0;
+  padding: 0;
+  li {
+    margin: 0;
+    padding: 0;
+    background-image: none;
+    list-style-type: none;
+  }
+}
+.hse-page-contents ul.list-inline {
+  margin: 0;
+  padding: 0;
+  li {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    background-image: none;
+    list-style-type: none;
+  }
+}
+
+
+/* review split list */
+.splitList2 ul {
+  column-count: 2;
+  column-gap: $hse-legacy-spacing-20;
+}
+.splitList3 ul {
+  column-count: 3;
+  column-gap: $hse-legacy-spacing-20;
+}
+.splitList4 ul {
+  column-count: 4;
+  column-gap: $hse-legacy-spacing-20;
+}
+
+.hse-page-contents .pressReleases li {
+  padding-bottom: $hse-legacy-spacing-20;
+}
+
+.hse-page-contents .safetyAlerts li {
+  list-style-type: none;
+}
+
+// description lists
+
+.document dl,
+.document dd {
+  margin: 0 !important;
+}
+
+.document dl dt {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  padding-right: 5px;
+}
+
+.box dl {
+margin: 0;
+}
+
+dt {
+font-weight: bold;
+padding-right: $hse-legacy-spacing-10;
+float: left;
+clear: left;
+padding-right: 5px;
+margin-top: 0;
+}
+
+
+dl.document {
+  align-items: center;
+  float: left;
+}
+
+dl.document dt {
+  float: left;
+  clear: left;
+  padding-right: 10px;
+}
+
+dl.document dd {
+  float: left;
+  margin-bottom: 5px;
+}
+
+/* page-contents */
+
+.hse-page-contents ul.hse-card-group {
+margin: 0;
+}
+
+
+  

@@ -1,7 +1,5 @@
 a.skip:link,
 a.skip:visited {
-  pointer-events: none;
-  height: 48px;
   display: block;
   overflow: hidden;
   text-indent: -600em;
@@ -10,15 +8,24 @@ a.skip:visited {
   position: absolute;
   top: 0;
   left: 0;
-  font-weight: 700;
+  font-weight: normal;
+  pointer-events: none;
 }
 a.skip:active,
 a.skip:focus,
 a.skip:hover {
   text-indent: 0;
-  width: 10em;
-  padding: 3px;
   z-index: 10000;
   text-decoration: underline;
-  background-color: #fff;
+  background-color: $hse-focus-color;
+  position: relative;
+  text-wrap: nowrap;
+  width: fit-content;
+  box-shadow: none;
+  padding: 10px 16px;
+  cursor: pointer;
+  width: 100%;
+}
+#top {
+background-color: $hse-focus-color;
 }
