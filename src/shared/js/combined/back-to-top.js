@@ -1,77 +1,79 @@
 export function backToTop() {
+    const backToTop = document.querySelector('.hse-back-to-top__container');
+    const backToTopHook = document.querySelector('.hse-back-to-top');
+    const minimumContentHeight = 1000; // Minimum height required to show the button
+    const displayPercentage = 35; // Display the button after 35% of the content is scrolled
+    let isScrolling = false; // Flag to track if the user is scrolling back to top
 
-    var backToTop = document.querySelector('.hse-back-to-top__container');
-    var backToTopHook = document.querySelector('.hse-back-to-top');
-    // var contents = document.querySelector('.hse-contents-list');
-
-    /* 
-
-    visually hides back-to-top link if there is not contents list
-
-    if(!contents) {
-    backToTopHook.classList.add("visually-hidden");
-    }
-    */
-
-    var scrollHeight = 1200;
-
-    var pageContents = document.querySelector('#page-contents');
-   
-    let viewportHeight = pageContents.offsetHeight;
-
-    var topTask = document.querySelector('.topTask');
-
-    if (topTask) {
-        backToTopHook.classList.add("visually-hidden"); 
+    // Move the back-to-top element before the aside with ID #contentAside
+    const contentAside = document.querySelector('#contentAside');
+    if (contentAside && contentAside.parentElement) {
+        contentAside.parentElement.insertBefore(backToTopHook, contentAside);
     }
 
-    // hides back-to-top link if page contents height is less than 2000px
-    if (pageContents) {
-        if (viewportHeight < scrollHeight) {
-            backToTopHook.classList.add("visually-hidden");
-        }
-    }
+    // Initially hide the button
+    backToTop.classList.add("hse-back-to-top--hidden");
+    backToTop.setAttribute('aria-hidden', 'true'); // Set aria-hidden to true initially
 
-    
-
-
-    // get aside content
-    let aside = document.querySelector('#contentAside');
-
-    // move above aside content
-
-    if(aside) {
-    aside.before(backToTopHook);
-    backToTop.classList.add("hse-back-to-top--above-aside");
-    }
-
-    // listen for scroll
+    // Cache the page contents for performance
+    const pageContents = document.querySelector('#page-contents');
 
     window.addEventListener('scroll', function() {
-    let scroll = window.scrollY;
-    if (scroll > scrollHeight) {
-    backToTop.classList.add("hse-back-to-top--fixed");
-    backToTop.classList.remove("hse-back-to-top--hide");
-    } else {
-    backToTop.classList.remove("hse-back-to-top--fixed");
-    }
+        const scrollY = window.scrollY;
+        const position = backToTopHook.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
 
-    // get element’s position within the viewport
+        // Check the total height of the page content
+        const contentHeight = pageContents ? pageContents.scrollHeight : 0;
 
-    const position = backToTopHook.getBoundingClientRect();
+        // Only apply the logic if the content height exceeds the minimum required height
+        if (contentHeight >= minimumContentHeight) {
+            // Calculate the scroll threshold as a percentage of the total content height
+            const scrollThreshold = (contentHeight * displayPercentage) / 100;
 
-    // hide if back-to-top link in view or above viewport
+            // Check if the user has scrolled beyond the calculated threshold
+            if (scrollY > scrollThreshold) {
+                // Show the back-to-top link if scrolled past the threshold and it's not in view
+                if (position.top > windowHeight && !isScrolling) {
+                    backToTop.classList.remove("hse-back-to-top--hidden");
+                    backToTop.classList.add("hse-back-to-top--fixed");
+                    backToTop.setAttribute('aria-hidden', 'false'); // Set aria-hidden to false when visible
+                } else {
+                    // If in view, remove fixed class and show normally
+                    backToTop.classList.remove("hse-back-to-top--fixed");
+                }
+            } else {
+                // Hide the link when not scrolled past the threshold
+                backToTop.classList.add("hse-back-to-top--hidden");
+                backToTop.classList.remove("hse-back-to-top--fixed");
+                backToTop.setAttribute('aria-hidden', 'true'); // Set aria-hidden to true when hidden
+            }
+        } else {
+            // If content height is less than minimum, ensure link is hidden
+            backToTop.classList.add("hse-back-to-top--hidden");
+            backToTop.classList.remove("hse-back-to-top--fixed");
+            backToTop.setAttribute('aria-hidden', 'true'); // Ensure aria-hidden is true
+        }
+    });
 
-    if(position.top <= window.innerHeight) {
-    backToTop.classList.add("hse-back-to-top--hide");
-    backToTop.classList.remove("hse-back-to-top--fixed");
-    } else {
-    // do nothing
-    }    
-   
-});
+    // Add smooth scroll behavior on link click
+    backToTop.addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent the default anchor behavior
 
+        isScrolling = true; // Set the flag to true to indicate scrolling
+        backToTop.classList.remove("hse-back-to-top--fixed"); // Immediately hide the fixed style
+
+        // Smooth scroll back to the top
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth' // This enables the smooth scrolling effect
+        });
+
+        // After the scroll, we can reset the flag
+        setTimeout(() => {
+            isScrolling = false; // Reset the scrolling flag
+            backToTop.classList.add("hse-back-to-top--hidden"); // Hide the button after scroll
+            backToTop.setAttribute('aria-hidden', 'true'); // Ensure aria-hidden is true when hidden
+        }, 500); // Adjust the timeout duration if needed
+    });
 }
-
-
-
