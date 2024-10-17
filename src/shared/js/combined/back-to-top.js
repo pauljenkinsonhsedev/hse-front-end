@@ -4,6 +4,12 @@ export function backToTop() {
     const scrollThreshold = 800; // Set your desired scroll threshold
     const minimumContentHeight = 1000; // Minimum height required to show the button
 
+    // Move the back-to-top element before the aside with ID #contentAside
+    const contentAside = document.querySelector('#contentAside');
+    if (contentAside && contentAside.parentElement) {
+        contentAside.parentElement.insertBefore(backToTopHook, contentAside);
+    }
+
     // Initially hide the button
     backToTop.classList.add("hse-back-to-top--hidden");
     backToTop.setAttribute('aria-hidden', 'true'); // Set aria-hidden to true initially
