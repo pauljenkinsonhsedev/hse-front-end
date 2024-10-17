@@ -143,50 +143,6 @@ dl.document dd {
   margin-bottom: 5px;
 }
 
-
-// Single list items
-
-.hse-page-contents .linkBullet::before {
-  content: "";
-  position: absolute;
-  background-image: url("../../assets/v6-images/icons/svg/solid/square-full-solid-red.svg");
-  background-repeat: no-repeat;
-  height: 4px;
-  width: 4px;
-  top: 8px;
-  left: 0;
-}
-
-p.more {
-  padding-left: $hse-legacy-spacing-10;
-}
-
-.mostPopular {
-padding: 0 $hse-legacy-spacing-20;
-min-height: 258px;
-margin-bottom: $hse-legacy-spacing-20;
-}
-
-.mostPopular h2 {
-padding-top: $hse-legacy-spacing-20;
-}
-
-ul.mostPopular li {
-  font-weight: 700;
-}
-
-ul.listLinks li a {
-  float: left;
-}
-
-ul.listLinks li span {
-  display: inline-block;
-}
-
-ul.listLinks p {
-  clear: both;
-}
-
 /* page-contents */
 
 .hse-page-contents ul.hse-card-group {
