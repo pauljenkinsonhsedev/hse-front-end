@@ -46,7 +46,7 @@ function hseStyles() {
     .pipe(autoprefixer({ grid: true }))
     .pipe(sourcemaps.write())
     .pipe(pxtorem())
-    .pipe(rename("v6.min.css"))
+    .pipe(rename("6.1.0.min.css"))
     .pipe(mode.development(sourcemaps.write()))
     .pipe(connect.reload())
     .pipe(dest(output));
@@ -69,7 +69,7 @@ function designSystemStyles() {
     .pipe(autoprefixer({ grid: true }))
     .pipe(sourcemaps.write())
     .pipe(pxtorem())
-    .pipe(rename("v6.min.css"))
+    .pipe(rename("6.1.0.min.css"))
     .pipe(mode.development(sourcemaps.write()))
     .pipe(connect.reload())
     .pipe(dest(outputDesignSystemStyles));

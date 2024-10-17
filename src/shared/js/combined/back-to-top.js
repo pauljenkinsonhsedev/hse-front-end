@@ -1,8 +1,9 @@
 export function backToTop() {
     const backToTop = document.querySelector('.hse-back-to-top__container');
     const backToTopHook = document.querySelector('.hse-back-to-top');
-    const minimumContentHeight = 1000; // Minimum height required to show the button
-    const displayPercentage = 35; // Display the button after 35% of the content is scrolled
+    const minimumContentHeight = 1500; // Minimum content height required to show the button
+    const displayPercentage = 30; // Display the button after 20% of the content is scrolled
+    const minimumScrollHeight = 1000; // Minimum pixel height to show the button
     let isScrolling = false; // Flag to track if the user is scrolling back to top
 
     // Move the back-to-top element before the aside with ID #contentAside
@@ -33,33 +34,25 @@ export function backToTop() {
         // Check the total height of the page content
         const contentHeight = pageContents ? pageContents.scrollHeight : 0;
 
-        // Only apply the logic if the content height exceeds the minimum required height
-        if (contentHeight >= minimumContentHeight) {
-            // Calculate the scroll threshold as a percentage of the total content height
-            const scrollThreshold = (contentHeight * displayPercentage) / 100;
+        // Calculate the scroll threshold as a percentage of the total content height
+        const scrollThreshold = (contentHeight * displayPercentage) / 100;
 
-            // Check if the user has scrolled beyond the calculated threshold
-            if (scrollY > scrollThreshold) {
-                // Show the back-to-top link if scrolled past the threshold and it's not in view
-                if (position.top > windowHeight && !isScrolling) {
-                    backToTop.classList.remove("hse-back-to-top--hidden");
-                    backToTop.classList.add("hse-back-to-top--fixed");
-                    backToTop.setAttribute('aria-hidden', 'false'); // Set aria-hidden to false when visible
-                } else {
-                    // If in view, remove fixed class and show normally
-                    backToTop.classList.remove("hse-back-to-top--fixed");
-                }
+        // Check if the user has scrolled past the minimum scroll height or the percentage threshold
+        if ((scrollY > scrollThreshold || scrollY > minimumScrollHeight) && contentHeight >= minimumContentHeight) {
+            // Show the back-to-top link if scrolled past the threshold and it's not in view
+            if (position.top > windowHeight && !isScrolling) {
+                backToTop.classList.remove("hse-back-to-top--hidden");
+                backToTop.classList.add("hse-back-to-top--fixed");
+                backToTop.setAttribute('aria-hidden', 'false'); // Set aria-hidden to false when visible
             } else {
-                // Hide the link when not scrolled past the threshold
-                backToTop.classList.add("hse-back-to-top--hidden");
+                // If in view, remove fixed class and show normally
                 backToTop.classList.remove("hse-back-to-top--fixed");
-                backToTop.setAttribute('aria-hidden', 'true'); // Set aria-hidden to true when hidden
             }
         } else {
-            // If content height is less than minimum, ensure link is hidden
+            // Hide the link when not scrolled past the threshold or minimum height
             backToTop.classList.add("hse-back-to-top--hidden");
             backToTop.classList.remove("hse-back-to-top--fixed");
-            backToTop.setAttribute('aria-hidden', 'true'); // Ensure aria-hidden is true
+            backToTop.setAttribute('aria-hidden', 'true'); // Set aria-hidden to true when hidden
         }
     });
 

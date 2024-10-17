@@ -233,8 +233,6 @@ export function subnavMenu(container) {
   if (parentHasClass === true) {
     const listItemsActive = topul.querySelectorAll("li");
 
-    console.log(listItemsActive);
-
     listItemsActive.forEach((item) => {
       item.querySelector("a").tabIndex = 0;
     });

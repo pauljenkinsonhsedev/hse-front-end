@@ -13,8 +13,8 @@
       "vendorOutput": "./secureroot/hseonline/website/livelive/secureroot/assets/v6-js/vendor",
       "all": "./src/shared/js/**/*.js",
       "entrypoint": [
-        "./src/shared/js/v6-main.js",
-        "./src/shared/js/v6-cookies.js"
+        "./src/shared/js/main.js",
+        "./src/shared/js/cookies.js"
       ],
       "outputSecureroot": "./secureroot/hseonline/website/livelive/secureroot/assets/v6-js",
       "outputdesignsystem": "./designsystem/assets/v6-js"
