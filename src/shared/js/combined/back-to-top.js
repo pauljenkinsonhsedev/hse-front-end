@@ -15,6 +15,13 @@ export function backToTop() {
     backToTop.classList.add("hse-back-to-top--hidden");
     backToTop.setAttribute('aria-hidden', 'true'); // Set aria-hidden to true initially
 
+    // Check if the page is a topTask layout
+    const topTaskMain = document.querySelector('main.topTask');
+    if (topTaskMain) {
+        // If the main tag exists, exit the function to prevent further execution
+        return;
+    }
+
     // Cache the page contents for performance
     const pageContents = document.querySelector('#page-contents');
 
