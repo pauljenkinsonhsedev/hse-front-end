@@ -6,8 +6,8 @@ module.exports = {
   devtool: 'source-map',
   target: 'web',
   entry: {
-    'v6-main.min': ['formdata-polyfill', 'whatwg-fetch', './src/shared/js/v6-main.js'],
-    'v6-cookies': ['formdata-polyfill', 'whatwg-fetch', './src/shared/js/v6-cookies.js'],
+    'main-6.1.0.min': ['formdata-polyfill', 'whatwg-fetch', './src/shared/js/main.js'],
+    'cookies-6.1.0': ['formdata-polyfill', 'whatwg-fetch', './src/shared/js/cookies.js'],
   },
   output: {
     filename: '[name].js',
