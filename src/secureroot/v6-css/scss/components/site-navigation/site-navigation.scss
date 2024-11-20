@@ -510,7 +510,8 @@
 
 .hero-banner-component_sub {
   position: absolute;
-  max-width: 520px;
+  //Standard width for banner text max-width: 520px;
+  max-width: 483px; //width for text for Statistics banner
   top: 50%;
   transform: translateY(-50%);
   -moz-transform: translateY(-50%);
