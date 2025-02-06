@@ -14,6 +14,7 @@ src/secureroot/html/**/*
 src/secureroot/**/*.lbi
 /secureroot
 /designsystem
+/wp-content
 src/designsystem/html/**/*
 /gulp/tasks/shared/designsystem/js/report.html
 /report.html
