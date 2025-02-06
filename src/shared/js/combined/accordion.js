@@ -17,57 +17,62 @@ export function accordion() {
     });
 }
 
-// Function to open an accordion section based on the URL hash
-function openAccordionFromHash() {
-    const hash = window.location.hash; // Get hash from URL
-    if (hash) { // Ensure there's a hash value
-        const section = document.querySelector(hash); // Get the accordion heading
-        if (section) {
-            const button = section.querySelector('button, .accordion-toggle'); // Find the accordion trigger
-            const content = section.nextElementSibling; // Find the corresponding accordion content
-            
-            if (button && content) {
-                // Ensure proper ARIA attributes
-                if (!button.hasAttribute("role")) {
-                    button.setAttribute("role", "button");
-                }
+document.addEventListener("DOMContentLoaded", function () {
+    let hasInteracted = false; // Flag to track user interaction
 
-                if (!button.hasAttribute("aria-controls")) {
-                    const contentId = content.id || `accordion-content-${Math.random().toString(36).substring(2, 9)}`;
-                    content.id = contentId;
-                    button.setAttribute("aria-controls", contentId);
-                }
+    function openAccordionFromHash() {
+        const hash = window.location.hash.substring(1);
+        if (!hash) return;
 
-                // Check if accordion is already open
-                const isOpen = button.getAttribute('aria-expanded') === 'true';
+        const heading = document.querySelector(`[id="${hash}"][data-aria-accordion-heading]`);
+        if (!heading) return;
 
-                if (!isOpen) {
-                    button.setAttribute('aria-expanded', 'true'); // Mark as expanded
-                    content.setAttribute('aria-hidden', 'false'); // Ensure it's visible
-                    
-                    // Use maxHeight instead of display to prevent screen reader issues
-                    content.style.maxHeight = `${content.scrollHeight}px`;
+        const panel = heading.nextElementSibling;
+        if (!panel || !panel.hasAttribute("data-aria-accordion-panel")) return;
 
-                    section.classList.add('active'); // Add active class
-                }
-
-                // Respect reduced motion settings
-                const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-                if (!prefersReducedMotion) {
-                    setTimeout(() => {
-                        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    }, 300); // Delay ensures it scrolls after the accordion opens
-                }
-            }
+        const button = heading.querySelector("button");
+        if (button && button.getAttribute("aria-expanded") === "false") {
+            button.click();
         }
+
+        // Scroll and move focus to the heading
+        setTimeout(() => {
+            heading.scrollIntoView({ behavior: "smooth", block: "start" });
+            heading.focus();
+            history.replaceState(null, null, " "); // Remove hash from URL
+        }, 300);
     }
-}
 
-// Ensure function runs when the document is loaded
-document.addEventListener("DOMContentLoaded", () => {
-    setTimeout(openAccordionFromHash, 200); // Delay to ensure DOM is fully ready
+    // Remove hash when clicking **any link** on the page
+    document.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+            history.replaceState(null, null, " "); // Clear hash
+        });
+    });
+
+    // Optional: Remove hash if user clicks anywhere on the page (outside accordion and links)
+    document.body.addEventListener("click", (event) => {
+        // Only remove hash if the user has interacted with the accordion
+        if (hasInteracted && !event.target.closest("[data-aria-accordion-heading]") && !event.target.closest("a")) {
+            history.replaceState(null, null, " "); // Clear hash
+        }
+    });
+
+    // Accordion logic: Set flag after user interacts with an accordion
+    document.querySelectorAll("[data-aria-accordion-heading]").forEach((heading) => {
+        heading.addEventListener("click", () => {
+            hasInteracted = true; // Mark the interaction flag as true
+        });
+    });
+
+    // Run function when page loads
+    if (window.ARIAaccordion) {
+        openAccordionFromHash();
+    } else {
+        setTimeout(openAccordionFromHash, 500);
+    }
+
+    // Handle hash changes dynamically
+    window.addEventListener("hashchange", openAccordionFromHash);
 });
-
-// Also re-check the hash when navigating within the same page
-window.addEventListener("hashchange", openAccordionFromHash);
 
