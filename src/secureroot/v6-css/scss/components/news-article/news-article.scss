@@ -15,9 +15,15 @@ content: '|';
 padding-left: 4px;
 }
 
+time:only-child::after {
+display: none;
+}
+
+
 .hse-news-article__category {
 display: inline-flex;
 margin-bottom: 5px;
+padding-right: 5px;
 &:not(:has(a.hse-news-article__link)) {
 padding: 5px;
 background: $color_hse-grey-4;

@@ -20,7 +20,7 @@
 
 <!-- TemplateBeginMultipleIf -->
 <!-- TemplateBeginIfClause cond="platform == 'v6'" -->
-<link rel="stylesheet" href="../assets/v6-css/6.1.0.min.css"  media="screen,print">
+<link rel="stylesheet" href="../assets/v6-css/6.2.0.min.css"  media="screen,print">
 <link href="https://fonts.googleapis.com/css?family=Roboto:100,200,300,400,500,600,700,400italic&display=swap" rel="stylesheet">
   
 <!-- TemplateEndIfClause -->
@@ -516,7 +516,7 @@
 <!-- TemplateBeginEditable name="updated" -->Updated:<!-- #BeginDate -->2023-03-16<!-- #EndDate --><!-- TemplateEndEditable -->
 </section>
 
-<script src="../assets/v6-js/main-6.1.0.min.js"></script>
+<script src="../assets/v6-js/main-6.2.0.min.js"></script>
 
 <div id="gutter">
 <!-- TemplateBeginEditable name="gutter" -->

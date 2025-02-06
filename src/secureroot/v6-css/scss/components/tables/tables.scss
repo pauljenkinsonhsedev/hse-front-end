@@ -62,17 +62,27 @@
   @include heading-label($color_hse-blue, $color_hse-white);
 }
 
-/* Small text for tables until desktop
+/* Small text for tables
 ========================================================================== */
 
 /**
+The classes below make it easier to visually differentiate between each piece of data on small screens.
+
+ .hse-table--small-text
+ This class reduces the size of the text on all screens so large amounts of data has more empty space around it. 
+
  .hse-table--small-text-until-large-desktop
  This class reduces the size of the text on small screens so large amounts of data has more empty space around it. 
- This makes it easier to visually differentiate between each piece of data when read on small screens.
+ 
 */
 
 .hse-table {
-&--small-text-until-large-desktop {
+&--small-text {
+  th,td {
+    @include hse-typography-responsive(16);
+  }
+}
+&--small-text-until-large-desktop  {
   th,td {
     @include mq($until: large-desktop) {
     @include hse-typography-responsive(16);
@@ -222,8 +232,6 @@ table.tablenumgrid td {
   }
 }
 
-
-
 div.sortDown,
 div.sortNone,
 div.sortUp {
@@ -248,8 +256,3 @@ table a.tableRowToggleClosed {
   text-indent: -9999px;
   margin: 2px 0 0 2px;
 }
-
-
-
-
-

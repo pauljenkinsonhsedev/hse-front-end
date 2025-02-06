@@ -5,7 +5,7 @@ devkit-v5
 *.bak
 .vscode/settings.json
 .eslintrc.json
-
+*.zip
 brexit/
 coronavirus/
 news/
@@ -14,6 +14,7 @@ src/secureroot/html/**/*
 src/secureroot/**/*.lbi
 /secureroot
 /designsystem
+/wp-content
 src/designsystem/html/**/*
 /gulp/tasks/shared/designsystem/js/report.html
 /report.html

@@ -30,6 +30,8 @@ if (isDev) {
 }
 
 let outputDesignSystemStyles = config.secureroot.styles.outputDesignSystem;
+let outputPressStyles = config.secureroot.styles.outputPress;
+
 
 sass.compiler = require("sass");
 
@@ -46,7 +48,7 @@ function hseStyles() {
     .pipe(autoprefixer({ grid: true }))
     .pipe(sourcemaps.write())
     .pipe(pxtorem())
-    .pipe(rename("6.1.0.min.css"))
+    .pipe(rename("6.2.0.min.css"))
     .pipe(mode.development(sourcemaps.write()))
     .pipe(connect.reload())
     .pipe(dest(output));
@@ -69,10 +71,33 @@ function designSystemStyles() {
     .pipe(autoprefixer({ grid: true }))
     .pipe(sourcemaps.write())
     .pipe(pxtorem())
-    .pipe(rename("6.1.0.min.css"))
+    .pipe(rename("6.2.0.min.css"))
     .pipe(mode.development(sourcemaps.write()))
     .pipe(connect.reload())
     .pipe(dest(outputDesignSystemStyles));
 }
 
 task("designSystemStyles", designSystemStyles);
+
+// Press styles for WP https://press.hse.gov.uk/
+
+function pressStyles() {
+  return src(config.secureroot.styles.entryPress)
+    .pipe(mode.development(sourcemaps.init()))
+    .pipe(
+      sass({
+        includePaths: "node_modules",
+        includePaths: ["node_modules/susy/sass"],
+        outputStyle: "compressed",
+      }).on("error", sass.logError)
+    )
+    .pipe(autoprefixer({ grid: true }))
+    .pipe(sourcemaps.write())
+    .pipe(pxtorem())
+    .pipe(rename("press-6.2.0.min.css"))
+    .pipe(mode.development(sourcemaps.write()))
+    .pipe(connect.reload())
+    .pipe(dest(outputPressStyles));
+}
+
+task("pressStyles", pressStyles);

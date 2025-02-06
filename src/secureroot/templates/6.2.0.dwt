@@ -10,7 +10,7 @@
 <!-- TemplateEndIfClause -->
 <!-- TemplateEndMultipleIf -->
 
-<script src="../assets/v6-js/cookies-6.1.0.js"></script>
+<script src="../assets/v6-js/cookies-6.2.0.js"></script>
 <!-- Anti-flicker snippet (recommended) If installing optimise with GTM, specifcy GTM container ID  -->
 <style>
 .async-hide { opacity: 0 !important }
@@ -80,7 +80,7 @@ window.dataLayer.push({'content_group': '@@(_document['contentGroup'])@@'});
 	
 <!-- TemplateBeginMultipleIf -->
 <!-- TemplateBeginIfClause cond="platform == 'v6'" -->
-<link rel="stylesheet" href="../assets/v6-css/6.1.0.min.css"  media="screen,print">
+<link rel="stylesheet" href="../assets/v6-css/6.2.0.min.css"  media="screen,print">
 <link href="https://fonts.googleapis.com/css?family=Roboto:100,200,300,400,500,600,700,400italic&display=swap" rel="stylesheet">
   
 <!-- TemplateEndIfClause -->
@@ -247,10 +247,10 @@ window.dataLayer.push({'content_group': '@@(_document['contentGroup'])@@'});
             <div class="hse-grid-column-one-third hse-section__content">
             <h3>About HSE</h3>
             <ul class="hse-navigation__navigation-list navigation-third-list">
-              <li class="hse-navigation__navigation-item"><a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="../news/index.htm">News</a></li>
+              <li class="hse-navigation__navigation-item"><a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="https://press.hse.gov.uk">News</a></li>
               <li class="hse-navigation__navigation-item"><a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="../news/subscribe/index.htm">Sign up for free updates</a></li>
               <li class="hse-navigation__navigation-item"><a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="../contact/index.htm">Contact us</a></li>
-              <li class="hse-navigation__navigation-item"><a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="../languages/index.htm">Information in other languages</a></li>
+              <li class="hse-navigation__navigation-item"><a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="https://consultations.hse.gov.uk/">Consultations</a></li>
               <li class="hse-navigation__navigation-item"><a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="../aboutus/our-mission-and-priorities.htm">Our mission and priorities</a></li>
               <li class="hse-navigation__navigation-item"><a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="https://careers.hse.gov.uk/">Careers</a></li>
               </ul>
@@ -661,10 +661,10 @@ window.dataLayer.push({'content_group': '@@(_document['contentGroup'])@@'});
           <div class="hse-grid-column-one-third hse-section__content">
           <h3 class="hse-footer__heading">About HSE</h3>
           <ul class="hse-navigation__navigation-list hse-navigation__navigation-list--footer navigation-third-list">
-            <li class="hse-navigation__navigation-item"><a class="hse-footer-white" href="../news/index.htm">News</a></li>
+            <li class="hse-navigation__navigation-item"><a class="hse-footer-white" href="https://press.hse.gov.uk">News</a></li>
             <li class="hse-navigation__navigation-item"><a class="hse-footer-white" href="../news/subscribe/index.htm">Sign up for free updates</a></li>
             <li class="hse-navigation__navigation-item"><a class="hse-footer-white" href="../contact/index.htm">Contact us</a></li>
-            <li class="hse-navigation__navigation-item"><a class="hse-footer-white" href="../languages/index.htm">Information in other languages</a></li>
+            <li class="hse-navigation__navigation-item"><a class="hse-footer-white" href="https://consultations.hse.gov.uk/">Consultations</a></li>
             <li class="hse-navigation__navigation-item"><a class="hse-footer-white" href="../aboutus/our-mission-and-priorities.htm">Our mission and priorities</a></li>
             <li class="hse-navigation__navigation-item"><a class="hse-footer-white" href="https://careers.hse.gov.uk/">Careers</a></li>
           </ul>
@@ -693,6 +693,7 @@ window.dataLayer.push({'content_group': '@@(_document['contentGroup'])@@'});
             <li class="hse-footer__list-item hse-footer__list-item--support-links"><a class="hse-footer__list-item-support-link" href="../help/accessibility.htm">Accessibility</a></li>
             <li class="hse-footer__list-item hse-footer__list-item--support-links"><a class="hse-footer__list-item-support-link" href="../foi/index.htm">Disclosure of information</a></li>
             <li class="hse-footer__list-item hse-footer__list-item--support-links"><a class="hse-footer__list-item-support-link" href="../help/report-vulnerability.htm">Vulnerability disclosure</a></li>
+            <li class="hse-footer__list-item hse-footer__list-item--support-links"><a class="hse-footer__list-item-support-link" href="../languages/index.htm">Other languages</a></li>
           </ul>
           <div>
             <svg aria-hidden="true" focusable="false" class="hse-footer__licence-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 483.2 195.7" height="17" width="41">
@@ -711,7 +712,7 @@ window.dataLayer.push({'content_group': '@@(_document['contentGroup'])@@'});
 <!-- TemplateBeginEditable name="updated" -->Updated:<!-- #BeginDate -->2023-03-16<!-- #EndDate --><!-- TemplateEndEditable -->
 </section>
 
-<script src="../assets/v6-js/main-6.1.0.min.js"></script>
+<script src="../assets/v6-js/main-6.2.0.min.js"></script>
 
 <div id="gutter">
 <!-- TemplateBeginEditable name="gutter" -->
