@@ -46,3 +46,8 @@
 
   padding: hse-spacing(3);
 }
+
+.hse-image-border {
+  border: 1px solid $color_hse-grey-4;
+  border-bottom: 0;
+}
