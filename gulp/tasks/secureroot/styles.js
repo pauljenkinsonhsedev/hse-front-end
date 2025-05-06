@@ -48,7 +48,7 @@ function hseStyles() {
     .pipe(autoprefixer({ grid: true }))
     .pipe(sourcemaps.write())
     .pipe(pxtorem())
-    .pipe(rename("6.2.0.min.css"))
+    .pipe(rename("6.3.0.min.css"))
     .pipe(mode.development(sourcemaps.write()))
     .pipe(connect.reload())
     .pipe(dest(output));
@@ -71,7 +71,7 @@ function designSystemStyles() {
     .pipe(autoprefixer({ grid: true }))
     .pipe(sourcemaps.write())
     .pipe(pxtorem())
-    .pipe(rename("6.2.0.min.css"))
+    .pipe(rename("6.3.0.min.css"))
     .pipe(mode.development(sourcemaps.write()))
     .pipe(connect.reload())
     .pipe(dest(outputDesignSystemStyles));
@@ -94,7 +94,7 @@ function pressStyles() {
     .pipe(autoprefixer({ grid: true }))
     .pipe(sourcemaps.write())
     .pipe(pxtorem())
-    .pipe(rename("press-6.2.0.min.css"))
+    .pipe(rename("press-6.3.0.min.css"))
     .pipe(mode.development(sourcemaps.write()))
     .pipe(connect.reload())
     .pipe(dest(outputPressStyles));
