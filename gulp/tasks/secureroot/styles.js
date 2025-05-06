@@ -2,7 +2,11 @@
 
 import { src, dest, task } from "gulp";
 import * as config from "../../config.json";
-import sass from "gulp-dart-sass";
+
+import dartSass from "sass";
+import gulpSass from "gulp-sass";
+const sass = gulpSass(dartSass);
+
 import connect from "gulp-connect";
 import sourcemaps from "gulp-sourcemaps";
 import autoprefixer from "gulp-autoprefixer";
