@@ -40,7 +40,6 @@ function hseStyles() {
     .pipe(mode.development(sourcemaps.init()))
     .pipe(
       sass({
-        includePaths: "node_modules",
         includePaths: ["node_modules/susy/sass"],
         outputStyle: "compressed",
       }).on("error", sass.logError)
@@ -63,7 +62,6 @@ function designSystemStyles() {
     .pipe(mode.development(sourcemaps.init()))
     .pipe(
       sass({
-        includePaths: "node_modules",
         includePaths: ["node_modules/susy/sass"],
         outputStyle: "compressed",
       }).on("error", sass.logError)
@@ -86,7 +84,6 @@ function pressStyles() {
     .pipe(mode.development(sourcemaps.init()))
     .pipe(
       sass({
-        includePaths: "node_modules",
         includePaths: ["node_modules/susy/sass"],
         outputStyle: "compressed",
       }).on("error", sass.logError)
