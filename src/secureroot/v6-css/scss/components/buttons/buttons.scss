@@ -120,7 +120,7 @@ $button-shadow-size: 4px;
   color: $color_hse-black;
 
   &:hover {
-    background-color: color.darken($hse-secondary-button-color, 10%);
+    background-color: color.mix(black, $hse-secondary-button-color, 10%);
     color: inherit;
   }
 
@@ -149,7 +149,7 @@ $button-shadow-size: 4px;
   color: $hse-reverse-button-text-color;
 
   &:hover {
-    background-color: color.darken($hse-reverse-button-color, 5%);
+    background-color: color.mix(black, $hse-reverse-button-color, 5%);
     color: $hse-reverse-button-text-color;
   }
 
@@ -189,7 +189,7 @@ $button-shadow-size: 4px;
   box-shadow: 0 $button-shadow-size 0 $hse-cautionary-button-shadow-color;
 
   &:hover {
-    background-color: color.darken($hse-cautionary-button-color, 10%);
+    background-color: color.mix(black, $hse-cautionary-button-color, 10%);
   }
 
   &:focus {
@@ -386,7 +386,7 @@ $button-shadow-size: 4px;
   color: $color_hse-black;
 
   &:hover {
-    background-color: color.darken($hse-secondary-button-color, 10%);
+    background-color: color.mix(black, $hse-secondary-button-color, 10%);
     color: inherit;
   }
 

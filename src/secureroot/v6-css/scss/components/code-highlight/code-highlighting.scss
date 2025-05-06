@@ -1,7 +1,6 @@
+@use 'sass:color';
 @import './node_modules/prismjs/themes/prism';
 @import './node_modules/prismjs/themes/prism-okaidia';
-@use 'sass:color';
-
 
 $radius: 5px;
 $background: #272822;
