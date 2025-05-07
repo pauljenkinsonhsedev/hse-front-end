@@ -1,5 +1,6 @@
-@import './node_modules/prismjs/themes/prism';
-@import './node_modules/prismjs/themes/prism-okaidia';
+@use 'sass:color';
+@import 'prismjs/themes/prism.css';
+@import 'prismjs/themes/prism-okaidia.css';
 
 $radius: 5px;
 $background: #272822;
@@ -66,7 +67,7 @@ pre[class*='language-'] {
     transition: all 250ms ease;
 
     &:hover {
-      color: darken($color_hse-white, 25%);
-    }
+      color: color.mix(black, $color_hse-white, 25%);
+    }    
   }
 }
