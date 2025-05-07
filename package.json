@@ -45,6 +45,7 @@
     "imagemin-jpeg-recompress": "^7.0.0",
     "imagemin-jpegtran": "^7.0.0",
     "imagemin-pngquant": "^9.0.0",
+    "node-notifier": "^10.0.1",
     "path": "^0.12.7",
     "rename": "^1.0.4",
     "require-dir": "^1.2.0",
