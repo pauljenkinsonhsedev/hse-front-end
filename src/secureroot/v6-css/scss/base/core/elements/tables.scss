@@ -7,12 +7,10 @@
  */
 
  table {
-    @include hse-responsive-margin(7, "bottom");
-  
     border-spacing: 0;
     vertical-align: top;
     width: 100%; /* [1] */
-  
+    @include hse-responsive-margin(7, "bottom");
     @include mq($media-type: print) {
       page-break-inside: avoid;
     }
@@ -26,15 +24,13 @@
   
   th,
   td {
+    border-bottom: $hse-border-table-cell-width solid $hse-border-color;
+    text-align: left;
+    vertical-align: top;
     @include hse-typography-responsive(19);
     @include hse-responsive-padding(3, "bottom");
     @include hse-responsive-padding(4, "right");
     @include hse-responsive-padding(3, "top");
-  
-    border-bottom: $hse-border-table-cell-width solid $hse-border-color;
-    text-align: left;
-    vertical-align: top;
-  
     &:last-child {
       padding-right: 0;
     }
@@ -45,6 +41,6 @@
   }
   
   caption {
-    @include hse-font($size: 22, $weight: bold);
     text-align: left;
+    @include hse-font($size: 22, $weight: bold);
   }

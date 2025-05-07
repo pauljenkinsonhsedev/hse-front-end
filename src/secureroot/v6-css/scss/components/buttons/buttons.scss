@@ -2,6 +2,8 @@
    COMPONENTS/ #BUTTON
    ========================================================================== */
 
+@use 'sass:color';
+
 /**
  * 1. Ensure that any global link styles are overridden.
  * 2. Fix unwanted button padding in Firefox.
@@ -12,6 +14,7 @@
 // Because the shadow (s0) is visually 'part of' the button, we need to reduce
 // the height of the button to compensate by adjusting its padding (s1) and
 // increase the bottom margin to include it (s1).
+
 $button-shadow-size: 4px;
 
 .hse-button {
@@ -117,10 +120,9 @@ $button-shadow-size: 4px;
   color: $color_hse-black;
 
   &:hover {
-    background-color: darken($hse-secondary-button-color, 10%);
+    background-color: color.mix(black, $hse-secondary-button-color, 10%);
     color: inherit;
   }
-
 
   &:focus {
     background: $hse-focus-color;
@@ -147,7 +149,7 @@ $button-shadow-size: 4px;
   color: $hse-reverse-button-text-color;
 
   &:hover {
-    background-color: darken($hse-reverse-button-color, 5%);
+    background-color: color.mix(black, $hse-reverse-button-color, 5%);
     color: $hse-reverse-button-text-color;
   }
 
@@ -187,7 +189,7 @@ $button-shadow-size: 4px;
   box-shadow: 0 $button-shadow-size 0 $hse-cautionary-button-shadow-color;
 
   &:hover {
-    background-color: darken($hse-cautionary-button-color, 10%);
+    background-color: color.mix(black, $hse-cautionary-button-color, 10%);
   }
 
   &:focus {
@@ -384,7 +386,7 @@ $button-shadow-size: 4px;
   color: $color_hse-black;
 
   &:hover {
-    background-color: darken($hse-secondary-button-color, 10%);
+    background-color: color.mix(black, $hse-secondary-button-color, 10%);
     color: inherit;
   }
 

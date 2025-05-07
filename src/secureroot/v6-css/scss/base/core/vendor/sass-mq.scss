@@ -6,6 +6,7 @@
 // See https://github.com/sass-mq/sass-mq/pull/10
 
 @use "sass:math";
+@use "sass:list";
 
 /// Base font size on the `<body>` element
 /// @type Number (unit)
@@ -362,6 +363,6 @@ $mq-media-type: all !default;
   }
 }
 
-@if length($mq-show-breakpoints) > 0 {
+@if list.length($mq-show-breakpoints) > 0 {
   @include mq-show-breakpoints;
 }

@@ -2,7 +2,11 @@
 
 import { src, dest, task } from "gulp";
 import * as config from "../../config.json";
-import sass from "gulp-dart-sass";
+
+import dartSass from "sass";
+import gulpSass from "gulp-sass";
+const sass = gulpSass(dartSass);
+
 import connect from "gulp-connect";
 import sourcemaps from "gulp-sourcemaps";
 import autoprefixer from "gulp-autoprefixer";
@@ -40,7 +44,6 @@ function hseStyles() {
     .pipe(mode.development(sourcemaps.init()))
     .pipe(
       sass({
-        includePaths: "node_modules",
         includePaths: ["node_modules/susy/sass"],
         outputStyle: "compressed",
       }).on("error", sass.logError)
@@ -48,7 +51,7 @@ function hseStyles() {
     .pipe(autoprefixer({ grid: true }))
     .pipe(sourcemaps.write())
     .pipe(pxtorem())
-    .pipe(rename("6.2.0.min.css"))
+    .pipe(rename("6.3.0.min.css"))
     .pipe(mode.development(sourcemaps.write()))
     .pipe(connect.reload())
     .pipe(dest(output));
@@ -63,7 +66,6 @@ function designSystemStyles() {
     .pipe(mode.development(sourcemaps.init()))
     .pipe(
       sass({
-        includePaths: "node_modules",
         includePaths: ["node_modules/susy/sass"],
         outputStyle: "compressed",
       }).on("error", sass.logError)
@@ -71,7 +73,7 @@ function designSystemStyles() {
     .pipe(autoprefixer({ grid: true }))
     .pipe(sourcemaps.write())
     .pipe(pxtorem())
-    .pipe(rename("6.2.0.min.css"))
+    .pipe(rename("6.3.0.min.css"))
     .pipe(mode.development(sourcemaps.write()))
     .pipe(connect.reload())
     .pipe(dest(outputDesignSystemStyles));
@@ -86,7 +88,6 @@ function pressStyles() {
     .pipe(mode.development(sourcemaps.init()))
     .pipe(
       sass({
-        includePaths: "node_modules",
         includePaths: ["node_modules/susy/sass"],
         outputStyle: "compressed",
       }).on("error", sass.logError)
@@ -94,7 +95,7 @@ function pressStyles() {
     .pipe(autoprefixer({ grid: true }))
     .pipe(sourcemaps.write())
     .pipe(pxtorem())
-    .pipe(rename("press-6.2.0.min.css"))
+    .pipe(rename("press-6.3.0.min.css"))
     .pipe(mode.development(sourcemaps.write()))
     .pipe(connect.reload())
     .pipe(dest(outputPressStyles));
