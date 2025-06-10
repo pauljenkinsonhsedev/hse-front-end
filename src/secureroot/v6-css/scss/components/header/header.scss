@@ -1,8 +1,5 @@
 .hse-header {
 @include clearfix();
-@include mq($media-type: print) {
-display: none;
-}
 background-color: $color_hse-white;
 }
 
