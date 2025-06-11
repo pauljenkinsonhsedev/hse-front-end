@@ -21,6 +21,9 @@
   background: url(../../assets/v6-images/icons/icon-print.png) no-repeat 10px 50%;
   background-color: $hse-focus-color;
  }
+ &:active {
+  color: inherit;
+ }
 }
 
 .printable-version {
