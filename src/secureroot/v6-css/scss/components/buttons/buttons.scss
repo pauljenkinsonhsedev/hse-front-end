@@ -19,7 +19,7 @@ $button-shadow-size: 4px;
 
 .hse-button {
   text-decoration: none;
-  @include hse-font(19);
+  @include hse-font(16);
   @include hse-responsive-margin(5, "bottom", $adjustment: $button-shadow-size); // s1
   -webkit-appearance: none;
   background-color: $hse-button-color;
@@ -65,7 +65,6 @@ $button-shadow-size: 4px;
     box-shadow: 0 $button-shadow-size 0 $hse-focus-text-color;
     color: $hse-focus-text-color;
     outline: $hse-focus-width solid transparent;
-
     &:visited {
       color: $hse-focus-text-color;
 
@@ -217,7 +216,7 @@ $button-shadow-size: 4px;
   border: 1px solid $hse-transparent-button-border-color;
   color: $hse-reverse-button-text-color;
   &:hover {
-    background-color: $color_hse-grey-3;
+    background-color: $color_hse-grey-4;
     color: $hse-reverse-button-text-color;
     color: $hse-reverse-button-text-color;
   }

@@ -16,9 +16,13 @@
 
 // default focus override
 .hse-button--transparent.btn-print {
+ box-shadow: none;
  &:focus {
   background: url(../../assets/v6-images/icons/icon-print.png) no-repeat 10px 50%;
   background-color: $hse-focus-color;
+ }
+ &:active {
+  color: inherit;
  }
 }
 

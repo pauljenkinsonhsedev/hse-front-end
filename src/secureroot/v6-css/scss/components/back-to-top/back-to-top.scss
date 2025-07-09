@@ -63,5 +63,8 @@
     &--hidden {
         display: none; // Hide back-to-top by default
     }
+    @include mq($media-type: print) {
+    display: none;
+    }
 }
 
