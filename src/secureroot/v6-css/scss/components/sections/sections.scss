@@ -118,6 +118,14 @@ border-top: none;
 @include hse-responsive-padding(4, "top");
 }
 
+.hse-browse-section__list {
+@extend .hse-list--key-links;
+p {
+text-indent: 0;
+font-weight: normal;
+}
+}
+
 // utility class 
 
 .hse-u-browse-link {
