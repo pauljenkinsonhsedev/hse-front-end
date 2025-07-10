@@ -105,6 +105,9 @@ border-top: 1px solid $color_hse-grey-3;
 h2 {
     @extend %hse-heading-m;
 }
+h3 {
+    @extend %hse-heading-s;
+}
 }
 
 .hse-browse-section--top-border {
