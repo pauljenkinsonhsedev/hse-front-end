@@ -102,6 +102,9 @@ border-top: 1px solid $color_hse-grey-3;
 
 .hse-browse-section {
 @include hse-responsive-margin(6, "bottom");
+h2 {
+    @extend %hse-heading-m;
+}
 }
 
 .hse-browse-section--top-border {
