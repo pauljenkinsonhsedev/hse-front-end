@@ -13,7 +13,7 @@
   "author": "",
   "license": "ISC",
   "engines": {
-  "node": ">=14.0.0 <23.0.0"
+    "node": ">=14.0.0 <23.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.10.2",
@@ -26,6 +26,7 @@
     "babel-loader": "^8.1.0",
     "colors": "^1.4.0",
     "core-js": "^3.16.1",
+    "cssnano": "^7.0.7",
     "date-format": "^3.0.0",
     "del": "^5.1.0",
     "fs": "^0.0.1-security",
@@ -39,6 +40,7 @@
     "gulp-notify": "^4.0.0",
     "gulp-nunjucks-render": "^2.2.3",
     "gulp-open": "^3.0.1",
+    "gulp-postcss": "^10.0.0",
     "gulp-pxtorem": "^3.0.0",
     "gulp-rename": "^2.0.0",
     "gulp-sizereport": "^1.2.1",
@@ -50,6 +52,7 @@
     "imagemin-pngquant": "^9.0.0",
     "node-notifier": "^10.0.1",
     "path": "^0.12.7",
+    "postcss-import": "^16.1.1",
     "rename": "^1.0.4",
     "require-dir": "^1.2.0",
     "sass-loader": "^13.3.3",
