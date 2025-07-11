@@ -680,6 +680,7 @@ window.dataLayer.push({'content_group': '@@(_document['contentGroup'])@@'});
             <li class="hse-footer__list-item hse-footer__list-item--support-links"><a class="hse-footer__list-item-support-link" href="../help/accessibility.htm">Accessibility</a></li>
             <li class="hse-footer__list-item hse-footer__list-item--support-links"><a class="hse-footer__list-item-support-link" href="../foi/index.htm">Disclosure of information</a></li>
             <li class="hse-footer__list-item hse-footer__list-item--support-links"><a class="hse-footer__list-item-support-link" href="../help/report-vulnerability.htm">Vulnerability disclosure</a></li>
+            <li class="hse-footer__list-item hse-footer__list-item--support-links"><a class="hse-footer__list-item-support-link" href="https://consultations.hse.gov.uk">Consultations</a></li>
             <li class="hse-footer__list-item hse-footer__list-item--support-links"><a class="hse-footer__list-item-support-link" href="../languages/index.htm">Other languages</a></li>
           </ul>
           <div>
