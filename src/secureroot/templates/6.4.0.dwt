@@ -256,13 +256,13 @@ window.dataLayer.push({'content_group': '@@(_document['contentGroup'])@@'});
                 <span class="hse-action-link__text hse-action-link__menu">Topics A to Z</span></a></div>
             </div>
             <div class="hse-grid-column-one-third hse-section__content">
-            <h3>About HSE</h3>
+            <h3>About</h3>
             <ul class="hse-navigation__navigation-list navigation-third-list">
+	            <li class="hse-navigation__navigation-item"><a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="../aboutus/index.htm">About us</a></li>
               <li class="hse-navigation__navigation-item"><a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="https://press.hse.gov.uk">News</a></li>
               <li class="hse-navigation__navigation-item"><a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="../news/subscribe/index.htm">Sign up for free updates</a></li>
               <li class="hse-navigation__navigation-item"><a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="../contact/index.htm">Contact us</a></li>
-              <li class="hse-navigation__navigation-item"><a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="https://consultations.hse.gov.uk/">Consultations</a></li>
-              <li class="hse-navigation__navigation-item"><a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="../aboutus/our-mission-and-priorities.htm">Our mission and priorities</a></li>
+              <li class="hse-navigation__navigation-item"><a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="../statistics/index.htm">Statistics</a></li>
               <li class="hse-navigation__navigation-item"><a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="https://careers.hse.gov.uk/">Careers</a></li>
               </ul>
               <h3>Products and services</h3>
