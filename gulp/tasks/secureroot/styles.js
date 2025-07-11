@@ -1,4 +1,6 @@
 "use strict";
+import mergeStream from "merge-stream";
+import concat from "gulp-concat";
 import postcss from "gulp-postcss";
 import cssnano from "cssnano";
 import { src, dest, task } from "gulp";
@@ -64,25 +66,35 @@ task("hseStyles", hseStyles);
 // Design system styles
 
 function designSystemStyles() {
-  return src(config.secureroot.styles.entryDesignSystem)
+  // Compile SCSS to CSS
+  const compiledSass = src(config.secureroot.styles.entryDesignSystem)
     .pipe(mode.development(sourcemaps.init()))
     .pipe(
       sass({
         includePaths: ["node_modules/susy/sass"],
-        outputStyle: "compressed",
+        outputStyle: "expanded", // not compressed yet
       }).on("error", sass.logError)
-    )   
+    )
     .pipe(autoprefixer({ grid: true }))
-    .pipe(sourcemaps.write())
-    .pipe(pxtorem())
-    .pipe(postcss([cssnano()])) // Final minification
-    .pipe(rename("6.4.0.min.css"))
+    .pipe(pxtorem());
+
+  // Read Prism raw CSS
+  const prismCSS = src([
+    'node_modules/prismjs/themes/prism.css',
+    'node_modules/prismjs/themes/prism-okaidia.css'
+  ]);
+
+  // Merge & concatenate all CSS
+  return mergeStream(compiledSass, prismCSS)
+    .pipe(concat('6.4.0.min.css'))           // Merge into one file
+    .pipe(postcss([cssnano()]))              // Minify
     .pipe(mode.development(sourcemaps.write()))
     .pipe(connect.reload())
-    .pipe(dest(outputDesignSystemStyles));
+    .pipe(dest(outputDesignSystemStyles));   // Write final file
 }
 
 task("designSystemStyles", designSystemStyles);
+
 
 // Press styles for WP https://press.hse.gov.uk/
 
