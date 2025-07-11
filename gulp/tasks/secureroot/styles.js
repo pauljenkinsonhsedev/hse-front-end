@@ -1,5 +1,6 @@
 "use strict";
-
+import postcss from "gulp-postcss";
+import cssnano from "cssnano";
 import { src, dest, task } from "gulp";
 import * as config from "../../config.json";
 
@@ -47,10 +48,11 @@ function hseStyles() {
         includePaths: ["node_modules/susy/sass"],
         outputStyle: "compressed",
       }).on("error", sass.logError)
-    )
+    )  
     .pipe(autoprefixer({ grid: true }))
     .pipe(sourcemaps.write())
     .pipe(pxtorem())
+    .pipe(postcss([cssnano()])) // Final minification
     .pipe(rename("6.4.0.min.css"))
     .pipe(mode.development(sourcemaps.write()))
     .pipe(connect.reload())
@@ -69,10 +71,11 @@ function designSystemStyles() {
         includePaths: ["node_modules/susy/sass"],
         outputStyle: "compressed",
       }).on("error", sass.logError)
-    )
+    )   
     .pipe(autoprefixer({ grid: true }))
     .pipe(sourcemaps.write())
     .pipe(pxtorem())
+    .pipe(postcss([cssnano()])) // Final minification
     .pipe(rename("6.4.0.min.css"))
     .pipe(mode.development(sourcemaps.write()))
     .pipe(connect.reload())
