@@ -1,8 +1,5 @@
 .hse-header {
 @include clearfix();
-@include mq($media-type: print) {
-display: none;
-}
 background-color: $color_hse-white;
 }
 
@@ -11,6 +8,9 @@ background: $color_hse-red;
 display: block;
 content: '';
 height: 4px;
+@include mq($media-type: print) {
+  display: none;
+}
 } 
 
 .hse-header__container {

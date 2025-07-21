@@ -168,6 +168,9 @@
     border-right: none;
     margin-left: 0;
   }
+  @include mq($media-type: print) {
+    display: none;
+  }
 }
 
 .search-button:hover,

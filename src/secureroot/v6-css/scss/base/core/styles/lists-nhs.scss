@@ -127,12 +127,4 @@
     border-color: $color_hse-darker-red;
   }
 
-  .hse-browse-section__list {
-  @extend .hse-list--key-links;
-  p {
-  text-indent: 0;
-  font-weight: normal;
-  }
-  }
-
 
