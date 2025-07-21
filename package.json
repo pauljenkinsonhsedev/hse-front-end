@@ -8,6 +8,7 @@
     "gulp": "gulp --development",
     "hse": "gulp --staging",
     "designsystem": "gulp development --development",
+    "press": "gulp pressStyles --production",
     "prod": "gulp production --production"
   },
   "author": "",
