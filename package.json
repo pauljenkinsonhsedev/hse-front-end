@@ -1,6 +1,6 @@
 {
   "name": "hse-front-end",
-  "version": "6.3.0",
+  "version": "6.4.0",
   "description": "",
   "main": "gulpfile.babel.js",
   "scripts": {
@@ -8,12 +8,13 @@
     "gulp": "gulp --development",
     "hse": "gulp --staging",
     "designsystem": "gulp development --development",
+    "press": "gulp pressStyles --production",
     "prod": "gulp production --production"
   },
   "author": "",
   "license": "ISC",
   "engines": {
-  "node": ">=14.0.0 <23.0.0"
+    "node": ">=14.0.0 <23.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.10.2",
@@ -26,6 +27,7 @@
     "babel-loader": "^8.1.0",
     "colors": "^1.4.0",
     "core-js": "^3.16.1",
+    "cssnano": "^7.0.7",
     "date-format": "^3.0.0",
     "del": "^5.1.0",
     "fs": "^0.0.1-security",
@@ -39,6 +41,7 @@
     "gulp-notify": "^4.0.0",
     "gulp-nunjucks-render": "^2.2.3",
     "gulp-open": "^3.0.1",
+    "gulp-postcss": "^10.0.0",
     "gulp-pxtorem": "^3.0.0",
     "gulp-rename": "^2.0.0",
     "gulp-sizereport": "^1.2.1",
@@ -48,8 +51,11 @@
     "imagemin-jpeg-recompress": "^7.0.0",
     "imagemin-jpegtran": "^7.0.0",
     "imagemin-pngquant": "^9.0.0",
+    "merge-stream": "^2.0.0",
     "node-notifier": "^10.0.1",
     "path": "^0.12.7",
+    "postcss-import": "^16.1.1",
+    "prismjs": "^1.30.0",
     "rename": "^1.0.4",
     "require-dir": "^1.2.0",
     "sass-loader": "^13.3.3",
@@ -79,7 +85,6 @@
     "papaparse": "^5.3.2",
     "pdfmake": "^0.2.4",
     "picturefill": "^3.0.3",
-    "prismjs": "^1.24.1",
     "regenerator-runtime": "^0.14.1",
     "sass": "^1.87.0",
     "tidy-html5": "^0.1.1"
