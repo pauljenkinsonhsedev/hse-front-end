@@ -6,6 +6,9 @@
  * 1. Force `<table>`s to be full-width by default.
  */
 
+ @use "../tools/all" as *;
+
+
  table {
     border-spacing: 0;
     vertical-align: top;
