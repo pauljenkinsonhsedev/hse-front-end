@@ -13,6 +13,9 @@
  * 6. Text decoration underline used to override default <a> styling.
  */
 
+@use "../../base/core/tools/focused" as *;
+
+
  .hse-action-link {
     @include hse-responsive-padding(3, "top");
     @include hse-responsive-padding(4, "bottom");

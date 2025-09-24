@@ -9,6 +9,9 @@
 // See utilities/clearfix
 //
 
+@use "../tools/focused" as *;
+
+
 @mixin clearfix() {
   &:after {
     clear: both;

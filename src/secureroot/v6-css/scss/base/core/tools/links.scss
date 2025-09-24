@@ -9,6 +9,7 @@
 //
 
 @use "../settings/_all" as *;
+@use "../tools/focused" as *;
 
 
 @mixin hse-link-style-default {
