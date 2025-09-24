@@ -1,13 +1,35 @@
 /* ==========================================================================
-   OBJECTS / #GRID
+   OBJECTS / #GRID (local fallback replacement)
    ========================================================================== */
 
-   @include govuk-exports("govuk/objects/grid") {
-    @include govuk-grid-row;
-    @include govuk-grid-column(one-quarter);
-    @include govuk-grid-column(one-third);
-    @include govuk-grid-column(one-half);
-    @include govuk-grid-column(two-thirds);
-    @include govuk-grid-column(three-quarters);
-    @include govuk-grid-column(full);
-  }
+// Fake govuk-exports mixin (does nothing but maintain compatibility)
+@mixin govuk-exports($name) {
+  @content;
+}
+
+// Define width map (same as GOV.UK)
+$govuk-grid-widths: (
+  "one-quarter": 25%,
+  "one-third": 33.3333%,
+  "one-half": 50%,
+  "two-thirds": 66.6667%,
+  "three-quarters": 75%,
+  "full": 100%
+) !default;
+
+// Define the grid row mixin
+@mixin govuk-grid-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -15px;
+  margin-right: -15px;
+  box-sizing: border-box;
+}
+
+// Define the grid column mixin
+@mixin govuk-grid-column($width) {
+  width: map-get($govuk-grid-widths, $width);
+  padding-left: 15px;
+  padding-right: 15px;
+  box-sizing: border-box;
+}
