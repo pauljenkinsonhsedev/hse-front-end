@@ -1,13 +1,13 @@
-/* ==========================================================================
-   OBJECTS / #GRID (local fallback replacement)
-   ========================================================================== */
+// ==========================================================================
+// OBJECTS / #GRID (local fallback replacement)
+// ==========================================================================
 
-// Fake govuk-exports mixin (does nothing but maintain compatibility)
+// ✅ Fake govuk-exports to prevent undefined errors
 @mixin govuk-exports($name) {
   @content;
 }
 
-// Define width map (same as GOV.UK)
+// Define width map
 $govuk-grid-widths: (
   "one-quarter": 25%,
   "one-third": 33.3333%,
@@ -17,7 +17,7 @@ $govuk-grid-widths: (
   "full": 100%
 ) !default;
 
-// Define the grid row mixin
+// Mixins
 @mixin govuk-grid-row {
   display: flex;
   flex-wrap: wrap;
@@ -26,10 +26,24 @@ $govuk-grid-widths: (
   box-sizing: border-box;
 }
 
-// Define the grid column mixin
 @mixin govuk-grid-column($width) {
   width: map-get($govuk-grid-widths, $width);
   padding-left: 15px;
   padding-right: 15px;
   box-sizing: border-box;
+}
+
+// ✅ Now this will no longer error:
+@include govuk-exports("govuk/objects/grid") {
+  .govuk-grid-row {
+    @include govuk-grid-row;
+  }
+
+  .govuk-grid-column-one-half {
+    @include govuk-grid-column("one-half");
+  }
+
+  .govuk-grid-column-one-third {
+    @include govuk-grid-column("one-third");
+  }
 }
