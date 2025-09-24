@@ -8,6 +8,9 @@
 // Usage: @include hse-link-style-default;
 //
 
+@use "../settings/_all" as *;
+
+
 @mixin hse-link-style-default {
     color: $hse-link-color;
   
