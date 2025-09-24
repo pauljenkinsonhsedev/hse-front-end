@@ -5,6 +5,8 @@
 @charset "UTF-8"; // Fixes an issue where Ruby locale is not set properly
 // See https://github.com/sass-mq/sass-mq/pull/10
 
+@use "sass:map";
+@use "sass:meta";
 @use "sass:math";
 @use "sass:list";
 
@@ -185,7 +187,7 @@ $mq-media-type: all !default;
 
   // From: this breakpoint (inclusive)
   @if $from {
-    @if type-of($from) == number {
+    @if meta.type-of($from) == number {
       $min-width: mq-px2em($from);
     } @else {
       $min-width: mq-px2em(mq-get-breakpoint-width($from, $breakpoints));
