@@ -1,27 +1,12 @@
-// ==========================================================================
-// TOOLS / #SASS-MQ
-// ==========================================================================
+// Always do @use first so this file itself knows about mq()
+@use "../vendor/sass-mq" as mq-core;
 
-// ✅ Modern module import
-@use "../vendor/sass-mq" as *;
+// Then forward it so downstream files can access it too
+@forward "../vendor/sass-mq" show mq;
 
-
-$sass-mq-already-included: false !default;
-
-@if $sass-mq-already-included {
-  $mq-show-breakpoints: ();
-}
-
-
-
-$sass-mq-already-included: true;
-
-// ==========================================================================
-// sass-mq helpers
-// ==========================================================================
-
+// Now you can use it
 @mixin govuk-media-query($args...) {
-  @include mq($args...) {
+  @include mq-core.mq($args...) {
     @content;
   }
 }
