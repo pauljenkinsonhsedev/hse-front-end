@@ -3,7 +3,8 @@
 // ==========================================================================
 
 // ✅ Modern module import
-@use "../vendor/sass-mq" as mq;
+@use "../vendor/sass-mq" as *;
+
 
 $sass-mq-already-included: false !default;
 
@@ -20,7 +21,7 @@ $sass-mq-already-included: true;
 // ==========================================================================
 
 @mixin govuk-media-query($args...) {
-  @include mq.mq($args...) {
+  @include mq($args...) {
     @content;
   }
 }
