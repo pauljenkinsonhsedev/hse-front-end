@@ -25,6 +25,8 @@
 @use "sass:map";
 @use "sass:meta";
 @use "../settings/all" as *;
+@use "../tools/sass-mq" as *;
+
 
 
 @function hse-spacing($spacing-point) {
