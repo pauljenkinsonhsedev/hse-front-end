@@ -9,6 +9,9 @@
 // Used for interactive text-based elements.
 //
 
+ @use "../settings/all" as *;
+
+
 @mixin hse-focused-text {
     background-color: $hse-focus-color;
     box-shadow: 0 -2px $hse-focus-color, 0 $hse-focus-width $hse-focus-text-color;

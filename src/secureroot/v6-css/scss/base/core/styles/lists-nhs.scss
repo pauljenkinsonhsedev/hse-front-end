@@ -16,6 +16,9 @@
  * 3. 'Random number' used to align icon and text.
  */
 
+ @use "../settings/all" as *;
+
+
  %hse-list {
     @include hse-typography-responsive(19);
     @include hse-responsive-margin(4, "bottom");
