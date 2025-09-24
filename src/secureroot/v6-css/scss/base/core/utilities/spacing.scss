@@ -6,6 +6,7 @@
 // Original code taken from GDS (Government Digital Service)
 // https://github.com/alphagov/govuk-frontend
 
+@use "../settings/all" as *;
 $_spacing-directions: ("top", "right", "bottom", "left") !default;
 
 // Spacing override classes

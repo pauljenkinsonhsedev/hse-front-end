@@ -23,6 +23,7 @@
 //
 
 @use "sass:meta";
+@use "../settings/all" as *;
 
 
 @function hse-spacing($spacing-point) {
