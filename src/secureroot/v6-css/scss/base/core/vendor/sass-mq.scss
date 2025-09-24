@@ -4,7 +4,7 @@
 /* stylelint-disable indentation */
 @charset "UTF-8"; // Fixes an issue where Ruby locale is not set properly
 // See https://github.com/sass-mq/sass-mq/pull/10
-
+@use "sass:string";
 @use "sass:map";
 @use "sass:meta";
 @use "sass:math";
@@ -97,13 +97,14 @@ $mq-media-type: all !default;
 @function mq-px2em($px, $base-font-size: $mq-base-font-size) {
   /* stylelint-disable-line scss/at-function-pattern */
 
-  @if unitless($px) {
-    @warn "Assuming #{$px} to be in pixels, attempting to convert it into pixels."; /* stylelint-disable-line at-rule-disallowed-list, string-quotes */
-    @return mq-px2em($px * 1px, $base-font-size);
-  } @else if unit($px) == em {
-    @return $px;
-  }
-  @return math.div($px, $base-font-size) * 1em;
+@if math.is-unitless($px) {
+  @warn "Assuming #{$px} to be in pixels, attempting to convert it into pixels."; /* stylelint-disable-line at-rule-disallowed-list, string-quotes */
+  @return mq-px2em($px * 1px, $base-font-size);
+} @else if math.unit($px) == "em" {
+  @return $px;
+}
+
+@return math.div($px, $base-font-size) * 1em;
 }
 
 /// Get a breakpoint's width
@@ -238,7 +239,7 @@ $mq-media-type: all !default;
     // Remove unnecessary media query prefix 'all and '
     @if ($media-type == "all" and $media-query != "") {
       $media-type: "";
-      $media-query: str-slice(unquote($media-query), 6);
+      $media-query: string.slice(string.unquote($media-query), 6);
     }
 
     @media #{$media-type + $media-query} {
