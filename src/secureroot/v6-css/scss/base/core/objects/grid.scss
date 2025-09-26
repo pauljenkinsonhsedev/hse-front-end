@@ -2,6 +2,9 @@
 // OBJECTS / #GRID (local fallback replacement)
 // ==========================================================================
 
+@use "sass:map";
+
+
 // ✅ Fake govuk-exports to prevent undefined errors
 @mixin govuk-exports($name) {
   @content;
