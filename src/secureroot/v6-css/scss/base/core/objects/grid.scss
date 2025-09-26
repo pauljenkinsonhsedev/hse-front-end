@@ -27,7 +27,7 @@ $govuk-grid-widths: (
 }
 
 @mixin govuk-grid-column($width) {
-  width: map-get($govuk-grid-widths, $width);
+  width: map.get($govuk-grid-widths, $width);
   padding-left: 15px;
   padding-right: 15px;
   box-sizing: border-box;
