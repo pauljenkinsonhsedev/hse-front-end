@@ -1,52 +1,14 @@
-// ==========================================================================
-// OBJECTS / #GRID (local fallback replacement)
-// ==========================================================================
+/* ==========================================================================
+   OBJECTS / #GRID
+   ========================================================================== */
+@use "../tools/all" as *;
 
-@use "sass:map";
-
-
-// ✅ Fake govuk-exports to prevent undefined errors
-@mixin govuk-exports($name) {
-  @content;
-}
-
-// Define width map
-$govuk-grid-widths: (
-  "one-quarter": 25%,
-  "one-third": 33.3333%,
-  "one-half": 50%,
-  "two-thirds": 66.6667%,
-  "three-quarters": 75%,
-  "full": 100%
-) !default;
-
-// Mixins
-@mixin govuk-grid-row {
-  display: flex;
-  flex-wrap: wrap;
-  margin-left: -15px;
-  margin-right: -15px;
-  box-sizing: border-box;
-}
-
-@mixin govuk-grid-column($width) {
-  width: map.get($govuk-grid-widths, $width);
-  padding-left: 15px;
-  padding-right: 15px;
-  box-sizing: border-box;
-}
-
-// ✅ Now this will no longer error:
-@include govuk-exports("govuk/objects/grid") {
-  .govuk-grid-row {
+   @include govuk-exports("govuk/objects/grid") {
     @include govuk-grid-row;
+    @include govuk-grid-column(one-quarter);
+    @include govuk-grid-column(one-third);
+    @include govuk-grid-column(one-half);
+    @include govuk-grid-column(two-thirds);
+    @include govuk-grid-column(three-quarters);
+    @include govuk-grid-column(full);
   }
-
-  .govuk-grid-column-one-half {
-    @include govuk-grid-column("one-half");
-  }
-
-  .govuk-grid-column-one-third {
-    @include govuk-grid-column("one-third");
-  }
-}

@@ -18,6 +18,10 @@
  * https://github.com/alphagov/govuk-frontend
  */
 
+ @use "../tools/spacing" as *;
+ @use "../settings/colours.scss" as *;
+
+
  %hse-section-break {
     border: 0;
     margin: 0;

@@ -16,103 +16,105 @@
  * 3. 'Random number' used to align icon and text.
  */
 
- @use "../settings/all" as *;
+@use "../settings/all" as *;
+@use "../tools/typography" as *;
+@use "../tools/spacing" as *;
 
+%hse-list {
+  list-style-type: none;
+  margin-top: 0;
+  padding-left: 0;
 
- %hse-list {
-    @include hse-typography-responsive(19);
-    @include hse-responsive-margin(4, "bottom");
-  
-    list-style-type: none;
-    margin-top: 0;
-    padding-left: 0;
-  }
-  
-  %hse-list > li {
-    @include hse-responsive-margin(2, "bottom");
-  
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
-  
-  %hse-list--bullet {
-    list-style-type: disc;
-    padding-left: 20px; /* [1] */
-  }
-  
-  .hse-list--bullet {
-    @extend %hse-list--bullet;
-  }
-  
-  %hse-list--number {
-    list-style-type: decimal;
-    padding-left: 20px; /* [1] */
-  }
-  
-  .hse-list--number {
-    @extend %hse-list--number;
-  }
-  
-  .hse-list {
-    @extend %hse-list;
-  }
-  
-  ul {
-    @extend %hse-list;
-    @extend %hse-list--bullet;
-  }
-  
-  ol {
-    @extend %hse-list;
-    @extend %hse-list--number;
-  }
-  
-  .hse-list--tick,
-  .hse-list--cross {
-    list-style: none;
-    margin-top: 0;
-    padding-left: 40px; /* [2] */
-    position: relative;
-  
-    svg {
-      left: -4px; /* [3] */
-      margin-top: -5px; /* [3] */
-      position: absolute;
-    }
-  }
+  @include hse-typography-responsive(19);
+  @include hse-responsive-margin(4, "bottom");
+}
 
-  .hse-list--key-links {
-  font-weight: bold;  
+%hse-list > li {
+  @include hse-responsive-margin(2, "bottom");
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+%hse-list--bullet {
+  list-style-type: disc;
+  padding-left: 20px; /* [1] */
+}
+
+.hse-list--bullet {
+  @extend %hse-list--bullet;
+}
+
+%hse-list--number {
+  list-style-type: decimal;
+  padding-left: 20px; /* [1] */
+}
+
+.hse-list--number {
+  @extend %hse-list--number;
+}
+
+.hse-list {
+  @extend %hse-list;
+}
+
+ul {
+  @extend %hse-list;
+  @extend %hse-list--bullet;
+}
+
+ol {
+  @extend %hse-list;
+  @extend %hse-list--number;
+}
+
+.hse-list--tick,
+.hse-list--cross {
+  list-style: none;
+  margin-top: 0;
+  padding-left: 40px; /* [2] */
+  position: relative;
+
+  svg {
+    left: -4px; /* [3] */
+    margin-top: -5px; /* [3] */
+    position: absolute;
+  }
+}
+
+.hse-list--key-links {
+  font-weight: bold;
   list-style: none;
   padding: 0;
   margin-left: 20px;
+
   li a:focus-within {
-  background: $hse-focus-color;
+    background: $hse-focus-color;
   }
-  }
+}
 
-  .hse-list--key-links li {
-  @include hse-responsive-margin(3, "bottom");
+.hse-list--key-links li {
   text-indent: -20px;
-  }
+  @include hse-responsive-margin(3, "bottom");
+}
 
-  .hse-list--key-links.hse-card-group {
-   margin-left: 0;
-  }
+.hse-list--key-links.hse-card-group {
+  margin-left: 0;
+}
 
-  .hse-list--key-links li a, .hse-u-browse-link a {
+.hse-list--key-links li a,
+.hse-u-browse-link a {
   &:focus:before {
     border-right: 3px solid $color_hse-black;
-    border-top: 3px solid $color_hse-black;    
+    border-top: 3px solid $color_hse-black;
   }
-  
+
   &:before {
     border-right: 3px solid $color_hse-red;
     border-top: 3px solid $color_hse-red;
     content: "";
     display: inline-flex;
-    /* display: inline-block; */
     height: 10px;
     position: relative;
     right: 0;
@@ -122,12 +124,9 @@
     -ms-transform: translateY(0) rotate(45deg) scale(1);
     transform: translateY(0) rotate(45deg) scale(1);
     width: 10px;
-
   }
 }
 
-  .hse-list--key-links li a:hover::before {
-    border-color: $color_hse-darker-red;
-  }
-
-
+.hse-list--key-links li a:hover::before {
+  border-color: $color_hse-darker-red;
+}

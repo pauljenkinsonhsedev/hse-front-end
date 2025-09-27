@@ -360,12 +360,16 @@ $mq-media-type: all !default;
     @each $show-breakpoint in $show-breakpoints {
       $width: mq-get-breakpoint-width($show-breakpoint, $breakpoints);
       @include mq($show-breakpoint, $breakpoints: $breakpoints) {
+          & {
         content: "#{$show-breakpoint} ≥ #{$width} (#{mq-px2em($width)})"; /* stylelint-disable-line string-quotes */
+          }
       }
     }
   }
 }
 
 @if list.length($mq-show-breakpoints) > 0 {
+  & {
   @include mq-show-breakpoints;
+  }
 }

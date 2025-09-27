@@ -1,15 +1,15 @@
-@import "visibility.scss";
-@import "floats.scss";
-@import "spacing.scss";
-@import "reading-width.scss";
-@import "clearfix.scss";
-@import "box-background.scss";
-@import "equal-heights.scss";
-@import "icons.scss";
-@import "nowrap.scss";
-@import "typography.scss";
-@import "widths.scss";
-@import "text-align.scss";
+@forward "visibility.scss";
+@forward "floats.scss";
+@forward "spacing.scss";
+@forward "reading-width.scss";
+@forward "clearfix.scss";
+@forward "box-background.scss";
+@forward "equal-heights.scss";
+@forward "icons.scss";
+@forward "nowrap.scss";
+@forward "typography.scss";
+@forward "widths.scss";
+@forward "text-align.scss";
 
 
 
