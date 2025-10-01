@@ -32,14 +32,13 @@ $button-shadow-size: 4px;
   color: $hse-button-text-color;
   cursor: pointer;
   display: inline-block;
-  font-weight: 600;
   margin-top: 0;
   padding: 8px hse-spacing(3); // s2
   position: relative;
   text-align: center;
   vertical-align: top;
   width: auto;
-  @include hse-font(16);
+  @include hse-font(16, bold);
   @include hse-responsive-margin(5, "bottom", $adjustment: $button-shadow-size); // s1
   @include mq($until: tablet) {
     padding: hse-spacing(2) hse-spacing(3); // s2

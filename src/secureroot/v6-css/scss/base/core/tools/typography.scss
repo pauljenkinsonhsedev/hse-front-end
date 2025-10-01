@@ -117,17 +117,34 @@
 
 // Font mixin (wrapper)
 // ==========================================================================
-
-@mixin hse-font($size, $weight: normal, $line-height: false) {
+@mixin hse-font($size, $weight: normal, $line-height: false, $important: false) {
   // ✅ Weight declarations first
-  @if $weight == normal {
-    @include hse-typography-weight-normal;
-  } @else if $weight == bold {
-    @include hse-typography-weight-bold;
+  @if ($weight == normal or $weight == "normal") {
+    & {
+      font-weight: $hse-font-normal iff($important, !important);
+    }
+  } @else if ($weight == bold or $weight == "bold") {
+    & {
+      font-weight: $hse-font-bold iff($important, !important);
+    }
+  } @else {
+    // fallback in case devs pass a number like 500
+    & {
+      font-weight: $weight iff($important, !important);
+    }
   }
 
   // ✅ Then responsive typography rules
   @if $size {
-    @include hse-typography-responsive($size, $override-line-height: $line-height);
+    & {
+      @include hse-typography-responsive(
+        $size,
+        $override-line-height: $line-height,
+        $important: $important
+      );
+    }
   }
 }
+
+
+

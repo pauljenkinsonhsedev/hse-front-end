@@ -11,8 +11,7 @@
 border-bottom: 2px solid $color_hse-grey-4;
 @include hse-responsive-margin(4, "bottom");
 @include hse-all-headings {
-font-weight: bold;
-@include hse-font(22);
+@include hse-font(22, bold);
 }
 &:last-of-type {
 border-bottom: none;    
