@@ -5,7 +5,11 @@
 @use "../../base/core/tools/sass-mq" as *;
 @use "../../base/core/tools/typography" as *;
 @use "../../base/core/tools/links" as *;
-@use "../../base/core/settings/colours.scss" as *;
+@use "../../base/core/settings/colours" as *;
+@use "../../base/core/settings/spacing" as *;
+@use "../../base/core/tools/spacing" as *;
+
+
 
 
 .hse-design-side-navigation {
