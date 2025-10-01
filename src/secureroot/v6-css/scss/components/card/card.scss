@@ -155,8 +155,7 @@
   width: 100%;
   position: relative;
   h3, h2 {
-    font-weight: bold;
-    @include hse-font(22);
+    @include hse-font(22, bold);
   }
   &:hover {
   border-bottom: 4px solid $color_hse-red;
