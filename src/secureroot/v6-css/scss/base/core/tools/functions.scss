@@ -2,43 +2,52 @@
 // TOOLS / #FUNCTIONS
 // ==========================================================================
 
+@use "sass:math";
+@use "../settings/all" as *;
+
+// ==========================================================================
 // Convert pixels to em
 // ==========================================================================
-
 //
 // A quick way to convert px into em
 // Usage: hse-em(20px, $hse-base-font-size);
 //
 // Original code taken from GDS (Government Digital Service)
 // https://github.com/alphagov/govuk-frontend
-//
-
-@use "sass:math";
+// ==========================================================================
 
 @function hse-em($value, $context-font-size) {
-  @if (unitless($value)) {
+  // Ensure both values have units
+  @if (math.is-unitless($value)) {
     $value: $value * 1px;
   }
-  @if (unitless($context-font-size)) {
+  @if (math.is-unitless($context-font-size)) {
     $context-font-size: $context-font-size * 1px;
   }
+
   @return math.div($value, $context-font-size) * 1em;
 }
 
+// ==========================================================================
 // Convert pixels to rem
 // ==========================================================================
-
 //
 // A quick way to convert px into rem
 // Usage: hse-px-to-rem(20px);
 //
 // The $hse-base-font-size (defined in settings/_globals.scss)
 // must be configured to match the font-size of your root (html) element
-//
+// ==========================================================================
 
 @function hse-px-to-rem($value) {
-  @if (unitless($value)) {
+  // Ensure the value has units
+  @if (math.is-unitless($value)) {
     $value: $value * 1px;
+  }
+
+  // Ensure the base font size is not unitless
+  @if (math.is-unitless($hse-base-font-size)) {
+    $hse-base-font-size: $hse-base-font-size * 1px;
   }
 
   @return math.div($value, $hse-base-font-size) * 1rem;

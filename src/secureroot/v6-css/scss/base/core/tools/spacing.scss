@@ -22,6 +22,7 @@
 // https://github.com/alphagov/govuk-frontend
 //
 
+@use "../tools/iff.scss" as *;
 @use "sass:map";
 @use "sass:meta";
 @use "../settings/all" as *;

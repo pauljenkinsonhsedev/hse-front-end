@@ -7,11 +7,12 @@
 // patterns such as colours and font-weight
 //
 
+@use "../tools/iff.scss" as *;
 @use "../tools/sass-mq" as *;
 @use "sass:math";
 @use "sass:map";
 @use "../settings/all" as *;
-
+@use "../tools/functions" as *;
 
 // Text colour
 // ==========================================================================
@@ -28,30 +29,21 @@
   }
 }
 
-
-// Normal font weight
+// ==========================================================================
+// Font weights
 // ==========================================================================
 
-//
-// @param {Boolean} $important [false] - Whether to mark declarations as
-//   `!important`. Generally used to create override classes.
-//
-
 @mixin hse-typography-weight-normal($important: false) {
-  // ✅ Declarations first
   & {
-  font-weight: $hse-font-normal iff($important, !important);
+  font-weight: $hse-font-normal #{if($important, "!important", "")};
   }
 }
 
-
-// Bold font weight
-// ==========================================================================
-
 @mixin hse-typography-weight-bold($important: false) {
-  font-weight: $hse-font-bold iff($important, !important);
+  & {
+  font-weight: $hse-font-bold #{if($important, "!important", "")};
+  }
 }
-
 
 // Line height helper
 // ==========================================================================
