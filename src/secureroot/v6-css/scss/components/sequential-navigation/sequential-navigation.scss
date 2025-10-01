@@ -2,6 +2,11 @@
 
 // Pagination
 
+@use "../../base/core/settings/spacing" as *;
+@use "../../base/core/tools/spacing" as *;
+@use "../../base/core/tools/sass-mq" as *;
+@use "../../base/core/settings/colours" as *;
+
 #pagination {
 margin-bottom: $hse-legacy-spacing-20;
 }

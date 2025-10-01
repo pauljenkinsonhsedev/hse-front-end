@@ -1,4 +1,10 @@
+
 // Google Custom Search
+
+@use "../../base/core/settings/colours" as *;
+@use "../../base/core/settings/spacing" as *;
+@use "../../base/core/tools/spacing" as *;
+
 .gsc-search-box {
   margin: 0 !important;
   background-color: $color_hse-red;

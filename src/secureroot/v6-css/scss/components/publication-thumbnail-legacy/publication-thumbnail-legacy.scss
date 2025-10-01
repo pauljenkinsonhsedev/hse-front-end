@@ -1,3 +1,7 @@
+
+@use "../../base/core/settings/colours" as *;
+@use "../../base/core/settings/spacing" as *;
+
 ul.itemThumbBook .header,
 ul.itemThumbBook .resourceTitle {
 color: $color_hse-red;

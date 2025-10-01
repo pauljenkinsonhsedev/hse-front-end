@@ -1,4 +1,8 @@
 
+@use "../../base/core/tools/sass-mq" as *;
+@use "../../base/core/settings/colours" as *;
+@use "../../base/core/settings/typography" as *;
+
 #cookie-message {
   @include mq($media-type: print) {
   display: none;

@@ -1,11 +1,15 @@
 // Callouts
 
+@use "../../base/core/tools/spacing" as *;
+@use "../../base/core/settings/spacing" as *;
+@use "../../base/core/settings/colours" as *;
+
 $callout-border-width: 10px;
 
 .callout {
-  @include hse-responsive-padding(4);
   margin-bottom: $hse-legacy-spacing-20;
   border-left: $callout-border-width solid $color_hse-red;
+  @include hse-responsive-padding(4);
   @include hse-responsive-margin(6, "bottom");
 }
 

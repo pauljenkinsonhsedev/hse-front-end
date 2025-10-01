@@ -1,8 +1,8 @@
-@import "margins.scss"; // Margins has to come first
-@import "abbr.scss";
-@import "lists.scss";
-@import "lists-nhs.scss";
-@import "typography.scss";
-@import "section-break.scss";
+@forward "margins.scss"; // Margins has to come first
+@forward "abbr.scss";
+@forward "lists.scss";
+@forward "lists-nhs.scss";
+@forward "typography.scss";
+@forward "section-break.scss";
 
 

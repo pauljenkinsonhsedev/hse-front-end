@@ -1,6 +1,6 @@
-@import "page.scss";
-@import "links.scss";
-@import "more-links.scss";
-@import "tables.scss";
+@forward "page.scss";
+@forward "links.scss";
+@forward "more-links.scss";
+@forward "tables.scss";
 
 

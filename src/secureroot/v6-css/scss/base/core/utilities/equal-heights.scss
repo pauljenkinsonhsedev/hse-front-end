@@ -1,5 +1,7 @@
 // Equal heights fix
 
+@use "../tools/sass-mq" as *;
+
 @include mq($until: desktop) {
     /* Disables auto height on mobile devices */
     [class*="equalHeights"], [class*="equalHeight"] {

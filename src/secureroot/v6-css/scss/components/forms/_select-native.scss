@@ -10,6 +10,10 @@ category: Page features - Form elements
 ```
 
 */
+@use "../../base/core/settings/colours" as *;
+@use "../../base/core/settings/typography" as *;
+
+
 .select-arrow {
   width: 0;
   height: 0;

@@ -1,3 +1,5 @@
+@use "../../base/core/settings/typography" as *;
+
 .date-input__item {
   display: inline-block;
   margin-right: $dp;

@@ -3,31 +3,31 @@
 //*-----------------------------------*//
 
 // Settings
-@import "settings/_all.scss";
+@forward "settings/_all.scss";
 
 // Tools
 
-@import "tools/_all.scss";
+@forward "tools/_all.scss";
 
 // Generic
 
-@import "generic/box-sizing.scss";
+@forward "generic/box-sizing.scss";
 
 // Elements
 
-@import "elements/_all.scss";
+@forward "elements/_all.scss";
 
 // Objects
 
-@import "objects/_all.scss";
+@forward "objects/_all.scss";
 
 // Styles
 
-@import "styles/_all.scss";
+@forward "styles/_all.scss";
 
 // Utilities
 
-@import "utilities/_all.scss";
+@forward "utilities/_all.scss";
 
 
 

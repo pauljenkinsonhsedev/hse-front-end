@@ -1,3 +1,7 @@
+@use "../../base/core/settings/colours" as *;
+@use "../../base/core/settings/spacing" as *;
+@use "../../base/core/tools/spacing" as *;
+
 #contentAside ul {
 list-style: none;
 padding-left: 0;

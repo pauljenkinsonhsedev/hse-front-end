@@ -1,4 +1,9 @@
 
+@use "../../base/core/settings/spacing" as *;
+@use "../../base/core/tools/spacing" as *;
+@use "../../base/core/settings/colours" as *;
+
+
 .tooltip {
     position: relative;
     border-bottom: 1px dashed #111;

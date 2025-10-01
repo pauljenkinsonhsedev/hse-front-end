@@ -6,6 +6,11 @@
  * 1. Force `<table>`s to be full-width by default.
  */
 
+ @use "../tools/all" as *;
+ @use "../settings/all" as *;
+ @use "../vendor/sass-mq" as *;
+
+
  table {
     border-spacing: 0;
     vertical-align: top;

@@ -1,3 +1,10 @@
+@use "../../base/core/settings/typography" as *;
+@use "../../base/core/tools/typography" as *;
+@use "../../base/core/settings/spacing" as *;
+@use "../../base/core/tools/spacing" as *;
+@use "../../base/core/tools/sass-mq" as *;
+@use "../../base/core/settings/colours" as *;
+
 
 .hse-sidebar__navigation, .hse-sidebar-top {
 
@@ -33,9 +40,9 @@ h2, h3 {
 
 
 h2 {
-  @include hse-font(19);
   margin-bottom: hse-spacing(2);
   font-weight: 700;
+  @include hse-font(19);
 }
 .box {
 background: none !important;

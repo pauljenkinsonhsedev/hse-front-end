@@ -1,6 +1,13 @@
+@use "../../base/core/settings/typography" as *;
+@use "../../base/core/settings/spacing" as *;
+@use "../../base/core/settings/colours" as *;
+@use "../../base/core/tools/typography" as *;
+@use "../../base/core/tools/spacing" as *;
+
+
 .hse-contents-list__title {
-@include hse-font(16);
 margin-bottom: hse-spacing(2);
+@include hse-font(16);
 }
 
 .hse-contents-list__list {

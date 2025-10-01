@@ -27,28 +27,36 @@
  * 17. Trick IE10 into rendering the invisible clickable area. Without this it does not.
  */
 
+@use "../../base/core/tools/spacing" as *;
+@use "../../base/core/tools/mixins" as *;
+@use "../../base/core/tools/typography" as *;
+@use "../../base/core/settings/spacing" as *;
+@use "../../base/core/settings/colours" as *;
+@use "../../base/core/settings/typography" as *;
+@use "../../base/core/tools/sass-mq" as *;
+
+
  $card-border-width: 1px;
  $card-border-bottom-width: hse-spacing(1);
 
  
  .hse-card {
-   @include hse-responsive-margin(7, "bottom");
    position: relative; /* [1] */
    width: 100%;
+   @include hse-responsive-margin(7, "bottom");
  }
  
  .hse-card__img {
-   @include print-hide();
- 
    border-bottom: $card-border-width solid $color_hse-grey-5; /* [2] */
    display: block;
    width: 100%;
+   @include print-hide();
  }
  
  .hse-card__content {
+   background: $color_hse-white;
    @include top-and-bottom();
    @include hse-responsive-padding(5);
-   background: $color_hse-white;
  }
  
  .hse-card__heading,
@@ -68,11 +76,9 @@
  */
  
  .hse-card-group {
-   @include flex();
- 
    margin-bottom: hse-spacing(3);
    padding: 0;
- 
+   @include flex();
    @include mq($until: desktop) {
      margin-bottom: hse-spacing(6);
    }
@@ -86,11 +92,9 @@
  }
  
  .hse-card-group__item {
-   @include flex-item();
- 
    list-style-type: none;
    margin-bottom: 0;
- 
+   @include flex-item();
  }
 
   .hse-card-group {
@@ -151,8 +155,7 @@
   width: 100%;
   position: relative;
   h3, h2 {
-    @include hse-font(22);
-    font-weight: bold;
+    @include hse-font(22, bold);
   }
   &:hover {
   border-bottom: 4px solid $color_hse-red;

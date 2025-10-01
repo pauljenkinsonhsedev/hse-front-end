@@ -129,28 +129,9 @@ $hse-typography-scale: (
   )
 ) !default;
 
-// Font weights
-// ==========================================================================
-
-//
-// Font weight for normal typography
-//
-
-$hse-font-normal: 400 !default;
-
-//
-// Font weight for bold typography
-//
-
-$hse-font-bold: 600 !default;
-
-// Roboto font overrides 
-//
-
 body {
 font-variant-ligatures: no-common-ligatures;
 }
-
 
 //
 // Legacy 

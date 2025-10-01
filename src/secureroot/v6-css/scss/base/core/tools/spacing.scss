@@ -22,18 +22,26 @@
 // https://github.com/alphagov/govuk-frontend
 //
 
+@use "../tools/iff.scss" as *;
+@use "sass:map";
+@use "sass:meta";
+@use "../settings/all" as *;
+@use "../tools/sass-mq" as *;
+
+
+
 @function hse-spacing($spacing-point) {
-  $actual-input-type: type-of($spacing-point);
+  $actual-input-type: meta.type-of($spacing-point);
   @if $actual-input-type != "number" {
     @error "Expected a number (integer), but got a "
     + "#{$actual-input-type}."; /* stylelint-disable-line indentation */
   }
 
-  @if not map-has-key($hse-spacing-points, $spacing-point) {
+  @if not map.has-key($hse-spacing-points, $spacing-point) {
     @error "Unknown spacing variable `#{$spacing-point}`. Make sure you are using a point from the spacing scale in `_settings/spacing.scss`.";
   }
 
-  @return map-get($hse-spacing-points, $spacing-point);
+  @return map.get($hse-spacing-points, $spacing-point);
 }
 
 // Responsive spacing
@@ -69,25 +77,25 @@
 // https://github.com/alphagov/govuk-frontend
 //
 
-@mixin _hse-responsive-spacing(
+@mixin _hse-responsive-spacing (
   $responsive-spacing-point,
   $property,
   $direction: "all",
   $important: false,
   $adjustment: false
 ) {
-  $actual-input-type: type-of($responsive-spacing-point);
+  $actual-input-type: meta.type-of($responsive-spacing-point);
   @if $actual-input-type != "number" {
     @error "Expected a number (integer), but got a " + "#{$actual-input-type}.";
   }
 
-  @if not map-has-key($hse-spacing-responsive-scale, $responsive-spacing-point) {
+  @if not map.has-key($hse-spacing-responsive-scale, $responsive-spacing-point) {
     @error "Unknown spacing point `#{$responsive-spacing-point}`. Make sure you are using a point from the "
     + "responsive spacing scale in `_settings/spacing.scss`."; /* stylelint-disable-line indentation */
   }
 
-  $scale-map: map-get($hse-spacing-responsive-scale, $responsive-spacing-point); // [1] //
-  $actual-map-type: type-of($scale-map);
+  $scale-map:  map.get($hse-spacing-responsive-scale, $responsive-spacing-point); // [1] //
+  $actual-map-type: meta.type-of($scale-map);
   @if $actual-map-type != "map" {
     @error "Expected a number (integer), but got a "
     + "#{$actual-map-type}. Make sure you are using a map to set the responsive spacing in `_settings/spacing.scss`)"; /* stylelint-disable-line indentation */
@@ -104,16 +112,24 @@
       // [3] //
 
       @if $direction == all {
+        & {
         #{$property}: $breakpoint-value iff($important, !important);
+        }
       } @else {
+        & {
         #{$property}-#{$direction}: $breakpoint-value iff($important, !important);
+        }
       }
     } @else {
       @include govuk-media-query($from: $breakpoint) {
         @if $direction == all {
+          & {
           #{$property}: $breakpoint-value iff($important, !important);
+          }
         } @else {
+          & {
           #{$property}-#{$direction}: $breakpoint-value iff($important, !important);
+          }
         }
       }
     }

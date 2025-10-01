@@ -7,6 +7,15 @@
 // https://github.com/alphagov/govuk-frontend
 //
 
+@use "sass:map";
+@use "../settings/all" as *;
+@use "../tools/mixins" as *;
+@use "../tools/sass-mq" as *;
+@use "../tools/exports" as *;
+
+
+
+
 // Map of grid column widths
 // ==========================================================================
 
@@ -30,8 +39,8 @@ $_hse-grid-widths: (
 //
 
 @function grid-width($key) {
-  @if map-has-key($_hse-grid-widths, $key) {
-    @return map-get($_hse-grid-widths, $key);
+  @if map.has-key($_hse-grid-widths, $key) {
+    @return map.get($_hse-grid-widths, $key);
   }
 
   @error "Unknown grid width `#{$key}`";

@@ -14,6 +14,8 @@
 // so we disable stylelint for that rule
 /* stylelint-disable declaration-no-important */
 
+@use "../tools/sass-mq" as *;
+
 .hse-u-width-full {
     width: 100% !important;
   }

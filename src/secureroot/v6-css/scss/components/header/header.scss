@@ -1,6 +1,13 @@
+@use "../../base/core/tools/mixins" as *;
+@use "../../base/core/settings/colours" as *;
+@use "../../base/core/settings/spacing" as *;
+@use "../../base/core/tools/typography" as *;
+@use "../../base/core/tools/sass-mq" as *;
+
+
 .hse-header {
-@include clearfix();
 background-color: $color_hse-white;
+@include clearfix();
 }
 
 .hse-header::before {
@@ -21,8 +28,8 @@ border-bottom: 1px solid #c2c2c2;
 display: flex;
 flex-direction: row;
 flex-wrap: wrap;
-@include clearfix();  
 padding: 10px 0 10px 0;
+@include clearfix();  
 }
 
 .hse-header__top-container {
@@ -31,7 +38,6 @@ padding: 10px 0 10px 0;
 
 
 .hse-header__search {
-@include clearfix();
 top: -5px;
 position: absolute;
 right: 0;
@@ -41,6 +47,7 @@ margin-right: 16px;
 text-align: right;
 flex-basis: 100%;
 margin-top: $hse-legacy-spacing-20;
+@include clearfix();
 @include mq($from: desktop) {
 // margin-left: auto;
 top: 0;
@@ -114,18 +121,18 @@ outline-offset: initial;
   }
 
 .hse-header__logo-text {
-@include hse-typography-responsive(19);
-@include mq($from: desktop) {
-padding-top: 14px;
-}
 display: flex;
 position: relative;
 flex-direction: column;
 padding-left: 40px;
+font-weight: 500;
+@include hse-typography-responsive(19);
+@include mq($from: desktop) {
+padding-top: 14px;
+}
 @include mq($from: desktop) {
 line-height: 1 !important;
 }
-font-weight: 500;
 &::before {
 background: #9f2447;
 bottom: 0;

@@ -1,12 +1,21 @@
+@use "../../base/core/settings/spacing" as *;
+@use "../../base/core/tools/spacing" as *;
+@use "../../base/core/settings/colours" as *;
+@use "../../base/core/settings/typography" as *;
+@use "../../base/core/tools/typography" as *;
+@use "../../base/core/tools/links" as *;
+@use "../../base/core/tools/sass-mq" as *;
+@use "../../base/core/tools/mixins" as *;
+
 .hse-tabs {
   @include hse-responsive-margin(1, "top");
   @include hse-responsive-margin(6, "bottom");
 }
 
 .hse-tabs__title {
-  @include hse-font($size: 19);
   color: $hse-text-color;
   margin-bottom: hse-spacing(2);
+  @include hse-font($size: 19);
 }
 
 .hse-tabs__list {
@@ -17,9 +26,8 @@
 }
 
 .hse-tabs__list-item {
-  @include hse-font($size: 19);
   margin-left: hse-spacing(5);
-
+  @include hse-font($size: 19);
   &:before {
     color: $hse-text-color;
     content: "\2014 "; // "— "
@@ -29,10 +37,9 @@
 }
 
 .hse-tabs__tab {
-  @include hse-link-style-default;
-
   display: inline-block;
   margin-bottom: hse-spacing(2);
+  @include hse-link-style-default;
 }
 
 .hse-tabs__panel {
@@ -43,9 +50,9 @@
 .js-enabled {
   @include govuk-media-query($from: tablet) {
     .hse-tabs__list {
-      @include clearfix;
       border-bottom: 1px solid $hse-border-color;
       margin-bottom: 0;
+      @include clearfix;
     }
 
     .hse-tabs__title {
@@ -101,12 +108,11 @@
     }
 
     .hse-tabs__panel {
-      @include hse-responsive-margin(0, "bottom");
       background-color: $color_hse-white;
       border: 1px solid $hse-border-color;
       border-top: 0;
       padding: hse-spacing(6) hse-spacing(4);
-
+      @include hse-responsive-margin(0, "bottom");
       & > :last-child {
         margin-bottom: 0;
       }

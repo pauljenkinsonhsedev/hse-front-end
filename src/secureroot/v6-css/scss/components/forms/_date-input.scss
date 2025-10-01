@@ -5,6 +5,7 @@
 /**
  * 1. font-size: 0 removes whitespace caused by inline-block
  */
+@use "../../base/core/tools/mixins" as *;
 
  .hse-date-input {
     @include clearfix;

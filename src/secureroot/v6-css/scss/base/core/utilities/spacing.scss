@@ -6,6 +6,10 @@
 // Original code taken from GDS (Government Digital Service)
 // https://github.com/alphagov/govuk-frontend
 
+@use "../tools/exports" as *;
+@use "../tools/spacing" as spacing;
+@use "../settings/all" as *;
+
 $_spacing-directions: ("top", "right", "bottom", "left") !default;
 
 // Spacing override classes
@@ -32,13 +36,21 @@ $_spacing-directions: ("top", "right", "bottom", "left") !default;
   // [1] //
   @each $scale-point, $scale-map in $hse-spacing-responsive-scale {
     .hse-u-#{$property}-#{$scale-point} {
-      @include _hse-responsive-spacing($scale-point, $property, "all", true);
+      @if $property == "margin" {
+        @include spacing.hse-responsive-margin($scale-point, "all", true);
+      } @else if $property == "padding" {
+        @include spacing.hse-responsive-padding($scale-point, "all", true);
+      }
     }
 
     // [2] //
     @each $direction in $_spacing-directions {
       .hse-u-#{$property}-#{$direction}-#{$scale-point} {
-        @include _hse-responsive-spacing($scale-point, $property, $direction, true);
+        @if $property == "margin" {
+          @include spacing.hse-responsive-margin($scale-point, $direction, true);
+        } @else if $property == "padding" {
+          @include spacing.hse-responsive-padding($scale-point, $direction, true);
+        }
       }
     }
   }

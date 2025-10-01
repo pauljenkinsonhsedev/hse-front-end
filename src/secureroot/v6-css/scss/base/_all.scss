@@ -1,4 +1,4 @@
-@import "initial/_all.scss";
-@import "core/_all.scss";
-@import "overides/_all.scss";
+@forward "initial/_all.scss";
+@forward "core/_all.scss";
+@forward "overides/_all.scss";
 

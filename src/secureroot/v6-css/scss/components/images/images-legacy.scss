@@ -1,5 +1,9 @@
 // V4 captions
 
+@use "../../base/core/settings/spacing" as *;
+@use "../../base/core/tools/spacing" as *;
+@use "../../base/core/settings/colours" as *;
+
 .icapsl {
     float: left;
     margin: 0 10px 10px 0;

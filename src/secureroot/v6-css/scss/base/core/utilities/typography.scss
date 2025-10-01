@@ -14,8 +14,16 @@
  * Original code taken from GDS (Government Digital Service)
  * https://github.com/alphagov/govuk-frontend
  */
+ @use "../settings/typography" as *;
+ @use "../settings/colours" as *;
+ @use "../tools/sass-mq" as *;
+ @use "../tools/typography" as *;
+@use "sass:map";
 
- @each $size in map-keys($hse-typography-scale) {
+
+
+
+ @each $size in map.keys($hse-typography-scale) {
     .hse-u-font-size-#{$size} {
       @include hse-typography-responsive($size, $important: true);
     }

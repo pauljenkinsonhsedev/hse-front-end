@@ -1,4 +1,8 @@
   /* HSL */
+@use "../../base/core/tools/sass-mq" as *;
+@use "../../base/core/settings/spacing" as *;
+@use "../../base/core/settings/colours" as *;
+
 
   .hsl-links {
     display: flex;

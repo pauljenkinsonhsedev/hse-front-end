@@ -1,3 +1,9 @@
+@use "../../base/core/settings/spacing.scss" as *;
+@use "../../base/core/settings/colours.scss" as *;
+@use "../../base/core/tools/spacing.scss" as *;
+@use "../../base/core/tools/sass-mq" as *;
+
+
 // HTML print guides
 
 .hse-print-guide-page  ul {
