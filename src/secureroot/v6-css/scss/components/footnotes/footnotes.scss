@@ -1,3 +1,7 @@
+@use "../../base/core/settings/spacing" as *;
+@use "../../base/core/tools/spacing" as *;
+@use "../../base/core/tools/sass-mq" as *;
+
 .hse-footnotes {
 @include mq($media-type: print) {
 .hideFromScreen {

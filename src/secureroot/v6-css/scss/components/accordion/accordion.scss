@@ -1,6 +1,12 @@
 /**
 * Accordion container element
 */
+
+@use "../../base/core/settings/colours.scss" as *;
+@use "../../base/core/settings/spacing.scss" as *;
+@use "../../base/core/tools/sass-mq" as *;
+
+
 .accordion {
 list-style: none;
 margin: 0;

@@ -9,7 +9,8 @@
 // Used for interactive text-based elements.
 //
 
- @use "../settings/all" as *;
+@use "../../../base/core/settings/colours" as *;
+@use "../../../base/core/settings/globals" as *;
 
 
 @mixin hse-focused-text {

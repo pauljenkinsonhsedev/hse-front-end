@@ -1,14 +1,15 @@
 /* ==========================================================================
    COMPONENTS/ #HINT
    ========================================================================== */
+@use "../../base/core/tools/typography" as *;
+@use "../../base/core/settings/colours" as *;
 
-   .hse-hint {
-    @include hse-font(19);
-  
-    color: $hse-secondary-text-color;
-    display: block;
-    margin-bottom: hse-spacing(3);
-  }
+.hse-hint {
+  color: $hse-secondary-text-color;
+  display: block;
+  margin-bottom: hse-spacing(3);
+  @include hse-font(19);
+}
   
   // Reduces margin-bottom of hint when used after the default label (no class)
   // or hse-label--s for better vertical alignment.

@@ -1,5 +1,7 @@
 $switch-size: 26px;
 
+@use "../../base/core/settings/colours" as *;
+
 // Label
 .input-switch-label {
   position: relative;

@@ -1,6 +1,9 @@
 // mq() v4.0.2
 // sass-mq/sass-mq
 
+@use "../../core/settings/breakpoints.scss" as *;
+
+
 /* stylelint-disable indentation */
 @charset "UTF-8"; // Fixes an issue where Ruby locale is not set properly
 // See https://github.com/sass-mq/sass-mq/pull/10
@@ -197,7 +200,7 @@ $mq-media-type: all !default;
 
   // Until: that breakpoint (exclusive)
   @if $until {
-    @if type-of($until) == number {
+    @if meta.type-of($until) == number {
       $max-width: mq-px2em($until);
     } @else {
       $max-width: mq-px2em(mq-get-breakpoint-width($until, $breakpoints)) - 0.01em;

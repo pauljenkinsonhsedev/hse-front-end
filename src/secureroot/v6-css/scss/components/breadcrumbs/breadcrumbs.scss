@@ -2,6 +2,10 @@
 
 // .hse-breadcrumb ol specificty can be removed if .hse-breadrumb__list is applied to all breadcrumbs
 
+@use "../../base/core/tools/sass-mq" as *;
+@use "../../base/core/settings/colours" as *;
+
+
 .hse-breadcrumb__container {
 padding: hse-spacing(3) 0;
 }

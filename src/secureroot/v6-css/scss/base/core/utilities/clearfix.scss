@@ -9,6 +9,8 @@
  * Usage: class="hse-u-clear"
  * See tools/mixins
  */
+ 
+@use "../tools/mixins" as *;
 
  .hse-u-clear {
    @include clearfix();

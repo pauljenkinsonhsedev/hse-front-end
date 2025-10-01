@@ -1,7 +1,12 @@
 /* ==========================================================================
    COMPONENTS/ #BUTTON
    ========================================================================== */
-
+@use "../../base/core/tools/typography" as *;
+@use "../../base/core/tools/spacing" as *;
+@use "../../base/core/settings/colours" as *;
+@use "../../base/core/settings/spacing" as *;
+@use "../../base/core/settings/globals" as *;
+@use "../../base/core/tools/sass-mq" as *;
 @use 'sass:color';
 
 /**
@@ -19,8 +24,6 @@ $button-shadow-size: 4px;
 
 .hse-button {
   text-decoration: none;
-  @include hse-font(16);
-  @include hse-responsive-margin(5, "bottom", $adjustment: $button-shadow-size); // s1
   -webkit-appearance: none;
   background-color: $hse-button-color;
   border: $hse-border-width-form-element solid transparent;
@@ -36,7 +39,8 @@ $button-shadow-size: 4px;
   text-align: center;
   vertical-align: top;
   width: auto;
-
+  @include hse-font(16);
+  @include hse-responsive-margin(5, "bottom", $adjustment: $button-shadow-size); // s1
   @include mq($until: tablet) {
     padding: hse-spacing(2) hse-spacing(3); // s2
   }

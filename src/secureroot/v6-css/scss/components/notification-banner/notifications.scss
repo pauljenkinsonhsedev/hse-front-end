@@ -1,5 +1,10 @@
 /* Notification bar */
 
+@use "../../base/core/settings/colours" as *;
+@use "../../base/core/tools/sass-mq" as *;
+@use "../../base/core/settings/typography" as *;
+@use "../../base/core/tools/typography" as *;
+
 .hse-notification-banner {
   background-color: $color_hse-grey-4;
   width: 100%;
