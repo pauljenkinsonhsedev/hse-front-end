@@ -42,7 +42,7 @@ h2, h3 {
 h2 {
   margin-bottom: hse-spacing(2);
   font-weight: 700;
-  @include hse-font(19);
+  @include hse-font(19, bold);
 }
 .box {
 background: none !important;
