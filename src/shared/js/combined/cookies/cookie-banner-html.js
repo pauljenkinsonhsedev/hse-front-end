@@ -14,20 +14,20 @@ export function cookieMessageHTML() {
                         <a class="hse-button" id="acceptAllCookies" href="#">Accept analytics cookies</a>
                         <a class="hse-button" id="rejectAllCookies" href="#">Reject analytics cookie</a>
 
-                        <p class="cookies-message__link"><a href="/cookies.htm">View cookies</a></p>
+                        <p class="cookies-message__link"><a href="/help/cookies.htm">View cookies</a></p>
                     </div>
                 </div>
             `;
     const cookieMessageAccept = `
                 <div class="cookies-message__copy cookies-message-accepted">
-                    <p>You've accepted analytics cookies. You can change your <a href="/cookies.htm">cookie settings</a> at any time.</p>
+                    <p>You've accepted analytics cookies. You can change your <a href="/help/cookies.htm">cookie settings</a> at any time.</p>
                     <button id="cookieNotifyClose" class="hse-button">Hide</button>
                 </div>
             `;
 
     const cookieMessageReject = `
                 <div class="cookies-message__copy cookies-message-rejected">
-                    <p>You've rejected analytics cookies. You can change your <a href="/cookies.htm">cookie settings</a> at any time.</p>
+                    <p>You've rejected analytics cookies. You can change your <a href="/help/cookies.htm">cookie settings</a> at any time.</p>
                     <button id="cookieNotifyClose" class="hse-button">Hide</button>
                 </div>
             `;
