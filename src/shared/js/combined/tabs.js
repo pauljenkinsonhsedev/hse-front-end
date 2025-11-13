@@ -9,11 +9,13 @@ export function tabs(container) {
   if (!tabTitles.length) return;
 
   // --- Setup ARIA roles and relationships ---
-  container.querySelector('.hse-tabs__list').setAttribute('role', 'tablist');
+  const tabList = container.querySelector('.hse-tabs__list');
+  tabList.setAttribute('role', 'tablist');
 
   tabTitles.forEach((tab, index) => {
     const panelId = tab.getAttribute('href').replace('#', '');
     const tabId = tab.getAttribute('id') || `tab-${index + 1}`;
+
     tab.setAttribute('id', tabId);
     tab.setAttribute('role', 'tab');
     tab.setAttribute('aria-controls', panelId);
@@ -43,7 +45,7 @@ export function tabs(container) {
 
     if (setFocus) tabTitles[index].focus();
 
-    // Update URL hash for deep linking
+    // Update URL hash (deep linking)
     if (updateHash) {
       const panelId = tabTitles[index].getAttribute('href');
       history.replaceState(null, '', panelId);
@@ -57,31 +59,36 @@ export function tabs(container) {
       activateTab(i, true);
     });
 
-    // --- Keyboard navigation ---
+    // --- GOV.UK-compliant keyboard navigation ---
     tab.addEventListener('keydown', e => {
       const key = e.key;
       let newIndex;
 
       switch (key) {
         case 'ArrowLeft':
-        case 'ArrowUp':
           newIndex = (i - 1 + tabTitles.length) % tabTitles.length;
           activateTab(newIndex, true);
           e.preventDefault();
           break;
+
         case 'ArrowRight':
-        case 'ArrowDown':
           newIndex = (i + 1) % tabTitles.length;
           activateTab(newIndex, true);
           e.preventDefault();
           break;
+
         case 'Home':
           activateTab(0, true);
           e.preventDefault();
           break;
+
         case 'End':
           activateTab(tabTitles.length - 1, true);
           e.preventDefault();
+          break;
+
+        default:
+          // Ignore all other keys (Up/Down/Space/Enter behave normally)
           break;
       }
     });
