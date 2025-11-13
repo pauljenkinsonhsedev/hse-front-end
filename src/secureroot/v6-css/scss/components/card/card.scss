@@ -208,10 +208,9 @@
 
  /* Chevron card
    ========================================================================== */
-
-  .hse-card--chevron {
-    position: relative;
  
+   .hse-card--chevron {
+    position: relative;
     a {
      font-weight: bold;
      display: block;
@@ -223,14 +222,10 @@
     margin: 0;
     padding: 0;
    }
-   }
- 
-   .hse-card--chevron {
    margin-bottom: $hse-legacy-spacing-10;
    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.15);
    border-bottom: none;
    background: $color_hse-white;
-
    padding: hse-spacing(3) hse-spacing(4) hse-spacing(3) hse-spacing(4);
    a {
    padding-right: hse-spacing(3); // fix for chevron icon positioning
