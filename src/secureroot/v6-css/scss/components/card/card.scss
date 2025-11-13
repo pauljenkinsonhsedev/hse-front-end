@@ -215,23 +215,27 @@
      font-weight: bold;
      display: block;
     }
-   &:hover{
-   border-bottom: none;
-   }
    h3 {
     margin: 0;
     padding: 0;
    }
+    .hse-card__descriptor {
+    padding-right: hse-spacing(3);
+    }
    margin-bottom: $hse-legacy-spacing-10;
    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.15);
    border-bottom: none;
    background: $color_hse-white;
-   padding: hse-spacing(3) hse-spacing(4) hse-spacing(3) hse-spacing(4);
+   padding: hse-spacing(3) hse-spacing(4);
    a {
    padding-right: hse-spacing(3); // fix for chevron icon positioning
    }
    &:hover {
-  background: $color_hse-red;
+    background: $color_hse-red;
+    border-bottom: none;
+    p {
+      color: white;
+    }
    }
    &:focus-within {
     background: $hse-focus-color;
@@ -244,7 +248,7 @@
       display: block;
       height: 10px;
       position: absolute;
-      right: hse-spacing(4);
+      right: hse-spacing(3);
       top: 43%;
       -webkit-transform: translateY(0) rotate(45deg) scale(1);
       -ms-transform: translateY(0) rotate(45deg) scale(1);
@@ -272,6 +276,63 @@
       outline: 0;
       box-shadow: inset 0 -4px 0 0 #333;
 
+   }
+
+   }
+  }
+
+
+   /* Box card
+   ========================================================================== */
+ 
+   .hse-card--box {
+    position: relative;
+    a {
+     font-weight: bold;
+     display: block;
+    }
+   &:hover{
+   border-bottom: none;
+   }
+   h3 {
+    margin: 0;
+    padding: 0;
+   }
+   margin-bottom: $hse-legacy-spacing-10;
+   box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.15);
+   border-bottom: none;
+   background: $color_hse-white;
+   padding: hse-spacing(3) hse-spacing(4);
+   a {
+   padding-right: hse-spacing(3); // fix for chevron icon positioning
+   }
+   &:hover {
+  background: $color_hse-red;
+   }
+   &:focus-within {
+    background: $hse-focus-color;
+   }
+   a {
+    &:hover {
+      color: white;
+    }
+    &:hover::before {
+      color: white;
+      border-right: 3px solid white;
+      border-top: 3px solid white;
+    }
+    &:focus {
+      color: $hse-text-color;
+      box-shadow: none;
+    }
+    &:focus::before {
+      border-right: 3px solid $hse-text-color;
+      border-top: 3px solid $hse-text-color;
+    }
+    &:focus::after {
+      border: 0 !important;
+      outline: 0;
+      box-shadow: inset 0 -4px 0 0 #333;
    }
 
    }
