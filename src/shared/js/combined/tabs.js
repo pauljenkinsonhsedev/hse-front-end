@@ -8,12 +8,12 @@ export function tabs(container) {
 
   if (!tabTitles.length) return;
 
-  // --- Setup ARIA roles and relationships ---
   const tabList = container.querySelector('.hse-tabs__list');
   tabList.setAttribute('role', 'tablist');
 
   tabTitles.forEach((tab, index) => {
-    const panelId = tab.getAttribute('href').replace('#', '');
+    const href = tab.getAttribute('href');
+    const panelId = href.replace('#', '');
     const tabId = tab.getAttribute('id') || `tab-${index + 1}`;
 
     tab.setAttribute('id', tabId);
@@ -22,15 +22,15 @@ export function tabs(container) {
     tab.setAttribute('tabindex', '-1');
     tab.setAttribute('aria-selected', 'false');
 
-    const panel = tabPanels[index];
+    const panel = container.querySelector(`#${panelId}`);
     if (panel) {
       panel.setAttribute('role', 'tabpanel');
       panel.setAttribute('aria-labelledby', tabId);
     }
   });
 
-  // --- Helper: activate tab ---
-  function activateTab(index, setFocus = true, updateHash = true) {
+  // --- Activate tab helper ---
+  function activateTab(index, setFocus = true) {
     listItems.forEach(li => li.classList.remove('hse-tabs__list-item--selected'));
     tabPanels.forEach(panel => panel.classList.add('hse-tabs__panel--hidden'));
     tabTitles.forEach(tab => {
@@ -45,11 +45,7 @@ export function tabs(container) {
 
     if (setFocus) tabTitles[index].focus();
 
-    // Update URL hash (deep linking)
-    if (updateHash) {
-      const panelId = tabTitles[index].getAttribute('href');
-      history.replaceState(null, '', panelId);
-    }
+    //  No URL hash update 
   }
 
   // --- Click activation ---
@@ -59,7 +55,7 @@ export function tabs(container) {
       activateTab(i, true);
     });
 
-    // --- GOV.UK-compliant keyboard navigation ---
+    // --- Keyboard navigation (Left/Right/Home/End) ---
     tab.addEventListener('keydown', e => {
       const key = e.key;
       let newIndex;
@@ -70,37 +66,32 @@ export function tabs(container) {
           activateTab(newIndex, true);
           e.preventDefault();
           break;
-
         case 'ArrowRight':
           newIndex = (i + 1) % tabTitles.length;
           activateTab(newIndex, true);
           e.preventDefault();
           break;
-
         case 'Home':
           activateTab(0, true);
           e.preventDefault();
           break;
-
         case 'End':
           activateTab(tabTitles.length - 1, true);
           e.preventDefault();
-          break;
-
-        default:
-          // Ignore all other keys (Up/Down/Space/Enter behave normally)
           break;
       }
     });
   });
 
-  // --- On load: activate tab from hash if present ---
+  // --- Activate from hash on load (deep link support) ---
   const currentHash = window.location.hash?.substring(1);
   const matchIndex = Array.from(tabPanels).findIndex(panel => panel.id === currentHash);
 
   if (matchIndex !== -1) {
-    activateTab(matchIndex, false, false);
+    activateTab(matchIndex, false);
+    // Optionally scroll the tab into view if the hash is lower on the page
+    tabTitles[matchIndex].scrollIntoView({ block: 'nearest' });
   } else {
-    activateTab(0, false, false);
+    activateTab(0, false);
   }
 }
