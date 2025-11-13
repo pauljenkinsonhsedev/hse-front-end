@@ -27,10 +27,11 @@
 
 .hse-tabs__list-item {
   margin-left: hse-spacing(5);
+  margin-bottom: 0;
   @include hse-font($size: 19);
   &:before {
     color: $hse-text-color;
-    content: "\2014 "; // "— "
+    content: "\2014 ";
     margin-left: -(hse-spacing(5));
     padding-right: hse-spacing(1);
   }
@@ -68,7 +69,6 @@
       padding: hse-spacing(2) hse-spacing(4);
       position: relative;
       text-align: center;
-
       &:before {
         content: none;
       }
@@ -86,7 +86,6 @@
       padding-right: hse-spacing(4) - $border-width;
       padding-top: (hse-spacing(2) * 1.5) - $border-width;
       position: relative;
-
       .hse-tabs__tab {
         text-decoration: none;
       }
@@ -94,9 +93,7 @@
 
     .hse-tabs__tab {
       @include hse-link-style-text;
-
       margin-bottom: 0;
-
       &:after {
         bottom: 0;
         content: "";
