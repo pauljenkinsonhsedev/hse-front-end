@@ -76,6 +76,7 @@ $card-border-bottom-width: hse-spacing(1);
   border: 2px solid $card-border-color;
   border-bottom-width: 4px;
   background: $color_hse-white;
+  margin-bottom: $hse-legacy-spacing-10;
 }
 
 /* Content block */
