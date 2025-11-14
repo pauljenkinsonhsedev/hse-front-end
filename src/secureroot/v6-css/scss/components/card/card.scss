@@ -21,8 +21,6 @@ $card-border-bottom-width: hse-spacing(1);
   width: 100%;
   border-bottom: 4px solid $card-border-color;   /* KEEP base border */
   margin-bottom: $hse-legacy-spacing-20;
-  @include hse-responsive-margin(7, "bottom");
-
   h2,
   h3 {
     @include hse-font(22, bold);
