@@ -19,7 +19,7 @@ $card-border-bottom-width: hse-spacing(1);
 .hse-card {
   position: relative;
   width: 100%;
-  border-bottom: 4px solid transparent;
+  border-bottom: 4px solid $card-border-color;   /* KEEP base border */
   margin-bottom: $hse-legacy-spacing-20;
   @include hse-responsive-margin(7, "bottom");
 
@@ -32,15 +32,16 @@ $card-border-bottom-width: hse-spacing(1);
     color: #1e060a;
     background: none;
   }
-
-  /* Only show red border when not focused */
-  &:not(:focus-within):hover {
-    border-bottom-color: $color_hse-red; 
-  }
-  
 }
 
-/* Non-clickable variant */
+/* ONLY apply hover border to plain cards
+   (NOT chevron / box / img / non-clickable) */
+
+.hse-card:not(.hse-card--chevron):not(.hse-card--box):not(.hse-card--img):not(.hse-card--non-clickable):not(:focus-within):hover {
+  border-bottom-color: $color_hse-red;  /* colour only — no jump */
+}
+
+/* Non-clickable card */
 
 .hse-card--non-clickable {
   box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.15);
@@ -55,7 +56,7 @@ $card-border-bottom-width: hse-spacing(1);
   }
 }
 
-/* Entire card clickable */
+/* Make entire card clickable */
 
 .hse-card a::after {
   position: absolute;
@@ -64,8 +65,7 @@ $card-border-bottom-width: hse-spacing(1);
   content: "";
 }
 
-/* Image card
-   ========================================================================== */
+/* Image card */
 
 .hse-card__img {
   border-bottom: $card-border-width solid $color_hse-grey-5;
@@ -80,7 +80,7 @@ $card-border-bottom-width: hse-spacing(1);
   background: $color_hse-white;
 }
 
-/* Card content */
+/* Content block */
 
 .hse-card__content {
   background: $color_hse-white;
@@ -134,7 +134,7 @@ $card-border-bottom-width: hse-spacing(1);
   }
 }
 
-/* Equal heights helper */
+/* Equal heights */
 
 .hse-card-group:has(.hse-card) li {
   @include hse-responsive-margin(4, "bottom");
@@ -148,8 +148,8 @@ $card-border-bottom-width: hse-spacing(1);
   margin-bottom: $hse-legacy-spacing-10;
   padding: hse-spacing(3) hse-spacing(4);
   background: $color_hse-white;
+  border-bottom: none; /* remove default card border */
   box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.15);
-  border-bottom: none;
 
   h3 {
     margin: 0;
@@ -160,10 +160,24 @@ $card-border-bottom-width: hse-spacing(1);
     padding-right: hse-spacing(3);
   }
 
+  /* Hover background only (no border, no jump) */
+  &:not(:focus-within):hover {
+    background: $color_hse-red;
+
+    p {
+      color: $color_hse-white;
+    }
+  }
+
+  /* Keyboard focus takes priority */
+  &:focus-within {
+    background: $hse-focus-color;
+  }
+
   a {
     display: block;
     font-weight: bold;
-    padding-right: hse-spacing(3); // chevron space
+    padding-right: hse-spacing(3);
 
     &::before {
       content: "";
@@ -177,7 +191,7 @@ $card-border-bottom-width: hse-spacing(1);
       transform: rotate(45deg);
     }
 
-    /* Hover styles only when not focused */
+    /* Hover only when not focused */
     &:not(:focus):hover {
       color: $color_hse-white;
     }
@@ -187,6 +201,7 @@ $card-border-bottom-width: hse-spacing(1);
       border-top-color: $color_hse-white;
     }
 
+    /* Focus styles */
     &:focus {
       color: $hse-text-color;
       box-shadow: none;
@@ -203,20 +218,6 @@ $card-border-bottom-width: hse-spacing(1);
       box-shadow: inset 0 -4px 0 0 #333;
     }
   }
-
-  /* Background + text for mouse hover, but not while focused */
-  &:not(:focus-within):hover {
-    background: $color_hse-red;
-
-    p {
-      color: $color_hse-white;
-    }
-  }
-
-  /* Keyboard focus: yellow background, text remains default (black) */
-  &:focus-within {
-    background: $hse-focus-color;
-  }
 }
 
 /* Box card
@@ -227,12 +228,20 @@ $card-border-bottom-width: hse-spacing(1);
   margin-bottom: $hse-legacy-spacing-10;
   padding: hse-spacing(3) hse-spacing(4);
   background: $color_hse-white;
+  border-bottom: none; /* remove default border */
   box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.15);
-  border-bottom: none;
 
   h3 {
     margin: 0;
     padding: 0;
+  }
+
+  &:not(:focus-within):hover {
+    background: $color_hse-red;
+  }
+
+  &:focus-within {
+    background: $hse-focus-color;
   }
 
   a {
@@ -259,13 +268,5 @@ $card-border-bottom-width: hse-spacing(1);
       outline: 0;
       box-shadow: inset 0 -4px 0 0 #333;
     }
-  }
-
-  &:not(:focus-within):hover {
-    background: $color_hse-red;
-  }
-
-  &:focus-within {
-    background: $hse-focus-color;
   }
 }
