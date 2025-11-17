@@ -53,9 +53,11 @@ ul.listhorizontal {
   margin: 1em 0 2em 0;
 }
 
-.hse-page-contents ul li::marker, .hse-print-guide-page ul li::marker {
+.hse-section__content, .hse-page-contents, .hse-print-guide-page {
+ ul li::marker,  ul li::marker {
   color: $color_hse-red;
 } 
+}
 
 .hse-page-contents ul.list-plain {
   margin: 0;
