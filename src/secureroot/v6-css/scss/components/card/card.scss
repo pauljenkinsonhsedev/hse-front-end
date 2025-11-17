@@ -65,18 +65,25 @@ $card-border-bottom-width: hse-spacing(1);
 
 /* Image card */
 
-.hse-card__img {
-  border-bottom: $card-border-width solid $color_hse-grey-5;
-  display: block;
-  width: 100%;
-  @include print-hide();
-}
-
 .hse-card--img {
   border: 2px solid $card-border-color;
   border-bottom-width: 4px;
-  background: $color_hse-white;
   margin-bottom: $hse-legacy-spacing-10;
+  @include print-hide();
+  &:hover {
+    border-bottom: 4px solid $color_hse-red;
+    .hse-card__img {
+     border-bottom: none;
+    }
+  }
+  .hse-card__content a:focus:hover {
+    color: $hse-text-color;
+  }
+}
+
+.hse-card__img {
+  display: block;
+  width: 100%;
 }
 
 /* Content block */
@@ -147,9 +154,9 @@ $card-border-bottom-width: hse-spacing(1);
   margin-bottom: $hse-legacy-spacing-10;
   padding: hse-spacing(3) hse-spacing(4);
   background: $color_hse-white;
-  border-bottom: none; /* remove default card border */
+  border-bottom-width: 4px;
   box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.15);
-
+ 
   h3 {
     margin: 0;
     padding: 0;
@@ -159,25 +166,13 @@ $card-border-bottom-width: hse-spacing(1);
     padding-right: hse-spacing(3);
   }
 
-  /* Hover background only (no border, no jump) */
-  &:not(:focus-within):hover {
-    background: $color_hse-red;
-
-    p {
-      color: $color_hse-white;
-    }
+  &:hover {
+    border-bottom: 4px solid $color_hse-red;
   }
-
-  /* Keyboard focus takes priority */
-  &:focus-within {
-    background: $hse-focus-color;
-  }
-
   a {
     display: block;
     font-weight: bold;
     padding-right: hse-spacing(3);
-
     &::before {
       content: "";
       position: absolute;
@@ -188,33 +183,6 @@ $card-border-bottom-width: hse-spacing(1);
       border-right: 3px solid $color_hse-red;
       border-top: 3px solid $color_hse-red;
       transform: rotate(45deg);
-    }
-
-    /* Hover only when not focused */
-    &:not(:focus):hover {
-      color: $color_hse-white;
-    }
-
-    &:not(:focus):hover::before {
-      border-right-color: $color_hse-white;
-      border-top-color: $color_hse-white;
-    }
-
-    /* Focus styles */
-    &:focus {
-      color: $hse-text-color;
-      box-shadow: none;
-    }
-
-    &:focus::before {
-      border-right-color: $hse-text-color;
-      border-top-color: $hse-text-color;
-    }
-
-    &:focus::after {
-      border: 0;
-      outline: 0;
-      box-shadow: inset 0 -4px 0 0 #333;
     }
   }
 }
@@ -227,45 +195,12 @@ $card-border-bottom-width: hse-spacing(1);
   margin-bottom: $hse-legacy-spacing-10;
   padding: hse-spacing(3) hse-spacing(4);
   background: $color_hse-white;
-  border-bottom: none; /* remove default border */
   box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.15);
-
+  &:hover {
+  border-bottom: 4px solid $color_hse-red;   
+  }
   h3 {
     margin: 0;
     padding: 0;
-  }
-
-  &:not(:focus-within):hover {
-    background: $color_hse-red;
-  }
-
-  &:focus-within {
-    background: $hse-focus-color;
-  }
-
-  a {
-    display: block;
-    font-weight: bold;
-    padding-right: hse-spacing(3);
-
-    &:not(:focus):hover {
-      color: $color_hse-white;
-    }
-
-    &:focus {
-      color: $hse-text-color;
-      box-shadow: none;
-    }
-
-    &:focus::before {
-      border-right: 3px solid $hse-text-color;
-      border-top: 3px solid $hse-text-color;
-    }
-
-    &:focus::after {
-      border: 0;
-      outline: 0;
-      box-shadow: inset 0 -4px 0 0 #333;
-    }
   }
 }
