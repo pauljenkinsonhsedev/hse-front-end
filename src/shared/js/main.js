@@ -19,7 +19,6 @@ import { informationBanner } from "./combined/information-banner.js";
 import { codeHighlighter } from "./combined/code-highlighter.js";
 import { htmlFormsAntiSpam } from "./combined/html-forms-anti-spam.js";
 import { subnavMenu } from "./combined/subnav-menu.js";
-// import { subNavPosition } from "./combined/subnav-position.js";
 import { subNavMobile } from "./combined/subnav-mobile.js";
 import { accordion } from "./combined/accordion.js";
 import { htmlPrintGuide } from "./combined/html-print-guide.js";
@@ -146,7 +145,6 @@ window.addEventListener("DOMContentLoaded", () => {
   if (secondaryMenuSelector) {
     subnavMenu(secondaryMenuSelector);
     subNavMobile();
-    // subNavPosition();
   }
 
   htmlFormsAntiSpam();
