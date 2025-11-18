@@ -57,9 +57,6 @@ window.addEventListener("DOMContentLoaded", () => {
   // Top tasks
   topTasks();
 
-  // Equal heights
-  equalHeights();
-
   // HTML Print Guide
   const htmlPrintGuideContainer = document.querySelector(".html-print-guide");
   if (htmlPrintGuideContainer) {
