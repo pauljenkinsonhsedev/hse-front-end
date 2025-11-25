@@ -6,8 +6,8 @@ export function cookieMessageHTML() {
                 <div class="cookies-message">
                     <p class="cookies-message__heading hse-heading-m">Cookies on www.hse.gov.uk</p>
                     <div class="cookies-message__copy">
-                        <p>We use some essential cookies to make this service work.</p>
-                        <p>We’d also like to use analytics cookies so we can understand how you use the service and make improvements.</p>
+                        <p class="hse-body-m">We use some essential cookies to make this service work.</p>
+                        <p class="hse-body-m">We’d also like to use analytics cookies so we can understand how you use the service and make improvements.</p>
                     </div>
 
                     <div class="cookies-message__actions">
