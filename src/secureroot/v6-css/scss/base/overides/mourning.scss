@@ -1,0 +1,15 @@
+.hse-header::before {
+background: black !important;
+}
+
+.hse-header__logo svg path{
+fill: black;
+}
+
+.global-menu-button {
+color: black !important;
+span::before {
+border-bottom: 2px solid black !important;    
+border-right: 2px solid black !important;
+}
+}
