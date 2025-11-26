@@ -12,4 +12,19 @@ span::before {
 border-bottom: 2px solid black !important;    
 border-right: 2px solid black !important;
 }
+&:hover:after {
+background: black !important;
+}
+}
+
+.gsc-search-button svg  {
+circle, line {
+stroke: black !important;
+}
+}
+
+.search-button {
+&:hover:after {
+background: black !important;
+}    
 }
