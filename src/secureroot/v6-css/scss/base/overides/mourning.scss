@@ -35,4 +35,14 @@
       background: $mourning-color;
     }
   }
+
+// banner
+
+.hse-mourning-banner__heading {
+margin: 0 !important;
+}
+.hse-mourning-banner__link {
+color: $mourning-color;
+}
+
 }
