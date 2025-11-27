@@ -25,6 +25,9 @@ color: $color_hse-beta;
 &__inner {
 border-left: 4px solid $color_hse-red;
 padding-left: hse-spacing(3);
+ p:last-of-type {
+ margin: 0;
+ }
 }
 @include mq($media-type: print) {
 display: none;
