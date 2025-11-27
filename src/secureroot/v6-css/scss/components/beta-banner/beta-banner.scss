@@ -1,7 +1,8 @@
 @use "../../base/core/settings/colours" as *;
 @use "../../base/core/tools/mixins" as *;
 @use "../../base/core/tools/sass-mq" as *;
-
+@use "../../base/core/settings/spacing" as *;
+@use "../../base/core/tools/spacing" as *;
 
 .hse-information-banner {
 @include clearfix();
