@@ -12,6 +12,19 @@
   @include hse-responsive-padding(4);
 }
 
+.box-card {
+  @include mq($until: tablet) {
+    margin-bottom: -9px;
+  }
+  @include mq($from: tablet) {
+    margin-bottom: -11px;
+  }
+}
+
+.box-card-image {
+  width: 150px; margin-bottom: 5px;
+}
+
 form fieldset.visibleFieldset {
   border: 1px solid #ababab;
   display: block;
