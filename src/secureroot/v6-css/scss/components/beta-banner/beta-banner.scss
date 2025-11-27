@@ -60,15 +60,16 @@ border-bottom: 1px solid $color_hse-grey-3;
 padding-left: 0;
 border-left: 0;
 }
+.hse-information-banner__heading {
+color: white;
+}
 p {
 color: white;
 }
 a {
 color: white;
 }
-&__heading {
-color: white;
-}
+
 }
 
 &__heading {
