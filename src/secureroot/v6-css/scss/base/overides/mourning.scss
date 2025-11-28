@@ -3,7 +3,6 @@
   $mourning-color: #000;
   $mourning-text: #FFF;
 
-
   .hse-header::before {
     background: $mourning-color;
   }
@@ -37,23 +36,5 @@
       background: $mourning-color;
     }
   }
-
-// homepage banner
-
-.hse-section--black {
-background: $mourning-color !important; 
-color: $mourning-text;
-}
-
-.hse-mourning-banner__heading {
-margin: 0 !important;
-color: $mourning-text;
-}
-.hse-mourning-banner__link {
-color: $mourning-text;
-}
-.hse-mourning-banner__more {
-margin: 0;
-}
 
 }
