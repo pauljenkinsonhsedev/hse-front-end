@@ -21,22 +21,75 @@ color: $color_hse-grey-1;
 &:a:focus {
 color: $color_hse-beta;
 }
-p {
-margin-bottom: 0 !important;
-}
+
 &__inner {
 border-left: 4px solid $color_hse-red;
-padding-left: hse-spacing(2);
+padding-left: hse-spacing(3);
+ p:last-of-type {
+ margin: 0;
+ }
 }
 @include mq($media-type: print) {
 display: none;
 }
+
+&--default {
+background-color: $color_hse-grey-4;
+border-bottom: 1px solid $color_hse-grey-3;
+.hse-information-banner__inner {
+p {
+margin: 0;
+}   
+}
+}
+
+&--phase {
+background-color: #f5e9eb;
+border-bottom: 1px solid $color_hse-grey-3;
+.hse-information-banner__inner {
+p {
+margin: 0;
+}
+}
+}
+
+&--mourning {
+background-color: black;
+border-bottom: 1px solid $color_hse-grey-3;
+.hse-information-banner__inner {
+padding-left: 0;
+border-left: 0;
+}
+.hse-information-banner__heading {
+color: white;
+}
+p {
+color: white;
+}
+a {
+color: white;
+}
+
+}
+
+&__heading {
+margin-bottom: 0;
+}
+&__description {
+margin: hse-spacing(3) 0;
+}
+&__more {
+margin: 0;
+}
+
 }
 
 
-/* Beta */
+/* Phase banner for alpha and beta
+<span class="hse-phase-banner">Beta</span>
+ */
 
-.hse-beta-highlight {
+.hse-phase-banner {
 display: inline-block;
 margin: 0 8px 0 0;
 padding: 2px 5px 0;
@@ -46,7 +99,7 @@ text-transform: uppercase;
 letter-spacing: 1px;
 text-decoration: none;
 color: #fff;
-background-color: $color_hse-beta;
+background-color: $color_hse-red;
 font-size: 16px;
 line-height: 1.25;
 }
