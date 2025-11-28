@@ -1,0 +1,40 @@
+// mourning.scss
+.hse-mourning {
+  $mourning-color: #000;
+  $mourning-text: #FFF;
+
+  .hse-header::before {
+    background: $mourning-color;
+  }
+
+  .hse-header__logo svg path {
+    fill: $mourning-color !important;
+  }
+
+  .global-menu-button {
+    color: $mourning-color !important;
+
+    span::before {
+      border-bottom: 2px solid $mourning-color !important;
+      border-right: 2px solid $mourning-color !important;
+    }
+
+    &:hover::after {
+      background: $mourning-color;
+    }
+  }
+
+  .gsc-search-button svg {
+    circle,
+    line {
+      stroke: $mourning-color !important;
+    }
+  }
+
+  .search-button {
+    &:hover::after {
+      background: $mourning-color;
+    }
+  }
+
+}
