@@ -72,6 +72,12 @@ max-width: none;
 
 }
 
+// remove padding-bottom for action links
+
+.hse-section__content .hse-action-link {
+padding-bottom: 0;
+}
+
 // card groups within sections
 
 // minus margin to keep margins equal within .hse-section 
