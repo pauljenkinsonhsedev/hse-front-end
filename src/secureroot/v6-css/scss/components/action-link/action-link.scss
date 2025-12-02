@@ -41,15 +41,13 @@
   // }
   .hse-action-link__link {
     display: inline-block; /* [1] */
-    font-weight: $hse-font-bold;
     padding-left: 38px; /* [2] */
     position: relative; /* [3] */
     text-decoration: none; /* [4] */
-    @include hse-font(22);
+    @include hse-font($size: 22, $weight: bold);
     &--menu {
-      font-weight: $hse-font-bold;
       padding-left: 28px;
-      @include hse-font(16);
+    @include hse-font($size: 16, $weight: bold);
       .hse-icon__arrow-right-circle {
         top: 2px !important;
       }
