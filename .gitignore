@@ -12,6 +12,8 @@ news/
 asbestos
 src/secureroot/html/**/*
 src/secureroot/**/*.lbi
+src/secureroot/copy/assets/homepage
+src/secureroot/copy/assets/images
 /secureroot
 /designsystem
 /wp-content
@@ -21,3 +23,4 @@ src/designsystem/html/**/*
 /yarn-error.log
 /yarn.lock
 /package-lock.json
+
