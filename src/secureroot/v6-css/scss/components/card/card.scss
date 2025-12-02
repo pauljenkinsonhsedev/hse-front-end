@@ -69,6 +69,7 @@ $card-border-bottom-width: hse-spacing(1);
   border: 2px solid $card-border-color;
   border-bottom-width: 4px;
   margin-bottom: $hse-legacy-spacing-10;
+  background: white;
   @include print-hide();
   &:hover {
     border-bottom: 4px solid $color_hse-red;
