@@ -9,6 +9,9 @@ display: flex;
 align-items: center;
 flex-direction: column;
 border: 2px solid $hse-border-color;
+.hse-section--homepage & {
+border: 2px solid $card-border-color;
+}
 margin-bottom: hse-spacing(6);
 &__form-group {
 width: 100%;
@@ -37,7 +40,7 @@ box-shadow: none;
 
 &:before {
 content: "";
-background: url(../../assets/v6-images/icons/mail.svg) white no-repeat 0;
+background: url(../../assets/v6-images/icons/mail.svg) transparent no-repeat 0;
 background-repeat: no-repeat;
 display: inline-block;
 width: 24px;
