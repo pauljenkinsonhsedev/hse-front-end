@@ -45,6 +45,10 @@ max-width: none;
 .hse-section__content {
 @include hse-responsive-padding(4, "top");
 @include hse-responsive-padding(4, "bottom");  
+// remove spacing from last element in .hse-section__content
+> :last-child {
+margin-bottom: 0;
+}
 }
 
 .hse-width-container--full {
