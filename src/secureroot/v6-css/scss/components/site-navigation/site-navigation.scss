@@ -196,6 +196,24 @@
   margin-bottom: -10px;
 }
 
+button#search-button.search-button.main-search-expanded {
+  position: relative;
+}
+button#search-button.search-button.main-search-expanded:after {
+ 
+  content: "";
+    display: block;
+    height: 3px;
+    left: 11px;
+    right: 11px;
+    position: absolute;
+    bottom: 0;
+    top: auto;
+    background: #212b32;
+ 
+
+}
+
 .menu.active {
   display: block;
 }
