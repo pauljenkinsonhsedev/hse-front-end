@@ -719,6 +719,7 @@ window.dataLayer.push({'content_group': '@@(_document['contentGroup'])@@'});
 <!-- TemplateParam name="contentType" type="text" value="default" -->
 <!-- TemplateParam name="contentGroup" type="text" value="default" -->
 <!-- TemplateParam name="infoBanner" type="boolean" value="true" -->
+<!-- TemplateParam name="infoBannerType" type="text" value="" -->
 <!-- TemplateParam name="infoBannerContent" type="text" value="" -->
 <!-- TemplateParam name="noIndex" type="boolean" value="false" -->
 <!-- TemplateParam name="printGuide" type="boolean" value="false" -->
