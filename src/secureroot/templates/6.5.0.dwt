@@ -111,7 +111,7 @@ window.dataLayer.push({'content_group': '@@(_document['contentGroup'])@@'});
 <!-- End Silktide analytics snippet -->
 
 </head>
-<body class="@@(_document['bodyClass'])@@  hse-template-@@(_document['layout'])@@">
+<body class="@@(_document['bodyClass'])@@  hse-@@(_document['infoBannerType'])@@">
 
 <!-- GTM -->
 
@@ -285,7 +285,7 @@ window.dataLayer.push({'content_group': '@@(_document['contentGroup'])@@'});
   
 <!-- TemplateBeginMultipleIf -->
 <!-- TemplateBeginIfClause cond="infoBanner == true" -->
-  <section id="information-banner" class="hse-information-banner" aria-label="Information" data-content="@@(_document['infoBannerContent'])@@">
+  <section id="information-banner" class="hse-information-banner hse-@@(_document['infoBannerType'])@@" aria-label="Information" data-content="@@(_document['infoBannerContent'])@@">
     <div class="hse-information-banner__inner hse-width-container"></div>
   </section>
 <!-- TemplateEndIfClause -->
