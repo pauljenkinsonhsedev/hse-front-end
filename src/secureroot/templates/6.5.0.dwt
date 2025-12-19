@@ -265,9 +265,9 @@ window.dataLayer.push({'content_group': '@@(_document['contentGroup'])@@'});
               <li class="hse-navigation__navigation-item"><a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="../statistics/index.htm">Statistics</a></li>
               <li class="hse-navigation__navigation-item"><a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="https://careers.hse.gov.uk/">Careers</a></li>
               </ul>
-              <h3>Products and services</h3>
+              <h3>Products</h3>
               <ul class="hse-navigation__navigation-list navigation-third-list">
-              <li class="hse-navigation__navigation-item"><a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="https://books.hse.gov.uk">Books and products</a></li>
+              <li class="hse-navigation__navigation-item"><a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="https://books.hse.gov.uk">Books and tools</a></li>
               <li class="hse-navigation__navigation-item"><a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="https://solutions.hse.gov.uk/training">Training and events</a></li>
               <li class="hse-navigation__navigation-item"><a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="https://solutions.hse.gov.uk/testing-and-monitoring">Testing and monitoring</a></li>
               <li class="hse-navigation__navigation-item"><a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="https://solutions.hse.gov.uk/research-and-consultancy">Research and consultancy</a></li>
@@ -654,9 +654,9 @@ window.dataLayer.push({'content_group': '@@(_document['contentGroup'])@@'});
             <li class="hse-navigation__navigation-item"><a class="hse-footer-white" href="../statistics/index.htm">Statistics</a></li>
             <li class="hse-navigation__navigation-item"><a class="hse-footer-white" href="https://careers.hse.gov.uk/">Careers</a></li>
           </ul>
-          <h3 class="hse-footer__heading">Products and services</h3>
+          <h3 class="hse-footer__heading">Products</h3>
           <ul class="hse-navigation__navigation-list hse-navigation__navigation-list--footer navigation-third-list">
-            <li class="hse-navigation__navigation-item"><a class="hse-footer-white" href="https://books.hse.gov.uk">Books and products</a></li>
+            <li class="hse-navigation__navigation-item"><a class="hse-footer-white" href="https://books.hse.gov.uk">Books and tools</a></li>
             <li class="hse-navigation__navigation-item"><a class="hse-footer-white" href="https://solutions.hse.gov.uk/training">Training and events</a></li>
             <li class="hse-navigation__navigation-item"><a class="hse-footer-white" href="https://solutions.hse.gov.uk/testing-and-monitoring">Testing and monitoring</a></li>
             <li class="hse-navigation__navigation-item"><a class="hse-footer-white" href="https://solutions.hse.gov.uk/research-and-consultancy">Research and consultancy</a></li>
