@@ -30,48 +30,6 @@
   width: 150px; margin-bottom: 5px;
 }
 
-form fieldset.visibleFieldset {
-  border: 1px solid #ababab;
-  display: block;
-  width: auto !important;
-  padding: 0 10px;
-  margin: -1em 0 1em 0;
-}
-.ie7 form fieldset.visibleFieldset {
-  position: relative;
-}
-
-form fieldset.radioButton input {
-  display: inline;
-  width: auto;
-}
-form fieldset.radioButton label {
-  padding: 0 $hse-legacy-spacing-20 0.5em 0;
-}
-form fieldset.radioButton label {
-  display: inline;
-  clear: none;
-}
-form fieldset.radioButton label input {
-  width: auto;
-  float: left;
-  clear: left;
-  display: block;
-  margin: 0 10px 0 0;
-}
-form label.checkbox {
-  margin: 0 0 1em 0;
-  display: inline-block;
-  padding-right: $hse-legacy-spacing-20;
-}
-form input.checkbox {
-  display: inline;
-  width: auto;
-}
-form fieldset input.checkbox {
-  width: auto;
-}
-
 .box .more {
   width: 100%;
   position: relative;
