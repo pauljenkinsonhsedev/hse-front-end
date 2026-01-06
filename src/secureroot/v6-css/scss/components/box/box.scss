@@ -30,29 +30,4 @@
   width: 150px; margin-bottom: 5px;
 }
 
-.box .more {
-  width: 100%;
-  position: relative;
-}
-
-.box1col .more {
-  width: 100% !important;
-}
-
-.box.backgroundRed.hasMore p.more a {
-  color: $color_hse-red !important;
-}
-
-.box p:last-child {
-  margin-bottom: 0 !important;
-}
-.box.hasMore p:last-child {
-  margin-bottom: 10px !important;
-}
-
-.more {
-  border-radius: 0;
-  margin-bottom: 10px !important;
-}
-
 
