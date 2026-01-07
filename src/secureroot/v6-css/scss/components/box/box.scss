@@ -12,6 +12,8 @@
 
 
 .box {
+  display: flex;
+  flex-direction: column;
   background-color: $color_hse-grey-4;
   margin-bottom: 20px;
   @include hse-responsive-padding(4);
