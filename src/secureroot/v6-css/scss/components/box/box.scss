@@ -10,7 +10,6 @@
   column-gap: 20px;
 }
 
-
 .box {
   display: flex;
   flex-direction: column;
@@ -35,5 +34,9 @@
 
 .box > :last-child {
   margin-bottom: 0;
+}
+
+.box-align-bottom {
+margin-top: auto;
 }
 
