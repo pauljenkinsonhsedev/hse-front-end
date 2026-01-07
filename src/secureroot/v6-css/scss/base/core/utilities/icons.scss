@@ -214,20 +214,20 @@
     content: "";
     height: 3px;
     position: relative;
-    bottom: -16px;
+    bottom: -15px;
     background: $color_hse-black;
     width: 70px;
     margin-left: -4px;
     display: block;
   }
 
-  @-moz-document url-prefix() {
-  /* Firefox-only */
-  .global-menu-button.main-menu:focus-visible:after,
-  .global-menu-button:focus-visible:after {
-    bottom: -15px;
-  }
-}
+//   @-moz-document url-prefix() {
+//   /* Firefox-only */
+//   .global-menu-button.main-menu:focus-visible:after,
+//   .global-menu-button:focus-visible:after {
+//     bottom: -15px;
+//   }
+// }
 
 //   @supports (-webkit-touch-callout: none) {
 //   /* Safari-only */
@@ -237,14 +237,14 @@
 //   }
 // }
 
-@supports (background: -webkit-named-image(i)) {
-  /* Safari-only */
-   .global-menu-button.main-menu:focus-visible:after,
-  .global-menu-button:focus-visible:after {
-    /* Safari CSS */
-    bottom: -15px !important;
-  }
-}
+// @supports (background: -webkit-named-image(i)) {
+//   /* Safari-only */
+//    .global-menu-button.main-menu:focus-visible:after,
+//   .global-menu-button:focus-visible:after {
+//     /* Safari CSS */
+//     bottom: -15px !important;
+//   }
+// }
 
 
 
