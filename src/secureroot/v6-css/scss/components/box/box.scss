@@ -6,8 +6,11 @@
 
 .box-half {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); // ✅ 2 per row
   column-gap: 20px;
+  grid-template-columns: 1fr; // default: 1 per row
+  @include mq($from: desktop) {
+  grid-template-columns: repeat(2, 1fr); // 2 per row
+  }
 }
 
 .box {
