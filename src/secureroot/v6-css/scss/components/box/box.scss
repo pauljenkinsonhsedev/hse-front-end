@@ -4,6 +4,14 @@
 @use "../../base/core/settings/breakpoints.scss" as *;
 @use "../../base/core/tools/sass-mq" as *;
 
+.box {
+  display: flex;
+  flex-direction: column;
+  background-color: $color_hse-grey-4;
+  margin-bottom: 20px;
+  @include hse-responsive-padding(4);
+}
+
 .box-half {
   display: grid;
   column-gap: 20px;
@@ -11,14 +19,6 @@
   @include mq($from: desktop) {
   grid-template-columns: repeat(2, 1fr); // 2 per row
   }
-}
-
-.box {
-  display: flex;
-  flex-direction: column;
-  background-color: $color_hse-grey-4;
-  margin-bottom: 20px;
-  @include hse-responsive-padding(4);
 }
 
 .box-card {
