@@ -27,7 +27,11 @@
 }
 
 .box-card-image {
-  width: 150px; margin-bottom: 5px;
+  width: 150px; 
+  margin-bottom: 5px;
 }
 
+.box > :last-child {
+  margin-bottom: 0;
+}
 
