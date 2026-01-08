@@ -1,11 +1,18 @@
 
+@use "../../base/core/settings/colours" as *;
+@use "../../base/core/settings/spacing" as *;
+@use "../../base/core/tools/spacing" as *;
+@use "../../base/core/tools/sass-mq" as *;
+
 .hse-subscribe {
 display: flex;
 align-items: center;
 flex-direction: column;
 border: 2px solid $hse-border-color;
-@include hse-responsive-padding(4);
-
+// homepage section variant
+.hse-section--homepage & {
+border: 2px solid $card-border-color;
+}
 margin-bottom: hse-spacing(6);
 &__form-group {
 width: 100%;
@@ -34,7 +41,7 @@ box-shadow: none;
 
 &:before {
 content: "";
-background: url(../../assets/v6-images/icons/mail.svg) white no-repeat 0;
+background: url(../../assets/v6-images/icons/mail.svg) transparent no-repeat 0;
 background-repeat: no-repeat;
 display: inline-block;
 width: 24px;
@@ -56,11 +63,11 @@ text-align: center;
 
 .hse-input--subscribe {
 width: 100%;
+min-width: 320px;
+height: 46px;
 @include mq($until: desktop) {
 min-width: 220px;
 }
-min-width: 320px;
-height: 46px;
 @include mq($from: tablet) {
 margin-right: 10px;
 }
@@ -70,6 +77,9 @@ margin-right: 10px;
 display: flex;
 flex-direction: column;
 }
+
+@include hse-responsive-padding(4);
+
 }
 
 

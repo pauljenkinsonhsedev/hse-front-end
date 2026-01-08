@@ -1,4 +1,10 @@
 
+@use "../../base/core/settings/spacing" as *;
+@use "../../base/core/settings/colours" as *;
+@use "../../base/core/tools/spacing" as *;
+@use "../../base/core/tools/sass-mq" as *;
+@use "../../base/core/tools/mixins" as *;
+
 .hse-side-navigation {
 float: left;
 width: 100%;

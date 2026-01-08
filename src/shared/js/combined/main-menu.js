@@ -26,7 +26,8 @@ export function mainMenu() {
                     <circle cx="12.0161" cy="11.0161" r="8.51613" stroke="#981E32" stroke-width="3"></circle>
                     <line x1="17.8668" y1="17.3587" x2="26.4475" y2="25.9393" stroke="#981E32" stroke-width="3"></line>
                   </svg>
-                  <span class="x-mark"> x </span>
+                  <span class="x-mark"> &times; </span>
+                  <span class="underline"></span> 
                 </div>`,
     ariaExpanded: false,
     ariaControls: 'search'

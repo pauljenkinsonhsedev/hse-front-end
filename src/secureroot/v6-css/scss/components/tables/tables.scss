@@ -7,19 +7,26 @@
  *
  * 1. Margin is removed so there isn't double spacing.
  */
+@use "../../base/core/settings/colours" as *;
+@use "../../base/core/settings/spacing" as *;
+@use "../../base/core/tools/spacing" as *;
+@use "../../base/core/tools/sass-mq" as *;
+@use "../../base/core/tools/mixins" as *;
+@use "../../base/core/settings/typography" as *;
+@use "../../base/core/tools/typography" as *;
+@use "../../base/core/settings/globals" as *;
 
 .hse-table-container {
-  @include hse-responsive-margin(7, "bottom");
-
   display: block;
   -webkit-overflow-scrolling: touch;
   -ms-overflow-style: -ms-autohiding-scrollbar;
+  width: 100%;
+  @include hse-responsive-margin(7, "bottom");
   @include mq($until: desktop) {
   // Allow large tables to overflow
   overflow-y: auto; 
   overflow-x: auto;
   }
-  width: 100%;
   .hse-table {
     margin: 0; /* [1] */
   }

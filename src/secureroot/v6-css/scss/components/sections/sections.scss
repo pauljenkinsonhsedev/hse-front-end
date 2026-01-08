@@ -1,4 +1,11 @@
 // sections
+@use "../../base/core/settings/colours" as *;
+@use "../../base/core/settings/spacing" as *;
+@use "../../base/core/tools/spacing" as *;
+@use "../../base/core/tools/sass-mq" as *;
+@use "../../base/core/styles/typography" as *;
+@use "../../base/core/styles/lists" as *;
+
 
 .hse-width-container--full {
 margin: 0;
@@ -38,6 +45,10 @@ max-width: none;
 .hse-section__content {
 @include hse-responsive-padding(4, "top");
 @include hse-responsive-padding(4, "bottom");  
+// remove spacing from last element in .hse-section__content
+> :last-child {
+margin-bottom: 0;
+}
 }
 
 .hse-width-container--full {
@@ -63,6 +74,12 @@ max-width: none;
   }
 }
 
+}
+
+// remove padding-bottom for action links
+
+.hse-section__content .hse-action-link {
+padding-bottom: 0;
 }
 
 // card groups within sections

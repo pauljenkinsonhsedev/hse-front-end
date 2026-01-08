@@ -1,8 +1,16 @@
 // Multi step nav
 
+@use "../../base/core/settings/spacing" as *;
+@use "../../base/core/tools/spacing" as *;
+@use "../../base/core/tools/sass-mq" as *;
+@use "../../base/core/settings/colours" as *;
+@use "../../base/core/settings/typography" as *;
+@use "../../base/core/tools/typography" as *;
+@use "../contents-list/contents-list" as *;
+
 .hse-multistep-navigation {
-@include hse-responsive-padding(4, "bottom");
 border-bottom: 4px solid #d8d8d8;
+@include hse-responsive-padding(4, "bottom");
 }
 
 .hse-multistep-navigation__title {
@@ -41,11 +49,12 @@ ol.multistep.multistep--dashed li::before, ol.hse-multistep-navigation__list.hse
 }
 
 ol.multistep li, ol.hse-multistep-navigation__list li  {
-  @include hse-typography-responsive(16);
   line-height: 1.5 !important;
   padding: 0 hse-spacing(2);
   clear: both;
   &:a {
     display: inline-block;
   }
+  @include hse-typography-responsive(16);
+
 }

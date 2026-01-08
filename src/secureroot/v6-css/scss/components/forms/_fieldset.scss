@@ -11,52 +11,54 @@
  *    not there.
  */
 
- .hse-fieldset {
-    @include clearfix;
-  
-    border: 0;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .hse-fieldset__legend {
-    @include hse-font(19);
-  
-    box-sizing: border-box; /* 1 */
-    color: $color_hse-black;
-    display: table; /* 2 */
-    margin-bottom: hse-spacing(2);
-    margin-top: 0;
-    max-width: 100%; /* 1 */
-    padding: 0;
-    white-space: normal; /* 3 */
-  }
+@use "../../base/core/tools/mixins" as *;
+@use "../../base/core/tools/typography" as *;
+@use "../../base/core/settings/colours" as *;
+
+.hse-fieldset {
+border: 0;
+margin: 0;
+padding: 0;
+@include clearfix;
+}
+
+.hse-fieldset__legend {
+box-sizing: border-box; /* 1 */
+color: $color_hse-black;
+display: table; /* 2 */
+margin-bottom: hse-spacing(2);
+margin-top: 0;
+max-width: 100%; /* 1 */
+padding: 0;
+white-space: normal; /* 3 */
+@include hse-font(19);
+}
   
   /* Heading modifiers */
   
-  .hse-fieldset__legend--xl {
-    @include hse-font($size: 48, $weight: bold);
-    margin-bottom: hse-spacing(3);
-  }
+.hse-fieldset__legend--xl {
+margin-bottom: hse-spacing(3);
+@include hse-font($size: 48, $weight: bold);
+}
+
+.hse-fieldset__legend--l {
+margin-bottom: hse-spacing(3);
+@include hse-font($size: 32, $weight: bold);
+}
+
+.hse-fieldset__legend--m {
+margin-bottom: hse-spacing(3);
+@include hse-font($size: 24, $weight: bold);
+}
+
+.hse-fieldset__legend--s {
+margin-bottom: hse-spacing(3);
+@include hse-font($size: 19, $weight: bold);
+}
   
-  .hse-fieldset__legend--l {
-    @include hse-font($size: 32, $weight: bold);
-    margin-bottom: hse-spacing(3);
-  }
-  
-  .hse-fieldset__legend--m {
-    @include hse-font($size: 24, $weight: bold);
-    margin-bottom: hse-spacing(3);
-  }
-  
-  .hse-fieldset__legend--s {
-    @include hse-font($size: 19, $weight: bold);
-    margin-bottom: hse-spacing(3);
-  }
-  
-  .hse-fieldset__heading {
-    /* 4 */
-    font-size: inherit;
-    font-weight: inherit;
-    margin: 0;
-  }
+.hse-fieldset__heading {
+/* 4 */
+font-size: inherit;
+font-weight: inherit;
+margin: 0;
+}

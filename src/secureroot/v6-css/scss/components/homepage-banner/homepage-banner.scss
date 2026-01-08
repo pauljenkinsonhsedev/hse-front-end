@@ -1,5 +1,8 @@
 // Homepage banner
 
+@use "../../base/core/tools/sass-mq" as *;
+@use "../../base/core/settings/colours" as *;
+@use "../../base/core/settings/spacing" as *;
 
 .homepageBanner {
     padding: 0;  

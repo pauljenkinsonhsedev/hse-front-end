@@ -10,6 +10,9 @@
  * See tools/mixins
  */
 
+ @use "../tools/mixins" as *;
+
+
 .hse-u-reading-width {
 @include reading-width();
 }

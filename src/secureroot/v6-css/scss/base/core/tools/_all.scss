@@ -1,13 +1,13 @@
-@import "exports.scss";
-@import "sass-mq.scss";
-@import "spacing.scss";
-@import "typography.scss";
-@import "links.scss";
-@import "focused.scss";
-@import "iff.scss";
-@import "mixins.scss";
-@import "grid.scss";
-@import "functions.scss";
+@forward "sass-mq.scss";
+@forward "spacing.scss";
+@forward "exports.scss";
+@forward "typography.scss";
+@forward "links.scss";
+@forward "focused.scss";
+@forward "iff.scss";
+@forward "mixins.scss";
+@forward "grid.scss";
+@forward "functions.scss";
 
 
 

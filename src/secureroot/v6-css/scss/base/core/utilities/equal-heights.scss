@@ -1,8 +1,0 @@
-// Equal heights fix
-
-@include mq($until: desktop) {
-    /* Disables auto height on mobile devices */
-    [class*="equalHeights"], [class*="equalHeight"] {
-    height: auto !important;	
-    }
-}

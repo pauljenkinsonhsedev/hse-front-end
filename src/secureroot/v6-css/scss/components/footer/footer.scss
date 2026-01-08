@@ -1,3 +1,12 @@
+@use "../../base/core/settings/colours.scss" as *;
+@use "../../base/core/tools/sass-mq" as *;
+@use "../../base/core/tools/links" as *;
+@use "../../base/core/settings/spacing" as *;
+@use "../../base/core/tools/typography" as *;
+@use "../../base/core/tools/sass-mq" as *;
+
+
+
 #footer-nav {
     padding-top: 20px;
 }
@@ -18,11 +27,11 @@
     .hse-footer__navigation {
     display: flex; 
     flex-direction: column;
+    background: $color_hse-grey-4;
+    padding: $hse-legacy-spacing-10 0;
     @include mq($from: desktop) {
     flex-direction: row;
     }
-    background: $color_hse-grey-4;
-    padding: $hse-legacy-spacing-10 0;
     }
     
     .hse-footer__base {
@@ -80,7 +89,6 @@
     
     .hse-footer__list-item {
     display: inline-block;
-    @include hse-font(16);
     margin-right: 15px;
     &--support-links {
         margin-bottom: 0;
@@ -88,6 +96,7 @@
     @include mq($until: desktop) {
     padding: 5px 0;
     }
+    @include hse-font(16);
     }
     
     .hse-footer__base-container {

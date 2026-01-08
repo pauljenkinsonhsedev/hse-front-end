@@ -2,6 +2,21 @@
    COMPONENTS/ #RADIOS
    ========================================================================== */
 
+@use "../../base/core/settings/globals" as *;
+@use "../../base/core/tools/mixins.scss" as *;
+@use "../../base/core/tools/typography" as *;
+@use "../../base/core/settings/colours" as *;
+@use "../../base/core/tools/focused" as *;
+@use "../../base/core/tools/sass-mq" as *;
+@use "../../base/core/settings/spacing" as *;
+@use "../../base/core/tools/spacing" as *;
+@use "../../base/core/settings/typography" as *;
+
+
+
+@use "sass:math";
+
+
 /**
  * 1. remove 300ms pause on mobile.
  * 2. Fix bug in IE11 caused by transform rotate (-45deg).
@@ -14,14 +29,13 @@
  $hse-radios-focus-width: $hse-focus-width + 1px;
  
  .hse-radios__item {
-   @include hse-font(19);
- 
    clear: left;
    display: block;
    margin-bottom: hse-spacing(2);
    min-height: $hse-radios-size;
    padding: 0 0 0 $hse-radios-size;
    position: relative;
+   @include hse-font(19);
  }
  
  .hse-radios__item:last-child,
@@ -119,13 +133,12 @@
  
  .hse-radios--inline {
    @include mq($from: tablet) {
-     @include clearfix;
- 
      .hse-radios__item {
        clear: none;
        float: left;
        margin-right: hse-spacing(4);
      }
+     @include clearfix;
    }
  
    &.hse-radios--conditional {
@@ -140,31 +153,29 @@
  /* Divider variant */
  
  .hse-radios__divider {
-   $hse-divider-size: $hse-radios-size !default;
-   @include hse-font(19);
- 
+   $hse-divider-size: $hse-radios-size !default; 
    color: $hse-text-color;
    margin-bottom: hse-spacing(2);
    text-align: center;
    width: $hse-divider-size;
+   @include hse-font(19);
  }
  
  /* Conditional */
  
- $conditional-border-width: $hse-border-width-mobile;
+ $conditional-border-width-radio: $hse-border-width-mobile;
  // Calculate the amount of padding needed to keep the border centered against the radios.
- $conditional-border-padding: ($hse-radios-size * 0.5) - ($conditional-border-width * 0.5);
+ $conditional-border-padding-radio: math.div($hse-radios-size, 2) - math.div($conditional-border-width-radio, 2);
  // Move the border centered with the radios
- $conditional-margin-left: $conditional-border-padding;
+ $conditional-margin-left-radio: $conditional-border-padding-radio;
  // Move the contents of the conditional inline with the label
- $conditional-padding-left: $conditional-border-padding + $hse-radios-label-padding-left-right;
+ $conditional-padding-left-radio: $conditional-border-padding-radio + $hse-radios-label-padding-left-right;
  
  .hse-radios__conditional {
+   border-left: $conditional-border-width-radio solid $hse-form-border-color;
+   margin-left: $conditional-margin-left-radio;
+   padding-left: $conditional-padding-left-radio;
    @include hse-responsive-margin(4, "bottom");
-   border-left: $conditional-border-width solid $hse-form-border-color;
-   margin-left: $conditional-margin-left;
-   padding-left: $conditional-padding-left;
- 
    & > :last-child {
      margin-bottom: 0;
    }

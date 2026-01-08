@@ -1,280 +1,208 @@
-
 /* ==========================================================================
    COMPONENTS / #CARD
    ========================================================================== */
 
-/**
- * 1. Is needed for the :active top positioning, and invisible clickable overlay.
- * 2. Border is used to create a divider between the white content
- *    box and an image.
- * 3. Creates the 'pressed down' effect when clicked.
- * 4. Removes padding-top from headings directly after the card group.
- * 5. Includes the border width to achieve the correct left alignment.
- * 6. Stops the heading from spanning the full width of the card.
- * 7. Removes padding top for the feature heading positioning.
- * 8. Default care card colour set to blue (non-urgent care card) -
- *    using the @mixin care-card tools/_mixins.scss.
- *    The same mixin is used for each care card, setting the background
- *    colour,text colour and print border width with the variables.
- * 9. 'Random number' for the heading triangle.
- * 10. 'Random number' for the heading triangle positioning.
- * 11. 'Random number' used for spacing to compensate for the triangle.
- * 12. Needed to enable the triangle to show correctly in high contrast mode.
- * 13. Prevent additional padding on headings
- * 14. Give the action link icon sufficient contrast when used in the emergency variant
- * 15. Reset the positioning to the default [1] to display heading triangle on a coloured background.
- * 16. Emergency care card <a> needs to be white because the background colour is black.
- * 17. Trick IE10 into rendering the invisible clickable area. Without this it does not.
- */
+@use "../../base/core/tools/spacing" as *;
+@use "../../base/core/tools/mixins" as *;
+@use "../../base/core/tools/typography" as *;
+@use "../../base/core/settings/spacing" as *;
+@use "../../base/core/settings/colours" as *;
+@use "../../base/core/settings/typography" as *;
+@use "../../base/core/tools/sass-mq" as *;
 
- $card-border-width: 1px;
- $card-border-bottom-width: hse-spacing(1);
+$card-border-width: 1px;
+$card-border-bottom-width: hse-spacing(1);
 
- 
- .hse-card {
-   @include hse-responsive-margin(7, "bottom");
-   position: relative; /* [1] */
-   width: 100%;
- }
- 
- .hse-card__img {
-   @include print-hide();
- 
-   border-bottom: $card-border-width solid $color_hse-grey-5; /* [2] */
-   display: block;
-   width: 100%;
- }
- 
- .hse-card__content {
-   @include top-and-bottom();
-   @include hse-responsive-padding(5);
-   background: $color_hse-white;
- }
- 
- .hse-card__heading,
- .hse-card__metadata,
- .hse-card__description {
-   margin-bottom: hse-spacing(3);
- }
-
- 
- /* Card group
+/* Base card
    ========================================================================== */
- 
- /**
- * Card group allows you to have a row of cards.
- *
- * Flexbox is used to make each card in a row the same height.
- */
- 
- .hse-card-group {
-   @include flex();
- 
-   margin-bottom: hse-spacing(3);
-   padding: 0;
- 
-   @include mq($until: desktop) {
-     margin-bottom: hse-spacing(6);
-   }
- 
-   + h2,
-   + .hse-heading-l,
-   + h3,
-   + .hse-heading-m {
-     padding-top: 0; /* [4] */
-   }
- }
- 
- .hse-card-group__item {
-   @include flex-item();
- 
-   list-style-type: none;
-   margin-bottom: 0;
- 
- }
 
-  .hse-card-group {
-    padding: 0;
-    list-style-type: none;
-    @include mq($from: tablet) {
-      margin: 0 -15px;
-      margin-top: hse-spacing(3);
-      @include flex();
-      }
+.hse-card {
+  position: relative;
+  width: 100%;
+  border-bottom: 4px solid $card-border-color;   /* KEEP base border */
+  margin-bottom: $hse-legacy-spacing-20;
+  h2,
+  h3 {
+    @include hse-font(22, bold);
   }
 
- .hse-card-group li {
+  &:link {
+    color: #1e060a;
+    background: none;
+  }
+}
+
+/* ONLY apply hover border to plain cards
+   (NOT chevron / box / img / non-clickable) */
+
+.hse-card:not(.hse-card--chevron):not(.hse-card--box):not(.hse-card--img):not(.hse-card--non-clickable):not(:focus-within):hover {
+  border-bottom-color: $color_hse-red;  /* colour only — no jump */
+}
+
+/* Non-clickable card */
+
+.hse-card--non-clickable {
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.15);
+  border-bottom: none;
+
+  a::after {
+    display: none;
+  }
+
+  &:hover {
+    border-bottom: none;
+  }
+}
+
+/* Make entire card clickable */
+
+.hse-card a::after {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  content: "";
+}
+
+/* Image card */
+
+.hse-card--img {
+  border: 2px solid $card-border-color;
+  border-bottom-width: 4px;
+  margin-bottom: $hse-legacy-spacing-10;
+  background: white;
+  @include print-hide();
+  &:hover {
+    border-bottom: 4px solid $color_hse-red;
+    .hse-card__img {
+     border-bottom: none;
+    }
+  }
+  .hse-card__content a:focus:hover {
+    color: $hse-text-color;
+  }
+}
+
+.hse-card__img {
+  display: block;
+  width: 100%;
+}
+
+/* Content block */
+
+.hse-card__content {
+  background: $color_hse-white;
+  @include top-and-bottom();
+  @include hse-responsive-padding(5);
+}
+
+.hse-card__heading,
+.hse-card__metadata,
+.hse-card__description {
+  margin-bottom: hse-spacing(3);
+}
+
+/* Card group
+   ========================================================================== */
+
+.hse-card-group {
+  margin-bottom: hse-spacing(3);
+  padding: 0;
+  list-style: none;
+  @include flex();
+
+  @include mq($until: desktop) {
+    margin-bottom: hse-spacing(6);
+  }
+
+  @include mq($from: tablet) {
+    margin: hse-spacing(3) -15px 0;
+  }
+
+  + h2,
+  + .hse-heading-l,
+  + h3,
+  + .hse-heading-m {
+    padding-top: 0;
+  }
+
+  li {
     @include flex-item();
-    @include mq($from: desktop) {
-    // margin-bottom: hse-spacing(4) !important; // temporary fix for equal height cards, apply utility class (.hse-u-margin-bottom-4) in html or dynamially add class with JS 
-    }
   }
-  
 
-    .hse-card-group .hse-grid-column-one-half li {
-      @include mq($from: tablet) {
-        background: none;
-        padding: 0 16px;
-        float: left;
-      }
-    }
-    .hse-card-group .hse-grid-column-one-third li {
+  &.hse-grid-column-one-half li,
+  &.hse-grid-column-one-third li {
     background: none;
     padding: 0;
-    list-style-image: none !important;
+
     @include mq($from: tablet) {
-      background: none;
       padding: 0 16px;
       float: left;
     }
   }
-
- /* Card group equal heights
-   ========================================================================== */
- 
- /**
- * equal heights fix for common card groups (this could also be achieved in HTML using the spacing override classes hse-u-margin-bottom-4)
- */
-
-.hse-card-group:has(.hse-card) {
-  li  {
-    @include hse-responsive-margin(4, "bottom");
-  } 
 }
 
- /* Default clickable card
+/* Equal heights */
+
+.hse-card-group:has(.hse-card) li {
+  @include hse-responsive-margin(4, "bottom");
+}
+
+/* Chevron card
    ========================================================================== */
 
-  .hse-card {
-  border-bottom: 4px solid $card-border-color;
-  margin-bottom: $hse-legacy-spacing-20;
-  width: 100%;
+.hse-card--chevron {
   position: relative;
-  h3, h2 {
-    @include hse-font(22);
-    font-weight: bold;
-  }
-  &:hover {
-  border-bottom: 4px solid $color_hse-red;
-  }
-  &:link {
-   color: #1e060a;
-   background: none;
-  }
-  }
-
-  // Make non-clickable
-
-  .hse-card--non-clickable  {
-  box-shadow: 1px 1px 4px rgba(0,0,0,.15);
-  border-bottom: none;
-  a::after {
-  display: none;
-  }
-  &:hover {
-  border-bottom: none;  
-  }
-
-}
-
-  // makes entire card clickable (method used in Bootstrap framework, differs to NHS code)
-
-  .hse-card a::after {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 1;
-    content: "";
-   }
-
- /* Image card
-   ========================================================================== */
-
-   .hse-card__img {  
-    border-bottom: $card-border-width solid $color_hse-grey-5; /* [2] */
-    display: block;
-    width: 100%;
-  }
-  .hse-card--img {
-    border: 2px solid $card-border-color;
-    border-bottom: 4px $card-border-color solid;
-    background: $color_hse-white;
-  }
-
- /* Chevron card
-   ========================================================================== */
-
-  .hse-card--chevron {
-    position: relative;
+  margin-bottom: $hse-legacy-spacing-10;
+  padding: hse-spacing(3) hse-spacing(4);
+  background: $color_hse-white;
+  border-bottom-width: 4px;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.15);
  
-    a {
-     font-weight: bold;
-     display: block;
-    }
-   &:hover{
-   border-bottom: none;
-   }
-   h3 {
+  h3 {
     margin: 0;
     padding: 0;
-   }
-   }
- 
-   .hse-card--chevron {
-   margin-bottom: $hse-legacy-spacing-10;
-   box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.15);
-   border-bottom: none;
-   background: $color_hse-white;
+  }
 
-   padding: hse-spacing(3) hse-spacing(4) hse-spacing(3) hse-spacing(4);
-   a {
-   padding-right: hse-spacing(3); // fix for chevron icon positioning
-   }
-   &:hover {
-  background: $color_hse-red;
-   }
-   &:focus-within {
-    background: $hse-focus-color;
-   }
-   a {
-    &:before {
+  .hse-card__descriptor {
+    padding-top: hse-spacing(2);
+    padding-right: hse-spacing(3);
+  }
+
+  &:hover {
+    border-bottom: 4px solid $color_hse-red;
+  }
+  a {
+    display: block;
+    font-weight: bold;
+    padding-right: hse-spacing(3);
+    &::before {
+      content: "";
+      position: absolute;
+      right: hse-spacing(3);
+      top: 43%;
+      width: 10px;
+      height: 10px;
       border-right: 3px solid $color_hse-red;
       border-top: 3px solid $color_hse-red;
-      content: "";
-      display: block;
-      height: 10px;
-      position: absolute;
-      right: hse-spacing(4);
-      top: 43%;
-      -webkit-transform: translateY(0) rotate(45deg) scale(1);
-      -ms-transform: translateY(0) rotate(45deg) scale(1);
-      transform: translateY(0) rotate(45deg) scale(1);
-      width: 10px;
+      transform: rotate(45deg);
     }
-    &:hover {
-      color: white;
-    }
-    &:hover::before {
-      color: white;
-      border-right: 3px solid white;
-      border-top: 3px solid white;
-    }
-    &:focus {
-      color: $hse-text-color;
-      box-shadow: none;
-    }
-    &:focus::before {
-      border-right: 3px solid $hse-text-color;
-      border-top: 3px solid $hse-text-color;
-    }
-    &:focus::after {
-      border: 0 !important;
-      outline: 0;
-      box-shadow: inset 0 -4px 0 0 #333;
-
-   }
-
-   }
   }
+}
+
+/* Box card
+   ========================================================================== */
+
+.hse-card--box {
+  position: relative;
+  margin-bottom: $hse-legacy-spacing-10;
+  padding: hse-spacing(3) hse-spacing(4);
+  background: $color_hse-white;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.15);
+  &:hover {
+  border-bottom: 4px solid $color_hse-red;   
+  }
+  h3 {
+    margin: 0;
+    padding: 0;
+  }
+}

@@ -8,6 +8,10 @@
 // Usage: @include hse-link-style-default;
 //
 
+@use "../settings/_all" as *;
+@use "../tools/focused" as *;
+
+
 @mixin hse-link-style-default {
     color: $hse-link-color;
   

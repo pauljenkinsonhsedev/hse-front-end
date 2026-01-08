@@ -17,6 +17,13 @@
  * 6. Feedback message from 1024px is not full width. Adding 100% width fixes the issue.
  */
 
+@use "../tools/sass-mq" as *;
+@use "../settings/all" as *;
+@use "../objects/grid" as *;
+@use "../tools/exports" as *;
+
+
+
  @mixin govuk-width-container {
   margin: 0 $hse-gutter-half; /* [1] */
 

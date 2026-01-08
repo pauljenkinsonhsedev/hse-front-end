@@ -2,6 +2,16 @@
 #SIDE NAVIGATION - DESIGN SYSTEM
 ========================================================================== */
 
+@use "../../base/core/tools/sass-mq" as *;
+@use "../../base/core/tools/typography" as *;
+@use "../../base/core/tools/links" as *;
+@use "../../base/core/settings/colours" as *;
+@use "../../base/core/settings/spacing" as *;
+@use "../../base/core/tools/spacing" as *;
+
+
+
+
 .hse-design-side-navigation {
 @include mq($until: desktop) {
 margin-bottom: hse-spacing(4);
@@ -17,11 +27,10 @@ margin-bottom: hse-spacing(4);
 }
 
 &__title {
-  @include hse-font($size: 19);
-  color: hse-colour("dark-grey");
   font-weight: normal;
   margin: 0;
   padding: hse-spacing(2) + 4px 0;
+  @include hse-font($size: 19);
   @include mq($until: desktop) {
     display: none;
   }
@@ -45,11 +54,11 @@ margin-bottom: hse-spacing(4);
   // Nested
 
   &--nested {
+  margin: 0 0 0 hse-spacing(2);
+  padding-left: 20px;
   @include mq($until: desktop) {
     display: none !important;
   }
-  margin: 0 0 0 hse-spacing(2);
-  padding-left: 20px;
   .hse-design-side-navigation__item {
     a:link {
       display: inline !important;
@@ -110,11 +119,11 @@ margin-bottom: hse-spacing(4);
   }
   &:has(.hse-design-side-navigation__list--nested) {
     border-left: 4px solid $hse-link-color;
+    padding-left: hse-spacing(2);
     @include mq($until: desktop) {
     border-bottom: 4px solid $hse-link-color !important;
     border-left: none;
     }
-    padding-left: hse-spacing(2);
     a {
       border: none;
     }

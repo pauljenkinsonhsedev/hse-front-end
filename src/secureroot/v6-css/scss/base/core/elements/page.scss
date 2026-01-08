@@ -17,6 +17,9 @@
  * 5. Sticky footer - sticks to bottom of the screen when content of the page isn’t enough to push it there. If there is enough content, footer happily pushed down.
  */
 
+ @use "../settings/_all" as *;
+
+
  html {
     background-color: $color_hse-white;
     overflow-y: scroll; /* [1] */

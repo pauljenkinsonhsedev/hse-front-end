@@ -10,8 +10,14 @@
  *    not be set either.
  */
 
+@use "../../base/core/settings/typography" as *;
+@use "../../base/core/tools/typography" as *;
+@use "../../base/core/settings/globals" as *;
+@use "../../base/core/settings/colours" as *;
+@use "../../base/core/tools/focused" as *;
+@use "../../base/core/tools/sass-mq" as *;
+
  .hse-input {
-    @include hse-font(19);
     -moz-appearance: none; /* 1 */
     -webkit-appearance: none; /* 1 */
     appearance: none; /* 1 */
@@ -22,6 +28,7 @@
     margin-top: 0;
     padding: hse-spacing(1);
     width: 100%;
+    @include hse-font(19);
     &--subscribe {
     text-align: center !important;
     }
@@ -89,8 +96,6 @@
   
   .hse-input__prefix,
   .hse-input__suffix {
-    @include hse-font($size: 19);
-  
     background-color: $color_hse-grey-4;
     border: $hse-border-width-form-element solid $hse-form-border-color;
     box-sizing: border-box;
@@ -102,7 +107,7 @@
     padding: hse-spacing(1);
     text-align: center;
     white-space: nowrap;
-  
+    @include hse-font($size: 19);
     @include mq($until: mobile) {
       max-width: 9.1ex;
       display: block;

@@ -1,3 +1,8 @@
+@use "../settings/colours" as *;
+@use "../settings/spacing" as *;
+@use "../tools/sass-mq" as *;
+
+
 .hse-section p.moreLink a::before {
     content: " ";
     position: relative;
@@ -118,6 +123,22 @@
     position: relative;
   }
 
+  .search-button .underline {
+  display: none;           // hidden by default
+  position: absolute;
+  bottom: 0;               // adjust to sit under X
+  left: 50%;
+  transform: translateX(-50%);
+  height: 3px;
+  width: 42px;             // match the X width
+  background: $color_hse-black;
+}
+
+.search-button.main-search-expanded .underline {
+  display: block;          // shows when expanded
+}
+
+
   @include mq($until: desktop) {
   .search-button:hover:after {
     background: none !important;
@@ -131,7 +152,7 @@
   .global-menu-button.main-menu-expanded:focus-visible {
     padding-bottom: 4px;
   }
-
+@include mq($from: desktop) {
   .global-menu-button:hover:after, .search-button:hover:after {
     content: "";
     height: 3px;
@@ -145,6 +166,19 @@
     left: 16px;
     right: 16px;
   }
+}
+
+.global-menu-button,
+.search-button {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+}
+
+.global-menu-button:active,
+.search-button:active {
+  background: transparent;
+}
+
 
   .global-menu-button:focus-visible {
     padding-right: 9px;
@@ -156,8 +190,8 @@
   } 
 
   .search-button:hover:after {
-    left: 1px;
-    right: 0;
+    left: 11px;
+    right: 11px;
   }
 
   .search-button.main-search-expanded:focus-visible:hover:after {
@@ -180,26 +214,53 @@
     content: "";
     height: 3px;
     position: relative;
-    bottom: -13px;
+    bottom: -15px;
     background: $color_hse-black;
     width: 70px;
     margin-left: -4px;
     display: block;
   }
 
+//   @-moz-document url-prefix() {
+//   /* Firefox-only */
+//   .global-menu-button.main-menu:focus-visible:after,
+//   .global-menu-button:focus-visible:after {
+//     bottom: -15px;
+//   }
+// }
+
+//   @supports (-webkit-touch-callout: none) {
+//   /* Safari-only */
+//   .global-menu-button.main-menu:focus-visible:after,
+//   .global-menu-button:focus-visible:after {
+//     bottom: -50px !important;
+//   }
+// }
+
+// @supports (background: -webkit-named-image(i)) {
+//   /* Safari-only */
+//    .global-menu-button.main-menu:focus-visible:after,
+//   .global-menu-button:focus-visible:after {
+//     /* Safari CSS */
+//     bottom: -15px !important;
+//   }
+// }
+
+
+
   button#menu-button.global-menu-button:focus-visible span {
     margin-top: 4px;
   }
 
-  @media screen and (-webkit-min-device-pixel-ratio: 1.25) {
-    .global-menu-button.main-menu:focus-visible:after,
-    .global-menu-button:focus-visible:after {
-      content: "";
-      bottom: -13px;
-      z-index: 1;
-      display:block;
-    }
-}
+//   @media screen and (-webkit-min-device-pixel-ratio: 1.25) {
+//     .global-menu-button.main-menu:focus-visible:after,
+//     .global-menu-button:focus-visible:after {
+//       content: "";
+//       bottom: -13px;
+//       z-index: 1;
+//       display:block;
+//     }
+// }
 
   .search-button.main-search:focus-visible:after,
   .search-button:focus-visible:after {
@@ -207,32 +268,37 @@
     height: 3px;
     position: absolute;
     background: $color_hse-black;
-    width: 64px;
-    margin-left: -32px;
-    margin-top: 15px;
+    width: 42px;
+    bottom: 0;
+    margin-left: -21px;
   }
 
-  #search-button.search-button:hover:focus-visible:after {
+  #search-button.search-button {
+    position: relative;
+  }
+
+  #search-button.search-button:hover:focus-visible:after
+  
+  {
 
       height: 3px;
       position: absolute;
       bottom: 0;
-      top: 48px;
+      // top: 48px;
       background: $color_hse-black;
-      width: 64px;
-      margin-left: -1px;
+      width: 42px;
+      margin-left: 0;
   
   }
 
   #search-button.search-button.main-search-expanded:focus-visible:after {
-    content: "";
-    height: 3px;
-    position: absolute;
-    bottom: -1px;
-    top: 63px;
-    background: $color_hse-black;
-    width: 64px !important;
-    margin-left: -37px !important;
+     height: 3px;
+      position: absolute;
+      bottom: 0;
+      // top: 48px;
+      background: $color_hse-black;
+      width: 42px;
+      margin-left: 0;
   }
 
   #menu-button.global-menu-button.main-menu-expanded:focus-visible:after {
@@ -267,7 +333,7 @@
   }
 
   .search-button.main-search-expanded {
-    padding-left: 26px;
+    // padding-left: 26px;
     &:after {
       bottom: 0;
       display: none;
@@ -276,11 +342,10 @@
 
   .search-button.main-search-expanded .x-mark {
     display: inline-block;
-    font-size: 26px;
+    font-size: 36px;
     font-weight: normal;
-    padding-right: 6px;
-    margin-left: -20px;
-    margin-top: -10px;
+    padding-right: 7px;
+    margin-top: -6px;
   }
 
   .search-button.main-search-expanded .gsc-search-button svg {

@@ -1,10 +1,15 @@
 // mq() v4.0.2
 // sass-mq/sass-mq
 
+@use "../../core/settings/breakpoints.scss" as *;
+
+
 /* stylelint-disable indentation */
 @charset "UTF-8"; // Fixes an issue where Ruby locale is not set properly
 // See https://github.com/sass-mq/sass-mq/pull/10
-
+@use "sass:string";
+@use "sass:map";
+@use "sass:meta";
 @use "sass:math";
 @use "sass:list";
 
@@ -95,13 +100,14 @@ $mq-media-type: all !default;
 @function mq-px2em($px, $base-font-size: $mq-base-font-size) {
   /* stylelint-disable-line scss/at-function-pattern */
 
-  @if unitless($px) {
-    @warn "Assuming #{$px} to be in pixels, attempting to convert it into pixels."; /* stylelint-disable-line at-rule-disallowed-list, string-quotes */
-    @return mq-px2em($px * 1px, $base-font-size);
-  } @else if unit($px) == em {
-    @return $px;
-  }
-  @return math.div($px, $base-font-size) * 1em;
+@if math.is-unitless($px) {
+  @warn "Assuming #{$px} to be in pixels, attempting to convert it into pixels."; /* stylelint-disable-line at-rule-disallowed-list, string-quotes */
+  @return mq-px2em($px * 1px, $base-font-size);
+} @else if math.unit($px) == "em" {
+  @return $px;
+}
+
+@return math.div($px, $base-font-size) * 1em;
 }
 
 /// Get a breakpoint's width
@@ -116,8 +122,8 @@ $mq-media-type: all !default;
 ///
 /// @returns {Number} Value in pixels
 @function mq-get-breakpoint-width($name, $breakpoints: $mq-breakpoints) {
-  @if map-has-key($breakpoints, $name) {
-    @return map-get($breakpoints, $name);
+  @if map.has-key($breakpoints, $name) {
+    @return map.get($breakpoints, $name);
   } @else {
     @warn "Breakpoint #{$name} wasn't found in $breakpoints."; /* stylelint-disable-line at-rule-disallowed-list */
   }
@@ -185,7 +191,7 @@ $mq-media-type: all !default;
 
   // From: this breakpoint (inclusive)
   @if $from {
-    @if type-of($from) == number {
+    @if meta.type-of($from) == number {
       $min-width: mq-px2em($from);
     } @else {
       $min-width: mq-px2em(mq-get-breakpoint-width($from, $breakpoints));
@@ -194,7 +200,7 @@ $mq-media-type: all !default;
 
   // Until: that breakpoint (exclusive)
   @if $until {
-    @if type-of($until) == number {
+    @if meta.type-of($until) == number {
       $max-width: mq-px2em($until);
     } @else {
       $max-width: mq-px2em(mq-get-breakpoint-width($until, $breakpoints)) - 0.01em;
@@ -236,7 +242,7 @@ $mq-media-type: all !default;
     // Remove unnecessary media query prefix 'all and '
     @if ($media-type == "all" and $media-query != "") {
       $media-type: "";
-      $media-query: str-slice(unquote($media-query), 6);
+      $media-query: string.slice(string.unquote($media-query), 6);
     }
 
     @media #{$media-type + $media-query} {
@@ -357,12 +363,16 @@ $mq-media-type: all !default;
     @each $show-breakpoint in $show-breakpoints {
       $width: mq-get-breakpoint-width($show-breakpoint, $breakpoints);
       @include mq($show-breakpoint, $breakpoints: $breakpoints) {
+          & {
         content: "#{$show-breakpoint} ≥ #{$width} (#{mq-px2em($width)})"; /* stylelint-disable-line string-quotes */
+          }
       }
     }
   }
 }
 
 @if list.length($mq-show-breakpoints) > 0 {
+  & {
   @include mq-show-breakpoints;
+  }
 }

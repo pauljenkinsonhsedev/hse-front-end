@@ -1,3 +1,6 @@
+@use "../../base/core/settings/colours" as *;
+@use "../../base/core/utilities/visibility" as *;
+
 .input-file {
   appearance: none;
   background-color: transparent;

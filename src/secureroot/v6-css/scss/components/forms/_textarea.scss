@@ -1,10 +1,13 @@
 /* ==========================================================================
    COMPONENTS/ #TEXTAREA
    ========================================================================== */
+@use "../../base/core/settings/typography" as *;
+@use "../../base/core/tools/typography" as *;
+@use "../../base/core/settings/globals" as *;
+@use "../../base/core/settings/colours" as *;
+@use "../../base/core/tools/focused" as *;
 
    .hse-textarea {
-    @include hse-font(19);
-  
     -webkit-appearance: none;
     border: $hse-border-width-form-element solid $hse-form-border-color;
     border-radius: 0;
@@ -14,7 +17,7 @@
     padding: hse-spacing(1);
     resize: vertical;
     width: 100%;
-  
+    @include hse-font(19);
     &:focus {
       @include hse-focused-input;
     }

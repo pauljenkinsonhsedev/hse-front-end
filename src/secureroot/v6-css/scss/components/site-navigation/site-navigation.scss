@@ -1,5 +1,14 @@
 // Navigation
 
+@use "../../base/core/settings/globals" as *;
+@use "../../base/core/tools/mixins" as *;
+@use "../../base/core/tools/sass-mq" as *;
+@use "../../base/core/settings/colours" as *;
+@use "../../base/core/settings/typography" as *;
+@use "../../base/core/tools/typography" as *;
+@use "../../base/core/tools/links" as *;
+
+
 .hse-navigation {
   @include clearfix();
   display: flex;
@@ -42,7 +51,6 @@
   .hse-navigation__navigation-list {
   width: 100%;
   margin: 0;
-  @include hse-font(16);
   list-style-type: none;
   background: none;
   padding: 0;
@@ -50,6 +58,7 @@
   &--footer {
     background-color: $color_hse-grey-1;
   }
+  @include hse-font(16);
   @include mq($from: desktop) {
   margin: 0 0 0 -16px;
   width: auto;
@@ -185,6 +194,24 @@
   background: $color_hse-grey-4;
   margin-top: -10px;
   margin-bottom: -10px;
+}
+
+button#search-button.search-button.main-search-expanded {
+  position: relative;
+}
+button#search-button.search-button.main-search-expanded:after {
+ 
+  content: "";
+    display: block;
+    height: 3px;
+    left: 11px;
+    right: 11px;
+    position: absolute;
+    bottom: 0;
+    top: auto;
+    background: #212b32;
+ 
+
 }
 
 .menu.active {

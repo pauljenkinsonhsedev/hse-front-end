@@ -7,18 +7,26 @@
  * 2. Fix bug in IE11 caused by transform rotate (-45deg).
  */
 
+ @use "../../base/core/settings/typography" as *;
+ @use "../../base/core/tools/typography" as *;
+ @use "../../base/core/tools/focused" as *;
+ @use "../../base/core/tools/spacing" as *;
+ @use "../../base/core/settings/colours" as *;
+ @use "../../base/core/settings/globals" as *;
+ @use "../../base/core/settings/spacing" as *;
+
+
  $hse-checkboxes-size: hse-spacing(6);
  $hse-checkboxes-label-padding-left-right: 12px;
  
  .hse-checkboxes__item {
-   @include hse-font(19);
- 
    clear: left;
    display: block;
    margin-bottom: hse-spacing(2);
    min-height: $hse-checkboxes-size;
    padding: 0 0 0 $hse-checkboxes-size;
    position: relative;
+   @include hse-font(19);
  }
  
  .hse-checkboxes__item:last-child,
@@ -115,12 +123,11 @@
  
  .hse-checkboxes__divider {
    $hse-divider-size: $hse-checkboxes-size !default;
-   @include hse-font(19);
- 
    color: $hse-text-color;
    margin-bottom: hse-spacing(2);
    text-align: center;
    width: $hse-divider-size;
+   @include hse-font(19);
  }
  
  /*
@@ -132,17 +139,16 @@
   * 3. Move the contents of the conditional inline with the label.
   */
  
- $conditional-border-width: $hse-border-width-mobile;
- $conditional-border-padding: ($hse-checkboxes-size * 0.5) - ($conditional-border-width * 0.5); /* 1 */
- $conditional-margin-left: $conditional-border-padding; /* 2 */
- $conditional-padding-left: $conditional-border-padding + $hse-checkboxes-label-padding-left-right; /* 3 */
+ $conditional-border-width-checkbox: $hse-border-width-mobile;
+ $conditional-border-padding-checkbox: ($hse-checkboxes-size * 0.5) - ($conditional-border-width-checkbox * 0.5); /* 1 */
+ $conditional-margin-left-checkbox: $conditional-border-padding-checkbox; /* 2 */
+ $conditional-padding-left-checkbox: $conditional-border-padding-checkbox + $hse-checkboxes-label-padding-left-right; /* 3 */
  
  .hse-checkboxes__conditional {
+   border-left: $conditional-border-width-checkbox solid $hse-form-border-color;
+   margin-left: $conditional-margin-left-checkbox;
+   padding-left: $conditional-padding-left-checkbox;
    @include hse-responsive-margin(4, "bottom");
-   border-left: $conditional-border-width solid $hse-form-border-color;
-   margin-left: $conditional-margin-left;
-   padding-left: $conditional-padding-left;
- 
    & > :last-child {
      margin-bottom: 0;
    }

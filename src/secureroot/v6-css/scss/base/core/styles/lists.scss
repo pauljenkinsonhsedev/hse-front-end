@@ -1,153 +1,132 @@
+/* ==========================================================================
+   STYLES / #LISTS
+   ========================================================================== */
 
+// The % (silent class) allows code to be extended (@extend) to other elements
+// without bloating the code.
+//
+// @example scss
+//  .foo {
+//   @extend %hse-section-break--xl;
+//  }
 
-.hse-page-contents dl {
-margin: 0 0 1em 0;
+/**
+ * 1. 'Random number' used to align ul and ol left with content.
+ * 2. 'Random number' used to give sufficient spacing between text and icon.
+ * 3. 'Random number' used to align icon and text.
+ */
+
+@use "../settings/all" as *;
+@use "../tools/typography" as *;
+@use "../tools/spacing" as *;
+
+%hse-list {
+  list-style-type: none;
+  margin-top: 0;
+  padding-left: 0;
+
+  @include hse-typography-responsive(19);
+  @include hse-responsive-margin(4, "bottom");
 }
 
-ul.no-style {
-margin: 0 !important;
-padding: 0 !important;
-}
-ul.no-style li {
-background: 0 0 !important;
-margin: 0 !important;
-padding: 0 !important;
+%hse-list > li {
+  @include hse-responsive-margin(2, "bottom");
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
-dd {
-  margin: 0;
+%hse-list--bullet {
+  list-style-type: disc;
+  padding-left: 20px; /* [1] */
+}
+
+.hse-list--bullet {
+  @extend %hse-list--bullet;
+}
+
+%hse-list--number {
+  list-style-type: decimal;
+  padding-left: 20px; /* [1] */
+}
+
+.hse-list--number {
+  @extend %hse-list--number;
+}
+
+.hse-list {
+  @extend %hse-list;
+}
+
+ul {
+  @extend %hse-list;
+  @extend %hse-list--bullet;
 }
 
 ol {
-  list-style: decimal outside;
+  @extend %hse-list;
+  @extend %hse-list--number;
 }
 
-ol.list-alpha,
-ol.a {
-  list-style-type: lower-alpha;
-}
+.hse-list--tick,
+.hse-list--cross {
+  list-style: none;
+  margin-top: 0;
+  padding-left: 40px; /* [2] */
+  position: relative;
 
-ol.list-numeric,
-ol.i {
-  list-style-type: lower-roman;
-}
-
-ul.listhorizontal li.first {
-  border: none;
-  padding-right: 0.6em;
-  margin-left: -1.6em;
-}
-
-ul.listhorizontal li {
-  background: 0 0;
-  margin: 0;
-  padding: 0 0.6em;
-  display: inline;
-  border-left-width: 1px;
-  border-left-style: solid;
-}
-
-ul.listhorizontal {
-  margin: 1em 0 2em 0;
-}
-
-.hse-page-contents ul li::marker, .hse-print-guide-page ul li::marker {
-  color: $color_hse-red;
-} 
-
-.hse-page-contents ul.list-plain {
-  margin: 0;
-  padding: 0;
-  li {
-    margin: 0;
-    padding: 0;
-    background-image: none;
-    list-style-type: none;
-  }
-}
-.hse-page-contents ul.list-inline {
-  margin: 0;
-  padding: 0;
-  li {
-    display: inline-block;
-    margin: 0;
-    padding: 0;
-    background-image: none;
-    list-style-type: none;
+  svg {
+    left: -4px; /* [3] */
+    margin-top: -5px; /* [3] */
+    position: absolute;
   }
 }
 
+.hse-list--key-links {
+  font-weight: bold;
+  list-style: none;
+  padding: 0;
+  margin-left: 20px;
 
-/* review split list */
-.splitList2 ul {
-  column-count: 2;
-  column-gap: $hse-legacy-spacing-20;
-}
-.splitList3 ul {
-  column-count: 3;
-  column-gap: $hse-legacy-spacing-20;
-}
-.splitList4 ul {
-  column-count: 4;
-  column-gap: $hse-legacy-spacing-20;
+  li a:focus-within {
+    background: $hse-focus-color;
+  }
 }
 
-.hse-page-contents .pressReleases li {
-  padding-bottom: $hse-legacy-spacing-20;
+.hse-list--key-links li {
+  text-indent: -20px;
+  @include hse-responsive-margin(3, "bottom");
 }
 
-.hse-page-contents .safetyAlerts li {
-  list-style-type: none;
+.hse-list--key-links.hse-card-group {
+  margin-left: 0;
 }
 
-// description lists
+.hse-list--key-links li a,
+.hse-u-browse-link a {
+  &:focus:before {
+    border-right: 3px solid $color_hse-black;
+    border-top: 3px solid $color_hse-black;
+  }
 
-.document dl,
-.document dd {
-  margin: 0 !important;
+  &:before {
+    border-right: 3px solid $color_hse-red;
+    border-top: 3px solid $color_hse-red;
+    content: "";
+    display: inline-flex;
+    height: 10px;
+    position: relative;
+    right: 0;
+    margin-right: 10px;
+    top: 0;
+    -webkit-transform: translateY(0) rotate(45deg) scale(1);
+    -ms-transform: translateY(0) rotate(45deg) scale(1);
+    transform: translateY(0) rotate(45deg) scale(1);
+    width: 10px;
+  }
 }
 
-.document dl dt {
-  font-size: 0.9rem;
-  line-height: 1.5;
-  padding-right: 5px;
+.hse-list--key-links li a:hover::before {
+  border-color: $color_hse-darker-red;
 }
-
-.box dl {
-margin: 0;
-}
-
-dt {
-font-weight: bold;
-padding-right: $hse-legacy-spacing-10;
-float: left;
-clear: left;
-padding-right: 5px;
-margin-top: 0;
-}
-
-
-dl.document {
-  align-items: center;
-  float: left;
-}
-
-dl.document dt {
-  float: left;
-  clear: left;
-  padding-right: 10px;
-}
-
-dl.document dd {
-  float: left;
-  margin-bottom: 5px;
-}
-
-/* page-contents */
-
-.hse-page-contents ul.hse-card-group {
-margin: 0;
-}
-
-
-  

@@ -1,3 +1,10 @@
+@use "../../base/core/settings/spacing" as *;
+@use "../../base/core/tools/spacing" as *;
+@use "../../base/core/settings/typography" as *;
+@use "../../base/core/tools/typography" as *;
+@use "../../base/core/tools/sass-mq" as *;
+@use "../../base/core/settings/colours" as *;
+
 .hse-image-gallery  {
 max-width: 100%;
 @include hse-responsive-margin(4, "bottom");
@@ -12,8 +19,9 @@ max-width: 100%;
 
 // items
 &__item  {
-  @include hse-font(16);
   width: 100%;
+  list-style-type: none !important; 
+  @include hse-font(16);
   @include mq($from: tablet) {
   width: 49%;
   }
@@ -24,7 +32,6 @@ max-width: 100%;
     aspect-ratio: 4/3;
     width: 100%;
   }
-  list-style-type: none !important; 
   figure {
     display: flex;
     flex-direction: column;
