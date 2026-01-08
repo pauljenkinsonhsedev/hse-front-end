@@ -18,9 +18,9 @@ Uncomment the specific domain you require, do not uncomment more than one cookie
 
 */
 
-// const setCookieSettings = { path: '/', domain: 'hse.gov.uk', secure: true, sameSite: 'strict', expires: 365 };
+   const setCookieSettings = { path: '/', domain: 'hse.gov.uk', secure: true, sameSite: 'strict', expires: 365 };
 // const setCookieSettings = { path: '/', domain: 'beta.hse.gov.uk', secure: true, sameSite: 'strict', expires: 365 };
-   const setCookieSettings = { path: '/', domain: 'localhost', secure: false, sameSite: 'strict', expires: 365 };
+// const setCookieSettings = { path: '/', domain: 'localhost', secure: false, sameSite: 'strict', expires: 365 };
 // const setCookieSettings = { path: '/', domain: 'hseonline', secure: false, sameSite: 'strict', expires: 365 };
 // const setCookieSettings = { path: '/', domain: 'hseuat', secure: false, sameSite: 'strict', expires: 365 };
 

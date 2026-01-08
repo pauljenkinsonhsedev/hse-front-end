@@ -5,11 +5,20 @@
 @use "../../base/core/tools/sass-mq" as *;
 
 .box {
-  margin: 0 0 16px 0;
-  position: relative;
-  background-color: #f3f3f3;
-  border-radius: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: $color_hse-grey-4;
+  margin-bottom: 20px;
   @include hse-responsive-padding(4);
+}
+
+.box-half {
+  display: grid;
+  column-gap: 20px;
+  grid-template-columns: 1fr; // default: 1 per row
+  @include mq($from: desktop) {
+  grid-template-columns: repeat(2, 1fr); // 2 per row
+  }
 }
 
 .box-card {
@@ -22,106 +31,15 @@
 }
 
 .box-card-image {
-  width: 150px; margin-bottom: 5px;
+  width: 150px; 
+  margin-bottom: 5px;
 }
 
-form fieldset.visibleFieldset {
-  border: 1px solid #ababab;
-  display: block;
-  width: auto !important;
-  padding: 0 10px;
-  margin: -1em 0 1em 0;
-}
-.ie7 form fieldset.visibleFieldset {
-  position: relative;
+.box > :last-child {
+  margin-bottom: 0;
 }
 
-form fieldset.radioButton input {
-  display: inline;
-  width: auto;
-}
-form fieldset.radioButton label {
-  padding: 0 $hse-legacy-spacing-20 0.5em 0;
-}
-form fieldset.radioButton label {
-  display: inline;
-  clear: none;
-}
-form fieldset.radioButton label input {
-  width: auto;
-  float: left;
-  clear: left;
-  display: block;
-  margin: 0 10px 0 0;
-}
-form label.checkbox {
-  margin: 0 0 1em 0;
-  display: inline-block;
-  padding-right: $hse-legacy-spacing-20;
-}
-form input.checkbox {
-  display: inline;
-  width: auto;
-}
-form fieldset input.checkbox {
-  width: auto;
-}
-
-
-.box {
-  border-radius: 0;
-  margin-bottom: 15px;
-}
-
-.box .more {
-  width: 100%;
-  position: relative;
-}
-
-.box1col .more {
-  width: 100% !important;
-}
-
-.box.backgroundRed.hasMore p.more a {
-  color: $color_hse-red !important;
-}
-
-.box p:last-child {
-  margin-bottom: 0 !important;
-}
-.box.hasMore p:last-child {
-  margin-bottom: 10px !important;
-}
-
-.more {
-  border-radius: 0;
-  margin-bottom: 10px !important;
-}
-
-.box .box {
-  margin-bottom: 0 !important;
-}
-
-// Box v6
-
-.boxHalfLeft {
-  float: left;
-  width: 100%;
-  margin-right: 1.5%;
-  @include mq($from: large-desktop) {
-  width: 48.5%;
-  }
-}
-.boxHalfRight {
-  float: left;
-  width: 100%;
-  @include mq($from: large-desktop) {
-  width: 48.5%;
-  margin-left: 1.5%;
-  }
-}
-
-.box {
-  background-color: $color_hse-grey-4;
+.box-align-bottom {
+margin-top: auto;
 }
 
