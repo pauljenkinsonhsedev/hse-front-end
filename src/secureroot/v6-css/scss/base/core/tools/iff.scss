@@ -14,6 +14,6 @@
 // https://github.com/alphagov/govuk-frontend
 //
 
-@function iff($condition, $if-true) {
-    @return if(sass($condition): $if-true; else: null);
-  }
+@function iff($condition, $if-true, $if-false: null) {
+  @return if($condition, $if-true, $if-false);
+}
