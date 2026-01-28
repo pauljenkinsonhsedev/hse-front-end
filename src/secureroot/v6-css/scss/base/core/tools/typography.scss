@@ -78,7 +78,12 @@
     $font-size-rem: hse-px-to-rem($font-size);
 
     $line-height: _hse-line-height(
-      $line-height: if($override-line-height, $override-line-height, map.get($breakpoint-map, "line-height")),
+      $line-height: if(
+        sass($override-line-height):
+          $override-line-height;
+        else:
+          map.get($breakpoint-map, "line-height")
+      ),
       $font-size: $font-size
     );
 
