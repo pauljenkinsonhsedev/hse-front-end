@@ -247,8 +247,6 @@ $button-shadow-size: 4px;
   margin-top: 0;
   margin-bottom: 0;
   &:focus-visible {
-    margin-top: -10px;
-    margin-bottom: -10px;
     background: $hse-focus-color !important;
     // box-shadow: 0 $button-shadow-size 0 $hse-focus-text-color;
     color: $hse-focus-text-color;
@@ -267,6 +265,7 @@ $button-shadow-size: 4px;
 
 .global-menu-button.main-menu-expanded:focus-visible {
   background: $hse-focus-color;
+  padding-bottom: 4px;
 }
 
 .search-button:focus-visible .gsc-search-button-v2.gsc {

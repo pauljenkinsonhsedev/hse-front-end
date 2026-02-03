@@ -28,7 +28,6 @@ border-bottom: 1px solid #c2c2c2;
 display: flex;
 flex-direction: row;
 flex-wrap: wrap;
-padding: 10px 0 10px 0;
 @include clearfix();  
 }
 
@@ -97,12 +96,7 @@ outline-offset: initial;
 }
 
 #headerLogo {
-    // line-height: 1.333em;
-    // font-weight: 700;
-    // font-family: Helvetica, Arial, sans-serif;
-    // color: $color_hse-red;
-    margin: 0;
-    // text-decoration: none;
+    margin: 10px 0;
     @include mq($from: desktop) {
       height: 46px;
       display: flex;
@@ -111,12 +105,8 @@ outline-offset: initial;
       color: $color_hse-black;
       display: block;
       padding: 0;
-      // width: 183px;
       text-decoration: none !important;
       display: flex;
-    }
-    svg {
-      // margin-right: $hse-legacy-spacing-20;
     }
   }
 
