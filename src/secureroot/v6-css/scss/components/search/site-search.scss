@@ -92,14 +92,14 @@ position: relative !important;
   padding-left: 4px !important;
 }
 
-td.gsib_b {
-  background-color: white !important;
-}
+// td.gsib_b {
+//   background-color: white !important;
+// }
 .gsst_a .gscb_a {
   color: $color_hse-black !important;
   font-size: 30px !important;
   position: relative;
-  top: 2px;
+  top: 0;
 }
 
 #globalSearch #gsc-i-id1 {
@@ -116,15 +116,19 @@ td.gsib_b {
 //   z-index: 2 !important;
 // }
 
-#globalSearch .gsc-input tbody tr:focus-within {
+#globalSearch .gsc-input tbody tr:focus-within, .gcs-results .gsc-input tbody tr:focus-within {
   outline: $hse-focus-color 5px solid !important;
   padding-right: 4px;
   z-index: 2;
   position: relative;
 }
 
+.gcs-results .gsc-input tbody tr:focus-within {
+  outline-offset: -1px;
+}
+
 /* Remove wrapper outline when X is focused */
-#globalSearch .gsc-input tbody tr:focus-within:has(.gsst_a:focus) {
+#globalSearch .gsc-input tbody tr:focus-within:has(.gsst_a:focus), .gcs-results .gsc-input tbody tr:focus-within:has(.gsst_a:focus)  {
   outline: none !important;
 }
 
@@ -171,17 +175,19 @@ td.gsc-search-button button:focus {
     margin: 0 !important;
     height: 40px !important;
     font-size: 1rem !important;
-    &:focus { 
-      outline:#fd0 5px solid !important;
-    }
+    // &:focus { 
+    //   outline:#fd0 5px solid !important;
+    // }
   }
   .gsc-input-box {
     border: 1px solid #dfe1e5 !important;
     border-right: 0px !important;
     border-top-left-radius: 0 !important;
     border-bottom-left-radius: 0 !important;
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
     margin: 0 !important;
-    height: 42px !important;
+    height: 48px !important;
   }
 
   .gsst_b {
@@ -251,22 +257,27 @@ td.gsc-search-button button:focus {
   }
 }
 
-#globalSearch input.gsc-input {
-  background-image: none !important;
+/* Only show the search button inside the search-results page container */
+#gcs-results-page .search-box-container .gsc-search-button {
+    display: inline-block !important;
 }
 
-#___gcse_1 .gsc-search-box > tbody > tr {
-  display: flex;
-  align-items: center;
+/* Force search button to show ONLY on search-results page */
+#gcs-results-page .gsc-search-button {
+    display: table-cell !important;
 }
 
-#___gcse_1 .gsc-input {
-  flex: 1;
+#gcs-results-page .gsc-search-button button {
+    display: inline-block !important;
 }
 
-#___gcse_1 .gsc-search-button {
-  flex: 0;
+#gcs-results-page input.gsc-input {
+  background-position: 10px center !important;
 }
+
+
+
+
 
 
 
