@@ -20,6 +20,7 @@ export function mainMenu() {
     className: 'search-button',
     id: 'search-button',
     ariaLabel: 'Search button',
+<<<<<<< HEAD
     innerHTML: `<div class="gsc-search-button gsc-search-button-v2 gsc">
                   <svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
                     <title>search</title>
@@ -29,6 +30,26 @@ export function mainMenu() {
                   <span class="x-mark"> &times; </span>
                   <span class="underline"></span> 
                 </div>`,
+=======
+    innerHTML: `<div class="search-container">
+  <!-- Search icon -->
+  <svg class="search-icon" width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+    <title>search</title>
+    <circle cx="12.0161" cy="11.0161" r="8.51613" stroke="currentColor" stroke-width="3"></circle>
+    <line x1="17.8668" y1="17.3587" x2="26.4475" y2="25.9393" stroke="currentColor" stroke-width="3"></line>
+  </svg>
+
+  <!-- X mark -->
+  <span class="x-mark">&times;</span>
+
+  <!-- Underline (optional) -->
+  <span class="underline"></span>
+
+  <!-- Google Search button -->
+  <div class="gsc-search-button gsc-search-button-v2 gsc"></div>
+</div>
+`,
+>>>>>>> hotfix/6.5.1
     ariaExpanded: false,
     ariaControls: 'search'
   });
@@ -128,6 +149,141 @@ export function mainMenu() {
       menuButton.focus();
     }
   });
+
+
+// Wait for Google CSE input and attach SVG magnifying glass
+// -------------------------------
+// Google CSE SVG Integration
+// -------------------------------
+
+function attachSearchSVG() {
+  const input = document.querySelector('.gsc-input');
+  const form = document.querySelector('form.gsc-search-box');
+
+  if (!input || !form) return false;
+
+  // Prevent duplicate binding
+  if (input.dataset.svgBound === "true") return true;
+  input.dataset.svgBound = "true";
+
+  // Wrap input
+  // const wrapper = document.createElement('div');
+  // wrapper.className = 'search-wrapper';
+  // input.parentNode.insertBefore(wrapper, input);
+  // wrapper.appendChild(input);
+
+  // Create SVG
+  const svgNS = "http://www.w3.org/2000/svg";
+  const svg = document.createElementNS(svgNS, "svg");
+  svg.setAttribute("class", "search-icon");
+  svg.setAttribute("viewBox", "0 0 24 24");
+  svg.setAttribute("aria-hidden", "true");
+  svg.style.cursor = "pointer";
+
+  const circle = document.createElementNS(svgNS, "circle");
+  circle.setAttribute("cx", "11");
+  circle.setAttribute("cy", "11");
+  circle.setAttribute("r", "8");
+  circle.setAttribute("stroke", "currentColor");
+  circle.setAttribute("stroke-width", "2");
+  circle.setAttribute("fill", "none");
+
+  const line = document.createElementNS(svgNS, "line");
+  line.setAttribute("x1", "16");
+  line.setAttribute("y1", "16");
+  line.setAttribute("x2", "22");
+  line.setAttribute("y2", "22");
+  line.setAttribute("stroke", "currentColor");
+  line.setAttribute("stroke-width", "2");
+
+  svg.appendChild(circle);
+  svg.appendChild(line);
+  wrapper.appendChild(svg);
+
+  // Run Google search properly
+function runSearch() {
+  if (!input.value.trim()) return;
+
+  const googleButton = document.querySelector('.gsc-search-button');
+  if (googleButton) {
+    googleButton.click();
+  }
+}
+
+
+  // Click on SVG
+  svg.addEventListener('click', (e) => {
+    e.preventDefault();
+    runSearch();
+  });
+
+  // Override Enter key
+  input.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      runSearch();
+    }
+  });
+
+  return true;
+}
+
+function appendMenuSearchSVG() {
+  const menuInput = document.querySelector('.js-search input.gsc-input'); // your menu search input
+  if (!menuInput) return;
+
+  // Prevent duplicate
+  if (document.querySelector('.menu-search-svg')) return;
+
+  const svgNS = "http://www.w3.org/2000/svg";
+  const svg = document.createElementNS(svgNS, "svg");
+  svg.setAttribute("class", "menu-search-svg");
+  svg.setAttribute("viewBox", "0 0 27 27");
+  svg.setAttribute("aria-hidden", "true");
+  svg.style.cursor = "pointer";
+
+  const circle = document.createElementNS(svgNS, "circle");
+  circle.setAttribute("cx", "12.0161");
+  circle.setAttribute("cy", "11.0161");
+  circle.setAttribute("r", "8.51613");
+  circle.setAttribute("stroke", "currentColor");
+  circle.setAttribute("stroke-width", "3");
+  circle.setAttribute("fill", "none");
+
+  const line = document.createElementNS(svgNS, "line");
+  line.setAttribute("x1", "17.8668");
+  line.setAttribute("y1", "17.3587");
+  line.setAttribute("x2", "26.4475");
+  line.setAttribute("y2", "25.9393");
+  line.setAttribute("stroke", "currentColor");
+  line.setAttribute("stroke-width", "3");
+
+  svg.appendChild(circle);
+  svg.appendChild(line);
+
+  // Wrap input in relative container to position SVG
+  const wrapper = document.createElement('div');
+  wrapper.className = 'menu-search-wrapper';
+  menuInput.parentNode.insertBefore(wrapper, menuInput);
+  wrapper.appendChild(menuInput);
+  wrapper.appendChild(svg);
+
+  // Click triggers Google search
+  svg.addEventListener('click', () => {
+    if (!menuInput.value.trim()) return;
+    const googleButton = document.querySelector('.gsc-search-button');
+    if (googleButton) googleButton.click();
+  });
+}
+
+
+// Wait for Google to inject search box
+const observer = new MutationObserver(() => {
+  if (attachSearchSVG()) observer.disconnect();
+});
+
+observer.observe(document.body, { childList: true, subtree: true });
+
 
 
 }
