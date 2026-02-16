@@ -145,76 +145,55 @@ export function mainMenu() {
 // -------------------------------
 
 function attachSearchSVG() {
+  // Get the search input
   const input = document.querySelector('.gsc-input');
-  const form = document.querySelector('form.gsc-search-box');
+  if (!input) return false; // Guard: input not found
 
-  if (!input || !form) return false;
+  // Get the wrapper/container
+  const wrapper = input.parentNode;
+  if (!wrapper) return false; // Guard: wrapper not found
 
-  // Prevent duplicate binding
-  if (input.dataset.svgBound === "true") return true;
-  input.dataset.svgBound = "true";
+  wrapper.style.position = 'relative'; // ensure absolute positioning works
 
-  // Wrap input
-  // const wrapper = document.createElement('div');
-  // wrapper.className = 'search-wrapper';
-  // input.parentNode.insertBefore(wrapper, input);
-  // wrapper.appendChild(input);
+  // Prevent multiple SVGs
+  if (wrapper.querySelector('.search-icon')) return;
 
-  // Create SVG
-  const svgNS = "http://www.w3.org/2000/svg";
-  const svg = document.createElementNS(svgNS, "svg");
-  svg.setAttribute("class", "search-icon");
-  svg.setAttribute("viewBox", "0 0 24 24");
-  svg.setAttribute("aria-hidden", "true");
-  svg.style.cursor = "pointer";
+  // Hide Google default search button
+  const googleBtn = wrapper.querySelector('.gsc-search-button');
+  if (googleBtn) googleBtn.style.display = 'none';
 
-  const circle = document.createElementNS(svgNS, "circle");
-  circle.setAttribute("cx", "11");
-  circle.setAttribute("cy", "11");
-  circle.setAttribute("r", "8");
-  circle.setAttribute("stroke", "currentColor");
-  circle.setAttribute("stroke-width", "2");
-  circle.setAttribute("fill", "none");
+  // Create the SVG
+  const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+  svg.setAttribute('width', '27');
+  svg.setAttribute('height', '27');
+  svg.classList.add('search-icon');
 
-  const line = document.createElementNS(svgNS, "line");
-  line.setAttribute("x1", "16");
-  line.setAttribute("y1", "16");
-  line.setAttribute("x2", "22");
-  line.setAttribute("y2", "22");
-  line.setAttribute("stroke", "currentColor");
-  line.setAttribute("stroke-width", "2");
+  svg.innerHTML = `
+    <path d="M11.742 10.344l3.85 3.85-1.398 1.398-3.85-3.85a5.5 5.5 0 1 1 1.398-1.398zM5.5 9a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
+  `;
 
-  svg.appendChild(circle);
-  svg.appendChild(line);
+  // Append the SVG
   wrapper.appendChild(svg);
 
-  // Run Google search properly
-function runSearch() {
-  if (!input.value.trim()) return;
-
-  const googleButton = document.querySelector('.gsc-search-button');
-  if (googleButton) {
-    googleButton.click();
-  }
-}
-
-
-  // Click on SVG
-  svg.addEventListener('click', (e) => {
-    e.preventDefault();
-    runSearch();
+  // Style SVG for positioning
+  Object.assign(svg.style, {
+    position: 'absolute',
+    right: '8px',
+    top: '50%',
+    transform: 'translateY(-50%)',
+    cursor: 'pointer'
   });
 
-  // Override Enter key
-  input.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter') {
-      e.preventDefault();
-      runSearch();
-    }
+  // Make SVG trigger search when clicked
+  svg.addEventListener('click', () => {
+    const searchBtn = wrapper.querySelector('.gsc-search-button');
+    if (searchBtn) searchBtn.click();
   });
-
-  return true;
 }
+
+// Example: call after GCS renders
+window.addEventListener('load', attachSearchSVG);
+
 
 function appendMenuSearchSVG() {
   const menuInput = document.querySelector('.js-search input.gsc-input'); // your menu search input
