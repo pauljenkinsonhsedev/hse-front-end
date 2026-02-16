@@ -253,7 +253,7 @@ window.dataLayer.push({'content_group': '@@(_document['contentGroup'])@@'});
               <li class="hse-navigation__navigation-item"><a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="../news/subscribe/index.htm">Sign up for free updates</a></li>
               <li class="hse-navigation__navigation-item"><a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="../contact/index.htm">Contact us</a></li>
               <li class="hse-navigation__navigation-item"><a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="../statistics/index.htm">Statistics</a></li>
-              <li class="hse-navigation__navigation-item"><a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="https://careers.hse.gov.uk/">Careers</a></li>
+              <li class="hse-navigation__navigation-item"><a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="../careers/index.htm">Careers</a></li>
               </ul>
               <h3>Products</h3>
               <ul class="hse-navigation__navigation-list navigation-third-list">
@@ -642,7 +642,7 @@ window.dataLayer.push({'content_group': '@@(_document['contentGroup'])@@'});
             <li class="hse-navigation__navigation-item"><a class="hse-footer-white" href="../news/subscribe/index.htm">Sign up for free updates</a></li>
             <li class="hse-navigation__navigation-item"><a class="hse-footer-white" href="../contact/index.htm">Contact us</a></li>
             <li class="hse-navigation__navigation-item"><a class="hse-footer-white" href="../statistics/index.htm">Statistics</a></li>
-            <li class="hse-navigation__navigation-item"><a class="hse-footer-white" href="https://careers.hse.gov.uk/">Careers</a></li>
+            <li class="hse-navigation__navigation-item"><a class="hse-footer-white" href="../careers/index.htm">Careers</a></li>
           </ul>
           <h3 class="hse-footer__heading">Products</h3>
           <ul class="hse-navigation__navigation-list hse-navigation__navigation-list--footer navigation-third-list">
