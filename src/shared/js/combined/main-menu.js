@@ -20,17 +20,6 @@ export function mainMenu() {
     className: 'search-button',
     id: 'search-button',
     ariaLabel: 'Search button',
-<<<<<<< HEAD
-    innerHTML: `<div class="gsc-search-button gsc-search-button-v2 gsc">
-                  <svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-                    <title>search</title>
-                    <circle cx="12.0161" cy="11.0161" r="8.51613" stroke="currentColor" stroke-width="3"></circle>
-                    <line x1="17.8668" y1="17.3587" x2="26.4475" y2="25.9393" stroke="currentColor" stroke-width="3"></line>
-                  </svg>
-                  <span class="x-mark"> &times; </span>
-                  <span class="underline"></span> 
-                </div>`,
-=======
     innerHTML: `<div class="search-container">
   <!-- Search icon -->
   <svg class="search-icon" width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
@@ -49,7 +38,6 @@ export function mainMenu() {
   <div class="gsc-search-button gsc-search-button-v2 gsc"></div>
 </div>
 `,
->>>>>>> hotfix/6.5.1
     ariaExpanded: false,
     ariaControls: 'search'
   });
