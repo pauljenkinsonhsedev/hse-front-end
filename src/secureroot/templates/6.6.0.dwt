@@ -10,7 +10,7 @@
 <!-- TemplateEndIfClause -->
 <!-- TemplateEndMultipleIf -->
 
-<script src="../assets/v6-js/cookies-6.5.0.js"></script>
+<script src="../assets/v6-js/cookies-6.6.0.js"></script>
 <!-- Anti-flicker snippet (recommended) If installing optimise with GTM, specifcy GTM container ID  -->
 <style>
 .async-hide { opacity: 0 !important }
@@ -69,7 +69,7 @@ window.dataLayer.push({'content_group': '@@(_document['contentGroup'])@@'});
 	
 <!-- TemplateBeginMultipleIf -->
 <!-- TemplateBeginIfClause cond="platform == 'v6'" -->
-<link rel="stylesheet" href="../assets/v6-css/6.5.0.min.css"  media="screen,print">
+<link rel="stylesheet" href="../assets/v6-css/6.6.0.min.css"  media="screen,print">
 <link href="https://fonts.googleapis.com/css?family=Roboto:100,200,300,400,500,600,700,400italic&display=swap" rel="stylesheet">
   
 <!-- TemplateEndIfClause -->
@@ -690,7 +690,7 @@ window.dataLayer.push({'content_group': '@@(_document['contentGroup'])@@'});
 <!-- TemplateBeginEditable name="updated" -->Updated:<!-- #BeginDate -->2023-03-16<!-- #EndDate --><!-- TemplateEndEditable -->
 </section>
 
-<script src="../assets/v6-js/main-6.5.0.min.js"></script>
+<script src="../assets/v6-js/main-6.6.0.min.js"></script>
 
 <div id="gutter">
 <!-- TemplateBeginEditable name="gutter" -->
