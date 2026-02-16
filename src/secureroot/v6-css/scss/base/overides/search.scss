@@ -82,3 +82,45 @@
   .gsc-search-button-v2 svg {
     fill: #333 !important;
   }
+
+  /* Make Google table behave like flex */
+#globalSearch table {
+  width: 100%;
+  margin: 0;
+  border-spacing: 0;
+}
+
+/* Table cells inline */
+#globalSearch td {
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+/* Clear/search button */
+#globalSearch td.gsib_b {
+  flex: 0; /* button stays its natural size */
+  margin-left: 5px; /* optional spacing */
+}
+
+/* Input styling */
+#globalSearch input.gsc-input {
+  width: 100% !important;
+  box-sizing: border-box;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+}
+
+/* Button styling */
+#globalSearch .gsst_a {
+  // display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0 8px;
+  height: 100%;
+}
+
+
