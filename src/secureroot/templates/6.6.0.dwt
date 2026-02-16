@@ -63,16 +63,6 @@ window.dataLayer.push({'content_group': '@@(_document['contentGroup'])@@'});
             .insertBefore(j, f);
         })(window, document, 'script', 'dataLayer', 'GTM-PJPWMNL');
 
-        // Siteimprove analytics
-
-        /*<![CDATA[*/
-        (function() {
-        var sz = document.createElement('script'); sz.type = 'text/javascript'; sz.async = true;
-        sz.src = '//siteimproveanalytics.com/js/siteanalyze_6798.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(sz, s);
-        })();
-        /*]]>*/
-
       }
     </script>
 <!-- End Google Tag Manager -->
