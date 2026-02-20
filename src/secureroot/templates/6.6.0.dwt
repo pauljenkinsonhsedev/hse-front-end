@@ -259,7 +259,7 @@ window.dataLayer.push({'content_group': '@@(_document['contentGroup'])@@'});
               <ul class="hse-navigation__navigation-list navigation-third-list">
               <li class="hse-navigation__navigation-item"><a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="https://books.hse.gov.uk">Books and tools</a></li>
               <li class="hse-navigation__navigation-item"><a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="../products/training-and-events/index.htm">Training and events</a></li>
-              <li class="hse-navigation__navigation-item"><a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="../products/testing-and-monitoring/index.htm  ">Testing and monitoring</a></li>
+              <li class="hse-navigation__navigation-item"><a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="../products/testing-and-monitoring/index.htm">Testing and monitoring</a></li>
               <li class="hse-navigation__navigation-item"><a class="hse-navigation__navigation-link hse-navigation__navigation-link--menu" href="../products/research-and-consultancy/index.htm">Research and consultancy</a></li>
             </ul>
             </div>
