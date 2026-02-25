@@ -178,29 +178,18 @@
   color: #000;
 }
 
-
-
-
 button.search-button .search-icon {
    color: $color_hse-red;
 }
 
-// .gsst_b {
-//   display: none !important;
-// }
+button.search-button:focus-visible .search-icon {
+   color: $color_hse-black;
+}
 
 .gscb_a {
     background: none !important;
 }
 
-
-
-
-
-
-
-
-  
   .global-menu-button span::before,
   .global-menu-button.main-menu span::before,
   .search-button span::before,

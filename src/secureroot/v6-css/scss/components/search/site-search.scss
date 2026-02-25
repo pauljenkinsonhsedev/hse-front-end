@@ -4,6 +4,7 @@
 @use "../../base/core/settings/colours" as *;
 @use "../../base/core/settings/spacing" as *;
 @use "../../base/core/tools/spacing" as *;
+@use "../../base/core/tools/sass-mq" as *;
 
 .gsc-search-box {
   margin: 0 !important;
@@ -116,11 +117,12 @@ position: relative !important;
 //   z-index: 2 !important;
 // }
 
-#globalSearch .gsc-input tbody tr:focus-within, .gcs-results .gsc-input tbody tr:focus-within {
-  outline: $hse-focus-color 5px solid !important;
+#globalSearch .gsc-input-box:focus-within {
+  outline: $hse-focus-color 3px solid !important;
   padding-right: 4px;
-  z-index: 2;
-  position: relative;
+  z-index: 9999 !important;
+  position: relative !important;
+  border-radius: 0 !important;
 }
 
 .gcs-results .gsc-input tbody tr:focus-within {
@@ -159,7 +161,7 @@ td.gsc-search-button {
 }
 
 td.gsc-search-button button:focus {
-  outline: #ffdd00 5px solid !important;
+  outline: #ffdd00 3px solid !important;
   outline-color: #ffdd00 !important;
 }
 
@@ -273,6 +275,18 @@ td.gsc-search-button button:focus {
 
 #gcs-results-page input.gsc-input {
   background-position: 10px center !important;
+}
+
+@include mq($from: tablet) {
+  .searchContainer form.gsc-search-box {
+    max-width: 66.6667% !important;
+  }
+}
+
+@include mq($until: tablet) {
+  .searchContainer form.gsc-search-box {
+    max-width: 100% !important;
+  }
 }
 
 
