@@ -138,95 +138,9 @@ export function mainMenu() {
     }
   });
 
-
-// Wait for Google CSE input and attach SVG magnifying glass
-// -------------------------------
-// Google CSE SVG Integration
-// -------------------------------
-
-function attachSearchSVG() {
-  // Get the search input
-  const input = document.querySelector('.gsc-input');
-  if (!input) return false; // Guard: input not found
-
-  // Get the wrapper/container
-  const wrapper = input.parentNode;
-  if (!wrapper) return false; // Guard: wrapper not found
-
-  wrapper.style.position = 'relative'; // ensure absolute positioning works
-
-  // Prevent multiple SVGs
-  if (wrapper.querySelector('.search-icon')) return;
-
-  // Hide Google default search button
-  const googleBtn = wrapper.querySelector('.gsc-search-button');
-  if (googleBtn) googleBtn.style.display = 'none';
-
-  // Create the SVG
-  // const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-  // svg.setAttribute('width', '27');
-  // svg.setAttribute('height', '27');
-  // svg.classList.add('search-icon');
-
-  // svg.innerHTML = `
-  //   <path d="M11.742 10.344l3.85 3.85-1.398 1.398-3.85-3.85a5.5 5.5 0 1 1 1.398-1.398zM5.5 9a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
-  // `;
-
-  // Append the SVG
-  wrapper.appendChild(svg);
-
-  // Style SVG for positioning
-  // Object.assign(svg.style, {
-  //   position: 'absolute',
-  //   right: '8px',
-  //   top: '50%',
-  //   transform: 'translateY(-50%)',
-  //   cursor: 'pointer'
-  // });
-
-  // Make SVG trigger search when clicked
-  svg.addEventListener('click', () => {
-    const searchBtn = wrapper.querySelector('.gsc-search-button');
-    if (searchBtn) searchBtn.click();
-  });
-}
-
-// Example: call after GCS renders
-window.addEventListener('load', attachSearchSVG);
-
-
 function appendMenuSearchSVG() {
   const menuInput = document.querySelector('.js-search input.gsc-input'); // your menu search input
   if (!menuInput) return;
-
-  // Prevent duplicate
-  // if (document.querySelector('.menu-search-svg')) return;
-
-  // const svgNS = "http://www.w3.org/2000/svg";
-  // const svg = document.createElementNS(svgNS, "svg");
-  // svg.setAttribute("class", "menu-search-svg");
-  // svg.setAttribute("viewBox", "0 0 27 27");
-  // svg.setAttribute("aria-hidden", "true");
-  // svg.style.cursor = "pointer";
-
-  // const circle = document.createElementNS(svgNS, "circle");
-  // circle.setAttribute("cx", "12.0161");
-  // circle.setAttribute("cy", "11.0161");
-  // circle.setAttribute("r", "8.51613");
-  // circle.setAttribute("stroke", "currentColor");
-  // circle.setAttribute("stroke-width", "3");
-  // circle.setAttribute("fill", "none");
-
-  // const line = document.createElementNS(svgNS, "line");
-  // line.setAttribute("x1", "17.8668");
-  // line.setAttribute("y1", "17.3587");
-  // line.setAttribute("x2", "26.4475");
-  // line.setAttribute("y2", "25.9393");
-  // line.setAttribute("stroke", "currentColor");
-  // line.setAttribute("stroke-width", "3");
-
-  // svg.appendChild(circle);
-  // svg.appendChild(line);
 
   // Wrap input in relative container to position SVG
   const wrapper = document.createElement('div');
@@ -242,17 +156,6 @@ function appendMenuSearchSVG() {
     if (googleButton) googleButton.click();
   });
 }
-
-
-// Wait for Google to inject search box
-const observer = new MutationObserver(() => {
-  if (attachSearchSVG()) observer.disconnect();
-});
-
-observer.observe(document.body, { childList: true, subtree: true });
-
-
-
 }
 
 // Helper function to create buttons

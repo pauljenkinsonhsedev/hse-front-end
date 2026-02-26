@@ -38,34 +38,9 @@ export function googleSearch() {
   searchTable3?.removeAttribute("cellpadding");
   searchTable3?.removeAttribute("cellspacing");
 
-  appendSearchIcon();
-
 }, 200);
     })
     .catch((err) => {
       console.error(err);
     });
 }
-
-// Function to append the search icon to the input
-function appendSearchIcon() {
-  const input = document.querySelector('.gsc-input');
-  if (!input) return;
-  if (document.querySelector('.search-icon-end')) return;
-
-  // Wrap input in a relative container if not already
-  const container = input.parentNode;
-  container.style.position = 'relative';
-
-  container.appendChild(btn);
-}
-
-// Observe when the search box loads dynamically
-const observer = new MutationObserver(() => {
-  if (document.querySelector('.gsc-input')) {
-    appendSearchIcon();
-    observer.disconnect();
-  }
-});
-observer.observe(document.body, { childList: true, subtree: true });
-
