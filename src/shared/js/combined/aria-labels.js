@@ -14,7 +14,9 @@ export function ariaLabels() {
   }
 
   const lastUpdated = document.getElementById("lastUpdated");
-  lastUpdated.setAttribute("aria-label", "Last updated");
+  if (lastUpdated) {
+    lastUpdated.setAttribute("aria-label", "Last updated");
+  }
 
   const breadcrumb = document.getElementById("breadCrumb");
   if (breadcrumb) {

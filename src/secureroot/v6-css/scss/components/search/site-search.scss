@@ -4,6 +4,7 @@
 @use "../../base/core/settings/colours" as *;
 @use "../../base/core/settings/spacing" as *;
 @use "../../base/core/tools/spacing" as *;
+@use "../../base/core/tools/sass-mq" as *;
 
 .gsc-search-box {
   margin: 0 !important;
@@ -47,10 +48,10 @@ border-bottom-left-radius: 0 !important;
   margin-left: 0 !important;
   width: auto !important;
   padding: 0 !important;
-  min-width: 38px !important;
-  max-width: 38px !important;
-  min-height: 42px !important;
-  max-height: 42px !important;
+  min-width: 48px !important;
+
+  min-height: 48px !important;
+
 }
 
 .gsc-search-button svg {
@@ -92,14 +93,14 @@ position: relative !important;
   padding-left: 4px !important;
 }
 
-td.gsib_b {
-  background-color: white !important;
-}
+// td.gsib_b {
+//   background-color: white !important;
+// }
 .gsst_a .gscb_a {
-  color: $color_hse-red !important;
+  color: $color_hse-black !important;
   font-size: 30px !important;
   position: relative;
-  top: 2px;
+  top: 0;
 }
 
 #globalSearch #gsc-i-id1 {
@@ -111,10 +112,37 @@ td.gsib_b {
   position: relative !important;
 }
 
-#globalSearch #gsc-i-id1:focus {
-  outline: $hse-focus-color 5px solid !important;
-  z-index: 2 !important;
+// #globalSearch #gsc-i-id1:focus {
+//   outline: $hse-focus-color 5px solid !important;
+//   z-index: 2 !important;
+// }
+
+#globalSearch .gsc-input-box:focus-within {
+  outline: $hse-focus-color 3px solid !important;
+  padding-right: 4px;
+  z-index: 9999 !important;
+  position: relative !important;
+  border-radius: 0 !important;
 }
+
+.gcs-results .gsc-input tbody tr:focus-within {
+  outline-offset: -1px;
+}
+
+/* Remove wrapper outline when X is focused */
+#globalSearch .gsc-input tbody tr:focus-within:has(.gsst_a:focus), .gcs-results .gsc-input tbody tr:focus-within:has(.gsst_a:focus)  {
+  outline: none !important;
+}
+
+input.gsc-input, .gsc-input-box, .gsc-input-box-hover, .gsc-input-box-focus {
+    border: none !important;
+}
+
+.gsib_b a:focus {
+  box-shadow: none;
+}
+
+
 
 .gsst_b {
   padding: 0 !important;
@@ -133,7 +161,7 @@ td.gsc-search-button {
 }
 
 td.gsc-search-button button:focus {
-  outline: #ffdd00 5px solid !important;
+  outline: #ffdd00 3px solid !important;
   outline-color: #ffdd00 !important;
 }
 
@@ -149,17 +177,19 @@ td.gsc-search-button button:focus {
     margin: 0 !important;
     height: 40px !important;
     font-size: 1rem !important;
-    &:focus { 
-      outline:#fd0 5px solid !important;
-    }
+    // &:focus { 
+    //   outline:#fd0 5px solid !important;
+    // }
   }
   .gsc-input-box {
     border: 1px solid #dfe1e5 !important;
     border-right: 0px !important;
     border-top-left-radius: 0 !important;
     border-bottom-left-radius: 0 !important;
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
     margin: 0 !important;
-    height: 42px !important;
+    height: 48px !important;
   }
 
   .gsst_b {
@@ -228,3 +258,40 @@ td.gsc-search-button button:focus {
   border: none !important;
   }
 }
+
+/* Only show the search button inside the search-results page container */
+#gcs-results-page .search-box-container .gsc-search-button {
+    display: inline-block !important;
+}
+
+/* Force search button to show ONLY on search-results page */
+#gcs-results-page .gsc-search-button {
+    display: table-cell !important;
+}
+
+#gcs-results-page .gsc-search-button button {
+    display: inline-block !important;
+}
+
+#gcs-results-page input.gsc-input {
+  background-position: 10px center !important;
+}
+
+@include mq($from: tablet) {
+  .searchContainer form.gsc-search-box {
+    max-width: 66.6667% !important;
+  }
+}
+
+@include mq($until: tablet) {
+  .searchContainer form.gsc-search-box {
+    max-width: 100% !important;
+  }
+}
+
+
+
+
+
+
+

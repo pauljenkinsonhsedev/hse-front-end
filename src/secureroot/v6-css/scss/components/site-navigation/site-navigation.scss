@@ -164,7 +164,6 @@
 }
 
 .global-menu-button, .search-button {
-  padding-bottom: 1px;
   background: none;
   border: none;
   margin-left: auto;
@@ -192,8 +191,6 @@
 .search-button.main-search-expanded, .global-menu-button.main-menu-expanded {
   color: $color_hse-black;
   background: $color_hse-grey-4;
-  margin-top: -10px;
-  margin-bottom: -10px;
 }
 
 button#search-button.search-button.main-search-expanded {
@@ -204,8 +201,6 @@ button#search-button.search-button.main-search-expanded:after {
   content: "";
     display: block;
     height: 3px;
-    left: 11px;
-    right: 11px;
     position: absolute;
     bottom: 0;
     top: auto;

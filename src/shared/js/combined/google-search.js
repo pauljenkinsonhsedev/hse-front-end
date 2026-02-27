@@ -9,31 +9,36 @@ export function googleSearch() {
 
   Promise.all(promises)
     .then(() => {
-      setTimeout(function () {
-        const searchInput = document.querySelector("input.gsc-input");
-        const searchTable = document.querySelector("table.gsc-search-box");
-        const searchTable2 = document.querySelector("table.gsc-input");
-        const searchTable3 = document.querySelector("table.gssb_c");
+      // Give CSE a little time to render the input
+    setTimeout(() => {
 
-        if (searchInput) {
-          const searchLabel = document.createElement("label");
+  function cleanSearchInput() {
+    const input = document.querySelector("input.gsc-input");
+    if (input) {
+      input.removeAttribute("placeholder");
+      input.removeAttribute("style");
+    }
+  }
 
-          searchLabel.innerHTML = "Search hse.gov.uk";
-          searchLabel.classList.add("hide");
-          searchLabel.setAttribute("for", "gsc-i-id1");
+  // Run immediately
+  cleanSearchInput();
 
-          searchInput.removeAttribute("style");
-          searchInput.insertAdjacentElement("beforebegin", searchLabel);
-          searchInput.setAttribute("placeholder", "Search hse.gov.uk");
+  // Run again in case CSE redraws
+  setTimeout(cleanSearchInput, 500);
 
-          searchTable.removeAttribute("cellpadding");
-          searchTable.removeAttribute("cellspacing");
-          searchTable2.removeAttribute("cellpadding");
-          searchTable2.removeAttribute("cellspacing");
-          searchTable3.removeAttribute("cellpadding");
-          searchTable3.removeAttribute("cellspacing");
-        }
-      }, 100);
+  // Table cleanup (this only needs to run once)
+  const searchTable = document.querySelector("table.gsc-search-box");
+  const searchTable2 = document.querySelector("table.gsc-input");
+  const searchTable3 = document.querySelector("table.gssb_c");
+
+  searchTable?.removeAttribute("cellpadding");
+  searchTable?.removeAttribute("cellspacing");
+  searchTable2?.removeAttribute("cellpadding");
+  searchTable2?.removeAttribute("cellspacing");
+  searchTable3?.removeAttribute("cellpadding");
+  searchTable3?.removeAttribute("cellspacing");
+
+}, 200);
     })
     .catch((err) => {
       console.error(err);

@@ -55,7 +55,7 @@ function hseStyles() {
     .pipe(sourcemaps.write())
     .pipe(pxtorem())
     .pipe(mode.production(postcss([cssnano()]))) // Only minify in production
-    .pipe(rename("6.5.0.min.css"))
+    .pipe(rename("6.6.0.min.css"))
     .pipe(mode.development(sourcemaps.write()))
     .pipe(connect.reload())
     .pipe(dest(output));
@@ -86,7 +86,7 @@ function designSystemStyles() {
 
   // Merge & concatenate all CSS
   return mergeStream(compiledSass, prismCSS)
-    .pipe(concat('6.5.0.min.css'))           // Merge into one file
+    .pipe(concat('6.6.0.min.css'))           // Merge into one file
     .pipe(mode.production(postcss([cssnano()]))) // Only minify in production
     .pipe(mode.development(sourcemaps.write()))
     .pipe(connect.reload())
@@ -111,7 +111,7 @@ function pressStyles() {
     .pipe(sourcemaps.write())
     .pipe(pxtorem())
     .pipe(mode.production(postcss([cssnano()]))) // Only minify in production
-    .pipe(rename("press-6.5.0.min.css"))
+    .pipe(rename("press-6.6.0.min.css"))
     .pipe(mode.development(sourcemaps.write()))
     .pipe(connect.reload())
     .pipe(dest(outputPressStyles));

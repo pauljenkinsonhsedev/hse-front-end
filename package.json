@@ -1,6 +1,6 @@
 {
   "name": "hse-front-end",
-  "version": "6.5.0",
+  "version": "6.6.0",
   "description": "",
   "main": "gulpfile.babel.js",
   "scripts": {
@@ -84,7 +84,7 @@
     "papaparse": "^5.3.2",
     "picturefill": "^3.0.3",
     "regenerator-runtime": "^0.14.1",
-    "sass": "^1.87.0",
+    "sass": "^1.97.3",
     "tidy-html5": "^0.1.1"
   }
 }
