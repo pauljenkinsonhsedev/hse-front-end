@@ -1,6 +1,6 @@
 {
   "name": "hse-front-end",
-  "version": "6.5.1",
+  "version": "6.6.0",
   "description": "",
   "main": "gulpfile.babel.js",
   "scripts": {
