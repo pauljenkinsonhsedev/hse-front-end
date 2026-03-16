@@ -1,47 +1,38 @@
 'use strict';
 
-import { src, task, series } from 'gulp';
+import { task, series } from 'gulp';
 import * as config from '../../config.json';
-import os from 'os';
 import connect from 'gulp-connect';
-import open from 'gulp-open';
+import open from 'open';
 import { isDefault, isStaging, isDev } from './mode.js';
 
-// serve from
+const inCodespaces = process.env.CODESPACES === 'true';
+
 let root;
-
-if (isDefault) {
-    root = config.server.locationStaging;
-}
-
-if (isStaging) {
-    root = config.server.locationStaging;
-}
-
 if (isDev) {
     root = config.server.locationDevelopment;
+} else if (isStaging || isDefault) {
+    root = config.server.locationStaging;
 }
 
-// Check to see which platform the user requires for their browser
-const browser = os.platform() === 'linux' ? 'google-chrome' : (
-    os.platform() === 'darwin' ? 'google chrome' : (
-    os.platform() === 'win32' ? 'chrome' : 'firefox'));
-
-    function server() {
+function server(done) {
     connect.server({
         root: root,
         livereload: true
-    })
+    });
+    done();
 }
 
-function openBrowser() {
-    return src(`${root}/${config.server.file}`)
-    .pipe(open({
-        app: browser,
-        uri: `${config.server.uri}:${config.server.port}`
-    }));
+function openBrowser(done) {
+    if (inCodespaces) {
+        console.log('Running in Codespaces: browser auto-open disabled. Open manually via forwarded port.');
+        done();
+        return;
+    }
+
+    console.log('Opening browser at http://localhost:8080');
+    open('http://localhost:8080');
+    done();
 }
 
-const toReturn = series(openBrowser, server);
-
-task('browser', toReturn)
+task('browser', series(server, openBrowser));
