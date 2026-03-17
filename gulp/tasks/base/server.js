@@ -3,7 +3,6 @@
 import { task, series } from 'gulp';
 import * as config from '../../config.json';
 import connect from 'gulp-connect';
-import open from 'open';
 import { isDefault, isStaging, isDev } from './mode.js';
 
 const inCodespaces = process.env.CODESPACES === 'true';
@@ -23,16 +22,17 @@ function server(done) {
     done();
 }
 
-function openBrowser(done) {
+async function openBrowser() {
     if (inCodespaces) {
         console.log('Running in Codespaces: browser auto-open disabled. Open manually via forwarded port.');
-        done();
         return;
     }
 
     console.log('Opening browser at http://localhost:8080');
-    open('http://localhost:8080');
-    done();
+
+    const importOpen = new Function('specifier', 'return import(specifier)');
+    const { default: open } = await importOpen('open');
+    await open('http://localhost:8080');
 }
 
 task('browser', series(server, openBrowser));
