@@ -30,7 +30,8 @@ async function openBrowser() {
 
     console.log('Opening browser at http://localhost:8080');
 
-    const { default: open } = await import('open');
+    const importOpen = new Function('specifier', 'return import(specifier)');
+    const { default: open } = await importOpen('open');
     await open('http://localhost:8080');
 }
 
