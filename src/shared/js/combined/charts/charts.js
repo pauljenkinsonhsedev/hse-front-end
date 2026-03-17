@@ -44,6 +44,7 @@ class ChartsDefault {
                 if (type.includes('with')) {
                     type = 'with';
                 }
+
                 switch(type) {
                     case 'with':
                         this.collection = new ChartOptionsDual(container);
@@ -77,12 +78,10 @@ class ChartsDefault {
                         this.collection = new ChartOptionsDefault(container);
                     break;
                 }
+
                 this.buildFn(container, this.collection);
             });
         });
-        // .catch((err) => {
-        //     console.error(`There was an error initialising charts: ${err}`);
-        // });
     }
 
     buildFn(container, params){
@@ -92,7 +91,9 @@ class ChartsDefault {
                 // numericSymbols: ['k', ' million', ' billion']
             }
         });
-        this.chart = new Highcharts.chart(container, params);
+
+        // FIX: Highcharts.chart should not be called with "new"
+        this.chart = Highcharts.chart(container, params);
 
         if (process.env.NODE_ENV === 'development') {
             const msg = this.chart ? 'successful' : 'unsuccessful';
