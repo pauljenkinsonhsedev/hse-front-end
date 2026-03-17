@@ -10,24 +10,18 @@ const picturefillAssets = ['./node_modules/picturefill/dist/picturefill.min.js']
 const bowserAssets = ['./node_modules/bowser/es5.js'];
 
 const highchartsAssets = [
-  "./node_modules/highcharts/highcharts.js",
-  "./node_modules/highcharts/highcharts.src.js",
-  "./node_modules/highcharts/highcharts.js.map",
-  "./node_modules/highcharts/modules/data.js",
-  "./node_modules/highcharts/modules/data.src.js",
-  "./node_modules/highcharts/modules/data.js.map",
-  "./node_modules/highcharts/modules/exporting.js",
-  "./node_modules/highcharts/modules/exporting.src.js",
-  "./node_modules/highcharts/modules/exporting.js.map",
-  "./node_modules/highcharts/modules/export-data.js",
-  "./node_modules/highcharts/modules/export-data.src.js",
-  "./node_modules/highcharts/modules/export-data.js.map",
-  "./node_modules/highcharts/modules/accessibility.js",
-  "./node_modules/highcharts/modules/accessibility.src.js",
-  "./node_modules/highcharts/modules/accessibility.js.map",
-  "./node_modules/highcharts/highcharts-more.js",
-  "./node_modules/highcharts/highcharts-more.src.js",
-  "./node_modules/highcharts/highcharts-more.js.map"
+  './node_modules/highcharts/highcharts.js',
+  './node_modules/highcharts/highcharts.src.js',
+  './node_modules/highcharts/highcharts-more.js',
+  './node_modules/highcharts/highcharts-more.src.js',
+  './node_modules/highcharts/modules/data.js',
+  './node_modules/highcharts/modules/data.src.js',
+  './node_modules/highcharts/modules/exporting.js',
+  './node_modules/highcharts/modules/exporting.src.js',
+  './node_modules/highcharts/modules/export-data.js',
+  './node_modules/highcharts/modules/export-data.src.js',
+  './node_modules/highcharts/modules/accessibility.js',
+  './node_modules/highcharts/modules/accessibility.src.js'
 ];
 
 function bowser() {
