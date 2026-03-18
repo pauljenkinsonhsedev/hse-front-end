@@ -10,7 +10,8 @@ import requireDir from "require-dir";
 // index all gulp tasks
 requireDir("../", { recurse: true });
 
-function watchTask() {
+// Added 'done' parameter to signal async completion
+function watchTask(done) {
   let rebuild;
   if (isDefault || isStaging) {
     rebuild = hseBuild;
@@ -53,6 +54,9 @@ function watchTask() {
   //     [config.secureroot.v4.all, config.secureroot.v4homepage.all, config.secureroot.v6.all],
   //     series('hseImages', )
   // );
+
+  // Signal to Gulp that the task setup is finished
+  done();
 }
 
 task("watchTask", series(watchTask));
