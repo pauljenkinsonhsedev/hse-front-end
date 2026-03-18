@@ -13,7 +13,7 @@ const sass = gulpSass(dartSass);
 import connect from "gulp-connect";
 import sourcemaps from "gulp-sourcemaps";
 import autoprefixer from "gulp-autoprefixer";
-import pxtorem from "gulp-pxtorem";
+import pxtorem from "postcss-pxtorem";
 import rename from "gulp-rename";
 import { isDefault, isStaging, isDev, isProd } from "../base/mode.js";
 const mode = require("gulp-mode")();
@@ -39,7 +39,6 @@ if (isDev) {
 let outputDesignSystemStyles = config.secureroot.styles.outputDesignSystem;
 let outputPressStyles = config.secureroot.styles.outputPress;
 
-
 sass.compiler = require("sass");
 
 function hseStyles() {
@@ -50,11 +49,11 @@ function hseStyles() {
         includePaths: ["node_modules/susy/sass"],
         outputStyle: "compressed",
       }).on("error", sass.logError)
-    )  
+    )
     .pipe(autoprefixer({ grid: true }))
     .pipe(sourcemaps.write())
-    .pipe(pxtorem())
-    .pipe(mode.production(postcss([cssnano()]))) // Only minify in production
+    .pipe(postcss([pxtorem()]))
+    .pipe(mode.production(postcss([cssnano()])))
     .pipe(rename("6.6.0.min.css"))
     .pipe(mode.development(sourcemaps.write()))
     .pipe(connect.reload())
@@ -66,35 +65,31 @@ task("hseStyles", hseStyles);
 // Design system styles
 
 function designSystemStyles() {
-  // Compile SCSS to CSS
   const compiledSass = src(config.secureroot.styles.entryDesignSystem)
     .pipe(mode.development(sourcemaps.init()))
     .pipe(
       sass({
         includePaths: ["node_modules/susy/sass"],
-        outputStyle: "expanded", // not compressed yet
+        outputStyle: "expanded",
       }).on("error", sass.logError)
     )
     .pipe(autoprefixer({ grid: true }))
-    .pipe(pxtorem());
+    .pipe(postcss([pxtorem()]));
 
-  // Read Prism raw CSS
   const prismCSS = src([
-    'node_modules/prismjs/themes/prism.css',
-    'node_modules/prismjs/themes/prism-okaidia.css'
+    "node_modules/prismjs/themes/prism.css",
+    "node_modules/prismjs/themes/prism-okaidia.css",
   ]);
 
-  // Merge & concatenate all CSS
   return mergeStream(compiledSass, prismCSS)
-    .pipe(concat('6.6.0.min.css'))           // Merge into one file
-    .pipe(mode.production(postcss([cssnano()]))) // Only minify in production
+    .pipe(concat("6.6.0.min.css"))
+    .pipe(mode.production(postcss([cssnano()])))
     .pipe(mode.development(sourcemaps.write()))
     .pipe(connect.reload())
-    .pipe(dest(outputDesignSystemStyles));   // Write final file
+    .pipe(dest(outputDesignSystemStyles));
 }
 
 task("designSystemStyles", designSystemStyles);
-
 
 // Press styles for WP https://press.hse.gov.uk/
 
@@ -109,8 +104,8 @@ function pressStyles() {
     )
     .pipe(autoprefixer({ grid: true }))
     .pipe(sourcemaps.write())
-    .pipe(pxtorem())
-    .pipe(mode.production(postcss([cssnano()]))) // Only minify in production
+    .pipe(postcss([pxtorem()]))
+    .pipe(mode.production(postcss([cssnano()])))
     .pipe(rename("press-6.6.0.min.css"))
     .pipe(mode.development(sourcemaps.write()))
     .pipe(connect.reload())
