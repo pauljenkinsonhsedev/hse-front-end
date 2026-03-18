@@ -3,7 +3,17 @@
   "version": "6.6.0",
   "description": "",
   "main": "gulpfile.babel.js",
-  "scripts": {
+ "scripts": {
+    "// --- MODERN BUILD ---": "",
+    "build:css": "sass src/secureroot/v6-css/scss/v6.scss:secureroot/hseonline/website/livelive/secureroot/assets/v6-css/6.7.0.min.css --load-path=node_modules --style=compressed --no-source-map",
+    "build:js": "rollup -c",
+    "build:modern": "npm-run-all build:css build:js",
+    "watch:modern": "npm-run-all --parallel \"build:css --watch\" \"build:js -- --watch\"",
+    "// --- THE BROWSER TASK ---": "",
+    "browse": "open-cli http://localhost:8080/index.htm",
+    "// --- THE ALL-IN-ONE COMMAND ---": "",
+    "dev": "npm-run-all build:modern --parallel watch:modern browse",
+    "// --- EXISTING TEAM COMMANDS ---": "",
     "bundle-report": "webpack-bundle-analyzer --port 8081 dist/stats.json",
     "gulp": "gulp --development",
     "hse": "gulp --staging",
