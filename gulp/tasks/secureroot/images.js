@@ -1,10 +1,6 @@
 "use strict";
 
 import { src, dest, series, task } from "gulp";
-import imagemin from "gulp-imagemin";
-import imageminJpegtran from "imagemin-jpegtran";
-import imageminPngquant from "imagemin-pngquant";
-import imageminJpegRecompress from "imagemin-jpeg-recompress";
 import * as config from "../../config.json";
 import { isDefault, isStaging, isDev, isProd } from "../base/mode.js";
 
@@ -36,48 +32,56 @@ if (isDev) {
   v4Homepage = config.designsystem.images.v4homepage.output;
 }
 
-function imagesV4() {
+const importModule = new Function("specifier", "return import(specifier)");
+
+async function getImageminPlugins() {
+  const [
+    { default: imageminJpegtran },
+    { default: imageminPngquant },
+    { default: imageminJpegRecompress },
+  ] = await Promise.all([
+    importModule("imagemin-jpegtran"),
+    importModule("imagemin-pngquant"),
+    importModule("imagemin-jpeg-recompress"),
+  ]);
+
+  return [
+    imageminJpegtran(),
+    imageminPngquant(),
+    imageminJpegRecompress(),
+  ];
+}
+
+async function imagesV4() {
+  const [{ default: imagemin }, plugins] = await Promise.all([
+    importModule("gulp-imagemin"),
+    getImageminPlugins(),
+  ]);
+
   return src(config.secureroot.images.v4.all)
-    .pipe(
-      imagemin([
-        imagemin.gifsicle(),
-        imagemin.optipng(),
-        imagemin.svgo(),
-        imageminJpegtran(),
-        imageminPngquant(),
-        imageminJpegRecompress(),
-      ])
-    )
+    .pipe(imagemin(plugins))
     .pipe(dest(v4output));
 }
 
-function imagesv6() {
+async function imagesv6() {
+  const [{ default: imagemin }, plugins] = await Promise.all([
+    importModule("gulp-imagemin"),
+    getImageminPlugins(),
+  ]);
+
   return src(config.secureroot.images.v6.all)
-    .pipe(
-      imagemin([
-        imagemin.gifsicle(),
-        imagemin.optipng(),
-        imagemin.svgo(),
-        imageminJpegtran(),
-        imageminPngquant(),
-        imageminJpegRecompress(),
-      ])
-    )
+    .pipe(imagemin(plugins))
     .pipe(dest(v6output));
 }
 
-function imagesV4Homepage() {
+async function imagesV4Homepage() {
+  const [{ default: imagemin }, plugins] = await Promise.all([
+    importModule("gulp-imagemin"),
+    getImageminPlugins(),
+  ]);
+
   return src(config.secureroot.images.v4homepage.all)
-    .pipe(
-      imagemin([
-        imagemin.gifsicle(),
-        imagemin.optipng(),
-        imagemin.svgo(),
-        imageminJpegtran(),
-        imageminPngquant(),
-        imageminJpegRecompress(),
-      ])
-    )
+    .pipe(imagemin(plugins))
     .pipe(dest(v4Homepage));
 }
 
