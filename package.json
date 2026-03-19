@@ -1,14 +1,14 @@
 {
   "name": "hse-front-end",
-  "version": "6.7.0",
+  "version": "6.6.0",
   "description": "",
   "main": "gulpfile.babel.js",
-"scripts": {
-    "build:css": "sass src/secureroot/v6-css/scss/v6.scss:secureroot/hseonline/website/livelive/secureroot/assets/v6-css/6.7.0.min.css --load-path=node_modules --style=compressed --no-source-map",
+  "scripts": {
+    "build:css": "cross-var sass src/secureroot/v6-css/scss/v6.scss:secureroot/hseonline/website/livelive/secureroot/assets/v6-css/%npm_package_version%.min.css --load-path=node_modules --style=compressed --no-source-map",
     "build:js": "rollup -c",
     "build:modern": "npm-run-all build:css build:js",
-    "serve": "browser-sync start --server \"./secureroot/hseonline/website/livelive/secureroot\" --index \"index.htm\" --port 8080 --files \"./secureroot/hseonline/website/livelive/secureroot/assets/v6-css/*.css, **/*.js, **/*.htm\" --no-notify --startPath \"index.htm\"",
-    "watch:css": "npm run build:css -- --watch --poll",
+    "serve": "cross-var browser-sync start --server \"./secureroot/hseonline/website/livelive/secureroot\" --index \"index.htm\" --port 8080 --files \"./secureroot/hseonline/website/livelive/secureroot/assets/v6-css/%npm_package_version%.min.css, **/*.js, **/*.htm\" --ignore \"node_modules, .git, .vscode\" --no-notify --no-ui --startPath \"index.htm\"",
+    "watch:css": "npm run build:css -- --watch",
     "watch:modern": "npm-run-all --parallel watch:css \"build:js -- --watch\" \"serve\"",
     "dev": "npm-run-all build:modern watch:modern",
     "// --- EXISTING TEAM COMMANDS ---": "",
@@ -18,7 +18,7 @@
     "designsystem": "gulp development --development",
     "press": "gulp pressStyles --production",
     "prod": "gulp production --production"
-},
+  },
   "author": "",
   "license": "ISC",
   "engines": {
@@ -40,6 +40,7 @@
     "browser-sync": "^3.0.4",
     "colors": "^1.4.0",
     "core-js": "^3.16.1",
+    "cross-var": "^1.1.0",
     "cssnano": "^7.0.7",
     "date-format": "^3.0.0",
     "del": "^5.1.0",
