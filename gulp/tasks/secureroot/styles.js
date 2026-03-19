@@ -12,7 +12,7 @@ const sass = gulpSass(dartSass);
 
 import connect from "gulp-connect";
 import sourcemaps from "gulp-sourcemaps";
-import autoprefixer from "gulp-autoprefixer";
+import autoprefixer from "autoprefixer";
 import pxtorem from "postcss-pxtorem";
 import rename from "gulp-rename";
 import { isDefault, isStaging, isDev, isProd } from "../base/mode.js";
@@ -50,7 +50,7 @@ function hseStyles() {
         outputStyle: "compressed",
       }).on("error", sass.logError)
     )
-    .pipe(autoprefixer({ grid: true }))
+    .pipe(postcss([autoprefixer({ grid: true })]))
     .pipe(sourcemaps.write())
     .pipe(postcss([pxtorem()]))
     .pipe(mode.production(postcss([cssnano()])))
@@ -73,7 +73,7 @@ function designSystemStyles() {
         outputStyle: "expanded",
       }).on("error", sass.logError)
     )
-    .pipe(autoprefixer({ grid: true }))
+    .pipe(postcss([autoprefixer({ grid: true })]))
     .pipe(postcss([pxtorem()]));
 
   const prismCSS = src([
@@ -102,7 +102,7 @@ function pressStyles() {
         outputStyle: "compressed",
       }).on("error", sass.logError)
     )
-    .pipe(autoprefixer({ grid: true }))
+    .pipe(postcss([autoprefixer({ grid: true })]))
     .pipe(sourcemaps.write())
     .pipe(postcss([pxtorem()]))
     .pipe(mode.production(postcss([cssnano()])))
