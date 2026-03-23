@@ -1,13 +1,16 @@
 export function footnoteAbbr ()  {
   const container = document.getElementById('contentContainer');
-  const accronym = container.querySelectorAll('accronym, abbr');
 
-  let listItems = [];
+  // exit early if container doesn't exist
+  if (!container) return;
+
+  const accronym = container.querySelectorAll('acronym, abbr');
+
+  let listItems = '';
 
   // build definition list items
   accronym.forEach((item) => {
-    listItems += `<dt>${item.innerText}</dt><dd>${item.title}</dd>
-    `;
+    listItems += `<dt>${item.innerText}</dt><dd>${item.title}</dd>`;
   });
 
   const html = `
