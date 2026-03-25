@@ -27,7 +27,11 @@ function convertDate(date) {
     return moment(x).format('YYYY/DD/MM').toString();
 }
 
-export function tableSortable(container){
+export function tableSortable(container) {
+    // 1. Add safety check
+    if (!container) return; 
+
+    // 2. The existing code continues below
     const tableHeaders = container.querySelectorAll('thead th');
 
     // Load moment.js for date conversions

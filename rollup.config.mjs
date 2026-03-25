@@ -2,30 +2,50 @@ import { nodeResolve } from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import terser from '@rollup/plugin-terser';
 import babel from '@rollup/plugin-babel';
-import fs from 'fs'; // Import the File System module
+import fs from 'fs';
 
-// Read the package.json and grab the version number
+// 1. Setup shared variables
 const pkg = JSON.parse(fs.readFileSync('./package.json', 'utf-8'));
 const version = pkg.version;
 
-export default {
-  input: 'src/shared/js/main.js',
-  context: 'window', // This tells Rollup that top-level 'this' is 'window'
+const sharedPlugins = [
+  nodeResolve(),
+  commonjs(),
+  babel({ 
+    babelHelpers: 'bundled',
+    presets: ['@babel/preset-env'],
+    exclude: 'node_modules/**'
+  }),
+  terser({
+    mangle: {
+      // Prevents renaming 'Cookies' or 'Highcharts' to single letters
+      reserved: ['Cookies', 'Highcharts'] 
+    },
+    format: {
+      comments: false // Removes comments for a smaller file size
+    }
+  })
+];
+
+// 2. The helper function to handle repeated settings
+const createConfig = (input, fileName, name, useMin = true) => ({
+  input,
+  context: 'window',
   output: {
-    // We use backticks (``) here to allow the ${version} variable to work
-    file: `secureroot/hseonline/website/livelive/secureroot/assets/v6-js/main-${version}.min.js`,
+    // We use a ternary operator to handle the difference between your cookies and main filenames
+    file: `./secureroot/hseonline/website/livelive/secureroot/assets/v6-js/${fileName}-${version}${useMin ? '.min' : ''}.js`,
     format: 'iife',
     sourcemap: true,
-    name: 'hseFrontend'
+    name
   },
-  plugins: [
-    nodeResolve(),
-    commonjs(),
-    babel({ 
-      babelHelpers: 'bundled',
-      presets: ['@babel/preset-env'],
-      exclude: 'node_modules/**'
-    }),
-    terser() 
-  ]
-};
+  plugins: sharedPlugins
+});
+
+// 3. The export list
+export default [
+  // This will create: assets/v6-js/main-6.6.0.min.js
+  createConfig('src/shared/js/main.js', 'main', 'hseFrontend', true),
+  
+  // This will create: assets/v6-js/cookies-6.6.0.js (No .min)
+  createConfig('src/shared/js/cookies.js', 'cookies', 'hseCookies', false),
+];
