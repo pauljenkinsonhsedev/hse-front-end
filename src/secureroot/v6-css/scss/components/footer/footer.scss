@@ -10,7 +10,7 @@
 
 .hse-footer {
   background: $color_hse-grey-1;
-
+  flex-shrink: 0;
   @include mq($media-type: print) {
     display: none;
   }
@@ -237,3 +237,4 @@
     position: relative;
   }
 }
+

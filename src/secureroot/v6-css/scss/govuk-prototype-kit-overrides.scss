@@ -9,3 +9,13 @@ a:hover,
 a:active {
   @include hse-link-style-default;
 }
+
+// Sticky footer — override HSE core, different DOM structure in GOV.UK Prototype Kit
+main {
+  flex: unset;
+}
+
+.govuk-width-container {
+  flex: 1 0 auto;
+  width: 100%;
+}

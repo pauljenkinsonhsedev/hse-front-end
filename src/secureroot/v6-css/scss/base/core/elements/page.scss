@@ -35,7 +35,11 @@
     line-height: _hse-line-height($hse-base-line-height, $hse-base-font-size);
     margin: 0; /* [3] */
     min-height: 101vh; /* [4][5] */
-    // display: flex; /* [5] */
-    // flex-direction: column; /* [5] */
+    display: flex; /* [5] */
+    flex-direction: column; /* [5] */
+  }
+
+  main {
+    flex: 1 0 auto;
   }
 
