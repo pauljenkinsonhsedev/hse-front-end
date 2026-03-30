@@ -46,6 +46,7 @@
   .hse-input[type="number"] {
     /* stylelint-disable-line string-quotes */
     -moz-appearance: textfield;
+    appearance: textfield;
   }
   
   .hse-input--error {
