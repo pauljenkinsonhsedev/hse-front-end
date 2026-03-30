@@ -10,10 +10,10 @@
 @use 'sass:color';
 
 /**
- * 1. Ensure that any global link styles are overridden.
- * 2. Fix unwanted button padding in Firefox.
- * 3. Use a pseudo element to expand the click target area to include the
- *    button's shadow as well, in case users try to click it.
+ * Ensure that any global link styles are overridden.
+ * Fix unwanted button padding in Firefox.
+ * Use a pseudo element to expand the click target area to include the
+ * button's shadow as well, in case users try to click it.
  */
 
 // Because the shadow (s0) is visually 'part of' the button, we need to reduce
@@ -25,6 +25,7 @@ $button-shadow-size: 4px;
 .hse-button {
   text-decoration: none;
   -webkit-appearance: none;
+  appearance: none;
   background-color: $hse-button-color;
   border: $hse-border-width-form-element solid transparent;
   box-shadow: 0 $button-shadow-size 0 $hse-button-shadow-color; // s0
@@ -44,7 +45,6 @@ $button-shadow-size: 4px;
     padding: hse-spacing(2) hse-spacing(3); // s2
   }
 
-  /* 2 */
   &:link,
   &:visited,
   &:active,
@@ -53,7 +53,7 @@ $button-shadow-size: 4px;
     text-decoration: none;
   }
 
-  /* 3 */
+  
   &::-moz-focus-inner {
     border: 0;
     padding: 0;
@@ -84,7 +84,6 @@ $button-shadow-size: 4px;
     top: $button-shadow-size;
   }
 
-  /* 4 */
   &::before {
     background: transparent;
     bottom: -($hse-border-width-form-element + $button-shadow-size);

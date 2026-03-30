@@ -17,15 +17,6 @@
 
  a {
     @include hse-link-style-default;
-  /*
-    @include mq($media-type: print) {
-      &:after {
-        color: $color_hse-black;
-        content: " (Link: " attr(href) ")"; 
-        font-size: 14pt; 
-      }
-    }
-    */
   }
 
   .hse-link {

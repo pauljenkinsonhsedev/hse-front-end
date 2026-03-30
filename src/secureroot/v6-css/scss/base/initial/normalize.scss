@@ -276,6 +276,7 @@
   input[type="reset"],
   input[type="submit"] {
     -webkit-appearance: button; /* 2 */
+    appearance: button;
     cursor: pointer; /* 3 */
   }
 
