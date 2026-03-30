@@ -128,7 +128,7 @@
  /*
   * Inline variant
   *
-  * 1. Prevent inline modifier being used with conditional reveals
+  * Prevent inline modifier being used with conditional reveals
   */
  
  .hse-radios--inline {
@@ -142,7 +142,6 @@
    }
  
    &.hse-radios--conditional {
-     /* 1 */
      .hse-radios__item {
        float: none;
        margin-right: 0;
