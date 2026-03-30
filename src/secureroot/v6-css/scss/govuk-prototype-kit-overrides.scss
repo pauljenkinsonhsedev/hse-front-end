@@ -1,0 +1,11 @@
+/* prototype-overrides.css
+   Loaded in prototyping kit only — never in production HSE front-end*/
+@use "base/core/settings/_all" as *;
+@use "base/core/tools/_all" as *;
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+  @include hse-link-style-default;
+}

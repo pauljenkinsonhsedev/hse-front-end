@@ -15,8 +15,6 @@
 @use "../settings/_all" as *;
 @use "../tools/_all" as *;
 
-
-
  a {
     @include hse-link-style-default;
   /*
@@ -28,6 +26,10 @@
       }
     }
     */
+  }
+
+  .hse-link {
+    @include hse-link-style-default;
   }
   
   .hse-link--no-visited-state {
