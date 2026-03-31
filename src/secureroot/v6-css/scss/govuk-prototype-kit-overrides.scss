@@ -11,7 +11,7 @@ a:active {
 }
 
 // Sticky footer — override HSE core, different DOM structure in GOV.UK Prototype Kit
-main {
+.govuk-main-wrapper {
   flex: unset;
 }
 
