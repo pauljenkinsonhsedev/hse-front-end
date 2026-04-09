@@ -3,6 +3,8 @@
    ========================================================================== */
 @use "../../base/core/tools/typography" as *;
 @use "../../base/core/settings/colours" as *;
+@use "../../base/core/tools/spacing" as *;
+
 
 .hse-hint {
   color: $hse-secondary-text-color;

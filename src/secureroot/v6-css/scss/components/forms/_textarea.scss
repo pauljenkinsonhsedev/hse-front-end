@@ -6,6 +6,8 @@
 @use "../../base/core/settings/globals" as *;
 @use "../../base/core/settings/colours" as *;
 @use "../../base/core/tools/focused" as *;
+@use "../../base/core/tools/spacing" as *;
+
 
    .hse-textarea {
     -webkit-appearance: none;
