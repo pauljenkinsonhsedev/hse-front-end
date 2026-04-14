@@ -1,4 +1,4 @@
-import { ChartOptions } from './dependencies';
+import { ChartOptions } from './options.js';
 import { seriesData } from './series-data.js';
 import { dataLabel } from './data-label.js';
 import { displayPrefix } from './data-prefix.js';

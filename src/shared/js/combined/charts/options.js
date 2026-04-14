@@ -19,7 +19,6 @@ import { displayPrefix } from './data-prefix.js';
 import { displaySuffix } from './data-suffix.js';
 import { dataTooltip } from './tooltip.js';
 import { plotBand } from './plot-band';
-import {bold} from 'ansi-colors';
 import resizer from '../utils/resizer.js';
 
 export class ChartOptions {
