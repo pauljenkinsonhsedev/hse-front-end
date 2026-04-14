@@ -1,167 +1,137 @@
 /**
-* Accordion container element
+* HSE Accordion Styles
+* Converted to match the hse-accordion structure
 */
 
 @use "../../base/core/settings/colours.scss" as *;
 @use "../../base/core/settings/spacing.scss" as *;
 @use "../../base/core/tools/sass-mq" as *;
+@use "../../base/core/styles/typography.scss" as *;
 
-
-.accordion {
-list-style: none;
-margin: 0;
-padding-bottom: 9px;
+.hse-accordion {
+    list-style: none;
+    margin: 0;
+    padding-bottom: 9px;
 }
 
-.accordion > li {
-margin: 0;
+/* Section Container */
+.hse-accordion__section {
+    margin-bottom: 15px;
 }
 
-/**
-* Add zero-width space. needed to ensure Safari + VO respect list semantics.
-* Set the before content to position absolute to negate any visible space
-* the before content could add to the document.
-*/
-.accordion > li:before {
-content: "\200B";
-position: absolute;
+/* Accordion Heading Wrapper */
+.hse-accordion__section-header {
+    border: 1px solid $color_hse-grey-4;
+    margin: -1px 0 0 !important;
 }
 
-/**
-* Accordion Heading
-*/
-.accordion__heading {
-border: 1px solid $color_hse-grey-4;
-margin: -1px 0 0 !important;
+.hse-accordion__section-heading {
+    margin: 0;
+    @extend %hse-heading-xs;
 }
 
-.accordion__trigger {
--webkit-appearance: none;
-background-color: white;
-border: none;
-border-radius: 0;
-box-shadow: none;
-color: $color_hse-red;
-cursor: pointer;
-display: block;
-font-size: inherit;
-line-height: inherit;
-font-weight: normal;
-margin: 0;
-padding: $hse-legacy-spacing-10 30px $hse-legacy-spacing-10 $hse-legacy-spacing-10;
-position: relative;
-text-align: left;
-width: 100%;
-z-index: 2;
+/* The Clickable Button */
+.hse-accordion__section-button {
+    -webkit-appearance: none;
+    background-color: white;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    color: $color_hse-red;
+    cursor: pointer;
+    display: block;
+    font-size: inherit;
+    line-height: inherit;
+    font-weight: normal;
+    margin: 0;
+    padding: $hse-legacy-spacing-10 30px $hse-legacy-spacing-10 $hse-legacy-spacing-10;
+    position: relative;
+    text-align: left;
+    width: 100%;
+    z-index: 2;
+
+    /* Chevron Icon */
+    &:after {
+        position: absolute;
+        content: "";
+        background-image: url("../../assets/v6-images/icons/svg/solid/chevron-down-solid-red.svg");
+        background-repeat: no-repeat;
+        background-size: contain;
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+        right: $hse-legacy-spacing-10;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    &:hover,
+    &:focus {
+        background-color: $hse-focus-color !important;
+        color: $color_hse-grey-1 !important;
+        outline: none;
+        
+        &:after {
+            background-image: url("../../assets/v6-images/icons/svg/solid/chevron-down-solid-black.svg");
+        }
+    }
+
+    /* Expanded State */
+    &[aria-expanded="true"] {
+        background: $color_hse-red !important;
+        color: #fff !important;
+
+        &:after {
+            background-image: url("../../assets/v6-images/icons/svg/solid/chevron-down-solid-white.svg");
+            transform: translateY(-50%) rotate(180deg);
+        }
+
+        &:hover,
+        &:focus {
+            background-color: $hse-focus-color !important;
+            color: $color_hse-grey-1 !important;
+            
+            &:after {
+                background-image: url("../../assets/v6-images/icons/svg/solid/chevron-down-solid-black.svg");
+            }
+        }
+    }
 }
 
-.accordion__trigger:after {
-position: absolute;
-content: "";
-background-image: url("../../assets/v6-images/icons/svg/solid/chevron-down-solid-red.svg");
-background-repeat: no-repeat;
-display: inline-block;
-margin: auto;
-width: 15px;
-height: 15px;
-right: $hse-legacy-spacing-10;
-top: 0;
-bottom: 0;
+/* The Content Panel */
+.hse-accordion__section-content {
+    background-color: inherit;
+    padding: 15px;
+    border: 1px solid $color_hse-grey-4;
+    border-top: 0;
+    margin-bottom: 15px;
+    display: none; /* JavaScript will toggle this to 'block' */
+    
+    & > :last-child {
+        margin-bottom: 0;
+    }
+
+    /* Ensure images within accordion look correct */
+    .icapml {
+        float: left;
+        margin: 0 15px 10px 0;
+    }
+    
+    /* Clearfix for floating images */
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
 }
 
-.accordion__trigger[aria-expanded="true"]:after {
-background-image: url("../../assets/v6-images/icons/svg/solid/chevron-down-solid-white.svg");
-}
-
-.accordion__trigger:hover[aria-expanded="true"]:after {
-background-image: url("../../assets/v6-images/icons/svg/solid/chevron-down-solid-black.svg");
-}
-
-.accordion__trigger:focus:after {
-background-image: url("../../assets/v6-images/icons/svg/solid/chevron-down-solid-black.svg");
-}
-
-.accordion__trigger[aria-expanded="true"]:after {
-transform: rotate(180deg);
-}
-
-/**
-* This is needed to allow a double tap iOS 11
-* Safari + VO to function correctly, if there
-* are multiple elements (wrapper spans) to layout
-* text nodes within the accordion button.
-
--- This is not needed if a button only contains text
-and no other child nodes wrapping the text --
-
-.accordion__trigger > * {
-pointer-events: none;
-}
-*/
-
-.accordion__trigger:hover,
-.accordion__trigger:focus {
-background-color: $hse-focus-color !important;
-color: $color_hse-grey-1 !important;
-outline: none;
-}
-
-.accordion__trigger:focus {
-// box-shadow: inset 0 0 0 2px #1e82d1;
-}
-
-.accordion__trigger[aria-disabled="true"]:hover {
-background-color: $color_hse-red;
-color: #fff;
-cursor: not-allowed;
-}
-
-.accordion__trigger[aria-disabled="true"]:focus {
-background-color: $color_hse-grey-1;
-}
-
-.accordion__panel {
-background-color: inherit;
-max-height: 0vh;
-overflow: hidden;
-padding: 0.001em 1.25em;
-position: relative;
-visibility: hidden;
-z-index: 1;
-border: 1px solid $color_hse-grey-4;
-border-top: 0;
-margin-bottom: 15px;
-}
-
-.accordion__panel--transition {
-transition: max-height 0.2s ease-in-out, padding-top 0.2s ease-in-out,
-padding-bottom 0.2s ease-in-out;
-}
-
-.accordion__panel > :last-child {
-margin-bottom: 0;
-}
-
-.accordion__panel[aria-hidden="false"] {
-max-height: 100vh;
-overflow: auto;
-padding: 15px;
-visibility: visible;
-}
-
-.accordion__trigger[aria-expanded="true"] {
-background: $color_hse-red;
-color: #fff;
-}
-
-// Make accordions visible for print media
+/* Print Styles */
 @include mq($media-type: print) {
-.accordion__panel {
-max-height: 100%;
-overflow: auto;
-padding: 15px;
-visibility: visible;
+    .hse-accordion__section-content {
+        display: block !important;
+        border: 1px solid $color_hse-grey-4;
+    }
+    .hse-accordion__section-button:after {
+        display: none;
+    }
 }
-}
-  
-  
