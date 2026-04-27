@@ -7,12 +7,12 @@ console.log(`Building design system CSS v${version}...`);
 
 execSync(
   `sass ./src/secureroot/v6-css/scss/design-system.scss:${output} --load-path=node_modules --style=compressed --no-source-map`,
-  { stdio: 'inherit' }
+  { stdio: 'inherit', shell: true }
 );
 
 execSync(
   `postcss ${output} --use autoprefixer --no-map -o ${output}`,
-  { stdio: 'inherit' }
+  { stdio: 'inherit', shell: true }
 );
 
 console.log('Design system CSS build complete.');
