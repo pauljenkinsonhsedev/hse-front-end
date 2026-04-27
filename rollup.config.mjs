@@ -11,9 +11,8 @@ const version = pkg.version;
 const sharedPlugins = [
   nodeResolve(),
   commonjs(),
-  babel({ 
+  babel({
     babelHelpers: 'bundled',
-    presets: ['@babel/preset-env'],
     exclude: 'node_modules/**'
   }),
   terser({
