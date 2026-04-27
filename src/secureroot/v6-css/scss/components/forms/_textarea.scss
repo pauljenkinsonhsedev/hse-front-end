@@ -6,9 +6,12 @@
 @use "../../base/core/settings/globals" as *;
 @use "../../base/core/settings/colours" as *;
 @use "../../base/core/tools/focused" as *;
+@use "../../base/core/tools/spacing" as *;
+
 
    .hse-textarea {
     -webkit-appearance: none;
+    appearance: none;
     border: $hse-border-width-form-element solid $hse-form-border-color;
     border-radius: 0;
     box-sizing: border-box;

@@ -11,7 +11,7 @@
 //  }
 
 /**
- * 1. Extended the section-break--l code for usage of a semantic <hr> with
+ * Extended the section-break--l code for usage of a semantic <hr> with
  * no class name.
  *
  * Original code taken from GDS (Government Digital Service)
@@ -67,7 +67,6 @@
   }
   
   hr {
-    /* [1] */
     @extend %hse-section-break;
     @extend %hse-section-break--l;
     @extend %hse-section-break--visible;

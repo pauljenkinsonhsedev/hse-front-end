@@ -1,196 +1,264 @@
 /*
+  Overview:
+  This script controls the page feedback component, including:
+  - Yes/No feedback buttons
+  - Optional follow-up survey UI
+  - "Report a problem" form
 
-    Notes:
-    Feedback and surveys are being used here purely for Google Analytics and therefore don't submit any data.
-    Data is captured in GA, these functions are purely superficial
+  Behaviour:
+  - Clicking Yes/No removes the controls, shows a thank-you message,
+    and optionally opens a survey panel (UI only, no data submission).
+  - Clicking "Report a problem" dynamically generates a form and submits it
+    via POST to an external ASP endpoint:
+      /assets/asp/feedback.asp
 
+  Form handling:
+  - The form includes user input plus hidden metadata (URL, browser, OS, etc.).
+  - Submission is handled server-side by the ASP script (e.g. email/processing + redirect).
+  - The page reloads after submission.
+
+  Confirmation flow:
+  - Cookies are set before submission to persist state across the reload.
+  - On return, the script checks these cookies to:
+      - Display a "Thank you" confirmation message
+      - Scroll the user to that message
 */
+
 import { scrollPos } from "./utils/feedback-position";
 import { bowser } from "./bowser.js";
 
 export function feedbackSurvey() {
   const container = document.querySelector(".hse-feedback");
 
+  // Exit early if the feedback component is not present on the page.
   if (!container) {
     return;
   }
+
+  // Main UI elements
   const survey = document.querySelector(".feedback-survey");
-
   const message = container.querySelector("#feedback-message");
-
   const feedbackPrompt = container.querySelector(".hse-feedback__prompt");
 
   // Containers
-  const yesNoContainer = document.querySelector(".hse-feedback__prompt-questions-answers");
+  const yesNoContainer = document.querySelector(
+    ".hse-feedback__prompt-questions-answers"
+  );
   const reportProblemButtonContainer = document.querySelector(
     ".hse-feedback__report-a-problem"
   );
 
-  // Report a problem
-
+  // Buttons / interactive controls
   const userReportProblem = document.querySelector("#report-problem-button");
   const reportProblemForm = document.querySelector(".report-a-problem-form");
-
-  // User yes/no
   const userYes = document.querySelector("#userYes");
   const userNo = document.querySelector("#userNo");
 
-  const surveyHandle = [userYes, userNo];
-  const ReportProblemHandle = [userReportProblem];
+  const surveyHandles = [userYes, userNo];
+  const reportProblemHandles = [userReportProblem];
 
+  // Initialise scroll position behaviour used by the feedback component.
   scrollPos();
 
-  // open survey
-  surveyHandle.forEach((elem) => {
-    elem.addEventListener("click", feedbackActions);
+  // Bind yes/no buttons to feedback flow.
+  surveyHandles.forEach((elem) => {
+    if (elem) {
+      elem.addEventListener("click", handleFeedbackClick);
+    }
   });
 
-  // open report a problem
-  ReportProblemHandle.forEach((elem) => {
-    elem.addEventListener("click", reportProblem);
+  // Bind "report a problem" button.
+  reportProblemHandles.forEach((elem) => {
+    if (elem) {
+      elem.addEventListener("click", openReportProblemForm);
+    }
   });
 
-  function feedbackActions(e) {
-    e.preventDefault();
-    websiteFeedback();
+  /**
+   * Handles yes/no feedback clicks.
+   * Shows the thank-you message and optionally opens the survey panel.
+   */
+  function handleFeedbackClick(event) {
+    event.preventDefault();
+    showWebsiteFeedbackAcknowledgement();
+
     if (survey) {
-      setTimeout(function () {
+      setTimeout(() => {
         showSurvey();
       }, 300);
     }
   }
 
-  function websiteFeedback() {
-    userYes.parentNode.removeChild(userYes);
-    userNo.parentNode.removeChild(userNo);
-    userReportProblem.parentNode.removeChild(userReportProblem);
-    message.innerHTML = `Thank you for your feedback.`;
-    message.classList.add("feedback-message-active");
+  /**
+   * Removes the initial feedback controls and shows a thank-you message.
+   */
+  function showWebsiteFeedbackAcknowledgement() {
+    removeElement(userYes);
+    removeElement(userNo);
+    removeElement(userReportProblem);
+
+    if (message) {
+      message.innerHTML = "Thank you for your feedback.";
+      message.classList.add("feedback-message-active");
+    }
   }
 
-  function reportProblem() {
+  /**
+   * Opens the "report a problem" form and populates hidden metadata fields.
+   */
+  function openReportProblemForm() {
     bowser();
 
     const Bowser = require("bowser");
     const browserUA = Bowser.getParser(window.navigator.userAgent);
 
-    // Get browser info
+    // Browser / OS / platform details for the hidden UA field
     const browser = browserUA.getBrowser();
     const os = browserUA.getOS();
     const platform = browserUA.getPlatform();
 
-    // Browser
     const browserName = browser.name;
     const browserVersion = browser.version;
-    // OS
     const osName = os.name;
     const osVersion = os.version;
-    // Platform
     const platformType = platform.type;
     const platformVendor = platform.vendor;
 
+    // Build a canonical page URL without hash fragments
     const newURL =
       window.location.protocol +
       "//" +
       window.location.host +
       window.location.pathname +
       window.location.search;
-    const action = document.createElement("button");
-    action.id = "close-report-a-problem";
-    action.classList.add("hse-button", "hse-button--secondary");
-    action.textContent = "Close";
 
-    action.addEventListener(
+    // Close button for the dynamic form
+    const closeButton = document.createElement("button");
+    closeButton.id = "close-report-a-problem";
+    closeButton.classList.add("hse-button", "hse-button--secondary");
+    closeButton.textContent = "Close";
+
+    closeButton.addEventListener(
       "click",
-      (e) => {
-        e.stopPropagation();
-        e.preventDefault();
-        closeProblemForm(e);
+      (event) => {
+        event.stopPropagation();
+        event.preventDefault();
+        closeProblemForm(event);
       },
       false
     );
 
-    const form = document.createElement("form");
+    // Detect whether the current page looks like a 404 page.
+    let notFoundPrefix = "";
+    const h1 = document.querySelector("h1");
 
-    const checkH1 = document.querySelector("h1");
-    if (checkH1) {
-    const notFoundHeading = document.querySelector("h1").innerText;
-      
-    const notFound = "404";
-
-    if (notFoundHeading.includes(notFound)) {
-      var notFoundTrue = "404! ";
-    } else {
-      var notFoundTrue = "";
+    if (h1) {
+      const headingText = h1.innerText;
+      if (headingText.includes("404")) {
+        notFoundPrefix = "404! ";
+      }
     }
-  }
 
-
+    // Create the form element and inject all required fields.
+    const form = document.createElement("form");
     form.id = "report-problem-form-html";
     form.action = "https://www.hse.gov.uk/assets/asp/feedback.asp";
     form.method = "POST";
     form.autocomplete = "on";
 
-    const formFields = `<fieldset class="hse-fieldset report-a-problem-form__questions fieldset">
-            <legend class="hse-fieldset__legend">
-                <h2 class="hse-fieldset__heading">Help us improve HSE.GOV.UK</h2>
-            </legend>
-            <p>Don’t include personal or financial information like your National Insurance number or credit card details.</p>
-            <div class="hse-form-group">
-                <label class="hse-label" for="what-were-you-doing?">What were you doing?</label>
-                <input required class="hse-input" name="what-were-you-doing?" type="text" id="what-were-you-doing?"/>
-            </div>
-            <div class="hse-form-group">
-                <label class="hse-label" for="what-went-wrong?">What went wrong?</label>
-                <input required class="hse-input" id="what-went-wrong?" name="what-went-wrong?" type="text">
-            </div>
-        </fieldset>
-        <div class="hse-form-group js-hide" id="user-url"></div>
-        <fieldset class="report-a-problem-form__hidden-fields fieldset">
-            <input name="url" type="hidden" id="url" size="100" class="hse-input" value="${newURL}">
-            <input name="ua" type="hidden" id="ua" size="100" class="hse-input" value="Browser name: ${browserName}, Browser version: ${browserVersion}, OS name: ${osName}, OS version: ${osVersion}, Platform type: ${platformType}, Platform vendor: ${platformVendor}">
-            <input type="hidden" name="mailredirect" value="${newURL}">
-            <input type="hidden" name="mailsubject" value="${notFoundTrue}Report a problem with this page: ${newURL}">
-            <input type="submit" value="Submit" class="hse-button report-problem-submit" />
-        </fieldset>`;
+    const formFields = `
+      <fieldset class="hse-fieldset report-a-problem-form__questions fieldset">
+        <legend class="hse-fieldset__legend">
+          <h2 class="hse-fieldset__heading">Help us improve HSE.GOV.UK</h2>
+        </legend>
+        <p>Don’t include personal or financial information like your National Insurance number or credit card details.</p>
 
-    // const formFeedbackHTML = `<div class="report-problem-form-feeback"><h2>Thank you</h2><p>Your feedback is appreciated.</p></div>`;
+        <div class="hse-form-group">
+          <label class="hse-label" for="what-were-you-doing?">What were you doing?</label>
+          <input
+            required
+            class="hse-input"
+            name="what-were-you-doing?"
+            type="text"
+            id="what-were-you-doing?"
+          />
+        </div>
+
+        <div class="hse-form-group">
+          <label class="hse-label" for="what-went-wrong?">What went wrong?</label>
+          <input
+            required
+            class="hse-input"
+            id="what-went-wrong?"
+            name="what-went-wrong?"
+            type="text"
+          />
+        </div>
+      </fieldset>
+
+      <div class="hse-form-group js-hide" id="user-url"></div>
+
+      <fieldset class="report-a-problem-form__hidden-fields fieldset">
+        <input
+          name="url"
+          type="hidden"
+          id="url"
+          size="100"
+          class="hse-input"
+          value="${newURL}"
+        >
+        <input
+          name="ua"
+          type="hidden"
+          id="ua"
+          size="100"
+          class="hse-input"
+          value="Browser name: ${browserName}, Browser version: ${browserVersion}, OS name: ${osName}, OS version: ${osVersion}, Platform type: ${platformType}, Platform vendor: ${platformVendor}"
+        >
+        <input type="hidden" name="mailredirect" value="${newURL}">
+        <input
+          type="hidden"
+          name="mailsubject"
+          value="${notFoundPrefix}Report a problem with this page: ${newURL}"
+        >
+        <input
+          type="submit"
+          value="Submit"
+          class="hse-button report-problem-submit"
+        />
+      </fieldset>
+    `;
 
     form.innerHTML = formFields;
-    // form.addEventListener('submit', (e) => {
-    //     e.stopPropagation();
-    //     e.preventDefault();
 
-    //     reportProblemForm.innerHTML = formFeedbackHTML;
+    if (!reportProblemForm) {
+      return;
+    }
 
-    //     form.submit();
-    // }, false);
-
-    
     reportProblemForm.insertAdjacentElement("afterbegin", form);
 
+    // Switch the UI into "report a problem" mode.
     reportProblemForm.classList.add("survey-in");
-    reportProblemButtonContainer.classList.add("js-hide");
-    yesNoContainer.classList.add("js-hide");
-    feedbackPrompt.classList.add("js-feedback-open");
+    reportProblemButtonContainer?.classList.add("js-hide");
+    yesNoContainer?.classList.add("js-hide");
+    feedbackPrompt?.classList.add("js-feedback-open");
 
     reportProblemForm.scrollIntoView({ behavior: "auto", block: "start" });
-    const reportProblemFormEnd = document.querySelector(".report-a-problem-form__hidden-fields");
-    
-    reportProblemFormEnd.insertAdjacentElement("beforeend", action);
 
-    // Form confirmation
+    const reportProblemFormEnd = document.querySelector(
+      ".report-a-problem-form__hidden-fields"
+    );
 
+    if (reportProblemFormEnd) {
+      reportProblemFormEnd.insertAdjacentElement("beforeend", closeButton);
+    }
 
-
-
-    // Get page URL and encode
+    // Store lightweight confirmation state in cookies so the page can
+    // show a confirmation message after the ASP form submission refreshes.
     const reportProblemPage = window.location.href;
     const encodedURL = window.btoa(reportProblemPage);
 
-    // Set cookies for confirmation status
-
-    function confirmationCookies(event) {
+    function confirmationCookies() {
       Cookies.set("report_problem", encodedURL, { expires: 1 });
       Cookies.set("report_problem_confirmation", true, { expires: 1 });
     }
@@ -198,66 +266,93 @@ export function feedbackSurvey() {
     reportProblemForm.addEventListener("submit", confirmationCookies);
   }
 
-  // Confirmation status
-  const URLcheck = window.location.href;
+  // Confirmation status after form submission and redirect/refresh.
+  const currentURL = window.location.href;
   const reportProblemStatus = Cookies.get("report_problem");
   const reportProblemConfirmation = Cookies.get("report_problem_confirmation");
 
   if (reportProblemStatus) {
-    // Add feedback alert
-    const decoded = window.atob(reportProblemStatus);
-    if (decoded === URLcheck) {
+    const decodedURL = window.atob(reportProblemStatus);
+
+    if (decodedURL === currentURL) {
       container.innerHTML =
         '<div class="feedback__report-problem-alert" role="alert">Thank you for your feedback</div>';
     }
 
-    // page refreshes on submission (asp script), move viewport to report problem alert message
-
+    // After submission the page refreshes; move focus/viewport back to the alert.
     if (reportProblemConfirmation === "true") {
-      var anchor = document.querySelector(".feedback__report-problem-alert");
+      const anchor = document.querySelector(".feedback__report-problem-alert");
 
-      setTimeout(function () {
-        anchor.scrollIntoView();
-      }, 1);
+      if (anchor) {
+        setTimeout(() => {
+          anchor.scrollIntoView();
+        }, 1);
+      }
 
       Cookies.set("report_problem_confirmation", false, { expires: 1 });
     }
   }
 
-  function closeProblemForm(e) {
-    reportProblemForm.classList.remove("survey-in");
-    reportProblemButtonContainer.classList.remove("js-hide");
-    yesNoContainer.classList.remove("js-hide");
-    feedbackPrompt.classList.remove("js-feedback-open");
-    reportProblemForm.innerHTML = "";
-    e.target.parentNode.removeChild(e.target);
+  /**
+   * Closes the report problem form and restores the default feedback UI.
+   */
+  function closeProblemForm(event) {
+    if (reportProblemForm) {
+      reportProblemForm.classList.remove("survey-in");
+      reportProblemForm.innerHTML = "";
+    }
+
+    reportProblemButtonContainer?.classList.remove("js-hide");
+    yesNoContainer?.classList.remove("js-hide");
+    feedbackPrompt?.classList.remove("js-feedback-open");
+
+    removeElement(event.target);
   }
 
+  /**
+   * Closes the survey panel.
+   */
   function closeSurvey() {
-    survey.classList.remove("survey-in");
+    if (survey) {
+      survey.classList.remove("survey-in");
+    }
   }
 
+  /**
+   * Opens the survey panel and wires the question progression behaviour.
+   */
   function showSurvey() {
-    const questionaire = survey.querySelector(".questionaire");
-    const questions = questionaire.querySelectorAll(".question");
+    if (!survey) {
+      return;
+    }
 
+    const questionaire = survey.querySelector(".questionaire");
+    const questions = questionaire?.querySelectorAll(".question");
     const surveyQuestions = survey.querySelectorAll(".question-list__item a");
     const surveyClose = survey.querySelector(".survey-close");
 
+    // Prevent default anchor behaviour in survey navigation.
     [...surveyQuestions].forEach((elem) => {
-      // prevent default behaviour
-      elem.addEventListener("click", (e) => e.preventDefault());
+      elem.addEventListener("click", (event) => event.preventDefault());
     });
 
-    // display questions
+    if (!questions || !questions.length) {
+      return;
+    }
+
+    // Activate the first question initially.
     questions[0].classList.add("active");
+
+    // Progress through the questionnaire when an answer is selected.
     [...questions].forEach((elem) => {
-      elem.addEventListener("click", (e) => {
-        e.preventDefault();
-        const target = e.target;
+      elem.addEventListener("click", (event) => {
+        event.preventDefault();
+
+        const target = event.target;
         if (
           target.classList.contains("answer") &&
-          elem.classList.contains("active")
+          elem.classList.contains("active") &&
+          elem.nextElementSibling
         ) {
           elem.classList.remove("active");
           elem.nextElementSibling.classList.add("active");
@@ -265,11 +360,20 @@ export function feedbackSurvey() {
       });
     });
 
-    surveyClose.addEventListener("click", closeSurvey);
+    if (surveyClose) {
+      surveyClose.addEventListener("click", closeSurvey);
+    }
 
-    // open survey panel
     survey.classList.add("survey-in");
+    questionaire?.scrollIntoView({ behavior: "auto", block: "start" });
+  }
 
-    questionaire.scrollIntoView({ behavior: "auto", block: "start" });
+  /**
+   * Safely removes an element from the DOM if it exists.
+   */
+  function removeElement(element) {
+    if (element?.parentNode) {
+      element.parentNode.removeChild(element);
+    }
   }
 }

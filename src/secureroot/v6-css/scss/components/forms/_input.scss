@@ -16,6 +16,8 @@
 @use "../../base/core/settings/colours" as *;
 @use "../../base/core/tools/focused" as *;
 @use "../../base/core/tools/sass-mq" as *;
+@use "../../base/core/tools/spacing" as *;
+
 
  .hse-input {
     -moz-appearance: none; /* 1 */
@@ -46,6 +48,7 @@
   .hse-input[type="number"] {
     /* stylelint-disable-line string-quotes */
     -moz-appearance: textfield;
+    appearance: textfield;
   }
   
   .hse-input--error {
