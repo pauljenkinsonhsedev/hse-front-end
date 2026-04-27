@@ -3,7 +3,7 @@
   "version": "6.6.0",
   "description": "",
   "scripts": {
-    "powerwash": "rimraf node_modules .gulp-cache ./secureroot/hseonline/website/livelive/secureroot/assets/v6-css ./secureroot/hseonline/website/livelive/secureroot/assets/v6-js ./designsystem/assets/v6-css && npm install",
+    "powerwash": "rimraf node_modules ./secureroot/hseonline/website/livelive/secureroot/assets/v6-css ./secureroot/hseonline/website/livelive/secureroot/assets/v6-js ./designsystem/assets/v6-css && npm install",
     "build:css": "cross-replace sass ./src/secureroot/v6-css/scss/v6.scss:./secureroot/hseonline/website/livelive/secureroot/assets/v6-css/%npm_package_version%.min.css --load-path=node_modules --style=compressed --no-source-map && postcss ./secureroot/hseonline/website/livelive/secureroot/assets/v6-css/%npm_package_version%.min.css --use autoprefixer --no-map -o ./secureroot/hseonline/website/livelive/secureroot/assets/v6-css/%npm_package_version%.min.css",
     "build:ds": "cross-replace sass ./src/secureroot/v6-css/scss/design-system.scss:./designsystem/assets/v6-css/%npm_package_version%.min.css --load-path=node_modules --style=compressed --no-source-map && postcss ./designsystem/assets/v6-css/%npm_package_version%.min.css --use autoprefixer --no-map -o ./designsystem/assets/v6-css/%npm_package_version%.min.css",
     "build:js": "rollup -c",
