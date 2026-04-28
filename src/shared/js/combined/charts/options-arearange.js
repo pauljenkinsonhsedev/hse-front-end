@@ -1,7 +1,7 @@
+import { ChartOptions } from './options.js';
 import { chartCategories } from './chart-categories';
 import { seriesDataRanges } from './series-data-ranges.js';
 import { missingDataAverage } from './missing-data-average.js';
-import { ChartOptions } from './dependencies';
 import { displaySuffix } from './data-suffix.js';
 import { displayPrefix } from './data-prefix.js';
 import { plotBand } from './plot-band';

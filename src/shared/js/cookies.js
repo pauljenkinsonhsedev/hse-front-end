@@ -1,10 +1,14 @@
-import './combined/polyfills.js';
-
+import Cookies from 'js-cookie'; 
 import { cookiePreferences } from './combined/cookies/cookie-preferences.js';
 import { notificationBanner } from './combined/cookies/notification-banner.js';
-// Window load
-window.addEventListener('DOMContentLoaded', () => {
-  // initiate cookies
+
+// Export for global access by other scripts
+window.Cookies = Cookies;
+
+window.addEventListener("DOMContentLoaded", () => {
+  window.Cookies.cookiePreferences = cookiePreferences;
+  window.Cookies.notificationBanner = notificationBanner;
+
   cookiePreferences();
   notificationBanner();
-}); // end window load
+});
