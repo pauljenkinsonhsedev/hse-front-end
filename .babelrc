@@ -10,8 +10,9 @@
             "corejs": 3,
             "targets": {
                "browsers": [
-                  "last 5 versions",
-                  "ie >= 11"
+                  "last 2 versions",
+                  "> 0.5%",
+                  "not dead"
                ]
             }
          }

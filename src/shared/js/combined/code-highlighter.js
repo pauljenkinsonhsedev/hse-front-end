@@ -1,5 +1,5 @@
-import PrismToolbar from 'prismjs/plugins/toolbar/prism-toolbar.js';
 import Prism from 'prismjs';
+import 'prismjs/plugins/toolbar/prism-toolbar.js';
 import ClipboardJS from 'clipboard';
 
 export function codeHighlighter() {
@@ -40,4 +40,7 @@ export function codeHighlighter() {
     function isPrismClass(preElement) {
         return preElement.className.includes('language');
     }
+
+    // Trigger Prism to highlight all the blocks on the page
+    Prism.highlightAll();
 }

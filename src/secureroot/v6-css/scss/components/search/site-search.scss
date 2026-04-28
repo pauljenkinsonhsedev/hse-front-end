@@ -117,7 +117,7 @@ position: relative !important;
 //   z-index: 2 !important;
 // }
 
-#globalSearch .gsc-input-box:focus-within {
+.gsc-input-box:focus-within {
   outline: $hse-focus-color 3px solid !important;
   padding-right: 4px;
   z-index: 9999 !important;
@@ -239,9 +239,9 @@ td.gsc-search-button button:focus {
     
   }
 
-  .gsc-refinementHeader:nth-child(n+7) {
-  display: none !important;
-  }
+  // .gsc-refinementHeader:nth-child(n+7) {
+  // display: none !important;
+  // }
 
   .gsc-tabHeader {
   display: none !important;

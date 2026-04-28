@@ -1,4 +1,4 @@
-import { ChartOptions } from './dependencies';
+import { ChartOptions } from './options.js';
 import { dataTooltip } from './tooltip.js';
 
 /*
