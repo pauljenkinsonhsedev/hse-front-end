@@ -12,14 +12,19 @@ import { informationBanner } from "./combined/information-banner.js";
 import { accordion } from "./combined/accordion.js";
 import { backToTop } from "./combined/back-to-top.js";
 import { dsSiteNavigation } from "./combined/ds-site-navigation.js";
+import { serviceNavigation } from "./combined/service-navigation.js";
 
 window.addEventListener("DOMContentLoaded", () => {
   document.body.classList.add("hasScript");
 
   // Initialize Core Navigation
   try {
-    if (document.getElementById("globalSearch")) { googleSearch(); }
-    if (document.querySelector(".js-menu")) { mainMenu(); }
+    if (document.getElementById("globalSearch")) {
+      googleSearch();
+    }
+    if (document.querySelector(".js-menu")) {
+      mainMenu();
+    }
     dsSiteNavigation();
   } catch (e) {
     console.error("Navigation failed to load:", e);
@@ -42,7 +47,11 @@ window.addEventListener("DOMContentLoaded", () => {
 
   feedbackSurvey();
 
-  if (document.querySelector(".hse-back-to-top")) { 
-    backToTop(); 
+  if (document.querySelector(".hse-back-to-top")) {
+    backToTop();
+  }
+
+  if (document.querySelector('[data-module="hse-service-navigation"]')) {
+    serviceNavigation();
   }
 });

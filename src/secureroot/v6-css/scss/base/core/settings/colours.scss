@@ -2,7 +2,7 @@
 // SETTINGS / #COLOURS
 // ==========================================================================
 
-@use 'sass:color';
+@use "sass:color";
 
 //
 //
@@ -27,6 +27,8 @@ $color_hse-red: #981e32;
 $color_hse-dark-red: #5b121e;
 $color_hse-darker-red: #1e060a;
 $color_hse-yellow: #ffdd00;
+$color_hse-red-tint-1: #faf3f4;
+$color_hse-red-tint-2: #cb8e98;
 
 //
 // Legacy colours
@@ -40,7 +42,6 @@ $mono-c: #828282;
 $mono-d: #bdbdbd;
 $mono-e: #e0e0e0;
 $mono-f: #f2f2f2;
-
 
 //
 // Secondary colours
@@ -61,8 +62,6 @@ $color_hse-grey-2: #4e4e4e;
 $color_hse-grey-3: #c2c2c2;
 $color_hse-grey-4: #f0f0f0;
 $color_hse-grey-5: #f0f4f5;
-
-
 
 /* stylelint-enable color-no-hex */
 //
@@ -127,7 +126,7 @@ $hse-print-text-color: $color_hse-black;
 $hse-link-color: $color_hse-red;
 $hse-link-hover-color: $color_hse-dark-red;
 $hse-link-active-color: shade($hse-link-color, 50%);
-$hse-link-visited-color: #CC2844;
+$hse-link-visited-color: #cc2844;
 $hse-link-active-color-white: $color_hse-white;
 
 // Focus
@@ -179,7 +178,7 @@ $hse-reverse-button-hover-color: shade($hse-reverse-button-color, 20%);
 $hse-reverse-button-active-color: $color-hse-black;
 $hse-reverse-button-shadow-color: $color-hse-black;
 
-$hse-transparent-button-color: rgba(255,255,255,0);
+$hse-transparent-button-color: rgba(255, 255, 255, 0);
 $hse-transparent-button-hover-color: shade($hse-transparent-button-color, 20%);
 $hse-transparent-button-active-color: $color-hse-black;
 $hse-transparent-button-shadow-color: $color-hse-black;
