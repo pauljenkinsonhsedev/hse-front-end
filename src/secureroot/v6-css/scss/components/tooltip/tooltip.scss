@@ -1,112 +1,100 @@
-
 @use "../../base/core/settings/spacing" as *;
 @use "../../base/core/tools/spacing" as *;
 @use "../../base/core/settings/colours" as *;
 
-
 .tooltip {
-    position: relative;
-    border-bottom: 1px dashed #111;
-    cursor: help;
-  }
-  .tooltip :focus + :last-child,
-  .tooltip:focus > :last-child,
-  .tooltip:hover > :last-child {
+  position: relative;
+  border-bottom: 1px dashed #111;
+  cursor: help;
+
+  &:focus > :last-child,
+  &:hover > :last-child,
+  & :focus + :last-child {
     opacity: 1;
-    -webkit-transition: 0.4s 0s;
-    -moz-transition: 0.4s 0s;
-    -ms-transition: 0.4s 0s;
-    -o-transition: 0.4s 0s;
     transition: 0.4s 0s;
     visibility: visible;
   }
-  .tooltip > :last-child {
-    border: solid 1px;
+
+  & > :last-child {
+    background-color: #ffdb58;
+    border: solid 1px #f1bd00;
     border-radius: 5px;
-    -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3),
+    box-shadow:
+      0 1px 2px rgba(0, 0, 0, 0.3),
       0 1px 0 rgba(255, 255, 255, 0.3) inset;
-    -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3),
-      0 1px 0 rgba(255, 255, 255, 0.3) inset;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3),
-      0 1px 0 rgba(255, 255, 255, 0.3) inset;
-    // font-size:1em;
+    color: #3f3100;
+    font-style: normal;
+    font-weight: 400;
     line-height: 1.5;
     opacity: 0;
     padding: $hse-legacy-spacing-10 $hse-legacy-spacing-20;
     position: absolute;
-    -webkit-transition: 0.2s 0s;
-    -moz-transition: 0.2s 0s;
-    -ms-transition: 0.2s 0s;
-    -o-transition: 0.2s 0s;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
     transition: 0.2s 0s;
     visibility: hidden;
     width: 275px;
     z-index: 999;
-    font-weight: 400;
-    font-style: normal;
+
+    * {
+      max-width: 100%;
+    }
+
+    &:after,
+    &:before {
+      border: solid 11px;
+      content: "";
+      display: block;
+      margin: 0 $hse-legacy-spacing-20;
+      position: absolute;
+    }
+
+    &:after {
+      border-color: #ffdb58;
+    }
+
+    &:before {
+      border-color: #f1bd00;
+    }
   }
-  .tooltip > :last-child * {
-    max-width: 100%;
-  }
-  .tooltip > :last-child:after,
-  .tooltip > :last-child:before {
-    border: solid 11px;
-    content: "";
-    display: block;
-    margin: 0 $hse-legacy-spacing-20;
-    position: absolute;
-  }
-  .tooltip > :last-child {
-    background-color: #ffdb58;
-    border-color: #f1bd00;
-    color: #3f3100;
-  }
-  .tooltip > :last-child:after {
-    border-color: #ffdb58;
-  }
-  .tooltip > :last-child:before {
-    border-color: #f1bd00;
-  }
-  .tooltip > :last-child {
-    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
-  }
-  .tooltip.tooltipToolbox > :last-child {
+
+  &.tooltipToolbox > :last-child {
     bottom: 100%;
     margin-bottom: 15px;
-  }
-  .tooltip.tooltipToolbox > :last-child:after {
-    margin-top: -1px;
-  }
-  .tooltip.tooltipToolbox > :last-child:after,
-  .tooltip.tooltipToolbox > :last-child:before {
-    border-bottom-color: transparent !important;
-    border-left-color: transparent !important;
-    border-right-color: transparent !important;
-    top: 100%;
-  }
-  .tooltip.tooltipToolbox > :last-child:before {
-    margin-top: 0;
-  }
-  .tooltip.tooltipToolbox > :last-child {
     right: 0;
+
+    &:after {
+      margin-top: -1px;
+    }
+
+    &:after,
+    &:before {
+      border-bottom-color: #f1bd00;
+      border-left-color: #f1bd00;
+      border-right-color: #f1bd00;
+      right: 0;
+      top: 100%;
+    }
+
+    &:before {
+      margin-top: 0;
+    }
   }
-  .tooltip.tooltipToolbox > :last-child:after,
-  .tooltip.tooltipToolbox > :last-child:before {
-    right: 0;
-  }
-  .ie8 .tooltip span {
-    display: none;
-  }
-  .ie8 .tooltip:focus span,
-  .ie8 .tooltip:hover span {
-    display: block;
-    background-color: #ffdb58;
-    border-color: #f1bd00;
-    color: #3f3100;
-    position: absolute;
-    top: -9.5em;
-    right: 0;
-    width: 275px;
-    padding: 5px $hse-legacy-spacing-10;
-    z-index: 999;
-  }
+}
+
+.ie8 .tooltip span {
+  display: none;
+}
+
+.ie8 .tooltip:focus span,
+.ie8 .tooltip:hover span {
+  display: block;
+  background-color: #ffdb58;
+  border-color: #f1bd00;
+  color: #3f3100;
+  position: absolute;
+  top: -9.5em;
+  right: 0;
+  width: 275px;
+  padding: 5px $hse-legacy-spacing-10;
+  z-index: 999;
+}
