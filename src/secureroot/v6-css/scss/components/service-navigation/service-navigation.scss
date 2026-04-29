@@ -4,11 +4,11 @@
 @use "../../base/core/tools/mixins" as *;
 @use "../../base/core/tools/typography" as *;
 @use "../../base/core/tools/links" as *;
+@use "../../base/core/tools/focused" as *;
 @use "../../base/core/settings/spacing" as *;
 @use "../../base/core/settings/colours" as *;
 @use "../../base/core/settings/typography" as *;
 @use "../../base/core/tools/sass-mq" as *;
-@use "../../base/core/tools/focused" as *;
 
 $hse-service-navigation-active-link-border-width: hse-spacing(1);
 $hse-service-navigation-text-colour: $color_hse-grey-1;
@@ -52,6 +52,15 @@ $hse-service-navigation-border-colour: $color_hse-red-tint-2;
 
     &:not(:last-child) {
       @include hse-responsive-margin(6, $direction: right);
+    }
+  }
+}
+
+.hse-service-navigation__service-name + .hse-service-navigation__wrapper {
+  .hse-service-navigation__list:first-child,
+  .hse-service-navigation__toggle[hidden] + .hse-service-navigation__list {
+    .hse-service-navigation__item:first-child {
+      margin-top: 0;
     }
   }
 }
@@ -136,7 +145,7 @@ $hse-service-navigation-border-colour: $color_hse-red-tint-2;
     border-color: $color_hse-red-tint-2;
     -webkit-clip-path: polygon(0% 0%, 50% 100%, 100% 0%);
     clip-path: polygon(0% 0%, 50% 100%, 100% 0%);
-    border-width: 8.66px 5px 0 5px;
+    border-width: 8.66px 5px 0;
     border-top-color: inherit;
     margin-left: hse-spacing(1);
   }
