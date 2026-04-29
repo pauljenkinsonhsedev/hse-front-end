@@ -61,7 +61,7 @@
   .icapmr p,
   .icapsr p,
   icapsl p {
-    padding: 0 6px 2px 6px;
+    padding: 0 6px 2px;
     margin: 0 !important;
   }
   div.icaplr span.download {
@@ -80,7 +80,7 @@
     list-style: none;
     background: 0 0;
     overflow: hidden;
-    padding: 0 0 15px 0;
+    padding: 0 0 15px;
     margin-left: 0;
     clear: left;
   }
@@ -101,7 +101,7 @@
     background: 0 0;
     clear: both;
     overflow: hidden;
-    padding: 0 0 12px 0;
+    padding: 0 0 12px;
     margin-left: 0;
   }
   .box1col .itemThumbBook li a {
@@ -111,7 +111,7 @@
   }
   .itemThumbBook span {
     font-weight: 400;
-    margin: 0 0 0.2em 0;
+    margin: 0 0 0.2em;
     padding-right: 10px;
     display: block;
   }
@@ -121,7 +121,7 @@
 
   .thumbHead {
     float: left;
-    padding: 0 0 14px 0;
+    padding: 0 0 14px;
   }
   .thumbHead img {
     float: left;
@@ -162,7 +162,6 @@ img.responsiveImg {
 .v6-figure {
   width: auto !important;
   margin-bottom: $hse-legacy-spacing-20;
-  width: auto;
 }
 
 .v6-figure-border {
