@@ -137,7 +137,6 @@ visibility: visible;
   }
   &::before {
     padding: 0 1em;
-    transform: scaleX(-1);
     content: ' ';
     background: url('../../assets/v6-images/icons/svg/solid/arrow-left-red.svg');
     background-repeat: no-repeat;

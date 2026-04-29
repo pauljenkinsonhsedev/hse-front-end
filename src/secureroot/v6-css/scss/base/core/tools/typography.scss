@@ -94,7 +94,6 @@
 
     @if $breakpoint == null {
       & {
-      font-size: $font-size;
       font-size: $font-size-rem;
       line-height: $line-height;
       }
@@ -110,7 +109,6 @@
       // ✅ All declarations *inside* nested rule
       @include govuk-media-query($from: $breakpoint) {
         & {
-        font-size: $font-size;
         font-size: $font-size-rem;
         line-height: $line-height;
         }
