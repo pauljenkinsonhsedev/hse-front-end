@@ -60,7 +60,6 @@
   }
   @include hse-font(16);
   @include mq($from: desktop) {
-  margin: 0 0 0 -16px;
   width: auto;
   margin: 0;
   position: relative;
@@ -167,7 +166,6 @@
   background: none;
   border: none;
   margin-left: auto;
-  margin-bottom: 4px;
   margin-top: 0;
   margin-bottom: 0;
   font-weight: 700;
@@ -472,7 +470,6 @@ button#search-button.search-button.main-search-expanded:after {
 }
 
 .hero-image.standard:not(.image).light {
-  background-color: #f2f2f2;
   background-color: var(--light-background);
 }
 

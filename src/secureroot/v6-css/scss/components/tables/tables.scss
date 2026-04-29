@@ -157,8 +157,7 @@ The classes below make it easier to visually differentiate between each piece of
         }
       }
 
-      td {
-        display: block; // For browsers that don't support flexbox
+      td { // For browsers that don't support flexbox
         display: flex;
         justify-content: space-between; /* [5] */
         min-width: 1px; /* [6] */
