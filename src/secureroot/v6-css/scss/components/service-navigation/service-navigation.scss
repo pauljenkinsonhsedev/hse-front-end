@@ -8,6 +8,7 @@
 @use "../../base/core/settings/colours" as *;
 @use "../../base/core/settings/typography" as *;
 @use "../../base/core/tools/sass-mq" as *;
+@use "../../base/core/tools/focused" as *;
 
 $hse-service-navigation-active-link-border-width: hse-spacing(1);
 $hse-service-navigation-text-colour: $color_hse-grey-1;
@@ -108,4 +109,51 @@ $hse-service-navigation-border-colour: $color_hse-red-tint-2;
 .hse-service-navigation__service-name .hse-service-navigation__link {
   @include hse-link-style-default;
   @include hse-link-style-text;
+}
+
+.hse-service-navigation__toggle {
+  @include hse-font(19, bold);
+  display: inline-flex;
+  align-items: center;
+  margin: hse-spacing(2) 0;
+  padding: 0;
+  border: 0;
+  color: $color_hse-red;
+  background: none;
+  word-break: break-all;
+  cursor: pointer;
+
+  &:focus {
+    @include hse-focused-text;
+  }
+
+  &::after {
+    content: "";
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-color: $color_hse-red-tint-2;
+    -webkit-clip-path: polygon(0% 0%, 50% 100%, 100% 0%);
+    clip-path: polygon(0% 0%, 50% 100%, 100% 0%);
+    border-width: 8.66px 5px 0 5px;
+    border-top-color: inherit;
+    margin-left: hse-spacing(1);
+  }
+
+  &[aria-expanded="true"]::after {
+    -webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    border-width: 0 5px 8.66px;
+    border-bottom-color: inherit;
+    border-top-color: $color_hse-red-tint-2;
+  }
+
+  &[hidden] {
+    display: none;
+  }
+
+  .hse-service-navigation__service-name + .hse-service-navigation__wrapper & {
+    margin-top: 0;
+  }
 }
