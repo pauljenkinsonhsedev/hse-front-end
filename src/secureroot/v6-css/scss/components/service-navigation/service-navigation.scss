@@ -1,0 +1,70 @@
+@use "sass:math";
+
+@use "../../base/core/tools/spacing" as *;
+@use "../../base/core/tools/mixins" as *;
+@use "../../base/core/tools/typography" as *;
+@use "../../base/core/tools/links" as *;
+@use "../../base/core/settings/spacing" as *;
+@use "../../base/core/settings/colours" as *;
+@use "../../base/core/settings/typography" as *;
+@use "../../base/core/tools/sass-mq" as *;
+
+$hse-service-navigation-active-link-border-width: hse-spacing(1);
+$hse-service-navigation-text-colour: $color_hse-grey-1;
+$hse-service-navigation-background: $color_hse-grey-4;
+$hse-service-navigation-border-colour: $color_hse-grey-3;
+
+.hse-service-navigation {
+  @include hse-font(19);
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: $hse-service-navigation-border-colour;
+  color: $hse-service-navigation-text-colour;
+  background-color: $hse-service-navigation-background;
+}
+
+.hse-service-navigation__container {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+
+  @include mq($from: tablet) {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+.hse-service-navigation__item,
+.hse-service-navigation__service-name {
+  position: relative;
+  margin: hse-spacing(2) 0;
+  border-width: 0;
+  border-style: solid;
+  border-color: $color_hse-red;
+
+  @include mq($from: tablet) {
+    display: inline-block;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: hse-spacing(3) 0;
+    line-height: math.div(29, 19);
+
+    &:not(:last-child) {
+      @include hse-responsive-margin(6, $direction: right);
+    }
+  }
+}
+
+.hse-service-navigation__service-name {
+  @include hse-typography-weight-bold;
+}
+
+.hse-service-navigation__link {
+  @include hse-link-style-default;
+  @include hse-link-style-no-visited-state;
+}
+
+.hse-service-navigation__service-name .hse-service-navigation__link {
+  @include hse-link-style-default;
+  @include hse-link-style-text;
+}
