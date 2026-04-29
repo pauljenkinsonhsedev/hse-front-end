@@ -9,32 +9,38 @@
 @use "../contents-list/contents-list" as *;
 
 .hse-multistep-navigation {
-border-bottom: 4px solid #d8d8d8;
-@include hse-responsive-padding(4, "bottom");
+  border-bottom: 4px solid #d8d8d8;
+  @include hse-responsive-padding(4, "bottom");
 }
 
 .hse-multistep-navigation__title {
-@extend .hse-contents-list__title
+  @extend .hse-contents-list__title;
 }
 
-.multistep--columns-two, .hse-multistep-navigation__list--columns-two  {
+.multistep--columns-two,
+.hse-multistep-navigation__list--columns-two {
   width: 100%;
+
   @include mq($from: desktop) {
     column-count: 2;
   }
 }
 
-ol.multistep.multistep--dashed, .hse-multistep-navigation__list.hse-multistep-navigation__list--dashed  {
+ol.multistep.multistep--dashed,
+.hse-multistep-navigation__list.hse-multistep-navigation__list--dashed {
   list-style-type: none;
   position: relative;
   width: 100%;
   margin: 0;
+
   li {
     padding: 0 hse-spacing(2);
   }
 }
 
-ol.multistep.multistep--dashed li::before, ol.hse-multistep-navigation__list.hse-multistep-navigation__list--dashed li::before {
+ol.multistep.multistep--dashed li::before,
+ol.hse-multistep-navigation__list.hse-multistep-navigation__list--dashed
+  li::before {
   content: "—";
   position: absolute;
   color: $color_hse-grey-3;
@@ -43,18 +49,20 @@ ol.multistep.multistep--dashed li::before, ol.hse-multistep-navigation__list.hse
   overflow: hidden;
 }
 
-.multistep, .hse-multistep-navigation__list {
+.multistep,
+.hse-multistep-navigation__list {
   width: 100%;
   padding: 0 0 0 20px;
 }
 
-ol.multistep li, ol.hse-multistep-navigation__list li  {
+ol.multistep li,
+ol.hse-multistep-navigation__list li {
   line-height: 1.5 !important;
   padding: 0 hse-spacing(2);
   clear: both;
-  &:a {
-    display: inline-block;
-  }
   @include hse-typography-responsive(16);
 
+  a {
+    display: inline-block;
+  }
 }
