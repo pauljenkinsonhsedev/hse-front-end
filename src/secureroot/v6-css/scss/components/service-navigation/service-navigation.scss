@@ -11,8 +11,8 @@
 
 $hse-service-navigation-active-link-border-width: hse-spacing(1);
 $hse-service-navigation-text-colour: $color_hse-grey-1;
-$hse-service-navigation-background: #faf3f4;
-$hse-service-navigation-border-colour: #cb8e98;
+$hse-service-navigation-background: $color_hse-red-tint-1;
+$hse-service-navigation-border-colour: $color_hse-red-tint-2;
 
 .hse-service-navigation {
   @include hse-font(19);
