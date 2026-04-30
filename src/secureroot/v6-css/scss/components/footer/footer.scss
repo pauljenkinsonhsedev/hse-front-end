@@ -11,7 +11,7 @@
 
 .hse-footer {
   background: $color_hse-grey-1;
-
+  box-shadow: 0 100vh 0 100vh $color_hse-grey-1;
   @include mq($media-type: print) {
     display: none;
   }
