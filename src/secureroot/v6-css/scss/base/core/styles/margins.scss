@@ -1,20 +1,38 @@
 @use "../tools/spacing" as *;
 
-h1, h2, h3, h4, h5, h6,
-ul, ol, dl,
-blockquote, p, address,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+ol,
+dl,
+blockquote,
+p,
+address,
 table,
-fieldset, figure,
+fieldset,
+figure,
 pre {
-    margin: 0 0 1em;  }
-
-// Page contents margins
-
-.hse-page-contents, .hse-page-header, .hse-page-contents--fullWidth, .sideNavigation {
-@include hse-responsive-margin(6, "top");
+  margin: 0 0 1em;
 }
 
-.sideNavigation .hse-page-contents, .twoThirdsOneThird .hse-page-contents {
-margin-top: 0;
+// Page contents padding
+
+.hse-page-contents,
+.hse-page-contents--fullWidth,
+.sideNavigation {
+  @include hse-responsive-padding(6, "top");
+  @include hse-responsive-padding(6, "bottom");
 }
 
+.hse-page-header {
+  @include hse-responsive-padding(6, "top");
+}
+
+.sideNavigation .hse-page-contents,
+.twoThirdsOneThird .hse-page-contents {
+  padding-top: 0;
+}
