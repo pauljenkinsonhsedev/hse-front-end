@@ -5,96 +5,91 @@
 @use "../../base/core/settings/spacing" as *;
 
 .homepageBanner {
-    padding: 0;  
-    @include mq($from: desktop) {
-      margin-bottom: 0;
-      a {
-        height: 100%;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        justify-content: flex-start;
-      }
+  padding: 0;
+  overflow: hidden;
+
+  @include mq($from: desktop) {
+    margin-bottom: 0;
+    max-height: 258px !important;
+
+    a {
+      height: 100%;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: flex-start;
     }
   }
-  
-  .homepageBanner {
+}
+
+.homepageBanner a {
+  width: 100%;
+}
+
+.homepageBanner:focus-within {
+  outline: 5px solid $hse-focus-color;
+}
+
+.homepageBannerInner {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  padding: $hse-legacy-spacing-20;
+  order: 2;
+  overflow: hidden;
+
+  @include mq($from: tablet) {
+    order: 1;
+  }
+}
+
+.homepageBannerImage {
+  order: 1;
+
+  @include mq($from: tablet) {
+    max-height: 258px;
+    order: 2;
     overflow: hidden;
-    @include mq($from: desktop) {
-      max-height: 258px !important;
-    }
   }
-  
-  .homepageBanner a {
+
+  @include mq($until: desktop) {
     width: 100%;
   }
+}
 
-  .homepageBanner:focus-within {
-   outline: 5px solid $hse-focus-color;
-  }
-  
-  .homepageBannerInner {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    padding: $hse-legacy-spacing-20;
-    order: 2;
-  
-    overflow: hidden;
-  
-    @include mq($from: tablet) {
-      order: 1;
-    }
-  }
-  
-  .homepageBannerImage {
-    order: 1;
-    @include mq($from: tablet) {
-    max-height: 258px;
-    }
-    @include mq($from: tablet) {
-      order: 2;
-      overflow: hidden;
-    }
-  
-    @include mq($until: desktop) {
-      width: 100%;
-    }
+.homepageBannerImage img {
+  max-width: 100%;
+  height: auto;
+}
+
+.coronaPoster {
+  background-color: #3272b2;
+  font-weight: 100;
+  letter-spacing: 1px;
+
+  h2 {
+    margin-bottom: 5px;
+    color: $color_hse-white;
   }
 
-  .homepageBannerImage img {
-    max-width: 100%;
-    height: auto;
+  a p {
+    font-size: 22px;
+    line-height: 1.5;
+    font-weight: normal;
+    text-decoration: none;
+    color: #ffffff;
   }
-  
-  .coronaPoster {
-    background-color: #3272b2;
-    font-weight: 100;
-    letter-spacing: 1px;
-  
-    h2 {
-      margin-bottom: 5px;
-      color: $color_hse-white;
-    }
-  
-    a p {
-      font-size: 22px;
-      line-height: 1.5;
-      font-weight: normal;
-      text-decoration: none;
-      color: #ffffff;
-    }
-  
-    a:link,
-    a:hover,
-    a:visited,
-    a:active {
-      text-decoration: none;
-      color: #ffffff;
-    }
+
+  a:link,
+  a:hover,
+  a:visited,
+  a:active {
+    text-decoration: none;
+    color: #ffffff;
   }
-  
-  .stayAlertBanner {
-    margin-top: auto;
-    align-items: flex-end;
-  }
+}
+
+.stayAlertBanner {
+  margin-top: auto;
+  align-items: flex-end;
+}
