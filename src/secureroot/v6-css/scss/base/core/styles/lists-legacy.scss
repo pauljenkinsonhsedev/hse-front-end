@@ -1,19 +1,19 @@
-
 @use "../settings/colours" as *;
 @use "../settings/spacing" as *;
 
 .hse-page-contents dl {
-margin: 0 0 1em;
+  margin: 0 0 1em;
 }
 
 ul.no-style {
-margin: 0 !important;
-padding: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
+
 ul.no-style li {
-background: 0 0 !important;
-margin: 0 !important;
-padding: 0 !important;
+  background: 0 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 dd {
@@ -53,15 +53,18 @@ ul.listhorizontal {
   margin: 1em 0 2em;
 }
 
-.hse-section__content, .hse-page-contents, .hse-print-guide-page {
- ul li::marker,  ul li::marker {
-  color: $color_hse-red;
-} 
+.hse-section__content,
+.hse-page-contents,
+.hse-print-guide-page {
+  ul li::marker {
+    color: $color_hse-red;
+  }
 }
 
 .hse-page-contents ul.list-plain {
   margin: 0;
   padding: 0;
+
   li {
     margin: 0;
     padding: 0;
@@ -69,9 +72,11 @@ ul.listhorizontal {
     list-style-type: none;
   }
 }
+
 .hse-page-contents ul.list-inline {
   margin: 0;
   padding: 0;
+
   li {
     display: inline-block;
     margin: 0;
@@ -81,16 +86,17 @@ ul.listhorizontal {
   }
 }
 
-
 /* review split list */
 .splitList2 ul {
   column-count: 2;
   column-gap: $hse-legacy-spacing-20;
 }
+
 .splitList3 ul {
   column-count: 3;
   column-gap: $hse-legacy-spacing-20;
 }
+
 .splitList4 ul {
   column-count: 4;
   column-gap: $hse-legacy-spacing-20;
@@ -118,17 +124,16 @@ ul.listhorizontal {
 }
 
 .box dl {
-margin: 0;
+  margin: 0;
 }
 
 dt {
-font-weight: bold;
-float: left;
-clear: left;
-padding-right: 5px;
-margin-top: 0;
+  font-weight: bold;
+  float: left;
+  clear: left;
+  padding-right: 5px;
+  margin-top: 0;
 }
-
 
 dl.document {
   align-items: center;
@@ -149,8 +154,5 @@ dl.document dd {
 /* page-contents */
 
 .hse-page-contents ul.hse-card-group {
-margin: 0;
+  margin: 0;
 }
-
-
-  

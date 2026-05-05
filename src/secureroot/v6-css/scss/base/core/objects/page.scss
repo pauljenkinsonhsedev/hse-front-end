@@ -1,4 +1,3 @@
-
 @use "../settings/all" as *;
 
 #menu {
@@ -33,10 +32,6 @@
   width: 100%;
 }
 
-#navigationContainer {
-  height: 33px;
-}
-
 .navDropdown {
   font-size: 1.1em !important;
 }
@@ -44,6 +39,3 @@
 #printGuide {
   margin-top: $hse-legacy-spacing-20;
 }
-
-
-
