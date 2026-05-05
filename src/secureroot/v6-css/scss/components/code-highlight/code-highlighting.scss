@@ -1,5 +1,5 @@
 @use "../../base/core/settings/colours" as *;
-@use 'sass:color';
+@use "sass:color";
 
 $radius: 5px;
 $background: #272822;
@@ -8,7 +8,11 @@ pre {
   margin: 2rem 0 !important;
 }
 
-pre[class*='language-'] {
+pre[class*="language-"] {
+  position: relative;
+  border-radius: 0;
+  overflow: visible;
+
   &:after {
     display: block;
     color: $color_hse-white;
@@ -18,33 +22,6 @@ pre[class*='language-'] {
     font-weight: bold;
     font-size: 12px;
   }
-}
-pre.language-git {
-  &:after {
-    content: 'GIT';
-  }
-}
-
-pre.language-js {
-  &:after {
-    content: 'JS';
-  }
-}
-pre.language-css {
-  &:after {
-    content: 'CSS';
-  }
-}
-pre.language-markup {
-  &:after {
-    content: 'HTML';
-  }
-}
-
-pre[class*='language-'] {
-  position: relative;
-  border-radius: 0;
-  overflow: visible;
 
   code {
     white-space: pre-wrap;
@@ -52,7 +29,7 @@ pre[class*='language-'] {
 
   .copy {
     font-family: $color_hse-black;
-    content: 'copy';
+    content: "copy";
     padding: 2px 10px 0;
     position: absolute;
     top: 0;
@@ -67,6 +44,30 @@ pre[class*='language-'] {
 
     &:hover {
       color: color.mix(black, $color_hse-white, 25%);
-    }    
+    }
+  }
+}
+
+pre.language-git {
+  &:after {
+    content: "GIT";
+  }
+}
+
+pre.language-js {
+  &:after {
+    content: "JS";
+  }
+}
+
+pre.language-css {
+  &:after {
+    content: "CSS";
+  }
+}
+
+pre.language-markup {
+  &:after {
+    content: "HTML";
   }
 }
