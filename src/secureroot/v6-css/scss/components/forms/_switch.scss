@@ -18,42 +18,40 @@ $switch-size: 26px;
 
   &:before,
   &:after {
-      display: block;
-      position: absolute;
-      width: 50%;
-      top: 50%;
-      transform: translateY(-50%);
-      color: $hse-text-color;
-      cursor: pointer;
-      transition: color 300ms ease-in-out;
+    display: block;
+    position: absolute;
+    width: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    color: $hse-text-color;
+    cursor: pointer;
+    transition: color 300ms ease-in-out;
   }
   &:before {
-      left: -30px;
-      content: "No"
+    left: -30px;
+    content: "No";
   }
   &:after {
-      right: -40px;
-      color: $mono-d;
-      content: "Yes"
+    right: -40px;
+    color: $mono-d;
+    content: "Yes";
   }
 
   &:checked {
-      &:before {
-          color: $mono-d;
-      }
-      &:after {
-          color: $hse-text-color;
-      }
+    &:before {
+      color: $mono-d;
+    }
+    &:after {
+      color: $hse-text-color;
+    }
   }
 }
 
 // Checkbox
 .input-switch {
-    width: 0;
-    height: 0;
-    appearance: none;
-
-  
+  appearance: none;
+  width: 0;
+  height: 0;
 }
 
 // Slider
@@ -65,7 +63,7 @@ $switch-size: 26px;
   right: 0;
   bottom: 0;
   background-color: #ccc;
-  transition: .4s;
+  transition: 0.4s;
   border-radius: $switch-size * 2.3;
   &:before {
     content: "";
@@ -76,8 +74,7 @@ $switch-size: 26px;
     left: 4px;
     bottom: calc($switch-size / 6);
     background-color: white;
-    -webkit-transition: .4s;
-    transition: .4s;
+    transition: 0.4s;
   }
 }
 

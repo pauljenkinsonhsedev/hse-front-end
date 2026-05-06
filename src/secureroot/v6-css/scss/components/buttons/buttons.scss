@@ -7,7 +7,7 @@
 @use "../../base/core/settings/spacing" as *;
 @use "../../base/core/settings/globals" as *;
 @use "../../base/core/tools/sass-mq" as *;
-@use 'sass:color';
+@use "sass:color";
 
 /**
  * Ensure that any global link styles are overridden.
@@ -24,7 +24,6 @@ $button-shadow-size: 4px;
 
 .hse-button {
   text-decoration: none;
-  -webkit-appearance: none;
   appearance: none;
   background-color: $hse-button-color;
   border: $hse-border-width-form-element solid transparent;
@@ -40,7 +39,11 @@ $button-shadow-size: 4px;
   vertical-align: top;
   width: auto;
   @include hse-font(16, bold);
-  @include hse-responsive-margin(5, "bottom", $adjustment: $button-shadow-size); // s1
+  @include hse-responsive-margin(
+    5,
+    "bottom",
+    $adjustment: $button-shadow-size
+  ); // s1
   @include mq($until: tablet) {
     padding: hse-spacing(2) hse-spacing(3); // s2
   }
@@ -53,7 +56,6 @@ $button-shadow-size: 4px;
     text-decoration: none;
   }
 
-  
   &::-moz-focus-inner {
     border: 0;
     padding: 0;
@@ -241,7 +243,8 @@ $button-shadow-size: 4px;
   }
 }
 
-.global-menu-button, .search-button {
+.global-menu-button,
+.search-button {
   margin-top: 0;
   margin-bottom: 0;
   &:focus-visible {
@@ -271,13 +274,14 @@ $button-shadow-size: 4px;
   svg {
     fill: $hse-focus-color !important;
   }
-  svg circle, svg line {
+  svg circle,
+  svg line {
     stroke: $color_hse-black !important;
   }
 }
 
 .search-button.main-search-expanded:focus-visible .gsc-search-button-v2.gsc {
-    &:after {
+  &:after {
     content: "";
     height: 3px;
     position: absolute;
@@ -285,7 +289,7 @@ $button-shadow-size: 4px;
     background: $color_hse-black;
     width: 42px;
     margin-left: -38px;
-    }
+  }
 }
 
 #menu-button.global-menu-button:focus-visible span:before {
@@ -294,22 +298,22 @@ $button-shadow-size: 4px;
 }
 
 .hse-button--start {
-&:after {
-  content: " ";
-  position: relative;
-  background-image: url(../../assets/v6-images/icons/svg/solid/chevron-right-white.svg);
-  background-repeat: no-repeat;
-  background-position: bottom;
-  display: inline-block;
-  width: 15px;
-  height: 20px;
-  margin: 0;
-  bottom: -4px;
-  margin-left: 10px;
-}
-&:focus::after {
-  background-image: url(../../assets/v6-images/icons/svg/solid/chevron-right-black.svg);
-}
+  &:after {
+    content: " ";
+    position: relative;
+    background-image: url(../../assets/v6-images/icons/svg/solid/chevron-right-white.svg);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    display: inline-block;
+    width: 15px;
+    height: 20px;
+    margin: 0;
+    bottom: -4px;
+    margin-left: 10px;
+  }
+  &:focus::after {
+    background-image: url(../../assets/v6-images/icons/svg/solid/chevron-right-black.svg);
+  }
 }
 
 /**
