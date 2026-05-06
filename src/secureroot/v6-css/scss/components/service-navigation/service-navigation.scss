@@ -113,11 +113,21 @@ $hse-service-navigation-border-colour: $color_hse-red-tint-2;
 .hse-service-navigation__link {
   @include hse-link-style-default;
   @include hse-link-style-no-visited-state;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 .hse-service-navigation__service-name .hse-service-navigation__link {
   @include hse-link-style-default;
   @include hse-link-style-text;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 .hse-service-navigation__toggle {
