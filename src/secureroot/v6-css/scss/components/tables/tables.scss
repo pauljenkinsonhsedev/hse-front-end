@@ -23,15 +23,15 @@
   width: 100%;
   @include hse-responsive-margin(7, "bottom");
   @include mq($until: desktop) {
-  // Allow large tables to overflow
-  overflow-y: auto; 
-  overflow-x: auto;
+    // Allow large tables to overflow
+    overflow-y: auto;
+    overflow-x: auto;
   }
   .hse-table {
     margin: 0; /* [1] */
   }
   &:has(.hse-table-responsive) {
-  max-height: 100%;
+    max-height: 100%;
   }
 }
 
@@ -57,7 +57,11 @@
  */
 
 .hse-table__panel-with-heading-tab {
-  @include panel-with-label($color_hse-white, $hse-text-color, $color_hse-grey-4);
+  @include panel-with-label(
+    $color_hse-white,
+    $hse-text-color,
+    $color_hse-grey-4
+  );
 
   .hse-table-container,
   .hse-table {
@@ -84,18 +88,20 @@ The classes below make it easier to visually differentiate between each piece of
 */
 
 .hse-table {
-&--small-text {
-  th,td {
-    @include hse-typography-responsive(16);
-  }
-}
-&--small-text-until-large-desktop  {
-  th,td {
-    @include mq($until: large-desktop) {
-    @include hse-typography-responsive(16);
+  &--small-text {
+    th,
+    td {
+      @include hse-typography-responsive(16);
     }
   }
-}
+  &--small-text-until-large-desktop {
+    th,
+    td {
+      @include mq($until: large-desktop) {
+        @include hse-typography-responsive(16);
+      }
+    }
+  }
 }
 
 /* Responsive table
@@ -114,8 +120,7 @@ The classes below make it easier to visually differentiate between each piece of
  * 10. Adding a display block value due to IE 11 not having full flex support
  */
 
- .hse-table-responsive {
-
+.hse-table-responsive {
   margin-bottom: 0;
   width: 100%;
 
@@ -157,7 +162,8 @@ The classes below make it easier to visually differentiate between each piece of
         }
       }
 
-      td { // For browsers that don't support flexbox
+      td {
+        // For browsers that don't support flexbox
         display: flex;
         justify-content: space-between; /* [5] */
         min-width: 1px; /* [6] */
@@ -174,7 +180,7 @@ The classes below make it easier to visually differentiate between each piece of
           padding-right: 0;
           text-align: right; /* [7] */
           &:last-child {
-            border-bottom: 3px solid $color_hse-grey-4;
+            border-bottom: 3px solid $hse-table-border-color;
           }
         }
       }
@@ -189,12 +195,12 @@ The classes below make it easier to visually differentiate between each piece of
  * Right aligns table cells for numeric tables.
  */
 
- .hse-table__header--numeric,
- .hse-table__cell--numeric {
-   text-align: right;
- }
+.hse-table__header--numeric,
+.hse-table__cell--numeric {
+  text-align: right;
+}
 
- /* Numeric legacy
+/* Numeric legacy
 ========================================================================== */
 
 table td.numbers,
@@ -215,7 +221,8 @@ table.tablenumgrid td {
 /* Sortable tables
 ========================================================================== */
 
-.hse-table--sortable, .sortable {
+.hse-table--sortable,
+.sortable {
   caption {
     padding-bottom: hse-spacing(4);
   }
@@ -226,8 +233,8 @@ table.tablenumgrid td {
     background-position: top 0 left 0;
     background-repeat: no-repeat;
     @include mq($until: desktop) {
-    @include hse-responsive-padding(4, "top");
-    @include hse-responsive-padding(4, "bottom");
+      @include hse-responsive-padding(4, "top");
+      @include hse-responsive-padding(4, "bottom");
     }
     &.sorted-asc {
       background-image: url("../../assets/v6-images/icons/svg/tables/table-sortable-up.svg");
