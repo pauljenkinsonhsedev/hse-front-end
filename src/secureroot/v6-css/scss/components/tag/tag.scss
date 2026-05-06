@@ -1,11 +1,13 @@
+@use "../../base/core/tools/spacing" as *;
 @use "../../base/core/tools/typography" as *;
-@use "../../base/core/settings/colours" as *;
 @use "../../base/core/tools/sass-mq" as *;
+@use "../../base/core/settings/spacing" as *;
+@use "../../base/core/settings/colours" as *;
 
 .hse-tag {
   @include hse-font(16);
   display: inline-block;
-  max-width: 160px;
+  width: fit-content;
   margin-top: -2px;
   margin-bottom: -3px;
   padding: 2px 8px 3px;

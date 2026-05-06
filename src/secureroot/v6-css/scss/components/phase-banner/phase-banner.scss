@@ -32,14 +32,14 @@
 .hse-phase-banner__content__tag {
   @include hse-font(16);
   margin-right: hse-spacing(3);
-  margin-bottom: hse-spacing(2);
-
-  @include mq($from: tablet) {
-    margin-bottom: 0;
-    margin-right: hse-spacing(2);
-  }
+  margin-bottom: hse-spacing(3);
 }
 
 .hse-phase-banner__text {
   vertical-align: middle;
+  padding-top: hse-spacing(2);
+
+  @include mq($from: tablet) {
+    padding-top: 0;
+  }
 }
