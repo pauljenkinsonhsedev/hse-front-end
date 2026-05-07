@@ -29,33 +29,6 @@
   display: none;
 }
 
-.hse-breadcrumb__back {
-  padding: 0;
-  margin: 0;
-
-  &::before {
-    content: " ";
-    background-image: url(../../assets/v6-images/icons/svg/solid/chevron-right-gray.svg);
-    transform: rotate(180deg);
-    background-repeat: no-repeat;
-    background-position: bottom;
-    float: left;
-    top: 10px;
-    margin: 0 8px;
-    position: relative;
-    width: 10px;
-    height: 10px;
-  }
-
-  @include mq($from: desktop) {
-    display: none;
-  }
-
-  @include mq($media-type: print) {
-    display: none;
-  }
-}
-
 .hse-breadcrumb ol li {
   display: inline-block;
   margin: 0;
