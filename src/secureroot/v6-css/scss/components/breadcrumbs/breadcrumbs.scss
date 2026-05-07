@@ -12,10 +12,6 @@
 }
 
 .hse-breadcrumb__container ol {
-  @include mq($until: desktop) {
-    display: none;
-  }
-
   @include mq($media-type: print) {
     display: block;
   }
@@ -70,7 +66,7 @@
     background-repeat: no-repeat;
     background-position: bottom;
     float: left;
-    top: 11px;
+    top: 10px;
     margin: 0 8px;
     position: relative;
     width: 10px;
