@@ -9,11 +9,11 @@
 
 .hse-breadcrumb__container {
   padding: hse-spacing(3) 0;
-}
 
-.hse-breadcrumb__container ol {
-  @include mq($media-type: print) {
-    display: block;
+  ol {
+    @include mq($media-type: print) {
+      display: block;
+    }
   }
 }
 
