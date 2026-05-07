@@ -244,28 +244,3 @@ table.tablenumgrid td {
     }
   }
 }
-
-div.sortDown,
-div.sortNone,
-div.sortUp {
-  background-repeat: no-repeat;
-}
-div.sortUp {
-  background-image: url("../../assets/v6-images/icons/tables/caret-up-solid-red.svg");
-}
-div.sortDown {
-  background-image: url("../../assets/v6-images/icons/tables/caret-down-solid-red.svg");
-}
-div.sortNone {
-  background-image: url("../../assets/v6-images/icons/tables/sort-solid-red.svg");
-}
-
-table a.tableRowToggle,
-table a.tableRowToggleClosed {
-  width: 12px;
-  height: 12px;
-  display: inline-block;
-  cursor: pointer;
-  text-indent: -9999px;
-  margin: 2px 0 0 2px;
-}
