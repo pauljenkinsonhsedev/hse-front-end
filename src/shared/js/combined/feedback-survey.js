@@ -24,8 +24,8 @@
       - Scroll the user to that message
 */
 
+import Bowser from "bowser";
 import { scrollPos } from "./utils/feedback-position";
-import { bowser } from "./bowser.js";
 
 export function feedbackSurvey() {
   const container = document.querySelector(".hse-feedback");
@@ -107,9 +107,6 @@ export function feedbackSurvey() {
    * Opens the "report a problem" form and populates hidden metadata fields.
    */
   function openReportProblemForm() {
-    bowser();
-
-    const Bowser = require("bowser");
     const browserUA = Bowser.getParser(window.navigator.userAgent);
 
     // Browser / OS / platform details for the hidden UA field
