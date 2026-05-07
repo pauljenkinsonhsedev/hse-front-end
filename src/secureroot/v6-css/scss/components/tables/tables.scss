@@ -229,7 +229,7 @@ table.tablenumgrid td {
   th {
     position: relative;
     cursor: pointer;
-    background-image: url("../../assets/v6-images/icons/svg/tables/table-sortable.svg");
+    background-image: url("../../assets/v6-images/icons/tables/table-sortable.svg");
     background-position: top 0 left 0;
     background-repeat: no-repeat;
     @include mq($until: desktop) {
@@ -237,10 +237,10 @@ table.tablenumgrid td {
       @include hse-responsive-padding(4, "bottom");
     }
     &.sorted-asc {
-      background-image: url("../../assets/v6-images/icons/svg/tables/table-sortable-up.svg");
+      background-image: url("../../assets/v6-images/icons/tables/table-sortable-up.svg");
     }
     &.sorted-desc {
-      background-image: url("../../assets/v6-images/icons/svg/tables/table-sortable-down.svg");
+      background-image: url("../../assets/v6-images/icons/tables/table-sortable-down.svg");
     }
   }
 }
@@ -251,13 +251,13 @@ div.sortUp {
   background-repeat: no-repeat;
 }
 div.sortUp {
-  background-image: url("../../assets/v6-images/icons/svg/solid/caret-up-solid-red.svg");
+  background-image: url("../../assets/v6-images/icons/tables/caret-up-solid-red.svg");
 }
 div.sortDown {
-  background-image: url("../../assets/v6-images/icons/svg/solid/caret-down-solid-red.svg");
+  background-image: url("../../assets/v6-images/icons/tables/caret-down-solid-red.svg");
 }
 div.sortNone {
-  background-image: url("../../assets/v6-images/icons/svg/solid/sort-solid-red.svg");
+  background-image: url("../../assets/v6-images/icons/tables/sort-solid-red.svg");
 }
 
 table a.tableRowToggle,
