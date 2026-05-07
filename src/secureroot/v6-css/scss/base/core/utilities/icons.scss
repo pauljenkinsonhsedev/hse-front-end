@@ -2,38 +2,6 @@
 @use "../settings/spacing" as *;
 @use "../tools/sass-mq" as *;
 
-.hse-section p.moreLink a::before {
-  content: " ";
-  position: relative;
-  top: 2px;
-  background-image: url("../../assets/v6-images/icons/svg/solid/arrow-right-red.svg");
-  background-repeat: no-repeat;
-  display: inline-block;
-  margin-right: 5px;
-  width: 16px;
-  height: 16px;
-}
-
-.hse-section p.moreLink a:hover::before {
-  content: " ";
-  background-image: url("../../assets/v6-images/icons/svg/solid/arrow-right-black.svg");
-  background-repeat: no-repeat;
-  display: inline-block;
-  margin-right: 5px;
-  width: 16px;
-  height: 16px;
-}
-
-.backgroundRed p.moreLink a::before {
-  content: " ";
-  background-image: url("../../assets/v6-images/icons/svg/solid/arrow-right-white.svg");
-  background-repeat: no-repeat;
-  display: inline-block;
-  margin-right: 5px;
-  width: 16px;
-  height: 16px;
-}
-
 #printGuide a::before {
   content: " ";
   background-image: url("../../assets/v6-images/icons/svg/solid/print.svg");
