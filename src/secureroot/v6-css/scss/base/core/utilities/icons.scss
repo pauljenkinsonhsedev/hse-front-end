@@ -358,19 +358,3 @@ button#menu-button.global-menu-button:focus-visible span {
 .search-button.main-search:hover:after {
   background: $color_hse-red;
 }
-
-.boxList ul li:hover h3 {
-  color: white !important;
-}
-
-#backnav::before {
-  content: " ";
-  background-image: url("../../assets/v6-images/icons/svg/solid/arrow-left-white.svg");
-  background-repeat: no-repeat;
-  display: inline-block;
-  position: relative;
-  top: 3px;
-  width: 16px;
-  height: 16px;
-  margin-right: $hse-legacy-spacing-10;
-}
