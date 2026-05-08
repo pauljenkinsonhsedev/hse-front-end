@@ -29,13 +29,6 @@
   @include hse-responsive-margin(4, "bottom");
 }
 
-%hse-list > li {
-  @include hse-responsive-margin(2, "bottom");
-
-  &:last-child {
-    margin-bottom: 0;
-  }
-}
 
 %hse-list--bullet {
   list-style-type: disc;
