@@ -36,3 +36,11 @@ pre {
 .twoThirdsOneThird .hse-page-contents {
   padding-top: 0;
 }
+
+// remove top padding for page container on homepage
+
+.home {
+  .hse-page-contents--fullWidth {
+    padding-top: 0;
+  }
+}
