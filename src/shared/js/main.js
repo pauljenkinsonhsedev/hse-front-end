@@ -1,4 +1,5 @@
 import ChartsDefault from "./combined/charts/charts.js";
+import { codeHighlighter } from "./combined/code-highlighter.js";
 import { mainMenu } from "./combined/main-menu.js";
 import { fileTypeFunction } from "./combined/file-type.js";
 import { tableSortable } from "./combined/tables/table-sortable.js";
@@ -45,6 +46,7 @@ window.addEventListener("DOMContentLoaded", () => {
     new ChartsDefault();
   }
 
+  codeHighlighter();
   feedbackSurvey();
 
   if (document.querySelector(".hse-back-to-top")) {
