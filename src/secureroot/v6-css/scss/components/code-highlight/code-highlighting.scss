@@ -1,8 +1,7 @@
 @use "../../base/core/settings/colours" as *;
 
-// Prism Okaidia theme — base text + font
-code[class*="language-"],
-pre[class*="language-"] {
+// Prism Okaidia theme — scope font to code only so children (e.g. buttons) don't inherit monospace
+code[class*="language-"] {
   color: #f8f8f2;
   background: none;
   text-shadow: 0 1px rgba(0, 0, 0, 0.3);
@@ -20,7 +19,6 @@ pre[class*="language-"] {
 
 // Code block
 pre[class*="language-"] {
-  position: relative;
   padding: 1.25em;
   margin: 2rem 0;
   overflow: auto;
@@ -29,33 +27,6 @@ pre[class*="language-"] {
 
   code {
     white-space: pre-wrap;
-  }
-
-  .code-copy-button {
-    position: absolute;
-    top: 0.75em;
-    right: 0.75em;
-    padding: 4px 12px;
-    font-family: inherit;
-    font-size: 0.8em;
-    font-weight: 600;
-    color: #f8f8f2;
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    border-radius: 3px;
-    cursor: pointer;
-    transition: background 150ms ease, border-color 150ms ease;
-    white-space: nowrap;
-
-    &:hover {
-      background: rgba(255, 255, 255, 0.2);
-      border-color: rgba(255, 255, 255, 0.5);
-    }
-
-    &:focus {
-      outline: 3px solid #ffdd00;
-      outline-offset: 2px;
-    }
   }
 }
 
@@ -75,8 +46,12 @@ pre[class*="language-"] {
   color: #8292a2;
 }
 
-.token.punctuation { color: #f8f8f2; }
-.token.namespace { opacity: 0.7; }
+.token.punctuation {
+  color: #f8f8f2;
+}
+.token.namespace {
+  opacity: 0.7;
+}
 
 .token.property,
 .token.tag,
@@ -115,7 +90,9 @@ pre[class*="language-"] {
   color: #e6db74;
 }
 
-.token.keyword { color: #66d9ef; }
+.token.keyword {
+  color: #66d9ef;
+}
 
 .token.regex,
 .token.important {
@@ -123,9 +100,31 @@ pre[class*="language-"] {
 }
 
 .token.important,
-.token.bold { font-weight: bold; }
-.token.italic { font-style: italic; }
-.token.entity { cursor: help; }
+.token.bold {
+  font-weight: bold;
+}
+.token.italic {
+  font-style: italic;
+}
+.token.entity {
+  cursor: help;
+}
+
+// Wrapper — positions button above the code block
+.code-block {
+  display: inline-block;
+  width: 100%;
+  text-align: right;
+
+  .code-copy-button {
+    margin-bottom: 10px;
+  }
+
+  pre[class*="language-"] {
+    margin-top: 4px;
+    text-align: left;
+  }
+}
 
 // Language label badge (bottom-right)
 pre[class*="language-"]::after {
@@ -141,7 +140,15 @@ pre[class*="language-"]::after {
   pointer-events: none;
 }
 
-pre.language-git::after    { content: "GIT"; }
-pre.language-js::after     { content: "JS"; }
-pre.language-css::after    { content: "CSS"; }
-pre.language-markup::after { content: "HTML"; }
+pre.language-git::after {
+  content: "GIT";
+}
+pre.language-js::after {
+  content: "JS";
+}
+pre.language-css::after {
+  content: "CSS";
+}
+pre.language-markup::after {
+  content: "HTML";
+}

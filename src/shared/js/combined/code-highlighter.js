@@ -20,16 +20,22 @@ export function codeHighlighter() {
             pre.replaceChild(code, rawScript);
         }
 
+        // Wrap pre in a container so the button sits outside the pre's CSS context
+        const wrapper = document.createElement('div');
+        wrapper.className = 'code-block';
+        pre.parentNode.insertBefore(wrapper, pre);
+        wrapper.appendChild(pre);
+
         const copyButton = document.createElement('button');
         copyButton.type = 'button';
-        copyButton.className = 'code-copy-button';
+        copyButton.className = 'hse-button hse-button--secondary code-copy-button';
         copyButton.setAttribute('aria-live', 'polite');
         copyButton.textContent = 'Copy code';
-        pre.insertBefore(copyButton, pre.firstChild);
+        wrapper.insertBefore(copyButton, pre);
     });
 
     const clipboard = new ClipboardJS('.code-copy-button', {
-        target: (trigger) => trigger.nextElementSibling,
+        target: (trigger) => trigger.nextElementSibling.querySelector('code'),
     });
 
     clipboard.on('success', (event) => {
