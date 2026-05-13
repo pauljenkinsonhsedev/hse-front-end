@@ -1,46 +1,44 @@
 import Prism from 'prismjs';
-import 'prismjs/plugins/toolbar/prism-toolbar.js';
+import 'prismjs/plugins/normalize-whitespace/prism-normalize-whitespace.js';
 import ClipboardJS from 'clipboard';
 
 export function codeHighlighter() {
-    const codeExample = document.getElementsByTagName('code');
+    const preElements = document.querySelectorAll('pre[class*="language-"]');
 
-    if (!codeExample) {
+    if (!preElements.length) {
         return;
     }
 
-    // all pre tags on the page
-    const preElement = document.getElementsByTagName('pre');
-
-    if (preElement !== null) {
-        const copyButton = `<div class='copy'>copy</div>`;
-        for (let i = 0; i < preElement.length; i++) {
-            if (isPrismClass(preElement[i])) {
-                preElement[i].insertAdjacentHTML('afterbegin', copyButton);
-            }
+    preElements.forEach((pre) => {
+        // Allow raw unescaped code via <script type="text/plain"> — no HTML encoding needed
+        const rawScript = pre.querySelector('script[type="text/plain"]');
+        if (rawScript) {
+            const langMatch = pre.className.match(/language-(\S+)/);
+            const code = document.createElement('code');
+            code.className = `language-${langMatch ? langMatch[1] : 'markup'}`;
+            code.textContent = rawScript.textContent;
+            pre.replaceChild(code, rawScript);
         }
-    }
-    // create clipboard for every copy element
-    const clipboard = new ClipboardJS('.copy', {
-        target: (trigger) => {
-            return trigger.nextElementSibling;
-        },
+
+        const copyButton = document.createElement('button');
+        copyButton.type = 'button';
+        copyButton.className = 'code-copy-button';
+        copyButton.setAttribute('aria-live', 'polite');
+        copyButton.textContent = 'Copy code';
+        pre.insertBefore(copyButton, pre.firstChild);
+    });
+
+    const clipboard = new ClipboardJS('.code-copy-button', {
+        target: (trigger) => trigger.nextElementSibling,
     });
 
     clipboard.on('success', (event) => {
-        event.trigger.textContent = 'copied';
-
+        event.trigger.textContent = 'Code copied';
         setTimeout(() => {
             event.clearSelection();
-            event.trigger.textContent = 'copy';
+            event.trigger.textContent = 'Copy code';
         }, 2000);
     });
 
-    // helper function - checks that PrismJS class exists
-    function isPrismClass(preElement) {
-        return preElement.className.includes('language');
-    }
-
-    // Trigger Prism to highlight all the blocks on the page
     Prism.highlightAll();
 }
