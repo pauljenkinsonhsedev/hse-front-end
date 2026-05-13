@@ -1,73 +1,147 @@
 @use "../../base/core/settings/colours" as *;
-@use "sass:color";
 
-$radius: 5px;
-$background: #272822;
-
-pre {
-  margin: 2rem 0 !important;
+// Prism Okaidia theme — base text + font
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #f8f8f2;
+  background: none;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+  font-size: 0.95em;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.6;
+  tab-size: 4;
+  hyphens: none;
 }
 
+// Code block
 pre[class*="language-"] {
   position: relative;
-  border-radius: 0;
-  overflow: visible;
-
-  &:after {
-    display: block;
-    color: $color_hse-white;
-    position: absolute;
-    right: 8px;
-    top: 8px;
-    font-weight: bold;
-    font-size: 12px;
-  }
+  padding: 1.25em;
+  margin: 2rem 0;
+  overflow: auto;
+  border-radius: 4px;
+  background: #272822;
 
   code {
     white-space: pre-wrap;
   }
 
-  .copy {
-    font-family: $color_hse-black;
-    content: "copy";
-    padding: 2px 10px 0;
+  .code-copy-button {
     position: absolute;
-    top: 0;
-    right: 0;
-    transform: translate(-10px, -90%);
-    border-top-left-radius: $radius;
-    border-top-right-radius: $radius;
-    color: $color_hse-white;
-    background: $background;
+    top: 0.75em;
+    right: 0.75em;
+    padding: 4px 12px;
+    font-family: inherit;
+    font-size: 0.8em;
+    font-weight: 600;
+    color: #f8f8f2;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 3px;
     cursor: pointer;
-    transition: all 250ms ease;
+    transition: background 150ms ease, border-color 150ms ease;
+    white-space: nowrap;
 
     &:hover {
-      color: color.mix(black, $color_hse-white, 25%);
+      background: rgba(255, 255, 255, 0.2);
+      border-color: rgba(255, 255, 255, 0.5);
+    }
+
+    &:focus {
+      outline: 3px solid #ffdd00;
+      outline-offset: 2px;
     }
   }
 }
 
-pre.language-git {
-  &:after {
-    content: "GIT";
-  }
+// Inline code
+:not(pre) > code[class*="language-"] {
+  padding: 0.1em 0.3em;
+  border-radius: 3px;
+  white-space: normal;
+  background: #272822;
 }
 
-pre.language-js {
-  &:after {
-    content: "JS";
-  }
+// Prism token colours (Okaidia)
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #8292a2;
 }
 
-pre.language-css {
-  &:after {
-    content: "CSS";
-  }
+.token.punctuation { color: #f8f8f2; }
+.token.namespace { opacity: 0.7; }
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+  color: #f92672;
 }
 
-pre.language-markup {
-  &:after {
-    content: "HTML";
-  }
+.token.boolean,
+.token.number {
+  color: #ae81ff;
 }
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+  color: #a6e22e;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.token.variable {
+  color: #f8f8f2;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.function,
+.token.class-name {
+  color: #e6db74;
+}
+
+.token.keyword { color: #66d9ef; }
+
+.token.regex,
+.token.important {
+  color: #fd971f;
+}
+
+.token.important,
+.token.bold { font-weight: bold; }
+.token.italic { font-style: italic; }
+.token.entity { cursor: help; }
+
+// Language label badge (bottom-right)
+pre[class*="language-"]::after {
+  display: block;
+  color: rgba(255, 255, 255, 0.4);
+  position: absolute;
+  right: 0.75em;
+  bottom: 0.6em;
+  font-family: Consolas, Monaco, "Andale Mono", monospace;
+  font-size: 0.75em;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  pointer-events: none;
+}
+
+pre.language-git::after    { content: "GIT"; }
+pre.language-js::after     { content: "JS"; }
+pre.language-css::after    { content: "CSS"; }
+pre.language-markup::after { content: "HTML"; }
