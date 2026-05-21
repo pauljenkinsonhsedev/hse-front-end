@@ -27,18 +27,28 @@ const sharedPlugins = [
 ];
 
 // 2. The helper function to handle repeated settings
-const createConfig = (input, fileName, name, useMin = true) => ({
-  input,
-  context: 'window',
-  output: {
-    // We use a ternary operator to handle the difference between your cookies and main filenames
-    file: `./secureroot/hseonline/website/livelive/secureroot/assets/v6-js/${fileName}-${version}${useMin ? '.min' : ''}.js`,
-    format: 'iife',
-    sourcemap: true,
-    name
-  },
-  plugins: sharedPlugins
-});
+const createConfig = (input, fileName, name, useMin = true) => {
+  const suffix = `${fileName}-${version}${useMin ? '.min' : ''}.js`;
+  return {
+    input,
+    context: 'window',
+    output: [
+      {
+        file: `./secureroot/hseonline/website/livelive/secureroot/assets/v6-js/${suffix}`,
+        format: 'iife',
+        sourcemap: true,
+        name
+      },
+      {
+        file: `./designsystem/assets/v6-js/${suffix}`,
+        format: 'iife',
+        sourcemap: true,
+        name
+      }
+    ],
+    plugins: sharedPlugins
+  };
+};
 
 // 3. The export list
 export default [
