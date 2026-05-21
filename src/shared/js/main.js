@@ -13,6 +13,7 @@ import { informationBanner } from "./combined/information-banner.js";
 import { accordion } from "./combined/accordion.js";
 import { backToTop } from "./combined/back-to-top.js";
 import { dsSiteNavigation } from "./combined/ds-site-navigation.js";
+import { sideNavDesign } from "./combined/side-nav-design.js";
 import { serviceNavigation } from "./combined/service-navigation.js";
 
 window.addEventListener("DOMContentLoaded", () => {
@@ -55,5 +56,9 @@ window.addEventListener("DOMContentLoaded", () => {
 
   if (document.querySelector('[data-module="hse-service-navigation"]')) {
     serviceNavigation();
+  }
+
+  if (document.querySelector(".hse-design-side-navigation")) {
+    sideNavDesign();
   }
 });
