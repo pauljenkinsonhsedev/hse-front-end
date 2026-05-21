@@ -72,10 +72,12 @@
   }
 
   .hse-button {
-    margin: hse-spacing(4) 0 0;
+    margin: 10px 0;
     padding: 5px;
     max-width: fit-content;
-    box-shadow: none;
+    @include mq($from: tablet) {
+      box-shadow: none;
+    }
   }
 }
 
@@ -135,10 +137,6 @@
     .hse-input--subscribe {
       min-width: fit-content;
       margin-right: 0;
-    }
-
-    .hse-button {
-      @include hse-responsive-margin(2, "top");
     }
   }
 }
