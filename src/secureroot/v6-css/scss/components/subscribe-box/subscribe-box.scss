@@ -89,7 +89,7 @@
     flex-direction: column;
   }
 
-  @include hse-responsive-padding(4);
+  padding: 10px;
 }
 
 // Full width layout
