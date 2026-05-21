@@ -2,7 +2,7 @@ import { glob } from 'glob';
 import fs from 'fs/promises';
 import path from 'path';
 
-const src = 'src/designsystem';
+const src = 'src/designsystem/html';
 const dest = 'designsystem';
 
 async function copyHtml() {

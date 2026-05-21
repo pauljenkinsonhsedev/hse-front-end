@@ -2,7 +2,7 @@ import { watch } from 'fs';
 import { execSync } from 'child_process';
 import path from 'path';
 
-const srcDir = 'src/designsystem';
+const srcDir = 'src/designsystem/html';
 console.log(`Watching ${srcDir} for changes...`);
 
 // Initial copy on start
