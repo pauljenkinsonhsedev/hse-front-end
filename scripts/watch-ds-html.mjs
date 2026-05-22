@@ -1,8 +1,9 @@
-import { watch } from 'fs';
+import { watch, mkdirSync } from 'fs';
 import { execSync } from 'child_process';
 import path from 'path';
 
 const srcDir = 'src/designsystem/html';
+mkdirSync(srcDir, { recursive: true });
 console.log(`Watching ${srcDir} for changes...`);
 
 // Initial copy on start
