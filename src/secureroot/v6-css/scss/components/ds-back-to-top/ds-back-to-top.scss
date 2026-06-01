@@ -1,0 +1,40 @@
+/* ==========================================================================
+#BACK TO TOP - DESIGN SYSTEM
+========================================================================== */
+
+@use "../../base/core/tools/sass-mq" as *;
+@use "../../base/core/settings/colours" as *;
+@use "../../base/core/settings/spacing" as *;
+@use "../../base/core/tools/spacing" as *;
+
+// Without JS: show as a plain static link below the nav
+.ds-back-to-top {
+  margin-top: hse-spacing(4);
+  margin-bottom: hse-spacing(4);
+}
+
+// With JS: hidden until the user scrolls past the nav
+.hasScript .ds-back-to-top {
+  display: none;
+}
+
+// Shown only when JS applies --fixed after scrolling
+.hasScript .ds-back-to-top--fixed {
+  display: block;
+  position: fixed;
+  bottom: hse-spacing(6);
+  // left is set dynamically by JS to keep it inside the sidebar column
+
+  @include mq($media-type: print) {
+    display: none;
+  }
+}
+
+.ds-back-to-top__icon {
+  display: inline-block;
+  width: 13px;
+  height: 17px;
+  margin-top: -5px;
+  margin-right: hse-spacing(2);
+  vertical-align: middle;
+}
