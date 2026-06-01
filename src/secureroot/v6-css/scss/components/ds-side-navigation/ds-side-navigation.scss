@@ -50,7 +50,7 @@
 
     // Nested
     &--nested {
-      margin: 0 0 0 hse-spacing(2);
+      margin: 10px 0 0;
       padding-left: 20px;
 
       @include mq($until: desktop) {
@@ -58,9 +58,16 @@
       }
 
       .hse-design-side-navigation__item {
+        &::before {
+          content: "—\00a0";
+          margin-left: -20px;
+          color: $color_hse-grey-2;
+        }
+
         a:link {
           display: inline !important;
           font-weight: normal;
+          padding-left: 0;
         }
       }
 
