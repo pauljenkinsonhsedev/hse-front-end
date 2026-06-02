@@ -270,15 +270,8 @@
   </div>
   <!-- TemplateEndEditable --> 
 </nav>
-	
-<div class="ds-back-to-top">
-	<a href="#contentContainer" class="ds-back-to-top__link hse-link--no-visited-state">
-		<svg class="ds-back-to-top__icon" xmlns="http://www.w3.org/2000/svg" width="13" height="17" viewBox="0 0 13 17" aria-hidden="true" focusable="false">
-			<path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z"/>
-		</svg>Back to top</a>
-</div>
 
-  
+
 </div>
 <!-- end grid column (one-quarter and three-quarters)  -->
   
@@ -303,13 +296,7 @@
 	
 	<!-- TemplateBeginMultipleIf -->
 <!-- TemplateBeginIfClause cond="homepage == true" -->
-	<div class="hse-section hse-section--homepage-header">
-<div class="hse-width-container">
-    <h1 style="color: white; margin-bottom: 30px;">Welcome to HSE.GOV.UK</h1>
-  <p style="font-size: 24px; color: white; margin-bottom: 5px;">Britain’s national regulator for workplace health and safety</p>
-  <p style="font-size: 24px; color: white; font-weight: 700;">Protecting people and places</p>
-</div>
-</div>
+
 <!-- TemplateEndIfClause -->
 <!-- TemplateEndMultipleIf -->
   
@@ -398,12 +385,20 @@
   
 <!-- TemplateBeginMultipleIf -->
 <!-- TemplateBeginIfClause cond="layout == 'sideNavigation'" -->
-    
+
   </div> <!-- end grid column (three-quarters) -->
   </div> <!-- end grid row -->
+
+<div class="ds-back-to-top">
+	<a href="#contentContainer" class="ds-back-to-top__link hse-link--no-visited-state">
+		<svg class="ds-back-to-top__icon" xmlns="http://www.w3.org/2000/svg" width="13" height="17" viewBox="0 0 13 17" aria-hidden="true" focusable="false">
+			<path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z"/>
+		</svg>Back to top</a>
+</div>
+
   </div> <!-- page container -->
   </main> <!-- end <main> -->
-  
+
 <!-- TemplateEndIfClause -->
 <!-- TemplateEndMultipleIf -->
 
