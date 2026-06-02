@@ -9,6 +9,23 @@ export function serviceNavigation() {
   );
   if (containers.length === 0) return;
 
+  const currentPath = window.location.pathname;
+  containers.forEach(($root) => {
+    $root.querySelectorAll('.hse-service-navigation__link').forEach((link) => {
+      const linkSegment = (link.getAttribute('href') || '').split('/').filter(Boolean)[0];
+      if (!linkSegment || currentPath.indexOf('/' + linkSegment + '/') === -1) return;
+
+      const item = link.closest('.hse-service-navigation__item');
+      if (item) item.classList.add('hse-service-navigation__item--active');
+      link.setAttribute('aria-current', 'page');
+
+      if (!link.querySelector('.hse-service-navigation__active-fallback')) {
+        link.innerHTML = '<strong class="hse-service-navigation__active-fallback">'
+          + link.innerHTML.trim() + '</strong>';
+      }
+    });
+  });
+
   containers.forEach(($root) => {
     const $menuButton = $root.querySelector(
       ".hse-js-service-navigation-toggle",
