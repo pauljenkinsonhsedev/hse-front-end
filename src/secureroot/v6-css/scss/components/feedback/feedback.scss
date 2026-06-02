@@ -6,6 +6,7 @@
 @use "../../base/core/settings/typography" as *;
 @use "../../base/core/tools/typography" as *;
 @use "../../base/core/settings/spacing" as *;
+@use "sass:color";
 
 
 .hse-feedback {
@@ -62,7 +63,11 @@ background: white;
 }
 
 .hse-feedback__prompt-link {
-box-shadow: 0 3px 0 #0b0c0c;
+  box-shadow: 0 3px 0 #0b0c0c;
+
+  &:hover {
+    background-color: color.mix(black, $color_hse-grey-4, 10%);
+  }
 }
 
 .hse-feedback__prompt-link.btn {
