@@ -13,7 +13,7 @@ export function cookieMessageHTML() {
                         <button class="hse-button hse-button--small" id="acceptAllCookies" href="#">Accept analytics cookies</button>
                         <button class="hse-button hse-button--small" id="rejectAllCookies" href="#">Reject analytics cookie</button>
 
-                        <p class="cookies-message__link"><a href="/help/cookies.htm">View cookies</a></p>
+                        <a class="cookies-message__link" href="/help/cookies.htm">View cookies</a>
                     </div>
                 </div>
             `;
