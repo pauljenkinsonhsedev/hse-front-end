@@ -231,6 +231,13 @@ $button-shadow-size: 4px;
     outline: $hse-focus-width solid transparent;
   }
 
+  &:focus:not(:focus-visible) {
+    background: $hse-transparent-button-color;
+    box-shadow: 0 $button-shadow-size 0 $hse-transparent-button-shadow-color;
+    color: $hse-reverse-button-text-color;
+    outline: none;
+  }
+
   &:active {
     background: $hse-transparent-button-active-color;
     box-shadow: none;
