@@ -32,10 +32,15 @@
   padding-bottom: 4px; // accommodate button box-shadow so visual bottom spacing matches top
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
+  row-gap: hse-spacing(3);
 
-  .hse-button,
+  .hse-button {
+    margin-bottom: 0;
+  }
+
   .cookies-message__link {
+    margin-top: hse-spacing(2);
     margin-bottom: 0;
   }
 
