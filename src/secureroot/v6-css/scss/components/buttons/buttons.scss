@@ -243,6 +243,17 @@ $button-shadow-size: 4px;
   }
 }
 
+// =========================================================
+// Small buttons
+// =========================================================
+
+.hse-button--small {
+  min-height: 32px + $button-shadow-size;
+  padding: 6px 12px;
+  line-height: 19px;
+  @include hse-responsive-margin(4, "bottom", $adjustment: $button-shadow-size);
+}
+
 .global-menu-button,
 .search-button {
   margin-top: 0;
