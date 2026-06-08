@@ -248,8 +248,8 @@ $button-shadow-size: 4px;
 // =========================================================
 
 .hse-button--small {
-  min-height: 32px + $button-shadow-size;
-  padding: 6px 12px;
+  min-height: 40px;
+  padding: hse-spacing(2) 12px;
   line-height: 19px;
   @include hse-responsive-margin(4, "bottom", $adjustment: $button-shadow-size);
 }
