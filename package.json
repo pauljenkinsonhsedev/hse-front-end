@@ -5,6 +5,7 @@
   "scripts": {
     "powerwash": "rimraf node_modules ./secureroot/hseonline/website/livelive/secureroot/assets/v6-css ./secureroot/hseonline/website/livelive/secureroot/assets/v6-js ./designsystem/assets/v6-css && npm install",
     "build:css": "node scripts/build-css.mjs",
+    "build:footer-css": "node scripts/build-footer-css.mjs",
     "build:ds-css": "node scripts/build-ds.mjs",
     "build:ds": "npm-run-all build:ds-css copy:ds-html copy:ds-images",
     "build:js": "rollup -c",
@@ -15,7 +16,7 @@
     "copy:ds-html": "node scripts/copy-ds-html.mjs",
     "copy:ds-images": "node scripts/copy-ds-images.mjs",
     "copy:images": "node scripts/copy-images.mjs",
-    "build:modern": "npm-run-all build:images copy:assets copy:html copy:images build:css build:ds build:js",
+    "build:modern": "npm-run-all build:images copy:assets copy:html copy:images build:css build:footer-css build:ds build:js",
     "build:ds-modern": "npm-run-all build:ds build:js",
     "serve": "browser-sync start --server \"./secureroot/hseonline/website/livelive/secureroot\" --index \"index.htm\" --port 8080 --files \"./secureroot/hseonline/website/livelive/secureroot/**/*\" --ignore \"node_modules, .git, .vscode\" --no-notify --no-ui --startPath \"index.htm\" --open local",
     "serve:ds": "browser-sync start --config scripts/bs-config-ds.cjs",
