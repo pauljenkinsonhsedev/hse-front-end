@@ -1,6 +1,8 @@
 @use "../../base/core/tools/sass-mq" as *;
 @use "../../base/core/settings/colours" as *;
 @use "../../base/core/settings/typography" as *;
+@use "../../base/core/tools/spacing" as *;
+@use "../../base/core/settings/spacing" as *;
 
 #cookie-message {
   @include mq($media-type: print) {
@@ -27,6 +29,27 @@
 
 .cookies-message__actions {
   margin-top: $dp * 3;
+  padding-bottom: 4px; // accommodate button box-shadow so visual bottom spacing matches top
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  row-gap: hse-spacing(3);
+
+  .hse-button {
+    margin-bottom: 0;
+  }
+
+  .cookies-message__link {
+    margin-top: hse-spacing(2);
+    margin-bottom: 0;
+  }
+
+  @include mq($from: tablet) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    column-gap: 15px;
+  }
 }
 
 .cookies-message-accepted,
@@ -46,7 +69,7 @@
 }
 
 .cookies-message__link {
-  margin-bottom: 0;
+  display: inline-block;
 }
 
 .v6-span-heading1 {

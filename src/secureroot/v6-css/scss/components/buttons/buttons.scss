@@ -33,7 +33,7 @@ $button-shadow-size: 4px;
   cursor: pointer;
   display: inline-block;
   margin-top: 0;
-  padding: 8px hse-spacing(3); // s2
+  padding: hse-spacing(2) hse-spacing(3); // s2
   position: relative;
   text-align: center;
   vertical-align: top;
@@ -44,9 +44,6 @@ $button-shadow-size: 4px;
     "bottom",
     $adjustment: $button-shadow-size
   ); // s1
-  @include mq($until: tablet) {
-    padding: hse-spacing(2) hse-spacing(3); // s2
-  }
 
   &:link,
   &:visited,
@@ -70,13 +67,6 @@ $button-shadow-size: 4px;
     box-shadow: 0 $button-shadow-size 0 $hse-focus-text-color;
     color: $hse-focus-text-color;
     outline: $hse-focus-width solid transparent;
-    &:visited {
-      color: $hse-focus-text-color;
-
-      &:active {
-        color: $color_hse-white;
-      }
-    }
   }
 
   &:active {
@@ -219,6 +209,13 @@ $button-shadow-size: 4px;
   box-shadow: 0 $button-shadow-size 0 $hse-transparent-button-shadow-color;
   border: 1px solid $hse-transparent-button-border-color;
   color: $hse-reverse-button-text-color;
+
+  &::before {
+    top: -1px;
+    bottom: -(1px + $button-shadow-size);
+    left: -1px;
+    right: -1px;
+  }
   &:hover {
     background-color: $color_hse-grey-4;
     color: $hse-reverse-button-text-color;
@@ -229,6 +226,13 @@ $button-shadow-size: 4px;
     box-shadow: 0 $button-shadow-size 0 $hse-focus-text-color;
     color: $hse-focus-text-color;
     outline: $hse-focus-width solid transparent;
+  }
+
+  &:focus:not(:focus-visible) {
+    background: $hse-transparent-button-color;
+    box-shadow: 0 $button-shadow-size 0 $hse-transparent-button-shadow-color;
+    color: $hse-reverse-button-text-color;
+    outline: none;
   }
 
   &:active {
@@ -243,13 +247,23 @@ $button-shadow-size: 4px;
   }
 }
 
+// =========================================================
+// Small buttons
+// =========================================================
+
+.hse-button--small {
+  height: 40px;
+  padding: hse-spacing(2) 12px;
+  line-height: 19px;
+  @include hse-responsive-margin(4, "bottom", $adjustment: $button-shadow-size);
+}
+
 .global-menu-button,
 .search-button {
   margin-top: 0;
   margin-bottom: 0;
   &:focus-visible {
     background: $hse-focus-color !important;
-    // box-shadow: 0 $button-shadow-size 0 $hse-focus-text-color;
     color: $hse-focus-text-color;
     outline: $hse-focus-width solid transparent;
     &:hover {
@@ -324,7 +338,7 @@ $button-shadow-size: 4px;
 .hse-button[disabled="disabled"],
 .hse-button[disabled] {
   background-color: $hse-button-color;
-  opacity: (0.5);
+  opacity: 0.5;
   pointer-events: none;
 
   &:hover {
@@ -346,7 +360,7 @@ $button-shadow-size: 4px;
 .hse-button--secondary[disabled="disabled"],
 .hse-button--secondary[disabled] {
   background-color: $hse-secondary-button-color;
-  opacity: (0.5);
+  opacity: 0.5;
 
   &:hover {
     background-color: $hse-secondary-button-color;
@@ -366,7 +380,7 @@ $button-shadow-size: 4px;
 .hse-button--reverse[disabled="disabled"],
 .hse-button--reverse[disabled] {
   background-color: $hse-reverse-button-color;
-  opacity: (0.5);
+  opacity: 0.5;
 
   &:hover {
     background-color: $hse-reverse-button-color;

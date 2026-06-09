@@ -2,15 +2,14 @@ import { glob } from 'glob';
 import fs from 'fs/promises';
 import path from 'path';
 
-const src = 'src/designsystem/html';
-const dest = 'designsystem';
+const src = 'src/secureroot/v6-images';
+const dest = 'designsystem/assets/v6-images';
 
-async function copyHtml() {
-  const pattern = `${src}/**/*.htm`;
-  const files = await glob(pattern, { windowsPathsNoEscape: true });
+async function copyImages() {
+  const files = await glob(`${src}/**/*.{jpg,jpeg,png,svg}`, { windowsPathsNoEscape: true });
 
   if (files.length === 0) {
-    console.log('No design system HTML files found to copy.');
+    console.log('No image files found to copy.');
     return;
   }
 
@@ -28,18 +27,13 @@ async function copyHtml() {
 
     await fs.mkdir(path.dirname(outputPath), { recursive: true });
     await fs.copyFile(normalized, outputPath);
-    console.log(`  Copied: ${outputPath}`);
     copied++;
   }
 
-  if (copied === 0) {
-    console.log('Design system HTML copy complete (no changes).');
-  } else {
-    console.log(`Design system HTML copy complete (${copied} file${copied === 1 ? '' : 's'}).`);
-  }
+  console.log(`Design system image copy complete (${copied} file${copied === 1 ? '' : 's'}).`);
 }
 
-copyHtml().catch(err => {
-  console.error('Design system HTML copy failed:', err);
+copyImages().catch(err => {
+  console.error('Design system image copy failed:', err);
   process.exit(1);
 });
