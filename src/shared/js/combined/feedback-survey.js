@@ -222,10 +222,12 @@ export function feedbackSurvey() {
           name="mailsubject"
           value="${notFoundPrefix}Report a problem with this page: ${newURL}"
         >
-        <button
-          type="submit"
-          class="hse-button hse-button--small report-problem-submit"
-        >Submit</button>
+        <div class="report-a-problem-form__actions">
+          <button
+            type="submit"
+            class="hse-button hse-button--small report-problem-submit"
+          >Submit</button>
+        </div>
       </fieldset>
     `;
 
@@ -246,7 +248,7 @@ export function feedbackSurvey() {
     reportProblemForm.scrollIntoView({ behavior: "auto", block: "start" });
 
     const reportProblemFormEnd = document.querySelector(
-      ".report-a-problem-form__hidden-fields",
+      ".report-a-problem-form__actions",
     );
 
     if (reportProblemFormEnd) {

@@ -101,6 +101,11 @@ align-items: center;
 &.report-a-problem-form__questions, &.report-a-problem-form__hidden-fields {margin: 0;}
 }
 
+.report-a-problem-form__actions {
+  display: flex;
+  column-gap: 10px;
+}
+
 .hse-feedback__report-a-problem button.btn-secondary {
 margin: 0;
 }
