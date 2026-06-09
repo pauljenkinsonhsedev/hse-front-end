@@ -35,10 +35,6 @@
   align-items: center;
   justify-content: center;
   background: $color_hse-grey-4;
-  // remove margins from buttons
-  button {
-  margin: 0;
-  }
   @include mq($from: tablet) {
   flex-direction: row;
   padding: 0;
@@ -76,6 +72,9 @@ border: 1px solid $color_hse-grey-2;
 }
 
 .hse-feedback__prompt-questions-answers, .hse-feedback__report-a-problem {
+  button {
+    margin: 0;
+  }
 display: flex;
 padding: 10px;
 align-items: center;
