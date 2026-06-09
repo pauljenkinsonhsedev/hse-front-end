@@ -68,7 +68,12 @@ background: white;
 
 .hse-feedback__prompt-link.btn {
 background: none;
-border: 1px solid $color_hse-grey-2; 
+border: 1px solid $color_hse-grey-2;
+}
+
+.hse-feedback__prompt-answers {
+  display: flex;
+  column-gap: 10px;
 }
 
 .hse-feedback__prompt-questions-answers, .hse-feedback__report-a-problem {
