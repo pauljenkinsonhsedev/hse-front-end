@@ -42,10 +42,10 @@ export function feedbackSurvey() {
 
   // Containers
   const yesNoContainer = document.querySelector(
-    ".hse-feedback__prompt-questions-answers"
+    ".hse-feedback__prompt-questions-answers",
   );
   const reportProblemButtonContainer = document.querySelector(
-    ".hse-feedback__report-a-problem"
+    ".hse-feedback__report-a-problem",
   );
 
   // Buttons / interactive controls
@@ -132,7 +132,11 @@ export function feedbackSurvey() {
     // Close button for the dynamic form
     const closeButton = document.createElement("button");
     closeButton.id = "close-report-a-problem";
-    closeButton.classList.add("hse-button", "hse-button--secondary");
+    closeButton.classList.add(
+      "hse-button",
+      "hse-button--small",
+      "hse-button--secondary",
+    );
     closeButton.textContent = "Close";
 
     closeButton.addEventListener(
@@ -142,7 +146,7 @@ export function feedbackSurvey() {
         event.preventDefault();
         closeProblemForm(event);
       },
-      false
+      false,
     );
 
     // Detect whether the current page looks like a 404 page.
@@ -218,11 +222,10 @@ export function feedbackSurvey() {
           name="mailsubject"
           value="${notFoundPrefix}Report a problem with this page: ${newURL}"
         >
-        <input
+        <button
           type="submit"
-          value="Submit"
-          class="hse-button report-problem-submit"
-        />
+          class="hse-button hse-button--small report-problem-submit"
+        >Submit</button>
       </fieldset>
     `;
 
@@ -243,7 +246,7 @@ export function feedbackSurvey() {
     reportProblemForm.scrollIntoView({ behavior: "auto", block: "start" });
 
     const reportProblemFormEnd = document.querySelector(
-      ".report-a-problem-form__hidden-fields"
+      ".report-a-problem-form__hidden-fields",
     );
 
     if (reportProblemFormEnd) {
