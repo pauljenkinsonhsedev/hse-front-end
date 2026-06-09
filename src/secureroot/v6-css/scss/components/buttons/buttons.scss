@@ -209,6 +209,13 @@ $button-shadow-size: 4px;
   box-shadow: 0 $button-shadow-size 0 $hse-transparent-button-shadow-color;
   border: 1px solid $hse-transparent-button-border-color;
   color: $hse-reverse-button-text-color;
+
+  &::before {
+    top: -1px;
+    bottom: -(1px + $button-shadow-size);
+    left: -1px;
+    right: -1px;
+  }
   &:hover {
     background-color: $color_hse-grey-4;
     color: $hse-reverse-button-text-color;
