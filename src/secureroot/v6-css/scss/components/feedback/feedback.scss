@@ -35,10 +35,6 @@
   align-items: center;
   justify-content: center;
   background: $color_hse-grey-4;
-  // remove margins from buttons
-  button {
-  margin: 0;
-  }
   @include mq($from: tablet) {
   flex-direction: row;
   padding: 0;
@@ -72,10 +68,18 @@ background: white;
 
 .hse-feedback__prompt-link.btn {
 background: none;
-border: 1px solid $color_hse-grey-2; 
+border: 1px solid $color_hse-grey-2;
+}
+
+.hse-feedback__prompt-answers {
+  display: flex;
+  column-gap: 10px;
 }
 
 .hse-feedback__prompt-questions-answers, .hse-feedback__report-a-problem {
+  button {
+    margin: 0;
+  }
 display: flex;
 padding: 10px;
 align-items: center;
@@ -95,6 +99,11 @@ align-items: center;
 
 .fieldset {
 &.report-a-problem-form__questions, &.report-a-problem-form__hidden-fields {margin: 0;}
+}
+
+.report-a-problem-form__actions {
+  display: flex;
+  column-gap: 10px;
 }
 
 .hse-feedback__report-a-problem button.btn-secondary {
