@@ -135,7 +135,7 @@ export function feedbackSurvey() {
     closeButton.classList.add(
       "hse-button",
       "hse-button--small",
-      "hse-button--secondary",
+      "hse-button--transparent",
     );
     closeButton.textContent = "Close";
 
