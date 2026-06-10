@@ -108,6 +108,8 @@
 // ─── Contents Layout ──────────────────────────────────────────────────────────
 
 .hse-page-contents .hse-subscribe {
+  @include hse-responsive-margin(4, "bottom");
+
   &__text {
     padding: hse-spacing(4);
     text-align: center;
