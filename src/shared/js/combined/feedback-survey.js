@@ -175,22 +175,22 @@ export function feedbackSurvey() {
         <p>Don’t include personal or financial information like your National Insurance number or credit card details.</p>
 
         <div class="hse-form-group">
-          <label class="hse-label" for="what-were-you-doing?">What were you doing?</label>
+          <label class="hse-label" for="what-were-you-doing">What were you doing?</label>
           <input
             required
             class="hse-input"
             name="what-were-you-doing?"
             type="text"
-            id="what-were-you-doing?"
+            id="what-were-you-doing"
           />
         </div>
 
         <div class="hse-form-group">
-          <label class="hse-label" for="what-went-wrong?">What went wrong?</label>
+          <label class="hse-label" for="what-went-wrong">What went wrong?</label>
           <input
             required
             class="hse-input"
-            id="what-went-wrong?"
+            id="what-went-wrong"
             name="what-went-wrong?"
             type="text"
           />
