@@ -132,6 +132,14 @@
 
 // ─── Sidebar Layout ───────────────────────────────────────────────────────────
 
+.hse-sidebar-top {
+  .hse-subscribe {
+    @include mq($until: tablet) {
+      margin-top: hse-spacing(4);
+    }
+  }
+}
+
 .hse-sidebar-top,
 .hse-sidebar {
   .hse-subscribe {
@@ -146,8 +154,13 @@
       text-align: center;
     }
 
-    .hse-subscribe__input {
+    &__input {
       min-width: fit-content;
+    }
+
+    &__button {
+      margin-left: 0;
+      margin-top: hse-spacing(2);
     }
   }
 }
