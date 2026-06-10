@@ -49,34 +49,32 @@
     width: 100%;
     margin-bottom: 0;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
 
     @include mq($until: tablet) {
       flex-direction: column;
     }
   }
 
-  .hse-input--subscribe {
+  &__input {
     width: 100%;
     min-width: 320px;
-    height: 46px;
-    margin-right: 10px;
+    margin-bottom: 0;
+    text-align: center;
 
     @include mq($until: desktop) {
       min-width: 220px;
     }
-
-    @include mq($until: tablet) {
-      margin-right: 0;
-    }
   }
 
-  .hse-button {
-    margin: 10px 0;
-    padding: 5px;
+  &__button {
+    margin-left: 10px;
+    margin-bottom: 0;
     max-width: fit-content;
-    @include mq($from: tablet) {
-      box-shadow: none;
+
+    @include mq($until: tablet) {
+      margin-left: 0;
+      margin-top: hse-spacing(2);
     }
   }
 }
@@ -98,9 +96,10 @@
     }
   }
 
-  .hse-button {
+  &__button {
     @include mq($from: tablet) {
-      margin: 0;
+      margin-top: 0;
+      margin-bottom: 0;
     }
   }
 }
@@ -134,9 +133,8 @@
       text-align: center;
     }
 
-    .hse-input--subscribe {
+    .hse-subscribe__input {
       min-width: fit-content;
-      margin-right: 0;
     }
   }
 }
