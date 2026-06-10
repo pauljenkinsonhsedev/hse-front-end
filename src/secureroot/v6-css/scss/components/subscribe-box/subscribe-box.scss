@@ -3,55 +3,30 @@
 @use "../../base/core/tools/spacing" as *;
 @use "../../base/core/tools/sass-mq" as *;
 
+// ─── Base Component ───────────────────────────────────────────────────────────
+
 .hse-subscribe {
   display: flex;
   align-items: center;
   flex-direction: column;
+  padding: 10px;
   border: 2px solid $hse-border-color;
 
   .hse-section--homepage & {
-    border: 2px solid $card-border-color;
+    border-color: $card-border-color;
   }
 
-  &__form-group {
-    width: 100%;
-    margin-bottom: 0;
-    display: flex;
-
-    @include mq($until: tablet) {
-      flex-direction: column;
-      align-items: center;
-    }
-  }
-
-  &__form {
-    flex: auto;
-    width: 100%;
-  }
-
-  button {
-    margin-bottom: 0;
-    margin-top: hse-spacing(4);
-    padding: 5px;
-    max-width: fit-content;
-  }
-
-  .hse-button {
-    box-shadow: none;
-  }
-
-  &:before {
+  // Email icon
+  &::before {
     content: "";
-    background: url(../../assets/v6-images/icons/mail.svg) transparent no-repeat
-      0;
-    background-repeat: no-repeat;
     display: inline-block;
     width: 24px;
     height: 24px;
     padding-right: hse-spacing(4);
+    background: url(../../assets/v6-images/icons/mail.svg) no-repeat 0 / contain;
   }
 
-  .hse-subscribe__text {
+  &__text {
     width: 100%;
     margin-bottom: 0;
     @include hse-responsive-padding(4);
@@ -65,98 +40,132 @@
     }
   }
 
-  .hse-input--subscribe {
+  &__form {
+    flex: auto;
+    width: 100%;
+  }
+
+  &__form-group {
+    width: 100%;
+    margin-bottom: 0;
+    display: flex;
+    align-items: flex-start;
+
+    @include mq($until: tablet) {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__input {
     width: 100%;
     min-width: 320px;
-    height: 46px;
+    margin-bottom: 0;
+    text-align: center;
 
     @include mq($until: desktop) {
       min-width: 220px;
     }
-
-    @include mq($from: tablet) {
-      margin-right: 10px;
-    }
   }
 
-  .hse-subscribe__submit {
-    display: flex;
-    flex-direction: column;
-  }
+  &__button {
+    margin-left: 10px;
+    margin-bottom: 0;
+    max-width: fit-content;
 
-  @include hse-responsive-padding(4);
-}
-
-// Full width layout
-
-.hse-page-contents--fullWidth {
-  .hse-subscribe {
-    flex-direction: column;
-
-    @include mq($from: tablet) {
-      flex-direction: row;
-    }
-
-    &__form {
-      flex: auto;
-
-      @include mq($from: desktop) {
-        margin-left: auto;
-      }
-    }
-
-    .hse-button {
-      @include mq($from: tablet) {
-        margin: 0;
-      }
+    @include mq($until: tablet) {
+      margin-left: 0;
+      margin-top: hse-spacing(2);
     }
   }
 }
 
-// contents
+// ─── Full Width Layout ────────────────────────────────────────────────────────
+
+.hse-page-contents--fullWidth .hse-subscribe {
+  flex-direction: column;
+
+  @include mq($from: tablet) {
+    flex-direction: row;
+  }
+
+  &__form {
+    flex: auto;
+
+    @include mq($from: desktop) {
+      margin-left: auto;
+    }
+  }
+
+  &__button {
+    @include mq($from: tablet) {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+}
+
+// ─── Contents Layout ──────────────────────────────────────────────────────────
 
 .hse-page-contents .hse-subscribe {
-  .hse-subscribe__text {
+  @include hse-responsive-margin(4, "bottom");
+
+  &__text {
     padding: hse-spacing(4);
-  }
-
-  &__form-group {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    &__hse-input--subscribe {
-      margin: 0;
-    }
-  }
-}
-
-// sidebar
-
-.hse-sidebar-top .hse-subscribe,
-.hse-sidebar .hse-subscribe {
-  @include hse-responsive-padding(3);
-
-  &__form-group {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .hse-input--subscribe {
-    min-width: fit-content;
-    margin-right: 0;
-  }
-
-  .hse-subscribe__text {
     text-align: center;
   }
 
-  .hse-button {
-    @include hse-responsive-margin(2, "top");
+  &__form-group {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__input {
+    min-width: fit-content;
+  }
+
+  &__button {
+    margin-left: 0;
+    margin-top: hse-spacing(2);
   }
 }
 
-// legacy subscribe box
+// ─── Sidebar Layout ───────────────────────────────────────────────────────────
+
+.hse-sidebar-top {
+  .hse-subscribe {
+    @include mq($until: tablet) {
+      margin-top: hse-spacing(4);
+    }
+  }
+}
+
+.hse-sidebar-top,
+.hse-sidebar {
+  .hse-subscribe {
+    @include hse-responsive-padding(3);
+
+    &__form-group {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &__text {
+      text-align: center;
+    }
+
+    &__input {
+      min-width: fit-content;
+    }
+
+    &__button {
+      margin-left: 0;
+      margin-top: hse-spacing(2);
+    }
+  }
+}
+
+// ─── Legacy ───────────────────────────────────────────────────────────────────
 
 .subscribe .fieldset__heading {
   color: $hse-text-color;
