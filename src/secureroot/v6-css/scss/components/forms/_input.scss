@@ -28,9 +28,6 @@
   padding: hse-spacing(1);
   width: 100%;
   @include hse-font(19);
-  &--subscribe {
-    text-align: center !important;
-  }
   &:focus {
     @include hse-focused-input;
   }
