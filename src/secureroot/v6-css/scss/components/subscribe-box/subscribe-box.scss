@@ -97,6 +97,12 @@
     }
   }
 
+  &__form-group {
+    @include mq($from: tablet) {
+      align-items: center;
+    }
+  }
+
   &__button {
     @include mq($from: tablet) {
       margin-top: 0;
