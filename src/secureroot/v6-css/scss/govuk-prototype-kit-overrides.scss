@@ -30,6 +30,10 @@ a.hse-footer-white,
   &:active {
     color: $color_hse-white;
   }
+
+  &:focus {
+    color: $hse-focus-text-color;
+  }
 }
 
 // Prototype-only footer bar for manage/clear prototype links
@@ -62,6 +66,10 @@ a.hse-footer__prototype-controls-link {
 
   &:active {
     color: $color_hse-white;
+  }
+
+  &:focus {
+    color: $hse-focus-text-color;
   }
 }
 
