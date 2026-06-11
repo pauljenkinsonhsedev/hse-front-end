@@ -1,67 +1,84 @@
-
 @use "../../base/core/tools/sass-mq" as *;
 @use "../../base/core/settings/colours" as *;
 @use "../../base/core/settings/typography" as *;
+@use "../../base/core/tools/spacing" as *;
+@use "../../base/core/settings/spacing" as *;
 
 #cookie-message {
   @include mq($media-type: print) {
-  display: none;
+    display: none;
   }
-  }
-  
+}
+
 .hse-cookie-banner {
   padding: 20px 0;
   background: $color_hse-grey-4;
 }
 
 #cookieContainer p a {
-    // color: $hse-focus-color;
-    text-decoration: underline;
-  }
-  
-  #cookieContainer p a:hover {
-    text-decoration: none;
-  }
+  text-decoration: underline;
+}
 
-  
-  #cookieContainer button:hover {
-    cursor: pointer;
-  }
-  
-  .cookies-message__actions {
-    margin-top: $dp * 3;
-  }
-  
-  .cookies-message-accepted,
-  .cookies-message-rejected {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  
-    p,
-    .btn {
-      margin: 0;
-    }
-  }
-  
-  .cookies-message__link {
+#cookieContainer p a:hover {
+  text-decoration: none;
+}
+
+#cookieContainer button:hover {
+  cursor: pointer;
+}
+
+.cookies-message__actions {
+  margin-top: $dp * 3;
+  padding-bottom: 4px; // accommodate button box-shadow so visual bottom spacing matches top
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  row-gap: hse-spacing(3);
+
+  .hse-button {
     margin-bottom: 0;
   }
 
-  .v6-span-heading1 {
-    color: $hse-text-color;
-    font-size: 2em;
-    padding: 0;
-    margin-bottom: 10px;
+  .cookies-message__link {
+    margin-top: hse-spacing(2);
+    margin-bottom: 0;
   }
 
-  #cookieNotify p {
-    color: $hse-text-color;
-    // font-size: 1.1em;
+  @include mq($from: tablet) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    column-gap: 15px;
+  }
+}
+
+.cookies-message-accepted,
+.cookies-message-rejected {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  p,
+  .btn {
+    margin: 0;
   }
 
-  .cookies-message-accepted, .cookies-message-rejected {
   .hse-button {
-  margin: 0;
+    margin: 0;
   }
-  }
+}
+
+.cookies-message__link {
+  display: inline-block;
+}
+
+.v6-span-heading1 {
+  color: $hse-text-color;
+  font-size: 2em;
+  padding: 0;
+  margin-bottom: 10px;
+}
+
+#cookieNotify p {
+  color: $hse-text-color;
+}

@@ -1,4 +1,5 @@
 import ChartsDefault from "./combined/charts/charts.js";
+import { codeHighlighter } from "./combined/code-highlighter.js";
 import { mainMenu } from "./combined/main-menu.js";
 import { fileTypeFunction } from "./combined/file-type.js";
 import { tableSortable } from "./combined/tables/table-sortable.js";
@@ -12,14 +13,21 @@ import { informationBanner } from "./combined/information-banner.js";
 import { accordion } from "./combined/accordion.js";
 import { backToTop } from "./combined/back-to-top.js";
 import { dsSiteNavigation } from "./combined/ds-site-navigation.js";
+import { sideNavDesign } from "./combined/side-nav-design.js";
+import { dsBackToTop } from "./combined/ds-back-to-top.js";
+import { serviceNavigation } from "./combined/service-navigation.js";
 
 window.addEventListener("DOMContentLoaded", () => {
   document.body.classList.add("hasScript");
 
   // Initialize Core Navigation
   try {
-    if (document.getElementById("globalSearch")) { googleSearch(); }
-    if (document.querySelector(".js-menu")) { mainMenu(); }
+    if (document.getElementById("globalSearch")) {
+      googleSearch();
+    }
+    if (document.querySelector(".js-menu")) {
+      mainMenu();
+    }
     dsSiteNavigation();
   } catch (e) {
     console.error("Navigation failed to load:", e);
@@ -40,9 +48,22 @@ window.addEventListener("DOMContentLoaded", () => {
     new ChartsDefault();
   }
 
+  codeHighlighter();
   feedbackSurvey();
 
-  if (document.querySelector(".hse-back-to-top")) { 
-    backToTop(); 
+  if (document.querySelector(".hse-back-to-top")) {
+    backToTop();
+  }
+
+  if (document.querySelector('[data-module="hse-service-navigation"]')) {
+    serviceNavigation();
+  }
+
+  if (document.querySelector(".hse-design-side-navigation")) {
+    sideNavDesign();
+  }
+
+  if (document.querySelector(".ds-back-to-top")) {
+    dsBackToTop();
   }
 });

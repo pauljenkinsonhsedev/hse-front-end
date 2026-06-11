@@ -24,8 +24,8 @@
       - Scroll the user to that message
 */
 
+import Bowser from "bowser";
 import { scrollPos } from "./utils/feedback-position";
-import { bowser } from "./bowser.js";
 
 export function feedbackSurvey() {
   const container = document.querySelector(".hse-feedback");
@@ -42,10 +42,10 @@ export function feedbackSurvey() {
 
   // Containers
   const yesNoContainer = document.querySelector(
-    ".hse-feedback__prompt-questions-answers"
+    ".hse-feedback__prompt-questions-answers",
   );
   const reportProblemButtonContainer = document.querySelector(
-    ".hse-feedback__report-a-problem"
+    ".hse-feedback__report-a-problem",
   );
 
   // Buttons / interactive controls
@@ -107,9 +107,6 @@ export function feedbackSurvey() {
    * Opens the "report a problem" form and populates hidden metadata fields.
    */
   function openReportProblemForm() {
-    bowser();
-
-    const Bowser = require("bowser");
     const browserUA = Bowser.getParser(window.navigator.userAgent);
 
     // Browser / OS / platform details for the hidden UA field
@@ -135,7 +132,11 @@ export function feedbackSurvey() {
     // Close button for the dynamic form
     const closeButton = document.createElement("button");
     closeButton.id = "close-report-a-problem";
-    closeButton.classList.add("hse-button", "hse-button--secondary");
+    closeButton.classList.add(
+      "hse-button",
+      "hse-button--small",
+      "hse-button--transparent",
+    );
     closeButton.textContent = "Close";
 
     closeButton.addEventListener(
@@ -145,7 +146,7 @@ export function feedbackSurvey() {
         event.preventDefault();
         closeProblemForm(event);
       },
-      false
+      false,
     );
 
     // Detect whether the current page looks like a 404 page.
@@ -174,22 +175,22 @@ export function feedbackSurvey() {
         <p>Don’t include personal or financial information like your National Insurance number or credit card details.</p>
 
         <div class="hse-form-group">
-          <label class="hse-label" for="what-were-you-doing?">What were you doing?</label>
+          <label class="hse-label" for="what-were-you-doing">What were you doing?</label>
           <input
             required
             class="hse-input"
             name="what-were-you-doing?"
             type="text"
-            id="what-were-you-doing?"
+            id="what-were-you-doing"
           />
         </div>
 
         <div class="hse-form-group">
-          <label class="hse-label" for="what-went-wrong?">What went wrong?</label>
+          <label class="hse-label" for="what-went-wrong">What went wrong?</label>
           <input
             required
             class="hse-input"
-            id="what-went-wrong?"
+            id="what-went-wrong"
             name="what-went-wrong?"
             type="text"
           />
@@ -221,11 +222,12 @@ export function feedbackSurvey() {
           name="mailsubject"
           value="${notFoundPrefix}Report a problem with this page: ${newURL}"
         >
-        <input
-          type="submit"
-          value="Submit"
-          class="hse-button report-problem-submit"
-        />
+        <div class="report-a-problem-form__actions">
+          <button
+            type="submit"
+            class="hse-button hse-button--small report-problem-submit"
+          >Submit</button>
+        </div>
       </fieldset>
     `;
 
@@ -246,7 +248,7 @@ export function feedbackSurvey() {
     reportProblemForm.scrollIntoView({ behavior: "auto", block: "start" });
 
     const reportProblemFormEnd = document.querySelector(
-      ".report-a-problem-form__hidden-fields"
+      ".report-a-problem-form__actions",
     );
 
     if (reportProblemFormEnd) {

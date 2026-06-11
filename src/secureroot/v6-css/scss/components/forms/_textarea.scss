@@ -8,24 +8,22 @@
 @use "../../base/core/tools/focused" as *;
 @use "../../base/core/tools/spacing" as *;
 
+.hse-textarea {
+  appearance: none;
+  border: $hse-border-width-form-element solid $hse-form-border-color;
+  border-radius: 0;
+  box-sizing: border-box;
+  display: block;
+  min-height: 40px;
+  padding: hse-spacing(1);
+  resize: vertical;
+  width: 100%;
+  @include hse-font(19);
+  &:focus {
+    @include hse-focused-input;
+  }
+}
 
-   .hse-textarea {
-    -webkit-appearance: none;
-    appearance: none;
-    border: $hse-border-width-form-element solid $hse-form-border-color;
-    border-radius: 0;
-    box-sizing: border-box;
-    display: block;
-    min-height: 40px;
-    padding: hse-spacing(1);
-    resize: vertical;
-    width: 100%;
-    @include hse-font(19);
-    &:focus {
-      @include hse-focused-input;
-    }
-  }
-  
-  .hse-textarea--error {
-    border: $hse-border-width-form-element-error solid $hse-error-color;
-  }
+.hse-textarea--error {
+  border: $hse-border-width-form-element-error solid $hse-error-color;
+}

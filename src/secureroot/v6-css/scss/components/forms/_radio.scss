@@ -12,174 +12,174 @@
 @use "../../base/core/tools/spacing" as *;
 @use "../../base/core/settings/typography" as *;
 
-
-
 @use "sass:math";
-
 
 /**
  * 1. remove 300ms pause on mobile.
  * 2. Fix bug in IE11 caused by transform rotate (-45deg).
  */
 
- $hse-radios-size: hse-spacing(6);
- $hse-radios-label-padding-left-right: 12px;
- // When the default focus width is used on a curved edge it looks visually smaller.
- // So for the circular radios we bump the default to make it look visually consistent.
- $hse-radios-focus-width: $hse-focus-width + 1px;
- 
- .hse-radios__item {
-   clear: left;
-   display: block;
-   margin-bottom: hse-spacing(2);
-   min-height: $hse-radios-size;
-   padding: 0 0 0 $hse-radios-size;
-   position: relative;
-   @include hse-font(19);
- }
- 
- .hse-radios__item:last-child,
- .hse-radios__item:last-of-type {
-   margin-bottom: 0;
- }
- 
- .hse-radios__input {
-   cursor: pointer;
-   height: $hse-radios-size;
-   left: 0;
-   margin: 0;
-   opacity: 0;
-   position: absolute;
-   top: 0;
-   width: $hse-radios-size;
-   z-index: 1;
- }
- 
- .hse-radios__label {
-   cursor: pointer;
-   display: inline-block;
-   margin-bottom: 0;
-   padding: 8px $hse-radios-label-padding-left-right hse-spacing(1);
-   -ms-touch-action: manipulation; /* 1 */
-   touch-action: manipulation; /* 1 */
- }
- 
- .hse-radios__hint {
-   display: block;
-   padding-left: $hse-radios-label-padding-left-right;
-   padding-right: $hse-radios-label-padding-left-right;
- }
- 
- .hse-radios__input + .hse-radios__label::before {
-   background: $hse-form-element-background-color;
-   border: $hse-border-width-form-element solid $hse-form-border-color;
-   border-radius: 50%;
-   box-sizing: border-box;
-   content: "";
-   height: $hse-radios-size;
-   left: 0;
-   position: absolute;
-   top: 0;
-   width: $hse-radios-size;
- }
- 
- .hse-radios__input + .hse-radios__label::after {
-   background: $hse-form-border-color;
-   border: 10px solid $hse-text-color;
-   border-radius: 50%;
-   content: "";
-   height: 0;
-   left: 10px;
-   opacity: 0;
-   position: absolute;
-   top: 10px;
-   width: 0;
- }
- 
- /**
+$hse-radios-size: hse-spacing(6);
+$hse-radios-label-padding-left-right: 12px;
+// When the default focus width is used on a curved edge it looks visually smaller.
+// So for the circular radios we bump the default to make it look visually consistent.
+$hse-radios-focus-width: $hse-focus-width + 1px;
+
+.hse-radios__item {
+  clear: left;
+  display: block;
+  margin-bottom: hse-spacing(2);
+  min-height: $hse-radios-size;
+  padding: 0 0 0 $hse-radios-size;
+  position: relative;
+  @include hse-font(19);
+}
+
+.hse-radios__item:last-child,
+.hse-radios__item:last-of-type {
+  margin-bottom: 0;
+}
+
+.hse-radios__input {
+  cursor: pointer;
+  height: $hse-radios-size;
+  left: 0;
+  margin: 0;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  width: $hse-radios-size;
+  z-index: 1;
+}
+
+.hse-radios__label {
+  cursor: pointer;
+  display: inline-block;
+  margin-bottom: 0;
+  padding: 8px $hse-radios-label-padding-left-right hse-spacing(1);
+  touch-action: manipulation; /* 1 */
+}
+
+.hse-radios__hint {
+  display: block;
+  padding-left: $hse-radios-label-padding-left-right;
+  padding-right: $hse-radios-label-padding-left-right;
+}
+
+.hse-radios__input + .hse-radios__label::before {
+  background: $hse-form-element-background-color;
+  border: $hse-border-width-form-element solid $hse-form-border-color;
+  border-radius: 50%;
+  box-sizing: border-box;
+  content: "";
+  height: $hse-radios-size;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: $hse-radios-size;
+}
+
+.hse-radios__input + .hse-radios__label::after {
+  background: $hse-form-border-color;
+  border: 10px solid $hse-text-color;
+  border-radius: 50%;
+  content: "";
+  height: 0;
+  left: 10px;
+  opacity: 0;
+  position: absolute;
+  top: 10px;
+  width: 0;
+}
+
+/**
   * Focus state
   *
   * 1. Since box-shadows are removed when users customise their colours
   *    We set a transparent outline that is shown instead.
   *    https://accessibility.blog.gov.uk/2017/03/27/how-users-change-colours-on-websites/
   */
- 
- .hse-radios__input:focus + .hse-radios__label::before {
-   @include hse-focused-radio();
- }
- 
- /* Selected state */
- 
- .hse-radios__input:checked + .hse-radios__label::after {
-   opacity: 1;
- }
- 
- /* Disabled state */
- 
- .hse-radios__input:disabled,
- .hse-radios__input:disabled + .hse-radios__label {
-   cursor: default;
- }
- 
- .hse-radios__input:disabled + .hse-radios__label {
-   opacity: 0.5;
- }
- 
- /*
+
+.hse-radios__input:focus + .hse-radios__label::before {
+  @include hse-focused-radio();
+}
+
+/* Selected state */
+
+.hse-radios__input:checked + .hse-radios__label::after {
+  opacity: 1;
+}
+
+/* Disabled state */
+
+.hse-radios__input:disabled,
+.hse-radios__input:disabled + .hse-radios__label {
+  cursor: default;
+}
+
+.hse-radios__input:disabled + .hse-radios__label {
+  opacity: 0.5;
+}
+
+/*
   * Inline variant
   *
   * Prevent inline modifier being used with conditional reveals
   */
- 
- .hse-radios--inline {
-   @include mq($from: tablet) {
-     .hse-radios__item {
-       clear: none;
-       float: left;
-       margin-right: hse-spacing(4);
-     }
-     @include clearfix;
-   }
- 
-   &.hse-radios--conditional {
-     .hse-radios__item {
-       float: none;
-       margin-right: 0;
-     }
-   }
- }
- 
- /* Divider variant */
- 
- .hse-radios__divider {
-   $hse-divider-size: $hse-radios-size !default; 
-   color: $hse-text-color;
-   margin-bottom: hse-spacing(2);
-   text-align: center;
-   width: $hse-divider-size;
-   @include hse-font(19);
- }
- 
- /* Conditional */
- 
- $conditional-border-width-radio: $hse-border-width-mobile;
- // Calculate the amount of padding needed to keep the border centered against the radios.
- $conditional-border-padding-radio: math.div($hse-radios-size, 2) - math.div($conditional-border-width-radio, 2);
- // Move the border centered with the radios
- $conditional-margin-left-radio: $conditional-border-padding-radio;
- // Move the contents of the conditional inline with the label
- $conditional-padding-left-radio: $conditional-border-padding-radio + $hse-radios-label-padding-left-right;
- 
- .hse-radios__conditional {
-   border-left: $conditional-border-width-radio solid $hse-form-border-color;
-   margin-left: $conditional-margin-left-radio;
-   padding-left: $conditional-padding-left-radio;
-   @include hse-responsive-margin(4, "bottom");
-   & > :last-child {
-     margin-bottom: 0;
-   }
- }
- 
- .js-enabled .hse-radios__conditional--hidden {
-   display: none;
- }
+
+.hse-radios--inline {
+  @include mq($from: tablet) {
+    .hse-radios__item {
+      clear: none;
+      float: left;
+      margin-right: hse-spacing(4);
+    }
+    @include clearfix;
+  }
+
+  &.hse-radios--conditional {
+    .hse-radios__item {
+      float: none;
+      margin-right: 0;
+    }
+  }
+}
+
+/* Divider variant */
+
+.hse-radios__divider {
+  $hse-divider-size: $hse-radios-size !default;
+  color: $hse-text-color;
+  margin-bottom: hse-spacing(2);
+  text-align: center;
+  width: $hse-divider-size;
+  @include hse-font(19);
+}
+
+/* Conditional */
+
+$conditional-border-width-radio: $hse-border-width-mobile;
+// Calculate the amount of padding needed to keep the border centered against the radios.
+$conditional-border-padding-radio: math.div($hse-radios-size, 2) - math.div(
+    $conditional-border-width-radio,
+    2
+  );
+// Move the border centered with the radios
+$conditional-margin-left-radio: $conditional-border-padding-radio;
+// Move the contents of the conditional inline with the label
+$conditional-padding-left-radio: $conditional-border-padding-radio +
+  $hse-radios-label-padding-left-right;
+
+.hse-radios__conditional {
+  border-left: $conditional-border-width-radio solid $hse-form-border-color;
+  margin-left: $conditional-margin-left-radio;
+  padding-left: $conditional-padding-left-radio;
+  @include hse-responsive-margin(4, "bottom");
+  & > :last-child {
+    margin-bottom: 0;
+  }
+}
+
+.js-enabled .hse-radios__conditional--hidden {
+  display: none;
+}

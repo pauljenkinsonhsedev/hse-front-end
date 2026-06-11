@@ -7,7 +7,7 @@
 @use "../../base/core/settings/spacing" as *;
 @use "../../base/core/settings/globals" as *;
 @use "../../base/core/tools/sass-mq" as *;
-@use 'sass:color';
+@use "sass:color";
 
 /**
  * Ensure that any global link styles are overridden.
@@ -24,7 +24,6 @@ $button-shadow-size: 4px;
 
 .hse-button {
   text-decoration: none;
-  -webkit-appearance: none;
   appearance: none;
   background-color: $hse-button-color;
   border: $hse-border-width-form-element solid transparent;
@@ -34,16 +33,17 @@ $button-shadow-size: 4px;
   cursor: pointer;
   display: inline-block;
   margin-top: 0;
-  padding: 8px hse-spacing(3); // s2
+  padding: hse-spacing(2) hse-spacing(3); // s2
   position: relative;
   text-align: center;
   vertical-align: top;
   width: auto;
   @include hse-font(16, bold);
-  @include hse-responsive-margin(5, "bottom", $adjustment: $button-shadow-size); // s1
-  @include mq($until: tablet) {
-    padding: hse-spacing(2) hse-spacing(3); // s2
-  }
+  @include hse-responsive-margin(
+    5,
+    "bottom",
+    $adjustment: $button-shadow-size
+  ); // s1
 
   &:link,
   &:visited,
@@ -53,7 +53,6 @@ $button-shadow-size: 4px;
     text-decoration: none;
   }
 
-  
   &::-moz-focus-inner {
     border: 0;
     padding: 0;
@@ -68,13 +67,6 @@ $button-shadow-size: 4px;
     box-shadow: 0 $button-shadow-size 0 $hse-focus-text-color;
     color: $hse-focus-text-color;
     outline: $hse-focus-width solid transparent;
-    &:visited {
-      color: $hse-focus-text-color;
-
-      &:active {
-        color: $color_hse-white;
-      }
-    }
   }
 
   &:active {
@@ -217,9 +209,15 @@ $button-shadow-size: 4px;
   box-shadow: 0 $button-shadow-size 0 $hse-transparent-button-shadow-color;
   border: 1px solid $hse-transparent-button-border-color;
   color: $hse-reverse-button-text-color;
+
+  &::before {
+    top: -1px;
+    bottom: -(1px + $button-shadow-size);
+    left: -1px;
+    right: -1px;
+  }
   &:hover {
     background-color: $color_hse-grey-4;
-    color: $hse-reverse-button-text-color;
     color: $hse-reverse-button-text-color;
   }
 
@@ -228,6 +226,13 @@ $button-shadow-size: 4px;
     box-shadow: 0 $button-shadow-size 0 $hse-focus-text-color;
     color: $hse-focus-text-color;
     outline: $hse-focus-width solid transparent;
+  }
+
+  &:focus:not(:focus-visible) {
+    background: $hse-transparent-button-color;
+    box-shadow: 0 $button-shadow-size 0 $hse-transparent-button-shadow-color;
+    color: $hse-reverse-button-text-color;
+    outline: none;
   }
 
   &:active {
@@ -242,12 +247,23 @@ $button-shadow-size: 4px;
   }
 }
 
-.global-menu-button, .search-button {
+// =========================================================
+// Small buttons
+// =========================================================
+
+.hse-button--small {
+  height: 40px;
+  padding: hse-spacing(2) 12px;
+  line-height: 19px;
+  @include hse-responsive-margin(4, "bottom", $adjustment: $button-shadow-size);
+}
+
+.global-menu-button,
+.search-button {
   margin-top: 0;
   margin-bottom: 0;
   &:focus-visible {
     background: $hse-focus-color !important;
-    // box-shadow: 0 $button-shadow-size 0 $hse-focus-text-color;
     color: $hse-focus-text-color;
     outline: $hse-focus-width solid transparent;
     &:hover {
@@ -272,13 +288,14 @@ $button-shadow-size: 4px;
   svg {
     fill: $hse-focus-color !important;
   }
-  svg circle, svg line {
+  svg circle,
+  svg line {
     stroke: $color_hse-black !important;
   }
 }
 
 .search-button.main-search-expanded:focus-visible .gsc-search-button-v2.gsc {
-    &:after {
+  &:after {
     content: "";
     height: 3px;
     position: absolute;
@@ -286,7 +303,7 @@ $button-shadow-size: 4px;
     background: $color_hse-black;
     width: 42px;
     margin-left: -38px;
-    }
+  }
 }
 
 #menu-button.global-menu-button:focus-visible span:before {
@@ -295,22 +312,22 @@ $button-shadow-size: 4px;
 }
 
 .hse-button--start {
-&:after {
-  content: " ";
-  position: relative;
-  background-image: url(../../assets/v6-images/icons/svg/solid/chevron-right-white.svg);
-  background-repeat: no-repeat;
-  background-position: bottom;
-  display: inline-block;
-  width: 15px;
-  height: 20px;
-  margin: 0;
-  bottom: -4px;
-  margin-left: 10px;
-}
-&:focus::after {
-  background-image: url(../../assets/v6-images/icons/svg/solid/chevron-right-black.svg);
-}
+  &:after {
+    content: " ";
+    position: relative;
+    background-image: url(../../assets/v6-images/icons/svg/solid/chevron-right-white.svg);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    display: inline-block;
+    width: 15px;
+    height: 20px;
+    margin: 0;
+    bottom: -4px;
+    margin-left: 10px;
+  }
+  &:focus::after {
+    background-image: url(../../assets/v6-images/icons/svg/solid/chevron-right-black.svg);
+  }
 }
 
 /**
@@ -321,7 +338,7 @@ $button-shadow-size: 4px;
 .hse-button[disabled="disabled"],
 .hse-button[disabled] {
   background-color: $hse-button-color;
-  opacity: (0.5);
+  opacity: 0.5;
   pointer-events: none;
 
   &:hover {
@@ -343,7 +360,7 @@ $button-shadow-size: 4px;
 .hse-button--secondary[disabled="disabled"],
 .hse-button--secondary[disabled] {
   background-color: $hse-secondary-button-color;
-  opacity: (0.5);
+  opacity: 0.5;
 
   &:hover {
     background-color: $hse-secondary-button-color;
@@ -363,7 +380,7 @@ $button-shadow-size: 4px;
 .hse-button--reverse[disabled="disabled"],
 .hse-button--reverse[disabled] {
   background-color: $hse-reverse-button-color;
-  opacity: (0.5);
+  opacity: 0.5;
 
   &:hover {
     background-color: $hse-reverse-button-color;

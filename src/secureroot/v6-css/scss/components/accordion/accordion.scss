@@ -9,129 +9,130 @@
 @use "../../base/core/styles/typography.scss" as *;
 
 .hse-accordion {
-    list-style: none;
-    margin: 0;
-    padding-bottom: 9px;
+  list-style: none;
+  margin: 0;
+  padding-bottom: 9px;
 }
 
 /* Section Container */
 .hse-accordion__section {
-    margin-bottom: 15px;
+  margin-bottom: 15px;
 }
 
 /* Accordion Heading Wrapper */
 .hse-accordion__section-header {
-    border: 1px solid $color_hse-grey-4;
-    margin: -1px 0 0 !important;
+  border: 1px solid $color_hse-grey-4;
+  margin: -1px 0 0 !important;
 }
 
 .hse-accordion__section-heading {
-    margin: 0;
-    @extend %hse-heading-xs;
+  margin: 0;
+  @extend %hse-heading-xs;
 }
 
 /* The Clickable Button */
 .hse-accordion__section-button {
-    -webkit-appearance: none;
-    background-color: white;
-    border: none;
-    border-radius: 0;
-    box-shadow: none;
-    color: $color_hse-red;
-    cursor: pointer;
-    display: block;
-    font-size: inherit;
-    line-height: inherit;
-    font-weight: normal;
-    margin: 0;
-    padding: $hse-legacy-spacing-10 30px $hse-legacy-spacing-10 $hse-legacy-spacing-10;
-    position: relative;
-    text-align: left;
-    width: 100%;
-    z-index: 2;
+  appearance: none;
+  background-color: white;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  color: $color_hse-red;
+  cursor: pointer;
+  display: block;
+  font-size: inherit;
+  line-height: inherit;
+  font-weight: normal;
+  margin: 0;
+  padding: $hse-legacy-spacing-10 30px $hse-legacy-spacing-10
+    $hse-legacy-spacing-10;
+  position: relative;
+  text-align: left;
+  width: 100%;
+  z-index: 2;
 
-    /* Chevron Icon */
+  /* Chevron Icon */
+  &:after {
+    position: absolute;
+    content: "";
+    background-image: url("../../assets/v6-images/icons/svg/solid/chevron-down-solid-red.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    right: $hse-legacy-spacing-10;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &:hover,
+  &:focus {
+    background-color: $hse-focus-color !important;
+    color: $color_hse-grey-1 !important;
+    outline: none;
+
     &:after {
-        position: absolute;
-        content: "";
-        background-image: url("../../assets/v6-images/icons/svg/solid/chevron-down-solid-red.svg");
-        background-repeat: no-repeat;
-        background-size: contain;
-        display: inline-block;
-        width: 15px;
-        height: 15px;
-        right: $hse-legacy-spacing-10;
-        top: 50%;
-        transform: translateY(-50%);
+      background-image: url("../../assets/v6-images/icons/svg/solid/chevron-down-solid-black.svg");
+    }
+  }
+
+  /* Expanded State */
+  &[aria-expanded="true"] {
+    background: $color_hse-red !important;
+    color: #fff !important;
+
+    &:after {
+      background-image: url("../../assets/v6-images/icons/svg/solid/chevron-down-solid-white.svg");
+      transform: translateY(-50%) rotate(180deg);
     }
 
     &:hover,
     &:focus {
-        background-color: $hse-focus-color !important;
-        color: $color_hse-grey-1 !important;
-        outline: none;
-        
-        &:after {
-            background-image: url("../../assets/v6-images/icons/svg/solid/chevron-down-solid-black.svg");
-        }
+      background-color: $hse-focus-color !important;
+      color: $color_hse-grey-1 !important;
+
+      &:after {
+        background-image: url("../../assets/v6-images/icons/svg/solid/chevron-down-solid-black.svg");
+      }
     }
-
-    /* Expanded State */
-    &[aria-expanded="true"] {
-        background: $color_hse-red !important;
-        color: #fff !important;
-
-        &:after {
-            background-image: url("../../assets/v6-images/icons/svg/solid/chevron-down-solid-white.svg");
-            transform: translateY(-50%) rotate(180deg);
-        }
-
-        &:hover,
-        &:focus {
-            background-color: $hse-focus-color !important;
-            color: $color_hse-grey-1 !important;
-            
-            &:after {
-                background-image: url("../../assets/v6-images/icons/svg/solid/chevron-down-solid-black.svg");
-            }
-        }
-    }
+  }
 }
 
 /* The Content Panel */
 .hse-accordion__section-content {
-    background-color: inherit;
-    padding: 15px;
-    border: 1px solid $color_hse-grey-4;
-    border-top: 0;
-    margin-bottom: 15px;
-    display: none; /* JavaScript will toggle this to 'block' */
-    
-    & > :last-child {
-        margin-bottom: 0;
-    }
+  background-color: inherit;
+  padding: 15px;
+  border: 1px solid $color_hse-grey-4;
+  border-top: 0;
+  margin-bottom: 15px;
+  display: none; /* JavaScript will toggle this to 'block' */
 
-    /* Ensure images within accordion look correct */
-    .icapml {
-        float: left;
-        margin: 0 15px 10px 0;
-    }
-    
-    /* Clearfix for floating images */
-    &:after {
-        content: "";
-        display: table;
-        clear: both;
-    }
+  & > :last-child {
+    margin-bottom: 0;
+  }
+
+  /* Ensure images within accordion look correct */
+  .icapml {
+    float: left;
+    margin: 0 15px 10px 0;
+  }
+
+  /* Clearfix for floating images */
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
 }
 
 /* Print Styles */
 @include mq($media-type: print) {
-    .hse-accordion__section-content {
-        display: block !important;
-        border: 1px solid $color_hse-grey-4;
-    }
-    .hse-accordion__section-button:after {
-        display: none;
-    }
+  .hse-accordion__section-content {
+    display: block !important;
+    border: 1px solid $color_hse-grey-4;
+  }
+  .hse-accordion__section-button:after {
+    display: none;
+  }
 }

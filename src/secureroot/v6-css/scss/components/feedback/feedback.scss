@@ -6,6 +6,7 @@
 @use "../../base/core/settings/typography" as *;
 @use "../../base/core/tools/typography" as *;
 @use "../../base/core/settings/spacing" as *;
+@use "sass:color";
 
 
 .hse-feedback {
@@ -34,10 +35,6 @@
   align-items: center;
   justify-content: center;
   background: $color_hse-grey-4;
-  // remove margins from buttons
-  button {
-  margin: 0;
-  }
   @include mq($from: tablet) {
   flex-direction: row;
   padding: 0;
@@ -62,15 +59,27 @@ background: white;
 }
 
 .hse-feedback__prompt-link {
-box-shadow: 0 3px 0 #0b0c0c;
+  box-shadow: 0 3px 0 #0b0c0c;
+
+  &:hover {
+    background-color: color.mix(black, $color_hse-grey-4, 10%);
+  }
 }
 
 .hse-feedback__prompt-link.btn {
 background: none;
-border: 1px solid $color_hse-grey-2; 
+border: 1px solid $color_hse-grey-2;
+}
+
+.hse-feedback__prompt-answers {
+  display: flex;
+  column-gap: 10px;
 }
 
 .hse-feedback__prompt-questions-answers, .hse-feedback__report-a-problem {
+  button {
+    margin: 0;
+  }
 display: flex;
 padding: 10px;
 align-items: center;
@@ -90,6 +99,11 @@ align-items: center;
 
 .fieldset {
 &.report-a-problem-form__questions, &.report-a-problem-form__hidden-fields {margin: 0;}
+}
+
+.report-a-problem-form__actions {
+  display: flex;
+  column-gap: 10px;
 }
 
 .hse-feedback__report-a-problem button.btn-secondary {
@@ -134,7 +148,6 @@ margin-right: 10px;
 .report-a-problem-form {
   width: 100%;
   position: relative;
-  overflow-y: hidden;
   float: left;
   display: none;
   .hse-fieldset__heading {

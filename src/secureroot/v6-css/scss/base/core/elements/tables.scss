@@ -6,46 +6,57 @@
  * 1. Force `<table>`s to be full-width by default.
  */
 
- @use "../tools/all" as *;
- @use "../settings/all" as *;
- @use "../vendor/sass-mq" as *;
+@use "../tools/all" as *;
+@use "../settings/all" as *;
+@use "../vendor/sass-mq" as *;
 
+table,
+.hse-table {
+  border-spacing: 0;
+  border-collapse: collapse;
+  vertical-align: top;
+  width: 100%; /* [1] */
+  @include hse-responsive-margin(7, "bottom");
 
- table {
-    border-spacing: 0;
-    vertical-align: top;
-    width: 100%; /* [1] */
-    @include hse-responsive-margin(7, "bottom");
-    @include mq($media-type: print) {
-      page-break-inside: avoid;
-    }
+  @include mq($media-type: print) {
+    page-break-inside: avoid;
   }
-  
-  thead {
-    th {
-      border-bottom: $hse-border-table-header-width solid $hse-border-color;
-    }
+}
+
+tr,
+.hse-table tr {
+  border-color: $hse-table-border-color;
+}
+
+thead th,
+.hse-table thead th {
+  border-bottom: $hse-border-table-header-width solid $hse-table-border-color;
+}
+
+th,
+td,
+.hse-table th,
+.hse-table td {
+  border-bottom: $hse-border-table-cell-width solid $hse-table-border-color;
+  text-align: left;
+  vertical-align: top;
+  @include hse-typography-responsive(19);
+  @include hse-responsive-padding(3, "bottom");
+  @include hse-responsive-padding(4, "right");
+  @include hse-responsive-padding(3, "top");
+
+  &:last-child {
+    padding-right: 0;
   }
-  
-  th,
-  td {
-    border-bottom: $hse-border-table-cell-width solid $hse-border-color;
-    text-align: left;
-    vertical-align: top;
-    @include hse-typography-responsive(19);
-    @include hse-responsive-padding(3, "bottom");
-    @include hse-responsive-padding(4, "right");
-    @include hse-responsive-padding(3, "top");
-    &:last-child {
-      padding-right: 0;
-    }
-  }
-  
-  th {
-    font-weight: $hse-font-bold;
-  }
-  
-  caption {
-    text-align: left;
-    @include hse-font($size: 22, $weight: bold);
-  }
+}
+
+th,
+.hse-table th {
+  font-weight: $hse-font-bold;
+}
+
+caption,
+.hse-table caption {
+  text-align: left;
+  @include hse-font($size: 22, $weight: bold);
+}
