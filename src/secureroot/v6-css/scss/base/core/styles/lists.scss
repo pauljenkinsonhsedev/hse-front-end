@@ -57,6 +57,10 @@ ul {
   @extend %hse-list--bullet;
 }
 
+ul li::marker {
+  color: $color_hse-red;
+}
+
 ol {
   @extend %hse-list;
   @extend %hse-list--number;
