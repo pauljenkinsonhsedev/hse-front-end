@@ -48,6 +48,10 @@ a.hse-link--no-visited-state {
   padding: $hse-legacy-spacing-10 0;
 }
 
+.hse-footer__prototype-controls + #footer-nav {
+  padding-top: 0;
+}
+
 .hse-footer__prototype-controls-list {
   list-style: none;
   margin: 0;
