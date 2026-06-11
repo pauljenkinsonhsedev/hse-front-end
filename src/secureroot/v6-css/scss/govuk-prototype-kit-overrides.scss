@@ -36,6 +36,13 @@ a.hse-footer-white,
   }
 }
 
+// a.hse-link--no-visited-state:visited = (0,2,1) beats a:visited:visited (0,2,1) on source order
+a.hse-link--no-visited-state {
+  &:visited {
+    color: $hse-link-color;
+  }
+}
+
 // Prototype-only footer bar for manage/clear prototype links
 .hse-footer__prototype-controls {
   padding: $hse-legacy-spacing-10 0;

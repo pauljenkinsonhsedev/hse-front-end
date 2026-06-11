@@ -96,12 +96,8 @@
   /// dashboards. The content on the page is changing all the time, so the fact
   /// that you’ve visited it before is not important.
   ///
-  /// If you use this mixin in a component you must also include the
-  /// hse-link-style-default mixin in order to get the focus state.
-  ///
   /// @example scss
   ///   .hse-component__link {
-  ///     @include hse-link-style-default;
   ///     @include hse-link-style-no-visited-state;
   ///   }
   ///
@@ -110,21 +106,33 @@
     &:link {
       color: $hse-link-color;
     }
-  
+
     &:visited {
       color: $hse-link-color;
     }
-  
+
     &:hover {
       color: $hse-link-hover-color;
     }
-  
+
     &:active {
       color: $hse-link-active-color;
     }
-  
+
     &:focus {
-      color: $hse-focus-text-color;
+      @include hse-focused-text();
+
+      &:hover {
+        text-decoration: none;
+      }
+
+      &:visited {
+        color: $hse-focus-text-color;
+      }
+
+      .hse-icon {
+        fill: $hse-focus-text-color;
+      }
     }
   }
   
