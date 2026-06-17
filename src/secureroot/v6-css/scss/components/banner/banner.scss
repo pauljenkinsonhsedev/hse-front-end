@@ -4,7 +4,7 @@
 @use "../../base/core/settings/spacing" as *;
 @use "../../base/core/tools/spacing" as *;
 
-.hse-information-banner {
+.hse-banner {
   @include clearfix();
   padding: hse-spacing(3) 0;
   background-color: #f5e9eb;
@@ -41,7 +41,7 @@
     background-color: $color_hse-grey-4;
     border-bottom: 1px solid $color_hse-grey-3;
 
-    .hse-information-banner__inner {
+    .hse-banner__inner {
       p {
         margin: 0;
       }
@@ -49,13 +49,9 @@
   }
 
   &--phase {
-    background-color: #f5e9eb;
-    border-bottom: 1px solid $color_hse-grey-3;
-
-    .hse-information-banner__inner {
-      p {
-        margin: 0;
-      }
+    .hse-banner__inner {
+      border-left: none;
+      padding-left: 0;
     }
   }
 
@@ -63,12 +59,12 @@
     background-color: black;
     border-bottom: 1px solid $color_hse-grey-3;
 
-    .hse-information-banner__inner {
+    .hse-banner__inner {
       padding-left: 0;
       border-left: 0;
     }
 
-    .hse-information-banner__heading {
+    .hse-banner__heading {
       color: white;
     }
 
