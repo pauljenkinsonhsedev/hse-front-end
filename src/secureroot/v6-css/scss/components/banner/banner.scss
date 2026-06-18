@@ -51,7 +51,6 @@
 
   &--phase {
     background-color: transparent;
-    margin-top: hse-spacing(2);
 
     a:visited,
     a:hover {
@@ -68,6 +67,7 @@
   &--mourning {
     background-color: black;
     border-bottom: 1px solid $color_hse-grey-3;
+    padding: hse-spacing(6) 0;
 
     .hse-banner__inner {
       padding-left: 0;
@@ -76,6 +76,7 @@
 
     .hse-banner__heading {
       color: white;
+      margin-bottom: hse-spacing(2);
     }
 
     p {
@@ -84,6 +85,13 @@
 
     a {
       color: white;
+      text-decoration: underline;
+    }
+
+    a:visited,
+    a:hover {
+      color: white;
+      text-decoration: underline;
     }
   }
 
