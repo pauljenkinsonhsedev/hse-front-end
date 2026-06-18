@@ -10,6 +10,7 @@ import { ariaLabels } from "./combined/aria-labels.js";
 import { googleSearch } from "./combined/google-search.js";
 import { topTasks } from "./combined/top-tasks.js";
 import { hseBanner } from "./combined/banner.js";
+import { globalBanner } from "./combined/global-banner.js";
 import { accordion } from "./combined/accordion.js";
 import { backToTop } from "./combined/back-to-top.js";
 import { dsSiteNavigation } from "./combined/ds-site-navigation.js";
@@ -36,6 +37,7 @@ window.addEventListener("DOMContentLoaded", () => {
   // Initialize Components
   accordion();
   hseBanner();
+  globalBanner();
   topTasks();
   ariaLabels();
   tabs();

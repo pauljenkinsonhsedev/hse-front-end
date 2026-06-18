@@ -1,5 +1,5 @@
 import Cookies from "js-cookie";
-import { customEventListener } from "../utils/add-custom-event-listener";
+import { customEventListener } from "./utils/add-custom-event-listener";
 
 const setCookiesSettings = {
   path: "/",
