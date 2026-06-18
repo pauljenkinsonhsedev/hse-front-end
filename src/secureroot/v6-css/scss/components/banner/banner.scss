@@ -49,6 +49,17 @@
   }
 
   &--phase {
+    background-color: transparent;
+    padding: 0;
+    padding-bottom: hse-spacing(2);
+    margin-top: hse-spacing(2);
+
+    a:visited,
+    a:hover {
+      color: inherit;
+      text-decoration: underline;
+    }
+
     .hse-banner__inner {
       border-left: none;
       padding-left: 0;
