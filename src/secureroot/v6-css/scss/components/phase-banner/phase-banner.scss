@@ -36,9 +36,4 @@
 
 .hse-phase-banner__text {
   vertical-align: middle;
-  padding-top: hse-spacing(2);
-
-  @include mq($from: tablet) {
-    padding-top: 0;
-  }
 }

@@ -6,7 +6,7 @@
 
 .hse-banner {
   @include clearfix();
-  padding: hse-spacing(3) 0;
+  padding: hse-spacing(2) 0;
   background-color: #f5e9eb;
   border-bottom: 1px solid $color_hse-grey-3;
 
@@ -38,9 +38,6 @@
   }
 
   &--default {
-    background-color: $color_hse-grey-4;
-    border-bottom: 1px solid $color_hse-grey-3;
-
     .hse-banner__inner {
       p {
         margin: 0;
@@ -48,10 +45,12 @@
     }
   }
 
+  &--secondary {
+    background-color: $color_hse-grey-4;
+  }
+
   &--phase {
     background-color: transparent;
-    padding: 0;
-    padding-bottom: hse-spacing(2);
     margin-top: hse-spacing(2);
 
     a:visited,
