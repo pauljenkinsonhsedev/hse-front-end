@@ -45,11 +45,4 @@ export function globalBanner() {
         });
       }
     });
-
-  const notificationBannerCookie = Cookies.get("notification_banner");
-  const globalBannerEl = document.getElementById("global-notification-banner");
-
-  if (notificationBannerCookie === "yes" && globalBannerEl) {
-    globalBannerEl.classList.add("hide-notification");
-  }
 }
