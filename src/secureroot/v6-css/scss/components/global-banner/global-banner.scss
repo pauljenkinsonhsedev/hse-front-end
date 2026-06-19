@@ -13,6 +13,10 @@
   border-bottom: 2px solid $color_hse-red;
   line-height: normal;
 
+  .hse-mourning & {
+    border-bottom: none;
+  }
+
   &__container {
     padding: 10px 0;
     display: flex;
