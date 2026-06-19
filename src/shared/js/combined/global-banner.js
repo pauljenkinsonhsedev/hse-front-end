@@ -9,9 +9,6 @@ const setCookiesSettings = {
   expires: 1,
 };
 
-// So we can access Cookies inline for Analytics in the HTML
-window.Cookies = Cookies;
-
 export function globalBanner() {
   const globalSet = Cookies.get("global_banner");
   fetch("/assets/ajax/global-message.json")
