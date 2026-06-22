@@ -19,6 +19,7 @@ import { serviceNavigation } from "./combined/service-navigation.js";
 
 window.addEventListener("DOMContentLoaded", () => {
   document.body.classList.add("hasScript");
+  document.documentElement.classList.add("js-enabled");
 
   // Initialize Core Navigation
   try {
@@ -39,7 +40,7 @@ window.addEventListener("DOMContentLoaded", () => {
   globalBanner();
   topTasks();
   ariaLabels();
-  tabs();
+  document.querySelectorAll(".hse-tabs").forEach((container) => tabs(container));
   dialogModal();
   tableSortable();
   fileTypeFunction();
