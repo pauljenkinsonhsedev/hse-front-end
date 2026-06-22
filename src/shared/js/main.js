@@ -1,15 +1,14 @@
-import ChartsDefault from "./combined/charts/charts.js";
 import { codeHighlighter } from "./combined/code-highlighter.js";
 import { mainMenu } from "./combined/main-menu.js";
 import { fileTypeFunction } from "./combined/file-type.js";
 import { tableSortable } from "./combined/tables/table-sortable.js";
 import { feedbackSurvey } from "./combined/feedback-survey.js";
-import { dialogModal } from "./combined/dialogs.js";
 import { tabs } from "./combined/tabs.js";
 import { ariaLabels } from "./combined/aria-labels.js";
 import { googleSearch } from "./combined/google-search.js";
 import { topTasks } from "./combined/top-tasks.js";
-import { informationBanner } from "./combined/information-banner.js";
+import { hseBanner } from "./combined/banner.js";
+import { globalBanner } from "./combined/global-banner.js";
 import { accordion } from "./combined/accordion.js";
 import { backToTop } from "./combined/back-to-top.js";
 import { dsSiteNavigation } from "./combined/ds-site-navigation.js";
@@ -19,6 +18,7 @@ import { serviceNavigation } from "./combined/service-navigation.js";
 
 window.addEventListener("DOMContentLoaded", () => {
   document.body.classList.add("hasScript");
+  document.documentElement.classList.add("js-enabled");
 
   // Initialize Core Navigation
   try {
@@ -35,17 +35,19 @@ window.addEventListener("DOMContentLoaded", () => {
 
   // Initialize Components
   accordion();
-  informationBanner();
+  hseBanner();
+  globalBanner();
   topTasks();
   ariaLabels();
-  tabs();
-  dialogModal();
-  tableSortable();
+  document.querySelectorAll(".hse-tabs").forEach((container) => tabs(container));
+  document.querySelectorAll(".sortable").forEach((container) => tableSortable(container));
   fileTypeFunction();
 
-  // Initialize Charts if container exists
+  // Initialize Charts if container exists — loaded as a separate chunk
   if (document.querySelector(".chart")) {
-    new ChartsDefault();
+    import("./combined/charts/charts.js").then(({ default: ChartsDefault }) => {
+      new ChartsDefault();
+    });
   }
 
   codeHighlighter();

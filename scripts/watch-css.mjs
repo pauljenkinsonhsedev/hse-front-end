@@ -9,6 +9,7 @@ const proc = spawn(
   'sass',
   [
     '--watch',
+    '--poll',
     `./src/secureroot/v6-css/scss/v6.scss:${output}`,
     '--load-path=node_modules',
     '--style=compressed',

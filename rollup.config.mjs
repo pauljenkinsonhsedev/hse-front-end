@@ -4,7 +4,6 @@ import terser from '@rollup/plugin-terser';
 import babel from '@rollup/plugin-babel';
 import fs from 'fs';
 
-// 1. Setup shared variables
 const pkg = JSON.parse(fs.readFileSync('./package.json', 'utf-8'));
 const version = pkg.version;
 
@@ -17,18 +16,39 @@ const sharedPlugins = [
   }),
   terser({
     mangle: {
-      // Prevents renaming 'Cookies' or 'Highcharts' to single letters
-      reserved: ['Cookies', 'Highcharts'] 
+      reserved: ['Cookies', 'Highcharts']
     },
     format: {
-      comments: false // Removes comments for a smaller file size
+      comments: false
     }
   })
 ];
 
-// 2. The helper function to handle repeated settings
-const createConfig = (input, fileName, name, useMin = true) => {
-  const suffix = `${fileName}-${version}${useMin ? '.min' : ''}.js`;
+// ES module config for main.js — supports dynamic import code splitting
+const createEsConfig = (input, fileName) => ({
+  input,
+  output: [
+    {
+      dir: './secureroot/hseonline/website/livelive/secureroot/assets/v6-js',
+      format: 'es',
+      sourcemap: true,
+      entryFileNames: `${fileName}-${version}.min.js`,
+      chunkFileNames: `[name]-${version}.min.js`
+    },
+    {
+      dir: './designsystem/assets/v6-js',
+      format: 'es',
+      sourcemap: true,
+      entryFileNames: `${fileName}-${version}.min.js`,
+      chunkFileNames: `[name]-${version}.min.js`
+    }
+  ],
+  plugins: sharedPlugins
+});
+
+// IIFE config for cookies.js — stays as plain script, no module system needed
+const createIifeConfig = (input, fileName, name) => {
+  const suffix = `${fileName}-${version}.js`;
   return {
     input,
     context: 'window',
@@ -50,11 +70,7 @@ const createConfig = (input, fileName, name, useMin = true) => {
   };
 };
 
-// 3. The export list
 export default [
-  // This will create: assets/v6-js/main-6.6.0.min.js
-  createConfig('src/shared/js/main.js', 'main', 'hseFrontend', true),
-  
-  // This will create: assets/v6-js/cookies-6.6.0.js (No .min)
-  createConfig('src/shared/js/cookies.js', 'cookies', 'hseCookies', false),
+  createEsConfig('src/shared/js/main.js', 'main'),
+  createIifeConfig('src/shared/js/cookies.js', 'cookies', 'hseCookies')
 ];

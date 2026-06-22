@@ -62,16 +62,16 @@
       color: $color_hse-white;
       text-decoration: none;
     }
-  
+
+    &:active {
+      color: $hse-link-active-color-white;
+    }
+
     &:focus {
       color: $hse-focus-text-color;
       outline: $hse-focus-width solid transparent;
       outline-offset: $hse-focus-width;
       text-decoration: none;
-    }
-  
-    &:active {
-      color: $hse-link-active-color-white;
     }
   }
   
@@ -101,7 +101,7 @@
   ///     @include hse-link-style-no-visited-state;
   ///   }
   ///
-  
+
   @mixin hse-link-style-no-visited-state {
     &:link {
       color: $hse-link-color;
