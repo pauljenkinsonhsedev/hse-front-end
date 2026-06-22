@@ -1,7 +1,6 @@
 import Cookies from "js-cookie";
 import { customEventListener } from "../utils/add-custom-event-listener";
 import { cookieMessageHTML } from "./cookie-banner-html.js";
-import { dialogModalAjax } from "../dialogs.js";
 import { smoothScroll } from "../utils/smooth-scroll";
 
 /* 
@@ -20,8 +19,8 @@ Uncomment the specific domain you require, do not uncomment more than one cookie
 
 const setCookieSettings = {
   path: "/",
-  domain: "hse.gov.uk",
-  secure: true,
+  domain: "localhost",
+  secure: false,
   sameSite: "strict",
   expires: 365,
 };
@@ -90,26 +89,6 @@ function controlAnalytics() {
       Cookies.remove("nmstat", setCookieSettings); // Site Improve cookie - invoked by Google Analytics
     }
   }
-}
-
-function formFeedback() {
-  const dialog = document.createElement("div");
-  dialog.className = "dialog dialog-generic";
-  const content = `<div class="dialog__copy">
-        <h2>Your cookie settings were saved</h2>
-        <p>Some HSE digital services may set additional cookies and, if so, will have their own cookie policy and banner.</p>
-        </div>
-        <div class="dialog__actions">
-        <button class="hse-button hse-button--cautionary close-action">Close</button>
-    </div>`;
-  dialog.innerHTML = content;
-
-  const options = {
-    size: "small",
-    transition: true,
-    overlay: true,
-  };
-  dialogModalAjax(dialog, options);
 }
 
 export function cookiePreferences() {
@@ -260,7 +239,6 @@ export function cookiePreferences() {
       "cookie-usage-analytics": true,
     });
     controlAnalytics();
-    formFeedback();
 
     Cookies.set("cookies_status", "accepted", setCookieSettings);
     messageContainer.innerHTML = cookieMessageHTML();

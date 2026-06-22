@@ -3,7 +3,6 @@ import { mainMenu } from "./combined/main-menu.js";
 import { fileTypeFunction } from "./combined/file-type.js";
 import { tableSortable } from "./combined/tables/table-sortable.js";
 import { feedbackSurvey } from "./combined/feedback-survey.js";
-import { dialogModal } from "./combined/dialogs.js";
 import { tabs } from "./combined/tabs.js";
 import { ariaLabels } from "./combined/aria-labels.js";
 import { googleSearch } from "./combined/google-search.js";
@@ -41,7 +40,6 @@ window.addEventListener("DOMContentLoaded", () => {
   topTasks();
   ariaLabels();
   document.querySelectorAll(".hse-tabs").forEach((container) => tabs(container));
-  dialogModal();
   document.querySelectorAll(".sortable").forEach((container) => tableSortable(container));
   fileTypeFunction();
 
