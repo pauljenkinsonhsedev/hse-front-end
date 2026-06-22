@@ -1,4 +1,3 @@
-import ChartsDefault from "./combined/charts/charts.js";
 import { codeHighlighter } from "./combined/code-highlighter.js";
 import { mainMenu } from "./combined/main-menu.js";
 import { fileTypeFunction } from "./combined/file-type.js";
@@ -45,9 +44,11 @@ window.addEventListener("DOMContentLoaded", () => {
   tableSortable();
   fileTypeFunction();
 
-  // Initialize Charts if container exists
+  // Initialize Charts if container exists — loaded as a separate chunk
   if (document.querySelector(".chart")) {
-    new ChartsDefault();
+    import("./combined/charts/charts.js").then(({ default: ChartsDefault }) => {
+      new ChartsDefault();
+    });
   }
 
   codeHighlighter();
