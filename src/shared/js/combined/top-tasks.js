@@ -8,8 +8,8 @@ export function topTasks() {
   const path = window.location.pathname;
   const pathAnchor = window.location.pathname + "#article";
 
-  const url = path ? path.split(/[\\\/]/).pop() : "index.htm";
-  const urlAnchor = pathAnchor ? pathAnchor.split(/[\\\/]/).pop() : "index.htm";
+  const url = (path ? path.split(/[\\\/]/).pop() : "") || "index.htm";
+  const urlAnchor = (pathAnchor ? pathAnchor.split(/[\\\/]/).pop() : "") || "index.htm";
 
   multiStep.forEach((step) => {
     const parent = step.closest("li");
