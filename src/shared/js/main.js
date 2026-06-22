@@ -42,7 +42,7 @@ window.addEventListener("DOMContentLoaded", () => {
   ariaLabels();
   document.querySelectorAll(".hse-tabs").forEach((container) => tabs(container));
   dialogModal();
-  tableSortable();
+  document.querySelectorAll(".sortable").forEach((container) => tableSortable(container));
   fileTypeFunction();
 
   // Initialize Charts if container exists — loaded as a separate chunk
