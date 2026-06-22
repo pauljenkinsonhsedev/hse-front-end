@@ -84,6 +84,38 @@ a.hse-footer__prototype-controls-link {
   }
 }
 
+// HSE buttons use <a> elements — prevent global link color rules overriding button text.
+// a.hse-button specificity (0,2,1) beats a:hover:hover (0,2,1) generated above on source order.
+a.hse-button {
+  &:link,
+  &:visited,
+  &:hover,
+  &:active {
+    color: $hse-button-text-color;
+    text-decoration: none;
+  }
+
+  &:focus {
+    color: $hse-focus-text-color;
+    text-decoration: none;
+  }
+}
+
+a.hse-button--secondary,
+a.hse-button--reverse,
+a.hse-button--transparent {
+  &:link,
+  &:visited,
+  &:hover,
+  &:active {
+    color: $color_hse-black;
+  }
+
+  &:focus {
+    color: $hse-focus-text-color;
+  }
+}
+
 // Sticky footer — override HSE core, different DOM structure in GOV.UK Prototype Kit
 .govuk-main-wrapper {
   flex: unset;
