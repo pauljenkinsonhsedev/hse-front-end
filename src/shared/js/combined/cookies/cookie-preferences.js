@@ -19,8 +19,8 @@ Uncomment the specific domain you require, do not uncomment more than one cookie
 
 const setCookieSettings = {
   path: "/",
-  domain: "localhost",
-  secure: false,
+  domain: "hse.gov.uk",
+  secure: true,
   sameSite: "strict",
   expires: 365,
 };
