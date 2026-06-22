@@ -315,7 +315,7 @@ $button-shadow-size: 4px;
   &:after {
     content: " ";
     position: relative;
-    background-image: url(../../assets/v6-images/icons/svg/solid/chevron-right-white.svg);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 512'%3E%3Cpath fill='%23ffffff' d='M285.5,273L91.1,467.3c-9.4,9.4-24.6,9.4-33.9,0l-22.7-22.7c-9.4-9.4-9.4-24.5,0-33.9l154-154.7l-154-154.7c-9.3-9.4-9.3-24.5,0-33.9l22.7-22.7c9.4-9.4,24.6-9.4,33.9,0L285.5,239C294.8,248.4,294.8,263.6,285.5,273z'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-position: bottom;
     display: inline-block;
@@ -326,7 +326,7 @@ $button-shadow-size: 4px;
     margin-left: 10px;
   }
   &:focus::after {
-    background-image: url(../../assets/v6-images/icons/svg/solid/chevron-right-black.svg);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 265 436.7'%3E%3Cpath fill='%23212b32' d='M258.1,235.4L63.7,429.6c-9.4,9.4-24.6,9.4-33.9,0L7,406.9c-9.4-9.4-9.4-24.5,0-33.9l154-154.7L7.1,63.7c-9.3-9.4-9.3-24.5,0-33.9L29.8,7c9.4-9.4,24.6-9.4,33.9,0l194.4,194.3C267.4,210.8,267.4,226,258.1,235.4z'/%3E%3C/svg%3E");
   }
 }
 
