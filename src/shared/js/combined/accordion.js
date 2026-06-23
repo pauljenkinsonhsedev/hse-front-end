@@ -10,7 +10,9 @@ export function accordion() {
     if (containers.length === 0) return;
 
     containers.forEach(container => {
-        const headings = Array.from(container.querySelectorAll('[data-aria-accordion-heading]'));
+        const headings = Array.from(container.querySelectorAll('[data-aria-accordion-heading]')).filter(
+            heading => heading.closest('[data-aria-accordion]') === container
+        );
         const isMulti = container.hasAttribute('data-multi');
 
         headings.forEach((heading, index) => {
@@ -27,7 +29,9 @@ export function accordion() {
             heading.classList.add('hse-accordion__section-heading');
 
             // Build the button inside the heading
-            const panelId = panel.id || `accordion-panel-${Date.now()}-${index}`;
+            const derivedId = heading.id ? `${heading.id}-panel` : null;
+            const panelId = panel.id ||
+                (derivedId && !document.getElementById(derivedId) ? derivedId : `accordion-panel-${Math.random().toString(36).slice(2)}`);
             panel.id = panelId;
 
             const button = document.createElement('button');
