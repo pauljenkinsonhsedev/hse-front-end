@@ -15,6 +15,7 @@ import { dsSiteNavigation } from "./combined/ds-site-navigation.js";
 import { sideNavDesign } from "./combined/side-nav-design.js";
 import { dsBackToTop } from "./combined/ds-back-to-top.js";
 import { serviceNavigation } from "./combined/service-navigation.js";
+import { htmlPrintGuide } from "./combined/html-print-guide.js";
 
 window.addEventListener("DOMContentLoaded", () => {
   document.body.classList.add("hasScript");
@@ -67,5 +68,9 @@ window.addEventListener("DOMContentLoaded", () => {
 
   if (document.querySelector(".ds-back-to-top")) {
     dsBackToTop();
+  }
+
+  if (document.querySelector(".html-print-guide")) {
+    htmlPrintGuide();
   }
 });
