@@ -82,8 +82,12 @@
 
 // card groups within sections
 
-.hse-section--homepage .hse-card-group {
-  margin-bottom: -hse-spacing(4);
+.hse-section--homepage .hse-card-group:last-child {
+  margin-bottom: -32px;
+
+  @include mq($from: tablet) {
+    margin-bottom: -40px;
+  }
 }
 
 // Beta section headings border style
