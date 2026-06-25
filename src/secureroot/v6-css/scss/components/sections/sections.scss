@@ -22,7 +22,7 @@
       @include hse-responsive-padding(6, "bottom");
     }
 
-    ul {
+    ul.hse-card-group:last-child {
       margin-bottom: 0;
     }
   }
