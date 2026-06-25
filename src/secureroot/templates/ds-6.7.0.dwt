@@ -135,27 +135,27 @@
 					</button>
 					<ul class="hse-service-navigation__list" id="navigation">
 						<li class="hse-service-navigation__item">
-							<a class="hse-service-navigation__link" href="/get-started/index.htm">
+							<a class="hse-service-navigation__link" href="../get-started/index.htm">
 								Get started
 							</a>
 						</li>
 						<li class="hse-service-navigation__item">
-							<a class="hse-service-navigation__link" href="/styles/index.htm">
+							<a class="hse-service-navigation__link" href="../styles/index.htm">
 								Styles
 							</a>
 						</li>
 						<li class="hse-service-navigation__item">
-							<a class="hse-service-navigation__link" href="/components/index.htm">
+							<a class="hse-service-navigation__link" href="../components/index.htm">
 								Components
 							</a>
 						</li>
 						<li class="hse-service-navigation__item">
-							<a class="hse-service-navigation__link" href="/patterns/index.htm">
+							<a class="hse-service-navigation__link" href="../patterns/index.htm">
 								Patterns
 							</a>
 						</li>
 						<li class="hse-service-navigation__item">
-							<a class="hse-service-navigation__link" href="/guidance/index.htm">
+							<a class="hse-service-navigation__link" href="../guidance/index.htm">
 								Guidance
 							</a>
 						</li>
