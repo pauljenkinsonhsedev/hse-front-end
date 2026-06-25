@@ -12,7 +12,11 @@ export function serviceNavigation() {
   const currentPath = window.location.pathname;
   containers.forEach(($root) => {
     $root.querySelectorAll('.hse-service-navigation__link').forEach((link) => {
-      const linkSegment = (link.getAttribute('href') || '').split('/').filter(Boolean)[0];
+      const linkSegment = (link.getAttribute('href') || '')
+        .replace(/\/index\.htm$/i, '')
+        .split('/')
+        .filter(Boolean)
+        .pop();
       if (!linkSegment || currentPath.indexOf('/' + linkSegment + '/') === -1) return;
 
       const item = link.closest('.hse-service-navigation__item');
