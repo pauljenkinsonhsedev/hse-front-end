@@ -6,6 +6,12 @@
 
 // HTML print guides
 
+.hse-global-banner {
+  @include mq($media-type: print) {
+    display: none;
+  }
+}
+
 .hse-print-guide-page  ul {
   margin: 0 0 10px 28px;
 }

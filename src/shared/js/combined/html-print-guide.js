@@ -62,6 +62,11 @@ export function htmlPrintGuide() {
     // Get the content from the page contents ID
     let content = doc.querySelector("#page-contents");
 
+    // Strip grid column classes so content spans full width on the print page
+    if (content != null) {
+      content.classList.remove('hse-grid-column-two-thirds', 'hse-grid-column-one-third', 'hse-grid-column-full');
+    }
+
     // Assemble
 
     const printContent = document.querySelector("#pageContainer");
@@ -79,6 +84,7 @@ export function htmlPrintGuide() {
     const printableVersion = document.querySelector(".printable-version");
     const calloutSurvey = document.querySelector(".callout.callout--survey");
     const backToTop = document.querySelector(".hse-back-to-top");
+    const feedback = document.querySelector(".feedback-container");
 
     // Remove clutter
     if (pagination) {
@@ -95,6 +101,9 @@ export function htmlPrintGuide() {
     }
     if (backToTop) {
       backToTop.remove();
+    }
+    if (feedback) {
+      feedback.remove();
     }
   };
 

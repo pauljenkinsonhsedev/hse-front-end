@@ -1,57 +1,98 @@
 /**
  * accordion.js
- * Handles multiple accordion containers and deep-linking.
+ * Progressively enhances [data-aria-accordion] containers.
+ * Transforms data-attribute HTML into the class-based structure the SCSS expects,
+ * replacing the old a11y_accordions vendor library dependency.
  */
 
 export function accordion() {
-    // 1. Find ALL accordion containers on the page
     const containers = document.querySelectorAll('[data-aria-accordion]');
     if (containers.length === 0) return;
 
-    // Use a shared function for the hash-based opening so it can find any button on the page
-    const openFromHash = () => {
-        const hash = window.location.hash.substring(1);
-        if (!hash) return;
-
-        const targetButton = document.querySelector(`[aria-controls="content-${hash}"], #${hash}`);
-        
-        if (targetButton && targetButton.getAttribute('aria-expanded') === 'false') {
-            targetButton.click();
-            setTimeout(() => {
-                targetButton.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }, 100);
-        }
-    };
-
-    // 2. Loop through each container (Board and Executive)
     containers.forEach(container => {
-        const buttons = container.querySelectorAll('.hse-accordion__section-button');
+        const headings = Array.from(container.querySelectorAll('[data-aria-accordion-heading]')).filter(
+            heading => heading.closest('[data-aria-accordion]') === container
+        );
         const isMulti = container.hasAttribute('data-multi');
+
+        headings.forEach((heading, index) => {
+            const panel = heading.nextElementSibling;
+            if (!panel || !panel.hasAttribute('data-aria-accordion-panel')) return;
+
+            // Wrap heading in section + header divs with the expected classes
+            const section = document.createElement('div');
+            section.className = 'hse-accordion__section';
+
+            const header = document.createElement('div');
+            header.className = 'hse-accordion__section-header';
+
+            heading.classList.add('hse-accordion__section-heading');
+
+            // Build the button inside the heading
+            const derivedId = heading.id ? `${heading.id}-panel` : null;
+            const panelId = panel.id ||
+                (derivedId && !document.getElementById(derivedId) ? derivedId : `accordion-panel-${Math.random().toString(36).slice(2)}`);
+            panel.id = panelId;
+
+            const button = document.createElement('button');
+            button.className = 'hse-accordion__section-button';
+            button.type = 'button';
+            button.setAttribute('aria-expanded', 'false');
+            button.setAttribute('aria-controls', panelId);
+            button.innerHTML = heading.innerHTML;
+            heading.innerHTML = '';
+            heading.appendChild(button);
+
+            // Add content class to panel and hide it
+            panel.classList.add('hse-accordion__section-content');
+            panel.style.display = 'none';
+
+            // Restructure: section > header > heading, then section > panel
+            container.insertBefore(section, heading);
+            header.appendChild(heading);
+            section.appendChild(header);
+            section.appendChild(panel);
+        });
+
+        // Wire up toggle behaviour after DOM is restructured
+        const buttons = container.querySelectorAll('.hse-accordion__section-button');
 
         buttons.forEach(button => {
             button.addEventListener('click', () => {
                 const isExpanded = button.getAttribute('aria-expanded') === 'true';
-                const panel = button.closest('.hse-accordion__section').querySelector('[data-aria-accordion-panel]');
+                const panel = document.getElementById(button.getAttribute('aria-controls'));
 
-                // Close others in THIS container if not multi-expand
                 if (!isMulti && !isExpanded) {
                     buttons.forEach(otherBtn => {
                         if (otherBtn !== button) {
                             otherBtn.setAttribute('aria-expanded', 'false');
-                            const otherPanel = otherBtn.closest('.hse-accordion__section').querySelector('[data-aria-accordion-panel]');
+                            const otherPanel = document.getElementById(otherBtn.getAttribute('aria-controls'));
                             if (otherPanel) otherPanel.style.display = 'none';
                         }
                     });
                 }
 
-                // Toggle current section
-                button.setAttribute('aria-expanded', !isExpanded);
+                button.setAttribute('aria-expanded', String(!isExpanded));
                 if (panel) panel.style.display = isExpanded ? 'none' : 'block';
             });
         });
     });
 
-    // Run on page load and hash change
+    const openFromHash = () => {
+        const hash = window.location.hash.substring(1);
+        if (!hash) return;
+
+        const heading = document.getElementById(hash);
+        const button = heading
+            ? heading.querySelector('.hse-accordion__section-button')
+            : document.querySelector(`[aria-controls="${hash}"]`);
+
+        if (button && button.getAttribute('aria-expanded') === 'false') {
+            button.click();
+            setTimeout(() => button.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
+        }
+    };
+
     openFromHash();
     window.addEventListener('hashchange', openFromHash);
 }

@@ -1,5 +1,5 @@
 {
     "name": "Global notification",
-    "active": "true",
+    "active": "false",
     "message": "<p>This is an example for a global notification message. <a href=\"https://www.hse.gov.uk/\">Link to updated guidance<\/a>.<\/p>"
 }

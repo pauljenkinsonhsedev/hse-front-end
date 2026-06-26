@@ -20,7 +20,7 @@
 
 <!-- TemplateBeginMultipleIf -->
 <!-- TemplateBeginIfClause cond="platform == 'v6'" -->
-<link rel="stylesheet" href="../assets/v6-css/6.6.0.min.css"  media="screen,print">
+<link rel="stylesheet" href="../assets/v6-css/6.7.0.min.css"  media="screen,print">
 <link href="https://fonts.googleapis.com/css?family=Roboto:100,200,300,400,500,600,700,400italic&display=swap" rel="stylesheet">
   
 <!-- TemplateEndIfClause -->
@@ -135,27 +135,27 @@
 					</button>
 					<ul class="hse-service-navigation__list" id="navigation">
 						<li class="hse-service-navigation__item">
-							<a class="hse-service-navigation__link" href="/get-started/index.htm">
+							<a class="hse-service-navigation__link" href="../get-started/index.htm">
 								Get started
 							</a>
 						</li>
 						<li class="hse-service-navigation__item">
-							<a class="hse-service-navigation__link" href="/styles/index.htm">
+							<a class="hse-service-navigation__link" href="../styles/index.htm">
 								Styles
 							</a>
 						</li>
 						<li class="hse-service-navigation__item">
-							<a class="hse-service-navigation__link" href="/components/index.htm">
+							<a class="hse-service-navigation__link" href="../components/index.htm">
 								Components
 							</a>
 						</li>
 						<li class="hse-service-navigation__item">
-							<a class="hse-service-navigation__link" href="/patterns/index.htm">
+							<a class="hse-service-navigation__link" href="../patterns/index.htm">
 								Patterns
 							</a>
 						</li>
 						<li class="hse-service-navigation__item">
-							<a class="hse-service-navigation__link" href="/guidance/index.htm">
+							<a class="hse-service-navigation__link" href="../guidance/index.htm">
 								Guidance
 							</a>
 						</li>
@@ -538,7 +538,7 @@
 <!-- TemplateBeginEditable name="updated" -->Updated:<!-- #BeginDate -->2023-03-16<!-- #EndDate --><!-- TemplateEndEditable -->
 </section>
 
-<script type="module" src="../assets/v6-js/main-6.6.0.min.js"></script>
+<script type="module" src="../assets/v6-js/main-6.7.0.min.js"></script>
 
 <div id="gutter">
 </div>

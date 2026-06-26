@@ -34,7 +34,7 @@ async function copyWithRetry(from, to) {
 }
 
 async function copyHtml() {
-  const pattern = `${src}/**/*.htm`;
+  const pattern = `${src}/**/*.{htm,json}`;
   const files = await glob(pattern, { windowsPathsNoEscape: true });
 
   if (files.length === 0) {
