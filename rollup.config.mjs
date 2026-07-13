@@ -46,31 +46,45 @@ const createEsConfig = (input, fileName) => ({
   plugins: sharedPlugins
 });
 
-// IIFE config for cookies.js — stays as plain script, no module system needed
-const createIifeConfig = (input, fileName, name) => {
-  const suffix = `${fileName}-${version}.js`;
+// IIFE config for cookies.js — stays as plain script, no module system needed.
+// options.suffix   overrides the output filename (e.g. the bookinglive variant).
+// options.deployOnly writes only to the secureroot deploy dir, not the design
+//                    system (used for site-specific variants like bookinglive).
+const createIifeConfig = (input, fileName, name, options = {}) => {
+  const { suffix: suffixOverride, deployOnly = false } = options;
+  const suffix = suffixOverride || `${fileName}-${version}.js`;
+  const output = [
+    {
+      file: `./secureroot/hseonline/website/livelive/secureroot/assets/v6-js/${suffix}`,
+      format: 'iife',
+      sourcemap: true,
+      name
+    }
+  ];
+  if (!deployOnly) {
+    output.push({
+      file: `./designsystem/assets/v6-js/${suffix}`,
+      format: 'iife',
+      sourcemap: true,
+      name
+    });
+  }
   return {
     input,
     context: 'window',
-    output: [
-      {
-        file: `./secureroot/hseonline/website/livelive/secureroot/assets/v6-js/${suffix}`,
-        format: 'iife',
-        sourcemap: true,
-        name
-      },
-      {
-        file: `./designsystem/assets/v6-js/${suffix}`,
-        format: 'iife',
-        sourcemap: true,
-        name
-      }
-    ],
+    output,
     plugins: sharedPlugins
   };
 };
 
 export default [
   createEsConfig('src/shared/js/main.js', 'main'),
-  createIifeConfig('src/shared/js/cookies.js', 'cookies', 'hseCookies')
+  createIifeConfig('src/shared/js/cookies.js', 'cookies', 'hseCookies'),
+  // training.hse.gov.uk (BookingLive) variant — same source, training config
+  createIifeConfig(
+    'src/shared/js/cookies-bookinglive.js',
+    'cookies',
+    'hseCookies',
+    { suffix: `cookies-${version}-bookinglive.js`, deployOnly: true }
+  )
 ];

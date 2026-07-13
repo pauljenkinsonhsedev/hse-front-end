@@ -91,11 +91,20 @@ function controlAnalytics() {
   }
 }
 
-export function cookiePreferences() {
+export function cookiePreferences(config = {}) {
+  // A build variant (e.g. bookinglive/training) can override where the banner is
+  // inserted. Default reproduces the stock www.hse.gov.uk behaviour: insert before
+  // #headerContainer.
+  const {
+    insertBanner = (container) => {
+      const body = document.getElementsByTagName("body")[0];
+      const header = document.getElementById("headerContainer");
+      body.insertBefore(container, header);
+    },
+  } = config;
+
   Cookies.set("optInGoogleTracking", false, setCookieSettings);
 
-  const body = document.getElementsByTagName("body")[0];
-  const header = document.getElementById("headerContainer");
   const settingsForm = document.getElementById("cookies-settings");
   const cookiesSet = Cookies.get("cookies_policy");
   const cookieStatus = Cookies.get("cookies_status");
@@ -113,9 +122,9 @@ export function cookiePreferences() {
   const hideBanner = Cookies.get("hide_banner");
 
   if (!hideBanner || hideBanner === false) {
-    message = cookieMessageHTML();
+    message = cookieMessageHTML(config);
     messageContainer.innerHTML = message;
-    body.insertBefore(messageContainer, header);
+    insertBanner(messageContainer);
   }
 
   if (!cookiesSet) {
@@ -207,7 +216,7 @@ export function cookiePreferences() {
     // set message
 
     Cookies.set("cookies_status", "accepted", setCookieSettings);
-    messageContainer.innerHTML = cookieMessageHTML();
+    messageContainer.innerHTML = cookieMessageHTML(config);
 
     // reload to capture tracking
     window.location.reload();
@@ -225,7 +234,7 @@ export function cookiePreferences() {
 
     // set message
     Cookies.set("cookies_status", "rejected", setCookieSettings);
-    messageContainer.innerHTML = cookieMessageHTML();
+    messageContainer.innerHTML = cookieMessageHTML(config);
 
     // reload to capture tracking
     window.location.reload();
@@ -241,7 +250,7 @@ export function cookiePreferences() {
     controlAnalytics();
 
     Cookies.set("cookies_status", "accepted", setCookieSettings);
-    messageContainer.innerHTML = cookieMessageHTML();
+    messageContainer.innerHTML = cookieMessageHTML(config);
 
     // reload to capture tracking
     window.location.reload();
