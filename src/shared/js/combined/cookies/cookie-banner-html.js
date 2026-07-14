@@ -1,5 +1,16 @@
-export function cookieMessageHTML() {
+export function cookieMessageHTML(config = {}) {
+  // config lets a build variant (e.g. bookinglive/training) override where the
+  // cookie-policy links point and how the "View cookies" link is wrapped.
+  // Defaults reproduce the stock www.hse.gov.uk behaviour exactly.
+  const { linkBase = "", wrapViewCookiesLink = false } = config;
+
   const status = Cookies.get("cookies_status");
+
+  const cookiesHelpHref = `${linkBase}/help/cookies.htm`;
+
+  const viewCookiesLink = wrapViewCookiesLink
+    ? `<p class="cookies-message__link"><a href="${cookiesHelpHref}">View cookies</a></p>`
+    : `<a class="cookies-message__link" href="${cookiesHelpHref}">View cookies</a>`;
 
   const cookieMessageStart = `
                 <div class="cookies-message">
@@ -13,21 +24,21 @@ export function cookieMessageHTML() {
                         <button class="hse-button hse-button--small" id="acceptAllCookies" href="#">Accept analytics cookies</button>
                         <button class="hse-button hse-button--small" id="rejectAllCookies" href="#">Reject analytics cookie</button>
 
-                        <a class="cookies-message__link" href="/help/cookies.htm">View cookies</a>
+                        ${viewCookiesLink}
                     </div>
                 </div>
             `;
   const cookieMessageAccept = `
                 <div class="cookies-message__copy cookies-message-accepted">
-                    <p>You've accepted analytics cookies. You can change your <a href="/help/cookies.htm">cookie settings</a> at any time.</p>
-                    <button id="cookieNotifyClose" class="hse-button">Hide</button>
+                    <p>You've accepted analytics cookies. You can change your <a href="${cookiesHelpHref}">cookie settings</a> at any time.</p>
+                    <button id="cookieNotifyClose" class="hse-button hse-button--small">Hide</button>
                 </div>
             `;
 
   const cookieMessageReject = `
                 <div class="cookies-message__copy cookies-message-rejected">
-                    <p>You've rejected analytics cookies. You can change your <a href="/help/cookies.htm">cookie settings</a> at any time.</p>
-                    <button id="cookieNotifyClose" class="hse-button">Hide</button>
+                    <p>You've rejected analytics cookies. You can change your <a href="${cookiesHelpHref}">cookie settings</a> at any time.</p>
+                    <button id="cookieNotifyClose" class="hse-button hse-button--small">Hide</button>
                 </div>
             `;
 

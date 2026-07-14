@@ -23,7 +23,7 @@
   border: $hse-border-width-form-element solid $hse-form-border-color; /* 2 */
   border-radius: 0;
   box-sizing: border-box;
-  min-height: 40px;
+  height: 40px;
   margin-top: 0;
   padding: hse-spacing(1);
   width: 100%;
@@ -83,9 +83,18 @@
 
 .hse-input__wrapper {
   display: flex;
+  align-items: flex-start;
 
-  @include mq($until: mobile) {
-    display: block;
+  .hse-input {
+    margin-bottom: 0;
+    flex: 1 1 auto;
+  }
+
+  .hse-button {
+    flex-shrink: 0;
+    margin-left: hse-spacing(1);
+    margin-bottom: 0;
+    white-space: nowrap;
   }
 }
 

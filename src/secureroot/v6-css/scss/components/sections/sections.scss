@@ -22,7 +22,7 @@
       @include hse-responsive-padding(6, "bottom");
     }
 
-    ul {
+    ul.hse-card-group:last-child {
       margin-bottom: 0;
     }
   }
@@ -37,6 +37,23 @@
   .hse-section:not(.hse-section--homepage-header) {
     &:first-of-type {
       padding-top: 0;
+    }
+  }
+
+  // sections without a heading — reduce top padding to match the visible
+  // bottom gap (li margin-bottom: spacing-4), cancel card-group margin-top
+  .hse-section--homepage:not(:has(h2)):not(:has(.hse-section__content--most-popular)) {
+    .hse-section__content {
+      @include hse-responsive-padding(4, "top");
+    }
+
+    .hse-card-group {
+      margin-top: 0;
+    }
+
+    .hse-card,
+    .hse-card--img {
+      margin-bottom: 0;
     }
   }
 }
