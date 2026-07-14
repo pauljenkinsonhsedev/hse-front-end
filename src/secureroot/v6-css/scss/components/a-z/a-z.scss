@@ -4,28 +4,26 @@
 @use "../../base/core/settings/spacing.scss" as *;
 @use "../../base/core/settings/colours.scss" as *;
 
-
-  .boxAtoZ {
+.boxAtoZ {
   padding: 0 !important;
   @include hse-responsive-margin(6, "bottom");
-  }
-  
-  ul.alphabetList {
-    margin: 0 !important;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    padding-left: 0;
-  }
-  
-  ul.alphabetList li {
+}
+
+ul.alphabetList {
+  margin: 0 !important;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-left: 0;
+
+  li {
     list-style-type: none;
     background: none;
     padding-left: 0 !important;
     margin: 0 $hse-legacy-spacing-10 $hse-legacy-spacing-10 0;
   }
-  
-  ul.alphabetList li.empty span {
+
+  li.empty span {
     display: block;
     font-weight: bold;
     font-size: large;
@@ -35,62 +33,62 @@
     background-color: #fff;
     color: #333;
   }
-  
-  ul.alphabetList  {
-    li a {
+
+  li a {
     &:link {
-    display: block;
-    font-weight: bold;
-    font-size: large;
-    border: 2px solid #f3f3f3;
-    padding: $hse-legacy-spacing-10 14px;
-    text-align: center;
+      display: block;
+      font-weight: bold;
+      font-size: large;
+      border: 2px solid #f3f3f3;
+      padding: $hse-legacy-spacing-10 14px;
+      text-align: center;
     }
+
     &:hover {
       background-color: $color_hse-red;
       color: white !important;
       text-decoration: none !important;
     }
+
     &:focus {
-    box-shadow: none;
-    color: $hse-text-color !important;
-    &:focus:hover {
-      color: white !important;  
+      box-shadow: none;
+      color: $hse-text-color !important;
+
+      &:hover {
+        color: white !important;
+      }
     }
-    }
+
     &:visited {
-    color: $color_hse-red;
-    border: 2px solid #f3f3f3;
+      color: $color_hse-red;
+      border: 2px solid #f3f3f3;
     }
-    }
-    
-    }
-  
-    
-  .AtoZSelected {
-    color: #000 !important;
-    background-color: #d5d5d5 !important;
-    border: 1px solid #e90542 !important;
   }
-  
-  dl.dlpretty {
-    margin-top: 15px;
-  }
-  
-  // A-Z list
-  
-  .listAtoZ {
-    clear: both;
-  }
-  
-  .listAtoZ h2 {
-    display: inline-block;
-    background-color: $color_hse-red;
-    color: white;
-    padding: 6px 14px;
-  }
-  
-  .listAtoZ ul li {
-    background: none;
-  }
-  
+}
+
+.AtoZSelected {
+  color: #000 !important;
+  background-color: #d5d5d5 !important;
+  border: 1px solid #e90542 !important;
+}
+
+dl.dlpretty {
+  margin-top: 15px;
+}
+
+// A-Z list
+
+.listAtoZ {
+  clear: both;
+}
+
+.listAtoZ h2 {
+  display: inline-block;
+  background-color: $color_hse-red;
+  color: white;
+  padding: 6px 14px;
+}
+
+.listAtoZ ul li {
+  background: none;
+}

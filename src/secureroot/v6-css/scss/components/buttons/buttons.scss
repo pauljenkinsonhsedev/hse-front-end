@@ -7,13 +7,13 @@
 @use "../../base/core/settings/spacing" as *;
 @use "../../base/core/settings/globals" as *;
 @use "../../base/core/tools/sass-mq" as *;
-@use 'sass:color';
+@use "sass:color";
 
 /**
- * 1. Ensure that any global link styles are overridden.
- * 2. Fix unwanted button padding in Firefox.
- * 3. Use a pseudo element to expand the click target area to include the
- *    button's shadow as well, in case users try to click it.
+ * Ensure that any global link styles are overridden.
+ * Fix unwanted button padding in Firefox.
+ * Use a pseudo element to expand the click target area to include the
+ * button's shadow as well, in case users try to click it.
  */
 
 // Because the shadow (s0) is visually 'part of' the button, we need to reduce
@@ -24,7 +24,7 @@ $button-shadow-size: 4px;
 
 .hse-button {
   text-decoration: none;
-  -webkit-appearance: none;
+  appearance: none;
   background-color: $hse-button-color;
   border: $hse-border-width-form-element solid transparent;
   box-shadow: 0 $button-shadow-size 0 $hse-button-shadow-color; // s0
@@ -33,18 +33,18 @@ $button-shadow-size: 4px;
   cursor: pointer;
   display: inline-block;
   margin-top: 0;
-  padding: 8px hse-spacing(3); // s2
+  padding: hse-spacing(2) hse-spacing(3); // s2
   position: relative;
   text-align: center;
   vertical-align: top;
   width: auto;
   @include hse-font(16, bold);
-  @include hse-responsive-margin(5, "bottom", $adjustment: $button-shadow-size); // s1
-  @include mq($until: tablet) {
-    padding: hse-spacing(2) hse-spacing(3); // s2
-  }
+  @include hse-responsive-margin(
+    5,
+    "bottom",
+    $adjustment: $button-shadow-size
+  ); // s1
 
-  /* 2 */
   &:link,
   &:visited,
   &:active,
@@ -53,7 +53,6 @@ $button-shadow-size: 4px;
     text-decoration: none;
   }
 
-  /* 3 */
   &::-moz-focus-inner {
     border: 0;
     padding: 0;
@@ -68,13 +67,6 @@ $button-shadow-size: 4px;
     box-shadow: 0 $button-shadow-size 0 $hse-focus-text-color;
     color: $hse-focus-text-color;
     outline: $hse-focus-width solid transparent;
-    &:visited {
-      color: $hse-focus-text-color;
-
-      &:active {
-        color: $color_hse-white;
-      }
-    }
   }
 
   &:active {
@@ -84,7 +76,6 @@ $button-shadow-size: 4px;
     top: $button-shadow-size;
   }
 
-  /* 4 */
   &::before {
     background: transparent;
     bottom: -($hse-border-width-form-element + $button-shadow-size);
@@ -218,9 +209,15 @@ $button-shadow-size: 4px;
   box-shadow: 0 $button-shadow-size 0 $hse-transparent-button-shadow-color;
   border: 1px solid $hse-transparent-button-border-color;
   color: $hse-reverse-button-text-color;
+
+  &::before {
+    top: -1px;
+    bottom: -(1px + $button-shadow-size);
+    left: -1px;
+    right: -1px;
+  }
   &:hover {
     background-color: $color_hse-grey-4;
-    color: $hse-reverse-button-text-color;
     color: $hse-reverse-button-text-color;
   }
 
@@ -229,6 +226,13 @@ $button-shadow-size: 4px;
     box-shadow: 0 $button-shadow-size 0 $hse-focus-text-color;
     color: $hse-focus-text-color;
     outline: $hse-focus-width solid transparent;
+  }
+
+  &:focus:not(:focus-visible) {
+    background: $hse-transparent-button-color;
+    box-shadow: 0 $button-shadow-size 0 $hse-transparent-button-shadow-color;
+    color: $hse-reverse-button-text-color;
+    outline: none;
   }
 
   &:active {
@@ -243,12 +247,23 @@ $button-shadow-size: 4px;
   }
 }
 
-.global-menu-button, .search-button {
+// =========================================================
+// Small buttons
+// =========================================================
+
+.hse-button--small {
+  height: 36px;
+  padding: hse-spacing(1) 12px;
+  line-height: 19px;
+  @include hse-responsive-margin(4, "bottom", $adjustment: $button-shadow-size);
+}
+
+.global-menu-button,
+.search-button {
   margin-top: 0;
   margin-bottom: 0;
   &:focus-visible {
     background: $hse-focus-color !important;
-    // box-shadow: 0 $button-shadow-size 0 $hse-focus-text-color;
     color: $hse-focus-text-color;
     outline: $hse-focus-width solid transparent;
     &:hover {
@@ -273,13 +288,14 @@ $button-shadow-size: 4px;
   svg {
     fill: $hse-focus-color !important;
   }
-  svg circle, svg line {
+  svg circle,
+  svg line {
     stroke: $color_hse-black !important;
   }
 }
 
 .search-button.main-search-expanded:focus-visible .gsc-search-button-v2.gsc {
-    &:after {
+  &:after {
     content: "";
     height: 3px;
     position: absolute;
@@ -287,7 +303,7 @@ $button-shadow-size: 4px;
     background: $color_hse-black;
     width: 42px;
     margin-left: -38px;
-    }
+  }
 }
 
 #menu-button.global-menu-button:focus-visible span:before {
@@ -296,22 +312,22 @@ $button-shadow-size: 4px;
 }
 
 .hse-button--start {
-&:after {
-  content: " ";
-  position: relative;
-  background-image: url(../../assets/v6-images/icons/svg/solid/chevron-right-white.svg);
-  background-repeat: no-repeat;
-  background-position: bottom;
-  display: inline-block;
-  width: 15px;
-  height: 20px;
-  margin: 0;
-  bottom: -4px;
-  margin-left: 10px;
-}
-&:focus::after {
-  background-image: url(../../assets/v6-images/icons/svg/solid/chevron-right-black.svg);
-}
+  &:after {
+    content: " ";
+    position: relative;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 512'%3E%3Cpath fill='%23ffffff' d='M285.5,273L91.1,467.3c-9.4,9.4-24.6,9.4-33.9,0l-22.7-22.7c-9.4-9.4-9.4-24.5,0-33.9l154-154.7l-154-154.7c-9.3-9.4-9.3-24.5,0-33.9l22.7-22.7c9.4-9.4,24.6-9.4,33.9,0L285.5,239C294.8,248.4,294.8,263.6,285.5,273z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: bottom;
+    display: inline-block;
+    width: 15px;
+    height: 20px;
+    margin: 0;
+    bottom: -4px;
+    margin-left: 10px;
+  }
+  &:focus::after {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 265 436.7'%3E%3Cpath fill='%23212b32' d='M258.1,235.4L63.7,429.6c-9.4,9.4-24.6,9.4-33.9,0L7,406.9c-9.4-9.4-9.4-24.5,0-33.9l154-154.7L7.1,63.7c-9.3-9.4-9.3-24.5,0-33.9L29.8,7c9.4-9.4,24.6-9.4,33.9,0l194.4,194.3C267.4,210.8,267.4,226,258.1,235.4z'/%3E%3C/svg%3E");
+  }
 }
 
 /**
@@ -322,7 +338,7 @@ $button-shadow-size: 4px;
 .hse-button[disabled="disabled"],
 .hse-button[disabled] {
   background-color: $hse-button-color;
-  opacity: (0.5);
+  opacity: 0.5;
   pointer-events: none;
 
   &:hover {
@@ -344,7 +360,7 @@ $button-shadow-size: 4px;
 .hse-button--secondary[disabled="disabled"],
 .hse-button--secondary[disabled] {
   background-color: $hse-secondary-button-color;
-  opacity: (0.5);
+  opacity: 0.5;
 
   &:hover {
     background-color: $hse-secondary-button-color;
@@ -364,7 +380,7 @@ $button-shadow-size: 4px;
 .hse-button--reverse[disabled="disabled"],
 .hse-button--reverse[disabled] {
   background-color: $hse-reverse-button-color;
-  opacity: (0.5);
+  opacity: 0.5;
 
   &:hover {
     background-color: $hse-reverse-button-color;

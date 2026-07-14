@@ -1,9 +1,8 @@
+import { ChartOptions } from './options.js';
 import { seriesData } from './series-data.js';
 import { chartCategories } from './chart-categories';
-import { ChartOptions } from './dependencies';
 import { missingData } from './missing-data.js';
 import { plotBand } from './plot-band';
-import {red} from 'ansi-colors';
 /*
     Class @ChartOptionsLine
 

@@ -14,6 +14,7 @@
 @use "../../base/core/tools/mixins" as *;
 @use "../../base/core/tools/typography" as *;
 @use "../../base/core/settings/colours" as *;
+@use "../../base/core/tools/spacing" as *;
 
 .hse-fieldset {
 border: 0;

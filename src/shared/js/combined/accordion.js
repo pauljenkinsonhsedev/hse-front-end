@@ -1,78 +1,98 @@
-import load from './utils/asset-loader';
-import pathEnv from './utils/asset-env-path';
+/**
+ * accordion.js
+ * Progressively enhances [data-aria-accordion] containers.
+ * Transforms data-attribute HTML into the class-based structure the SCSS expects,
+ * replacing the old a11y_accordions vendor library dependency.
+ */
 
-// Function to initialize the accordion
 export function accordion() {
-    const accordion = document.querySelector('[data-aria-accordion]');
-    if (!accordion) {
-        return;
-    }
+    const containers = document.querySelectorAll('[data-aria-accordion]');
+    if (containers.length === 0) return;
 
-    return Promise.all([
-        load.js(pathEnv + '/assets/v6-js/vendor/a11y_accordions/index.js'),
-    ]).then(() => {
-        openAccordionFromHash(); // Call function to handle hash-based opening
-    }).catch((err) => {
-        console.error(`Error initiating accordion: ${err}`);
+    containers.forEach(container => {
+        const headings = Array.from(container.querySelectorAll('[data-aria-accordion-heading]')).filter(
+            heading => heading.closest('[data-aria-accordion]') === container
+        );
+        const isMulti = container.hasAttribute('data-multi');
+
+        headings.forEach((heading, index) => {
+            const panel = heading.nextElementSibling;
+            if (!panel || !panel.hasAttribute('data-aria-accordion-panel')) return;
+
+            // Wrap heading in section + header divs with the expected classes
+            const section = document.createElement('div');
+            section.className = 'hse-accordion__section';
+
+            const header = document.createElement('div');
+            header.className = 'hse-accordion__section-header';
+
+            heading.classList.add('hse-accordion__section-heading');
+
+            // Build the button inside the heading
+            const derivedId = heading.id ? `${heading.id}-panel` : null;
+            const panelId = panel.id ||
+                (derivedId && !document.getElementById(derivedId) ? derivedId : `accordion-panel-${Math.random().toString(36).slice(2)}`);
+            panel.id = panelId;
+
+            const button = document.createElement('button');
+            button.className = 'hse-accordion__section-button';
+            button.type = 'button';
+            button.setAttribute('aria-expanded', 'false');
+            button.setAttribute('aria-controls', panelId);
+            button.innerHTML = heading.innerHTML;
+            heading.innerHTML = '';
+            heading.appendChild(button);
+
+            // Add content class to panel and hide it
+            panel.classList.add('hse-accordion__section-content');
+            panel.style.display = 'none';
+
+            // Restructure: section > header > heading, then section > panel
+            container.insertBefore(section, heading);
+            header.appendChild(heading);
+            section.appendChild(header);
+            section.appendChild(panel);
+        });
+
+        // Wire up toggle behaviour after DOM is restructured
+        const buttons = container.querySelectorAll('.hse-accordion__section-button');
+
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                const isExpanded = button.getAttribute('aria-expanded') === 'true';
+                const panel = document.getElementById(button.getAttribute('aria-controls'));
+
+                if (!isMulti && !isExpanded) {
+                    buttons.forEach(otherBtn => {
+                        if (otherBtn !== button) {
+                            otherBtn.setAttribute('aria-expanded', 'false');
+                            const otherPanel = document.getElementById(otherBtn.getAttribute('aria-controls'));
+                            if (otherPanel) otherPanel.style.display = 'none';
+                        }
+                    });
+                }
+
+                button.setAttribute('aria-expanded', String(!isExpanded));
+                if (panel) panel.style.display = isExpanded ? 'none' : 'block';
+            });
+        });
     });
-}
 
-document.addEventListener("DOMContentLoaded", function () {
-    let hasInteracted = false; // Flag to track user interaction
-
-    function openAccordionFromHash() {
+    const openFromHash = () => {
         const hash = window.location.hash.substring(1);
         if (!hash) return;
 
-        const heading = document.querySelector(`[id="${hash}"][data-aria-accordion-heading]`);
-        if (!heading) return;
+        const heading = document.getElementById(hash);
+        const button = heading
+            ? heading.querySelector('.hse-accordion__section-button')
+            : document.querySelector(`[aria-controls="${hash}"]`);
 
-        const panel = heading.nextElementSibling;
-        if (!panel || !panel.hasAttribute("data-aria-accordion-panel")) return;
-
-        const button = heading.querySelector("button");
-        if (button && button.getAttribute("aria-expanded") === "false") {
+        if (button && button.getAttribute('aria-expanded') === 'false') {
             button.click();
+            setTimeout(() => button.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
         }
+    };
 
-        // Scroll and move focus to the heading
-        setTimeout(() => {
-            heading.scrollIntoView({ behavior: "smooth", block: "start" });
-            heading.focus();
-            history.replaceState(null, null, " "); // Remove hash from URL
-        }, 300);
-    }
-
-    // Remove hash when clicking **any link** on the page
-    document.querySelectorAll("a").forEach((link) => {
-        link.addEventListener("click", () => {
-            history.replaceState(null, null, " "); // Clear hash
-        });
-    });
-
-    // Optional: Remove hash if user clicks anywhere on the page (outside accordion and links)
-    document.body.addEventListener("click", (event) => {
-        // Only remove hash if the user has interacted with the accordion
-        if (hasInteracted && !event.target.closest("[data-aria-accordion-heading]") && !event.target.closest("a")) {
-            history.replaceState(null, null, " "); // Clear hash
-        }
-    });
-
-    // Accordion logic: Set flag after user interacts with an accordion
-    document.querySelectorAll("[data-aria-accordion-heading]").forEach((heading) => {
-        heading.addEventListener("click", () => {
-            hasInteracted = true; // Mark the interaction flag as true
-        });
-    });
-
-    // Run function when page loads
-    if (window.ARIAaccordion) {
-        openAccordionFromHash();
-    } else {
-        setTimeout(openAccordionFromHash, 500);
-    }
-
-    // Handle hash changes dynamically
-    window.addEventListener("hashchange", openAccordionFromHash);
-});
-
+    openFromHash();
+    window.addEventListener('hashchange', openFromHash);
+}

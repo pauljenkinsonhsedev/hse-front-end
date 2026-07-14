@@ -1,152 +1,76 @@
-import "./combined/polyfills.js";
-import ChartsDefault from "./combined/charts/charts.js";
+import { codeHighlighter } from "./combined/code-highlighter.js";
 import { mainMenu } from "./combined/main-menu.js";
-import { loadPicturefillFn } from "./combined/utils/picture-elem.js";
 import { fileTypeFunction } from "./combined/file-type.js";
-import { getInternetExplorerVersion } from "./combined/utils/internet-explorer-detection.js";
 import { tableSortable } from "./combined/tables/table-sortable.js";
 import { feedbackSurvey } from "./combined/feedback-survey.js";
-import { dialogModal } from "./combined/dialogs.js";
 import { tabs } from "./combined/tabs.js";
-import { backLinks } from "./combined/back-link.js";
 import { ariaLabels } from "./combined/aria-labels.js";
 import { googleSearch } from "./combined/google-search.js";
-// import { mainSearch } from "./combined/main-search.js";
-import { footnoteLinks } from "./combined/footnote-links.js";
-import { footnoteAbbr } from "./combined/footnote-abbr.js";
 import { topTasks } from "./combined/top-tasks.js";
-import { informationBanner } from "./combined/information-banner.js";
-import { codeHighlighter } from "./combined/code-highlighter.js";
-import { htmlFormsAntiSpam } from "./combined/html-forms-anti-spam.js";
-import { subnavMenu } from "./combined/subnav-menu.js";
-import { subNavMobile } from "./combined/subnav-mobile.js";
+import { hseBanner } from "./combined/banner.js";
+import { globalBanner } from "./combined/global-banner.js";
 import { accordion } from "./combined/accordion.js";
-import { htmlPrintGuide } from "./combined/html-print-guide.js";
 import { backToTop } from "./combined/back-to-top.js";
-import { sideNavDesign } from "./combined/side-nav-design.js";
 import { dsSiteNavigation } from "./combined/ds-site-navigation.js";
+import { sideNavDesign } from "./combined/side-nav-design.js";
+import { dsBackToTop } from "./combined/ds-back-to-top.js";
+import { serviceNavigation } from "./combined/service-navigation.js";
+import { htmlPrintGuide } from "./combined/html-print-guide.js";
 
-// Window load
 window.addEventListener("DOMContentLoaded", () => {
-  // Selector to reference prgressive enhancements in css
-  const body = document.querySelector("body");
-  body.classList.add("hasScript");
+  document.body.classList.add("hasScript");
+  document.documentElement.classList.add("js-enabled");
 
-  // picturefill.min.js
-  const pictureElemSelector = document.getElementsByTagName("picture")[0];
-  if (pictureElemSelector && getInternetExplorerVersion() <= 11) {
-    loadPicturefillFn();
+  // Initialize Core Navigation
+  try {
+    if (document.getElementById("globalSearch")) {
+      googleSearch();
+    }
+    if (document.querySelector(".js-menu")) {
+      mainMenu();
+    }
+    dsSiteNavigation();
+  } catch (e) {
+    console.error("Navigation failed to load:", e);
   }
 
-  const backToTopLink = document.querySelector(".hse-back-to-top");
-  
-  if (backToTopLink) {
+  // Initialize Components
+  accordion();
+  hseBanner();
+  globalBanner();
+  topTasks();
+  ariaLabels();
+  document.querySelectorAll(".hse-tabs").forEach((container) => tabs(container));
+  document.querySelectorAll(".sortable").forEach((container) => tableSortable(container));
+  fileTypeFunction();
+
+  // Initialize Charts if container exists — loaded as a separate chunk
+  if (document.querySelector(".chart")) {
+    import("./combined/charts/charts.js").then(({ default: ChartsDefault }) => {
+      new ChartsDefault();
+    });
+  }
+
+  codeHighlighter();
+  feedbackSurvey();
+
+  if (document.querySelector(".hse-back-to-top")) {
     backToTop();
   }
 
-  accordion();
-
-  informationBanner();
-
-  codeHighlighter();
-
-  // aria labels
-  ariaLabels();
-
-  // Top tasks
-  topTasks();
-
-  // HTML Print Guide
-  const htmlPrintGuideContainer = document.querySelector(".html-print-guide");
-  if (htmlPrintGuideContainer) {
-    htmlPrintGuide();
-  } else {
-    // footnotes (for all printed pages)
-    footnoteLinks();
-    footnoteAbbr();
+  if (document.querySelector('[data-module="hse-service-navigation"]')) {
+    serviceNavigation();
   }
 
-  const googleSearchContainer = document.getElementById("globalSearch");
-  if (googleSearchContainer) {
-    googleSearch();
-  }
-
-  // Back links
-  const backLink = document.querySelector(".hse-breadcrumb");
-  if (backLink) {
-    backLinks();
-  }
-
-  // small device menu
-  const menu = document.querySelector(".js-menu");
-  if (menu) {
-    mainMenu();
-  }
-
-  // small device menu
-  // const search = document.querySelector(".js-search");
-  // if (search) {
-  //   mainSearch();
-  // }
-
-  // JS Enabled flag
-  const htmlDoc = document.getElementsByTagName("html")[0];
-  htmlDoc.classList.add("js-enabled");
-
-  // Tables
-  const tableSortableSelector = document.querySelector(".sortable");
-  if (document.body.contains(tableSortableSelector)) {
-    tableSortable(tableSortableSelector);
-  }
-
-  // Tabs
-  const tabSelector = document.querySelector(".hse-tabs");
-  if (document.body.contains(tabSelector)) {
-    tabs(tabSelector);
-  }
-
-  // Dialogs
-  const dialog = document.querySelector(".dialog");
-  if (document.body.contains(dialog)) {
-    dialogModal(dialog);
-  }
-
-  // HighCharts JS
-  const chartSelector = document.querySelector(".chart");
-  if (document.body.contains(chartSelector)) {
-    new ChartsDefault();
-  }
-
-  // Append file types to anchors
-  const anchorSelector = document.querySelector("#page-contents a, .hse-browse-section__list a");
-  if (document.body.contains(anchorSelector)) {
-    fileTypeFunction();
-  }
-
-
-  feedbackSurvey();
-
-  // Design system side-nav
-  const dsSide = document.querySelector(".hse-design-side-navigation");
-  if (dsSide) {
+  if (document.querySelector(".hse-design-side-navigation")) {
     sideNavDesign();
   }
 
-  // Design system site navigation
-  const dsSiteNav = document.querySelector(".hse-ds-navigation");
-  if (dsSiteNav) {
-    dsSiteNavigation();
-  }
-  
-
-  
-  const secondaryMenuSelector = document.getElementById("menu");
-
-  if (secondaryMenuSelector) {
-    subnavMenu(secondaryMenuSelector);
-    subNavMobile();
+  if (document.querySelector(".ds-back-to-top")) {
+    dsBackToTop();
   }
 
-  htmlFormsAntiSpam();
-
-}); // end window load
+  if (document.querySelector(".html-print-guide")) {
+    htmlPrintGuide();
+  }
+});

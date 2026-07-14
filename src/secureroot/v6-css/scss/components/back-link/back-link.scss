@@ -1,0 +1,63 @@
+@use "sass:math";
+@use "sass:string";
+
+@use "../../base/core/tools/spacing" as *;
+@use "../../base/core/tools/typography" as *;
+@use "../../base/core/tools/links" as *;
+@use "../../base/core/tools/focused" as *;
+@use "../../base/core/settings/spacing" as *;
+@use "../../base/core/settings/colours" as *;
+@use "../../base/core/settings/typography" as *;
+@use "../../base/core/tools/sass-mq" as *;
+
+$hse-back-link-font-size: 16;
+$hse-back-link-chevron-size: #{math.div(7, $hse-back-link-font-size)}em;
+$hse-back-link-chevron-border-width: #{math.div(1, $hse-back-link-font-size)}em;
+$hse-back-link-chevron-colour: $color_hse-grey-2;
+
+.hse-back-link {
+  @include hse-font(16);
+  @include hse-link-style-default;
+  display: inline-block;
+  position: relative;
+  margin-top: hse-spacing(3);
+  margin-bottom: hse-spacing(3);
+  padding-left: #{math.div(14, $hse-back-link-font-size)}em;
+}
+
+.hse-back-link::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: #{math.div(3, $hse-back-link-font-size)}em;
+  width: $hse-back-link-chevron-size;
+  height: $hse-back-link-chevron-size;
+  margin: auto 0;
+  transform: rotate(225deg);
+  border: solid;
+  border-width: 1px 1px 0 0;
+  border-color: $hse-back-link-chevron-colour;
+
+  @supports (border-width: string.unquote("max(0px)")) {
+    border-width: string.unquote(
+        "max(1px, #{$hse-back-link-chevron-border-width})"
+      )
+      string.unquote("max(1px, #{$hse-back-link-chevron-border-width})") 0 0;
+    font-size: string.unquote("max(#{$hse-back-link-font-size * 1px}, 1em)");
+  }
+}
+
+.hse-back-link:focus::before {
+  border-color: $hse-focus-text-color;
+}
+
+.hse-back-link::after {
+  content: "";
+  position: absolute;
+  top: -14px;
+  right: 0;
+  bottom: -14px;
+  left: 0;
+}

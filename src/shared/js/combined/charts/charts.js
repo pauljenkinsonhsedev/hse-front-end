@@ -1,5 +1,26 @@
+import Highcharts from 'highcharts';
+import HighchartsMore from 'highcharts/highcharts-more';
+import Data from 'highcharts/modules/data';
+import Exporting from 'highcharts/modules/exporting';
+import Accessibility from 'highcharts/modules/accessibility';
+
+// PLOT TWIST FIX: Module bundlers often wrap imported functions in a 'default' object.
+// This helper safely initializes Highcharts modules regardless of how the bundler packaged them.
+const safeInit = (module, hc) => {
+    if (typeof module === 'function') {
+        module(hc);
+    } else if (module && typeof module.default === 'function') {
+        module.default(hc);
+    }
+};
+
+// Initialize everything safely!
+safeInit(HighchartsMore, Highcharts);
+safeInit(Data, Highcharts);
+safeInit(Exporting, Highcharts);
+safeInit(Accessibility, Highcharts);
+
 import {
-    ChartOptions,
     ChartOptionsDefault,
     ChartOptionsLine,
     ChartOptionsDual,
@@ -9,28 +30,16 @@ import {
     ChartOptionsBarStacked,
     ChartOptionsColumnStacked
 } from './dependencies';
-import pathEnv from '../utils/asset-env-path';
-import load from '../utils/asset-loader';
 
 class ChartsDefault {
     constructor() {
         this.chart = window.chart || {};
-
         this.init();
     }
 
+    // Bypass the broken asset loader by returning an empty resolved promise
     loadChartsFn() {
-        return Promise.all([
-            load.js(pathEnv + '/assets/v6-js/vendor/highcharts/highcharts.js'),
-            load.js(pathEnv + '/assets/v6-js/vendor/highcharts/highcharts-more.js'),
-            load.js(pathEnv + '/assets/v6-js/vendor/highcharts/data.js'),
-            load.js(pathEnv + '/assets/v6-js/vendor/highcharts/exporting.js'),
-            load.js(pathEnv + '/assets/v6-js/vendor/highcharts/accessibility.js'),
-            load.js(pathEnv + '/assets/v6-js/vendor/moment/moment.js'),
-        ])
-        .catch((err) => {
-            console.error(`Error initiating charts: ${err}`);
-        });
+        return Promise.resolve(); 
     }
 
     init() {
@@ -38,65 +47,53 @@ class ChartsDefault {
             const chartContainer = document.querySelectorAll('.chart');
             const chartArray = [...chartContainer];
 
-            // initialise charts
             chartArray.forEach((container) => {
                 let type = container.dataset.chartType;
-                if (type.includes('with')) {
+                if (type && type.includes('with')) {
                     type = 'with';
                 }
+
                 switch(type) {
                     case 'with':
                         this.collection = new ChartOptionsDual(container);
                     break;
-
                     case 'pie':
                         this.collection = new ChartOptionsPie(container);
                     break;
-
                     case 'donut':
                         this.collection = new ChartOptionsDonut(container);
                     break;
-
                     case 'line':
                         this.collection = new ChartOptionsLine(container);
                     break;
-
                     case 'barstacked':
                         this.collection = new ChartOptionsBarStacked(container);
                     break;
-
                     case 'columnstacked':
                         this.collection = new ChartOptionsColumnStacked(container);
                     break;
-
                     case 'arearange':
                         this.collection = new ChartOptionsArearange(container);
                     break;
-
                     default:
                         this.collection = new ChartOptionsDefault(container);
                     break;
                 }
+
                 this.buildFn(container, this.collection);
             });
         });
-        // .catch((err) => {
-        //     console.error(`There was an error initialising charts: ${err}`);
-        // });
     }
 
     buildFn(container, params){
         Highcharts.setOptions({
             lang: {
-                thousandsSep: ',',
-                // numericSymbols: ['k', ' million', ' billion']
+                thousandsSep: ','
             }
         });
-        this.chart = new Highcharts.chart(container, params);
 
-        if (process.env.NODE_ENV === 'development') {
-            const msg = this.chart ? 'successful' : 'unsuccessful';
-        }
+        // DRAW THE CHART
+        this.chart = Highcharts.chart(container, params);
     }
 }
 

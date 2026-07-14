@@ -1,0 +1,124 @@
+@use "../../base/core/settings/colours" as *;
+@use "../../base/core/tools/mixins" as *;
+@use "../../base/core/tools/sass-mq" as *;
+@use "../../base/core/settings/spacing" as *;
+@use "../../base/core/tools/spacing" as *;
+
+.hse-banner {
+  @include clearfix();
+  padding: hse-spacing(2) 0;
+  background-color: #f5e9eb;
+  border-bottom: 1px solid $color_hse-grey-3;
+
+  a:link {
+    text-decoration: underline;
+  }
+
+  a:visited,
+  a:hover {
+    text-decoration: none;
+    color: $color_hse-grey-1;
+  }
+
+  a:focus {
+    color: $color_hse-beta;
+  }
+
+  &__inner {
+    border-left: 4px solid $color_hse-red;
+    padding-left: hse-spacing(3);
+
+    p:last-of-type {
+      margin: 0;
+    }
+  }
+
+  @include mq($media-type: print) {
+    display: none;
+  }
+
+  &--default {
+    .hse-banner__inner {
+      p {
+        font-size: 1rem;
+        line-height: normal;
+        margin: 0;
+      }
+    }
+  }
+
+  &--secondary {
+    background-color: $color_hse-grey-4;
+
+    a:visited,
+    a:hover {
+      color: $hse-link-hover-color;
+    }
+
+    .hse-banner__inner {
+      p {
+        font-size: 1rem;
+        line-height: normal;
+        margin: 0;
+      }
+    }
+  }
+
+  &--phase {
+    background-color: transparent;
+
+    a:visited,
+    a:hover {
+      color: $hse-link-hover-color;
+      text-decoration: underline;
+    }
+
+    .hse-banner__inner {
+      border-left: none;
+      padding-left: 0;
+    }
+  }
+
+  &--mourning {
+    background-color: black;
+    border-bottom: 1px solid $color_hse-grey-3;
+    padding: hse-spacing(6) 0;
+
+    .hse-banner__inner {
+      padding-left: 0;
+      border-left: 0;
+    }
+
+    .hse-banner__heading {
+      color: white;
+      margin-bottom: hse-spacing(2);
+    }
+
+    p {
+      color: white;
+    }
+
+    a {
+      color: white;
+      text-decoration: underline;
+    }
+
+    a:visited,
+    a:hover {
+      color: white;
+      text-decoration: underline;
+    }
+  }
+
+  &__heading {
+    margin-bottom: 0;
+  }
+
+  &__description {
+    margin: hse-spacing(3) 0;
+  }
+
+  &__more {
+    margin: 0;
+  }
+}

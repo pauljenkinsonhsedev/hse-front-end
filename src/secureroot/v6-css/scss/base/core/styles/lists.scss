@@ -29,13 +29,6 @@
   @include hse-responsive-margin(4, "bottom");
 }
 
-%hse-list > li {
-  @include hse-responsive-margin(2, "bottom");
-
-  &:last-child {
-    margin-bottom: 0;
-  }
-}
 
 %hse-list--bullet {
   list-style-type: disc;
@@ -55,13 +48,17 @@
   @extend %hse-list--number;
 }
 
-.hse-list {
+.hse-list--unstyled {
   @extend %hse-list;
 }
 
 ul {
   @extend %hse-list;
   @extend %hse-list--bullet;
+}
+
+ul li::marker {
+  color: $color_hse-red;
 }
 
 ol {
@@ -120,8 +117,6 @@ ol {
     right: 0;
     margin-right: 10px;
     top: 0;
-    -webkit-transform: translateY(0) rotate(45deg) scale(1);
-    -ms-transform: translateY(0) rotate(45deg) scale(1);
     transform: translateY(0) rotate(45deg) scale(1);
     width: 10px;
   }

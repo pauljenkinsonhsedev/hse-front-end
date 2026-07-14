@@ -1,0 +1,23 @@
+@use "../../base/core/tools/spacing" as *;
+@use "../../base/core/tools/typography" as *;
+@use "../../base/core/tools/sass-mq" as *;
+@use "../../base/core/settings/spacing" as *;
+@use "../../base/core/settings/colours" as *;
+
+.hse-tag {
+  @include hse-font(16);
+  display: inline-block;
+  width: fit-content;
+  margin-top: -2px;
+  margin-bottom: -3px;
+  padding: 2px 8px 3px;
+  border-radius: 1px;
+  text-decoration: none;
+  overflow-wrap: break-word;
+  color: $color_hse-red;
+  background-color: $color_hse-red-tint-1;
+
+  @media screen and (forced-colors: active) {
+    font-weight: bold;
+  }
+}

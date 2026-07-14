@@ -1,13 +1,31 @@
 {
-  "plugins": [
-    "stylelint-scss"
-  ],
+  "plugins": ["stylelint-scss", "stylelint-order"],
+  "customSyntax": "postcss-scss",
   "rules": {
-    "indentation": 2,
-    "scss/no-mixed-declarations": true,
     "no-empty-source": true,
     "block-no-empty": true,
-    "unit-no-unknown": true
+    "unit-no-unknown": true,
+    "color-no-invalid-hex": true,
+    "shorthand-property-no-redundant-values": true,
+    "declaration-block-no-duplicate-properties": true,
+    "declaration-block-no-shorthand-property-overrides": true,
+    "selector-pseudo-class-no-unknown": true,
+    "selector-pseudo-element-no-unknown": true,
+    "no-duplicate-at-import-rules": true,
+    "no-duplicate-selectors": true,
+    "scss/no-duplicate-dollar-variables": true,
+    "scss/at-rule-no-unknown": true,
+    "property-no-vendor-prefix": [
+      true,
+      {
+        "ignoreProperties": [
+          "-webkit-font-smoothing",
+          "-moz-osx-font-smoothing",
+          "-webkit-tap-highlight-color",
+          "-webkit-touch-callout",
+          "-webkit-backdrop-filter"
+        ]
+      }
+    ]
   }
 }
-  

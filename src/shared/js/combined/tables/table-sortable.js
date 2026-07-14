@@ -1,14 +1,3 @@
-import load from '../utils/asset-loader';
-import pathEnv from '../utils/asset-env-path';
-
-function loadmomentFn() {
-    return Promise.all([
-        load.js(pathEnv + '/assets/v6-js/vendor/moment/moment.js'),
-    ])
-    .catch((err) => {
-        console.error(`Error initiating charts: ${err}`);
-    });
-}
 
 // Check if the value is a date
 function validateDate(date) {
@@ -23,15 +12,16 @@ function validateDate(date) {
 }
 
 function convertDate(date) {
-    const x = new Date(date).toISOString();
-    return moment(x).format('YYYY/DD/MM').toString();
+    const d = new Date(date);
+    return `${d.getFullYear()}/${String(d.getMonth() + 1).padStart(2, '0')}/${String(d.getDate()).padStart(2, '0')}`;
 }
 
-export function tableSortable(container){
-    const tableHeaders = container.querySelectorAll('thead th');
+export function tableSortable(container) {
+    // 1. Add safety check
+    if (!container) return; 
 
-    // Load moment.js for date conversions
-    loadmomentFn();
+    // 2. The existing code continues below
+    const tableHeaders = container.querySelectorAll('thead th');
 
     // Sorting event
     for (let i = 0; i < tableHeaders.length; i++) {

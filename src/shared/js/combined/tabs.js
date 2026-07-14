@@ -2,9 +2,13 @@
 import { tabsMediaQuery } from "./utils/tabs-media-query.js";
 
 export function tabs(container) {
+  // --- ADD THIS SAFETY CHECK ---
+  if (!container) return; 
+  
   const tabTitles = container.querySelectorAll(".hse-tabs__tab");
   const listItems = container.querySelectorAll(".hse-tabs__list-item");
   const tabPanels = container.querySelectorAll(".hse-tabs__panel");
+  // ... rest of your code
 
   if (!tabTitles.length) return;
 

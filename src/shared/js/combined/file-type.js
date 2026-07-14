@@ -18,7 +18,10 @@ export function fileTypeFunction() {
 
     anchors.forEach((elem) => {
         const path = elem.href;
-        const extension = path.split('.').pop();
+        // Strip query/hash, take the last dot-segment, normalise case.
+        // Guards against extensionless URLs and archive/query-string links.
+        const extension = (path.split(/[?#]/)[0].split('.').pop() || '').toLowerCase();
+
 
         // Get the file type description if exists
         const fileType = fileTypes[extension];
