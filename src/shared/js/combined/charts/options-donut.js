@@ -86,6 +86,12 @@ export class ChartOptionsDonut extends ChartOptions {
                 allowPointSelect: true,
                 cursor: 'pointer',
                 innerSize: '65%',
+                states: {
+                    select: {
+                        borderColor: '#000000',
+                        borderWidth: 3
+                    }
+                },
                 dataLabels: {
                     enabled: true,
                     alignTo: this.alignTo,

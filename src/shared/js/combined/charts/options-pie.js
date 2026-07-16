@@ -47,6 +47,12 @@ export class ChartOptionsPie extends ChartOptions {
                 allowPointSelect: true,
                 cursor: 'pointer',
                 size: this.pieSize,
+                states: {
+                    select: {
+                        borderColor: '#000000',
+                        borderWidth: 3
+                    }
+                },
                 dataLabels: {
                     enabled: true,
                     alignTo: this.alignTo,
