@@ -16,9 +16,13 @@ function convertDate(date) {
     return `${d.getFullYear()}/${String(d.getMonth() + 1).padStart(2, '0')}/${String(d.getDate()).padStart(2, '0')}`;
 }
 
+function getCellText(cell) {
+    return cell.textContent.trim().toLowerCase();
+}
+
 export function tableSortable(container) {
     // 1. Add safety check
-    if (!container) return; 
+    if (!container) return;
 
     // 2. The existing code continues below
     const tableHeaders = container.querySelectorAll('thead th');
@@ -67,10 +71,10 @@ export function tableSortable(container) {
                 cell = rows[i].getElementsByTagName('td')[n];
                 cellNext = rows[i + 1].getElementsByTagName('td')[n];
 
-                let cellText = cell.innerHTML.toLowerCase();
-                let cellNextText = cellNext.innerHTML.toLowerCase();
+                let cellText = getCellText(cell);
+                let cellNextText = getCellText(cellNext);
 
-                if (validateDate(cellText) === true) {
+                if (validateDate(cellText) === true && validateDate(cellNextText) === true) {
                     cellText = convertDate(cellText);
                     cellNextText = convertDate(cellNextText);
                 }
@@ -91,7 +95,6 @@ export function tableSortable(container) {
             if (Switch) {
                 rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
                 switching = true;
-
                 count++;
             } else {
                 if (count == 0 && direction == 'ascending') {
