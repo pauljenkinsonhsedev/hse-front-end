@@ -164,6 +164,15 @@ export class ChartOptions {
                 '<div>{typeDescription}</div>'+
                 '<div>{chartSubtitle}</div>'
             },
+            keyboardNavigation: {
+              focusBorder: {
+                enabled: true,
+                style: {
+                  color: '#ffdd00', // $hse-focus-color
+                  lineWidth: 4, // $hse-focus-width
+                },
+              },
+            },
           },
           title: {
             useHTML: true,

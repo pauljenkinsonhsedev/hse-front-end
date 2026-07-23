@@ -88,7 +88,7 @@ export class ChartOptionsDonut extends ChartOptions {
                 innerSize: '65%',
                 states: {
                     select: {
-                        borderColor: '#000000',
+                        borderColor: '#ffdd00', // $hse-focus-color
                         borderWidth: 3
                     }
                 },
