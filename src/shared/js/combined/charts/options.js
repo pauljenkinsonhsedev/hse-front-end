@@ -172,6 +172,7 @@ export class ChartOptions {
                   lineWidth: 4, // $hse-focus-width
                   borderRadius: 0,
                 },
+                margin: 0,
               },
             },
           },

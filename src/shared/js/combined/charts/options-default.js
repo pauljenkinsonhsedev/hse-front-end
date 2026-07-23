@@ -45,6 +45,7 @@ export class ChartOptionsDefault extends ChartOptions {
         const plotOptions = {
             bar: {
                 borderRadius: 0,
+                clip: false,
                 dataLabels: {
                     enabled: true,
                     formatter: getValue,
@@ -61,6 +62,7 @@ export class ChartOptionsDefault extends ChartOptions {
             },
             series: {
                 showInLegend: true,
+                borderWidth: 0,
                 events: {
                     legendItemClick: () => {
                         return false;
@@ -69,7 +71,8 @@ export class ChartOptionsDefault extends ChartOptions {
             },
             column: {
                 maxPointWidth: this.colWidth,
-                borderRadius: 0
+                borderRadius: 0,
+                clip: false
             }
         };
 
