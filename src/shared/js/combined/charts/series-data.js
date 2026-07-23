@@ -86,7 +86,13 @@ export function seriesData(data) {
                     let value = parseFloat(text[j].innerText);
 
                     if (j === u) {
-                        unitArray.push({name: categoryTitle, y: value});
+                        const point = {name: categoryTitle, y: value};
+                        if (errorArray[i] && typeof errorArray[i][1] === 'number') {
+                            // Upper confidence interval bound, used to keep the
+                            // value label clear of the error bar whisker.
+                            point.high = errorArray[i][1];
+                        }
+                        unitArray.push(point);
                     }
                 }
             }
