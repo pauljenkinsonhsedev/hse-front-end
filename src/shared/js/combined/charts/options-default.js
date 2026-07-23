@@ -44,6 +44,7 @@ export class ChartOptionsDefault extends ChartOptions {
 
         const plotOptions = {
             bar: {
+                borderRadius: 0,
                 dataLabels: {
                     enabled: true,
                     formatter: getValue,
@@ -67,7 +68,8 @@ export class ChartOptionsDefault extends ChartOptions {
                 }
             },
             column: {
-                maxPointWidth: this.colWidth
+                maxPointWidth: this.colWidth,
+                borderRadius: 0
             }
         };
 

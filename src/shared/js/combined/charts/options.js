@@ -170,6 +170,7 @@ export class ChartOptions {
                 style: {
                   color: '#ffdd00', // $hse-focus-color
                   lineWidth: 4, // $hse-focus-width
+                  borderRadius: 0,
                 },
               },
             },

@@ -41,6 +41,7 @@ export class ChartOptionsColumnStacked extends ChartOptions {
             },
             column: {
                 stacking: 'normal',
+                borderRadius: 0
             }
         };
 

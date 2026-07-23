@@ -48,6 +48,9 @@ export class ChartOptionsBarStacked extends ChartOptions {
         }
 
         const plotOptions = {
+            bar: {
+                borderRadius: 0
+            },
             column: {
             stacking: 'normal',
                 dataLabels: {
