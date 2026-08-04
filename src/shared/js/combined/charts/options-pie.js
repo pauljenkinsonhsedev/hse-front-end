@@ -60,7 +60,7 @@ export class ChartOptionsPie extends ChartOptions {
                     formatter: getDataLabel,
                     style: {
                         fontFamily: this.fontFamily,
-                        fontSize: '0.75rem',
+                        fontSize: '1rem',
                         fontWeight: 'bold'
                     }
                 }

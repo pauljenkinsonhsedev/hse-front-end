@@ -68,7 +68,7 @@ export class ChartOptionsArearange extends ChartOptions {
 
         const style = {
             fontFamily: this.fontFamily,
-            fontSize: '0.8rem',
+            fontSize: '1rem',
             fontWeight: 'regular'
         };
         this.collection.style = style;
@@ -162,7 +162,7 @@ export class ChartOptionsArearange extends ChartOptions {
                 format: '{value:,.0f}',
                 style: {
                     fontFamily: this.fontFamily,
-                    fontSize: '0.7rem',
+                    fontSize: '1rem',
                     fontWeight: 'regular',
                 }
             },
@@ -184,7 +184,7 @@ export class ChartOptionsArearange extends ChartOptions {
             padding: 1,
             style: {
                 backgroundColor: 'rgba(255, 255, 255, 1)',
-                fontSize: '0.9rem',
+                fontSize: '1rem',
                 opacity: 1
             },
             formatter: function() {
@@ -217,10 +217,10 @@ export class ChartOptionsArearange extends ChartOptions {
 
                     return `
                         <div style="background-color: #ffffff; padding: 8px;">
-                            <span style="font-size: 0.8rem;"><strong>${series[0].points[index].category}</strong></span>
+                            <span style="font-size: 1rem;"><strong>${series[0].points[index].category}</strong></span>
                             <br/>
-                            <span style="font-size: 0.8rem;"><span style="font-size: 0.8rem; color: ${series[0].color};">●</span> ${series[0].name} <strong>${dataLabelsPrefix}${rangeAverage}${dataLabelsSuffix}</strong></span><br/>
-                            <span style="font-size: 0.8rem;"><span style="font-size: 0.8rem; color: ${series[0].color};">●</span> ${series[rangeIndex].name} <strong>${dataLabelsPrefix}${rangeLow}${dataLabelsSuffix} - ${dataLabelsPrefix}${rangeHigh}${dataLabelsSuffix}</strong></span>
+                            <span style="font-size: 1rem;"><span style="font-size: 1rem; color: ${series[0].color};">●</span> ${series[0].name} <strong>${dataLabelsPrefix}${rangeAverage}${dataLabelsSuffix}</strong></span><br/>
+                            <span style="font-size: 1rem;"><span style="font-size: 1rem; color: ${series[0].color};">●</span> ${series[rangeIndex].name} <strong>${dataLabelsPrefix}${rangeLow}${dataLabelsSuffix} - ${dataLabelsPrefix}${rangeHigh}${dataLabelsSuffix}</strong></span>
                         </div>
                     `;
                 }
@@ -241,7 +241,7 @@ export class ChartOptionsArearange extends ChartOptions {
             style: {
                 color: '#666',
                 fontFamily: this.fontFamily,
-                fontSize: '0.8rem',
+                fontSize: '1rem',
                 fontWeight: 'regular',
             }
         };
@@ -257,7 +257,7 @@ export class ChartOptionsArearange extends ChartOptions {
                 dataLabels: {
                     style: {
                         fontFamily: this.fontFamily,
-                        fontSize: '0.7rem',
+                        fontSize: '1rem',
                         fontWeight: 'bold'
                     },
                 }
@@ -268,7 +268,7 @@ export class ChartOptionsArearange extends ChartOptions {
             enabled: true,
             itemStyle: {
                 font: this.fontFamily,
-                fontSize: '0.75rem',
+                fontSize: '1rem',
                 color: '#000'
             }
         };
@@ -276,7 +276,7 @@ export class ChartOptionsArearange extends ChartOptions {
             marginTop: 100,
             style: {
                 fontFamily: this.fontFamily,
-                fontSize: '0.8rem',
+                fontSize: '1rem',
                 fontWeight: 'regular'
             }
         };

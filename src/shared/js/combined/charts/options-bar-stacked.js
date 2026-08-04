@@ -24,7 +24,7 @@ export class ChartOptionsBarStacked extends ChartOptions {
             type: 'bar',
             style: {
                 fontFamily: this.fontFamily,
-                fontSize: '0.8rem',
+                fontSize: '1rem',
                 fontWeight: 'regular'
             }
         };
@@ -38,7 +38,7 @@ export class ChartOptionsBarStacked extends ChartOptions {
             labels: {
                 style: {
                     fontFamily: this.fontFamily,
-                    fontSize: '0.9rem',
+                    fontSize: '1rem',
                     fontWeight: 'regular',
                 }
             },

@@ -51,7 +51,7 @@ export class ChartOptionsDefault extends ChartOptions {
         let chart = {};
         if (this.type === 'bar' || this.type === 'column') {
             const categoryCount = container.querySelectorAll('.category').length;
-            const pxPerCategory = 50;
+            const pxPerCategory = 60; // bumped from 50 to fit 1rem category labels (was 0.7rem)
             const chartPadding = 150; // title, subtitle, axis labels, legend, margins
             const minChartHeight = 1000; // matches the industry/self-reported-ill-health chart (17 categories)
             chart = {
@@ -96,7 +96,7 @@ export class ChartOptionsDefault extends ChartOptions {
                     formatter: getValue,
                     style: {
                         fontFamily: this.fontFamily,
-                        fontSize: '0.8rem',
+                        fontSize: '1rem',
                         fontWeight: 'bold'
                     }
                 }

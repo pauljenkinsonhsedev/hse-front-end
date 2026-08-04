@@ -24,7 +24,7 @@ export class ChartOptionsColumnStacked extends ChartOptions {
             type: 'column',
             style: {
                 fontFamily: this.fontFamily,
-                fontSize: '0.8rem',
+                fontSize: '1rem',
                 fontWeight: 'regular'
             }
         };
