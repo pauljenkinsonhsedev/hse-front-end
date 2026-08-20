@@ -144,6 +144,15 @@ export class ChartOptions {
             return flag;
         }, 0);
 
+        // Chart title mirrors the site's H3 heading scale (rather than H2),
+        // since charts always sit below an H2 on the page. Values match
+        // the "24" entry of $hse-typography-scale (settings/typography.scss),
+        // switching at the sass-mq "tablet" breakpoint (641px, breakpoints.scss).
+        const titleBreakpointTablet = 641;
+        const isTabletUp = container.clientWidth >= titleBreakpointTablet;
+        this.titleFontSize = isTabletUp ? '1.5rem' : '1.25rem'; // 24px / 20px
+        this.titleLineHeight = isTabletUp ? '2rem' : '1.75rem'; // 32px / 28px
+
         this.collection = {
           chart: {
             type: this.type,
@@ -152,7 +161,7 @@ export class ChartOptions {
             height: this.height,
             style: {
               fontFamily: this.fontFamily,
-              fontSize: '0.8rem',
+              fontSize: '1rem',
               fontWeight: 'regular',
             },
           },
@@ -164,6 +173,17 @@ export class ChartOptions {
                 '<div>{typeDescription}</div>'+
                 '<div>{chartSubtitle}</div>'
             },
+            keyboardNavigation: {
+              focusBorder: {
+                enabled: true,
+                style: {
+                  color: '#ffdd00', // $hse-focus-color
+                  lineWidth: 4, // $hse-focus-width
+                  borderRadius: 0,
+                },
+                margin: 0,
+              },
+            },
           },
           title: {
             useHTML: true,
@@ -171,7 +191,8 @@ export class ChartOptions {
             style: {
               color: '#000',
               fontFamily: this.fontFamily,
-              fontSize: '1.1rem',
+              fontSize: this.titleFontSize,
+              lineHeight: this.titleLineHeight,
               fontWeight: 'bold',
             },
           },
@@ -181,7 +202,7 @@ export class ChartOptions {
             style: {
               color: '#000',
               fontFamily: this.fontFamily,
-              fontSize: '0.9rem',
+              fontSize: '1rem',
               fontWeight: 'regular',
             },
           },
@@ -191,7 +212,7 @@ export class ChartOptions {
             style: {
               color: '#666',
               fontFamily: this.fontFamily,
-              fontSize: '0.8rem',
+              fontSize: '1rem',
               fontWeight: 'regular',
             },
           },
@@ -202,7 +223,7 @@ export class ChartOptions {
               align: 'high',
               style: {
                 fontFamily: this.fontFamily,
-                fontSize: '0.7rem',
+                fontSize: '1rem',
                 fontWeight: 'regular',
               },
             },
@@ -222,7 +243,7 @@ export class ChartOptions {
               // useHTML: true,
               style: {
                 fontFamily: this.fontFamily,
-                fontSize: '0.9rem',
+                fontSize: '1rem',
                 fontWeight: 'regular',
               },
             },
@@ -236,13 +257,15 @@ export class ChartOptions {
               format: '{value:,.0f}',
               style: {
                 fontFamily: this.fontFamily,
-                fontSize: '0.7rem',
+                fontSize: '1rem',
                 fontWeight: 'regular',
               },
             },
             title: {
               text: this.yAxisText,
               style: {
+                fontFamily: this.fontFamily,
+                fontSize: '1rem',
                 fontWeight: 'bold',
               },
             },
@@ -254,17 +277,18 @@ export class ChartOptions {
             formatter: getTooltip,
             backgroundColor: 'rgba(255, 255, 255, 1)',
             borderWidth: 1,
-            fontSize: '0.9rem',
             padding: 1,
             style: {
               opacity: 1,
+              fontFamily: this.fontFamily,
+              fontSize: '1rem',
             },
           },
           legend: {
             enabled: true,
             itemStyle: {
               font: this.fontFamily,
-              fontSize: '0.75rem',
+              fontSize: '1rem',
               color: '#000',
             },
           },
@@ -281,7 +305,7 @@ export class ChartOptions {
               dataLabels: {
                 style: {
                   fontFamily: this.fontFamily,
-                  fontSize: '0.7rem',
+                  fontSize: '1rem',
                   fontWeight: 'bold',
                 },
               },

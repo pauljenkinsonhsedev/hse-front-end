@@ -61,7 +61,7 @@ export class ChartOptionsDual extends ChartOptions {
                 align: 'high',
                 style: {
                     fontFamily: this.fontFamily,
-                    fontSize: '0.7rem',
+                    fontSize: '1rem',
                     fontWeight: 'regular',
                 }
             },
@@ -69,7 +69,7 @@ export class ChartOptionsDual extends ChartOptions {
                 overflow: 'justify',
                 style: {
                     fontFamily: this.fontFamily,
-                    fontSize: '0.7rem',
+                    fontSize: '1rem',
                     fontWeight: 'regular',
                 }
             },
@@ -81,7 +81,7 @@ export class ChartOptionsDual extends ChartOptions {
               text: xAxisTitle1,
               style: {
                 fontFamily: this.fontFamily,
-                fontSize: '0.7rem',
+                fontSize: '1rem',
                 fontWeight: 'regular',
               },
             },
@@ -89,7 +89,7 @@ export class ChartOptionsDual extends ChartOptions {
               format: '{value}',
               style: {
                 fontFamily: this.fontFamily,
-                fontSize: '0.7rem',
+                fontSize: '1rem',
                 fontWeight: 'regular',
               },
             },
@@ -99,7 +99,7 @@ export class ChartOptionsDual extends ChartOptions {
               text: xAxisTitle2,
               style: {
                 fontFamily: this.fontFamily,
-                fontSize: '0.7rem',
+                fontSize: '1rem',
                 fontWeight: 'regular',
               },
             },
@@ -107,7 +107,7 @@ export class ChartOptionsDual extends ChartOptions {
               format: '{value} mm',
               style: {
                 fontFamily: this.fontFamily,
-                fontSize: '0.7rem',
+                fontSize: '1rem',
                 fontWeight: 'regular',
               },
             },

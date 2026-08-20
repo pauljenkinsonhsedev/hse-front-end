@@ -49,7 +49,7 @@ export class ChartOptionsPie extends ChartOptions {
                 size: this.pieSize,
                 states: {
                     select: {
-                        borderColor: '#000000',
+                        borderColor: '#ffdd00', // $hse-focus-color
                         borderWidth: 3
                     }
                 },
@@ -60,7 +60,7 @@ export class ChartOptionsPie extends ChartOptions {
                     formatter: getDataLabel,
                     style: {
                         fontFamily: this.fontFamily,
-                        fontSize: '0.75rem',
+                        fontSize: '1rem',
                         fontWeight: 'bold'
                     }
                 }

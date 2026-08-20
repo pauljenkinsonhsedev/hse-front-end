@@ -43,7 +43,7 @@ export class ChartOptionsLine extends ChartOptions {
                 align: 'high',
                 style: {
                     fontFamily: this.fontFamily,
-                    fontSize: '0.7rem',
+                    fontSize: '1rem',
                     fontWeight: 'regular',
                 }
             },
@@ -62,7 +62,7 @@ export class ChartOptionsLine extends ChartOptions {
                 },
                 style: {
                     fontFamily: this.fontFamily,
-                    fontSize: '0.7rem',
+                    fontSize: '1rem',
                     fontWeight: 'regular',
                 }
             },
@@ -72,7 +72,7 @@ export class ChartOptionsLine extends ChartOptions {
             labels: {
                 style: {
                     fontFamily: this.fontFamily,
-                    fontSize: '0.9rem',
+                    fontSize: '1rem',
                     fontWeight: 'regular'
                 }
             },
@@ -86,7 +86,7 @@ export class ChartOptionsLine extends ChartOptions {
                 format: '{value:,.0f}',
                 style: {
                     fontFamily: this.fontFamily,
-                    fontSize: '0.7rem',
+                    fontSize: '1rem',
                     fontWeight: 'regular',
                 }
             },

@@ -31,11 +31,11 @@ export class ChartOptionsDonut extends ChartOptions {
         if (mediaquery === 'small') {
             this.alignTo = 'plotEdges';
             this.pieSize = '160px';
-            this.fontSize = '0.9rem';
+            this.fontSize = '1rem';
         } else {
             this.alignTo = false;
             this.pieSize = '220px';
-            this.fontSize = '0.9rem';
+            this.fontSize = '1rem';
         }
 
         let chart = {
@@ -43,7 +43,7 @@ export class ChartOptionsDonut extends ChartOptions {
             style: {
                 color: '#000',
                 fontFamily: this.fontFamily,
-                fontSize: '0.9rem',
+                fontSize: '1rem',
                 fontWeight: 'bold'
             }
         };
@@ -88,7 +88,7 @@ export class ChartOptionsDonut extends ChartOptions {
                 innerSize: '65%',
                 states: {
                     select: {
-                        borderColor: '#000000',
+                        borderColor: '#ffdd00', // $hse-focus-color
                         borderWidth: 3
                     }
                 },
@@ -100,7 +100,7 @@ export class ChartOptionsDonut extends ChartOptions {
                     style: {
                         width: '150px',
                         fontFamily: this.fontFamily,
-                        fontSize: '0.75rem',
+                        fontSize: '1rem',
                         fontWeight: 'bold'
                     }
                 },
