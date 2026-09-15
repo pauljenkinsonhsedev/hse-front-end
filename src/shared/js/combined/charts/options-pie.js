@@ -28,13 +28,21 @@ export class ChartOptionsPie extends ChartOptions {
         }
 
         const mediaquery = mediaQuery();
-        if (mediaquery === 'small') {
-            this.pieSize = '150px';
-            this.alignTo = 'plotEdges';
-        } else {
-            this.pieSize = '220px';
-            this.alignTo = false;
-        }
+        const isSmall = mediaquery === 'small';
+        this.pieSize = isSmall ? '150px' : '220px';
+        // Align every label to the plot edges rather than positioning it
+        // close to its own slice, so labels stack down the side with a
+        // (sometimes long, bent) connector line back to their slice —
+        // this was already the mobile behaviour; using it at every width
+        // means a very small slice's label always has room to sit apart
+        // from the pie itself instead of crowding its edge.
+        this.alignTo = 'plotEdges';
+        // How far labels sit from the pie has to scale with how much
+        // room there actually is: on the smaller mobile pie/chart width,
+        // a desktop-sized distance pushes a label's stacked position
+        // outside the available area, and Highcharts hides it outright
+        // rather than let it overlap anything.
+        this.dataLabelDistance = isSmall ? 30 : 60;
 
         const getCategories = chartCategories(container);
         const getDataLabel = dataLabel(this.units, this.decimals, total);
@@ -56,6 +64,25 @@ export class ChartOptionsPie extends ChartOptions {
                 dataLabels: {
                     enabled: true,
                     alignTo: this.alignTo,
+                    // Push labels well clear of the pie itself (rather
+                    // than hugging its edge) so they read as a stacked
+                    // column with a visible connector line back to their
+                    // slice — this is what keeps a very small slice's
+                    // label (e.g. a <1% remainder) from crowding the
+                    // pie's own edge, regardless of where that slice
+                    // happens to sit on the circle.
+                    distance: this.dataLabelDistance,
+                    // Separate from hideOverlappingLabels above: crop
+                    // (default true) hides a label outright if its
+                    // computed position falls outside the plot area —
+                    // e.g. a stacked label landing just above the plot
+                    // area, into the title/subtitle's space, at some
+                    // narrow container width. overflow:'allow' is what
+                    // actually lets a label render past that boundary
+                    // instead of being clipped away; crop:false just
+                    // stops Highcharts moving/hiding it to compensate.
+                    crop: false,
+                    overflow: 'allow',
                     connectorColor: '#ccc',
                     formatter: getDataLabel,
                     style: {
@@ -75,7 +102,18 @@ export class ChartOptionsPie extends ChartOptions {
         };
 
         const collection = this.collection;
-        this.collection = {...collection, plotOptions, ...accessibility};
+
+        // Highcharts' default collision handling will silently set a
+        // data label's visibility to hidden if it decides one doesn't
+        // fit — the label just vanishes, with nothing in the console to
+        // say why. That's worse than a label sitting a bit too close to
+        // something, so disable it: at worst a label looks tight at some
+        // width, it never just disappears. (Merge with the existing
+        // chart object rather than replacing it — it also carries
+        // type/renderTo/marginTop/height from the base ChartOptions.)
+        let chart = {...collection.chart, hideOverlappingLabels: false};
+
+        this.collection = {...collection, chart, plotOptions, ...accessibility};
 
         return this.collection;
     }
