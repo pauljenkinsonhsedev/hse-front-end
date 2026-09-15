@@ -20,6 +20,7 @@ import { displaySuffix } from './data-suffix.js';
 import { dataTooltip } from './tooltip.js';
 import { plotBand } from './plot-band';
 import resizer from '../utils/resizer.js';
+import { measureElementHeight } from './measure-element-height.js';
 
 export class ChartOptions {
     constructor(container) {
@@ -153,11 +154,48 @@ export class ChartOptions {
         this.titleFontSize = isTabletUp ? '1.5rem' : '1.25rem'; // 24px / 20px
         this.titleLineHeight = isTabletUp ? '2rem' : '1.75rem'; // 32px / 28px
 
+        // chart.marginTop reserves space above the plot area for the
+        // title + subtitle. 100px covers the common case (short title,
+        // no/short subtitle), but a long subtitle (a multi-line
+        // paragraph) can need more room than that — the plot area (and
+        // any data labels that sit outside the shape itself, e.g. a
+        // pie's outer labels) would otherwise start before the subtitle
+        // has actually finished rendering and overlap it. Measure the
+        // actual content height and only grow past 100px when it's
+        // needed, so every chart with a short title/subtitle keeps
+        // today's exact spacing.
+        const titleHeight = measureElementHeight(container.clientWidth, this.title, {
+          fontFamily: this.fontFamily,
+          fontSize: this.titleFontSize,
+          lineHeight: this.titleLineHeight,
+          fontWeight: 'bold',
+        });
+        const subtitleHeight = measureElementHeight(container.clientWidth, this.subtitle, {
+          fontFamily: this.fontFamily,
+          fontSize: '1rem',
+          fontWeight: 'normal',
+        });
+        // The off-screen measurement above approximates Highcharts' own
+        // SVG text wrapping but isn't pixel-identical to it (different
+        // rendering engine, font metrics), so a plain content+padding
+        // total can still land a few px short in the real chart. Add a
+        // second, larger safety margin, but only for charts that
+        // actually need to grow past the 100px floor in the first place
+        // — that keeps every chart with a short title/subtitle at
+        // exactly 100px, unchanged, while charts with long subtitles get
+        // real breathing room instead of a razor-thin gap.
+        const chartTopPadding = 24; // baseline breathing room below the subtitle, above the plot area
+        const measurementSafetyMargin = 24; // extra buffer once base padding requires growing past 100px
+        const requiredHeight = titleHeight + subtitleHeight + chartTopPadding;
+        this.marginTop = requiredHeight > 100
+          ? requiredHeight + measurementSafetyMargin
+          : 100;
+
         this.collection = {
           chart: {
             type: this.type,
             renderTo: this.chartRender,
-            marginTop: 100,
+            marginTop: this.marginTop,
             height: this.height,
             style: {
               fontFamily: this.fontFamily,
