@@ -36,6 +36,9 @@
   &--full {
   width: 100%;
   }
+  &--border {
+    border: 1px solid $hse-border-color;
+  }
 }
 
 .hse-image__img {
@@ -47,9 +50,4 @@
 .hse-image__caption {
   padding: hse-spacing(3);
   @include hse-typography-responsive(16);
-}
-
-.hse-image-border {
-  border: 1px solid $color_hse-grey-4;
-  border-bottom: 0;
 }
