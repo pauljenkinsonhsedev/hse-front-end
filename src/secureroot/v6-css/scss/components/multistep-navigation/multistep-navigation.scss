@@ -61,8 +61,4 @@ ol.hse-multistep-navigation__list li {
   padding: 0 hse-spacing(2);
   clear: both;
   @include hse-typography-responsive(16);
-
-  a {
-    display: inline-block;
-  }
 }
