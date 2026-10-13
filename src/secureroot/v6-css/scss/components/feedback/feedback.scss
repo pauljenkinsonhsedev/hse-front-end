@@ -18,7 +18,7 @@
 
 .feedback-container {
   background: $color_hse-grey-4;
-  border-top: 1px solid $color_hse-grey-2;
+  border-top: 1px solid $hse-border-color;
     @include mq($media-type: print) {
      border-top: none;
   }
