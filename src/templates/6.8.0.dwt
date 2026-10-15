@@ -547,7 +547,7 @@ window.dataLayer.push({'content_group': '@@(_document['contentGroup'])@@'});
 <!-- Start feedback component -->
 
 <div class="feedback-container">
-<section id="feedback" class="hse-feedback@@(_document['feedbackClass'])@@" aria-describedby="feedback-message" aria-label="Is this page useful">
+<section id="feedback" class="hse-feedback" aria-describedby="feedback-message" aria-label="Is this page useful">
     <div class="hse-feedback__prompt">
       <div class="hse-feedback__prompt-questions-answers">
         <p class="hse-feedback__prompt-question" id="feedback-message"><strong>Is this page useful?</strong></p>
@@ -691,7 +691,6 @@ window.dataLayer.push({'content_group': '@@(_document['contentGroup'])@@'});
 <!-- TemplateParam name="platform" type="text" value="v6" -->
 <!-- TemplateParam name="welsh" type="boolean" value="false" -->
 <!-- TemplateParam name="feedback" type="boolean" value="true" -->
-<!-- TemplateParam name="survey" type="boolean" value="false" -->
 <!-- TemplateParam name="contentType" type="text" value="default" -->
 <!-- TemplateParam name="contentGroup" type="text" value="default" -->
 <!-- TemplateParam name="infoBanner" type="boolean" value="false" -->
