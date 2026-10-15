@@ -2,12 +2,10 @@
   Overview:
   This script controls the page feedback component, including:
   - Yes/No feedback buttons
-  - Optional follow-up survey UI
   - "Report a problem" form
 
   Behaviour:
-  - Clicking Yes/No removes the controls, shows a thank-you message,
-    and optionally opens a survey panel (UI only, no data submission).
+  - Clicking Yes/No removes the controls and shows a thank-you message.
   - Clicking "Report a problem" dynamically generates a form and submits it
     via POST to an external ASP endpoint:
       /assets/asp/feedback.asp
@@ -36,7 +34,6 @@ export function feedbackSurvey() {
   }
 
   // Main UI elements
-  const survey = document.querySelector(".feedback-survey");
   const message = container.querySelector("#feedback-message");
   const feedbackPrompt = container.querySelector(".hse-feedback__prompt");
 
@@ -54,14 +51,14 @@ export function feedbackSurvey() {
   const userYes = document.querySelector("#userYes");
   const userNo = document.querySelector("#userNo");
 
-  const surveyHandles = [userYes, userNo];
+  const feedbackHandles = [userYes, userNo];
   const reportProblemHandles = [userReportProblem];
 
   // Initialise scroll position behaviour used by the feedback component.
   scrollPos();
 
   // Bind yes/no buttons to feedback flow.
-  surveyHandles.forEach((elem) => {
+  feedbackHandles.forEach((elem) => {
     if (elem) {
       elem.addEventListener("click", handleFeedbackClick);
     }
@@ -75,18 +72,11 @@ export function feedbackSurvey() {
   });
 
   /**
-   * Handles yes/no feedback clicks.
-   * Shows the thank-you message and optionally opens the survey panel.
+   * Handles yes/no feedback clicks by showing the thank-you message.
    */
   function handleFeedbackClick(event) {
     event.preventDefault();
     showWebsiteFeedbackAcknowledgement();
-
-    if (survey) {
-      setTimeout(() => {
-        showSurvey();
-      }, 300);
-    }
   }
 
   /**
@@ -309,65 +299,6 @@ export function feedbackSurvey() {
     feedbackPrompt?.classList.remove("js-feedback-open");
 
     removeElement(event.target);
-  }
-
-  /**
-   * Closes the survey panel.
-   */
-  function closeSurvey() {
-    if (survey) {
-      survey.classList.remove("survey-in");
-    }
-  }
-
-  /**
-   * Opens the survey panel and wires the question progression behaviour.
-   */
-  function showSurvey() {
-    if (!survey) {
-      return;
-    }
-
-    const questionaire = survey.querySelector(".questionaire");
-    const questions = questionaire?.querySelectorAll(".question");
-    const surveyQuestions = survey.querySelectorAll(".question-list__item a");
-    const surveyClose = survey.querySelector(".survey-close");
-
-    // Prevent default anchor behaviour in survey navigation.
-    [...surveyQuestions].forEach((elem) => {
-      elem.addEventListener("click", (event) => event.preventDefault());
-    });
-
-    if (!questions || !questions.length) {
-      return;
-    }
-
-    // Activate the first question initially.
-    questions[0].classList.add("active");
-
-    // Progress through the questionnaire when an answer is selected.
-    [...questions].forEach((elem) => {
-      elem.addEventListener("click", (event) => {
-        event.preventDefault();
-
-        const target = event.target;
-        if (
-          target.classList.contains("answer") &&
-          elem.classList.contains("active") &&
-          elem.nextElementSibling
-        ) {
-          elem.classList.remove("active");
-          elem.nextElementSibling.classList.add("active");
-        }
-      });
-    });
-
-    if (surveyClose) {
-      surveyClose.addEventListener("click", closeSurvey);
-    }
-
-    survey.classList.add("survey-in");
-    questionaire?.scrollIntoView({ behavior: "auto", block: "start" });
   }
 
   /**
