@@ -16,7 +16,7 @@
 .hse-card {
   position: relative;
   width: 100%;
-  border-bottom: 4px solid $hse-border-color;   /* KEEP base border */
+  border-bottom: 2px solid $hse-border-color;   /* KEEP base border */
   margin-bottom: $hse-legacy-spacing-20;
   h2,
   h3 {
@@ -64,12 +64,12 @@
 
 .hse-card--img {
   border: 1px solid $hse-border-color;
-  border-bottom-width: 4px;
+  border-bottom-width: 2px;
   margin-bottom: $hse-legacy-spacing-10;
   background: white;
   @include print-hide();
   &:hover {
-    border-bottom: 4px solid $color_hse-red;
+    border-bottom: 2px solid $color_hse-red;
     .hse-card__img {
      border-bottom: none;
     }
@@ -153,7 +153,7 @@
   padding: hse-spacing(3) hse-spacing(4);
   background: $color_hse-white;
   border: 1px solid $hse-border-color;
-  border-bottom-width: 4px;
+  border-bottom-width: 2px;
 
   h3 {
     margin: 0;
@@ -166,7 +166,7 @@
   }
 
   &:hover {
-    border-bottom: 4px solid $color_hse-red;
+    border-bottom: 2px solid $color_hse-red;
   }
   a {
     display: block;
@@ -196,7 +196,7 @@
   background: $color_hse-white;
   box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.15);
   &:hover {
-  border-bottom: 4px solid $color_hse-red;   
+  border-bottom: 2px solid $color_hse-red;   
   }
   h3 {
     margin: 0;
