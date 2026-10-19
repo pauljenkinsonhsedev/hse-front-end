@@ -31,9 +31,9 @@ h2, h3 {
   h2::before {
   background-color: $color_hse-red;
     content: '';
-    height: 4px;
+    height: 2px;
     position: absolute;
-    top: -4px;
+    top: -2px;
     width: 100%;
   
   }
