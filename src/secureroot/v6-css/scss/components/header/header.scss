@@ -22,6 +22,11 @@
 
 .hse-header__container {
   border-bottom: 1px solid $hse-border-color;
+
+  // service navigation provides its own bottom border
+  &:has(.hse-service-navigation) {
+    border-bottom: none;
+  }
 }
 
 .hse-header__top-container {
