@@ -1,5 +1,5 @@
 import Cookies from 'js-cookie';
-import { cookiePreferences } from './combined/cookies/cookie-preferences.js';
+import { cookiePreferences, loadGtag } from './combined/cookies/cookie-preferences.js';
 
 // Export for global access by other scripts
 window.Cookies = Cookies;
@@ -7,7 +7,7 @@ window.Cookies = Cookies;
 /*
   training.hse.gov.uk (BookingLive) variant.
 
-  Same cookie logic as the main www.hse.gov.uk build, with three differences
+  Same cookie logic as the main [www.hse.gov.uk](https://www.hse.gov.uk) build, with four differences
   needed for the training site's domain/markup:
 
     1. linkBase           - cookie-policy links point at the absolute
@@ -21,6 +21,11 @@ window.Cookies = Cookies;
                             border-top) so the line sits below the banner, with
                             <header>/[role="banner"] and body.prepend fallbacks.
                             The main site's #headerContainer does not exist here.
+    4. loadAnalytics       - the training site has no GTM. GA4 is loaded directly
+                            with gtag.js by an inline snippet in the BookingLive
+                            head for returning visitors. On accept this loads the
+                            same tag in place instead of reloading the page, so
+                            the original referrer is kept.
 */
 const bookingliveConfig = {
   linkBase: "https://www.hse.gov.uk",
@@ -36,6 +41,9 @@ const bookingliveConfig = {
     } else {
       document.body.prepend(messageContainer);
     }
+  },
+  loadAnalytics() {
+    loadGtag("G-1Y6RD6YT11", { content_group: "training" });
   },
 };
 

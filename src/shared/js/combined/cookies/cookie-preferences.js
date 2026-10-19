@@ -91,17 +91,103 @@ function controlAnalytics() {
   }
 }
 
+/*
+
+Analytics loaders:
+
+When analytics cookies are accepted, the site's analytics is loaded in place
+instead of reloading the page. A script-triggered reload makes the page its own
+referrer, so GA4 loses the real source (e.g. google.com) and records the
+session as Direct.
+
+Each site's build passes its own loader as config.loadAnalytics:
+
+   1. www.hse.gov.uk       loadGoogleTagManager("GTM-PJPWMNL") (default)
+   2. training.hse.gov.uk  loadGtag("G-1Y6RD6YT11", { content_group: "training" })
+   3. press.hse.gov.uk     loadGoogleTagManager("GTM-PJPWMNL") + loadSiteimprove()
+
+Each loader does nothing if its script is already on the page, so it is safe
+alongside the inline snippets that load analytics for returning visitors.
+Pass loadAnalytics: null to keep the old reload behaviour.
+
+*/
+
+export function loadGoogleTagManager(gtmId) {
+  if (window.google_tag_manager && window.google_tag_manager[gtmId]) {
+    return;
+  }
+  if (document.querySelector(`script[src*="gtm.js?id=${gtmId}"]`)) {
+    return;
+  }
+
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+
+  const script = document.createElement("script");
+  script.async = true;
+  script.src = `https://www.googletagmanager.com/gtm.js?id=${gtmId}`;
+  const first = document.getElementsByTagName("script")[0];
+  first.parentNode.insertBefore(script, first);
+}
+
+export function loadGtag(measurementId, gtagConfig = {}) {
+  if (window.gtag) {
+    return;
+  }
+  if (document.querySelector(`script[src*="gtag/js?id=${measurementId}"]`)) {
+    return;
+  }
+
+  const script = document.createElement("script");
+  script.async = true;
+  script.src = `https://www.googletagmanager.com/gtag/js?id=${measurementId}`;
+  document.head.appendChild(script);
+
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    window.dataLayer.push(arguments);
+  }
+  window.gtag = gtag;
+  gtag("js", new Date());
+  gtag("config", measurementId, gtagConfig);
+}
+
+export function loadSiteimprove(accountId) {
+  const src = `//siteimproveanalytics.com/js/siteanalyze_${accountId}.js`;
+  if (document.querySelector(`script[src*="siteanalyze_${accountId}.js"]`)) {
+    return;
+  }
+
+  const script = document.createElement("script");
+  script.type = "text/javascript";
+  script.async = true;
+  script.src = src;
+  const first = document.getElementsByTagName("script")[0];
+  first.parentNode.insertBefore(script, first);
+}
+
 export function cookiePreferences(config = {}) {
   // A build variant (e.g. bookinglive/training) can override where the banner is
   // inserted. Default reproduces the stock www.hse.gov.uk behaviour: insert before
   // #headerContainer.
+  //
+  // loadAnalytics runs when analytics cookies are accepted (see above).
   const {
     insertBanner = (container) => {
       const body = document.getElementsByTagName("body")[0];
       const header = document.getElementById("headerContainer");
       body.insertBefore(container, header);
     },
+    loadAnalytics = () => loadGoogleTagManager("GTM-PJPWMNL"),
   } = config;
+
+  const startAnalytics = () => {
+    if (typeof loadAnalytics === "function") {
+      loadAnalytics();
+    } else {
+      window.location.reload();
+    }
+  };
 
   Cookies.set("optInGoogleTracking", false, setCookieSettings);
 
@@ -218,8 +304,8 @@ export function cookiePreferences(config = {}) {
     Cookies.set("cookies_status", "accepted", setCookieSettings);
     messageContainer.innerHTML = cookieMessageHTML(config);
 
-    // reload to capture tracking
-    window.location.reload();
+    // load analytics in place so the original referrer is kept (no reload)
+    startAnalytics();
   });
 
   // reject all
@@ -252,7 +338,7 @@ export function cookiePreferences(config = {}) {
     Cookies.set("cookies_status", "accepted", setCookieSettings);
     messageContainer.innerHTML = cookieMessageHTML(config);
 
-    // reload to capture tracking
-    window.location.reload();
+    // load analytics in place so the original referrer is kept (no reload)
+    startAnalytics();
   });
 }
