@@ -19,7 +19,7 @@ $card-border-bottom-width: hse-spacing(1);
 .hse-card {
   position: relative;
   width: 100%;
-  border-bottom: 4px solid $card-border-color;   /* KEEP base border */
+  border-bottom: 4px solid $hse-border-color;   /* KEEP base border */
   margin-bottom: $hse-legacy-spacing-20;
   h2,
   h3 {
