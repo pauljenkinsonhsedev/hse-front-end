@@ -66,7 +66,7 @@ $card-border-bottom-width: hse-spacing(1);
 /* Image card */
 
 .hse-card--img {
-  border: 2px solid $card-border-color;
+  border: 1px solid $hse-border-color;
   border-bottom-width: 4px;
   margin-bottom: $hse-legacy-spacing-10;
   background: white;
@@ -155,9 +155,9 @@ $card-border-bottom-width: hse-spacing(1);
   margin-bottom: $hse-legacy-spacing-10;
   padding: hse-spacing(3) hse-spacing(4);
   background: $color_hse-white;
+  border: 1px solid $hse-border-color;
   border-bottom-width: 4px;
-  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.15);
- 
+
   h3 {
     margin: 0;
     padding: 0;
