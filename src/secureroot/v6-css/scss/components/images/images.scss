@@ -17,7 +17,7 @@
 
  .hse-image {
   background-color: $color_hse-grey-4;
-  border-bottom: 1px solid $color_hse-grey-3;
+  border-bottom: 1px solid $hse-border-color;
   margin-left: 0; 
   margin-right: 0; 
   @include hse-responsive-margin(6, "bottom");
