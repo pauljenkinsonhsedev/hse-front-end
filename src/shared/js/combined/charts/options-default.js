@@ -79,10 +79,12 @@ export class ChartOptionsDefault extends ChartOptions {
             // bar chart's height is corrected by fitPlotToCategories.
             const pxPerCategory = 60;
             const chartPadding = 150; // title, subtitle, axis labels, legend, margins
-            const minChartHeight = 1000; // columns only: matches the industry/self-reported-ill-health chart (17 categories)
             const estimatedHeight = (categoryCount * pxPerCategory) + chartPadding;
             chart = {
-                height: this.type === 'bar' ? estimatedHeight + this.marginTop : Math.max(estimatedHeight, minChartHeight),
+                // Columns run across the chart, so their height doesn't
+                // depend on how many categories there are: leave it to the
+                // default, as for line charts.
+                height: this.type === 'bar' ? estimatedHeight + this.marginTop : undefined,
                 events: {
                     // Push each point's value label clear of its error bar's
                     // upper CI bound, otherwise the label overlaps the
