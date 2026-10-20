@@ -25,19 +25,19 @@ table,
 
 tr,
 .hse-table tr {
-  border-color: $hse-table-border-color;
+  border-color: $hse-border-color;
 }
 
 thead th,
 .hse-table thead th {
-  border-bottom: $hse-border-table-header-width solid $hse-table-border-color;
+  border-bottom: $hse-border-table-header-width solid $hse-border-color;
 }
 
 th,
 td,
 .hse-table th,
 .hse-table td {
-  border-bottom: $hse-border-table-cell-width solid $hse-table-border-color;
+  border-bottom: $hse-border-table-cell-width solid $hse-border-color;
   text-align: left;
   vertical-align: top;
   @include hse-typography-responsive(19);

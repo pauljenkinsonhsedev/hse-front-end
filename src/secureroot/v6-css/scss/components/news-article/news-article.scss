@@ -8,7 +8,7 @@
 
 
 .hse-news-article {
-border-bottom: 2px solid $color_hse-grey-4;
+border-bottom: 1px solid $hse-border-color;
 @include hse-responsive-margin(4, "bottom");
 @include hse-all-headings {
 @include hse-font(22, bold);

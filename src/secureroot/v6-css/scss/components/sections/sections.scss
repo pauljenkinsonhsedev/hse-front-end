@@ -130,11 +130,6 @@
   }
 }
 
-.hse-section--feedback {
-  background: $color_hse-grey-4;
-  border-top: 1px solid $color_hse-grey-3;
-}
-
 // browse sections
 
 .hse-browse-section {
@@ -150,7 +145,7 @@
 }
 
 .hse-browse-section--top-border {
-  border-top: 2px solid #d8d8d8;
+  border-top: 1px solid $hse-border-color;
 
   &:first-of-type {
     border-top: none;

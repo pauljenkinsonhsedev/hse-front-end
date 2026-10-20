@@ -180,7 +180,7 @@ The classes below make it easier to visually differentiate between each piece of
           padding-right: 0;
           text-align: right; /* [7] */
           &:last-child {
-            border-bottom: 3px solid $hse-table-border-color;
+            border-bottom: 3px solid $hse-border-color;
           }
         }
       }
