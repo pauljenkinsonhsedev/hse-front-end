@@ -89,6 +89,18 @@ class ChartsDefault {
         Highcharts.setOptions({
             lang: {
                 thousandsSep: ','
+            },
+            // Legends are a key only: clicking an item must not hide its
+            // series (or, in a pie, its slice). Since Highcharts 11 the
+            // toggle runs from legend.events.itemClick; the series-level
+            // legendItemClick handlers in the options files fire after it
+            // and returning false from them no longer prevents anything.
+            legend: {
+                events: {
+                    itemClick: function () {
+                        return false;
+                    }
+                }
             }
         });
 
