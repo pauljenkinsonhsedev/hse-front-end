@@ -3,7 +3,6 @@ import { chartCategories } from './chart-categories';
 import { dataLabel } from './data-label.js';
 import { displayPrefix } from './data-prefix.js';
 import { displaySuffix } from './data-suffix.js';
-import { mediaQuery } from '../utils/media-query.js';
 
 /*
     Class @ChartOptionsPie
@@ -27,9 +26,8 @@ export class ChartOptionsPie extends ChartOptions {
             total += Number(units[i].innerText)
         }
 
-        const mediaquery = mediaQuery();
-        const isSmall = mediaquery === 'small';
-        this.pieSize = isSmall ? '150px' : '220px';
+        const { pie: pieLayout } = this.layout().plotOptions;
+        this.pieSize = pieLayout.size;
         // Align every label to the plot edges rather than positioning it
         // close to its own slice, so labels stack down the side with a
         // (sometimes long, bent) connector line back to their slice —
@@ -37,12 +35,7 @@ export class ChartOptionsPie extends ChartOptions {
         // means a very small slice's label always has room to sit apart
         // from the pie itself instead of crowding its edge.
         this.alignTo = 'plotEdges';
-        // How far labels sit from the pie has to scale with how much
-        // room there actually is: on the smaller mobile pie/chart width,
-        // a desktop-sized distance pushes a label's stacked position
-        // outside the available area, and Highcharts hides it outright
-        // rather than let it overlap anything.
-        this.dataLabelDistance = isSmall ? 30 : 60;
+        this.dataLabelDistance = pieLayout.dataLabels.distance;
 
         const getCategories = chartCategories(container);
         const getDataLabel = dataLabel(this.units, this.decimals, total);
@@ -116,5 +109,29 @@ export class ChartOptionsPie extends ChartOptions {
         this.collection = {...collection, chart, plotOptions, ...accessibility};
 
         return this.collection;
+    }
+
+    // Pie size and label distance depend on the screen size, so they're
+    // part of the layout watchLayout re-applies on resize (see
+    // ChartOptions.layout), rather than fixed at page-load values.
+    layout() {
+        // matches the sass-mq "tablet" breakpoint (641px, breakpoints.scss)
+        const isSmall = !window.matchMedia('(min-width: 641px)').matches;
+        // How far labels sit from the pie has to scale with how much
+        // room there actually is: on the smaller mobile pie/chart width,
+        // a desktop-sized distance pushes a label's stacked position
+        // outside the available area, and Highcharts hides it outright
+        // rather than let it overlap anything.
+        const dataLabelDistance = isSmall ? 30 : 60;
+
+        return {
+            ...super.layout(),
+            plotOptions: {
+                pie: {
+                    size: isSmall ? '150px' : '220px',
+                    dataLabels: { distance: dataLabelDistance },
+                },
+            },
+        };
     }
 }
