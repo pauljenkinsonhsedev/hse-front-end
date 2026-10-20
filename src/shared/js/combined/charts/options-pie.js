@@ -94,7 +94,9 @@ export class ChartOptionsPie extends ChartOptions {
                     style: {
                         fontFamily: this.fontFamily,
                         fontSize: '1rem',
-                        fontWeight: 'bold'
+                        // Regular weight, as in the small-screen legend: the
+                        // formatter already makes just the value bold.
+                        fontWeight: 'normal'
                     }
                 }
             }
