@@ -156,6 +156,21 @@ export class ChartOptionsDefault extends ChartOptions {
         };
 
         const collection = this.collection;
+        // Legend clicks are disabled (legend.events.itemClick in
+        // charts.js), so with a
+        // single series the legend item is just a key: show it as plain
+        // text. Turning off legend accessibility removes the "Show
+        // <series>" proxy button Highcharts adds for keyboard and screen
+        // reader users, which announced a toggle that does nothing; the
+        // series name is still announced with each bar.
+        const isSingleSeries = (collection.series || []).filter((series) => series.type !== 'errorbar').length === 1;
+        const legend = isSingleSeries ? {
+            ...collection.legend,
+            accessibility: { enabled: false },
+            itemStyle: { ...collection.legend.itemStyle, cursor: 'default' },
+            itemHoverStyle: { color: collection.legend.itemStyle.color },
+        } : collection.legend;
+
         // Merge chart.events too, not just chart: a plain spread would
         // replace the base class's events (its load handler starts
         // watchLayout, which re-applies title size and marginTop on
@@ -167,6 +182,7 @@ export class ChartOptionsDefault extends ChartOptions {
                 ...chart,
                 events: {...collection.chart.events, ...chart.events},
             },
+            legend,
             plotOptions,
         };
         return this.collection;

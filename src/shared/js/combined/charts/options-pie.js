@@ -148,7 +148,12 @@ export class ChartOptionsPie extends ChartOptions {
         let legend = {
             ...collection.legend,
             ...layout.legend,
-            itemStyle: {...collection.legend.itemStyle, ...layout.legend.itemStyle},
+            itemStyle: {...collection.legend.itemStyle, ...layout.legend.itemStyle, cursor: 'default'},
+            itemHoverStyle: { color: collection.legend.itemStyle.color },
+            // A key only (clicks are disabled in charts.js): no "Show
+            // <slice>" proxy buttons for a toggle that does nothing. Each
+            // slice still announces its name and value.
+            accessibility: { enabled: false },
             useHTML: true,
             // One item per row, so the height layout() reserves for the
             // legend matches what Highcharts actually draws.
