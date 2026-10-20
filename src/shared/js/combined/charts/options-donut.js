@@ -38,7 +38,16 @@ export class ChartOptionsDonut extends ChartOptions {
             this.fontSize = '1rem';
         }
 
+        // The title uses the base chart title, above the donut like every
+        // other chart. It used to sit in the donut's hole (verticalAlign
+        // 'middle'), where any title longer than a few words spilled out
+        // over the ring itself.
+
+        // Merge with the base chart options rather than replacing them:
+        // they carry renderTo, marginTop (room for the title above the
+        // donut) and the load event that re-applies layout on resize.
         let chart = {
+            ...this.collection.chart,
             type: 'pie',
             style: {
                 color: '#000',
@@ -54,22 +63,6 @@ export class ChartOptionsDonut extends ChartOptions {
             dataLabels: {
                 enabled: true,
                 connectorColor: 'silver'
-            }
-        };
-
-        let title = {
-            text: this.title,
-            align: 'center',
-            verticalAlign: 'middle',
-            floating: false,
-            y: 0,
-            x: 0,
-            widthAdjust: -550,
-            style: {
-                color: '#000',
-                fontFamily: this.fontFamily,
-                fontSize: this.fontSize,
-                fontWeight: 'bold'
             }
         };
 
@@ -117,7 +110,7 @@ export class ChartOptionsDonut extends ChartOptions {
         };
 
         const collection = this.collection;
-        this.collection = {...collection, chart, xAxis, title, pieOptions, plotOptions};
+        this.collection = {...collection, chart, xAxis, pieOptions, plotOptions};
 
         return this.collection;
     }
