@@ -232,9 +232,10 @@ export class ChartOptions {
               text: this.xAxisText,
               align: 'high',
               style: {
+                color: '#000',
                 fontFamily: this.fontFamily,
                 fontSize: '1rem',
-                fontWeight: 'regular',
+                fontWeight: 'normal',
               },
             },
             labels: {
@@ -273,10 +274,13 @@ export class ChartOptions {
             },
             title: {
               text: this.yAxisText,
+              // Regular black, like the legend and subtitle, rather than
+              // bold Highcharts grey
               style: {
+                color: '#000',
                 fontFamily: this.fontFamily,
                 fontSize: '1rem',
-                fontWeight: 'bold',
+                fontWeight: 'normal',
               },
             },
             gridLineWidth: this.gridLineWidth,

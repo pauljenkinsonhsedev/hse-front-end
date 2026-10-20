@@ -42,6 +42,7 @@ export class ChartOptionsLine extends ChartOptions {
                 text: this.xAxisText,
                 align: 'high',
                 style: {
+                    color: '#000',
                     fontFamily: this.fontFamily,
                     fontSize: '1rem',
                     fontWeight: 'regular',
@@ -79,7 +80,10 @@ export class ChartOptionsLine extends ChartOptions {
             title: {
                 text: this.yAxisText,
                 style: {
-                    fontWeight: 'bold'
+                    color: '#000',
+                    fontFamily: this.fontFamily,
+                    fontSize: '1rem',
+                    fontWeight: 'normal'
                 }
             },
             labels: {

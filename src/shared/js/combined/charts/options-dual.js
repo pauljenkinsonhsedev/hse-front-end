@@ -60,6 +60,7 @@ export class ChartOptionsDual extends ChartOptions {
                 text: this.xAxisText,
                 align: 'high',
                 style: {
+                    color: '#000',
                     fontFamily: this.fontFamily,
                     fontSize: '1rem',
                     fontWeight: 'regular',
@@ -80,6 +81,7 @@ export class ChartOptionsDual extends ChartOptions {
             title: {
               text: xAxisTitle1,
               style: {
+                color: '#000',
                 fontFamily: this.fontFamily,
                 fontSize: '1rem',
                 fontWeight: 'regular',
@@ -98,6 +100,7 @@ export class ChartOptionsDual extends ChartOptions {
             title: {
               text: xAxisTitle2,
               style: {
+                color: '#000',
                 fontFamily: this.fontFamily,
                 fontSize: '1rem',
                 fontWeight: 'regular',
