@@ -20,6 +20,8 @@ import { displaySuffix } from './data-suffix.js';
 import { dataTooltip } from './tooltip.js';
 import { plotBand } from './plot-band';
 import resizer from '../utils/resizer.js';
+import { measureElementHeight } from './measure-element-height.js';
+import { watchLayout } from './watch-layout.js';
 
 export class ChartOptions {
     constructor(container) {
@@ -144,21 +146,24 @@ export class ChartOptions {
             return flag;
         }, 0);
 
-        // Chart title mirrors the site's H3 heading scale (rather than H2),
-        // since charts always sit below an H2 on the page. Values match
-        // the "24" entry of $hse-typography-scale (settings/typography.scss),
-        // switching at the sass-mq "tablet" breakpoint (641px, breakpoints.scss).
-        const titleBreakpointTablet = 641;
-        const isTabletUp = container.clientWidth >= titleBreakpointTablet;
-        this.titleFontSize = isTabletUp ? '1.5rem' : '1.25rem'; // 24px / 20px
-        this.titleLineHeight = isTabletUp ? '2rem' : '1.75rem'; // 32px / 28px
+        const layout = this.layout();
+        this.titleFontSize = layout.title.style.fontSize;
+        this.titleLineHeight = layout.title.style.lineHeight;
+        this.marginTop = layout.chart.marginTop;
+
+        const getLayout = () => this.layout();
 
         this.collection = {
           chart: {
             type: this.type,
             renderTo: this.chartRender,
-            marginTop: 100,
+            marginTop: this.marginTop,
             height: this.height,
+            events: {
+              load: function () {
+                watchLayout(this, getLayout);
+              },
+            },
             style: {
               fontFamily: this.fontFamily,
               fontSize: '1rem',
@@ -188,6 +193,11 @@ export class ChartOptions {
           title: {
             useHTML: true,
             text: '<div style="text-align: center;">' + this.title + '</div>',
+            // Highcharts shrinks a title that doesn't fit on one line (to
+            // as little as 0.67x) before wrapping it, so titles of
+            // different lengths render at different sizes. Always wrap at
+            // the full H3 size instead.
+            minScale: 1,
             style: {
               color: '#000',
               fontFamily: this.fontFamily,
@@ -319,6 +329,71 @@ export class ChartOptions {
           },
           colors: this.colours,
           series: getSeriesData,
+        };
+    }
+
+    // Every option that depends on the chart's current width. Called
+    // once when the chart is built, then again by watchLayout whenever
+    // the container resizes (see watch-layout.js), so subclasses that
+    // add their own width-dependent options should override this and
+    // merge in super.layout().
+    layout() {
+        // Chart title mirrors the site's H3 heading scale (rather than H2),
+        // since charts always sit below an H2 on the page. Values match
+        // the "24" entry of $hse-typography-scale (settings/typography.scss),
+        // switching at the sass-mq "tablet" breakpoint (641px, breakpoints.scss).
+        const titleBreakpointTablet = 641;
+        const isTabletUp = this.container.clientWidth >= titleBreakpointTablet;
+        const titleFontSize = isTabletUp ? '1.5rem' : '1.25rem'; // 24px / 20px
+        const titleLineHeight = isTabletUp ? '2rem' : '1.75rem'; // 32px / 28px
+
+        // chart.marginTop reserves space above the plot area for the
+        // title + subtitle. 100px covers the common case (short title,
+        // no/short subtitle), but a long subtitle (a multi-line
+        // paragraph) can need more room than that — the plot area (and
+        // any data labels that sit outside the shape itself, e.g. a
+        // pie's outer labels) would otherwise start before the subtitle
+        // has actually finished rendering and overlap it. Measure the
+        // actual content height and only grow past 100px when it's
+        // needed, so every chart with a short title/subtitle keeps
+        // today's exact spacing.
+        // Highcharts wraps the title and subtitle narrower than the
+        // container: .chart's padding (8px each side), chart spacing
+        // (10px each side) and title/subtitle widthAdjust (-44px), so
+        // measure at that width or two-line titles measure as one.
+        const textWidth = this.container.clientWidth - 80;
+        const titleHeight = measureElementHeight(textWidth, this.title, {
+          fontFamily: this.fontFamily,
+          fontSize: titleFontSize,
+          lineHeight: titleLineHeight,
+          fontWeight: 'bold',
+        });
+        const subtitleHeight = measureElementHeight(textWidth, this.subtitle, {
+          fontFamily: this.fontFamily,
+          fontSize: '1rem',
+          fontWeight: 'normal',
+        });
+        // The off-screen measurement above approximates Highcharts' own
+        // SVG text wrapping but isn't pixel-identical to it (different
+        // rendering engine, font metrics), so a plain content+padding
+        // total can still land a few px short in the real chart. Add a
+        // second, larger safety margin, but only for charts that
+        // actually need to grow past the 100px floor in the first place
+        // — that keeps every chart with a short title/subtitle at
+        // exactly 100px, unchanged, while charts with long subtitles get
+        // real breathing room instead of a razor-thin gap.
+        const chartTopPadding = 24; // baseline breathing room below the subtitle, above the plot area
+        const measurementSafetyMargin = 24; // extra buffer once base padding requires growing past 100px
+        const requiredHeight = titleHeight + subtitleHeight + chartTopPadding;
+        const marginTop = requiredHeight > 100
+          ? requiredHeight + measurementSafetyMargin
+          : 100;
+
+        return {
+            chart: { marginTop },
+            title: {
+                style: { fontSize: titleFontSize, lineHeight: titleLineHeight },
+            },
         };
     }
 }
