@@ -171,6 +171,33 @@ export class ChartOptionsDefault extends ChartOptions {
             itemHoverStyle: { color: collection.legend.itemStyle.color },
         } : collection.legend;
 
+        // Highcharts cuts a category label short with an ellipsis once it
+        // has more lines than fit its slot, but on bar charts the slot
+        // grows to fit the label (fitPlotToCategories), so let labels run
+        // to their full height. Also let a slash-joined word that's too
+        // wide for the label area (e.g. "Information/communication" on a
+        // small chart) break after its "/", rather than being cut short
+        // however many lines are allowed. Highcharts only wraps at
+        // ordinary spaces (not a zero-width space), so this adds a space
+        // after the slash, and only in words that wouldn't otherwise fit.
+        const baseXAxisLabels = collection.xAxis.labels;
+        const xAxis = this.type === 'bar' ? {
+            ...collection.xAxis,
+            labels: {
+                ...baseXAxisLabels,
+                formatter: function () {
+                    const label = baseXAxisLabels.formatter.call(this);
+                    if (typeof label !== 'string') return label;
+                    const labelWidth = parseFloat(this.axis.options.labels.style.width) || this.chart.chartWidth * 0.33;
+                    const approxCharWidth = 8.5; // 1rem Arial
+                    return label.replace(/\S+\/\S+/g, (word) => (
+                        word.length * approxCharWidth > labelWidth ? word.replace(/\//g, '/ ') : word
+                    ));
+                },
+                style: { ...baseXAxisLabels.style, ...this.layout().xAxis.labels.style, lineClamp: 20 },
+            },
+        } : collection.xAxis;
+
         // Merge chart.events too, not just chart: a plain spread would
         // replace the base class's events (its load handler starts
         // watchLayout, which re-applies title size and marginTop on
@@ -183,8 +210,23 @@ export class ChartOptionsDefault extends ChartOptions {
                 events: {...collection.chart.events, ...chart.events},
             },
             legend,
+            xAxis,
             plotOptions,
         };
         return this.collection;
+    }
+
+    // Bar charts only: on small charts the category labels' default width
+    // (about a third of the chart) is too narrow for single long words
+    // like "Manufacturing" or "Luxembourg", which Highcharts then cuts
+    // short with an ellipsis. Give them more of the chart below the
+    // tablet breakpoint (641px, as in ChartOptions.layout()); larger
+    // charts keep Highcharts' default width.
+    layout() {
+        const base = super.layout();
+        if (this.type !== 'bar') return base;
+        const isSmall = this.container.clientWidth < 641;
+        const labelWidth = isSmall ? Math.round(this.container.clientWidth * 0.45) + 'px' : undefined;
+        return { ...base, xAxis: { labels: { style: { width: labelWidth } } } };
     }
 }
