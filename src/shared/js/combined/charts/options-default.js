@@ -156,7 +156,19 @@ export class ChartOptionsDefault extends ChartOptions {
         };
 
         const collection = this.collection;
-        this.collection = {...collection, chart: {...collection.chart, ...chart}, plotOptions};
+        // Merge chart.events too, not just chart: a plain spread would
+        // replace the base class's events (its load handler starts
+        // watchLayout, which re-applies title size and marginTop on
+        // resize) with the render handler above.
+        this.collection = {
+            ...collection,
+            chart: {
+                ...collection.chart,
+                ...chart,
+                events: {...collection.chart.events, ...chart.events},
+            },
+            plotOptions,
+        };
         return this.collection;
     }
 }
