@@ -42,26 +42,56 @@ export class ChartOptionsDefault extends ChartOptions {
 
 
 
-        // Bar/column charts lay out one bar per category, but the base
-        // class sizes chart height as a ratio of container width, so a
-        // chart with many categories gets squeezed into the same height
-        // as one with few. Scale height with category count instead, so
-        // each bar keeps consistent breathing room regardless of how many
-        // categories are in the data.
+        // Bars are a fixed thickness on every bar chart, at every screen
+        // size, rather than stretching to fill whatever height the chart
+        // happens to be. Each category gets a fixed slot (its bars plus a
+        // gap), and the slot only grows when a wrapped category label is
+        // taller than that, so labels never overlap. The chart height is
+        // then fitted after render (see fitPlotToCategories below) so the
+        // plot area is exactly categories x slot, whatever the title,
+        // subtitle, legend and caption add around it.
+        const barThickness = 30;
+        const barGap = 24; // between one category's bars and the next
+        const labelGap = 12; // between wrapped category labels
+        const fitPlotToCategories = (chart) => {
+            const axis = chart.xAxis[0];
+            const categoryCount = (axis.categories || []).length || (chart.series[0] ? chart.series[0].points.length : 0);
+            if (!categoryCount) return;
+            const tallestLabel = Object.values(axis.ticks).reduce((tallest, tick) => (
+                // The label's rendered size: getBBox() can still hold its
+                // pre-wrapping size at this point
+                tick.label ? Math.max(tallest, tick.label.element.getBoundingClientRect().height) : tallest
+            ), 0);
+            // Count bar series, not data table columns: error bar charts
+            // have extra (confidence interval) columns.
+            const barSeriesCount = chart.series.filter((series) => series.type === 'bar' && series.visible).length || 1;
+            const slot = Math.max((barSeriesCount * barThickness) + barGap, tallestLabel + labelGap);
+            const heightChange = Math.round((categoryCount * slot) - chart.plotHeight);
+            if (Math.abs(heightChange) > 1) {
+                chart.setSize(null, chart.chartHeight + heightChange, false);
+            }
+        };
+
         let chart = {};
         if (this.type === 'bar' || this.type === 'column') {
             const categoryCount = container.querySelectorAll('.category').length;
-            const pxPerCategory = 60; // bumped from 50 to fit 1rem category labels (was 0.7rem)
+            // Starting estimate only, so the first render is close; the
+            // bar chart's height is corrected by fitPlotToCategories.
+            const pxPerCategory = 60;
             const chartPadding = 150; // title, subtitle, axis labels, legend, margins
-            const minChartHeight = 1000; // matches the industry/self-reported-ill-health chart (17 categories)
+            const minChartHeight = 1000; // columns only: matches the industry/self-reported-ill-health chart (17 categories)
+            const estimatedHeight = (categoryCount * pxPerCategory) + chartPadding;
             chart = {
-                height: Math.max((categoryCount * pxPerCategory) + chartPadding, minChartHeight),
+                height: this.type === 'bar' ? estimatedHeight + this.marginTop : Math.max(estimatedHeight, minChartHeight),
                 events: {
                     // Push each point's value label clear of its error bar's
                     // upper CI bound, otherwise the label overlaps the
                     // whisker whenever the CI extends past the bar's own
                     // value (the common case).
                     render() {
+                        if (this.options.chart.type === 'bar') {
+                            fitPlotToCategories(this);
+                        }
                         this.series.forEach((series) => {
                             if (series.type !== 'bar' && series.type !== 'column') {
                                 return;
@@ -89,6 +119,7 @@ export class ChartOptionsDefault extends ChartOptions {
 
         const plotOptions = {
             bar: {
+                pointWidth: barThickness,
                 borderRadius: 0,
                 clip: false,
                 dataLabels: {
