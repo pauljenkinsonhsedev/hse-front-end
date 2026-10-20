@@ -94,7 +94,9 @@ export class ChartOptionsDonut extends ChartOptions {
                         width: '150px',
                         fontFamily: this.fontFamily,
                         fontSize: '1rem',
-                        fontWeight: 'bold'
+                        // Regular weight, as on pie labels: the formatter
+                        // already makes just the value bold.
+                        fontWeight: 'normal'
                     }
                 },
             },
