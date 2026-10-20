@@ -170,12 +170,16 @@ export class ChartOptionsPie extends ChartOptions {
     // than fixed at page-load values.
     layout() {
         const base = super.layout();
-        // Based on the chart's own width, not the viewport's: in a narrow
-        // column (e.g. two-thirds) a wide screen can still have a chart
-        // too narrow for a 220px pie with labels either side, and
-        // Highcharts then hides every label it can't fit (tested: labels
-        // still fit at a 505px chart width, but were all hidden at 478px).
-        const isSmall = this.container.clientWidth < 540;
+        // Labels beside the pie on desktop only, matching the sass-mq
+        // "desktop" breakpoint (769px, breakpoints.scss); tablet and
+        // mobile get the stacked legend. Also check the chart's own
+        // width: in a narrow column (e.g. two-thirds) a desktop screen
+        // can still have a chart too narrow for a 220px pie with labels
+        // either side, and Highcharts then hides every label it can't
+        // fit (tested: labels still fit at a 505px chart width, but were
+        // all hidden at 478px).
+        const isDesktop = window.matchMedia('(min-width: 769px)').matches;
+        const isSmall = !isDesktop || this.container.clientWidth < 540;
         // Highcharts renders into the container and replaces the data
         // table, so read the values while it's still there (the first
         // call, from the constructor) and reuse them on every resize.
