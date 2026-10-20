@@ -155,6 +155,11 @@
   border: 1px solid $hse-border-color;
   border-bottom-width: 2px;
 
+  // card group list items provide the spacing between rows
+  .hse-card-group & {
+    margin-bottom: 0;
+  }
+
   h3 {
     margin: 0;
     padding: 0;
