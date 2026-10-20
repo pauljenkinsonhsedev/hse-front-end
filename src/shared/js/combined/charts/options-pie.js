@@ -239,9 +239,13 @@ export class ChartOptionsPie extends ChartOptions {
             return height + (lines * pxPerLegendLine) + legendItemSpacing;
         }, 0);
         const chartBottomPadding = 40;
+        const pieClearance = 28; // chart spacing below the plot area, plus a little room
         const requiredHeight = isSmall
             ? base.chart.marginTop + pieSize + chartBottomPadding + legendHeight
-            : base.chart.marginTop + labelBandHeight + chartBottomPadding;
+            // The plot area also has to fit the (fixed-size) pie itself,
+            // plus bottom spacing: if it's shorter than the pie,
+            // Highcharts hides the pie's labels altogether.
+            : base.chart.marginTop + Math.max(labelBandHeight + chartBottomPadding, pieSize + pieClearance);
         const height = Math.max(requiredHeight, this.defaultHeight);
 
         return {

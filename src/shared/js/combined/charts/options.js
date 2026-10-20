@@ -193,6 +193,11 @@ export class ChartOptions {
           title: {
             useHTML: true,
             text: '<div style="text-align: center;">' + this.title + '</div>',
+            // Highcharts shrinks a title that doesn't fit on one line (to
+            // as little as 0.67x) before wrapping it, so titles of
+            // different lengths render at different sizes. Always wrap at
+            // the full H3 size instead.
+            minScale: 1,
             style: {
               color: '#000',
               fontFamily: this.fontFamily,
@@ -352,13 +357,18 @@ export class ChartOptions {
         // actual content height and only grow past 100px when it's
         // needed, so every chart with a short title/subtitle keeps
         // today's exact spacing.
-        const titleHeight = measureElementHeight(this.container.clientWidth, this.title, {
+        // Highcharts wraps the title and subtitle narrower than the
+        // container: .chart's padding (8px each side), chart spacing
+        // (10px each side) and title/subtitle widthAdjust (-44px), so
+        // measure at that width or two-line titles measure as one.
+        const textWidth = this.container.clientWidth - 80;
+        const titleHeight = measureElementHeight(textWidth, this.title, {
           fontFamily: this.fontFamily,
           fontSize: titleFontSize,
           lineHeight: titleLineHeight,
           fontWeight: 'bold',
         });
-        const subtitleHeight = measureElementHeight(this.container.clientWidth, this.subtitle, {
+        const subtitleHeight = measureElementHeight(textWidth, this.subtitle, {
           fontFamily: this.fontFamily,
           fontSize: '1rem',
           fontWeight: 'normal',
