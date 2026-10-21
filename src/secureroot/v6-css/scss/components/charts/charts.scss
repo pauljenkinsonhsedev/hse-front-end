@@ -86,6 +86,15 @@ $chart-inner-spacing-bottom: 8px + 15px;
         display: block;
     }
 
+    // The table's heading is an <h2> in the page markup, but styled as an
+    // H3 (h3 / .hse-heading-m, base/core/styles/typography.scss) to match
+    // the chart title on the Chart tab, which ChartOptions styles the same.
+    .datacontent__title {
+        color: $hse-text-color;
+        @include hse-font($size: 24, $weight: bold);
+        @include hse-responsive-margin(4, "bottom");
+    }
+
     .displayChart {
         display: none;
     }
