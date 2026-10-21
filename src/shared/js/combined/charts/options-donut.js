@@ -124,7 +124,16 @@ export class ChartOptionsDonut extends ChartOptions {
         };
 
         const collection = this.collection;
-        this.collection = {...collection, chart, legend, xAxis, plotOptions};
+
+        // Highcharts describes a donut to screen readers as a "Pie chart",
+        // from its series type; say what it is instead.
+        const segmentCount = container.querySelectorAll('.unit').length;
+        const accessibility = {
+            ...collection.accessibility,
+            typeDescription: `Donut chart with ${segmentCount} ${segmentCount === 1 ? 'segment' : 'segments'}.`,
+        };
+
+        this.collection = {...collection, chart, legend, xAxis, plotOptions, accessibility};
 
         return this.collection;
     }

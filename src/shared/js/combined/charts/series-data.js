@@ -117,7 +117,11 @@ export function seriesData(data) {
                 }
             };
 
-            if (document.querySelector('.error-low')) {
+            // This chart's own table, not the whole page: otherwise every
+            // chart on a page where any table has confidence intervals got
+            // an (empty) error bar series, and e.g. a donut was announced
+            // to screen readers as a "Combination chart with 2 data series".
+            if (data.querySelector('.error-low')) {
                 seriesData.push(unitdata, errorBar);
             } else {
                 seriesData.push(unitdata);
