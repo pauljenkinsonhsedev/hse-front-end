@@ -161,7 +161,7 @@ class ChartsDefault {
         // Into its .displayChart element, not the whole .chart container:
         // rendering into the container replaced everything in it,
         // including the title, description and data table the chart is
-        // built from, which the table view (addViewToggle) shows.
+        // built from, which the Tabular data tab (addViewTabs) shows.
         const renderTarget = container.querySelector('.displayChart') || container;
         this.chart = Highcharts.chart(renderTarget, params);
 
@@ -173,37 +173,79 @@ class ChartsDefault {
         });
 
         if (renderTarget !== container) {
-            this.addViewToggle(container, chart);
+            this.addViewTabs(container, chart);
         }
     }
 
-    // A button in the bottom left of the chart box, to switch between the
-    // chart and its data table, as on GOV.UK: every value can be read at once, by anyone,
-    // rather than one point at a time through the chart. The table is the
-    // chart's own source data, already in the page (and the only view
-    // without JavaScript). A visually hidden alert announces the change.
-    addViewToggle(container, chart) {
-        const button = document.createElement('button');
-        button.type = 'button';
-        button.className = 'hse-button hse-button--secondary chart-view-toggle';
-        const text = document.createElement('span');
-        text.textContent = 'Change to table view';
-        const status = document.createElement('span');
-        status.className = 'visually-hidden';
-        status.setAttribute('role', 'alert');
-        button.append(text, status);
-        container.append(button);
+    // "Chart" and "Tabular data" tabs above the chart box (the box is the
+    // tab panel), to switch between the chart and its data table: every
+    // value can be read at once, by anyone, rather than one point at a time
+    // through the chart. The table is the chart's own source data, already
+    // in the page (and the only view without JavaScript). Styled like the
+    // HSE tabs component, and built to the ARIA tabs pattern, so screen
+    // readers announce each tab and its selected state, and the arrow keys
+    // move between them.
+    addViewTabs(container, chart) {
+        const id = container.id || `chart-${ChartsDefault.tabsCount = (ChartsDefault.tabsCount || 0) + 1}`;
+        container.id = id;
 
-        button.addEventListener('click', () => {
-            const showTable = !container.classList.contains('chart--table-view');
+        const tablist = document.createElement('div');
+        tablist.className = 'chart-tabs';
+        tablist.setAttribute('role', 'tablist');
+        tablist.setAttribute('aria-label', 'Show as');
+
+        const views = [
+            { key: 'chart', label: 'Chart' },
+            { key: 'table', label: 'Tabular data' },
+        ];
+        const tabs = views.map(({ key, label }) => {
+            const tab = document.createElement('button');
+            tab.type = 'button';
+            tab.className = 'chart-tabs__tab';
+            tab.id = `${id}-tab-${key}`;
+            tab.textContent = label;
+            tab.setAttribute('role', 'tab');
+            tab.setAttribute('aria-controls', id);
+            tab.dataset.view = key;
+            tablist.append(tab);
+            return tab;
+        });
+        container.before(tablist);
+        container.setAttribute('role', 'tabpanel');
+
+        const select = (tab, moveFocus) => {
+            const showTable = tab.dataset.view === 'table';
+            tabs.forEach((other) => {
+                const selected = other === tab;
+                other.setAttribute('aria-selected', String(selected));
+                other.tabIndex = selected ? 0 : -1;
+                other.classList.toggle('chart-tabs__tab--selected', selected);
+            });
+            container.setAttribute('aria-labelledby', tab.id);
             container.classList.toggle('chart--table-view', showTable);
-            text.textContent = showTable ? 'Change to chart view' : 'Change to table view';
-            status.textContent = showTable ? 'Table visible' : 'Chart visible';
-            if (!showTable) {
+            // The table has nothing focusable in it, so make the panel
+            // itself reachable with Tab (the chart already is).
+            if (showTable) {
+                container.tabIndex = 0;
+            } else {
+                container.removeAttribute('tabindex');
                 // The window may have been resized while the chart was hidden
                 chart.reflow();
             }
+            if (moveFocus) tab.focus();
+        };
+
+        tabs.forEach((tab, index) => {
+            tab.addEventListener('click', () => select(tab, false));
+            tab.addEventListener('keydown', (event) => {
+                const keys = { ArrowLeft: index - 1, ArrowRight: index + 1, Home: 0, End: tabs.length - 1 };
+                if (!(event.key in keys)) return;
+                event.preventDefault();
+                select(tabs[(keys[event.key] + tabs.length) % tabs.length], true);
+            });
         });
+
+        select(tabs[0], false);
     }
 }
 

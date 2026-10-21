@@ -1,5 +1,7 @@
 @use "../../base/core/settings/colours" as *;
 @use "../../base/core/tools/focused" as *;
+@use "../../base/core/tools/spacing" as *;
+@use "../../base/core/tools/typography" as *;
 
 .js-enabled .chart table,
 .js-enabled .datacontent__subtitle,
@@ -18,16 +20,62 @@
     margin-bottom: 1rem;
 }
 
-// The "Change to table view" button (added in charts.js), in the bottom
-// left of the chart box: the box's padding spaces it from the edges.
-.chart-view-toggle {
-    margin-bottom: 0;
+// Highcharts' own spacing inside the chart (chart.spacing: 10px, 15px at
+// the bottom), on top of the box's 8px padding. The Tabular data tab uses
+// it so the table lines up with the chart's content.
+$chart-inner-spacing: 8px + 10px;
+$chart-inner-spacing-bottom: 8px + 15px;
+
+// "Chart" / "Tabular data" tabs above the chart box (added in charts.js),
+// which is their tab panel. Looks like the HSE tabs component
+// (components/tabs), but at every width: with only two short labels they
+// fit side by side even on small screens.
+.chart-tabs {
+    display: flex;
+    align-items: flex-end;
+    margin-top: hse-spacing(1); // room for the raised selected tab
 }
 
-// Table view: show the chart's title, description and data table instead
-// of the chart.
+.chart-tabs__tab {
+    appearance: none;
+    background-color: $color_hse-grey-4;
+    border: 0;
+    border-radius: 0;
+    color: $hse-text-color;
+    cursor: pointer;
+    margin: 0 hse-spacing(1) 0 0;
+    padding: hse-spacing(2) hse-spacing(4);
+    position: relative;
+    text-align: center;
+    text-decoration: underline;
+    @include hse-font($size: 19);
+
+    &:hover {
+        color: rgba($hse-text-color, 0.99); // as hse-link-style-text
+    }
+
+    &:focus {
+        @include hse-focused-text;
+    }
+}
+
+.chart-tabs__tab--selected {
+    $border-width: 1px;
+    background-color: $color_hse-white;
+    border: $border-width solid $hse-border-color;
+    border-bottom: 0;
+    margin-bottom: -$border-width; // overlap the panel's top border, so they join
+    margin-top: -(hse-spacing(1));
+    padding: ((hse-spacing(2) * 1.5) - $border-width) (hse-spacing(4) - $border-width) ((hse-spacing(2) * 1.5) + $border-width);
+    text-decoration: none;
+    z-index: 1;
+}
+
+// Tabular data tab: show the chart's title, description and data table
+// instead of the chart, spaced in from the border as the chart's content is.
 .js-enabled .chart.chart--table-view {
     min-height: 0;
+    padding: $chart-inner-spacing $chart-inner-spacing $chart-inner-spacing-bottom;
 
     table {
         display: table;
