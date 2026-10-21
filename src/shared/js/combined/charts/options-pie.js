@@ -3,6 +3,7 @@ import { chartCategories } from './chart-categories';
 import { dataLabel } from './data-label.js';
 import { displayPrefix } from './data-prefix.js';
 import { displaySuffix } from './data-suffix.js';
+import { defaultChartHeight, fitHeightToLegend } from './pie-legend.js';
 
 // Degrees clockwise from 12 o'clock (see plotOptions.pie.startAngle below)
 const pieStartAngle = 90;
@@ -126,18 +127,8 @@ export class ChartOptionsPie extends ChartOptions {
             height: layout.chart.height,
             events: {
                 ...collection.chart.events,
-                // layout() can only estimate the small-screen height (it
-                // runs before Highcharts has drawn the title, subtitle
-                // and legend), so once they're drawn, size the chart to
-                // fit them exactly: the pie, a small gap, then the legend.
                 render: function () {
-                    if (!this.legend.display || !this.series[0]) return;
-                    const pieGap = 36;
-                    const fittedHeight = Math.round(this.plotTop + this.series[0].center[2] + pieGap +
-                        (this.legend.options.margin || 0) + this.legend.legendHeight + this.spacing[2]);
-                    if (Math.abs(fittedHeight - this.chartHeight) > 1) {
-                        this.setSize(null, fittedHeight, false);
-                    }
+                    fitHeightToLegend(this);
                 }
             }
         };
@@ -229,16 +220,10 @@ export class ChartOptionsPie extends ChartOptions {
             ? 30
             : Math.max(60, Math.ceil((labelBandHeight - pieSize) / 2));
 
-        // Never smaller than the height the chart gets with no height set
-        // (the space inside .chart's min-height, padding and border), so
-        // pies with only a few slices keep exactly that. Set it as a
-        // number rather than leaving it unset: once a chart has grown,
-        // Highcharts' "unset" height is the container's current height,
-        // so it would never shrink back on resize.
+        // Never smaller than the height the chart gets with no height set,
+        // so pies with only a few slices keep exactly that.
         if (!this.defaultHeight) {
-            const style = window.getComputedStyle(this.container);
-            this.defaultHeight = ['paddingTop', 'paddingBottom', 'borderTopWidth', 'borderBottomWidth']
-                .reduce((height, prop) => height - parseFloat(style[prop]), parseFloat(style.minHeight)) || 400;
+            this.defaultHeight = defaultChartHeight(this.container);
         }
         const legendItemWidth = this.container.clientWidth - 80; // minus legend symbol and chart padding
         const pxPerLegendLine = 21;
