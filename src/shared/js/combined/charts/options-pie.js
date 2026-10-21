@@ -50,8 +50,9 @@ export class ChartOptionsPie extends ChartOptions {
 
         let plotOptions = {
             pie: {
-                allowPointSelect: true,
-                cursor: 'pointer',
+                // Hover tooltips only, no click-to-select: selecting a
+                // slice did nothing beyond outlining it, and the pointer
+                // cursor suggested an action that wasn't there.
                 size: this.pieSize,
                 center: pieLayout.center,
                 // Start at 3 o'clock rather than 12. Data is usually
@@ -62,12 +63,6 @@ export class ChartOptionsPie extends ChartOptions {
                 // them. At 3 o'clock they can spread up and down instead.
                 startAngle: pieStartAngle,
                 showInLegend: true,
-                states: {
-                    select: {
-                        borderColor: '#ffdd00', // $hse-focus-color
-                        borderWidth: 3
-                    }
-                },
                 dataLabels: {
                     enabled: pieLayout.dataLabels.enabled,
                     alignTo: this.alignTo,

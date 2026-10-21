@@ -82,15 +82,6 @@ export class ChartOptionsDonut extends ChartOptions {
             }
         };
 
-        let pieOptions = {
-            allowPointSelect: true,
-            cursor: 'pointer',
-            dataLabels: {
-                enabled: true,
-                connectorColor: 'silver'
-            }
-        };
-
         let xAxis = {
             labels: {
                 enabled: false
@@ -103,15 +94,8 @@ export class ChartOptionsDonut extends ChartOptions {
                 size: this.pieSize,
                 center: pieLayout.center,
                 showInLegend: true,
-                allowPointSelect: true,
-                cursor: 'pointer',
+                // Hover tooltips only, no click-to-select (as for pies).
                 innerSize: '65%',
-                states: {
-                    select: {
-                        borderColor: '#ffdd00', // $hse-focus-color
-                        borderWidth: 3
-                    }
-                },
                 dataLabels: {
                     enabled: pieLayout.dataLabels.enabled,
                     formatter: getDataLabel,
@@ -138,7 +122,7 @@ export class ChartOptionsDonut extends ChartOptions {
         };
 
         const collection = this.collection;
-        this.collection = {...collection, chart, legend, xAxis, pieOptions, plotOptions};
+        this.collection = {...collection, chart, legend, xAxis, plotOptions};
 
         return this.collection;
     }
