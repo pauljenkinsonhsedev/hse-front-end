@@ -3,7 +3,7 @@ import { seriesData } from './series-data.js';
 import { dataLabel } from './data-label.js';
 import { displayPrefix } from './data-prefix.js';
 import { displaySuffix } from './data-suffix.js';
-import { mediaQuery } from '../utils/media-query.js';
+import { defaultChartHeight, fitHeightToLegend } from './pie-legend.js';
 
 /*
     Class @ChartOptionsChartOptionsDonut
@@ -26,17 +26,9 @@ export class ChartOptionsDonut extends ChartOptions {
         this.units = container.dataset.chartUnits;
         this.decimals = container.dataset.decimalPoint;
         const getDataLabel = dataLabel(this.units, this.decimals, total);
-        const mediaquery = mediaQuery();
-
-        if (mediaquery === 'small') {
-            this.alignTo = 'plotEdges';
-            this.pieSize = '160px';
-            this.fontSize = '1rem';
-        } else {
-            this.alignTo = false;
-            this.pieSize = '220px';
-            this.fontSize = '1rem';
-        }
+        const layout = this.layout();
+        const { pie: pieLayout } = layout.plotOptions;
+        this.pieSize = pieLayout.size;
 
         // The title uses the base chart title, above the donut like every
         // other chart. It used to sit in the donut's hole (verticalAlign
@@ -49,20 +41,46 @@ export class ChartOptionsDonut extends ChartOptions {
         let chart = {
             ...this.collection.chart,
             type: 'pie',
+            marginTop: layout.chart.marginTop,
+            height: layout.chart.height,
+            // Regular weight: text that doesn't set its own (e.g. the
+            // tooltip) inherits this, and was all bold.
             style: {
                 color: '#000',
                 fontFamily: this.fontFamily,
                 fontSize: '1rem',
-                fontWeight: 'bold'
+                fontWeight: 'normal'
+            },
+            events: {
+                ...this.collection.chart.events,
+                render: function () {
+                    fitHeightToLegend(this);
+                }
             }
         };
 
-        let pieOptions = {
-            allowPointSelect: true,
-            cursor: 'pointer',
-            dataLabels: {
-                enabled: true,
-                connectorColor: 'silver'
+        // Only shown below desktop, in place of the data labels (see
+        // layout() below): one item per row, reusing the data label
+        // formatter so each item reads the same as its label would. A key
+        // only (legend clicks are disabled in charts.js), so plain text
+        // with no "Show <segment>" accessibility proxy buttons; each
+        // segment still announces its name and value.
+        let legend = {
+            ...this.collection.legend,
+            ...layout.legend,
+            itemStyle: {
+                ...this.collection.legend.itemStyle,
+                ...layout.legend.itemStyle,
+                fontWeight: 'normal',
+                cursor: 'default'
+            },
+            itemHoverStyle: { color: this.collection.legend.itemStyle.color },
+            accessibility: { enabled: false },
+            useHTML: true,
+            layout: 'vertical',
+            itemMarginBottom: 8,
+            labelFormatter: function () {
+                return getDataLabel.call({ key: this.name, y: this.y });
             }
         };
 
@@ -76,25 +94,24 @@ export class ChartOptionsDonut extends ChartOptions {
             pie: {
                 slicedOffset: 0,
                 size: this.pieSize,
-                allowPointSelect: true,
-                cursor: 'pointer',
+                center: pieLayout.center,
+                showInLegend: true,
+                // Hover tooltips only, no click-to-select (as for pies).
                 innerSize: '65%',
-                states: {
-                    select: {
-                        borderColor: '#ffdd00', // $hse-focus-color
-                        borderWidth: 3
-                    }
-                },
+                // Anchored by its segment so it can be hovered, as for pies
+                // (see options-pie.js).
+                tooltip: { followPointer: false },
                 dataLabels: {
-                    enabled: true,
-                    alignTo: this.alignTo,
+                    enabled: pieLayout.dataLabels.enabled,
                     formatter: getDataLabel,
                     connectorColor: '#ccc',
                     style: {
                         width: '150px',
                         fontFamily: this.fontFamily,
                         fontSize: '1rem',
-                        fontWeight: 'bold'
+                        // Regular weight, as on pie labels: the formatter
+                        // already makes just the value bold.
+                        fontWeight: 'normal'
                     }
                 },
             },
@@ -110,8 +127,65 @@ export class ChartOptionsDonut extends ChartOptions {
         };
 
         const collection = this.collection;
-        this.collection = {...collection, chart, xAxis, pieOptions, plotOptions};
+        this.collection = {...collection, chart, legend, xAxis, plotOptions};
 
         return this.collection;
+    }
+
+    // Labels vs legend, ring size and chart height depend on the screen
+    // size, so they're part of the layout watchLayout re-applies on resize
+    // (see ChartOptions.layout), rather than fixed at page-load values.
+    layout() {
+        const base = super.layout();
+        // Labels beside the ring on desktop only (sass-mq "desktop"
+        // breakpoint, 769px, breakpoints.scss), as for pie charts;
+        // tablet and mobile get a stacked legend underneath. Also use the
+        // legend when the chart itself is narrow, e.g. a two-thirds column
+        // on a small desktop, where labels either side of the 220px ring
+        // run off the bottom of the chart (donut labels are a fixed 150px
+        // wide: tested, they fit at a 595px chart width but not at 529px).
+        const isDesktop = window.matchMedia('(min-width: 769px)').matches;
+        const isSmall = !isDesktop || this.container.clientWidth < 600;
+        const ringSize = isSmall ? 160 : 220;
+
+        // Highcharts renders into the container and replaces the data
+        // table, so count the segments while it's still there (the first
+        // call, from the constructor).
+        if (this.segmentCount === undefined) {
+            this.segmentCount = this.container.querySelectorAll('.unit').length;
+        }
+        if (!this.defaultHeight) {
+            this.defaultHeight = defaultChartHeight(this.container);
+        }
+        // Small screens: a starting estimate for the ring plus legend,
+        // corrected after render by fitHeightToLegend. Desktop: the
+        // default height, as before.
+        const pxPerLegendItem = 80; // donut segment names are long, wrapping onto 2-4 lines
+        const height = isSmall
+            ? Math.max(this.defaultHeight, base.chart.marginTop + ringSize + 40 + (this.segmentCount * pxPerLegendItem))
+            : this.defaultHeight;
+        const legendItemWidth = this.container.clientWidth - 80; // minus legend symbol and chart padding
+
+        return {
+            ...base,
+            // No outer labels on small screens, so let Highcharts size
+            // the top margin to the title and subtitle it actually drew.
+            chart: { ...base.chart, marginTop: isSmall ? null : base.chart.marginTop, height },
+            legend: {
+                enabled: isSmall,
+                itemStyle: { width: legendItemWidth + 'px', textOverflow: null },
+            },
+            plotOptions: {
+                pie: {
+                    size: ringSize + 'px',
+                    // On small screens sit the ring near the top of the
+                    // plot area, so any spare height ends up below it. The
+                    // 20px matches the title-to-ring gap on pie charts
+                    // (Highcharts leaves less room under a donut's title).
+                    center: isSmall ? ['50%', (ringSize / 2) + 20] : ['50%', '50%'],
+                    dataLabels: { enabled: !isSmall },
+                },
+            },
+        };
     }
 }

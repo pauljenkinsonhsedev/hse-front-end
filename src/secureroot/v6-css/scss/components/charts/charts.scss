@@ -1,4 +1,5 @@
 @use "../../base/core/settings/colours" as *;
+@use "../../base/core/tools/focused" as *;
 
 .js-enabled .chart table,
 .js-enabled .datacontent__subtitle,
@@ -15,6 +16,13 @@
 
     min-height: 400px;
     margin-bottom: 1rem;
+}
+
+// Keyboard focus on a chart point: Highcharts draws this border in
+// $hse-focus-color (keyboardNavigation.focusBorder in options.js); add the
+// black edge the site's other focus styles have.
+.highcharts-focus-border {
+    @include hse-focused-svg;
 }
 
 .highcharts-root {
