@@ -3,7 +3,6 @@ import { seriesData } from './series-data.js';
 import { dataLabel } from './data-label.js';
 import { displayPrefix } from './data-prefix.js';
 import { displaySuffix } from './data-suffix.js';
-import { mediaQuery } from '../utils/media-query.js';
 
 /*
     Class @ChartOptionsChartOptionsDonut
@@ -26,17 +25,9 @@ export class ChartOptionsDonut extends ChartOptions {
         this.units = container.dataset.chartUnits;
         this.decimals = container.dataset.decimalPoint;
         const getDataLabel = dataLabel(this.units, this.decimals, total);
-        const mediaquery = mediaQuery();
-
-        if (mediaquery === 'small') {
-            this.alignTo = 'plotEdges';
-            this.pieSize = '160px';
-            this.fontSize = '1rem';
-        } else {
-            this.alignTo = false;
-            this.pieSize = '220px';
-            this.fontSize = '1rem';
-        }
+        const { pie: pieLayout } = this.layout().plotOptions;
+        this.alignTo = pieLayout.dataLabels.alignTo;
+        this.pieSize = pieLayout.size;
 
         // The title uses the base chart title, above the donut like every
         // other chart. It used to sit in the donut's hole (verticalAlign
@@ -115,5 +106,28 @@ export class ChartOptionsDonut extends ChartOptions {
         this.collection = {...collection, chart, xAxis, pieOptions, plotOptions};
 
         return this.collection;
+    }
+
+    // Ring size and label alignment depend on the screen size, so they're
+    // part of the layout watchLayout re-applies on resize (see
+    // ChartOptions.layout), rather than fixed at page-load values.
+    layout() {
+        // Below the sass-mq "tablet" breakpoint (641px, breakpoints.scss),
+        // or when the chart itself is narrow, e.g. a two-thirds column on a
+        // small desktop, where the 220px ring leaves too little room and
+        // the stacked labels run off the bottom of the chart (as with pie
+        // charts, see ChartOptionsPie.layout(); the cutoff is higher than
+        // the pie's because donut labels are a fixed 150px wide: tested,
+        // labels fit at a 595px chart width, but not at 529px).
+        const isSmall = !window.matchMedia('(min-width: 641px)').matches || this.container.clientWidth < 600;
+        return {
+            ...super.layout(),
+            plotOptions: {
+                pie: {
+                    size: isSmall ? '160px' : '220px',
+                    dataLabels: { alignTo: isSmall ? 'plotEdges' : false },
+                },
+            },
+        };
     }
 }
