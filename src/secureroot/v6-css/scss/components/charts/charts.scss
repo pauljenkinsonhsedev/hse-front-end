@@ -1,4 +1,5 @@
 @use "../../base/core/settings/colours" as *;
+@use "../../base/core/settings/globals" as *;
 @use "../../base/core/tools/focused" as *;
 @use "../../base/core/tools/spacing" as *;
 @use "../../base/core/tools/typography" as *;
@@ -126,6 +127,19 @@ $chart-inner-spacing-bottom: 8px + 15px;
     table {
         display: table;
         margin-bottom: 0;
+    }
+
+    // Wraps the table (added in charts.js), so a table wider than the box
+    // scrolls sideways inside it, as in .hse-table-container, instead of
+    // widening the page. Focusable for keyboard scrolling, with the site's
+    // focus colours (a black edge inside a yellow outline, as on inputs).
+    .chart-table-scroll {
+        overflow-x: auto;
+
+        &:focus {
+            outline: $hse-focus-width solid $hse-focus-color;
+            box-shadow: inset 0 0 0 2px $hse-focus-text-color;
+        }
     }
 
     .displayChart {

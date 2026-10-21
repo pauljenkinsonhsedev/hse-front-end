@@ -218,6 +218,24 @@ class ChartsDefault {
         container.before(tablist);
         container.setAttribute('role', 'tabpanel');
 
+        // Let a table that's wider than the box scroll sideways inside it,
+        // rather than widening the whole page on small screens (WCAG 2.2
+        // 1.4.10), as .hse-table-container does for the site's standard
+        // tables. Focusable and labelled, so keyboard users can scroll it
+        // with the arrow keys and screen readers announce what it is.
+        const table = container.querySelector('table');
+        if (table) {
+            const scroller = document.createElement('div');
+            scroller.className = 'chart-table-scroll';
+            scroller.tabIndex = 0;
+            scroller.setAttribute('role', 'region');
+            const title = document.createElement('div');
+            title.innerHTML = container.dataset.chartTitle || '';
+            scroller.setAttribute('aria-label', `${title.textContent.replace(/\s+/g, ' ').trim() || 'Chart'} data table`);
+            table.before(scroller);
+            scroller.append(table);
+        }
+
         const select = (tab, moveFocus) => {
             const showTable = tab.dataset.view === 'table';
             tabs.forEach((other) => {
@@ -228,12 +246,10 @@ class ChartsDefault {
             });
             container.setAttribute('aria-labelledby', tab.id);
             container.classList.toggle('chart--table-view', showTable);
-            // The table has nothing focusable in it, so make the panel
-            // itself reachable with Tab (the chart already is).
-            if (showTable) {
-                container.tabIndex = 0;
-            } else {
-                container.removeAttribute('tabindex');
+            // Tab then moves into the panel: to the chart, or to the
+            // table's focusable scroll area (so the panel itself doesn't
+            // need to be focusable).
+            if (!showTable) {
                 // The window may have been resized while the chart was hidden
                 chart.reflow();
             }
