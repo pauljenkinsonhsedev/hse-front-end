@@ -43,11 +43,13 @@ export class ChartOptionsDonut extends ChartOptions {
             type: 'pie',
             marginTop: layout.chart.marginTop,
             height: layout.chart.height,
+            // Regular weight: text that doesn't set its own (e.g. the
+            // tooltip) inherits this, and was all bold.
             style: {
                 color: '#000',
                 fontFamily: this.fontFamily,
                 fontSize: '1rem',
-                fontWeight: 'bold'
+                fontWeight: 'normal'
             },
             events: {
                 ...this.collection.chart.events,
