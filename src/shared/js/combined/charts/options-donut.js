@@ -96,11 +96,8 @@ export class ChartOptionsDonut extends ChartOptions {
                 size: this.pieSize,
                 center: pieLayout.center,
                 showInLegend: true,
-                // Hover tooltips only, no click-to-select (as for pies).
+                // No click-to-select (as for pies).
                 innerSize: '65%',
-                // Anchored by its segment so it can be hovered, as for pies
-                // (see options-pie.js).
-                tooltip: { followPointer: false },
                 dataLabels: {
                     enabled: pieLayout.dataLabels.enabled,
                     formatter: getDataLabel,
