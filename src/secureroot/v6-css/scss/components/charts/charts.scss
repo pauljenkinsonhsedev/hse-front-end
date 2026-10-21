@@ -72,14 +72,12 @@ $chart-inner-spacing-bottom: 8px + 15px;
 }
 
 // Tabular data tab: show the chart's title, description and data table
-// instead of the chart, spaced in from the border as the chart's content is.
+// instead of the chart, sized and spaced like the chart's own content (on
+// the site's typography and spacing scales), and spaced in from the
+// border as the chart's content is.
 .js-enabled .chart.chart--table-view {
     min-height: 0;
-    padding: $chart-inner-spacing $chart-inner-spacing $chart-inner-spacing-bottom;
-
-    table {
-        display: table;
-    }
+    padding: hse-spacing(3) $chart-inner-spacing $chart-inner-spacing-bottom;
 
     .datacontent__title,
     .datacontent__description {
@@ -89,10 +87,38 @@ $chart-inner-spacing-bottom: 8px + 15px;
     // The table's heading is an <h2> in the page markup, but styled as an
     // H3 (h3 / .hse-heading-m, base/core/styles/typography.scss) to match
     // the chart title on the Chart tab, which ChartOptions styles the same.
+    // Directly followed by the description, as the chart's title is by its
+    // subtitle.
     .datacontent__title {
         color: $hse-text-color;
+        margin-bottom: hse-spacing(1);
         @include hse-font($size: 24, $weight: bold);
-        @include hse-responsive-margin(4, "bottom");
+    }
+
+    // Like the chart's subtitle: 16px, with a tighter line height than the
+    // scale's 32px for body copy.
+    .datacontent__description {
+        margin-bottom: hse-spacing(3);
+        @include hse-typography-responsive(16, $override-line-height: 1.25);
+    }
+
+    // 16px like the chart's axis and data labels, rather than 19px body
+    // text, with compact rows. No bottom margins: the panel's padding
+    // spaces it from the border.
+    figure {
+        margin-bottom: 0;
+    }
+
+    table {
+        display: table;
+        margin-bottom: 0;
+    }
+
+    th,
+    td {
+        padding-top: hse-spacing(2);
+        padding-bottom: hse-spacing(2);
+        @include hse-typography-responsive(16, $override-line-height: 1.5);
     }
 
     .displayChart {
