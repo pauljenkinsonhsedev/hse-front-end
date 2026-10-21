@@ -14,6 +14,25 @@ const safeInit = (module, hc) => {
     }
 };
 
+// WCAG 2.2 1.4.13 (content on hover): after Esc dismisses a tooltip (see
+// ChartsDefault.init), keep it closed while the pointer stays on the same
+// point. Hiding a tooltip that overlaps its own point exposes the point
+// underneath, the browser fires a hover on it, and the tooltip would
+// otherwise reopen straight away. Moving to another point, or out of the
+// chart, lets tooltips show again.
+Highcharts.wrap(Highcharts.Tooltip.prototype, 'refresh', function (proceed, pointOrPoints, event) {
+    const points = [].concat(pointOrPoints);
+    const dismissed = this.chart.dismissedTooltipPoint;
+    if (dismissed) {
+        if (points.includes(dismissed)) return;
+        this.chart.dismissedTooltipPoint = null;
+    }
+    // Remembered for Esc: while the pointer is on the tooltip itself,
+    // chart.hoverPoint has already been cleared.
+    this.lastPoint = points[0];
+    return proceed.call(this, pointOrPoints, event);
+});
+
 // Initialize everything safely!
 safeInit(HighchartsMore, Highcharts);
 safeInit(Data, Highcharts);
@@ -43,6 +62,26 @@ class ChartsDefault {
     }
 
     init() {
+        // WCAG 2.2 1.4.13 (content on hover): Esc dismisses an open chart
+        // tooltip without moving the pointer. Highcharts only does this
+        // during its own keyboard navigation, not after a mouse hover.
+        document.addEventListener('keydown', (event) => {
+            if (event.key !== 'Escape') return;
+            // While the pointer rests on a sticky tooltip, Highcharts has
+            // already marked it hidden internally although it's still on
+            // screen, so tooltip.hide() alone does nothing. Mark it shown
+            // again first, so hide() actually takes it off screen.
+            Highcharts.charts.forEach((chart) => {
+                const tooltip = chart && chart.tooltip;
+                if (tooltip && tooltip.label) {
+                    chart.dismissedTooltipPoint = tooltip.lastPoint;
+                    tooltip.label.show();
+                    tooltip.isHidden = false;
+                    tooltip.hide(0);
+                }
+            });
+        });
+
         return this.loadChartsFn().then(() => {
             const chartContainer = document.querySelectorAll('.chart');
             const chartArray = [...chartContainer];
@@ -110,12 +149,23 @@ class ChartsDefault {
                 borderRadius: 0,
                 borderColor: '#cecece',
                 borderWidth: 1,
-                shadow: false
+                shadow: false,
+                // WCAG 2.2 1.4.13 (content on hover): keep the tooltip open
+                // while the pointer moves onto it, e.g. for screen
+                // magnifier users panning to read it.
+                stickOnContact: true
             }
         });
 
         // DRAW THE CHART
         this.chart = Highcharts.chart(container, params);
+
+        // Leaving the chart ends an Esc dismissal (see the Tooltip
+        // refresh wrapper above), so the next hover shows its tooltip.
+        const chart = this.chart;
+        chart.container.addEventListener('mouseleave', () => {
+            chart.dismissedTooltipPoint = null;
+        });
     }
 }
 

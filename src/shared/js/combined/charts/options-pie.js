@@ -54,6 +54,11 @@ export class ChartOptionsPie extends ChartOptions {
                 // slice did nothing beyond outlining it, and the pointer
                 // cursor suggested an action that wasn't there.
                 size: this.pieSize,
+                // Anchor the tooltip by its slice instead of following the
+                // pointer (the pie default): Highcharts ignores
+                // stickOnContact for tooltips that follow the pointer, so
+                // otherwise it can't be hovered (WCAG 2.2 1.4.13).
+                tooltip: { followPointer: false },
                 center: pieLayout.center,
                 // Start at 3 o'clock rather than 12. Data is usually
                 // largest-first, which puts the smallest slices just
