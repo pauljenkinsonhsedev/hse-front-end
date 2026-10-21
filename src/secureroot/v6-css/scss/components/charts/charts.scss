@@ -47,16 +47,27 @@ $chart-inner-spacing-bottom: 8px + 15px;
     padding: hse-spacing(2) hse-spacing(4);
     position: relative;
     text-align: center;
-    text-decoration: underline;
     @include hse-font($size: 19);
 
     &:hover {
         color: rgba($hse-text-color, 0.99); // as hse-link-style-text
     }
 
+    // As the tabs component: the focus style wraps the label, inside the
+    // tab, rather than filling the whole tab. The label keeps a
+    // transparent outline (from hse-focused-text) for forced-colours mode.
     &:focus {
-        @include hse-focused-text;
+        outline: none;
+
+        .chart-tabs__label {
+            @include hse-focused-text;
+        }
     }
+}
+
+.chart-tabs__label {
+    display: inline-block; // as .hse-tabs__tab, so its focus style is full line height
+    text-decoration: underline;
 }
 
 .chart-tabs__tab--selected {
@@ -67,8 +78,11 @@ $chart-inner-spacing-bottom: 8px + 15px;
     margin-bottom: -$border-width; // overlap the panel's top border, so they join
     margin-top: -(hse-spacing(1));
     padding: ((hse-spacing(2) * 1.5) - $border-width) (hse-spacing(4) - $border-width) ((hse-spacing(2) * 1.5) + $border-width);
-    text-decoration: none;
     z-index: 1;
+
+    .chart-tabs__label {
+        text-decoration: none;
+    }
 }
 
 // Tabular data tab: show the chart's title, description and data table

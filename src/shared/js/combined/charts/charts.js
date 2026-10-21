@@ -203,7 +203,12 @@ class ChartsDefault {
             tab.type = 'button';
             tab.className = 'chart-tabs__tab';
             tab.id = `${id}-tab-${key}`;
-            tab.textContent = label;
+            // In a span so the focus style can wrap just the label, inside
+            // the tab, as the tabs component's links do
+            const text = document.createElement('span');
+            text.className = 'chart-tabs__label';
+            text.textContent = label;
+            tab.append(text);
             tab.setAttribute('role', 'tab');
             tab.setAttribute('aria-controls', id);
             tab.dataset.view = key;
