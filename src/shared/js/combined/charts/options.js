@@ -35,6 +35,11 @@ export class ChartOptions {
         this.brandColourBrown = ['#4D442F', '#6A5F42', '#897A55', '#A5956D', '#B9AD8F', '#D1C9B5', '#E7E3D9'];
         this.brandColourPink = ['#772B4F', '#A33B6D', '#C25689', '#CE76A0', '#D997B6', '#E7BBD0', '#F2DCE6'];
         this.fontFamily = 'Arial, Helvetica, sans-serif';
+        // The chart title is styled as the site's H3 (h3 / .hse-heading-m in
+        // base/core/styles/typography.scss): the page font (page.scss) and
+        // text colour ($hse-text-color), like the Tabular data tab's heading.
+        this.headingFontFamily = 'Roboto, Arial, "Helvetica Neue", Helvetica, sans-serif';
+        this.headingColor = '#212b32'; // $hse-text-color
         this.chartRender = container.querySelector('.displayChart');
         this.dataTable = container.querySelector('.tabledata');
         this.type = container.dataset.chartType;
@@ -199,11 +204,11 @@ export class ChartOptions {
             // the full H3 size instead.
             minScale: 1,
             style: {
-              color: '#000',
-              fontFamily: this.fontFamily,
+              color: this.headingColor,
+              fontFamily: this.headingFontFamily,
               fontSize: this.titleFontSize,
               lineHeight: this.titleLineHeight,
-              fontWeight: 'bold',
+              fontWeight: '600', // $hse-font-bold
             },
           },
           subtitle: {
@@ -345,9 +350,10 @@ export class ChartOptions {
         // Chart title mirrors the site's H3 heading scale (rather than H2),
         // since charts always sit below an H2 on the page. Values match
         // the "24" entry of $hse-typography-scale (settings/typography.scss),
-        // switching at the sass-mq "tablet" breakpoint (641px, breakpoints.scss).
-        const titleBreakpointTablet = 641;
-        const isTabletUp = this.container.clientWidth >= titleBreakpointTablet;
+        // switching at the sass-mq "tablet" breakpoint (641px, breakpoints.scss)
+        // of the viewport, as H3s elsewhere on the page do, so the title
+        // matches them even in a narrow (e.g. two-thirds) column.
+        const isTabletUp = window.matchMedia('(min-width: 641px)').matches;
         const titleFontSize = isTabletUp ? '1.5rem' : '1.25rem'; // 24px / 20px
         const titleLineHeight = isTabletUp ? '2rem' : '1.75rem'; // 32px / 28px
 
@@ -367,10 +373,10 @@ export class ChartOptions {
         // measure at that width or two-line titles measure as one.
         const textWidth = this.container.clientWidth - 80;
         const titleHeight = measureElementHeight(textWidth, this.title, {
-          fontFamily: this.fontFamily,
+          fontFamily: this.headingFontFamily,
           fontSize: titleFontSize,
           lineHeight: titleLineHeight,
-          fontWeight: 'bold',
+          fontWeight: '600',
         });
         const subtitleHeight = measureElementHeight(textWidth, this.subtitle, {
           fontFamily: this.fontFamily,

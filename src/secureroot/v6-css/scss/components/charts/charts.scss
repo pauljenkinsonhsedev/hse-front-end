@@ -1,5 +1,7 @@
 @use "../../base/core/settings/colours" as *;
 @use "../../base/core/tools/focused" as *;
+@use "../../base/core/tools/spacing" as *;
+@use "../../base/core/tools/typography" as *;
 
 .js-enabled .chart table,
 .js-enabled .datacontent__subtitle,
@@ -16,6 +18,119 @@
 
     min-height: 400px;
     margin-bottom: 1rem;
+}
+
+// Highcharts' own spacing inside the chart (chart.spacing: 10px, 15px at
+// the bottom), on top of the box's 8px padding. The Tabular data tab uses
+// it so the table lines up with the chart's content.
+$chart-inner-spacing: 8px + 10px;
+$chart-inner-spacing-bottom: 8px + 15px;
+
+// "Chart" / "Tabular data" tabs above the chart box (added in charts.js),
+// which is their tab panel. Looks like the HSE tabs component
+// (components/tabs), but at every width: with only two short labels they
+// fit side by side even on small screens.
+.chart-tabs {
+    display: flex;
+    align-items: flex-end;
+    margin-top: hse-spacing(1); // room for the raised selected tab
+}
+
+.chart-tabs__tab {
+    appearance: none;
+    background-color: $color_hse-grey-4;
+    border: 0;
+    border-radius: 0;
+    color: $hse-text-color;
+    cursor: pointer;
+    margin: 0 hse-spacing(1) 0 0;
+    padding: hse-spacing(2) hse-spacing(4);
+    position: relative;
+    text-align: center;
+    @include hse-font($size: 19);
+
+    &:hover {
+        color: rgba($hse-text-color, 0.99); // as hse-link-style-text
+    }
+
+    // As the tabs component: the focus style wraps the label, inside the
+    // tab, rather than filling the whole tab. The label keeps a
+    // transparent outline (from hse-focused-text) for forced-colours mode.
+    &:focus {
+        outline: none;
+
+        .chart-tabs__label {
+            @include hse-focused-text;
+        }
+    }
+}
+
+.chart-tabs__label {
+    display: inline-block; // as .hse-tabs__tab, so its focus style is full line height
+    text-decoration: underline;
+}
+
+.chart-tabs__tab--selected {
+    $border-width: 1px;
+    background-color: $color_hse-white;
+    border: $border-width solid $hse-border-color;
+    border-bottom: 0;
+    margin-bottom: -$border-width; // overlap the panel's top border, so they join
+    margin-top: -(hse-spacing(1));
+    padding: ((hse-spacing(2) * 1.5) - $border-width) (hse-spacing(4) - $border-width) ((hse-spacing(2) * 1.5) + $border-width);
+    z-index: 1;
+
+    .chart-tabs__label {
+        text-decoration: none;
+    }
+}
+
+// Tabular data tab: show the chart's title, description and data table
+// instead of the chart, sized and spaced like the chart's own content (on
+// the site's typography and spacing scales), and spaced in from the
+// border as the chart's content is.
+.js-enabled .chart.chart--table-view {
+    min-height: 0;
+    padding: hse-spacing(3) $chart-inner-spacing $chart-inner-spacing-bottom;
+
+    .datacontent__title,
+    .datacontent__description {
+        display: block;
+    }
+
+    // The table's heading is an <h2> in the page markup, but styled as an
+    // H3 (h3 / .hse-heading-m, base/core/styles/typography.scss) to match
+    // the chart title on the Chart tab, which ChartOptions styles the same.
+    // Directly followed by the description, as the chart's title is by its
+    // subtitle.
+    .datacontent__title {
+        color: $hse-text-color;
+        margin-bottom: hse-spacing(1);
+        @include hse-font($size: 24, $weight: bold);
+    }
+
+    // Like the chart's subtitle: 16px, with a tighter line height than the
+    // scale's 32px for body copy.
+    .datacontent__description {
+        margin-bottom: hse-spacing(3);
+        @include hse-typography-responsive(16, $override-line-height: 1.25);
+    }
+
+    // The site's standard table style (base/core/elements/tables.scss),
+    // unchanged. No bottom margins, as inside the standard
+    // .hse-table-container: the panel's padding spaces it from the border.
+    figure {
+        margin-bottom: 0;
+    }
+
+    table {
+        display: table;
+        margin-bottom: 0;
+    }
+
+    .displayChart {
+        display: none;
+    }
 }
 
 // Keyboard focus on a chart point: Highcharts draws this border in
