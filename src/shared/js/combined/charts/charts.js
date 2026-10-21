@@ -101,6 +101,16 @@ class ChartsDefault {
                         return false;
                     }
                 }
+            },
+            // A plain 1px border with square corners in the standard HSE
+            // border colour ($hse-border-color, settings/colours.scss),
+            // rather than Highcharts' rounded corners, series-coloured
+            // border and drop shadow.
+            tooltip: {
+                borderRadius: 0,
+                borderColor: '#cecece',
+                borderWidth: 1,
+                shadow: false
             }
         });
 
