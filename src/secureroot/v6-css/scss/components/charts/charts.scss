@@ -18,6 +18,31 @@
     margin-bottom: 1rem;
 }
 
+// The "Change to table view" button (added in charts.js), in the bottom
+// left of the chart box: the box's padding spaces it from the edges.
+.chart-view-toggle {
+    margin-bottom: 0;
+}
+
+// Table view: show the chart's title, description and data table instead
+// of the chart.
+.js-enabled .chart.chart--table-view {
+    min-height: 0;
+
+    table {
+        display: table;
+    }
+
+    .datacontent__title,
+    .datacontent__description {
+        display: block;
+    }
+
+    .displayChart {
+        display: none;
+    }
+}
+
 // Keyboard focus on a chart point: Highcharts draws this border in
 // $hse-focus-color (keyboardNavigation.focusBorder in options.js); add the
 // black edge the site's other focus styles have.

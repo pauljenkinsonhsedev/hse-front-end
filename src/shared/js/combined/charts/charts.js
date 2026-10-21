@@ -158,13 +158,51 @@ class ChartsDefault {
         });
 
         // DRAW THE CHART
-        this.chart = Highcharts.chart(container, params);
+        // Into its .displayChart element, not the whole .chart container:
+        // rendering into the container replaced everything in it,
+        // including the title, description and data table the chart is
+        // built from, which the table view (addViewToggle) shows.
+        const renderTarget = container.querySelector('.displayChart') || container;
+        this.chart = Highcharts.chart(renderTarget, params);
 
         // Leaving the chart ends an Esc dismissal (see the Tooltip
         // refresh wrapper above), so the next hover shows its tooltip.
         const chart = this.chart;
         chart.container.addEventListener('mouseleave', () => {
             chart.dismissedTooltipPoint = null;
+        });
+
+        if (renderTarget !== container) {
+            this.addViewToggle(container, chart);
+        }
+    }
+
+    // A button in the bottom left of the chart box, to switch between the
+    // chart and its data table, as on GOV.UK: every value can be read at once, by anyone,
+    // rather than one point at a time through the chart. The table is the
+    // chart's own source data, already in the page (and the only view
+    // without JavaScript). A visually hidden alert announces the change.
+    addViewToggle(container, chart) {
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className = 'hse-button hse-button--secondary chart-view-toggle';
+        const text = document.createElement('span');
+        text.textContent = 'Change to table view';
+        const status = document.createElement('span');
+        status.className = 'visually-hidden';
+        status.setAttribute('role', 'alert');
+        button.append(text, status);
+        container.append(button);
+
+        button.addEventListener('click', () => {
+            const showTable = !container.classList.contains('chart--table-view');
+            container.classList.toggle('chart--table-view', showTable);
+            text.textContent = showTable ? 'Change to chart view' : 'Change to table view';
+            status.textContent = showTable ? 'Table visible' : 'Chart visible';
+            if (!showTable) {
+                // The window may have been resized while the chart was hidden
+                chart.reflow();
+            }
         });
     }
 }
