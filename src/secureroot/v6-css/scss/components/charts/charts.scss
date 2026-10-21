@@ -3,6 +3,7 @@
 @use "../../base/core/tools/focused" as *;
 @use "../../base/core/tools/spacing" as *;
 @use "../../base/core/tools/typography" as *;
+@use "../../base/core/tools/mixins" as *;
 
 .js-enabled .chart table,
 .js-enabled .datacontent__subtitle,
@@ -108,6 +109,19 @@ $chart-inner-spacing-bottom: 8px + 15px;
         color: $hse-text-color;
         margin-bottom: hse-spacing(1);
         @include hse-font($size: 24, $weight: bold);
+    }
+
+    // The title charts.js adds from data-chart-title replaces the markup's
+    // own heading; a caption stays for screen readers, as it names the
+    // table.
+    &.chart--with-table-title {
+        .datacontent__title:not(.chart-table-title) {
+            display: none;
+        }
+
+        caption {
+            @include visually-hidden;
+        }
     }
 
     // Like the chart's subtitle: 16px, with a tighter line height than the

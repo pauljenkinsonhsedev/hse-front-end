@@ -169,6 +169,21 @@ class ChartsDefault {
         container.before(tablist);
         container.setAttribute('role', 'tabpanel');
 
+        // The Tabular data tab's title is always the chart's own title
+        // (data-chart-title), whatever heading the page markup has (some
+        // tables have an <h2 class="datacontent__title">, some a
+        // <caption>, some nothing), so both tabs show the same title.
+        // charts.scss hides the markup's own heading, and keeps a caption
+        // for screen readers only, since it names the table.
+        const figure = container.querySelector('figure');
+        if (figure && container.dataset.chartTitle) {
+            const heading = document.createElement('h2');
+            heading.className = 'datacontent__title chart-table-title';
+            heading.innerHTML = container.dataset.chartTitle;
+            figure.prepend(heading);
+            container.classList.add('chart--with-table-title');
+        }
+
         // Let a table that's wider than the box scroll sideways inside it,
         // rather than widening the whole page on small screens (WCAG 2.2
         // 1.4.10), as .hse-table-container does for the site's standard
