@@ -1,4 +1,5 @@
 import { ChartOptions } from './options.js';
+import { cellValue } from './cell-value.js';
 import { displaySuffix } from './data-suffix.js';
 import { displayPrefix } from './data-prefix.js';
 import { dataLabel } from './data-label.js';
@@ -18,7 +19,7 @@ export class ChartOptionsDefault extends ChartOptions {
         let units = container.querySelectorAll('.unit');
         let total = 0;
         for (let i = 0; i < units.length; i++) {
-            total += Number(units[i].innerText)
+            total += cellValue(units[i])
         }
 
         this.dataTable = container.querySelector('.tabledata');

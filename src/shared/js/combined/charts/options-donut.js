@@ -1,4 +1,5 @@
 import { ChartOptions } from './options.js';
+import { cellValue } from './cell-value.js';
 import { seriesData } from './series-data.js';
 import { dataLabel } from './data-label.js';
 import { displayPrefix } from './data-prefix.js';
@@ -20,7 +21,7 @@ export class ChartOptionsDonut extends ChartOptions {
         let units = container.querySelectorAll('.unit');
         let total = 0;
         for (let i = 0; i < units.length; i++) {
-            total += Number(units[i].innerText)
+            total += cellValue(units[i])
         }
 
         this.units = container.dataset.chartUnits;

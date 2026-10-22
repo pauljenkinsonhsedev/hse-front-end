@@ -14,6 +14,7 @@
 */
 
 import { seriesData } from './series-data.js';
+import { cellValue } from './cell-value.js';
 import { chartCategories } from './chart-categories';
 import { displayPrefix } from './data-prefix.js';
 import { displaySuffix } from './data-suffix.js';
@@ -135,7 +136,7 @@ export class ChartOptions {
         let units = container.querySelectorAll('.unit');
         let total = 0;
         for (let i = 0; i < units.length; i++) {
-            total += Number(units[i].innerText)
+            total += cellValue(units[i])
         }
 
         const getSeriesData = seriesData(this.container);

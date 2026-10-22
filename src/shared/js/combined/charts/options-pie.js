@@ -1,4 +1,5 @@
 import { ChartOptions } from './options.js';
+import { cellValue } from './cell-value.js';
 import { chartCategories } from './chart-categories';
 import { dataLabel } from './data-label.js';
 import { displayPrefix } from './data-prefix.js';
@@ -27,7 +28,7 @@ export class ChartOptionsPie extends ChartOptions {
         let units = container.querySelectorAll('.unit');
         let total = 0;
         for (let i = 0; i < units.length; i++) {
-            total += Number(units[i].innerText)
+            total += cellValue(units[i])
         }
 
         const layout = this.layout();
@@ -175,7 +176,7 @@ export class ChartOptionsPie extends ChartOptions {
         // table, so read the values while it's still there (the first
         // call, from the constructor) and reuse them on every resize.
         if (!this.sliceValues) {
-            this.sliceValues = [...this.container.querySelectorAll('.unit')].map((unit) => Number(unit.innerText));
+            this.sliceValues = [...this.container.querySelectorAll('.unit')].map(cellValue);
             this.sliceNames = [...this.container.querySelectorAll('.category')].map((category) => category.innerText.trim());
         }
         const values = this.sliceValues;
