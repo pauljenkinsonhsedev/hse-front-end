@@ -2,8 +2,6 @@ import { ChartOptions } from './options.js';
 import { cellValue } from './cell-value.js';
 import { chartCategories } from './chart-categories';
 import { dataLabel } from './data-label.js';
-import { displayPrefix } from './data-prefix.js';
-import { displaySuffix } from './data-suffix.js';
 import { defaultChartHeight, fitHeightToLegend } from './pie-legend.js';
 
 // Degrees clockwise from 12 o'clock (see plotOptions.pie.startAngle below)
@@ -46,8 +44,6 @@ export class ChartOptionsPie extends ChartOptions {
         const getCategories = chartCategories(container);
         const getDataLabel = dataLabel(this.units, this.decimals, total);
 
-        const dataLabelsPrefix = displayPrefix(this.units);
-        const dataLabelsSuffix = displaySuffix(this.units);
 
         let plotOptions = {
             pie: {
@@ -99,13 +95,6 @@ export class ChartOptionsPie extends ChartOptions {
             }
         };
 
-        let accessibility = {
-            point: {
-                valuePrefix: dataLabelsPrefix,
-                valueSuffix: dataLabelsSuffix
-            }
-        };
-
         const collection = this.collection;
 
         // Highcharts' default collision handling will silently set a
@@ -151,7 +140,7 @@ export class ChartOptionsPie extends ChartOptions {
             }
         };
 
-        this.collection = {...collection, chart, legend, plotOptions, ...accessibility};
+        this.collection = {...collection, chart, legend, plotOptions};
 
         return this.collection;
     }
