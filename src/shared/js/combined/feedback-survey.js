@@ -126,6 +126,7 @@ export function feedbackSurvey() {
       "hse-button",
       "hse-button--small",
       "hse-button--transparent",
+      "hse-feedback__prompt-link",
     );
     closeButton.textContent = "Close";
 
