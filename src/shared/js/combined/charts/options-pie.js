@@ -1,8 +1,7 @@
 import { ChartOptions } from './options.js';
+import { cellValue } from './cell-value.js';
 import { chartCategories } from './chart-categories';
 import { dataLabel } from './data-label.js';
-import { displayPrefix } from './data-prefix.js';
-import { displaySuffix } from './data-suffix.js';
 import { defaultChartHeight, fitHeightToLegend } from './pie-legend.js';
 
 // Degrees clockwise from 12 o'clock (see plotOptions.pie.startAngle below)
@@ -27,7 +26,7 @@ export class ChartOptionsPie extends ChartOptions {
         let units = container.querySelectorAll('.unit');
         let total = 0;
         for (let i = 0; i < units.length; i++) {
-            total += Number(units[i].innerText)
+            total += cellValue(units[i])
         }
 
         const layout = this.layout();
@@ -45,20 +44,13 @@ export class ChartOptionsPie extends ChartOptions {
         const getCategories = chartCategories(container);
         const getDataLabel = dataLabel(this.units, this.decimals, total);
 
-        const dataLabelsPrefix = displayPrefix(this.units);
-        const dataLabelsSuffix = displaySuffix(this.units);
 
         let plotOptions = {
             pie: {
-                // Hover tooltips only, no click-to-select: selecting a
-                // slice did nothing beyond outlining it, and the pointer
-                // cursor suggested an action that wasn't there.
+                // No click-to-select: selecting a slice did nothing beyond
+                // outlining it, and the pointer cursor suggested an action
+                // that wasn't there.
                 size: this.pieSize,
-                // Anchor the tooltip by its slice instead of following the
-                // pointer (the pie default): Highcharts ignores
-                // stickOnContact for tooltips that follow the pointer, so
-                // otherwise it can't be hovered (WCAG 2.2 1.4.13).
-                tooltip: { followPointer: false },
                 center: pieLayout.center,
                 // Start at 3 o'clock rather than 12. Data is usually
                 // largest-first, which puts the smallest slices just
@@ -100,13 +92,6 @@ export class ChartOptionsPie extends ChartOptions {
                         fontWeight: 'normal'
                     }
                 }
-            }
-        };
-
-        let accessibility = {
-            point: {
-                valuePrefix: dataLabelsPrefix,
-                valueSuffix: dataLabelsSuffix
             }
         };
 
@@ -155,7 +140,7 @@ export class ChartOptionsPie extends ChartOptions {
             }
         };
 
-        this.collection = {...collection, chart, legend, plotOptions, ...accessibility};
+        this.collection = {...collection, chart, legend, plotOptions};
 
         return this.collection;
     }
@@ -180,7 +165,7 @@ export class ChartOptionsPie extends ChartOptions {
         // table, so read the values while it's still there (the first
         // call, from the constructor) and reuse them on every resize.
         if (!this.sliceValues) {
-            this.sliceValues = [...this.container.querySelectorAll('.unit')].map((unit) => Number(unit.innerText));
+            this.sliceValues = [...this.container.querySelectorAll('.unit')].map(cellValue);
             this.sliceNames = [...this.container.querySelectorAll('.category')].map((category) => category.innerText.trim());
         }
         const values = this.sliceValues;

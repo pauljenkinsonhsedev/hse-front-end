@@ -14,25 +14,6 @@ const safeInit = (module, hc) => {
     }
 };
 
-// WCAG 2.2 1.4.13 (content on hover): after Esc dismisses a tooltip (see
-// ChartsDefault.init), keep it closed while the pointer stays on the same
-// point. Hiding a tooltip that overlaps its own point exposes the point
-// underneath, the browser fires a hover on it, and the tooltip would
-// otherwise reopen straight away. Moving to another point, or out of the
-// chart, lets tooltips show again.
-Highcharts.wrap(Highcharts.Tooltip.prototype, 'refresh', function (proceed, pointOrPoints, event) {
-    const points = [].concat(pointOrPoints);
-    const dismissed = this.chart.dismissedTooltipPoint;
-    if (dismissed) {
-        if (points.includes(dismissed)) return;
-        this.chart.dismissedTooltipPoint = null;
-    }
-    // Remembered for Esc: while the pointer is on the tooltip itself,
-    // chart.hoverPoint has already been cleared.
-    this.lastPoint = points[0];
-    return proceed.call(this, pointOrPoints, event);
-});
-
 // Initialize everything safely!
 safeInit(HighchartsMore, Highcharts);
 safeInit(Data, Highcharts);
@@ -62,26 +43,6 @@ class ChartsDefault {
     }
 
     init() {
-        // WCAG 2.2 1.4.13 (content on hover): Esc dismisses an open chart
-        // tooltip without moving the pointer. Highcharts only does this
-        // during its own keyboard navigation, not after a mouse hover.
-        document.addEventListener('keydown', (event) => {
-            if (event.key !== 'Escape') return;
-            // While the pointer rests on a sticky tooltip, Highcharts has
-            // already marked it hidden internally although it's still on
-            // screen, so tooltip.hide() alone does nothing. Mark it shown
-            // again first, so hide() actually takes it off screen.
-            Highcharts.charts.forEach((chart) => {
-                const tooltip = chart && chart.tooltip;
-                if (tooltip && tooltip.label) {
-                    chart.dismissedTooltipPoint = tooltip.lastPoint;
-                    tooltip.label.show();
-                    tooltip.isHidden = false;
-                    tooltip.hide(0);
-                }
-            });
-        });
-
         return this.loadChartsFn().then(() => {
             const chartContainer = document.querySelectorAll('.chart');
             const chartArray = [...chartContainer];
@@ -141,19 +102,15 @@ class ChartsDefault {
                     }
                 }
             },
-            // A plain 1px border with square corners in the standard HSE
-            // border colour ($hse-border-color, settings/colours.scss),
-            // rather than Highcharts' rounded corners, series-coloured
-            // border and drop shadow.
+            // No hover tooltips: every value is either labelled on the chart
+            // or in its Tabular data tab (addViewTabs), so they only repeated
+            // what's already there, as GOV.UK charts don't use them either.
+            // Screen readers still announce each point's name and value.
+            // The chart types' tooltip formatters are kept, so a tooltip
+            // could be turned back on here; it would then need to be
+            // hoverable and dismissible again (WCAG 2.2 1.4.13).
             tooltip: {
-                borderRadius: 0,
-                borderColor: '#cecece',
-                borderWidth: 1,
-                shadow: false,
-                // WCAG 2.2 1.4.13 (content on hover): keep the tooltip open
-                // while the pointer moves onto it, e.g. for screen
-                // magnifier users panning to read it.
-                stickOnContact: true
+                enabled: false
             }
         });
 
@@ -164,13 +121,7 @@ class ChartsDefault {
         // built from, which the Tabular data tab (addViewTabs) shows.
         const renderTarget = container.querySelector('.displayChart') || container;
         this.chart = Highcharts.chart(renderTarget, params);
-
-        // Leaving the chart ends an Esc dismissal (see the Tooltip
-        // refresh wrapper above), so the next hover shows its tooltip.
         const chart = this.chart;
-        chart.container.addEventListener('mouseleave', () => {
-            chart.dismissedTooltipPoint = null;
-        });
 
         if (renderTarget !== container) {
             this.addViewTabs(container, chart);
@@ -218,6 +169,39 @@ class ChartsDefault {
         container.before(tablist);
         container.setAttribute('role', 'tabpanel');
 
+        // The Tabular data tab's title is always the chart's own title
+        // (data-chart-title), whatever heading the page markup has (some
+        // tables have an <h2 class="datacontent__title">, some a
+        // <caption>, some nothing), so both tabs show the same title.
+        // charts.scss hides the markup's own heading, and keeps a caption
+        // for screen readers only, since it names the table.
+        const figure = container.querySelector('figure');
+        if (figure && container.dataset.chartTitle) {
+            const heading = document.createElement('h2');
+            heading.className = 'datacontent__title chart-table-title';
+            heading.innerHTML = container.dataset.chartTitle;
+            figure.prepend(heading);
+            container.classList.add('chart--with-table-title');
+        }
+
+        // Let a table that's wider than the box scroll sideways inside it,
+        // rather than widening the whole page on small screens (WCAG 2.2
+        // 1.4.10), as .hse-table-container does for the site's standard
+        // tables. Focusable and labelled, so keyboard users can scroll it
+        // with the arrow keys and screen readers announce what it is.
+        const table = container.querySelector('table');
+        if (table) {
+            const scroller = document.createElement('div');
+            scroller.className = 'chart-table-scroll';
+            scroller.tabIndex = 0;
+            scroller.setAttribute('role', 'region');
+            const title = document.createElement('div');
+            title.innerHTML = container.dataset.chartTitle || '';
+            scroller.setAttribute('aria-label', `${title.textContent.replace(/\s+/g, ' ').trim() || 'Chart'} data table`);
+            table.before(scroller);
+            scroller.append(table);
+        }
+
         const select = (tab, moveFocus) => {
             const showTable = tab.dataset.view === 'table';
             tabs.forEach((other) => {
@@ -228,12 +212,10 @@ class ChartsDefault {
             });
             container.setAttribute('aria-labelledby', tab.id);
             container.classList.toggle('chart--table-view', showTable);
-            // The table has nothing focusable in it, so make the panel
-            // itself reachable with Tab (the chart already is).
-            if (showTable) {
-                container.tabIndex = 0;
-            } else {
-                container.removeAttribute('tabindex');
+            // Tab then moves into the panel: to the chart, or to the
+            // table's focusable scroll area (so the panel itself doesn't
+            // need to be focusable).
+            if (!showTable) {
                 // The window may have been resized while the chart was hidden
                 chart.reflow();
             }

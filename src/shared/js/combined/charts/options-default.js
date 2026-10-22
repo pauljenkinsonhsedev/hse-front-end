@@ -1,4 +1,5 @@
 import { ChartOptions } from './options.js';
+import { cellValue } from './cell-value.js';
 import { displaySuffix } from './data-suffix.js';
 import { displayPrefix } from './data-prefix.js';
 import { dataLabel } from './data-label.js';
@@ -18,7 +19,7 @@ export class ChartOptionsDefault extends ChartOptions {
         let units = container.querySelectorAll('.unit');
         let total = 0;
         for (let i = 0; i < units.length; i++) {
-            total += Number(units[i].innerText)
+            total += cellValue(units[i])
         }
 
         this.dataTable = container.querySelector('.tabledata');
@@ -159,19 +160,36 @@ export class ChartOptionsDefault extends ChartOptions {
 
         const collection = this.collection;
         // Legend clicks are disabled (legend.events.itemClick in
-        // charts.js), so with a
-        // single series the legend item is just a key: show it as plain
-        // text. Turning off legend accessibility removes the "Show
+        // charts.js), so with a single series the legend item is just a
+        // key: show it as plain text. Turning off legend accessibility removes the "Show
         // <series>" proxy button Highcharts adds for keyboard and screen
         // reader users, which announced a toggle that does nothing; the
         // series name is still announced with each bar.
-        const isSingleSeries = (collection.series || []).filter((series) => series.type !== 'errorbar').length === 1;
+        const dataSeries = (collection.series || []).filter((series) => series.type !== 'errorbar');
+        const isSingleSeries = dataSeries.length === 1;
         const legend = isSingleSeries ? {
             ...collection.legend,
             accessibility: { enabled: false },
             itemStyle: { ...collection.legend.itemStyle, cursor: 'default' },
             itemHoverStyle: { color: collection.legend.itemStyle.color },
         } : collection.legend;
+
+        // Highcharts describes a chart with error bars to screen readers as
+        // a "Combination chart with 2 data series", counting the error bars
+        // as a second series. Say what it is instead: bars (or columns)
+        // with confidence intervals.
+        const hasErrorBars = (collection.series || []).some((series) => series.type === 'errorbar');
+        let accessibility = collection.accessibility;
+        if (hasErrorBars && (this.type === 'bar' || this.type === 'column')) {
+            const shape = this.type === 'bar' ? 'bar' : 'column';
+            const description = isSingleSeries
+                ? `${dataSeries[0].data.length} ${shape}s`
+                : `${dataSeries.length} data series`;
+            accessibility = {
+                ...collection.accessibility,
+                typeDescription: `${shape === 'bar' ? 'Bar' : 'Column'} chart with ${description}, with confidence intervals.`,
+            };
+        }
 
         // Highcharts cuts a category label short with an ellipsis once it
         // has more lines than fit its slot, but on bar charts the slot
@@ -214,6 +232,7 @@ export class ChartOptionsDefault extends ChartOptions {
             legend,
             xAxis,
             plotOptions,
+            accessibility,
         };
         return this.collection;
     }

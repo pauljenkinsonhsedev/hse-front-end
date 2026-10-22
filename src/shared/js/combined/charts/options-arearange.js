@@ -1,4 +1,5 @@
 import { ChartOptions } from './options.js';
+import { cellValue } from './cell-value.js';
 import { chartCategories } from './chart-categories';
 import { seriesDataRanges } from './series-data-ranges.js';
 import { missingDataAverage } from './missing-data-average.js';
@@ -23,7 +24,7 @@ export class ChartOptionsArearange extends ChartOptions {
         let units = container.querySelectorAll('.unit');
         let total = 0;
         for (let i = 0; i < units.length; i++) {
-            total += Number(units[i].innerText)
+            total += cellValue(units[i])
         }
 
         let areaRangeTitle = container.dataset.areaRangeTitle;

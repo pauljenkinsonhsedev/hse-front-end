@@ -1,7 +1,9 @@
 @use "../../base/core/settings/colours" as *;
+@use "../../base/core/settings/globals" as *;
 @use "../../base/core/tools/focused" as *;
 @use "../../base/core/tools/spacing" as *;
 @use "../../base/core/tools/typography" as *;
+@use "../../base/core/tools/mixins" as *;
 
 .js-enabled .chart table,
 .js-enabled .datacontent__subtitle,
@@ -109,6 +111,19 @@ $chart-inner-spacing-bottom: 8px + 15px;
         @include hse-font($size: 24, $weight: bold);
     }
 
+    // The title charts.js adds from data-chart-title replaces the markup's
+    // own heading; a caption stays for screen readers, as it names the
+    // table.
+    &.chart--with-table-title {
+        .datacontent__title:not(.chart-table-title) {
+            display: none;
+        }
+
+        caption {
+            @include visually-hidden;
+        }
+    }
+
     // Like the chart's subtitle: 16px, with a tighter line height than the
     // scale's 32px for body copy.
     .datacontent__description {
@@ -126,6 +141,19 @@ $chart-inner-spacing-bottom: 8px + 15px;
     table {
         display: table;
         margin-bottom: 0;
+    }
+
+    // Wraps the table (added in charts.js), so a table wider than the box
+    // scrolls sideways inside it, as in .hse-table-container, instead of
+    // widening the page. Focusable for keyboard scrolling, with the site's
+    // focus colours (a black edge inside a yellow outline, as on inputs).
+    .chart-table-scroll {
+        overflow-x: auto;
+
+        &:focus {
+            outline: $hse-focus-width solid $hse-focus-color;
+            box-shadow: inset 0 0 0 2px $hse-focus-text-color;
+        }
     }
 
     .displayChart {

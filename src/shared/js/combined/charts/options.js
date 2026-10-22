@@ -14,6 +14,7 @@
 */
 
 import { seriesData } from './series-data.js';
+import { cellValue } from './cell-value.js';
 import { chartCategories } from './chart-categories';
 import { displayPrefix } from './data-prefix.js';
 import { displaySuffix } from './data-suffix.js';
@@ -46,7 +47,12 @@ export class ChartOptions {
         this.title = container.dataset.chartTitle;
         this.subtitle = container.dataset.chartSubtitle;
         this.caption = container.dataset.chartCaption;
-        this.description = container.querySelector('.datacontent__description');
+        // The chart's description for screen readers: a summary of what it
+        // shows (data-chart-description), as text. Read before the chart as
+        // {chartLongdesc}; without one, Highcharts uses the chart's caption.
+        const descriptionText = (container.dataset.chartDescription || '')
+            .replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+        this.description = descriptionText || undefined;
         this.yAxisText = container.dataset.yaxisText;
         this.xAxisText = container.dataset.xaxisText;
         this.colorScheme = container.dataset.colorScheme;
@@ -135,7 +141,7 @@ export class ChartOptions {
         let units = container.querySelectorAll('.unit');
         let total = 0;
         for (let i = 0; i < units.length; i++) {
-            total += Number(units[i].innerText)
+            total += cellValue(units[i])
         }
 
         const getSeriesData = seriesData(this.container);
@@ -181,7 +187,15 @@ export class ChartOptions {
               beforeChartFormat:
                 '<div>{chartTitle}</div>' +
                 '<div>{typeDescription}</div>'+
-                '<div>{chartSubtitle}</div>'
+                '<div>{chartSubtitle}</div>' +
+                '<div>{chartLongdesc}</div>'
+            },
+            // Each point is announced with its unit, as its label shows it
+            // (e.g. "Injury, 38%."). Not for percentage-calc charts: their
+            // values are counts, from which the chart works out percentages.
+            point: {
+              valuePrefix: displayPrefix(this.units),
+              valueSuffix: this.units === 'percentage-calc' ? '' : displaySuffix(this.units),
             },
             keyboardNavigation: {
               focusBorder: {

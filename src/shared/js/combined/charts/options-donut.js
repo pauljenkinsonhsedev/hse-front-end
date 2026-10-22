@@ -1,4 +1,5 @@
 import { ChartOptions } from './options.js';
+import { cellValue } from './cell-value.js';
 import { seriesData } from './series-data.js';
 import { dataLabel } from './data-label.js';
 import { displayPrefix } from './data-prefix.js';
@@ -20,7 +21,7 @@ export class ChartOptionsDonut extends ChartOptions {
         let units = container.querySelectorAll('.unit');
         let total = 0;
         for (let i = 0; i < units.length; i++) {
-            total += Number(units[i].innerText)
+            total += cellValue(units[i])
         }
 
         this.units = container.dataset.chartUnits;
@@ -96,11 +97,8 @@ export class ChartOptionsDonut extends ChartOptions {
                 size: this.pieSize,
                 center: pieLayout.center,
                 showInLegend: true,
-                // Hover tooltips only, no click-to-select (as for pies).
+                // No click-to-select (as for pies).
                 innerSize: '65%',
-                // Anchored by its segment so it can be hovered, as for pies
-                // (see options-pie.js).
-                tooltip: { followPointer: false },
                 dataLabels: {
                     enabled: pieLayout.dataLabels.enabled,
                     formatter: getDataLabel,
@@ -127,7 +125,16 @@ export class ChartOptionsDonut extends ChartOptions {
         };
 
         const collection = this.collection;
-        this.collection = {...collection, chart, legend, xAxis, plotOptions};
+
+        // Highcharts describes a donut to screen readers as a "Pie chart",
+        // from its series type; say what it is instead.
+        const segmentCount = container.querySelectorAll('.unit').length;
+        const accessibility = {
+            ...collection.accessibility,
+            typeDescription: `Donut chart with ${segmentCount} ${segmentCount === 1 ? 'segment' : 'segments'}.`,
+        };
+
+        this.collection = {...collection, chart, legend, xAxis, plotOptions, accessibility};
 
         return this.collection;
     }
