@@ -5,6 +5,7 @@ import { dataLabel } from './data-label.js';
 import { displayPrefix } from './data-prefix.js';
 import { displaySuffix } from './data-suffix.js';
 import { defaultChartHeight, fitHeightToLegend } from './pie-legend.js';
+import { drawDonutTotal } from './donut-total.js';
 
 /*
     Class @ChartOptionsChartOptionsDonut
@@ -36,6 +37,13 @@ export class ChartOptionsDonut extends ChartOptions {
         // 'middle'), where any title longer than a few words spilled out
         // over the ring itself.
 
+        // The donut's headline total, shown in its hole (donut-total.js),
+        // read in its screen reader summary and added as a total row in the
+        // Tabular data tab (charts.js): data-chart-total="£22.9 bn",
+        // data-chart-total-label="Total cost".
+        const headlineTotal = (container.dataset.chartTotal || '').trim();
+        const headlineTotalLabel = (container.dataset.chartTotalLabel || '').trim();
+
         // Merge with the base chart options rather than replacing them:
         // they carry renderTo, marginTop (room for the title above the
         // donut) and the load event that re-applies layout on resize.
@@ -56,6 +64,7 @@ export class ChartOptionsDonut extends ChartOptions {
                 ...this.collection.chart.events,
                 render: function () {
                     fitHeightToLegend(this);
+                    drawDonutTotal(this, headlineTotal, headlineTotalLabel);
                 }
             }
         };
@@ -131,7 +140,8 @@ export class ChartOptionsDonut extends ChartOptions {
         const segmentCount = container.querySelectorAll('.unit').length;
         const accessibility = {
             ...collection.accessibility,
-            typeDescription: `Donut chart with ${segmentCount} ${segmentCount === 1 ? 'segment' : 'segments'}.`,
+            typeDescription: `Donut chart with ${segmentCount} ${segmentCount === 1 ? 'segment' : 'segments'}.`
+                + (headlineTotal ? ` ${headlineTotalLabel || 'Total'}: ${headlineTotal}.` : ''),
         };
 
         this.collection = {...collection, chart, legend, xAxis, plotOptions, accessibility};
