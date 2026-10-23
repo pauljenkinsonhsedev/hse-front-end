@@ -143,6 +143,12 @@ $chart-inner-spacing-bottom: 8px + 15px;
         margin-bottom: 0;
     }
 
+    // A donut's total row (added in charts.js): bold, like the table's
+    // headers, as a standard total row.
+    .chart-table-total td {
+        font-weight: $hse-font-bold;
+    }
+
     // Wraps the table (added in charts.js), so a table wider than the box
     // scrolls sideways inside it, as in .hse-table-container, instead of
     // widening the page. Focusable for keyboard scrolling, with the site's

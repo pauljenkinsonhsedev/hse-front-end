@@ -190,6 +190,24 @@ class ChartsDefault {
         // tables. Focusable and labelled, so keyboard users can scroll it
         // with the arrow keys and screen readers announce what it is.
         const table = container.querySelector('table');
+
+        // A donut's headline total (data-chart-total, see options-donut.js)
+        // as a total row. In a <tfoot> with plain cells (no category/unit
+        // classes), so the chart, which reads the <tbody> and those classes,
+        // never treats it as data.
+        if (table && container.dataset.chartTotal && !table.tFoot) {
+            const columns = table.rows[0] ? table.rows[0].cells.length : 2;
+            const row = table.createTFoot().insertRow();
+            row.className = 'chart-table-total';
+            const label = document.createElement('th');
+            label.scope = 'row';
+            label.textContent = container.dataset.chartTotalLabel || 'Total';
+            const value = row.insertCell();
+            value.textContent = container.dataset.chartTotal;
+            if (columns > 2) value.colSpan = columns - 1;
+            row.prepend(label);
+        }
+
         if (table) {
             const scroller = document.createElement('div');
             scroller.className = 'chart-table-scroll';

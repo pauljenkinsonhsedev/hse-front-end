@@ -1,3 +1,4 @@
+import { parseCellNumber, cellText } from './cell-value.js';
 export function seriesData(data) {
     /*
         function @seriesData
@@ -34,8 +35,8 @@ export function seriesData(data) {
         const high = [...cells].filter(element => element.classList.contains('error-high'));
 
         const errorData = low.map((e, i) => {
-            const textLow = Number(parseFloat(low[i].textContent).toFixed(2).toLocaleString('en', {minimumFractionDigits: 0}));
-            const textHigh = Number(parseFloat(high[i].textContent).toFixed(2).toLocaleString('en', {minimumFractionDigits: 0}));
+            const textLow = Number(parseCellNumber(low[i]).toFixed(2).toLocaleString('en', {minimumFractionDigits: 0}));
+            const textHigh = Number(parseCellNumber(high[i]).toFixed(2).toLocaleString('en', {minimumFractionDigits: 0}));
 
             const array = new Array;
             array.push(textLow, textHigh);
@@ -68,22 +69,22 @@ export function seriesData(data) {
             const headingIndex = u + 1;
 
             if (unitLength === 1) {
-                headingsArray.push(heading[1].innerText);
+                headingsArray.push(cellText(heading[1]));
             } else {
-                headingsArray.push(heading[headingIndex].innerText);
+                headingsArray.push(cellText(heading[headingIndex]));
             }
 
             for (let i = 0; i < rowLength; i++) {
                 const category = tbody.rows[i].querySelectorAll('.category');
                 const text = tbody.rows[i].querySelectorAll('.unit');
-                let categoryTitle = category[0].innerText;
+                let categoryTitle = cellText(category[0]);
 
                 if (categoryTitle.match(dateRegEx)) {
                     categoryTitle = moment(categoryTitle).format('DD MMM YYYY').toString();
                 }
 
                 for (let j = 0; j < unitLength; j++) {
-                    let value = parseFloat(text[j].innerText);
+                    let value = parseCellNumber(text[j]);
 
                     if (j === u) {
                         const point = {name: categoryTitle, y: value};
