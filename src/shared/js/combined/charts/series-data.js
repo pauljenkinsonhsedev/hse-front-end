@@ -1,3 +1,4 @@
+import { parseCellNumber } from './cell-value.js';
 export function seriesData(data) {
     /*
         function @seriesData
@@ -34,8 +35,8 @@ export function seriesData(data) {
         const high = [...cells].filter(element => element.classList.contains('error-high'));
 
         const errorData = low.map((e, i) => {
-            const textLow = Number(parseFloat(low[i].textContent).toFixed(2).toLocaleString('en', {minimumFractionDigits: 0}));
-            const textHigh = Number(parseFloat(high[i].textContent).toFixed(2).toLocaleString('en', {minimumFractionDigits: 0}));
+            const textLow = Number(parseCellNumber(low[i]).toFixed(2).toLocaleString('en', {minimumFractionDigits: 0}));
+            const textHigh = Number(parseCellNumber(high[i]).toFixed(2).toLocaleString('en', {minimumFractionDigits: 0}));
 
             const array = new Array;
             array.push(textLow, textHigh);
@@ -83,7 +84,7 @@ export function seriesData(data) {
                 }
 
                 for (let j = 0; j < unitLength; j++) {
-                    let value = parseFloat(text[j].innerText);
+                    let value = parseCellNumber(text[j]);
 
                     if (j === u) {
                         const point = {name: categoryTitle, y: value};
