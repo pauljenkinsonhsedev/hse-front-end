@@ -1,4 +1,4 @@
-import { parseCellNumber } from './cell-value.js';
+import { parseCellNumber, cellText } from './cell-value.js';
 export function seriesData(data) {
     /*
         function @seriesData
@@ -69,15 +69,15 @@ export function seriesData(data) {
             const headingIndex = u + 1;
 
             if (unitLength === 1) {
-                headingsArray.push(heading[1].innerText);
+                headingsArray.push(cellText(heading[1]));
             } else {
-                headingsArray.push(heading[headingIndex].innerText);
+                headingsArray.push(cellText(heading[headingIndex]));
             }
 
             for (let i = 0; i < rowLength; i++) {
                 const category = tbody.rows[i].querySelectorAll('.category');
                 const text = tbody.rows[i].querySelectorAll('.unit');
-                let categoryTitle = category[0].innerText;
+                let categoryTitle = cellText(category[0]);
 
                 if (categoryTitle.match(dateRegEx)) {
                     categoryTitle = moment(categoryTitle).format('DD MMM YYYY').toString();

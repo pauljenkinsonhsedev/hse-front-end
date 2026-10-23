@@ -1,5 +1,5 @@
 import { ChartOptions } from './options.js';
-import { cellValue } from './cell-value.js';
+import { cellValue, cellText } from './cell-value.js';
 import { chartCategories } from './chart-categories';
 import { dataLabel } from './data-label.js';
 import { defaultChartHeight, fitHeightToLegend } from './pie-legend.js';
@@ -166,7 +166,7 @@ export class ChartOptionsPie extends ChartOptions {
         // call, from the constructor) and reuse them on every resize.
         if (!this.sliceValues) {
             this.sliceValues = [...this.container.querySelectorAll('.unit')].map(cellValue);
-            this.sliceNames = [...this.container.querySelectorAll('.category')].map((category) => category.innerText.trim());
+            this.sliceNames = [...this.container.querySelectorAll('.category')].map(cellText);
         }
         const values = this.sliceValues;
         const sliceCount = values.length;
