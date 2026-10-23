@@ -42,11 +42,12 @@ Useful individual steps:
 
 ## Source files
 
-Source lives under `src/`, split into three areas:
+Source lives under `src/`, split into four areas:
 
 ```
 src/
-├── secureroot/   HSE website source (SCSS, images, HTML, Dreamweaver templates)
+├── secureroot/   HSE website source (SCSS, images, HTML)
+├── templates/    Adobe Dreamweaver templates (.dwt) used to author pages
 ├── designsystem/ Design system / pattern library source (components & patterns)
 └── shared/       Shared JavaScript (and vendor) used by both
 ```
@@ -57,12 +58,21 @@ The HSE website assets and page tests.
 
 ```
 src/secureroot/
-├── html/        Page tests / content (must include a top-level index page)
-├── templates/   Adobe Dreamweaver templates (.dwt) used to author pages
+├── html/        Your local pages (git-ignored, see below)
+├── starter/     Starter index page served until you add your own
 ├── v6-css/      Website SCSS (see Styles below)
 ├── v6-images/   Website images
 └── copy/        Static files copied verbatim into the build
 ```
+
+#### Local pages
+
+Everything in `src/secureroot/html/` is git-ignored, so a fresh clone (or a
+Codespace) starts without any pages. Until you add
+`src/secureroot/html/index.htm`, the build serves `starter/index.htm` as the
+home page. Add your own `index.htm` (for example a copy of the real homepage)
+and it replaces the starter automatically. All `.htm` and `.json` files in
+`html/` are copied into the build by `copy:html` and watched by `npm run dev`.
 
 ### Design system (`src/designsystem/`)
 
