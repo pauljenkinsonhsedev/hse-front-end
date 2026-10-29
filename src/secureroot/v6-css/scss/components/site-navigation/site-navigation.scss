@@ -190,6 +190,11 @@
   background: $color_hse-grey-4;
 }
 
+// Blend the menu/search divider into the open menu's background.
+.global-menu-button.main-menu-expanded span {
+  border-right-color: $color_hse-grey-4;
+}
+
 button#search-button.search-button.main-search-expanded {
   position: relative;
 
