@@ -99,8 +99,11 @@ src/shared/js/
 ```
 
 Output filenames are versioned from the `version` field in `package.json`
-(e.g. `main-6.7.0.min.js`). The HTML/Dreamweaver templates reference these
-versioned filenames, so bump `version` and rebuild when releasing.
+(`main-<version>.min.js`, e.g. `main-6.8.0.min.js` for version `6.8.0`). The
+HTML/Dreamweaver templates reference these versioned filenames, so bump
+`version` and rebuild when releasing. The `--hse-frontend-version` value in
+`v6.scss` and the asset paths in the new release's templates are set by hand,
+so update those too.
 
 ### JavaScript utilities
 
