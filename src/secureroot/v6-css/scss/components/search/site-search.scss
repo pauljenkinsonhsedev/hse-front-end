@@ -1,6 +1,7 @@
 // Google Custom Search
 
 @use "../../base/core/settings/colours" as *;
+@use "../../base/core/settings/globals" as *;
 @use "../../base/core/settings/spacing" as *;
 @use "../../base/core/tools/spacing" as *;
 @use "../../base/core/tools/sass-mq" as *;
@@ -95,13 +96,54 @@ td.gsib_b {
   top: 0;
 }
 
+// Search box focus (header and results page), as GOV.UK's: the wrapper's
+// yellow outline (below) with a black inner border on the input itself.
+// Google's script puts an inline outline: none on the input, so without
+// its own focus style the focused element doesn't change (flagged by
+// Silktide, WCAG 2.4.7). The input fills the whole box, with Google's
+// clear button over its right-hand end, so the black border goes all the
+// way round.
+#globalSearch,
+.gcs-results {
+  .gsc-input-box {
+    position: relative !important;
+  }
+
+  td.gsib_a {
+    width: 100%;
+  }
+
+  td.gsib_b {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+  }
+
+  input.gsc-input {
+    border-radius: 0 !important;
+    padding-right: 48px !important; // clear of the clear button
+
+    &:focus {
+      box-shadow: inset 0 0 0 $hse-focus-width $hse-focus-text-color !important;
+    }
+  }
+}
+
 #globalSearch #gsc-i-id1 {
   margin: 0 !important;
-  height: 38px !important;
+  height: 48px !important; // fills the box
   background: none !important;
   background-color: #fff !important;
   border: none !important;
   position: relative !important;
+}
+
+// Fills the box, inside its 1px border (.gcs-results .gsc-input-box)
+.gcs-results input.gsc-input {
+  height: 46px !important;
 }
 
 .gsc-input-box:focus-within {
