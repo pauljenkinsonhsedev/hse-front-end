@@ -150,20 +150,22 @@ class ChartsDefault {
             { key: 'table', label: 'Tabular data' },
         ];
         const tabs = views.map(({ key, label }) => {
+            // As the GOV.UK tabs component: the item is the tab's box and
+            // the button is just its label, so the focus style wraps the
+            // label and is on the focused element itself (WCAG 2.4.7).
+            const item = document.createElement('div');
+            item.className = 'chart-tabs__item';
+            item.setAttribute('role', 'presentation');
             const tab = document.createElement('button');
             tab.type = 'button';
             tab.className = 'chart-tabs__tab';
             tab.id = `${id}-tab-${key}`;
-            // In a span so the focus style can wrap just the label, inside
-            // the tab, as the tabs component's links do
-            const text = document.createElement('span');
-            text.className = 'chart-tabs__label';
-            text.textContent = label;
-            tab.append(text);
+            tab.textContent = label;
             tab.setAttribute('role', 'tab');
             tab.setAttribute('aria-controls', id);
             tab.dataset.view = key;
-            tablist.append(tab);
+            item.append(tab);
+            tablist.append(item);
             return tab;
         });
         container.before(tablist);
@@ -226,7 +228,7 @@ class ChartsDefault {
                 const selected = other === tab;
                 other.setAttribute('aria-selected', String(selected));
                 other.tabIndex = selected ? 0 : -1;
-                other.classList.toggle('chart-tabs__tab--selected', selected);
+                other.parentElement.classList.toggle('chart-tabs__item--selected', selected);
             });
             container.setAttribute('aria-labelledby', tab.id);
             container.classList.toggle('chart--table-view', showTable);

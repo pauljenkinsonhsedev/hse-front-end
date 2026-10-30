@@ -38,41 +38,50 @@ $chart-inner-spacing-bottom: 8px + 15px;
     margin-top: hse-spacing(1); // room for the raised selected tab
 }
 
-.chart-tabs__tab {
-    appearance: none;
+// The tab's box. The button inside it is just the label, as in the tabs
+// component, so the focus style wraps the label, on the focused element
+// itself, rather than filling the whole tab.
+.chart-tabs__item {
     background-color: $color_hse-grey-4;
-    border: 0;
-    border-radius: 0;
-    color: $hse-text-color;
-    cursor: pointer;
     margin: 0 hse-spacing(1) 0 0;
     padding: hse-spacing(2) hse-spacing(4);
     position: relative;
     text-align: center;
     @include hse-font($size: 19);
+}
+
+.chart-tabs__tab {
+    appearance: none;
+    background: none;
+    border: 0;
+    border-radius: 0;
+    color: $hse-text-color;
+    cursor: pointer;
+    display: inline-block; // as .hse-tabs__tab, so its focus style is full line height
+    font: inherit;
+    margin: 0;
+    padding: 0;
+    text-decoration: underline;
+
+    // Make the whole tab clickable, not just the label
+    &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+    }
 
     &:hover {
         color: rgba($hse-text-color, 0.99); // as hse-link-style-text
     }
 
-    // As the tabs component: the focus style wraps the label, inside the
-    // tab, rather than filling the whole tab. The label keeps a
-    // transparent outline (from hse-focused-text) for forced-colours mode.
+    // Keeps a transparent outline (from hse-focused-text) for
+    // forced-colours mode
     &:focus {
-        outline: none;
-
-        .chart-tabs__label {
-            @include hse-focused-text;
-        }
+        @include hse-focused-text;
     }
 }
 
-.chart-tabs__label {
-    display: inline-block; // as .hse-tabs__tab, so its focus style is full line height
-    text-decoration: underline;
-}
-
-.chart-tabs__tab--selected {
+.chart-tabs__item--selected {
     $border-width: 1px;
     background-color: $color_hse-white;
     border: $border-width solid $hse-border-color;
@@ -82,7 +91,7 @@ $chart-inner-spacing-bottom: 8px + 15px;
     padding: ((hse-spacing(2) * 1.5) - $border-width) (hse-spacing(4) - $border-width) ((hse-spacing(2) * 1.5) + $border-width);
     z-index: 1;
 
-    .chart-tabs__label {
+    .chart-tabs__tab {
         text-decoration: none;
     }
 }
