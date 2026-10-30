@@ -183,9 +183,12 @@ td.gsc-search-button {
   z-index: 1 !important;
 }
 
+// As the input: a black inner border inside the yellow outline, as
+// GOV.UK's search button
 td.gsc-search-button button:focus {
   outline: #ffdd00 3px solid !important;
   outline-color: #ffdd00 !important;
+  box-shadow: inset 0 0 0 $hse-focus-width $hse-focus-text-color !important;
 }
 
 // Search results
