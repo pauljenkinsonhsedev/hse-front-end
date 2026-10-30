@@ -165,26 +165,8 @@
 		</div>
 	</div>
 </div>
-    <!-- JS Main Navigation -->	
+    <!-- JS Main Navigation -->
 
-  <!-- TemplateBeginMultipleIf -->
-  <!-- TemplateBeginIfClause cond="notificationBar == true" -->
-
-  <div id="notificationBanner" class="notification-banner">
-    <div class="notification-container fixed-container">
-
-    <!-- TemplateBeginEditable name="notification-message" --> 
-		
-    <!-- TemplateEndEditable -->
-
-    <button class="notification-hide">Hide&nbsp;message</button>
-		
-    </div>
-  </div>
-  <!-- TemplateEndIfClause -->
-  <!-- TemplateEndMultipleIf -->
-    
-    
 </div>
   
   
@@ -230,11 +212,6 @@
 <!-- TemplateEndIfClause -->
   
 <!-- TemplateBeginIfClause cond="welsh == true" -->
-  
-<!-- TemplateBeginEditable name="beta-survey-welsh" -->
-  
-<!-- TemplateEndEditable -->
-  
 <main id="contentContainer" class="@@(_document['layout'])@@" lang="cy">
 
 <!-- TemplateEndIfClause -->
@@ -294,12 +271,6 @@
 <!-- TemplateEndIfClause -->
 <!-- TemplateEndMultipleIf -->
 	
-	<!-- TemplateBeginMultipleIf -->
-<!-- TemplateBeginIfClause cond="homepage == true" -->
-
-<!-- TemplateEndIfClause -->
-<!-- TemplateEndMultipleIf -->
-  
 <!-- TemplateBeginMultipleIf -->
 <!-- TemplateBeginIfClause cond="containerType == 'default'" -->
 <div id="pageContainer" class="@@(_document['platform'])@@ hse-width-container hse-page-contents--@@(_document['layout'])@@"> 
@@ -548,10 +519,7 @@
 <!-- TemplateParam name="containerType" type="text" value="default" -->
 <!-- TemplateParam name="platform" type="text" value="v6" -->
 <!-- TemplateParam name="welsh" type="boolean" value="false" -->
-<!-- TemplateParam name="homepage" type="boolean" value="false" -->
-<!-- TemplateParam name="survey" type="boolean" value="false" -->
 <!-- TemplateParam name="contentType" type="text" value="default" -->
-<!-- TemplateParam name="notificationBar" type="boolean" value="false" -->
 <!-- TemplateParam name="infoBanner" type="boolean" value="false" -->
 <!-- TemplateParam name="infoBannerContent" type="text" value="" -->
 <!-- TemplateParam name="noIndex" type="boolean" value="false" -->
