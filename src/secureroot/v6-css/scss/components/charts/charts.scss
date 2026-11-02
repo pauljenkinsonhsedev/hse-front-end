@@ -70,8 +70,11 @@ $chart-inner-spacing-bottom: 8px + 15px;
         inset: 0;
     }
 
+    // As the HSE tabs component and other links (hse-link-style-default):
+    // the underline goes on hover
     &:hover {
         color: rgba($hse-text-color, 0.99); // as hse-link-style-text
+        text-decoration: none;
     }
 
     // Keeps a transparent outline (from hse-focused-text) for
