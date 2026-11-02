@@ -95,11 +95,21 @@ class ChartsDefault {
             // toggle runs from legend.events.itemClick; the series-level
             // legendItemClick handlers in the options files fire after it
             // and returning false from them no longer prevents anything.
+            // So a legend item doesn't look or sound like a control: a
+            // default cursor rather than a pointer, and no "Show <series>"
+            // toggle button for keyboard and screen reader users. Hovering
+            // an item still highlights its series or slice.
             legend: {
                 events: {
                     itemClick: function () {
                         return false;
                     }
+                },
+                itemStyle: {
+                    cursor: 'default'
+                },
+                accessibility: {
+                    enabled: false
                 }
             },
             // No hover tooltips: every value is either labelled on the chart
