@@ -163,10 +163,12 @@ $chart-inner-spacing-bottom: 8px + 15px;
 
     // Wraps the table (added in charts.js), so a table wider than the box
     // scrolls sideways inside it, as in .hse-table-container, instead of
-    // widening the page. Focusable for keyboard scrolling, with the site's
+    // widening the page, with a shadow on the edge that has more columns
+    // to scroll to. Focusable for keyboard scrolling, with the site's
     // focus colours (a black edge inside a yellow outline, as on inputs).
     .chart-table-scroll {
         overflow-x: auto;
+        @include hse-scroll-shadows;
 
         &:focus {
             outline: $hse-focus-width solid $hse-focus-color;
