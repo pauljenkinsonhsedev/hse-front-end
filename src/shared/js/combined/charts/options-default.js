@@ -4,6 +4,7 @@ import { displaySuffix } from './data-suffix.js';
 import { displayPrefix } from './data-prefix.js';
 import { dataLabel } from './data-label.js';
 import { dataValue } from './data-value.js';
+import { fitPlotHeight } from './fit-plot-height.js';
 /*
     Class @ChartOptionsDefault
 
@@ -94,6 +95,8 @@ export class ChartOptionsDefault extends ChartOptions {
                     render() {
                         if (this.options.chart.type === 'bar') {
                             fitPlotToCategories(this);
+                        } else {
+                            fitPlotHeight(this);
                         }
                         this.series.forEach((series) => {
                             if (series.type !== 'bar' && series.type !== 'column') {
