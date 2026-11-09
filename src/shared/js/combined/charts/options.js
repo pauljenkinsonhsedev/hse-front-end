@@ -381,11 +381,12 @@ export class ChartOptions {
         // actual content height and only grow past 100px when it's
         // needed, so every chart with a short title/subtitle keeps
         // today's exact spacing.
-        // Highcharts wraps the title and subtitle narrower than the
-        // container: .chart's padding (8px each side), chart spacing
-        // (10px each side) and title/subtitle widthAdjust (-44px), so
-        // measure at that width or two-line titles measure as one.
-        const textWidth = this.container.clientWidth - 80;
+        // Highcharts wraps the (HTML) title and subtitle narrower than the
+        // container: .chart's padding (8px each side) and chart spacing
+        // (10px each side). Measure at that width: narrower and they
+        // measure extra lines (an ~80px gap above the plot on mobile),
+        // wider and two-line titles measure as one.
+        const textWidth = this.container.clientWidth - 36;
         const titleHeight = measureElementHeight(textWidth, this.title, {
           fontFamily: this.headingFontFamily,
           fontSize: titleFontSize,

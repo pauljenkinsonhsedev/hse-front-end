@@ -3,6 +3,7 @@ import { seriesData } from './series-data.js';
 import { chartCategories } from './chart-categories';
 import { missingData } from './missing-data.js';
 import { plotBand } from './plot-band';
+import { fitPlotHeight } from './fit-plot-height.js';
 /*
     Class @ChartOptionsLine
 
@@ -101,7 +102,17 @@ export class ChartOptionsLine extends ChartOptions {
         }
 
         const collection = this.collection;
-        this.collection = {...collection, xAxis, yAxis, series};
+        // Keep the base chart events (its load handler starts watchLayout)
+        const chart = {
+            ...collection.chart,
+            events: {
+                ...collection.chart.events,
+                render: function () {
+                    fitPlotHeight(this);
+                }
+            }
+        };
+        this.collection = {...collection, chart, xAxis, yAxis, series};
         return this.collection;
     }
 }

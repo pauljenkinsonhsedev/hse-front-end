@@ -20,7 +20,7 @@ window.Cookies = Cookies;
                        place instead of reloading the page, so the original
                        referrer is kept.
 
-  Deployed to the press theme as wp-content/themes/press/js/cookies-6.7.0.js
+  Deployed to the press theme as wp-content/themes/press/js/cookies-6.8.0.js
 */
 const pressConfig = {
   loadAnalytics() {

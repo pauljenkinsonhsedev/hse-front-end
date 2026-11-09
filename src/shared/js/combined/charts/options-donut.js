@@ -4,7 +4,7 @@ import { seriesData } from './series-data.js';
 import { dataLabel } from './data-label.js';
 import { displayPrefix } from './data-prefix.js';
 import { displaySuffix } from './data-suffix.js';
-import { defaultChartHeight, fitHeightToLegend } from './pie-legend.js';
+import { defaultChartHeight, fitHeightToCaption, fitHeightToLegend } from './pie-legend.js';
 import { drawDonutTotal } from './donut-total.js';
 
 /*
@@ -64,6 +64,7 @@ export class ChartOptionsDonut extends ChartOptions {
                 ...this.collection.chart.events,
                 render: function () {
                     fitHeightToLegend(this);
+                    fitHeightToCaption(this);
                     drawDonutTotal(this, headlineTotal, headlineTotalLabel);
                 }
             }

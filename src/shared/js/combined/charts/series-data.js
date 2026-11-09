@@ -92,6 +92,14 @@ export function seriesData(data) {
                             // Upper confidence interval bound, used to keep the
                             // value label clear of the error bar whisker.
                             point.high = errorArray[i][1];
+                            // The error bars aren't reachable on their own
+                            // (see errorBar below), so read the interval
+                            // with its bar, written as in the table.
+                            const low = tbody.rows[i].querySelector('.error-low');
+                            const high = tbody.rows[i].querySelector('.error-high');
+                            point.accessibility = {
+                                description: `Confidence interval ${cellText(low)} to ${cellText(high)}.`
+                            };
                         }
                         unitArray.push(point);
                     }
@@ -113,6 +121,14 @@ export function seriesData(data) {
                 yAxis: 0,
                 data: errorArray,
                 showInLegend: false,
+                // Not a separate stop for keyboard and screen reader users:
+                // after the last bar, the arrow keys moved on through every
+                // error bar, with a focus border that didn't fit them. Each
+                // interval is read with its bar instead (point.accessibility
+                // above).
+                accessibility: {
+                    enabled: false
+                },
                 tooltip: {
                     pointFormat: '(error range: {point.low}-{point.high})<br/>'
                 }

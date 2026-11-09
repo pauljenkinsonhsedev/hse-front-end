@@ -4,6 +4,7 @@ import { displaySuffix } from './data-suffix.js';
 import { displayPrefix } from './data-prefix.js';
 import { dataLabel } from './data-label.js';
 import { dataValue } from './data-value.js';
+import { fitPlotHeight } from './fit-plot-height.js';
 /*
     Class @ChartOptionsDefault
 
@@ -73,6 +74,26 @@ export class ChartOptionsDefault extends ChartOptions {
             }
         };
 
+        // On bar charts with error bars, each value label is pushed past its
+        // error bar (in the render handler below). Highcharts doesn't leave
+        // room for that, so the longest bar's label was cut off at the edge
+        // of the chart (e.g. "5,53" for 5,530). An error bar never goes past
+        // the end of the axis, so reserve room there for the widest label,
+        // worked out from the table before the chart is drawn.
+        // Desktop only (see layout()): on a narrow chart the room taken from
+        // the bars was more than the label needed, and squeezed them.
+        if (this.type === 'bar' && container.querySelector('.error-high')) {
+            const context = document.createElement('canvas').getContext('2d');
+            const fontSize = parseFloat(window.getComputedStyle(document.documentElement).fontSize) || 16;
+            context.font = `bold ${fontSize}px ${this.fontFamily}`; // as plotOptions.bar.dataLabels
+            const widestLabel = [...units].reduce((widest, unit) => (
+                Math.max(widest, context.measureText(getValue.call({ y: cellValue(unit) })).width)
+            ), 0);
+            const labelOffset = 10 + 5; // past the error bar (render handler), plus the label's padding
+            const edgeGap = 10; // the chart's own right spacing
+            this.labelMarginRight = Math.ceil(edgeGap + labelOffset + widestLabel + 5);
+        }
+
         let chart = {};
         if (this.type === 'bar' || this.type === 'column') {
             const categoryCount = container.querySelectorAll('.category').length;
@@ -86,6 +107,7 @@ export class ChartOptionsDefault extends ChartOptions {
                 // depend on how many categories there are: leave it to the
                 // default, as for line charts.
                 height: this.type === 'bar' ? estimatedHeight + this.marginTop : undefined,
+                marginRight: this.layout().chart.marginRight,
                 events: {
                     // Push each point's value label clear of its error bar's
                     // upper CI bound, otherwise the label overlaps the
@@ -94,6 +116,8 @@ export class ChartOptionsDefault extends ChartOptions {
                     render() {
                         if (this.options.chart.type === 'bar') {
                             fitPlotToCategories(this);
+                        } else {
+                            fitPlotHeight(this);
                         }
                         this.series.forEach((series) => {
                             if (series.type !== 'bar' && series.type !== 'column') {
@@ -103,15 +127,22 @@ export class ChartOptionsDefault extends ChartOptions {
                                 if (typeof point.high !== 'number' || !point.dataLabel) {
                                     return;
                                 }
-                                if (point.defaultLabelX === undefined) {
+                                // Highcharts' own position for the label,
+                                // unless it's still where we last moved it:
+                                // after a resize Highcharts places it again,
+                                // so take the new position (keeping the one
+                                // from the first render left labels off the
+                                // edge of the chart after a resize)
+                                if (point.dataLabel.x !== point.movedLabelX) {
                                     point.defaultLabelX = point.dataLabel.x;
                                 }
                                 const axis = series.yAxis;
                                 const highOffset = Math.abs(
                                     axis.toPixels(point.high, true) - axis.toPixels(point.y, true)
                                 );
+                                point.movedLabelX = point.defaultLabelX + highOffset + 10;
                                 point.dataLabel.attr({
-                                    x: point.defaultLabelX + highOffset + 10
+                                    x: point.movedLabelX
                                 });
                             });
                         });
@@ -242,12 +273,19 @@ export class ChartOptionsDefault extends ChartOptions {
     // like "Manufacturing" or "Luxembourg", which Highcharts then cuts
     // short with an ellipsis. Give them more of the chart below the
     // tablet breakpoint (641px, as in ChartOptions.layout()); larger
-    // charts keep Highcharts' default width.
+    // charts keep Highcharts' default width. Larger charts with error bars
+    // also get room on the right for the value labels (labelMarginRight).
     layout() {
         const base = super.layout();
         if (this.type !== 'bar') return base;
         const isSmall = this.container.clientWidth < 641;
         const labelWidth = isSmall ? Math.round(this.container.clientWidth * 0.45) + 'px' : undefined;
-        return { ...base, xAxis: { labels: { style: { width: labelWidth } } } };
+        return {
+            ...base,
+            // From 500px: charts are 579-627px wide on desktop and 324-356px
+            // on phones, where the room for the labels squeezed the bars
+            chart: { ...base.chart, marginRight: this.container.clientWidth >= 500 && this.labelMarginRight ? this.labelMarginRight : null },
+            xAxis: { labels: { style: { width: labelWidth } } },
+        };
     }
 }
