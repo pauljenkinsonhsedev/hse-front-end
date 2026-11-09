@@ -1,3 +1,4 @@
+import { parseCellNumber, cellText } from './cell-value.js';
 export function seriesData(data) {
     /*
         function @seriesData
@@ -34,8 +35,8 @@ export function seriesData(data) {
         const high = [...cells].filter(element => element.classList.contains('error-high'));
 
         const errorData = low.map((e, i) => {
-            const textLow = Number(parseFloat(low[i].textContent).toFixed(2).toLocaleString('en', {minimumFractionDigits: 0}));
-            const textHigh = Number(parseFloat(high[i].textContent).toFixed(2).toLocaleString('en', {minimumFractionDigits: 0}));
+            const textLow = Number(parseCellNumber(low[i]).toFixed(2).toLocaleString('en', {minimumFractionDigits: 0}));
+            const textHigh = Number(parseCellNumber(high[i]).toFixed(2).toLocaleString('en', {minimumFractionDigits: 0}));
 
             const array = new Array;
             array.push(textLow, textHigh);
@@ -68,25 +69,39 @@ export function seriesData(data) {
             const headingIndex = u + 1;
 
             if (unitLength === 1) {
-                headingsArray.push(heading[1].innerText);
+                headingsArray.push(cellText(heading[1]));
             } else {
-                headingsArray.push(heading[headingIndex].innerText);
+                headingsArray.push(cellText(heading[headingIndex]));
             }
 
             for (let i = 0; i < rowLength; i++) {
                 const category = tbody.rows[i].querySelectorAll('.category');
                 const text = tbody.rows[i].querySelectorAll('.unit');
-                let categoryTitle = category[0].innerText;
+                let categoryTitle = cellText(category[0]);
 
                 if (categoryTitle.match(dateRegEx)) {
                     categoryTitle = moment(categoryTitle).format('DD MMM YYYY').toString();
                 }
 
                 for (let j = 0; j < unitLength; j++) {
-                    let value = parseFloat(text[j].innerText);
+                    let value = parseCellNumber(text[j]);
 
                     if (j === u) {
-                        unitArray.push({name: categoryTitle, y: value});
+                        const point = {name: categoryTitle, y: value};
+                        if (errorArray[i] && typeof errorArray[i][1] === 'number') {
+                            // Upper confidence interval bound, used to keep the
+                            // value label clear of the error bar whisker.
+                            point.high = errorArray[i][1];
+                            // The error bars aren't reachable on their own
+                            // (see errorBar below), so read the interval
+                            // with its bar, written as in the table.
+                            const low = tbody.rows[i].querySelector('.error-low');
+                            const high = tbody.rows[i].querySelector('.error-high');
+                            point.accessibility = {
+                                description: `Confidence interval ${cellText(low)} to ${cellText(high)}.`
+                            };
+                        }
+                        unitArray.push(point);
                     }
                 }
             }
@@ -106,12 +121,24 @@ export function seriesData(data) {
                 yAxis: 0,
                 data: errorArray,
                 showInLegend: false,
+                // Not a separate stop for keyboard and screen reader users:
+                // after the last bar, the arrow keys moved on through every
+                // error bar, with a focus border that didn't fit them. Each
+                // interval is read with its bar instead (point.accessibility
+                // above).
+                accessibility: {
+                    enabled: false
+                },
                 tooltip: {
                     pointFormat: '(error range: {point.low}-{point.high})<br/>'
                 }
             };
 
-            if (document.querySelector('.error-low')) {
+            // This chart's own table, not the whole page: otherwise every
+            // chart on a page where any table has confidence intervals got
+            // an (empty) error bar series, and e.g. a donut was announced
+            // to screen readers as a "Combination chart with 2 data series".
+            if (data.querySelector('.error-low')) {
                 seriesData.push(unitdata, errorBar);
             } else {
                 seriesData.push(unitdata);

@@ -9,7 +9,7 @@
 @use "../contents-list/contents-list" as *;
 
 .hse-multistep-navigation {
-  border-bottom: 4px solid #d8d8d8;
+  border-bottom: 2px solid $hse-border-color;
   @include hse-responsive-padding(4, "bottom");
 }
 
@@ -61,8 +61,4 @@ ol.hse-multistep-navigation__list li {
   padding: 0 hse-spacing(2);
   clear: both;
   @include hse-typography-responsive(16);
-
-  a {
-    display: inline-block;
-  }
 }

@@ -21,7 +21,7 @@
 
 /* Accordion Heading Wrapper */
 .hse-accordion__section-header {
-  border: 1px solid $color_hse-grey-4;
+  border: 1px solid $hse-border-color;
   margin: -1px 0 0 !important;
 }
 
@@ -103,7 +103,7 @@
 .hse-accordion__section-content {
   background-color: inherit;
   padding: 15px;
-  border: 1px solid $color_hse-grey-4;
+  border: 1px solid $hse-border-color;
   border-top: 0;
   margin-bottom: 15px;
   display: none; /* JavaScript will toggle this to 'block' */
@@ -130,7 +130,7 @@
 @include mq($media-type: print) {
   .hse-accordion__section-content {
     display: block !important;
-    border: 1px solid $color_hse-grey-4;
+    border: 1px solid $hse-border-color;
   }
   .hse-accordion__section-button:after {
     display: none;

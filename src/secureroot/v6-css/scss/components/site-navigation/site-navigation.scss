@@ -147,7 +147,7 @@
 
   span {
     display: block;
-    border-right: 1px solid $color_hse-grey-4;
+    border-right: 1px solid $hse-border-color;
     padding: 5px 20px 5px 0;
     margin-right: -9px;
 
@@ -188,6 +188,11 @@
 .global-menu-button.main-menu-expanded {
   color: $color_hse-black;
   background: $color_hse-grey-4;
+}
+
+// Blend the menu/search divider into the open menu's background.
+.global-menu-button.main-menu-expanded span {
+  border-right-color: $color_hse-grey-4;
 }
 
 button#search-button.search-button.main-search-expanded {

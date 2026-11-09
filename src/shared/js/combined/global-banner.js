@@ -1,5 +1,6 @@
 import Cookies from "js-cookie";
 import { customEventListener } from "./utils/add-custom-event-listener";
+import pathEnv from "./utils/asset-env-path";
 
 const setCookiesSettings = {
   path: "/",
@@ -11,8 +12,13 @@ const setCookiesSettings = {
 
 export function globalBanner() {
   const globalSet = Cookies.get("global_banner");
-  fetch("/assets/ajax/global-message.json")
-    .then((response) => response.json())
+  fetch(`${pathEnv}/assets/ajax/global-message.json`)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`global-message.json: ${response.status}`);
+      }
+      return response.json();
+    })
     .then((data) => {
       const active = data.active;
       const message = data.message;
@@ -41,5 +47,8 @@ export function globalBanner() {
           globalNotification.parentNode.removeChild(globalNotification);
         });
       }
+    })
+    .catch(() => {
+      // No global message available; leave the page without a banner.
     });
 }

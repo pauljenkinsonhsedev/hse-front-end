@@ -134,14 +134,8 @@ $hse-focus-color: $color_hse-yellow;
 $hse-focus-text-color: $color_hse-black;
 
 // Border
-$hse-border-color: $color_hse-grey-4;
+$hse-border-color: #cecece;
 $hse-secondary-border-color: $color_transparent_hse-white-20;
-$hse-table-border-color: #cecece;
-
-// Cards
-
-$card-border-color: #d8d8d8;
-$card-border-hover-color: $color_hse-grey-3;
 
 // Box shadow
 $hse-box-shadow: rgba(33, 43, 50, 0.16);
@@ -170,9 +164,9 @@ $hse-secondary-button-active-color: shade($hse-secondary-button-color, 50%);
 $hse-secondary-button-shadow-color: shade($hse-secondary-button-color, 50%);
 
 $hse-cautionary-button-color: $color_hse-red;
-$hse-cautionary-button-hover-color: shade($hse-secondary-button-color, 20%);
-$hse-cautionary-button-active-color: shade($hse-secondary-button-color, 50%);
-$hse-cautionary-button-shadow-color: shade($hse-secondary-button-color, 50%);
+$hse-cautionary-button-hover-color: shade($hse-cautionary-button-color, 20%);
+$hse-cautionary-button-active-color: shade($hse-cautionary-button-color, 50%);
+$hse-cautionary-button-shadow-color: shade($hse-cautionary-button-color, 50%);
 
 $hse-reverse-button-color: $color_hse-white;
 $hse-reverse-button-hover-color: shade($hse-reverse-button-color, 20%);

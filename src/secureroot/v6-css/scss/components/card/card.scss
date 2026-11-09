@@ -10,16 +10,13 @@
 @use "../../base/core/settings/typography" as *;
 @use "../../base/core/tools/sass-mq" as *;
 
-$card-border-width: 1px;
-$card-border-bottom-width: hse-spacing(1);
-
 /* Base card
    ========================================================================== */
 
 .hse-card {
   position: relative;
   width: 100%;
-  border-bottom: 4px solid $card-border-color;   /* KEEP base border */
+  border-bottom: 2px solid $hse-border-color;   /* KEEP base border */
   margin-bottom: $hse-legacy-spacing-20;
   h2,
   h3 {
@@ -66,13 +63,13 @@ $card-border-bottom-width: hse-spacing(1);
 /* Image card */
 
 .hse-card--img {
-  border: 2px solid $card-border-color;
-  border-bottom-width: 4px;
+  border: 1px solid $hse-border-color;
+  border-bottom-width: 2px;
   margin-bottom: $hse-legacy-spacing-10;
   background: white;
   @include print-hide();
   &:hover {
-    border-bottom: 4px solid $color_hse-red;
+    border-bottom: 2px solid $color_hse-red;
     .hse-card__img {
      border-bottom: none;
     }
@@ -155,9 +152,14 @@ $card-border-bottom-width: hse-spacing(1);
   margin-bottom: $hse-legacy-spacing-10;
   padding: hse-spacing(3) hse-spacing(4);
   background: $color_hse-white;
-  border-bottom-width: 4px;
-  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.15);
- 
+  border: 1px solid $hse-border-color;
+  border-bottom-width: 2px;
+
+  // card group list items provide the spacing between rows
+  .hse-card-group & {
+    margin-bottom: 0;
+  }
+
   h3 {
     margin: 0;
     padding: 0;
@@ -169,7 +171,7 @@ $card-border-bottom-width: hse-spacing(1);
   }
 
   &:hover {
-    border-bottom: 4px solid $color_hse-red;
+    border-bottom: 2px solid $color_hse-red;
   }
   a {
     display: block;
@@ -199,7 +201,7 @@ $card-border-bottom-width: hse-spacing(1);
   background: $color_hse-white;
   box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.15);
   &:hover {
-  border-bottom: 4px solid $color_hse-red;   
+  border-bottom: 2px solid $color_hse-red;   
   }
   h3 {
     margin: 0;

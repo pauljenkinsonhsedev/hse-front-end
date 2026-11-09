@@ -1,4 +1,9 @@
 @use "../../base/core/settings/colours" as *;
+@use "../../base/core/settings/globals" as *;
+@use "../../base/core/tools/focused" as *;
+@use "../../base/core/tools/spacing" as *;
+@use "../../base/core/tools/typography" as *;
+@use "../../base/core/tools/mixins" as *;
 
 .js-enabled .chart table,
 .js-enabled .datacontent__subtitle,
@@ -9,16 +14,178 @@
 
 .chart {
     position: relative;
-    border: 1px solid #e0e0e0;
+    border: 1px solid $hse-border-color;
     padding: 8px;
     background-color: $color_hse-white;
 
     min-height: 400px;
     margin-bottom: 1rem;
+}
 
-    &[data-chart-type="bar"] {
-        min-height: 700px;
+// Highcharts' own spacing inside the chart (chart.spacing: 10px, 15px at
+// the bottom), on top of the box's 8px padding. The Tabular data tab uses
+// it so the table lines up with the chart's content.
+$chart-inner-spacing: 8px + 10px;
+$chart-inner-spacing-bottom: 8px + 15px;
+
+// "Chart" / "Tabular data" tabs above the chart box (added in charts.js),
+// which is their tab panel. Looks like the HSE tabs component
+// (components/tabs), but at every width: with only two short labels they
+// fit side by side even on small screens.
+.chart-tabs {
+    display: flex;
+    align-items: flex-end;
+    margin-top: hse-spacing(1); // room for the raised selected tab
+}
+
+// The tab's box. The button inside it is just the label, as in the tabs
+// component, so the focus style wraps the label, on the focused element
+// itself, rather than filling the whole tab.
+.chart-tabs__item {
+    background-color: $color_hse-grey-4;
+    margin: 0 hse-spacing(1) 0 0;
+    padding: hse-spacing(2) hse-spacing(4);
+    position: relative;
+    text-align: center;
+    @include hse-font($size: 19);
+}
+
+.chart-tabs__tab {
+    appearance: none;
+    background: none;
+    border: 0;
+    border-radius: 0;
+    color: $hse-text-color;
+    cursor: pointer;
+    display: inline-block; // as .hse-tabs__tab, so its focus style is full line height
+    font: inherit;
+    margin: 0;
+    padding: 0;
+    text-decoration: underline;
+
+    // Make the whole tab clickable, not just the label
+    &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
     }
+
+    // As the HSE tabs component and other links (hse-link-style-default):
+    // the underline goes on hover
+    &:hover {
+        color: rgba($hse-text-color, 0.99); // as hse-link-style-text
+        text-decoration: none;
+    }
+
+    // Keeps a transparent outline (from hse-focused-text) for
+    // forced-colours mode
+    &:focus {
+        @include hse-focused-text;
+    }
+}
+
+.chart-tabs__item--selected {
+    $border-width: 1px;
+    background-color: $color_hse-white;
+    border: $border-width solid $hse-border-color;
+    border-bottom: 0;
+    margin-bottom: -$border-width; // overlap the panel's top border, so they join
+    margin-top: -(hse-spacing(1));
+    padding: ((hse-spacing(2) * 1.5) - $border-width) (hse-spacing(4) - $border-width) ((hse-spacing(2) * 1.5) + $border-width);
+    z-index: 1;
+
+    .chart-tabs__tab {
+        text-decoration: none;
+    }
+}
+
+// Tabular data tab: show the chart's title, description and data table
+// instead of the chart, sized and spaced like the chart's own content (on
+// the site's typography and spacing scales), and spaced in from the
+// border as the chart's content is.
+.js-enabled .chart.chart--table-view {
+    min-height: 0;
+    padding: hse-spacing(3) $chart-inner-spacing $chart-inner-spacing-bottom;
+
+    .datacontent__title,
+    .datacontent__description {
+        display: block;
+    }
+
+    // The table's heading is an <h2> in the page markup, but styled as an
+    // H3 (h3 / .hse-heading-m, base/core/styles/typography.scss) to match
+    // the chart title on the Chart tab, which ChartOptions styles the same.
+    // Directly followed by the description, as the chart's title is by its
+    // subtitle.
+    .datacontent__title {
+        color: $hse-text-color;
+        margin-bottom: hse-spacing(1);
+        @include hse-font($size: 24, $weight: bold);
+    }
+
+    // The title charts.js adds from data-chart-title replaces the markup's
+    // own heading; a caption stays for screen readers, as it names the
+    // table.
+    &.chart--with-table-title {
+        .datacontent__title:not(.chart-table-title) {
+            display: none;
+        }
+
+        caption {
+            @include visually-hidden;
+        }
+    }
+
+    // Like the chart's subtitle: 16px, with a tighter line height than the
+    // scale's 32px for body copy.
+    .datacontent__description {
+        margin-bottom: hse-spacing(3);
+        @include hse-typography-responsive(16, $override-line-height: 1.25);
+    }
+
+    // The site's standard table style (base/core/elements/tables.scss),
+    // unchanged. No bottom margins, as inside the standard
+    // .hse-table-container: the panel's padding spaces it from the border.
+    figure {
+        margin-bottom: 0;
+    }
+
+    table {
+        display: table;
+        margin-bottom: 0;
+    }
+
+    // A donut's total row (added in charts.js): bold, like the table's
+    // headers, as a standard total row.
+    .chart-table-total td {
+        font-weight: $hse-font-bold;
+    }
+
+    // Wraps the table (added in charts.js), so a table wider than the box
+    // scrolls sideways inside it, as in .hse-table-container, instead of
+    // widening the page, with a shadow on the edge that has more columns
+    // to scroll to. Focusable for keyboard scrolling, with the site's
+    // focus colours (a black edge inside a yellow outline, as on inputs).
+    .chart-table-scroll {
+        overflow-x: auto;
+        @include hse-scroll-shadows;
+
+        &:focus {
+            outline: $hse-focus-width solid $hse-focus-color;
+            box-shadow: inset 0 0 0 2px $hse-focus-text-color;
+        }
+    }
+
+    .displayChart {
+        display: none;
+    }
+}
+
+// Keyboard focus on a chart point: Highcharts draws this border in
+// $hse-focus-color (keyboardNavigation.focusBorder in options.js); add the
+// black edge the site's other focus styles have.
+.highcharts-focus-border {
+    @include hse-focused-svg;
 }
 
 .highcharts-root {

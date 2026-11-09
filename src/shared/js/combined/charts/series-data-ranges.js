@@ -1,3 +1,4 @@
+import { parseCellNumber } from './cell-value.js';
 export function seriesDataRanges(data) {
     const tbody = data.querySelector('.table__body');
 
@@ -9,7 +10,7 @@ export function seriesDataRanges(data) {
 
         const averageData = rangeAxis.map((e, i) => {
             const getDate = rangeAxis[i].textContent;
-            const average = Number(parseFloat(rangeAverage[i].textContent).toFixed(2).toLocaleString('en', {minimumFractionDigits: 0}));
+            const average = Number(parseCellNumber(rangeAverage[i]).toFixed(2).toLocaleString('en', {minimumFractionDigits: 0}));
 
             const array = new Array;
             array.push(average);
@@ -31,8 +32,8 @@ export function seriesDataRanges(data) {
 
         const rangeData = rangeAxis.map((e, i) => {
             const getDate = rangeAxis[i].textContent;
-            const range1 = Number(parseFloat(rangeLow[i].textContent).toFixed(2).toLocaleString('en', {minimumFractionDigits: 0}));
-            const range2 = Number(parseFloat(rangeHigh[i].textContent).toFixed(2).toLocaleString('en', {minimumFractionDigits: 0}));
+            const range1 = Number(parseCellNumber(rangeLow[i]).toFixed(2).toLocaleString('en', {minimumFractionDigits: 0}));
+            const range2 = Number(parseCellNumber(rangeHigh[i]).toFixed(2).toLocaleString('en', {minimumFractionDigits: 0}));
             const array = new Array;
             array.push(getDate, range1, range2);
             return array;
@@ -52,7 +53,7 @@ export function seriesDataRanges(data) {
 
         const rangeHighData = rangeAxis.map((e, i) => {
             const getDate = rangeAxis[i].textContent;
-            const range = Number(parseFloat(rangeHigh[i].textContent).toFixed(2).toLocaleString('en', {minimumFractionDigits: 0}));
+            const range = Number(parseCellNumber(rangeHigh[i]).toFixed(2).toLocaleString('en', {minimumFractionDigits: 0}));
             const array = new Array;
             array.push(getDate, range);
             return array;

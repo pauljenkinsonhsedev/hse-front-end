@@ -26,7 +26,7 @@ export function plotBand(data, colours) {
                     text: titleText,
                     align: 'left',
                     style: {
-                        fontSize: '0.7rem',
+                        fontSize: '1rem',
                         fontWeight: 'bold',
                         color: '#666666'
                     },

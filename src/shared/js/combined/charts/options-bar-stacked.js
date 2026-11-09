@@ -1,4 +1,5 @@
 import { ChartOptions } from './options.js';
+import { cellValue } from './cell-value.js';
 import { dataTooltip } from './tooltip.js';
 
 /*
@@ -16,7 +17,7 @@ export class ChartOptionsBarStacked extends ChartOptions {
         let units = container.querySelectorAll('.unit');
         let total = 0;
         for (let i = 0; i < units.length; i++) {
-            total += Number(units[i].innerText)
+            total += cellValue(units[i])
         }
         const getTooltip = dataTooltip(this.type, this.units, this.decimals, total);
 
@@ -24,7 +25,7 @@ export class ChartOptionsBarStacked extends ChartOptions {
             type: 'bar',
             style: {
                 fontFamily: this.fontFamily,
-                fontSize: '0.8rem',
+                fontSize: '1rem',
                 fontWeight: 'regular'
             }
         };
@@ -38,7 +39,7 @@ export class ChartOptionsBarStacked extends ChartOptions {
             labels: {
                 style: {
                     fontFamily: this.fontFamily,
-                    fontSize: '0.9rem',
+                    fontSize: '1rem',
                     fontWeight: 'regular',
                 }
             },
@@ -48,6 +49,9 @@ export class ChartOptionsBarStacked extends ChartOptions {
         }
 
         const plotOptions = {
+            bar: {
+                borderRadius: 0
+            },
             column: {
             stacking: 'normal',
                 dataLabels: {

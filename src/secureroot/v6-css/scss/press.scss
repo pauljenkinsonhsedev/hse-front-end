@@ -1,3 +1,5 @@
+@use "base/core/settings/colours" as *;
+
 @media (min-width: 40.0625em) {
   .hse-global-banner__text p {
     font-size: 1rem;
@@ -144,7 +146,7 @@ h1.search-title {
 /* Style the search input to show an 'X' on the right side */
 input[type="search"] {
   background: white;
-  border: 1px solid #ccc;
+  border: 1px solid $hse-border-color;
 }
 
 input[type="search"]::-webkit-search-cancel-button {

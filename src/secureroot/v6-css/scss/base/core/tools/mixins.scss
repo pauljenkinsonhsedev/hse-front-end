@@ -379,3 +379,28 @@
     }
   }
 }
+
+/// Scroll shadows
+///
+/// A shadow on the edge of a sideways-scrolling box that has more content
+/// to scroll to, so it's clear that some of it (e.g. a table's columns) is
+/// out of view. As GOV.UK content tables (govspeak). Only shows when the
+/// box actually scrolls. Pure CSS: the two white "cover" layers scroll
+/// with the content (local) and hide the fixed shadows (scroll) when
+/// there's nothing more to scroll to on that side. Needs the content
+/// itself to have no background colour, or it hides the shadows.
+/// Used on table containers.
+
+@mixin hse-scroll-shadows($background: $color_hse-white) {
+  $shadow: rgba($color_hse-grey-1-rgb, 0.2);
+  $clear: rgba($background, 0);
+  background:
+    linear-gradient(90deg, $background 30%, $clear), // covers the left shadow at the start
+    linear-gradient(90deg, $clear, $background 70%) 100% 0, // covers the right shadow at the end
+    linear-gradient(90deg, $shadow, rgba($color_hse-grey-1-rgb, 0)), // more to the left
+    linear-gradient(90deg, rgba($color_hse-grey-1-rgb, 0), $shadow) 100% 0; // more to the right
+  background-attachment: local, local, scroll, scroll;
+  background-color: $background;
+  background-repeat: no-repeat;
+  background-size: 50px 100%, 50px 100%, 14px 100%, 14px 100%;
+}

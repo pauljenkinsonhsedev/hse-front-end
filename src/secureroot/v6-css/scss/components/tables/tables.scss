@@ -26,6 +26,10 @@
     // Allow large tables to overflow
     overflow-y: auto;
     overflow-x: auto;
+    // Show there are more columns to scroll to. Not on desktop, where
+    // wide tables overflow the container instead (users found that easier
+    // than scrolling).
+    @include hse-scroll-shadows;
   }
   .hse-table {
     margin: 0; /* [1] */
@@ -180,7 +184,7 @@ The classes below make it easier to visually differentiate between each piece of
           padding-right: 0;
           text-align: right; /* [7] */
           &:last-child {
-            border-bottom: 3px solid $hse-table-border-color;
+            border-bottom: 3px solid $hse-border-color;
           }
         }
       }

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!-- hse-starter-page: served by scripts/copy-html.mjs when src/secureroot/html/index.htm does not exist. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>HSE front end – local development</title>
+<link rel="stylesheet" href="assets/v6-css/{{version}}.min.css" media="screen,print">
+<link href="https://fonts.googleapis.com/css?family=Roboto:100,200,300,400,500,600,700,400italic&display=swap" rel="stylesheet">
+<link rel="shortcut icon" href="favicon.ico">
+</head>
+<body>
+<div class="hse-width-container">
+<main id="contentContainer">
+
+  <span class="hse-caption-l">HSE front end v{{version}}</span>
+  <h1 class="hse-heading-xl">Local development</h1>
+
+  <p class="hse-body-l">This is the starter page. You're seeing it because there is no <code>src/secureroot/html/index.htm</code> yet.</p>
+
+  <h2 class="hse-heading-l">Build your pages here</h2>
+  <p>Put the pages you want to test in <code>src/secureroot/html/</code>. Every <code>.htm</code> and <code>.json</code> file in that folder is copied to <code>secureroot/hseonline/website/livelive/secureroot/</code> and served from there.</p>
+  <p>Add your own <code>src/secureroot/html/index.htm</code>, for example a copy of the real homepage, and it replaces this page.</p>
+  <p>Everything in <code>src/secureroot/html/</code> is git-ignored, so pages you add stay on your machine.</p>
+
+  <h2 class="hse-heading-l">How it works</h2>
+  <ul class="hse-list hse-list--bullet">
+    <li><code>npm run dev</code> builds everything, then watches the source and serves the site at <code>http://localhost:8080</code></li>
+    <li>SCSS in <code>src/secureroot/v6-css/</code> builds to <code>assets/v6-css/{{version}}.min.css</code></li>
+    <li>JavaScript in <code>src/shared/js/</code> builds to <code>assets/v6-js/main-{{version}}.min.js</code></li>
+    <li>Dreamweaver templates (<code>.dwt</code>) are in <code>src/templates/</code></li>
+    <li><code>npm run ds</code> builds and serves the design system instead</li>
+  </ul>
+  <p>See <code>README.md</code> for the full set of scripts.</p>
+
+</main>
+</div>
+<script type="module" src="assets/v6-js/main-{{version}}.min.js"></script>
+</body>
+</html>

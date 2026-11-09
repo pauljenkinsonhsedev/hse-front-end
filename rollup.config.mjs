@@ -86,5 +86,13 @@ export default [
     'cookies',
     'hseCookies',
     { suffix: `cookies-${version}-bookinglive.js`, deployOnly: true }
+  ),
+  // press.hse.gov.uk (WordPress) variant — same source, press config.
+  // Deploy as wp-content/themes/press/js/cookies-${version}.js in the press theme.
+  createIifeConfig(
+    'src/shared/js/cookies-press.js',
+    'cookies',
+    'hseCookies',
+    { suffix: `cookies-${version}-press.js`, deployOnly: true }
   )
 ];

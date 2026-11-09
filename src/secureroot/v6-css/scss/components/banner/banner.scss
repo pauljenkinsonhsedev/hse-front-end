@@ -8,7 +8,7 @@
   @include clearfix();
   padding: hse-spacing(2) 0;
   background-color: #f5e9eb;
-  border-bottom: 1px solid $color_hse-grey-3;
+  border-bottom: 1px solid $hse-border-color;
 
   a:link {
     text-decoration: underline;
@@ -81,7 +81,7 @@
 
   &--mourning {
     background-color: black;
-    border-bottom: 1px solid $color_hse-grey-3;
+    border-bottom: 1px solid $hse-border-color;
     padding: hse-spacing(6) 0;
 
     .hse-banner__inner {

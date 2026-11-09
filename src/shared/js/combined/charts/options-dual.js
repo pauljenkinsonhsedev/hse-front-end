@@ -60,8 +60,9 @@ export class ChartOptionsDual extends ChartOptions {
                 text: this.xAxisText,
                 align: 'high',
                 style: {
+                    color: '#000',
                     fontFamily: this.fontFamily,
-                    fontSize: '0.7rem',
+                    fontSize: '1rem',
                     fontWeight: 'regular',
                 }
             },
@@ -69,7 +70,7 @@ export class ChartOptionsDual extends ChartOptions {
                 overflow: 'justify',
                 style: {
                     fontFamily: this.fontFamily,
-                    fontSize: '0.7rem',
+                    fontSize: '1rem',
                     fontWeight: 'regular',
                 }
             },
@@ -80,8 +81,9 @@ export class ChartOptionsDual extends ChartOptions {
             title: {
               text: xAxisTitle1,
               style: {
+                color: '#000',
                 fontFamily: this.fontFamily,
-                fontSize: '0.7rem',
+                fontSize: '1rem',
                 fontWeight: 'regular',
               },
             },
@@ -89,7 +91,7 @@ export class ChartOptionsDual extends ChartOptions {
               format: '{value}',
               style: {
                 fontFamily: this.fontFamily,
-                fontSize: '0.7rem',
+                fontSize: '1rem',
                 fontWeight: 'regular',
               },
             },
@@ -98,8 +100,9 @@ export class ChartOptionsDual extends ChartOptions {
             title: {
               text: xAxisTitle2,
               style: {
+                color: '#000',
                 fontFamily: this.fontFamily,
-                fontSize: '0.7rem',
+                fontSize: '1rem',
                 fontWeight: 'regular',
               },
             },
@@ -107,7 +110,7 @@ export class ChartOptionsDual extends ChartOptions {
               format: '{value} mm',
               style: {
                 fontFamily: this.fontFamily,
-                fontSize: '0.7rem',
+                fontSize: '1rem',
                 fontWeight: 'regular',
               },
             },

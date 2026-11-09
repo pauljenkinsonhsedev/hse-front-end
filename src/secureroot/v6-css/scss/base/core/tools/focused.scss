@@ -76,3 +76,15 @@
       fill: $hse-focus-text-color;
     }
   }
+
+  /// Focused SVG shape
+  ///
+  /// For an SVG focus outline already drawn in $hse-focus-color (e.g. the
+  /// Highcharts chart focus border). Pairs the yellow with a thin
+  /// $hse-focus-text-color edge, as the other focus styles do, so it stays
+  /// visible against light backgrounds as well as dark ones. SVG paths
+  /// don't support box-shadow or outline, so this uses filter.
+
+  @mixin hse-focused-svg {
+    filter: drop-shadow(0 0 1px $hse-focus-text-color) drop-shadow(0 0 1px $hse-focus-text-color);
+  }

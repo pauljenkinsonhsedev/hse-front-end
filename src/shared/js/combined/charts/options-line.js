@@ -3,6 +3,7 @@ import { seriesData } from './series-data.js';
 import { chartCategories } from './chart-categories';
 import { missingData } from './missing-data.js';
 import { plotBand } from './plot-band';
+import { fitPlotHeight } from './fit-plot-height.js';
 /*
     Class @ChartOptionsLine
 
@@ -42,8 +43,9 @@ export class ChartOptionsLine extends ChartOptions {
                 text: this.xAxisText,
                 align: 'high',
                 style: {
+                    color: '#000',
                     fontFamily: this.fontFamily,
-                    fontSize: '0.7rem',
+                    fontSize: '1rem',
                     fontWeight: 'regular',
                 }
             },
@@ -62,7 +64,7 @@ export class ChartOptionsLine extends ChartOptions {
                 },
                 style: {
                     fontFamily: this.fontFamily,
-                    fontSize: '0.7rem',
+                    fontSize: '1rem',
                     fontWeight: 'regular',
                 }
             },
@@ -72,21 +74,24 @@ export class ChartOptionsLine extends ChartOptions {
             labels: {
                 style: {
                     fontFamily: this.fontFamily,
-                    fontSize: '0.9rem',
+                    fontSize: '1rem',
                     fontWeight: 'regular'
                 }
             },
             title: {
                 text: this.yAxisText,
                 style: {
-                    fontWeight: 'bold'
+                    color: '#000',
+                    fontFamily: this.fontFamily,
+                    fontSize: '1rem',
+                    fontWeight: 'normal'
                 }
             },
             labels: {
                 format: '{value:,.0f}',
                 style: {
                     fontFamily: this.fontFamily,
-                    fontSize: '0.7rem',
+                    fontSize: '1rem',
                     fontWeight: 'regular',
                 }
             },
@@ -97,7 +102,17 @@ export class ChartOptionsLine extends ChartOptions {
         }
 
         const collection = this.collection;
-        this.collection = {...collection, xAxis, yAxis, series};
+        // Keep the base chart events (its load handler starts watchLayout)
+        const chart = {
+            ...collection.chart,
+            events: {
+                ...collection.chart.events,
+                render: function () {
+                    fitPlotHeight(this);
+                }
+            }
+        };
+        this.collection = {...collection, chart, xAxis, yAxis, series};
         return this.collection;
     }
 }

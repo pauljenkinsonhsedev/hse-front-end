@@ -37,17 +37,6 @@ $callout-border-width: 10px;
     background: $color_hse-grey-4;
     border-left: $callout-border-width solid $color_hse-beta;
   }
-
-  .callout--warning {
-    background: left $color_hse-grey-4;
-    border-left: hse-spacing(4) solid $color_hse-grey-4;
-    margin: hse-spacing(6) 0;
-    @include hse-responsive-padding(4, "top");
-    @include hse-responsive-padding(4, "bottom");
-    p {
-      @include hse-responsive-padding(2);  
-    }
-  }
 }
 
 .callout--warning {
