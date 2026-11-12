@@ -136,6 +136,39 @@
     }
   }
   
+  /// Underline on hover link mixin
+  ///
+  /// Matches GOV.UK navigation links: no underline at rest, a thick underline
+  /// on hover/active, and no text underline on focus (the focus style draws
+  /// its own). Include it after any rule that sets `text-decoration: none`.
+  ///
+  /// @example scss
+  ///   .hse-component__link {
+  ///     @include hse-link-style-default;
+  ///     @include hse-link-style-underline-on-hover;
+  ///   }
+  ///
+
+  @mixin hse-link-style-underline-on-hover {
+    text-underline-offset: 0.1578em;
+
+    &:not(:hover):not(:active) {
+      text-decoration: none;
+    }
+
+    &:hover,
+    &:active {
+      text-decoration: underline;
+      text-decoration-thickness: max(3px, 0.1875rem, 0.12em);
+      text-decoration-skip-ink: none;
+    }
+
+    &:focus,
+    &:focus:hover {
+      text-decoration: none;
+    }
+  }
+
   /// Text link styles
   ///
   /// Makes links use the primary text colour, in all states. Use this mixin for

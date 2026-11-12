@@ -117,6 +117,10 @@
       }
     }
 
+    a {
+      @include hse-link-style-underline-on-hover;
+    }
+
     a:hover {
       color: $hse-link-hover-color;
     }
