@@ -1,0 +1,56 @@
+@use "../../base/core/tools/spacing" as *;
+@use "../../base/core/tools/typography" as *;
+@use "../../base/core/tools/sass-mq" as *;
+@use "../../base/core/settings/spacing" as *;
+@use "../../base/core/settings/colours" as *;
+@use "../../base/core/settings/globals" as *;
+
+// Service feedback
+// Port of the GOV.UK Design System "Feedback" component (govuk-frontend 6.5.0,
+// components/feedback/_mixin.scss), renamed to avoid clashing with the
+// existing .hse-feedback page survey. Sits directly above the footer and asks
+// users for feedback on the service as a whole.
+//
+// GOV.UK functional colours mapped to HSE:
+//   brand              (blue)          -> $color_hse-red
+//   surface-background (blue tint-95)  -> $color_hse-red-tint-1
+//   text               (black)         -> $hse-text-color
+
+$hse-service-feedback-border-colour: $color_hse-red;
+$hse-service-feedback-background: $color_hse-red-tint-1;
+
+.hse-service-feedback {
+  box-sizing: border-box;
+  padding: hse-spacing(4) $hse-gutter-half hse-spacing(5);
+  border-top: 1px solid $hse-service-feedback-border-colour;
+  background-color: $hse-service-feedback-background;
+
+  @include mq($from: tablet) {
+    padding-right: hse-spacing(4);
+    padding-left: hse-spacing(4);
+  }
+
+  // Full bleed on small screens
+  @include mq($until: tablet) {
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  @include mq($media-type: print) {
+    border-color: currentcolor;
+    background-color: transparent;
+  }
+}
+
+.hse-service-feedback__title {
+  @include hse-typography-responsive(24);
+  @include hse-responsive-margin(1, "bottom");
+  margin-top: 0;
+  font-weight: $hse-font-bold;
+  color: $hse-text-color;
+}
+
+// Body has no typography of its own: use hse-body etc. on its content
+.hse-service-feedback__body > :last-child {
+  margin-bottom: 0;
+}
