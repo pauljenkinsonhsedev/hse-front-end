@@ -8,13 +8,9 @@
 // Service feedback
 // Port of the GOV.UK Design System "Feedback" component (govuk-frontend 6.5.0,
 // components/feedback/_mixin.scss), renamed to avoid clashing with the
-// existing .hse-feedback page survey. Sits directly above the footer and asks
+// existing .hse-feedback page feedback. Sits directly above the footer and asks
 // users for feedback on the service as a whole.
 //
-// GOV.UK functional colours mapped to HSE:
-//   brand              (blue)          -> $color_hse-red
-//   surface-background (blue tint-95)  -> $color_hse-red-tint-1
-//   text               (black)         -> $hse-text-color
 
 $hse-service-feedback-border-colour: $color_hse-red;
 $hse-service-feedback-background: $color_hse-red-tint-1;
